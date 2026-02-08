@@ -1,0 +1,7 @@
+project_id = "bhcibpfhiqgtzvyhlegj"
+
+[functions.submit-rfq]
+verify_jwt = false
+
+[functions.create-admin]
+verify_jwt = false

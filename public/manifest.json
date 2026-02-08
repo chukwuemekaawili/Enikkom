@@ -1,0 +1,27 @@
+{
+  "name": "Enikkom Construction Limited",
+  "short_name": "Enikkom",
+  "description": "Nigeria's leading HDD, Pipeline & Marine Civil Works Contractor since 1993",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F7FAFF",
+  "theme_color": "#123D7F",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "construction", "industrial"],
+  "lang": "en-NG",
+  "dir": "ltr"
+}
