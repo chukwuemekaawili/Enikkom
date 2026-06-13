@@ -1,99 +1,18 @@
 import { motion, useReducedMotion } from "framer-motion";
-import { Quote, Plus, X, GripVertical } from "lucide-react";
-import { useRef, useState } from "react";
+import { Quote, Plus, X } from "lucide-react";
+import { useState } from "react";
 import { EditableText, EditableImage } from "@/components/admin";
 import { usePageContent } from "@/hooks/useSiteSettings";
 import { useEditMode } from "@/contexts/EditModeContext";
 import { Button } from "@/components/ui/button";
+import { EnhancedImage } from "@/components/ui/enhanced-image";
+import { approvedClientBrands, resolveBrandDisplay } from "@/content/brandRegistry";
 
-// Default client logos as data with image URLs (can be replaced)
-const defaultClients = [
-  { id: "shell", name: "Shell", imageUrl: "/logos/shell.svg" },
-  { id: "dangote", name: "Dangote", imageUrl: "/logos/dangote.svg" },
-  { id: "nnpc", name: "NNPC", imageUrl: "/logos/nnpc.svg" },
-  { id: "saipem", name: "Saipem", imageUrl: "/logos/saipem.svg" },
-  { id: "chevron", name: "Chevron", imageUrl: "/logos/chevron.svg" },
-  { id: "total", name: "TotalEnergies", imageUrl: "/logos/total.svg" },
-  { id: "nlng", name: "NLNG", imageUrl: "/logos/nlng.svg" },
-  { id: "oando", name: "Oando", imageUrl: "/logos/oando.svg" },
-  { id: "eni", name: "Eni", imageUrl: "/logos/eni.svg" },
-  { id: "npdc", name: "NPDC", imageUrl: "/logos/npdc.svg" },
-  { id: "daewoo", name: "Daewoo", imageUrl: "/logos/daewoo.svg" },
-];
-
-// Client logos as SVG components - used when image not available
-const LogoSVG: Record<string, React.FC<{ className?: string }>> = {
-  Shell: ({ className }) => (
-    <svg viewBox="0 0 100 100" className={className}>
-      <path d="M50 5C25.1 5 5 25.1 5 50s20.1 45 45 45 45-20.1 45-45S74.9 5 50 5z" fill="#FBCE07"/>
-      <path d="M50 10c-22.1 0-40 17.9-40 40s17.9 40 40 40 40-17.9 40-40S72.1 10 50 10zm0 73c-3.9-7.4-6.5-12.6-10.2-20.9L50 45.5l10.2 16.6c-3.7 8.3-6.3 13.5-10.2 20.9zm-13.3-26.7L50 30l13.3 26.3H36.7z" fill="#DD1D21"/>
-    </svg>
-  ),
-  NNPC: ({ className }) => (
-    <svg viewBox="0 0 100 40" className={className}>
-      <circle cx="20" cy="20" r="16" fill="#008751"/>
-      <path d="M12 14L20 8L28 14L28 26L20 32L12 26Z" fill="white"/>
-      <text x="62" y="24" textAnchor="middle" fill="#008751" fontSize="10" fontWeight="bold" fontFamily="Arial">NNPC Ltd</text>
-    </svg>
-  ),
-  NPDC: ({ className }) => (
-    <svg viewBox="0 0 100 40" className={className}>
-      <rect x="5" y="8" width="90" height="24" rx="4" fill="#006633"/>
-      <text x="50" y="25" textAnchor="middle" fill="white" fontSize="11" fontWeight="bold" fontFamily="Arial">NPDC</text>
-    </svg>
-  ),
-  Dangote: ({ className }) => (
-    <svg viewBox="0 0 120 40" className={className}>
-      <rect x="5" y="8" width="110" height="24" rx="4" fill="#003366"/>
-      <text x="60" y="25" textAnchor="middle" fill="white" fontSize="11" fontWeight="bold" fontFamily="Arial">DANGOTE</text>
-    </svg>
-  ),
-  Saipem: ({ className }) => (
-    <svg viewBox="0 0 120 40" className={className}>
-      <rect x="5" y="8" width="110" height="24" rx="4" fill="#0066B2"/>
-      <text x="60" y="25" textAnchor="middle" fill="white" fontSize="12" fontWeight="bold" fontFamily="Arial">SAIPEM</text>
-    </svg>
-  ),
-  Chevron: ({ className }) => (
-    <svg viewBox="0 0 120 40" className={className}>
-      <path d="M15 5L5 20L15 35L25 20L15 5z" fill="#0066B2"/>
-      <path d="M25 5L15 20L25 35L35 20L25 5z" fill="#ED1C24"/>
-      <text x="75" y="26" textAnchor="middle" fill="#0066B2" fontSize="12" fontWeight="bold" fontFamily="Arial">Chevron</text>
-    </svg>
-  ),
-  TotalEnergies: ({ className }) => (
-    <svg viewBox="0 0 140 40" className={className}>
-      <rect x="5" y="5" width="130" height="30" rx="4" fill="#E31E24"/>
-      <text x="70" y="26" textAnchor="middle" fill="white" fontSize="12" fontWeight="bold" fontFamily="Arial">TotalEnergies</text>
-    </svg>
-  ),
-  NLNG: ({ className }) => (
-    <svg viewBox="0 0 120 40" className={className}>
-      <rect x="5" y="5" width="110" height="30" rx="4" fill="#003366"/>
-      <text x="60" y="22" textAnchor="middle" fill="white" fontSize="10" fontWeight="bold" fontFamily="Arial">Nigeria LNG</text>
-      <text x="60" y="32" textAnchor="middle" fill="#7CB9E8" fontSize="7" fontFamily="Arial">LIMITED</text>
-    </svg>
-  ),
-  Oando: ({ className }) => (
-    <svg viewBox="0 0 100 40" className={className}>
-      <circle cx="20" cy="20" r="14" fill="#FF6600"/>
-      <circle cx="20" cy="20" r="6" fill="white"/>
-      <text x="62" y="26" textAnchor="middle" fill="#FF6600" fontSize="14" fontWeight="bold" fontFamily="Arial">Oando</text>
-    </svg>
-  ),
-  Eni: ({ className }) => (
-    <svg viewBox="0 0 80 60" className={className}>
-      <rect x="10" y="10" width="60" height="40" rx="4" fill="#FCCD00"/>
-      <text x="40" y="38" textAnchor="middle" fill="#000" fontSize="16" fontWeight="bold" fontFamily="Arial">eni</text>
-    </svg>
-  ),
-  Daewoo: ({ className }) => (
-    <svg viewBox="0 0 140 40" className={className}>
-      <path d="M15 20L25 10L30 20L25 30L15 20Z" fill="#003F87"/>
-      <text x="85" y="27" textAnchor="middle" fill="#003F87" fontSize="11" fontWeight="bold" fontFamily="Arial">DAEWOO NIGERIA</text>
-    </svg>
-  ),
-};
+const defaultClients = approvedClientBrands.map((client) => ({
+  id: client.id,
+  name: client.name,
+  imageUrl: client.logoSrc || "",
+}));
 
 interface TrustBlockProps {
   variant?: "light" | "dark";
@@ -104,18 +23,18 @@ export function TrustBlock({ variant = "light" }: TrustBlockProps) {
   const [isPaused, setIsPaused] = useState(false);
   const isDark = variant === "dark";
   const { isEditMode, addChange } = useEditMode();
-  
+
   const { content } = usePageContent('home');
   const trustContent = content.trust_block || {};
-  
-  // Default testimonial data
+
+  // Default testimonial — sourced from approved 1.2 TESTIMONIALS document
   const defaultTestimonial = {
-    quote: "The 40\" x 760m Yenagoa crossing at 100ft depth was executed flawlessly. This was the largest pipeline crossing in Nigeria and Enikkom delivered on time with zero safety incidents.",
-    author: "Project Coordinator",
-    company: "Shell Petroleum Development Company (SPDC)",
-    project: "Yenagoa 40\" HDD Crossing"
+    quote: "We are delighted with our experience of working with ENIKKOM over the duration of our project. We have found all staff from senior management down to the site delivery team to be friendly, cooperative, helpful and very professional. It was a pleasure working with the team and we definitely will look forward to our next project together.",
+    author: "Project Management Team",
+    company: "Saipem Contracting Nigeria Limited",
+    project: "SPDC Otumara–Escravos Pipeline Project",
   };
-  
+
   const testimonial = {
     quote: trustContent.quote || defaultTestimonial.quote,
     author: trustContent.author || defaultTestimonial.author,
@@ -132,10 +51,10 @@ export function TrustBlock({ variant = "light" }: TrustBlockProps) {
 
   // Handle logo management in edit mode
   const handleAddLogo = () => {
-    const newLogos = [...clients, { 
-      id: `logo-${Date.now()}`, 
-      name: "New Client", 
-      imageUrl: "" 
+    const newLogos = [...clients, {
+      id: `logo-${Date.now()}`,
+      name: "New Client",
+      imageUrl: ""
     }];
     addChange({
       pageSlug: "home",
@@ -158,7 +77,7 @@ export function TrustBlock({ variant = "light" }: TrustBlockProps) {
   };
 
   const handleUpdateLogo = (index: number, field: string, value: string) => {
-    const newLogos = clients.map((logo: any, i: number) => 
+    const newLogos = clients.map((logo: any, i: number) =>
       i === index ? { ...logo, [field]: value } : logo
     );
     addChange({
@@ -246,9 +165,9 @@ export function TrustBlock({ variant = "light" }: TrustBlockProps) {
           <div className="bg-background/80 backdrop-blur-sm border border-dashed border-primary/50 rounded-lg p-4">
             <div className="flex items-center justify-between mb-4">
               <h4 className="text-sm font-semibold text-foreground">Client Logos (Editable)</h4>
-              <Button 
-                size="sm" 
-                variant="outline" 
+              <Button
+                size="sm"
+                variant="outline"
                 onClick={handleAddLogo}
                 className="h-8 text-xs"
               >
@@ -256,9 +175,11 @@ export function TrustBlock({ variant = "light" }: TrustBlockProps) {
               </Button>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
-              {clients.map((client: any, index: number) => (
-                <div 
-                  key={client.id || index} 
+              {clients.map((client: any, index: number) => {
+                const brandDisplay = resolveBrandDisplay(client);
+                return (
+                <div
+                  key={client.id || index}
                   className="relative bg-muted/50 rounded-lg p-3 border border-border group"
                 >
                   <button
@@ -275,39 +196,32 @@ export function TrustBlock({ variant = "light" }: TrustBlockProps) {
                       className="text-xs text-center bg-transparent border-b border-dashed border-muted-foreground/30 focus:border-primary outline-none px-1 py-0.5"
                       placeholder="Client name"
                     />
-                    {client.imageUrl ? (
-                      <div className="relative">
+                    {brandDisplay.logoSrc ? (
+                      <div className={`relative flex h-8 w-full items-center justify-center ${brandDisplay.containerClassName || ""}`}>
                         <EditableImage
-                          src={client.imageUrl}
+                          src={brandDisplay.logoSrc}
                           alt={client.name}
                           pageSlug="home"
                           sectionKey="trust_block"
                           field={`client_logos.${index}.imageUrl`}
-                          className="h-8 w-full object-contain"
+                          className={`h-full w-full object-contain ${brandDisplay.imageClassName || ""}`}
                         />
                       </div>
                     ) : (
-                      <div className="h-8 flex items-center justify-center">
-                        {LogoSVG[client.name] ? (
-                          (() => {
-                            const LogoComponent = LogoSVG[client.name];
-                            return <LogoComponent className="w-full h-full" />;
-                          })()
-                        ) : (
-                          <span className="text-[10px] text-muted-foreground">No logo</span>
-                        )}
+                      <div className="flex h-8 items-center justify-center rounded-md bg-primary/10 text-[10px] font-semibold text-primary">
+                        {brandDisplay.badge || client.name}
                       </div>
                     )}
                   </div>
                 </div>
-              ))}
+              )})}
             </div>
           </div>
         </div>
       )}
 
       {/* Logo Marquee */}
-      <div 
+      <div
         className="relative"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
@@ -315,18 +229,18 @@ export function TrustBlock({ variant = "light" }: TrustBlockProps) {
         onTouchEnd={() => setTimeout(() => setIsPaused(false), 2000)}
       >
         {/* Gradient Fade Edges */}
-        <div 
+        <div
           className="absolute left-0 top-0 bottom-0 w-16 md:w-24 z-10 pointer-events-none"
           style={{
-            background: isDark 
+            background: isDark
               ? "linear-gradient(to right, hsl(220 50% 9% / 1) 0%, hsl(220 50% 9% / 0) 100%)"
               : "linear-gradient(to right, hsl(220 30% 96% / 1) 0%, hsl(220 30% 96% / 0) 100%)"
           }}
         />
-        <div 
+        <div
           className="absolute right-0 top-0 bottom-0 w-16 md:w-24 z-10 pointer-events-none"
           style={{
-            background: isDark 
+            background: isDark
               ? "linear-gradient(to left, hsl(220 50% 9% / 1) 0%, hsl(220 50% 9% / 0) 100%)"
               : "linear-gradient(to left, hsl(220 30% 96% / 1) 0%, hsl(220 30% 96% / 0) 100%)"
           }}
@@ -351,32 +265,39 @@ export function TrustBlock({ variant = "light" }: TrustBlockProps) {
             }
           >
             {duplicatedClients.map((client: any, index: number) => {
-              const LogoComponent = LogoSVG[client.name];
+              const brandDisplay = resolveBrandDisplay(client);
               return (
                 <motion.div
                   key={`${client.id}-${index}`}
                   className={`flex-shrink-0 flex items-center justify-center p-3 md:p-4 rounded-xl transition-all duration-300 ${
-                    isDark 
-                      ? "bg-white/5 hover:bg-white/10 border border-white/8" 
+                    isDark
+                      ? "bg-white/5 hover:bg-white/10 border border-white/8"
                       : "bg-white hover:shadow-md border border-border/50"
                   }`}
-                  style={{ 
-                    width: "100px", 
+                  style={{
+                    width: "100px",
                     height: "60px",
                   }}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <div className="w-16 h-8 md:w-20 md:h-10 flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity duration-300">
-                    {client.imageUrl ? (
-                      <img 
-                        src={client.imageUrl} 
-                        alt={client.name} 
-                        className="w-full h-full object-contain"
-                      />
-                    ) : LogoComponent ? (
-                      <LogoComponent className="w-full h-full" />
+                  <div className="w-16 h-8 md:w-20 md:h-10 flex items-center justify-center opacity-85 hover:opacity-100 transition-opacity duration-300">
+                    {brandDisplay.logoSrc ? (
+                      <div className={`flex h-full w-full items-center justify-center ${brandDisplay.containerClassName || ""}`}>
+                        <EnhancedImage
+                          src={brandDisplay.logoSrc}
+                          alt={brandDisplay.name}
+                          wrapperClassName={`w-full h-full ${brandDisplay.imageWrapperClassName || ""}`}
+                          className={`w-full h-full ${brandDisplay.imageClassName || ""}`}
+                          fit="contain"
+                          tone="logo"
+                          shimmer={false}
+                          sizes="120px"
+                        />
+                      </div>
                     ) : (
-                      <span className="text-xs text-muted-foreground">{client.name}</span>
+                      <div className="flex h-full w-full items-center justify-center rounded-md bg-primary/10 text-xs font-semibold text-primary">
+                        {brandDisplay.badge || brandDisplay.name}
+                      </div>
                     )}
                   </div>
                 </motion.div>

@@ -1,7 +1,8 @@
 import type { Config } from "tailwindcss";
+import tailwindcssAnimate from "tailwindcss-animate";
 
 export default {
-  darkMode: ["class"],
+  darkMode: "media",
   content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
   prefix: "",
   theme: {
@@ -15,7 +16,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-        heading: ['Manrope', 'system-ui', 'sans-serif'],
+        heading: ['Space Grotesk', 'system-ui', 'sans-serif'],
       },
       colors: {
         // Brand colors - Premium Industrial
@@ -24,6 +25,8 @@ export default {
           "primary-hover": "hsl(var(--brand-primary-hover))",
           cyan: "hsl(var(--brand-cyan))",
           red: "hsl(var(--brand-red))",
+          amber: "hsl(var(--brand-amber))",
+          "amber-hover": "hsl(var(--brand-amber-hover))",
         },
         charcoal: "hsl(var(--charcoal))",
         "charcoal-light": "hsl(var(--charcoal-light))",
@@ -124,5 +127,5 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [tailwindcssAnimate],
 } satisfies Config;

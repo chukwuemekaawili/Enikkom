@@ -4,12 +4,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { MapPin, Building2, Calendar, Ruler, Filter, ChevronRight, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
-
-// Import images
-import pipelineConstruction from "@/assets/capabilities/pipeline-construction.jpg";
-import hddDrilling from "@/assets/capabilities/hdd-drilling.jpg";
-import jettyConstruction from "@/assets/capabilities/jetty-construction.jpg";
-import dredgingMarine from "@/assets/capabilities/dredging-marine.jpg";
+import { EnhancedImage } from "@/components/ui/enhanced-image";
+import { interactiveProjectImageSelections } from "@/content/projectImageSelections";
+import { currentProjectImage } from "@/content/siteImageSelections";
 
 export interface ProjectLocation {
   id: string;
@@ -22,27 +19,38 @@ export interface ProjectLocation {
   client: string;
   year: string;
   metrics: string;
-  image: string;
+  image?: string;
   href?: string;
   scope?: string;
 }
 
+const lekkiGasPipeline = currentProjectImage("lekki-gas-pipeline.jpg");
+const otumaraEscravos = currentProjectImage("otumara-escravos.jpg");
+const projAtlas = currentProjectImage("proj_atlas.jpg");
+const drillingSite2 = currentProjectImage("drilling-site-2.jpg");
+const projOml34 = currentProjectImage("proj_oml34.jpg");
+const heroRiverCrossing = currentProjectImage("hero_river_crossing.jpg");
+const nipcoIbafo = currentProjectImage("nipco-ibafo.jpg");
+const hddTeam1 = currentProjectImage("hdd-team-1.jpg");
+const hddDrilling = currentProjectImage("hdd-night-panorama-cropped.jpg");
+const pipelineConstruction = currentProjectImage("cap_pipeline.jpg");
+
 // VERIFIED PROJECT DATA - Extracted from official ECL Project Brochures
-const projectLocations: ProjectLocation[] = [
+const baseProjectLocations: ProjectLocation[] = [
   // === HDD PROJECTS ===
   {
     id: "1",
-    name: "Lekki Gas Pipeline Project (LGPP)",
-    location: "Ejinrin, Epe, Lagos State",
+    name: "Dangote Fertilizer Lagoon Crossing",
+    location: "Ejirin, Lagos Lagoon, Lagos State",
     state: "Lagos",
     type: "HDD",
     coordinates: { x: 30, y: 54 },
-    description: "Engineering, Procurement, Construction and Installation of 36\" x 1.5km Gas Pipeline across swamp and river using HDD Intersect Method with 2 maxi rigs (300T and 500T).",
-    client: "Zakhem Construction / Dangote Fertilizers Limited",
-    year: "2019",
-    metrics: "36\" x 1.5km HDD",
+    description: "Engineering, Procurement, Construction and Installation of 36\" × 2km Gas Pipeline across Lagos Lagoon / swamp using HDD Intersect Method with 2 maxi rigs (300T and 500T).",
+    client: "Dangote Fertilizers Limited",
+    year: "2016",
+    metrics: "36\" × 2km HDD",
     scope: "Feasibility Study, Design, Welding/Pre-Testing, HDD Intersect Method, Tie-In, Commissioning, Cathodic Protection Installation",
-    image: hddDrilling,
+    image: lekkiGasPipeline,
   },
   {
     id: "2",
@@ -56,49 +64,49 @@ const projectLocations: ProjectLocation[] = [
     year: "2016",
     metrics: "2.78km Bundled HDD",
     scope: "Mobilizing 2 HDD Rigs (300T + 500T), Intersect Method drilling from both ends",
-    image: hddDrilling,
+    image: otumaraEscravos,
   },
   {
     id: "3",
-    name: "Atlas Cove-Mosimi 16\" x 3km Pipeline (Arepo)",
+    name: "Atlas Cove–Mosimi 16\" × 3.1km (Arepo)",
     location: "Arepo Swamp, Ogun State",
     state: "Ogun",
     type: "HDD",
     coordinates: { x: 26, y: 50 },
-    description: "Emergency reconstruction of vandalised pipeline section using HDD Intersect Method - LONGEST SINGLE DRILL IN AFRICA (3.1km) at time of completion.",
+    description: "Emergency reconstruction of vandalised pipeline section using HDD Intersect Method — LONGEST SINGLE DRILL IN AFRICA (3.1km) at time of completion.",
     client: "NNPC / PPMC",
-    year: "2017",
-    metrics: "16\" x 3km Record HDD",
+    year: "2016",
+    metrics: "16\" × 3.1km Africa Record",
     scope: "Feasibility Study, Design, Welding/Pre-Testing, HDD Intersect Method, Tie-In, Commissioning, CP Installation",
-    image: hddDrilling,
+    image: projAtlas,
   },
   {
     id: "4",
-    name: "Ekiadalor Deep Valley Crossing",
-    location: "Benin City, Edo State",
+    name: "Ekiadolor Deep Valley Crossing",
+    location: "Ekiadolor, Edo State",
     state: "Edo",
     type: "HDD",
     coordinates: { x: 42, y: 62 },
-    description: "36\" x 1.3km Gas Transmission Pipeline across Ekiadalor Rock Valley - DEEPEST HDD CROSSING IN AFRICA at over 80m depth.",
-    client: "NNPC / Zakhem Construction",
-    year: "2018",
-    metrics: "36\" x 1.3km @ 80m depth",
+    description: "36\" × 1.3km Gas Transmission Pipeline across Ekiadolor Rock Valley — DEEPEST HDD CROSSING IN AFRICA at over 80m depth.",
+    client: "SPDC",
+    year: "2016",
+    metrics: "36\" × 1.3km @ 80m depth",
     scope: "Construction, Laying and Commissioning of Gas Transmission Pipeline",
-    image: hddDrilling,
+    image: drillingSite2,
   },
   {
     id: "5",
-    name: "OML 34 - 12km CHDD Record",
-    location: "Utorogun, Warri, Delta State",
+    name: "OML34 — 10\" × 12km Continuous HDD",
+    location: "Utorogun, Delta State",
     state: "Delta",
     type: "HDD",
     coordinates: { x: 44, y: 72 },
-    description: "Installation of 12\" x 10km+ Pipeline by Continuous Horizontal Directional Drilling - LONGEST FUNCTIONAL CONTINUOUS HDD CROSSING IN NIGERIA.",
-    client: "NPDC",
-    year: "2023",
-    metrics: "12\" x 10km+ CHDD",
-    scope: "Complete HDD installation with extended reach technology",
-    image: hddDrilling,
+    description: "Installation of 10\" × 12km Pipeline by Continuous Horizontal Directional Drilling — LONGEST FUNCTIONAL CONTINUOUS HDD CROSSING IN NIGERIA.",
+    client: "NPDC / ND Western",
+    year: "2021",
+    metrics: "10\" × 12km CHDD — Nigeria Record",
+    scope: "Complete CHDD installation with extended reach technology",
+    image: projOml34,
   },
   {
     id: "6",
@@ -112,21 +120,21 @@ const projectLocations: ProjectLocation[] = [
     year: "2010",
     metrics: "40\" x 760m @ 100ft depth",
     scope: "Eastern Gas Gathering System Phase II Pipelines (EGGS-2)",
-    image: hddDrilling,
+    image: heroRiverCrossing,
   },
   {
     id: "7",
-    name: "Escravos Export System - Escravos Creek",
-    location: "Escravos, Delta State",
-    state: "Delta",
+    name: "OB3 River Niger — 48\" Direct Pipe Installation",
+    location: "River Niger, Nigeria",
+    state: "Rivers",
     type: "HDD",
-    coordinates: { x: 38, y: 75 },
-    description: "Design and Installation of 30\" x 540m Pipeline Section at Escravos Creek using HDD Method.",
-    client: "Gramen Petroserve Limited / Chevron Nigeria Limited",
-    year: "2018",
-    metrics: "30\" x 540m HDD",
-    scope: "Installation Contractor for HDD crossing",
-    image: hddDrilling,
+    coordinates: { x: 50, y: 70 },
+    description: "Landmark 48\" × 1.8km crossing of the River Niger using HDD combined with Direct Pipe Installation technology.",
+    client: "NPDC",
+    year: "2020",
+    metrics: "48\" × 1.8km HDD + DPI",
+    scope: "HDD pilot bore, reaming and Direct Pipe Installation of 48\" casing",
+    image: heroRiverCrossing,
   },
   {
     id: "8",
@@ -140,7 +148,7 @@ const projectLocations: ProjectLocation[] = [
     year: "2015",
     metrics: "36\" x 7.2km total HDD",
     scope: "Expansion of Escravos-Lagos Gas Pipeline Project Phase II",
-    image: hddDrilling,
+    image: heroRiverCrossing,
   },
   {
     id: "9",
@@ -154,7 +162,7 @@ const projectLocations: ProjectLocation[] = [
     year: "2015",
     metrics: "15km pipeline, 3km HDD",
     scope: "Underground Steel Pipeline Laying Work & Above Ground Piping Work",
-    image: hddDrilling,
+    image: nipcoIbafo,
   },
   {
     id: "10",
@@ -168,7 +176,7 @@ const projectLocations: ProjectLocation[] = [
     year: "2016",
     metrics: "10km pipeline, 5km HDD",
     scope: "Phase 2 Underground Steel Pipeline Work",
-    image: hddDrilling,
+    image: nipcoIbafo,
   },
   {
     id: "11",
@@ -182,7 +190,7 @@ const projectLocations: ProjectLocation[] = [
     year: "2013",
     metrics: "680m + 739m HDD crossings",
     scope: "Onshore Part of Lot 3 NIPP Project",
-    image: hddDrilling,
+    image: hddTeam1,
   },
   {
     id: "12",
@@ -196,7 +204,7 @@ const projectLocations: ProjectLocation[] = [
     year: "2011",
     metrics: "12\" x 300m HDD",
     scope: "OANDO Pipeline Works river crossing",
-    image: hddDrilling,
+    image: hddTeam1,
   },
   {
     id: "13",
@@ -210,7 +218,7 @@ const projectLocations: ProjectLocation[] = [
     year: "2010",
     metrics: "12\" x 300m HDD",
     scope: "Ogbele-Rumuji Pipeline Project river crossing",
-    image: hddDrilling,
+    image: hddTeam1,
   },
   {
     id: "14",
@@ -224,7 +232,7 @@ const projectLocations: ProjectLocation[] = [
     year: "2008",
     metrics: "7 HDD crossings totaling 4.9km",
     scope: "Multiple river crossings on Calabar Pipeline Project",
-    image: hddDrilling,
+    image: hddTeam1,
   },
   {
     id: "15",
@@ -525,6 +533,11 @@ const projectLocations: ProjectLocation[] = [
   },
 ];
 
+const projectLocations: ProjectLocation[] = baseProjectLocations.map((project) => ({
+  ...project,
+  image: interactiveProjectImageSelections[project.name] ?? project.image,
+}));
+
 const projectTypes = ["All", "HDD", "Pipeline", "Marine", "Dredging", "Shore Approach", "Thrust Boring"] as const;
 
 const typeColors: Record<string, string> = {
@@ -595,7 +608,7 @@ export function InteractiveProjectMap({
                 Nationwide Project Coverage
               </h2>
               <p className="text-white/70 max-w-2xl mx-auto text-lg">
-                35+ verified major projects across Nigeria and West Africa, extracted from official ECL Project Brochures.
+                35+ verified major projects across Nigeria, extracted from official ECL Project Brochures.
               </p>
             </motion.div>
           )}
@@ -806,15 +819,33 @@ export function InteractiveProjectMap({
                 </div>
               </div>
 
-              {/* Image */}
-              <div className="relative h-48 rounded-xl overflow-hidden">
-                <img 
-                  src={selectedProject.image} 
-                  alt={selectedProject.name}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 to-transparent" />
-                <div className="absolute bottom-3 left-3 right-3">
+              {selectedProject.image ? (
+                <div className="relative h-48 rounded-xl overflow-hidden">
+                  <EnhancedImage
+                    src={selectedProject.image}
+                    alt={selectedProject.name}
+                    wrapperClassName="h-full w-full"
+                    className="h-full w-full"
+                    hoverZoom
+                    tone="natural"
+                    fallbackLabel={selectedProject.name}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 to-transparent" />
+                  <div className="absolute bottom-3 left-3 right-3">
+                    <div className="flex items-center gap-4 text-sm">
+                      <div className="flex items-center gap-1.5 text-white/80">
+                        <Calendar className="w-4 h-4" />
+                        {selectedProject.year}
+                      </div>
+                      <div className="flex items-center gap-1.5 text-primary">
+                        <Ruler className="w-4 h-4" />
+                        {selectedProject.metrics}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <div className="flex h-48 items-end rounded-xl border border-white/10 bg-white/5 p-4">
                   <div className="flex items-center gap-4 text-sm">
                     <div className="flex items-center gap-1.5 text-white/80">
                       <Calendar className="w-4 h-4" />
@@ -826,7 +857,7 @@ export function InteractiveProjectMap({
                     </div>
                   </div>
                 </div>
-              </div>
+              )}
 
               {/* Details */}
               <div className="space-y-3">
@@ -860,7 +891,7 @@ export function InteractiveProjectMap({
                 )}
                 <Link to="/contact" className="flex-1">
                   <Button variant="outline" className="w-full border-white/20 text-white hover:bg-white/10">
-                    Request Quote
+                    Contact Us
                   </Button>
                 </Link>
               </div>

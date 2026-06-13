@@ -1,25 +1,6 @@
 import { motion } from "framer-motion";
-
-interface Partner {
-  name: string;
-  logo?: string;
-  type: "client" | "partner";
-}
-
-const partners: Partner[] = [
-  // Major Clients
-  { name: "Shell", type: "client" },
-  { name: "Chevron", type: "client" },
-  { name: "TotalEnergies", type: "client" },
-  { name: "NLNG", type: "client" },
-  { name: "ExxonMobil", type: "client" },
-  { name: "NNPC", type: "client" },
-  { name: "Dangote", type: "client" },
-  { name: "Seplat", type: "client" },
-  // Partners
-  { name: "HDDThailand", type: "partner" },
-  { name: "EISNL", type: "partner" },
-];
+import { EnhancedImage } from "@/components/ui/enhanced-image";
+import { approvedClientBrands, approvedStrategicPartners } from "@/content/brandRegistry";
 
 interface PartnersClientsProps {
   variant?: "light" | "dark";
@@ -27,15 +8,16 @@ interface PartnersClientsProps {
 }
 
 export function PartnersClients({ variant = "light", showTitle = true }: PartnersClientsProps) {
-  const clients = partners.filter(p => p.type === "client");
-  const partnersList = partners.filter(p => p.type === "partner");
+  const clients = approvedClientBrands;
+  const partnersList = approvedStrategicPartners;
 
   const bgClass = variant === "dark" ? "bg-charcoal" : "bg-muted/30";
   const textClass = variant === "dark" ? "text-white" : "text-foreground";
   const mutedClass = variant === "dark" ? "text-white/60" : "text-muted-foreground";
-  const cardClass = variant === "dark" 
-    ? "bg-white/5 border-white/10 hover:bg-white/10" 
-    : "bg-card border hover:shadow-md";
+  const cardClass =
+    variant === "dark"
+      ? "bg-white/5 border-white/10 hover:bg-white/10"
+      : "bg-card border hover:shadow-md";
 
   return (
     <section className={`section-padding ${bgClass}`}>
@@ -44,12 +26,11 @@ export function PartnersClients({ variant = "light", showTitle = true }: Partner
           <div className="text-center mb-12">
             <h2 className={`mb-4 ${textClass}`}>Trusted By Industry Leaders</h2>
             <p className={`max-w-2xl mx-auto ${mutedClass}`}>
-              We are the contractor of choice for Nigeria's leading oil & gas operators and infrastructure developers.
+              We are the contractor of choice for Nigeria&apos;s leading oil & gas operators and infrastructure developers.
             </p>
           </div>
         )}
 
-        {/* Clients */}
         <div className="mb-12">
           <h3 className={`text-sm font-semibold uppercase tracking-wider mb-6 text-center ${mutedClass}`}>
             Our Clients
@@ -65,12 +46,17 @@ export function PartnersClients({ variant = "light", showTitle = true }: Partner
                 className={`flex items-center justify-center p-4 rounded-lg border transition-all ${cardClass}`}
               >
                 <div className="text-center">
-                  <div className={`w-12 h-12 rounded-full mx-auto mb-2 flex items-center justify-center ${
-                    variant === "dark" ? "bg-primary/20" : "bg-primary/10"
-                  }`}>
-                    <span className="text-primary font-bold text-lg">
-                      {client.name.charAt(0)}
-                    </span>
+                  <div className="w-14 h-14 rounded-xl mx-auto mb-2 flex items-center justify-center overflow-hidden bg-white p-2">
+                    <EnhancedImage
+                      src={client.logoSrc}
+                      alt={client.name}
+                      wrapperClassName={`h-full w-full bg-transparent ${client.imageWrapperClassName || ""}`}
+                      className={`h-full w-full ${client.imageClassName || ""}`}
+                      fit="contain"
+                      tone="logo"
+                      shimmer={false}
+                      sizes="72px"
+                    />
                   </div>
                   <span className={`text-xs font-medium ${textClass}`}>{client.name}</span>
                 </div>
@@ -79,7 +65,6 @@ export function PartnersClients({ variant = "light", showTitle = true }: Partner
           </div>
         </div>
 
-        {/* Partners */}
         <div>
           <h3 className={`text-sm font-semibold uppercase tracking-wider mb-6 text-center ${mutedClass}`}>
             Strategic Partners
@@ -94,12 +79,25 @@ export function PartnersClients({ variant = "light", showTitle = true }: Partner
                 transition={{ duration: 0.3, delay: index * 0.1 }}
                 className={`flex items-center gap-3 px-6 py-4 rounded-lg border transition-all ${cardClass}`}
               >
-                <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
-                  variant === "dark" ? "bg-accent/20" : "bg-accent/10"
-                }`}>
-                  <span className="text-accent font-bold">
-                    {partner.name.charAt(0)}
-                  </span>
+                <div
+                  className={`w-10 h-10 rounded-full flex items-center justify-center overflow-hidden ${
+                    partner.logoSrc ? "bg-white px-1" : variant === "dark" ? "bg-accent/20" : "bg-accent/10"
+                  }`}
+                >
+                  {partner.logoSrc ? (
+                    <EnhancedImage
+                      src={partner.logoSrc}
+                      alt={partner.name}
+                      wrapperClassName={`h-full w-full bg-transparent ${partner.imageWrapperClassName || ""}`}
+                      className={`h-full w-full ${partner.imageClassName || ""}`}
+                      fit="contain"
+                      tone="logo"
+                      shimmer={false}
+                      sizes="64px"
+                    />
+                  ) : (
+                    <span className="text-accent font-bold">{partner.badge}</span>
+                  )}
                 </div>
                 <span className={`font-medium ${textClass}`}>{partner.name}</span>
               </motion.div>

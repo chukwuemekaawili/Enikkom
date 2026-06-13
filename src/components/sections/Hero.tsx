@@ -1,10 +1,13 @@
 import { ReactNode } from "react";
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+
 import { EditableImage } from "@/components/admin";
+import { Button } from "@/components/ui/button";
+import { EnhancedImage } from "@/components/ui/enhanced-image";
 import { useEditMode } from "@/contexts/EditModeContext";
+import { getAssetUrl } from "@/lib/assetMap";
 
 interface HeroProps {
   title: string;
@@ -22,7 +25,6 @@ interface HeroProps {
   trustStrip?: ReactNode;
   size?: "default" | "large" | "small";
   align?: "left" | "center";
-  // Live editing props
   pageSlug?: string;
   sectionKey?: string;
   imageField?: string;
@@ -43,149 +45,115 @@ export function Hero({
   imageField = "backgroundImage",
 }: HeroProps) {
   const { isEditMode, pendingChanges } = useEditMode();
-  
+
   const heights = {
-    small: "min-h-[380px] md:min-h-[440px] lg:min-h-[480px]",
-    default: "min-h-[480px] md:min-h-[560px] lg:min-h-[620px]",
-    large: "min-h-[580px] md:min-h-[680px] lg:min-h-[760px]",
+    small: "min-h-[460px] md:min-h-[520px] lg:min-h-[560px]",
+    default: "min-h-[560px] md:min-h-[640px] lg:min-h-[700px]",
+    large: "min-h-[660px] md:min-h-[760px] lg:min-h-[840px]",
   };
 
-  const alignClass = align === "center" ? "text-center items-center" : "text-left items-start";
-
-  // Check for pending image change
-  const changeKey = pageSlug ? `${pageSlug}:${sectionKey}:${imageField}` : '';
+  const changeKey = pageSlug ? `${pageSlug}:${sectionKey}:${imageField}` : "";
   const pendingChange = changeKey ? pendingChanges.get(changeKey) : undefined;
   const displayImage = pendingChange?.value ?? backgroundImage;
+  const resolvedImage = displayImage ? getAssetUrl(displayImage) : undefined;
+  const isCentered = align === "center";
 
   return (
-    <section className={`relative ${heights[size]} flex items-center overflow-hidden`}>
-      {/* Background Image - Editable when pageSlug is provided */}
-      {displayImage ? (
+    <section className={`relative overflow-hidden ${heights[size]}`}>
+      {resolvedImage ? (
         <>
           {isEditMode && pageSlug ? (
             <EditableImage
-              src={displayImage}
+              src={resolvedImage}
               alt="Hero background"
               pageSlug={pageSlug}
               sectionKey={sectionKey}
               field={imageField}
               containerClassName="absolute inset-0"
-              className="w-full h-full object-cover object-center"
+              className="h-full w-full object-cover object-center"
             />
           ) : (
-            <div
-              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-              style={{ 
-                backgroundImage: `url(${displayImage})`,
-                backgroundPosition: "center 40%"
-              }}
+            <EnhancedImage
+              src={resolvedImage}
+              alt=""
+              aria-hidden="true"
+              priority
+              tone="cinematic"
+              wrapperClassName="absolute inset-0"
+              className="h-full w-full object-cover object-center"
+              sizes="100vw"
             />
           )}
-          {/* Premium gradient overlay */}
-          <div 
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              background: align === "center" 
-                ? 'linear-gradient(to bottom, rgba(11, 18, 32, 0.65) 0%, rgba(11, 18, 32, 0.78) 100%)'
-                : 'linear-gradient(to right, rgba(11, 18, 32, 0.85) 0%, rgba(11, 18, 32, 0.70) 45%, rgba(11, 18, 32, 0.50) 100%)'
-            }}
-          />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,14,19,0.88)_0%,rgba(10,14,19,0.72)_45%,rgba(10,14,19,0.5)_100%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(29,160,101,0.18),transparent_32%)]" />
         </>
       ) : (
-        <div className="absolute inset-0 bg-charcoal" />
+        <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(10,14,19,1)_0%,rgba(18,24,31,0.94)_55%,rgba(29,160,101,0.4)_100%)]" />
       )}
 
-      {/* Content */}
-      <div className="relative z-10 container-wide py-16 md:py-20 lg:py-24">
-        <motion.div 
-          className={`flex flex-col ${alignClass} max-w-2xl ${align === "center" ? "mx-auto" : ""}`}
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
-        >
-          {/* Badge */}
-          {badge && (
-            <motion.div 
-              className="mb-5"
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.1 }}
-            >
-              <span className="inline-flex items-center px-4 py-2 rounded-lg text-[12px] font-semibold bg-primary text-white uppercase tracking-wide">
-                {badge}
-              </span>
-            </motion.div>
-          )}
+      <div className="absolute inset-x-0 top-0 h-px bg-white/10" />
+      <div className="absolute inset-x-0 bottom-0 h-px bg-white/10" />
 
-          {/* Title */}
-          <motion.h1 
-            className="text-white mb-5"
-            style={{ textShadow: '0 2px 12px rgba(0, 0, 0, 0.4)' }}
-            initial={{ opacity: 0, y: 16 }}
+      <div className="relative z-10 flex min-h-full items-center">
+        <div className="container-wide py-20 md:py-24 lg:py-28">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.15 }}
+            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+            className={`${isCentered ? "mx-auto text-center items-center" : "items-start text-left"} flex max-w-4xl flex-col`}
           >
-            {title}
-          </motion.h1>
-          
-          {subtitle && (
-            <motion.p 
-              className="text-[16px] md:text-[17px] lg:text-[18px] text-white/75 mb-8 leading-[1.65] max-w-xl"
-              style={{ textShadow: '0 2px 8px rgba(0, 0, 0, 0.3)' }}
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.45, delay: 0.2 }}
+            <div
+              className={`mb-7 flex w-full ${isCentered ? "justify-center" : "justify-start"}`}
             >
-              {subtitle}
-            </motion.p>
-          )}
+              <div className="flex items-center gap-4 text-white/55">
+                <span className="h-px w-10 bg-primary/75" />
+                <span className="text-[10px] font-semibold uppercase tracking-[0.22em]">
+                  {badge || "Engineering delivery"}
+                </span>
+              </div>
+            </div>
 
-          {(primaryCTA || secondaryCTA) && (
-            <motion.div 
-              className="flex flex-wrap gap-3"
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.25 }}
-            >
-              {primaryCTA && (
-                <Button 
-                  asChild 
-                  size="lg" 
-                  className="h-12 px-7 text-[14px] font-semibold bg-primary hover:bg-primary/90 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-0.5"
-                >
-                  <Link to={primaryCTA.href}>
-                    {primaryCTA.label}
-                    <ChevronRight className="ml-1 h-4 w-4" />
-                  </Link>
-                </Button>
-              )}
-              {secondaryCTA && (
-                <Button 
-                  asChild 
-                  variant="outline" 
-                  size="lg" 
-                  className="h-12 px-7 text-[14px] font-semibold border-white/40 text-white bg-white/8 hover:bg-white/12 hover:border-white/50 rounded-xl backdrop-blur-sm transition-all duration-200"
-                >
-                  <Link to={secondaryCTA.href}>
-                    {secondaryCTA.label}
-                  </Link>
-                </Button>
-              )}
-            </motion.div>
-          )}
-        </motion.div>
+            <h1 className="max-w-4xl text-white">{title}</h1>
 
-        {/* Trust Strip */}
-        {trustStrip && (
-          <motion.div 
-            className="mt-14 md:mt-16 lg:mt-20"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.35 }}
-          >
-            {trustStrip}
+            {subtitle && (
+              <p className="mt-6 max-w-2xl text-[16px] leading-8 text-white/70 md:text-[18px]">
+                {subtitle}
+              </p>
+            )}
+
+            {(primaryCTA || secondaryCTA) && (
+              <div
+                className={`mt-10 flex flex-wrap gap-3 ${isCentered ? "justify-center" : "justify-start"}`}
+              >
+                {primaryCTA && (
+                  <Button asChild size="lg">
+                    <Link to={primaryCTA.href}>
+                      {primaryCTA.label}
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  </Button>
+                )}
+
+                {secondaryCTA && (
+                  <Button asChild size="lg" variant="premium">
+                    <Link to={secondaryCTA.href}>{secondaryCTA.label}</Link>
+                  </Button>
+                )}
+              </div>
+            )}
+
+            {trustStrip && (
+              <motion.div
+                className={`mt-14 w-full max-w-4xl rounded-[1.75rem] border border-white/10 bg-white/[0.06] p-5 backdrop-blur-md md:p-6 ${isCentered ? "text-left" : ""}`}
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.45, delay: 0.12 }}
+              >
+                {trustStrip}
+              </motion.div>
+            )}
           </motion.div>
-        )}
+        </div>
       </div>
     </section>
   );

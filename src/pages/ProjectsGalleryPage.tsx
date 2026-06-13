@@ -4,27 +4,12 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { X, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
-
-// Import authentic project images from PDFs
-import heroHddRig from "@/assets/projects/hdd-night-panorama.jpg";
-import hddRigOperation from "@/assets/projects/hdd-rig-night.jpg";
-import pipelineConstruction from "@/assets/projects/pipe-laying-crane.jpg";
-import dredgingMarine from "@/assets/projects/otumara-escravos.jpg";
-import jettyConstruction from "@/assets/projects/multi-crane-operations.jpg";
-import shoreApproach from "@/assets/projects/drilling-ops-5.jpg";
-import pipeWelding from "@/assets/projects/welding-crew.jpg";
-import rigSetup from "@/assets/projects/hdd-equipment-fleet.jpg";
-import swampPipeline from "@/assets/projects/cat-excavator.jpg";
-import pipelineLaying from "@/assets/projects/scope-operations.jpg";
-import drillingSite from "@/assets/projects/hdd-drill-string.jpg";
-import equipmentFleet from "@/assets/projects/hdd-equipment-fleet-2.jpg";
-import dredgingHero from "@/assets/projects/otumara-escravos-2.jpg";
-import atlasCoveMosimi from "@/assets/projects/atlas-cove-mosimi.jpg";
-import lekiGasPipeline from "@/assets/projects/lekki-gas-pipeline.jpg";
-import teamSafety from "@/assets/projects/team-safety.jpg";
+import { EnhancedImage } from "@/components/ui/enhanced-image";
+import { getProjectImage } from "@/content/projectImageSelections";
+import { siteImageSelections } from "@/content/siteImageSelections";
 
 interface Project {
-  image: string;
+  image?: string;
   title: string;
   client?: string;
   location?: string;
@@ -35,109 +20,127 @@ interface Project {
 
 const hddProjects: Project[] = [
   {
-    image: hddRigOperation,
-    title: "River Niger HDD Crossing",
-    client: "NNPC/Shell",
-    location: "Niger Delta, Nigeria",
-    year: "2003",
-    description: "Historic first HDD crossing of the River Niger, pioneering trenchless technology in Nigeria. 48-inch diameter pipeline installed across 1.2km river crossing.",
-    specs: ["1,200m crossing length", "48\" diameter", "500T pullback force"],
+    image: getProjectImage("oml34-chdd", "projectGallery"),
+    title: "OML34 Continuous HDD — 10\" × 12km",
+    client: "NPDC / ND Western",
+    location: "Utorogun, Delta State",
+    year: "2021",
+    description: "Nigeria's longest Continuous HDD — 12km of 10-inch pipeline installed in a single continuous operation through the Niger Delta. Record-breaking achievement.",
+    specs: ["12km total length", "10\" diameter", "500T CHDD — Nigeria record"],
   },
   {
-    image: rigSetup,
-    title: "Escravos River Crossing",
-    client: "Chevron Nigeria",
+    image: getProjectImage("atlas-cove-mosimi", "projectGallery"),
+    title: "Atlas Cove–Mosimi — 16\" × 3.1km",
+    client: "NNPC / PPMC",
+    location: "Arepo / Imagbon, Ogun State",
+    year: "2016",
+    description: "Africa's longest single HDD drill — emergency reconstruction of the Atlas Cove to Mosimi petroleum products pipeline.",
+    specs: ["3.1km single drill", "16\" diameter", "Africa record"],
+  },
+  {
+    image: getProjectImage("otumara-escravos", "projectGallery"),
+    title: "Otumara-Escravos Bundled HDD",
+    client: "Saipem / SPDC",
     location: "Delta State, Nigeria",
-    year: "2018",
-    description: "Major HDD crossing beneath the Escravos River for gas export pipeline, completed ahead of schedule with zero safety incidents.",
-    specs: ["850m crossing length", "36\" diameter", "D1000x900 rig"],
+    year: "2016",
+    description: "Africa's longest bundled HDD crossing — 12\" and 3\" pipelines installed simultaneously across 2.78km of the Escravos River system.",
+    specs: ["2.78km bundled crossing", "12\" + 3\" pipes", "Africa record"],
   },
   {
-    image: drillingSite,
-    title: "Lagos Lagoon Crossing",
-    client: "NNPC",
-    location: "Lagos, Nigeria",
+    image: getProjectImage("ob3-river-niger", "projectGallery"),
+    title: "OB3 River Niger 48\" Direct Pipe",
+    client: "NPDC / OB3 Consortium",
+    location: "River Niger, Nigeria",
     year: "2020",
-    description: "Complex urban HDD crossing beneath Lagos Lagoon, navigating challenging soil conditions and existing infrastructure.",
-    specs: ["1,500m crossing length", "24\" diameter", "Urban environment"],
+    description: "Landmark 48-inch × 1.8km crossing of the River Niger using HDD combined with Direct Pipe Installation technology.",
+    specs: ["1.8km crossing", "48\" diameter", "HDD + DPI method"],
+  },
+  {
+    image: getProjectImage("river-niger-historic", "projectGallery"),
+    title: "First HDD Crossing of River Niger",
+    client: "NNPC",
+    location: "Nigeria",
+    year: "2003",
+    description: "Nigeria's historic first Horizontal Directional Drilling crossing, pioneering trenchless technology in the country.",
+    specs: ["Pioneer HDD in Nigeria", "16\" diameter", "Opened new market"],
   },
 ];
 
 const pipelineProjects: Project[] = [
   {
-    image: pipelineConstruction,
-    title: "OML 58 Pipeline Network",
-    client: "Shell Petroleum",
-    location: "Rivers State, Nigeria",
-    year: "2019",
-    description: "Construction of 45km of oil and gas gathering pipelines across challenging swamp and mangrove terrain in the Niger Delta.",
-    specs: ["45km total length", "Multiple diameters", "Swamp terrain"],
-  },
-  {
-    image: pipeWelding,
-    title: "Trans-Niger Pipeline",
-    client: "NNPC/Total",
-    location: "Cross River State, Nigeria",
-    year: "2021",
-    description: "Major trunk line construction with API-certified welding, hydrostatic testing, and coating operations.",
-    specs: ["32km pipeline", "36\" diameter", "API 5L X65 steel"],
-  },
-  {
-    image: swampPipeline,
-    title: "Swamp Pipeline Installation",
-    client: "Eni Nigeria",
+    image: getProjectImage("gbaran-phase-3b", "projectGallery"),
+    title: "Gbaran Phase 3b — 16\" Pipeline EPC",
+    client: "SPDC",
     location: "Bayelsa State, Nigeria",
-    year: "2022",
-    description: "Challenging pipeline installation through deep swamp terrain using specialized equipment and flotation techniques.",
-    specs: ["18km swamp crossing", "24\" diameter", "Flotation method"],
+    year: "2025",
+    description: "EPC pipeline construction — 8km and 10km of 16-inch pipeline for the Gbaran–UZU CPF upgrade project.",
+    specs: ["8km & 10km", "16\" diameter", "EPC contract"],
   },
   {
-    image: pipelineLaying,
-    title: "Onshore Gas Pipeline",
-    client: "Nigeria LNG",
-    location: "Bonny Island, Nigeria",
-    year: "2023",
-    description: "Gas pipeline construction from wellhead to processing facility with full cathodic protection system.",
-    specs: ["28km length", "20\" diameter", "CP system installed"],
+    image: getProjectImage("calabar-gas-transmission", "projectGallery"),
+    title: "Calabar Gas Transmission — 24\" × 21.5km",
+    client: "Zakhem / NDPHC",
+    location: "Cross River State, Nigeria",
+    year: "2015",
+    description: "Gas transmission pipeline construction with multiple HDD river crossings providing critical gas supply for power generation.",
+    specs: ["21.5km length", "24\" diameter", "Gas transmission"],
+  },
+  {
+    image: getProjectImage("nipco-gas-distribution", "projectGallery"),
+    title: "NIPCO Gas Distribution Network",
+    client: "NIPCO",
+    location: "Multiple Locations, Nigeria",
+    year: "2009",
+    description: "50km multi-diameter urban gas distribution network with extensive HDD crossings under roads and waterways.",
+    specs: ["50km network", "4\"/8\"/12\" diameters", "Urban HDD crossings"],
+  },
+  {
+    image: getProjectImage("elps-phase-2", "projectGallery"),
+    title: "ELPS Phase II — 36\" × 7.2km HDD",
+    client: "Zakhem / NNPC",
+    location: "Lagos / Delta State",
+    year: "2018",
+    description: "Multiple 36-inch HDD sections totaling 7.2km for the Escravos-Lagos Pipeline System Phase II expansion.",
+    specs: ["7.2km HDD total", "36\" diameter", "Multiple crossings"],
   },
 ];
 
 const marineProjects: Project[] = [
   {
-    image: dredgingMarine,
-    title: "Warri Channel Dredging",
-    client: "Nigerian Ports Authority",
-    location: "Warri, Delta State",
-    year: "2017",
-    description: "Capital dredging project to deepen the Warri navigation channel to accommodate larger vessels at the port.",
-    specs: ["12km channel length", "10m depth achieved", "2.5M cubic meters"],
-  },
-  {
-    image: dredgingHero,
-    title: "Bonny Deep Water Port",
-    client: "NLNG/FG",
-    location: "Bonny Island, Rivers State",
-    year: "2020",
-    description: "Marine dredging and reclamation works for the Bonny Deep Water Port project expansion.",
-    specs: ["5 hectares reclaimed", "14m depth", "Cutter suction dredger"],
-  },
-  {
-    image: jettyConstruction,
-    title: "Oil Terminal Jetty",
-    client: "ExxonMobil Nigeria",
-    location: "Qua Iboe Terminal, Akwa Ibom",
-    year: "2019",
-    description: "Steel and concrete jetty construction for crude oil export terminal, including mooring dolphins and loading platforms.",
-    specs: ["350m jetty length", "VLCC capable", "Steel pile foundations"],
-  },
-  {
-    image: shoreApproach,
-    title: "Shore Approach Works",
-    client: "Total E&P Nigeria",
-    location: "Brass, Bayelsa State",
+    image: getProjectImage("oml34-chdd", "related"),
+    title: "OML34 Dredging & Cofferdam Works",
+    client: "NPDC",
+    location: "Delta State, Nigeria",
     year: "2021",
-    description: "Complex shore approach installation through surf zone and beach, connecting offshore pipeline to onshore facilities.",
-    specs: ["800m approach length", "36\" pipeline", "Cofferdam method"],
+    description: "Cofferdam installation and dredging works in support of the OML34 CHDD project, managing groundwater in challenging swamp conditions.",
+    specs: ["Cofferdam construction", "Swamp dredging", "Groundwater control"],
+  },
+  {
+    image: getProjectImage("ob3-river-niger", "related") || getProjectImage("ob3-river-niger", "projectMap"),
+    title: "OB3 Sheet Piling Works",
+    client: "NPDC",
+    location: "River Niger, Nigeria",
+    year: "2020",
+    description: "Sheet pile installation to create safe working platforms for the OB3 River Niger Direct Pipe Installation crossing.",
+    specs: ["River Niger site", "Sheet pile installation", "Platform construction"],
+  },
+  {
+    image: getProjectImage("escravos-shore-approach", "projectGallery"),
+    title: "Escravos Shore Approach",
+    client: "ECL / SPDC",
+    location: "Delta State, Nigeria",
+    year: "2021",
+    description: "Shore crossing pipeline installation connecting offshore infrastructure to onshore facilities across 1.8km.",
+    specs: ["1.8km shore crossing", "Shore approach method", "Zero LTI"],
+  },
+  {
+    image: getProjectImage("dangote-lagoon", "projectGallery"),
+    title: "Dangote Lagoon Crossing — 36\" × 2km",
+    client: "Dangote Fertilizer",
+    location: "Ejirin, Lagos Lagoon",
+    year: "2016",
+    description: "36-inch × 2km swamp and lagoon HDD crossing delivering gas supply to Dangote's fertilizer complex.",
+    specs: ["2km crossing", "36\" diameter", "Lagoon environment"],
   },
 ];
 
@@ -165,10 +168,14 @@ export default function ProjectsGalleryPage() {
             onClick={() => setSelectedProject(project)}
           >
             <div className="aspect-[4/3] overflow-hidden relative">
-              <img
+              <EnhancedImage
                 src={project.image}
                 alt={project.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                wrapperClassName="h-full w-full"
+                className="h-full w-full"
+                hoverZoom
+                tone="natural"
+                fallbackLabel={project.title}
               />
               {project.year && (
                 <div className="absolute top-3 right-3 bg-primary text-primary-foreground text-xs font-bold px-2 py-1 rounded">
@@ -210,9 +217,9 @@ export default function ProjectsGalleryPage() {
       <Hero
         title="Projects Gallery"
         subtitle="Explore our portfolio of completed HDD crossings, pipeline installations, and marine construction projects across Nigeria and West Africa."
-        backgroundImage={heroHddRig}
+        backgroundImage={siteImageSelections.projectMap.hero}
         size="default"
-        primaryCTA={{ label: "Request Quote", href: "/contact" }}
+        primaryCTA={{ label: "Contact Us", href: "/contact" }}
         pageSlug="projects-gallery"
         sectionKey="hero"
         imageField="backgroundImage"
@@ -298,10 +305,13 @@ export default function ProjectsGalleryPage() {
             className="max-w-5xl w-full bg-card rounded-lg overflow-hidden my-8"
             onClick={(e) => e.stopPropagation()}
           >
-            <img
+            <EnhancedImage
               src={selectedProject.image}
               alt={selectedProject.title}
-              className="w-full h-auto max-h-[50vh] object-cover"
+              wrapperClassName="w-full max-h-[50vh]"
+              className="w-full max-h-[50vh]"
+              tone="natural"
+              fallbackLabel={selectedProject.title}
             />
             <div className="p-6 md:p-8">
               <div className="flex flex-wrap items-center gap-3 mb-4">
@@ -346,7 +356,7 @@ export default function ProjectsGalleryPage() {
       <CTABand 
         headline="Ready to Start Your Project?"
         subhead="Contact our team to discuss your HDD, pipeline, or marine construction requirements."
-        primaryCTA={{ label: "Request Quote", href: "/contact" }}
+        primaryCTA={{ label: "Contact Us", href: "/contact" }}
         secondaryCTA={{ label: "View Equipment", href: "/equipment" }}
       />
     </Layout>

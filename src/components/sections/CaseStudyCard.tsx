@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { MapPin, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { EnhancedImage } from "@/components/ui/enhanced-image";
+import { currentProjectImage } from "@/content/siteImageSelections";
 
 interface CaseStudyCardProps {
   title: string;
@@ -26,6 +28,8 @@ export function CaseStudyCard({
   year,
   index = 0,
 }: CaseStudyCardProps) {
+  const resolvedThumbnail = thumbnail || currentProjectImage("hdd-night-panorama-cropped.jpg");
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -35,22 +39,20 @@ export function CaseStudyCard({
     >
       <Link
         to={href}
-        className="group block h-full bg-card rounded-xl overflow-hidden border border-border transition-all duration-200 hover:shadow-lg hover:border-border/60 hover:-translate-y-1"
+        className="group flex flex-col h-full card-premium transition-all duration-300"
       >
         {/* Thumbnail */}
         <div className="relative aspect-[16/10] overflow-hidden bg-muted">
-          {thumbnail ? (
-            <img
-              src={thumbnail}
-              alt={title}
-              loading="lazy"
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-          ) : (
-            <div className="w-full h-full flex items-center justify-center bg-muted">
-              <span className="text-muted-foreground text-[13px]">Project Image</span>
-            </div>
-          )}
+          <EnhancedImage
+            src={resolvedThumbnail}
+            alt={title}
+            wrapperClassName="h-full w-full"
+            className="w-full h-full"
+            sizes="(min-width: 1024px) 30vw, (min-width: 768px) 45vw, 100vw"
+            tone="vivid"
+            hoverZoom
+            fallbackLabel={title}
+          />
           
           {/* Gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
@@ -67,7 +69,7 @@ export function CaseStudyCard({
         </div>
 
         {/* Content */}
-        <div className="p-5 md:p-6">
+        <div className="p-6 md:p-8 flex flex-col flex-grow">
           {/* Location */}
           <div className="flex items-center gap-1.5 text-[12px] text-muted-foreground mb-2">
             <MapPin className="h-3.5 w-3.5" />
@@ -84,10 +86,10 @@ export function CaseStudyCard({
             </p>
           )}
 
-          <span className="inline-flex items-center text-[13px] font-semibold text-primary">
-            See Full Case Study
-            <ArrowRight className="ml-1.5 h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
-          </span>
+          <div className="mt-auto pt-4 flex items-center text-[13.5px] font-bold text-primary tracking-wide uppercase">
+            Full Case Study
+            <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />
+          </div>
         </div>
       </Link>
     </motion.div>

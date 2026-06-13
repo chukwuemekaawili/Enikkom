@@ -5,47 +5,49 @@ import { motion, AnimatePresence } from "framer-motion";
 import { MapPin, Calendar, Shield, CheckCircle, ArrowLeft, Quote, Users, Gauge, Trophy, Play, X, ZoomIn, ImageIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import { getProjectGalleryImages, getProjectImage } from "@/content/projectImageSelections";
 import { usePageContent } from "@/hooks/useSiteSettings";
 import { EditableText, EditableImage } from "@/components/admin";
+import { EnhancedImage } from "@/components/ui/enhanced-image";
 
 // Import all authentic project images from PDFs
-import hddNightPanorama from "@/assets/projects/hdd-night-panorama.jpg";
-import hddRigNight from "@/assets/projects/hdd-rig-night.jpg";
-import pipeLaying from "@/assets/projects/pipe-laying-crane.jpg";
-import otumaraEscravos from "@/assets/projects/otumara-escravos.jpg";
-import otumaraEscravos2 from "@/assets/projects/otumara-escravos-2.jpg";
-import atlasCoveMosimi from "@/assets/projects/atlas-cove-mosimi.jpg";
-import atlasCoveMosimi2 from "@/assets/projects/atlas-cove-mosimi-2.jpg";
-import lekiGasPipeline from "@/assets/projects/lekki-gas-pipeline.jpg";
-import multiCraneOps from "@/assets/projects/multi-crane-operations.jpg";
-import hddEquipmentFleet from "@/assets/projects/hdd-equipment-fleet.jpg";
-import hddEquipmentFleet2 from "@/assets/projects/hdd-equipment-fleet-2.jpg";
-import hddEquipmentFleet3 from "@/assets/projects/hdd-equipment-fleet-3.jpg";
-import hddEquipmentFleet4 from "@/assets/projects/hdd-equipment-fleet-4.jpg";
-import drillingOps4 from "@/assets/projects/drilling-ops-4.jpg";
-import drillingOps5 from "@/assets/projects/drilling-ops-5.jpg";
-import drillingOps6 from "@/assets/projects/drilling-ops-6.jpg";
-import drillingOps7 from "@/assets/projects/drilling-ops-7.jpg";
-import weldingCrew from "@/assets/projects/welding-crew.jpg";
-import pipeHandling from "@/assets/projects/pipe-handling.jpg";
-import pipelineCrew from "@/assets/projects/pipeline-crew.jpg";
-import hddDrillString from "@/assets/projects/hdd-drill-string.jpg";
-import hddTeam1 from "@/assets/projects/hdd-team-1.jpg";
-import scopeOperations from "@/assets/projects/scope-operations.jpg";
-import scopeOperations2 from "@/assets/projects/scope-operations-2.jpg";
-import scopeOperations3 from "@/assets/projects/scope-operations-3.jpg";
-import teamSafety from "@/assets/projects/team-safety.jpg";
-import workersPpe from "@/assets/projects/workers-ppe.jpg";
-import drillingSite2 from "@/assets/projects/drilling-site-2.jpg";
-import craneOperations from "@/assets/projects/crane-operations.jpg";
-import trippingSafety from "@/assets/projects/tripping-safety.jpg";
-import nipcoIbafo from "@/assets/projects/nipco-ibafo.jpg";
-import nipcoIbafo2 from "@/assets/projects/nipco-ibafo-2.jpg";
-import nipcoIbafo3 from "@/assets/projects/nipco-ibafo-3.jpg";
-import nipcoHddOps from "@/assets/projects/hdd-operations-2.jpg";
-import catExcavator from "@/assets/projects/cat-excavator.jpg";
-import partnershipHddThailand from "@/assets/projects/partnership-hddthailand.jpg";
-import partnershipHddThailand2 from "@/assets/projects/partnership-hddthailand-2.jpg";
+import hddNightPanorama from "@/assets/images/projects/hdd-night-panorama-cropped.jpg";
+import hddRigNight from "@/assets/images/projects/hdd-rig-night.jpg";
+import pipeLaying from "@/assets/images/projects/pipe-laying-crane.jpg";
+import otumaraEscravos from "@/assets/images/projects/otumara-escravos.jpg";
+import otumaraEscravos2 from "@/assets/images/projects/otumara-escravos-2.jpg";
+import atlasCoveMosimi from "@/assets/images/projects/atlas-cove-mosimi.jpg";
+import atlasCoveMosimi2 from "@/assets/images/projects/atlas-cove-mosimi-2.jpg";
+import lekiGasPipeline from "@/assets/images/projects/lekki-gas-pipeline.jpg";
+import multiCraneOps from "@/assets/images/projects/multi-crane-operations.jpg";
+import hddEquipmentFleet from "@/assets/images/projects/hdd-equipment-fleet.jpg";
+import hddEquipmentFleet2 from "@/assets/images/projects/hdd-equipment-fleet-2.jpg";
+import hddEquipmentFleet3 from "@/assets/images/projects/hdd-equipment-fleet-3.jpg";
+import hddEquipmentFleet4 from "@/assets/images/projects/hdd-equipment-fleet-4.jpg";
+import drillingOps4 from "@/assets/images/projects/drilling-ops-4.jpg";
+import drillingOps5 from "@/assets/images/projects/drilling-ops-5.jpg";
+import drillingOps6 from "@/assets/images/projects/drilling-ops-6.jpg";
+import drillingOps7 from "@/assets/images/projects/drilling-ops-7.jpg";
+import weldingCrew from "@/assets/images/projects/welding-crew.jpg";
+import pipeHandling from "@/assets/images/projects/pipe-handling.jpg";
+import pipelineCrew from "@/assets/images/projects/pipeline-crew.jpg";
+import hddDrillString from "@/assets/images/projects/hdd-drill-string.jpg";
+import hddTeam1 from "@/assets/images/projects/hdd-team-1.jpg";
+import scopeOperations from "@/assets/images/projects/scope-operations.jpg";
+import scopeOperations2 from "@/assets/images/projects/scope-operations-2.jpg";
+import scopeOperations3 from "@/assets/images/projects/scope-operations-3.jpg";
+import teamSafety from "@/assets/images/projects/team-safety.jpg";
+import workersPpe from "@/assets/images/projects/workers-ppe.jpg";
+import drillingSite2 from "@/assets/images/projects/drilling-site-2.jpg";
+import craneOperations from "@/assets/images/projects/crane-operations.jpg";
+import trippingSafety from "@/assets/images/projects/tripping-safety.jpg";
+import nipcoIbafo from "@/assets/images/projects/nipco-ibafo.jpg";
+import nipcoIbafo2 from "@/assets/images/projects/nipco-ibafo-2.jpg";
+import nipcoIbafo3 from "@/assets/images/projects/nipco-ibafo-3.jpg";
+import nipcoHddOps from "@/assets/images/projects/hdd-operations-2.jpg";
+import catExcavator from "@/assets/images/projects/cat-excavator.jpg";
+import partnershipHddThailand from "@/assets/images/projects/team-safety.jpg";
+import partnershipHddThailand2 from "@/assets/images/projects/scope-operations.jpg";
 
 interface GalleryImage {
   src: string;
@@ -77,17 +79,17 @@ const slugToPageSlug: Record<string, string> = {
   'oml34-chdd': 'proj-oml34',
   'otumara-escravos': 'proj-otumara',
   'atlas-cove-mosimi': 'proj-atlas',
-  'lekki-gas-pipeline': 'proj-lekki',
+  'dangote-lagoon': 'proj-lekki',
   'yenagoa-40-crossing': 'proj-yenagoa',
-  'nipco-ibafo-crossing': 'proj-nipco',
+  'nipco-gas-distribution': 'proj-nipco',
 };
 
 // Verified project data from Enikkom documents with dedicated galleries
-const projectData: Record<string, ProjectData> = {
+const baseProjectData: Record<string, ProjectData> = {
   "oml34-chdd": {
-    title: "OML34 Continuous HDD - 10\" x 12km",
-    client: "NPDC (Nigerian Petroleum Development Company)",
-    location: "Niger Delta, Nigeria",
+    title: "OML34 Continuous HDD — 10\" × 12km",
+    client: "NPDC / ND Western",
+    location: "Utorogun, Delta State, Nigeria",
     year: "2020-2021",
     capabilities: ["HDD", "Pipeline", "CHDD"],
     overview: "Nigeria's longest functional Continuous Horizontal Directional Drilling (CHDD) project - installing 12 kilometers of 10-inch pipeline in a single continuous operation through challenging Niger Delta terrain.",
@@ -124,8 +126,8 @@ const projectData: Record<string, ProjectData> = {
       { src: hddEquipmentFleet, alt: "HDD Equipment Fleet", caption: "Complete HDD equipment spread" },
       { src: hddEquipmentFleet2, alt: "Drill Pipe Handling", caption: "Drill pipe handling operations" },
       { src: hddDrillString, alt: "Drill String Assembly", caption: "Drill string assembly and preparation" },
-      { src: partnershipHddThailand, alt: "HDDThailand Partnership", caption: "Technical partnership with HDDThailand" },
-      { src: partnershipHddThailand2, alt: "Specialized Downhole Tools", caption: "Specialized downhole tools deployment" },
+      { src: partnershipHddThailand, alt: "Technical coordination with specialist partners", caption: "Technical coordination with specialist drilling partners" },
+      { src: partnershipHddThailand2, alt: "Specialized downhole operations monitoring", caption: "Specialized drilling support and monitoring operations" },
       { src: scopeOperations, alt: "Scope Rig Operations", caption: "Scope rig operations monitoring" },
       { src: scopeOperations2, alt: "Real-time Monitoring", caption: "Real-time trajectory monitoring" },
       { src: scopeOperations3, alt: "Drilling Control Center", caption: "Drilling control and navigation" },
@@ -180,10 +182,10 @@ const projectData: Record<string, ProjectData> = {
     ]
   },
   "atlas-cove-mosimi": {
-    title: "Atlas Cove-Mosimi Emergency Pipeline",
-    client: "NNPC / PPMC (Pipelines and Products Marketing Company)",
-    location: "Lagos-Ogun States, Nigeria",
-    year: "2017",
+    title: "Atlas Cove–Mosimi — 16\" × 3.1km",
+    client: "NNPC / PPMC",
+    location: "Arepo / Imagbon, Lagos–Ogun States, Nigeria",
+    year: "2016",
     capabilities: ["HDD", "Pipeline"],
     overview: "Africa's longest single HDD drill - a 3.1km, 16-inch pipeline crossing for the emergency reconstruction of the Atlas Cove to Mosimi petroleum products pipeline, a critical national infrastructure asset.",
     challenge: "The Atlas Cove-Mosimi pipeline was a critical national fuel supply artery that required emergency reconstruction. The route crossed the Lagos Lagoon and environmentally sensitive areas, making conventional open-cut construction impossible. Speed was essential to restore national fuel supply.",
@@ -191,7 +193,7 @@ const projectData: Record<string, ProjectData> = {
     results: [
       { label: "Crossing Length", value: "3.1 km" },
       { label: "Pipe Diameter", value: "16 inches" },
-      { label: "Completion", value: "April 2017" },
+      { label: "Completion", value: "April 2016" },
       { label: "Client", value: "NNPC/PPMC" },
       { label: "LTI Record", value: "Zero" },
     ],
@@ -219,25 +221,25 @@ const projectData: Record<string, ProjectData> = {
       { src: trippingSafety, alt: "Safety Protocols", caption: "Safe tripping operations" },
     ]
   },
-  "lekki-gas-pipeline": {
-    title: "Lekki Gas Pipeline Project (LGPP)",
-    client: "Dangote Fertilizer Limited / Zakhem Construction",
-    location: "Lagos, Nigeria",
-    year: "2019",
+  "dangote-lagoon": {
+    title: "Dangote Fertilizer — 36\" × 2km Lagoon Crossing",
+    client: "Dangote Fertilizer Limited",
+    location: "Ejirin, Lagos Lagoon, Lagos State, Nigeria",
+    year: "2016",
     capabilities: ["HDD", "Pipeline"],
-    overview: "Major gas pipeline HDD crossing for the Lekki Gas Pipeline Project - a 36-inch x 1.5km swamp and river crossing delivering natural gas to Dangote's fertilizer complex, one of the largest in Africa.",
-    challenge: "The project required crossing the Lagos lagoon and swamp areas to connect gas supply infrastructure to the Dangote Fertilizer plant. The crossing involved challenging geological conditions, tidal variations, and strict project timelines to support the plant's commissioning schedule.",
-    solution: "Enikkom deployed our 500T HDD rig with advanced gyro guidance for the 1.5km crossing. The 36-inch steel pipeline was pre-fabricated onshore and pulled back in a single operation. Comprehensive geotechnical investigation informed the crossing design to avoid geological hazards.",
+    overview: "36-inch × 2km swamp and lagoon HDD crossing delivering gas supply infrastructure to Dangote's fertilizer complex at Lekki. One of the largest diameter lagoon HDD crossings in Nigeria.",
+    challenge: "The project required crossing the Lagos Lagoon with a 36-inch pipeline through challenging swamp and open-water conditions. Tidal variations, soft marine sediments, and strict timelines to support the fertilizer plant's commissioning schedule added significant complexity.",
+    solution: "Enikkom deployed our 500T HDD rig with advanced gyro guidance for the 2km crossing. The 36-inch steel pipeline was pre-fabricated onshore and pulled back in a single operation. Comprehensive geotechnical investigation informed the crossing design to handle the soft lagoon sediments.",
     results: [
-      { label: "Crossing Length", value: "1.5 km" },
+      { label: "Crossing Length", value: "2 km" },
       { label: "Pipe Diameter", value: "36 inches" },
-      { label: "Completion", value: "June 2019" },
-      { label: "Client", value: "Dangote/Zakhem" },
+      { label: "Completion", value: "2016" },
+      { label: "Client", value: "Dangote Fertilizer" },
       { label: "LTI Record", value: "Zero" },
     ],
-    hseNotes: "Marine safety protocols were rigorously implemented. All personnel completed water safety training. Environmental monitoring confirmed zero impact on the lagoon ecosystem. The project was completed ahead of schedule.",
+    hseNotes: "Marine safety protocols were rigorously implemented. All personnel completed water safety training. Environmental monitoring confirmed zero impact on the lagoon ecosystem.",
     clientQuote: {
-      text: "Outstanding job on the 36\" x 1.5km swamp/river crossing. Impressive drilling work done by your team. We have no hesitation in recommending Enikkom for similar projects.",
+      text: "Outstanding job on the 36\" × 2km swamp/lagoon crossing. Impressive drilling work done by your team. We look forward to more collaborations with Enikkom in the future.",
       author: "Project Director",
       role: "Dangote Fertilizer Limited"
     },
@@ -245,7 +247,7 @@ const projectData: Record<string, ProjectData> = {
     scope: [
       "Geotechnical investigation and crossing design",
       "36\" HDD pilot bore and reaming operations",
-      "Pipeline prefabrication (1.5km string)",
+      "Pipeline prefabrication (2km string)",
       "Single-pull pipeline installation",
       "Tie-in works at both ends",
       "Hydrostatic testing and commissioning"
@@ -255,9 +257,10 @@ const projectData: Record<string, ProjectData> = {
       { src: hddEquipmentFleet, alt: "HDD Equipment Spread", caption: "Complete equipment spread" },
       { src: pipeLaying, alt: "36\" Pipeline Fabrication", caption: "36-inch pipeline string fabrication" },
       { src: multiCraneOps, alt: "Heavy Lift Operations", caption: "Multi-crane pipeline handling" },
-      { src: nipcoIbafo, alt: "Drilling Operations", caption: "HDD drilling operations" },
-      { src: nipcoIbafo2, alt: "Mud System", caption: "Mud recycling system" },
-      { src: nipcoIbafo3, alt: "Pipe Welding", caption: "Pipeline welding operations" },
+      { src: hddDrillString, alt: "Drill String Preparation", caption: "Drill string preparation for the 36-inch crossing" },
+      { src: drillingOps5, alt: "Support Equipment Mobilization", caption: "Support equipment mobilized for crossing operations" },
+      { src: drillingOps7, alt: "Pipeline Pullback Support", caption: "Field crew supporting pullback activities" },
+      { src: workersPpe, alt: "Fluid Handling Operations", caption: "Safe fluid handling and mud support operations" },
       { src: teamSafety, alt: "HSE Meeting", caption: "Daily HSE briefing" },
     ]
   },
@@ -341,10 +344,10 @@ const projectData: Record<string, ProjectData> = {
     ]
   },
   "ob3-river-niger": {
-    title: "OB3 River Niger 48\" Microtunnelling",
-    client: "NNPC / OB3 Project Consortium",
-    location: "River Niger Crossing, Nigeria",
-    year: "2019",
+    title: "OB3 River Niger 48\" Direct Pipe Installation",
+    client: "NPDC / OB3 Consortium",
+    location: "River Niger, Nigeria",
+    year: "2020",
     capabilities: ["HDD", "Microtunnelling", "Pipeline"],
     overview: "A landmark 48-inch x 1.8km pipeline crossing under the River Niger using a combination of HDD and Direct Pipe Installation (DPI) - one of the most technically complex crossings ever attempted in West Africa.",
     challenge: "The OB3 gas pipeline required crossing the mighty River Niger - Nigeria's largest river - with a 48-inch diameter pipe. The geological conditions presented extreme complexity with variable soil strata including sand, clay, and rock formations. The water depth and river width made conventional HDD extremely challenging.",
@@ -381,12 +384,12 @@ const projectData: Record<string, ProjectData> = {
     ]
   },
   "ekiadolor-deep-valley": {
-    title: "Ekiadolor Deep Valley HDD Crossing",
-    client: "NPDC / NNPC",
+    title: "Ekiadolor Deep Valley Crossing",
+    client: "SPDC",
     location: "Edo State, Nigeria",
-    year: "2018",
+    year: "2016",
     capabilities: ["HDD", "Pipeline"],
-    overview: "Nigeria's deepest HDD crossing - a 36-inch x 1.2km pipeline installation at 80 meters depth through extremely challenging geological conditions including rock, sand, coal, and clay formations.",
+    overview: "Africa's deepest HDD crossing - a 36-inch x 1.2km pipeline installation at 80 meters depth through extremely challenging geological conditions including rock, sand, coal, and clay formations.",
     challenge: "The Ekiadolor crossing presented unprecedented depth requirements at 80m - the deepest HDD ever attempted in Nigeria. The geological survey revealed a complex formation with alternating layers of rock, sand, coal seams, and clay. Initial drilling attempts encountered tool losses and steering challenges in the variable formation.",
     solution: "After extensive analysis using 2D/3D Electrical Resistivity Imaging, Enikkom's engineering team designed a custom hybrid reamer specifically for the rock/sand/coal/clay formation. The tool combined rock cutting elements with sand displacement features. Three drilling attempts refined the approach, ultimately achieving success with the specialized tooling and optimized drilling parameters.",
     results: [
@@ -412,7 +415,7 @@ const projectData: Record<string, ProjectData> = {
       "Single-pull installation",
       "As-built survey and handover"
     ],
-    recordBadge: "Nigeria's Deepest HDD Crossing",
+    recordBadge: "Africa's Deepest HDD Crossing",
     gallery: [
       { src: drillingSite2, alt: "Ekiadolor Site", caption: "Deep valley crossing site" },
       { src: hddEquipmentFleet, alt: "HDD Setup", caption: "Heavy-duty HDD equipment" },
@@ -533,6 +536,27 @@ const projectData: Record<string, ProjectData> = {
   },
 };
 
+function buildCuratedGallery(slug: string, project: ProjectData) {
+  const curatedGallery = getProjectGalleryImages(slug).map((src, index) => ({
+    src,
+    alt: project.gallery[index]?.alt || `${project.title} gallery image ${index + 1}`,
+    caption: project.gallery[index]?.caption,
+  }));
+
+  return curatedGallery.length > 0 ? curatedGallery : project.gallery;
+}
+
+const projectData: Record<string, ProjectData> = Object.fromEntries(
+  Object.entries(baseProjectData).map(([slug, project]) => [
+    slug,
+    {
+      ...project,
+      heroImage: getProjectImage(slug, "hero") || project.heroImage,
+      gallery: buildCuratedGallery(slug, project),
+    },
+  ]),
+) as Record<string, ProjectData>;
+
 const relatedProjects = [
   {
     title: "OML34 Continuous HDD",
@@ -541,7 +565,7 @@ const relatedProjects = [
     metricLabel: "Nigeria's longest CHDD",
     tags: ["HDD"],
     href: "/projects/oml34-chdd",
-    thumbnail: hddNightPanorama,
+    thumbnail: getProjectImage("oml34-chdd", "related"),
   },
   {
     title: "Lekki Gas Pipeline",
@@ -549,8 +573,8 @@ const relatedProjects = [
     metric: "36\" x 1.5km",
     metricLabel: "Dangote Fertilizer",
     tags: ["HDD"],
-    href: "/projects/lekki-gas-pipeline",
-    thumbnail: lekiGasPipeline,
+    href: "/projects/dangote-lagoon",
+    thumbnail: getProjectImage("dangote-lagoon", "projectMap"),
   },
   {
     title: "Otumara-Escravos",
@@ -559,7 +583,7 @@ const relatedProjects = [
     metricLabel: "Africa's longest bundled",
     tags: ["HDD"],
     href: "/projects/otumara-escravos",
-    thumbnail: otumaraEscravos,
+    thumbnail: getProjectImage("otumara-escravos", "projectMap"),
   },
   {
     title: "Atlas Cove-Mosimi",
@@ -568,7 +592,7 @@ const relatedProjects = [
     metricLabel: "Africa's longest drill",
     tags: ["HDD"],
     href: "/projects/atlas-cove-mosimi",
-    thumbnail: atlasCoveMosimi,
+    thumbnail: getProjectImage("atlas-cove-mosimi", "projectMap"),
   },
   {
     title: "OB3 River Niger 48\"",
@@ -577,7 +601,7 @@ const relatedProjects = [
     metricLabel: "HDD + DPI Technology",
     tags: ["HDD", "Microtunnelling"],
     href: "/projects/ob3-river-niger",
-    thumbnail: hddNightPanorama,
+    thumbnail: getProjectImage("ob3-river-niger", "related"),
   },
   {
     title: "Ekiadolor Deep Valley",
@@ -586,7 +610,7 @@ const relatedProjects = [
     metricLabel: "Nigeria's deepest HDD",
     tags: ["HDD"],
     href: "/projects/ekiadolor-deep-valley",
-    thumbnail: drillingSite2,
+    thumbnail: getProjectImage("ekiadolor-deep-valley", "related"),
   },
 ];
 
@@ -950,7 +974,7 @@ export default function ProjectDetailPage() {
 
                 <div className="mt-8 space-y-3">
                   <Button asChild className="w-full">
-                    <Link to="/contact">Request a Quote</Link>
+                    <Link to="/contact">Contact Us</Link>
                   </Button>
                   <Button asChild variant="outline" className="w-full">
                     <Link to="/contact">Discuss Your Project</Link>
@@ -993,10 +1017,14 @@ export default function ProjectDetailPage() {
                   className="group cursor-pointer aspect-[4/3] rounded-xl overflow-hidden relative"
                   onClick={() => setSelectedImage(image)}
                 >
-                  <img
+                  <EnhancedImage
                     src={image.src}
                     alt={image.alt}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    wrapperClassName="h-full w-full"
+                    className="h-full w-full"
+                    hoverZoom
+                    tone="natural"
+                    fallbackLabel={image.alt}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -1043,10 +1071,14 @@ export default function ProjectDetailPage() {
               transition={{ duration: 0.3 }}
               onClick={(e) => e.stopPropagation()}
             >
-              <img
+              <EnhancedImage
                 src={selectedImage.src}
                 alt={selectedImage.alt}
-                className="w-full h-auto max-h-[70vh] object-contain rounded-xl"
+                wrapperClassName="w-full max-h-[70vh] rounded-xl"
+                className="w-full max-h-[70vh]"
+                fit="contain"
+                tone="natural"
+                fallbackLabel={selectedImage.alt}
               />
               <div className="mt-5 text-center">
                 <h3 className="text-white text-xl font-bold">{selectedImage.alt}</h3>
@@ -1078,7 +1110,7 @@ export default function ProjectDetailPage() {
 
       <CTABand
         headline="Ready to Start Your Project?"
-        primaryCTA={{ label: "Request a Quote", href: "/contact" }}
+        primaryCTA={{ label: "Contact Us", href: "/contact" }}
       />
     </Layout>
   );

@@ -6,71 +6,56 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Button } from "@/components/ui/button";
 import { usePageContent } from "@/hooks/useSiteSettings";
 import { EditableText } from "@/components/admin";
+import { siteImageSelections } from "@/content/siteImageSelections";
 
-import heroHddRig from "@/assets/hero/hero-hdd-rig.jpg";
-
-// Comprehensive project data from official Enikkom documents
+// Verified project data from approved Enikkom source documents
 const completedProjects = [
   // HDD Projects
-  { year: "2024", client: "Chevron", project: "16\" & 6\" Nun River HDD Crossing", scope: "Dual HDD crossing under Nun River", location: "Bayelsa State", type: "HDD", size: "16\" & 6\"", length: "1.2km" },
-  { year: "2023", client: "Shell", project: "Gbaran Phase 3b HDD Crossings", scope: "Multiple HDD crossings for pipeline", location: "Bayelsa State", type: "HDD", size: "16\"", length: "2.5km" },
-  { year: "2021", client: "NPDC", project: "OML34 Continuous HDD", scope: "Nigeria's longest CHDD - Record Breaking", location: "Delta State", type: "HDD", size: "10\"", length: "12km" },
-  { year: "2019", client: "Dangote", project: "Lekki Gas Pipeline HDD", scope: "Swamp/river crossing for gas pipeline", location: "Lagos", type: "HDD", size: "36\"", length: "1.5km" },
-  { year: "2019", client: "NNPC", project: "Trans-Forcados Pipeline HDD", scope: "Major river crossing", location: "Delta State", type: "HDD", size: "24\"", length: "1.8km" },
-  { year: "2017", client: "PPMC", project: "Atlas Cove-Mosimi Emergency HDD", scope: "Africa's longest single drill - Record", location: "Lagos/Ogun", type: "HDD", size: "16\"", length: "3.1km" },
-  { year: "2016", client: "Chevron", project: "Escravos River HDD Crossing", scope: "HDD crossing Escravos River", location: "Delta State", type: "HDD", size: "20\"", length: "1.2km" },
-  { year: "2015", client: "Shell", project: "Nembe Creek HDD", scope: "Creek crossing for flowline", location: "Bayelsa State", type: "HDD", size: "12\"", length: "0.8km" },
-  { year: "2014", client: "Total", project: "Amenam Field HDD", scope: "Field development HDD crossings", location: "Rivers State", type: "HDD", size: "10\"", length: "1.5km" },
-  { year: "2012", client: "NPDC", project: "Oredo HDD Crossings", scope: "Multiple road/river crossings", location: "Edo State", type: "HDD", size: "8\"", length: "2.0km" },
-  { year: "2010", client: "NNPC", project: "River Niger HDD Crossing", scope: "Historic Niger River crossing", location: "Niger State", type: "HDD", size: "20\"", length: "1.2km" },
-  { year: "2008", client: "Shell", project: "Cawthorne Channel HDD", scope: "Deep water channel crossing", location: "Rivers State", type: "HDD", size: "16\"", length: "0.9km" },
-  { year: "2006", client: "Chevron", project: "Abiteye HDD Crossing", scope: "Swamp area HDD", location: "Delta State", type: "HDD", size: "12\"", length: "0.7km" },
-  { year: "2003", client: "NNPC", project: "First River Niger Crossing", scope: "Pioneer HDD project in Nigeria", location: "Niger State", type: "HDD", size: "16\"", length: "1.0km" },
-  
+  { year: "2024", client: "NPDC", project: "16\" & 6\" Nun River Dual HDD Crossing", scope: "Dual HDD crossing under Nun River", location: "Niger Delta", type: "HDD", size: "16\" & 6\"", length: "Dual" },
+  { year: "2021", client: "NPDC / ND Western", project: "OML34 Continuous HDD — 10\" × 12km", scope: "Nigeria's longest CHDD — record breaking", location: "Utorogun, Delta State", type: "HDD", size: "10\"", length: "12km" },
+  { year: "2021", client: "ECL / SPDC", project: "Escravos Shore Approach Installation", scope: "Shore crossing pipeline installation", location: "Delta State", type: "Shore Approach", size: "—", length: "1.8km" },
+  { year: "2020", client: "NPDC", project: "OB3 River Niger 48\" Direct Pipe Installation", scope: "HDD + Direct Pipe — major river crossing", location: "River Niger, Nigeria", type: "HDD", size: "48\"", length: "1.8km" },
+  { year: "2018", client: "NNPC / PPMC", project: "Escravos-Lagos Pipeline System Phase II", scope: "Multiple HDD sections — gas pipeline", location: "Lagos / Delta State", type: "HDD", size: "36\"", length: "7.2km" },
+  { year: "2016", client: "NNPC / PPMC", project: "Atlas Cove–Mosimi 16\" × 3.1km", scope: "Africa's longest single drill — record", location: "Arepo / Imagbon, Ogun State", type: "HDD", size: "16\"", length: "3.1km" },
+  { year: "2016", client: "Saipem / SPDC", project: "Otumara-Escravos Bundled HDD Crossing", scope: "Africa's longest bundled crossing — record", location: "Delta State", type: "HDD", size: "12\" + 3\"", length: "2.78km" },
+  { year: "2016", client: "Daewoo / SPDC", project: "Dangote Fertilizer 36\" × 2km Lagoon Crossing", scope: "Swamp / lagoon HDD crossing", location: "Ejirin, Lagos Lagoon", type: "HDD", size: "36\"", length: "2km" },
+  { year: "2016", client: "SPDC", project: "Ekiadolor Deep Valley Crossing", scope: "Africa's deepest HDD crossing — 80m depth", location: "Edo State", type: "HDD", size: "36\"", length: "1.2km" },
+  { year: "2010", client: "Daewoo / SPDC", project: "Yenagoa 40\" HDD Crossing", scope: "Largest pipeline crossing in Nigeria — record", location: "Bayelsa State", type: "HDD", size: "40\"", length: "760m" },
+  { year: "2003", client: "NNPC", project: "First HDD Crossing of the River Niger", scope: "Pioneer HDD project — first in Nigeria", location: "Nigeria", type: "HDD", size: "16\"", length: "1.0km" },
+
   // Pipeline Projects
-  { year: "2024", client: "Shell", project: "Gbaran Phase 3b Pipeline EPC", scope: "16\" pipeline construction", location: "Bayelsa State", type: "Pipeline", size: "16\"", length: "18km" },
-  { year: "2023", client: "Total", project: "18\" Pipeline with HDD Crossings", scope: "Trunk line with multiple crossings", location: "Niger Delta", type: "Pipeline", size: "18\"", length: "8km" },
-  { year: "2023", client: "NPDC", project: "OML 34 Pipeline Construction", scope: "Complete pipeline EPC", location: "Delta State", type: "Pipeline", size: "10\"", length: "12km" },
-  { year: "2022", client: "Shell", project: "Escravos Shore Approach", scope: "Shore crossing installation", location: "Delta State", type: "Shore Approach", size: "24\"", length: "1.8km" },
-  { year: "2021", client: "Chevron", project: "Bonny Island Flowline", scope: "Flowline installation", location: "Rivers State", type: "Pipeline", size: "14\"", length: "12km" },
-  { year: "2020", client: "Total", project: "OML 58 Flowline Installation", scope: "Production flowline", location: "Rivers State", type: "Pipeline", size: "14\"", length: "8km" },
-  { year: "2020", client: "Shell", project: "Forcados Terminal Pipeline", scope: "Trunk line to terminal", location: "Delta State", type: "Pipeline", size: "20\"", length: "6km" },
-  { year: "2018", client: "Shell", project: "Gbaran-Ubie Pipeline", scope: "Gathering system installation", location: "Bayelsa State", type: "Pipeline", size: "12\"", length: "15km" },
-  { year: "2017", client: "Total", project: "Amenam Pipeline", scope: "Flowline construction", location: "Rivers State", type: "Pipeline", size: "8\"", length: "6km" },
-  { year: "2015", client: "Shell", project: "Nembe Creek Pipeline", scope: "Swamp pipeline", location: "Bayelsa State", type: "Pipeline", size: "12\"", length: "10km" },
-  { year: "2014", client: "Chevron", project: "Meren Flowlines", scope: "Offshore flowlines", location: "Delta State", type: "Pipeline", size: "10\"", length: "5km" },
-  { year: "2012", client: "ExxonMobil", project: "Qua Iboe Pipeline", scope: "Export line", location: "Akwa Ibom", type: "Pipeline", size: "16\"", length: "8km" },
-  
-  // Marine/Dredging Projects
-  { year: "2022", client: "NLNG", project: "Lagos Port Terminal Expansion", scope: "Quay wall construction", location: "Lagos", type: "Marine", size: "-", length: "500m" },
-  { year: "2021", client: "ExxonMobil", project: "Qua Iboe Terminal Upgrade", scope: "Jetty rehabilitation", location: "Akwa Ibom", type: "Marine", size: "-", length: "200m" },
-  { year: "2018", client: "NLNG", project: "Bonny Terminal Dredging", scope: "Channel deepening", location: "Rivers State", type: "Dredging", size: "-", length: "3km" },
-  { year: "2016", client: "ExxonMobil", project: "Eket Shore Approach", scope: "Beach crossing works", location: "Akwa Ibom", type: "Shore Approach", size: "20\"", length: "0.8km" },
-  { year: "2014", client: "Shell", project: "Bonny Jetty Upgrade", scope: "Jetty extension works", location: "Rivers State", type: "Marine", size: "-", length: "150m" },
-  
-  // Facilities Projects
-  { year: "2023", client: "NIPCO", project: "Ibafo Depot Upgrade", scope: "Flow station modifications", location: "Ogun State", type: "Facilities", size: "-", length: "-" },
-  { year: "2020", client: "Shell", project: "Otumara-Escravos Facilities", scope: "Wellhead platform works", location: "Delta State", type: "Facilities", size: "-", length: "-" },
-  { year: "2018", client: "Chevron", project: "Meren Platform Upgrade", scope: "Platform brownfield works", location: "Delta State", type: "Facilities", size: "-", length: "-" },
+  { year: "2025", client: "SPDC", project: "Gbaran Phase 3b — UZU CPF Upgrade", scope: "EPC pipeline construction", location: "Bayelsa State", type: "Pipeline", size: "16\"", length: "8km & 10km" },
+  { year: "2021", client: "NPDC / ND Western", project: "OML34 CHDD Pipeline", scope: "EPC — 10\" pipeline associated with CHDD", location: "Delta State", type: "Pipeline", size: "10\"", length: "12km" },
+  { year: "2015", client: "NDPHC / Zakhem", project: "Calabar Gas Transmission Pipeline", scope: "Gas transmission pipeline", location: "Cross River State", type: "Pipeline", size: "24\"", length: "21.5km" },
+  { year: "2009", client: "NIPCO", project: "NIPCO Gas Distribution Network", scope: "Multi-diameter gas distribution network", location: "Multiple Locations", type: "Pipeline", size: "4\" / 8\" / 12\"", length: "50km" },
+
+  // Dredging & Piling
+  { year: "2021", client: "NPDC", project: "OML34 Dredging & Cofferdam Works", scope: "Cofferdam installation and dredging", location: "Delta State", type: "Dredging", size: "—", length: "—" },
+  { year: "2020", client: "NPDC", project: "OB3 Sheet Piling Works", scope: "Sheet pile installation for river crossing", location: "River Niger", type: "Dredging", size: "—", length: "—" },
+
+  // Facilities
+  { year: "2023", client: "NIPCO", project: "NIPCO Ibafo Depot — Phase 2 & 3", scope: "Depot upgrade and tank farm works", location: "Ogun State", type: "Facilities", size: "—", length: "—" },
+  { year: "2009", client: "NIPCO", project: "NIPCO Ibafo Depot — Phase 1", scope: "Initial depot construction", location: "Ogun State", type: "Facilities", size: "—", length: "—" },
 ];
 
-const projectTypes = ["All", "HDD", "Pipeline", "Marine", "Dredging", "Shore Approach", "Facilities"];
+const projectTypes = ["All", "HDD", "Pipeline", "Shore Approach", "Dredging", "Facilities"];
 
 export default function CompletedProjectsPage() {
   const [activeFilter, setActiveFilter] = useState("All");
   const { content } = usePageContent('completed-projects');
   const heroContent = content.hero || {};
   const statsContent = content.stats || {};
+  const completedImages = siteImageSelections.completedProjects;
 
   const filteredProjects = activeFilter === "All"
     ? completedProjects
     : completedProjects.filter((p) => p.type === activeFilter);
 
   const stats = {
-    totalProjects: completedProjects.length,
+    totalProjects: 120,
     hddCrossings: completedProjects.filter(p => p.type === "HDD").length,
     pipelineProjects: completedProjects.filter(p => p.type === "Pipeline").length,
-    yearsActive: new Date().getFullYear() - 2003 + 1,
+    yearsActive: 34,
   };
 
   return (
@@ -78,9 +63,9 @@ export default function CompletedProjectsPage() {
       <Hero
         title={heroContent.title || "Completed Projects"}
         subtitle={heroContent.subtitle || "A comprehensive record of our successfully delivered projects across Nigeria and West Africa since 2003."}
-        badge={heroContent.badge || `${stats.totalProjects}+ Projects Completed`}
+        badge="120 Projects Completed"
         primaryCTA={{ label: "Download Project Profile", href: "/resources" }}
-        backgroundImage={heroContent.backgroundImage || heroHddRig}
+        backgroundImage={heroContent.backgroundImage || completedImages.hero}
         size="default"
         pageSlug="completed-projects"
         sectionKey="hero"
@@ -94,7 +79,7 @@ export default function CompletedProjectsPage() {
             <div>
               <p className="text-4xl font-bold text-white">
                 <EditableText
-                  value={statsContent.stat1_value || `${stats.totalProjects}+`}
+                  value="120"
                   pageSlug="completed-projects"
                   sectionKey="stats"
                   field="stat1_value"
@@ -102,7 +87,7 @@ export default function CompletedProjectsPage() {
               </p>
               <p className="text-white/80 text-sm">
                 <EditableText
-                  value={statsContent.stat1_label || "Projects Completed"}
+                  value="Projects Completed"
                   pageSlug="completed-projects"
                   sectionKey="stats"
                   field="stat1_label"
@@ -148,7 +133,7 @@ export default function CompletedProjectsPage() {
             <div>
               <p className="text-4xl font-bold text-white">
                 <EditableText
-                  value={statsContent.stat4_value || `${stats.yearsActive}`}
+                  value="34"
                   pageSlug="completed-projects"
                   sectionKey="stats"
                   field="stat4_value"
@@ -252,7 +237,7 @@ export default function CompletedProjectsPage() {
 
       <CTABand 
         headline="Ready to Start Your Project?"
-        primaryCTA={{ label: "Request a Quote", href: "/contact" }}
+        primaryCTA={{ label: "Contact Us", href: "/contact" }}
       />
     </Layout>
   );

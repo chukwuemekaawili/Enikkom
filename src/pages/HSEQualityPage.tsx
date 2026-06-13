@@ -1,11 +1,26 @@
 import { Layout } from "@/components/layout";
-import { Hero, CTABand, CertificationsBlock } from "@/components/sections";
+import { Hero, CTABand } from "@/components/sections";
 import { EditableText } from "@/components/admin";
 import { usePageContent } from "@/hooks/useSiteSettings";
 import { motion } from "framer-motion";
-import { Shield, FileCheck, HardHat, ClipboardCheck, CheckCircle, AlertTriangle, Target, Award } from "lucide-react";
-
-import hseSafety from "@/assets/projects/hse-safety.jpg";
+import { Button } from "@/components/ui/button";
+import { EnhancedImage } from "@/components/ui/enhanced-image";
+import {
+  Shield,
+  FileCheck,
+  HardHat,
+  ClipboardCheck,
+  CheckCircle,
+  AlertTriangle,
+  Target,
+  Award,
+  Landmark,
+  Lock,
+  HeartHandshake,
+  ExternalLink,
+  FileX2,
+} from "lucide-react";
+import { siteImageSelections } from "@/content/siteImageSelections";
 
 const hseSteps = [
   { icon: FileCheck, title: "Level 1: Policy Manual", description: "Policy and Authority Statement Manual establishing company-wide HSE principles" },
@@ -32,11 +47,83 @@ const hseStats = [
   { value: "ISO", label: "Certified Systems", icon: Award },
 ];
 
+const isoCertification = {
+  title: "ISO 9001:2015 Quality Management Certification",
+  company: "HDD Thailand-Enikkom Limited",
+  certificateNo: "231031013401",
+  issued: "31 Oct 2023",
+  validUntil: "30 Oct 2026",
+  href: "/downloads/compliance/hddtec-iso-9001-2015-certificate.jpeg",
+  image: "/downloads/compliance/hddtec-iso-9001-2015-certificate.jpeg",
+  scope:
+    "Pipeline construction, HDD, thrust boring, steel and metal fabrication, dredging works, procurement, and civil construction / project financing of turnkey projects.",
+};
+
+const permitsAndLicenses = [
+  {
+    title: "DPR / NUPRC Permit Bundle 2026",
+    authority: "Nigerian Upstream Petroleum Regulatory Commission",
+    description:
+      "Current specialized category permits covering dredging, drilling and production services, offshore pipeline laying, and special transportation services.",
+    href: "/downloads/compliance/dpr-nuprc-permits-2026-merged.pdf",
+    cta: "View Permit Bundle",
+    available: true,
+  },
+  {
+    title: "PENCOM Compliance Certificate",
+    authority: "National Pension Commission",
+    description:
+      "Requested in scope, but no standalone PENCOM file was present in the supplied ECLweb document set.",
+    available: false,
+  },
+  {
+    title: "NSITF Compliance Certificate",
+    authority: "Nigeria Social Insurance Trust Fund",
+    description:
+      "Requested in scope, but no standalone NSITF file was present in the supplied ECLweb document set.",
+    available: false,
+  },
+] as const;
+
+const policyDocuments = [
+  {
+    icon: HeartHandshake,
+    title: "Community Management Policy",
+    description:
+      "Document sourced from the current Community Relation Policy statement used for project stakeholder engagement.",
+    href: "/downloads/compliance/community-management-policy.pdf",
+  },
+  {
+    icon: Award,
+    title: "Quality Policy",
+    description:
+      "Quality Policy Statement extracted from the current Quality Assurance and Quality Control policy manual.",
+    href: "/downloads/compliance/quality-policy-statement.pdf",
+    highlight:
+      "Committed to providing products and services that satisfy client needs and specified quality requirements.",
+  },
+  {
+    icon: Lock,
+    title: "Security Policy",
+    description:
+      "Security Policy extracted from the current HSE policy documents for personnel, property, and operational risk protection.",
+    href: "/downloads/compliance/security-policy.pdf",
+  },
+  {
+    icon: Shield,
+    title: "Safety Policy",
+    description:
+      "Occupational Health and Safety Policy extracted from the current HSE policy documents.",
+    href: "/downloads/compliance/safety-policy.pdf",
+  },
+] as const;
+
 export default function HSEQualityPage() {
   const { content } = usePageContent('hse');
   const heroContent = content.hero || {};
   const qmsContent = content.qms || {};
   const commitmentContent = content.commitment || {};
+  const hseImages = siteImageSelections.hse;
 
   const hseCommitments = commitmentContent.items || defaultHseCommitments;
 
@@ -46,7 +133,7 @@ export default function HSEQualityPage() {
         title={heroContent.title || "HSE & Quality Excellence"}
         subtitle={heroContent.subtitle || "Safety First. Quality Always. Our unwavering commitment to zero incidents and world-class standards drives everything we do."}
         primaryCTA={{ label: heroContent.primaryBtnText || "Request HSE Documentation", href: heroContent.primaryBtnLink || "/contact" }}
-        backgroundImage={heroContent.backgroundImage || hseSafety}
+        backgroundImage={heroContent.backgroundImage || hseImages.hero}
         size="default"
         pageSlug="hse"
         sectionKey="hero"
@@ -75,7 +162,90 @@ export default function HSEQualityPage() {
         </div>
       </section>
 
-      <CertificationsBlock />
+      {/* ISO Certification */}
+      <section className="section-padding bg-muted/30">
+        <div className="container-wide">
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <p className="section-eyebrow">Certification</p>
+            <h2 className="section-title">Current ISO Certification</h2>
+            <p className="section-subtitle">
+              The incorrect ISO listing has been replaced with the current certificate file from the HDDTEC compliance pack.
+            </p>
+          </motion.div>
+
+          <div className="grid lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] gap-8 items-center">
+            <motion.a
+              href={isoCertification.href}
+              target="_blank"
+              rel="noreferrer"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.45 }}
+              className="block rounded-[1.75rem] overflow-hidden border border-border bg-white shadow-[0_24px_60px_rgba(15,23,42,0.08)]"
+            >
+              <EnhancedImage
+                src={isoCertification.image}
+                alt={isoCertification.title}
+                wrapperClassName="h-full w-full"
+                className="h-full w-full"
+                tone="natural"
+                fallbackLabel={isoCertification.title}
+              />
+            </motion.a>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.45, delay: 0.08 }}
+              className="rounded-[1.75rem] border border-border bg-card p-7 md:p-9"
+            >
+              <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.24em] text-primary">
+                Verified Certificate
+              </p>
+              <h3 className="text-2xl font-semibold tracking-tight mb-2">
+                {isoCertification.title}
+              </h3>
+              <p className="text-[15px] text-muted-foreground leading-7 mb-6">
+                {isoCertification.company}
+              </p>
+
+              <div className="grid sm:grid-cols-3 gap-4 mb-6">
+                {[
+                  { label: "Certificate No.", value: isoCertification.certificateNo },
+                  { label: "Issued", value: isoCertification.issued },
+                  { label: "Valid Until", value: isoCertification.validUntil },
+                ].map((item) => (
+                  <div key={item.label} className="rounded-xl bg-muted/50 border border-border/60 p-4">
+                    <p className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-1">
+                      {item.label}
+                    </p>
+                    <p className="text-[14px] font-semibold text-foreground">{item.value}</p>
+                  </div>
+                ))}
+              </div>
+
+              <p className="text-[14px] leading-7 text-muted-foreground mb-6">
+                {isoCertification.scope}
+              </p>
+
+              <Button asChild className="h-11 px-5 gap-2">
+                <a href={isoCertification.href} target="_blank" rel="noreferrer">
+                  View Certificate
+                  <ExternalLink className="h-4 w-4" />
+                </a>
+              </Button>
+            </motion.div>
+          </div>
+        </div>
+      </section>
 
       {/* HSE Process */}
       <section className="section-padding bg-background">
@@ -198,10 +368,13 @@ export default function HSEQualityPage() {
               transition={{ duration: 0.5, delay: 0.1 }}
             >
               <div className="image-premium">
-                <img 
-                  src={hseSafety} 
-                  alt="HSE Safety Meeting" 
-                  className="w-full h-[350px] md:h-[420px] object-cover"
+                <EnhancedImage 
+                src={hseImages.briefing}
+                  alt="Enikkom field personnel working in full PPE" 
+                  wrapperClassName="w-full h-[350px] md:h-[420px]"
+                  className="w-full h-full"
+                  tone="natural"
+                  fallbackLabel="Field HSE compliance"
                 />
               </div>
               <motion.div 
@@ -238,9 +411,131 @@ export default function HSEQualityPage() {
         </div>
       </section>
 
-      <CTABand 
+      {/* Permits & Licenses */}
+      <section className="section-padding bg-background">
+        <div className="container-wide">
+          <motion.div
+            className="text-center mb-10"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <p className="text-[11px] md:text-xs font-semibold uppercase tracking-widest text-primary mb-3">
+              Regulatory Compliance
+            </p>
+            <h2 className="mb-3">Permits and Licenses</h2>
+            <p className="text-[14px] md:text-[15px] text-muted-foreground max-w-xl mx-auto">
+              Compliance documents currently verified from the supplied corporate document pack.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
+            {permitsAndLicenses.map((permit, i) => {
+              const Icon = permit.available ? Landmark : FileX2;
+              return (
+                <motion.div
+                  key={permit.title}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: i * 0.07 }}
+                  className="flex flex-col gap-4 p-6 bg-card rounded-xl border border-border hover:shadow-sm transition-shadow"
+                >
+                  <div className="flex items-start gap-3">
+                    <div className={`w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 ${permit.available ? "bg-primary/10" : "bg-muted"}`}>
+                      <Icon className={`h-5 w-5 ${permit.available ? "text-primary" : "text-muted-foreground"}`} />
+                    </div>
+                    <div>
+                      <h4 className="text-[15px] font-semibold mb-1">{permit.title}</h4>
+                      <p className="text-[12px] text-primary font-medium">{permit.authority}</p>
+                    </div>
+                  </div>
+
+                  <p className="text-[13px] text-muted-foreground leading-relaxed flex-1">
+                    {permit.description}
+                  </p>
+
+                  {permit.available ? (
+                    <Button asChild variant="outline" className="h-10 w-fit gap-2">
+                      <a href={permit.href} target="_blank" rel="noreferrer">
+                        {permit.cta}
+                        <ExternalLink className="h-4 w-4" />
+                      </a>
+                    </Button>
+                  ) : (
+                    <span className="inline-flex w-fit rounded-full border border-border bg-muted px-3 py-1 text-[11px] font-medium text-muted-foreground">
+                      Source Not Supplied
+                    </span>
+                  )}
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Corporate Policies — exactly 4 approved policies */}
+      <section className="section-padding bg-muted/30">
+        <div className="container-wide">
+          <motion.div
+            className="text-center mb-10"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <p className="text-[11px] md:text-xs font-semibold uppercase tracking-widest text-primary mb-3">
+              Corporate Governance
+            </p>
+            <h2 className="mb-3">Our Policies</h2>
+            <p className="text-[14px] md:text-[15px] text-muted-foreground max-w-xl mx-auto">
+              Only the four approved policies below are displayed, with direct access to the current source documents.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-4xl mx-auto">
+            {policyDocuments.map((policy, i) => {
+              const Icon = policy.icon;
+              return (
+                <motion.div
+                  key={policy.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: i * 0.08 }}
+                  className="flex flex-col gap-4 p-6 bg-card rounded-xl border border-border hover:shadow-md transition-shadow"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Icon className="h-5 w-5 text-primary" />
+                    </div>
+                    <h4 className="text-[15px] font-semibold">{policy.title}</h4>
+                  </div>
+                  {policy.highlight && (
+                    <p className="text-[13px] font-medium leading-relaxed text-foreground">
+                      {policy.highlight}
+                    </p>
+                  )}
+                  <p className="text-[13px] text-muted-foreground leading-relaxed flex-1">
+                    {policy.description}
+                  </p>
+                  <Button asChild variant="outline" className="h-10 w-fit gap-2">
+                    <a href={policy.href} target="_blank" rel="noreferrer">
+                      View Policy
+                      <ExternalLink className="h-4 w-4" />
+                    </a>
+                  </Button>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <CTABand
         headline={content.cta?.headline || "Need HSE Documentation?"}
-        primaryCTA={{ label: content.cta?.primaryBtnText || "Request HSE Pack", href: content.cta?.primaryBtnLink || "/contact" }} 
+        primaryCTA={{ label: content.cta?.primaryBtnText || "Contact Us", href: content.cta?.primaryBtnLink || "/contact" }}
       />
     </Layout>
   );

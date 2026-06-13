@@ -4,6 +4,7 @@ import { cn } from '@/lib/utils';
 import { ImageIcon, Upload, X, Check, Loader2 } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
+import { EnhancedImage } from '@/components/ui/enhanced-image';
 
 interface EditableImageProps {
   src: string;
@@ -101,13 +102,14 @@ export function EditableImage({
   // Non-edit mode: just render the image
   if (!isEditMode) {
     return (
-      <div className={cn("relative overflow-hidden", containerClassName)}>
-        <img
-          src={displaySrc}
-          alt={alt}
-          className={cn("w-full h-full object-cover", className)}
-        />
-      </div>
+      <EnhancedImage
+        src={displaySrc}
+        alt={alt}
+        wrapperClassName={cn("relative overflow-hidden", containerClassName)}
+        className={className}
+        tone="vivid"
+        sizes="100vw"
+      />
     );
   }
 
@@ -123,10 +125,13 @@ export function EditableImage({
       )}
       onClick={() => !isUploading && setShowUpload(true)}
     >
-      <img
+      <EnhancedImage
         src={displaySrc}
         alt={alt}
+        wrapperClassName="h-full w-full"
         className={cn("w-full h-full object-cover transition-opacity", className)}
+        tone="vivid"
+        sizes="100vw"
       />
       
       {/* Edit overlay */}

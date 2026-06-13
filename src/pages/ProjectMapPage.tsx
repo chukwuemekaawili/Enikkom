@@ -3,13 +3,13 @@ import { Hero, CTABand } from "@/components/sections";
 import { InteractiveProjectMap } from "@/components/sections/InteractiveProjectMap";
 import { usePageContent } from "@/hooks/useSiteSettings";
 import { EditableText } from "@/components/admin";
-
-import heroHddRig from "@/assets/hero/hero-hdd-rig.jpg";
+import { siteImageSelections } from "@/content/siteImageSelections";
 
 export default function ProjectMapPage() {
   const { content } = usePageContent('project-map');
   const heroContent = content.hero || {};
   const ctaContent = content.cta || {};
+  const projectMapImages = siteImageSelections.projectMap;
 
   return (
     <Layout>
@@ -18,8 +18,8 @@ export default function ProjectMapPage() {
         subtitle={heroContent.subtitle || "Explore our completed projects across Nigeria's key oil & gas regions. Click on any marker to view project details."}
         badge={heroContent.badge || "Interactive Map"}
         primaryCTA={{ label: "View All Projects", href: "/projects" }}
-        secondaryCTA={{ label: "Request a Quote", href: "/contact" }}
-        backgroundImage={heroContent.backgroundImage || heroHddRig}
+        secondaryCTA={{ label: "Contact Us", href: "/contact" }}
+        backgroundImage={heroContent.backgroundImage || projectMapImages.hero}
         size="default"
         pageSlug="project-map"
         sectionKey="hero"
@@ -60,7 +60,7 @@ export default function ProjectMapPage() {
 
       <CTABand 
         headline={ctaContent.headline || "Ready to Start Your Project?"}
-        primaryCTA={{ label: ctaContent.cta_label || "Request a Quote", href: "/contact" }}
+        primaryCTA={{ label: ctaContent.cta_label || "Contact Us", href: "/contact" }}
       />
     </Layout>
   );

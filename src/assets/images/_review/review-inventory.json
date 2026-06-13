@@ -1,0 +1,1113 @@
+{
+  "total_images": 85,
+  "main_active_count": 74,
+  "review_file_count": 11,
+  "review_files": [
+    "_review/alternate-versions/equipment/equipment-fleet.jpg",
+    "_review/alternate-versions/projects/shore-approach.png",
+    "_review/duplicates/logos/enikkom-logo-light.png",
+    "_review/likely-unused/projects/client-logos.jpg",
+    "_review/likely-unused/projects/qms-iso-cert.jpg",
+    "_review/likely-unused/team/commercial-director.jpg",
+    "_review/likely-unused/team/hse-director.jpg",
+    "_review/likely-unused/team/md-ceo.jpg",
+    "_review/likely-unused/team/operations-director.jpg",
+    "_review/likely-unused/team/projects-director.jpg",
+    "_review/likely-unused/team/technical-director.jpg"
+  ],
+  "exact_pixel_duplicates": [
+    [
+      "_review/duplicates/logos/enikkom-logo-light.png",
+      "logos/enikkom-logo-color.png"
+    ]
+  ],
+  "items": [
+    {
+      "rel": "_review/alternate-versions/equipment/equipment-fleet.jpg",
+      "width": 1024,
+      "height": 768,
+      "size": 158201,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts"
+      ]
+    },
+    {
+      "rel": "_review/alternate-versions/projects/shore-approach.png",
+      "width": 1024,
+      "height": 571,
+      "size": 575389,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts"
+      ]
+    },
+    {
+      "rel": "_review/duplicates/logos/enikkom-logo-light.png",
+      "width": 1536,
+      "height": 1024,
+      "size": 184195,
+      "active": false,
+      "references": []
+    },
+    {
+      "rel": "_review/likely-unused/projects/client-logos.jpg",
+      "width": 192,
+      "height": 138,
+      "size": 9672,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts"
+      ]
+    },
+    {
+      "rel": "_review/likely-unused/projects/qms-iso-cert.jpg",
+      "width": 986,
+      "height": 986,
+      "size": 27292,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts"
+      ]
+    },
+    {
+      "rel": "_review/likely-unused/team/commercial-director.jpg",
+      "width": 512,
+      "height": 640,
+      "size": 35256,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts"
+      ]
+    },
+    {
+      "rel": "_review/likely-unused/team/hse-director.jpg",
+      "width": 512,
+      "height": 640,
+      "size": 25725,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts"
+      ]
+    },
+    {
+      "rel": "_review/likely-unused/team/md-ceo.jpg",
+      "width": 512,
+      "height": 640,
+      "size": 41020,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts"
+      ]
+    },
+    {
+      "rel": "_review/likely-unused/team/operations-director.jpg",
+      "width": 512,
+      "height": 640,
+      "size": 37994,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts"
+      ]
+    },
+    {
+      "rel": "_review/likely-unused/team/projects-director.jpg",
+      "width": 512,
+      "height": 640,
+      "size": 24880,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts"
+      ]
+    },
+    {
+      "rel": "_review/likely-unused/team/technical-director.jpg",
+      "width": 512,
+      "height": 640,
+      "size": 36353,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts"
+      ]
+    },
+    {
+      "rel": "capabilities/dredging-marine.jpg",
+      "width": 1024,
+      "height": 768,
+      "size": 85333,
+      "active": true,
+      "references": [
+        "src/components/sections/InteractiveProjectMap.tsx",
+        "src/components/sections/ProjectMap.tsx",
+        "src/lib/assetMap.ts",
+        "src/pages/CapabilityDetailPage.tsx"
+      ]
+    },
+    {
+      "rel": "capabilities/hdd-drilling.jpg",
+      "width": 1024,
+      "height": 768,
+      "size": 91928,
+      "active": true,
+      "references": [
+        "src/components/sections/InteractiveProjectMap.tsx",
+        "src/components/sections/ProjectMap.tsx",
+        "src/lib/assetMap.ts",
+        "src/pages/CapabilityDetailPage.tsx"
+      ]
+    },
+    {
+      "rel": "capabilities/jetty-construction.jpg",
+      "width": 1024,
+      "height": 768,
+      "size": 121150,
+      "active": true,
+      "references": [
+        "src/components/sections/InteractiveProjectMap.tsx",
+        "src/components/sections/ProjectMap.tsx",
+        "src/lib/assetMap.ts",
+        "src/pages/CapabilityDetailPage.tsx"
+      ]
+    },
+    {
+      "rel": "capabilities/pipeline-construction.jpg",
+      "width": 1024,
+      "height": 768,
+      "size": 99321,
+      "active": true,
+      "references": [
+        "src/components/sections/InteractiveProjectMap.tsx",
+        "src/components/sections/ProjectMap.tsx",
+        "src/lib/assetMap.ts",
+        "src/pages/CapabilityDetailPage.tsx"
+      ]
+    },
+    {
+      "rel": "hero/hero-hdd-rig.jpg",
+      "width": 1920,
+      "height": 1080,
+      "size": 287102,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/CapabilityDetailPage.tsx",
+        "src/pages/CompletedProjectsPage.tsx",
+        "src/pages/PartnersPage.tsx",
+        "src/pages/ProjectMapPage.tsx",
+        "src/pages/ResourcesPage.tsx",
+        "src/pages/TestimonialsPage.tsx"
+      ]
+    },
+    {
+      "rel": "logos/enikkom-logo-color.png",
+      "width": 1536,
+      "height": 1024,
+      "size": 184195,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts"
+      ]
+    },
+    {
+      "rel": "logos/enikkom-logo-white.png",
+      "width": 1536,
+      "height": 1024,
+      "size": 173663,
+      "active": true,
+      "references": [
+        "src/components/layout/Footer.tsx",
+        "src/components/layout/Header.tsx",
+        "src/lib/assetMap.ts"
+      ]
+    },
+    {
+      "rel": "projects/330b-excavator.jpg",
+      "width": 1080,
+      "height": 810,
+      "size": 136760,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/GalleryPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/atlas-cove-mosimi-2.jpg",
+      "width": 617,
+      "height": 467,
+      "size": 78480,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/ProjectDetailPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/atlas-cove-mosimi.jpg",
+      "width": 624,
+      "height": 468,
+      "size": 57318,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/HomePage.tsx",
+        "src/pages/ProjectDetailPage.tsx",
+        "src/pages/ProjectsGalleryPage.tsx",
+        "src/pages/ProjectsPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/brochure-hero.jpg",
+      "width": 1125,
+      "height": 1600,
+      "size": 421606,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/GalleryPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/careers-team.jpg",
+      "width": 1024,
+      "height": 768,
+      "size": 78176,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/CareersPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/cat-excavator.jpg",
+      "width": 960,
+      "height": 540,
+      "size": 92932,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/GalleryPage.tsx",
+        "src/pages/ProjectDetailPage.tsx",
+        "src/pages/ProjectsGalleryPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/contact-office.jpg",
+      "width": 1024,
+      "height": 768,
+      "size": 94039,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/ContactPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/crane-operations.jpg",
+      "width": 960,
+      "height": 1280,
+      "size": 189303,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/ProjectDetailPage.tsx",
+        "src/pages/ProjectsPage.tsx",
+        "src/pages/ServicesPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/dredging-hero.jpg",
+      "width": 1920,
+      "height": 1080,
+      "size": 353430,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/HomePage.tsx",
+        "src/pages/ServicesPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/dredging-marine.png",
+      "width": 768,
+      "height": 512,
+      "size": 633349,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/GalleryPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/drilling-ops-4.jpg",
+      "width": 612,
+      "height": 426,
+      "size": 97945,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/ProjectDetailPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/drilling-ops-5.jpg",
+      "width": 264,
+      "height": 165,
+      "size": 13817,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/CapabilitiesPage.tsx",
+        "src/pages/HomePage.tsx",
+        "src/pages/ProjectDetailPage.tsx",
+        "src/pages/ProjectsGalleryPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/drilling-ops-6.jpg",
+      "width": 409,
+      "height": 258,
+      "size": 38278,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/ProjectDetailPage.tsx",
+        "src/pages/ProjectsPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/drilling-ops-7.jpg",
+      "width": 411,
+      "height": 261,
+      "size": 34668,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/ProjectDetailPage.tsx",
+        "src/pages/ProjectsPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/drilling-site-2.jpg",
+      "width": 960,
+      "height": 540,
+      "size": 56083,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/ProjectDetailPage.tsx",
+        "src/pages/ProjectsPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/drilling-site.png",
+      "width": 768,
+      "height": 577,
+      "size": 821009,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/CapabilitiesPage.tsx",
+        "src/pages/CapabilityDetailPage.tsx",
+        "src/pages/GalleryPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/equipment-fleet.jpg",
+      "width": 1200,
+      "height": 800,
+      "size": 133923,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/GalleryPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/hdd-drill-string.jpg",
+      "width": 1240,
+      "height": 696,
+      "size": 109969,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/CapabilitiesPage.tsx",
+        "src/pages/GalleryPage.tsx",
+        "src/pages/ProjectDetailPage.tsx",
+        "src/pages/ProjectsGalleryPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/hdd-equipment-fleet-2.jpg",
+      "width": 582,
+      "height": 609,
+      "size": 106705,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/ProjectDetailPage.tsx",
+        "src/pages/ProjectsGalleryPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/hdd-equipment-fleet-3.jpg",
+      "width": 502,
+      "height": 642,
+      "size": 87567,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/AboutPage.tsx",
+        "src/pages/ProjectDetailPage.tsx",
+        "src/pages/ProjectsPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/hdd-equipment-fleet-4.jpg",
+      "width": 513,
+      "height": 610,
+      "size": 128622,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/GalleryPage.tsx",
+        "src/pages/ProjectDetailPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/hdd-equipment-fleet.jpg",
+      "width": 584,
+      "height": 642,
+      "size": 115879,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/CapabilityDetailPage.tsx",
+        "src/pages/EquipmentPage.tsx",
+        "src/pages/HomePage.tsx",
+        "src/pages/ProjectDetailPage.tsx",
+        "src/pages/ProjectsGalleryPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/hdd-night-panorama-cropped.jpg",
+      "width": 2600,
+      "height": 1441,
+      "size": 343578,
+      "active": true,
+      "references": [
+        "src/pages/ProjectsPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/hdd-night-panorama.jpg",
+      "width": 1131,
+      "height": 1600,
+      "size": 138092,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/CompanyIntroPage.tsx",
+        "src/pages/HomePage.tsx",
+        "src/pages/ManagementPage.tsx",
+        "src/pages/ProjectDetailPage.tsx",
+        "src/pages/ProjectsGalleryPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/hdd-operations-2.jpg",
+      "width": 1080,
+      "height": 720,
+      "size": 119906,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/ProjectDetailPage.tsx",
+        "src/pages/ServicesPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/hdd-rig-night.jpg",
+      "width": 1080,
+      "height": 810,
+      "size": 112202,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/HDDEquipmentPage.tsx",
+        "src/pages/HomePage.tsx",
+        "src/pages/ProjectDetailPage.tsx",
+        "src/pages/ProjectsGalleryPage.tsx",
+        "src/pages/ProjectsPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/hdd-rig-operation.png",
+      "width": 1022,
+      "height": 766,
+      "size": 1145141,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/GalleryPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/hdd-team-1.jpg",
+      "width": 494,
+      "height": 369,
+      "size": 55848,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/CareersPage.tsx",
+        "src/pages/ProjectDetailPage.tsx",
+        "src/pages/ServicesPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/hero-hdd.jpg",
+      "width": 1920,
+      "height": 1080,
+      "size": 411926,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/ProjectsPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/hse-safety.jpg",
+      "width": 1024,
+      "height": 768,
+      "size": 73229,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/CapabilityDetailPage.tsx",
+        "src/pages/GalleryPage.tsx",
+        "src/pages/HSEQualityPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/jetty-construction.jpg",
+      "width": 1200,
+      "height": 800,
+      "size": 119142,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/CapabilitiesPage.tsx",
+        "src/pages/HomePage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/lekki-gas-pipeline.jpg",
+      "width": 1239,
+      "height": 594,
+      "size": 119349,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/HomePage.tsx",
+        "src/pages/ProjectDetailPage.tsx",
+        "src/pages/ProjectsGalleryPage.tsx",
+        "src/pages/ProjectsPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/multi-crane-operations.jpg",
+      "width": 372,
+      "height": 251,
+      "size": 37759,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/ProjectDetailPage.tsx",
+        "src/pages/ProjectsGalleryPage.tsx",
+        "src/pages/ProjectsPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/nipco-ibafo-2.jpg",
+      "width": 540,
+      "height": 303,
+      "size": 51013,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/CapabilitiesPage.tsx",
+        "src/pages/ProjectDetailPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/nipco-ibafo-3.jpg",
+      "width": 540,
+      "height": 304,
+      "size": 47661,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/CapabilitiesPage.tsx",
+        "src/pages/ProjectDetailPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/nipco-ibafo.jpg",
+      "width": 540,
+      "height": 303,
+      "size": 50867,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/ProjectDetailPage.tsx",
+        "src/pages/ProjectsPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/nipco-pipeline.jpg",
+      "width": 894,
+      "height": 670,
+      "size": 226638,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/GalleryPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/otumara-escravos-2.jpg",
+      "width": 709,
+      "height": 399,
+      "size": 102378,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/CapabilitiesPage.tsx",
+        "src/pages/ProjectDetailPage.tsx",
+        "src/pages/ProjectsGalleryPage.tsx",
+        "src/pages/ProjectsPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/otumara-escravos.jpg",
+      "width": 307,
+      "height": 227,
+      "size": 27385,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/HomePage.tsx",
+        "src/pages/ProjectDetailPage.tsx",
+        "src/pages/ProjectsGalleryPage.tsx",
+        "src/pages/ProjectsPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/partnership-hddthailand-2.jpg",
+      "width": 276,
+      "height": 90,
+      "size": 11296,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/ProjectDetailPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/partnership-hddthailand.jpg",
+      "width": 309,
+      "height": 73,
+      "size": 8301,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/CapabilitiesPage.tsx",
+        "src/pages/CapabilityDetailPage.tsx",
+        "src/pages/ProjectDetailPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/pipe-handling.jpg",
+      "width": 1080,
+      "height": 810,
+      "size": 116993,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/GalleryPage.tsx",
+        "src/pages/ProjectDetailPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/pipe-laying-crane.jpg",
+      "width": 372,
+      "height": 243,
+      "size": 27385,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/CompanyIntroPage.tsx",
+        "src/pages/HomePage.tsx",
+        "src/pages/ProjectDetailPage.tsx",
+        "src/pages/ProjectsGalleryPage.tsx",
+        "src/pages/ProjectsPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/pipe-welding.png",
+      "width": 768,
+      "height": 576,
+      "size": 905960,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/GalleryPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/pipeline-construction.jpg",
+      "width": 1920,
+      "height": 1080,
+      "size": 323534,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/HomePage.tsx",
+        "src/pages/ProjectsPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/pipeline-crew.jpg",
+      "width": 1080,
+      "height": 607,
+      "size": 85169,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/ProjectDetailPage.tsx",
+        "src/pages/ServicesPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/pipeline-laying.png",
+      "width": 768,
+      "height": 576,
+      "size": 813842,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/GalleryPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/rig-setup.png",
+      "width": 768,
+      "height": 626,
+      "size": 851991,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/GalleryPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/safety-signage.jpg",
+      "width": 980,
+      "height": 616,
+      "size": 201428,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/ServicesPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/scope-operations-2.jpg",
+      "width": 399,
+      "height": 301,
+      "size": 25593,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/ProjectDetailPage.tsx",
+        "src/pages/ProjectsPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/scope-operations-3.jpg",
+      "width": 399,
+      "height": 300,
+      "size": 28271,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/ProjectDetailPage.tsx",
+        "src/pages/ProjectsPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/scope-operations.jpg",
+      "width": 399,
+      "height": 298,
+      "size": 34152,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/GalleryPage.tsx",
+        "src/pages/ProjectDetailPage.tsx",
+        "src/pages/ProjectsGalleryPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/shore-approach.jpg",
+      "width": 1024,
+      "height": 768,
+      "size": 92256,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/CapabilityDetailPage.tsx",
+        "src/pages/ProjectsPage.tsx",
+        "src/pages/ServicesPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/swamp-pipeline.png",
+      "width": 768,
+      "height": 631,
+      "size": 905881,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/GalleryPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/team-safety.jpg",
+      "width": 1080,
+      "height": 798,
+      "size": 101887,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/CapabilitiesPage.tsx",
+        "src/pages/ProjectDetailPage.tsx",
+        "src/pages/ProjectsGalleryPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/tripping-safety.jpg",
+      "width": 810,
+      "height": 1080,
+      "size": 141422,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/GalleryPage.tsx",
+        "src/pages/ProjectDetailPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/welding-crew.jpg",
+      "width": 1240,
+      "height": 696,
+      "size": 110836,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/CapabilitiesPage.tsx",
+        "src/pages/GalleryPage.tsx",
+        "src/pages/ProjectDetailPage.tsx",
+        "src/pages/ProjectsGalleryPage.tsx"
+      ]
+    },
+    {
+      "rel": "projects/workers-ppe.jpg",
+      "width": 810,
+      "height": 1080,
+      "size": 137184,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/GalleryPage.tsx",
+        "src/pages/ProjectDetailPage.tsx"
+      ]
+    },
+    {
+      "rel": "team/adekunle-adewole.png",
+      "width": 980,
+      "height": 980,
+      "size": 680399,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/ManagementPage.tsx"
+      ]
+    },
+    {
+      "rel": "team/biodun-adefila.jpg",
+      "width": 809,
+      "height": 1080,
+      "size": 55074,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/ManagementPage.tsx"
+      ]
+    },
+    {
+      "rel": "team/chibuike-nwachukwu.png",
+      "width": 980,
+      "height": 980,
+      "size": 898748,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/ManagementPage.tsx"
+      ]
+    },
+    {
+      "rel": "team/edward-amene.png",
+      "width": 980,
+      "height": 980,
+      "size": 533115,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/ManagementPage.tsx"
+      ]
+    },
+    {
+      "rel": "team/francis-anatogu.png",
+      "width": 980,
+      "height": 980,
+      "size": 581256,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/ManagementPage.tsx"
+      ]
+    },
+    {
+      "rel": "team/idigbor-emeka.png",
+      "width": 980,
+      "height": 980,
+      "size": 457889,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/ManagementPage.tsx"
+      ]
+    },
+    {
+      "rel": "team/ken-james.png",
+      "width": 980,
+      "height": 980,
+      "size": 606832,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/ManagementPage.tsx"
+      ]
+    },
+    {
+      "rel": "team/saleem-khan.png",
+      "width": 980,
+      "height": 980,
+      "size": 498915,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/ManagementPage.tsx"
+      ]
+    },
+    {
+      "rel": "team/teddy-allen.png",
+      "width": 980,
+      "height": 980,
+      "size": 406198,
+      "active": true,
+      "references": [
+        "src/lib/assetMap.ts",
+        "src/pages/ManagementPage.tsx"
+      ]
+    }
+  ],
+  "main_active_files": [
+    "capabilities/dredging-marine.jpg",
+    "capabilities/hdd-drilling.jpg",
+    "capabilities/jetty-construction.jpg",
+    "capabilities/pipeline-construction.jpg",
+    "hero/hero-hdd-rig.jpg",
+    "logos/enikkom-logo-color.png",
+    "logos/enikkom-logo-white.png",
+    "projects/330b-excavator.jpg",
+    "projects/atlas-cove-mosimi-2.jpg",
+    "projects/atlas-cove-mosimi.jpg",
+    "projects/brochure-hero.jpg",
+    "projects/careers-team.jpg",
+    "projects/cat-excavator.jpg",
+    "projects/contact-office.jpg",
+    "projects/crane-operations.jpg",
+    "projects/dredging-hero.jpg",
+    "projects/dredging-marine.png",
+    "projects/drilling-ops-4.jpg",
+    "projects/drilling-ops-5.jpg",
+    "projects/drilling-ops-6.jpg",
+    "projects/drilling-ops-7.jpg",
+    "projects/drilling-site-2.jpg",
+    "projects/drilling-site.png",
+    "projects/equipment-fleet.jpg",
+    "projects/hdd-drill-string.jpg",
+    "projects/hdd-equipment-fleet-2.jpg",
+    "projects/hdd-equipment-fleet-3.jpg",
+    "projects/hdd-equipment-fleet-4.jpg",
+    "projects/hdd-equipment-fleet.jpg",
+    "projects/hdd-night-panorama-cropped.jpg",
+    "projects/hdd-night-panorama.jpg",
+    "projects/hdd-operations-2.jpg",
+    "projects/hdd-rig-night.jpg",
+    "projects/hdd-rig-operation.png",
+    "projects/hdd-team-1.jpg",
+    "projects/hero-hdd.jpg",
+    "projects/hse-safety.jpg",
+    "projects/jetty-construction.jpg",
+    "projects/lekki-gas-pipeline.jpg",
+    "projects/multi-crane-operations.jpg",
+    "projects/nipco-ibafo-2.jpg",
+    "projects/nipco-ibafo-3.jpg",
+    "projects/nipco-ibafo.jpg",
+    "projects/nipco-pipeline.jpg",
+    "projects/otumara-escravos-2.jpg",
+    "projects/otumara-escravos.jpg",
+    "projects/partnership-hddthailand-2.jpg",
+    "projects/partnership-hddthailand.jpg",
+    "projects/pipe-handling.jpg",
+    "projects/pipe-laying-crane.jpg",
+    "projects/pipe-welding.png",
+    "projects/pipeline-construction.jpg",
+    "projects/pipeline-crew.jpg",
+    "projects/pipeline-laying.png",
+    "projects/rig-setup.png",
+    "projects/safety-signage.jpg",
+    "projects/scope-operations-2.jpg",
+    "projects/scope-operations-3.jpg",
+    "projects/scope-operations.jpg",
+    "projects/shore-approach.jpg",
+    "projects/swamp-pipeline.png",
+    "projects/team-safety.jpg",
+    "projects/tripping-safety.jpg",
+    "projects/welding-crew.jpg",
+    "projects/workers-ppe.jpg",
+    "team/adekunle-adewole.png",
+    "team/biodun-adefila.jpg",
+    "team/chibuike-nwachukwu.png",
+    "team/edward-amene.png",
+    "team/francis-anatogu.png",
+    "team/idigbor-emeka.png",
+    "team/ken-james.png",
+    "team/saleem-khan.png",
+    "team/teddy-allen.png"
+  ]
+}

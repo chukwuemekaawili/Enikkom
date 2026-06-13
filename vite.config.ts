@@ -14,8 +14,23 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
-    },
+    alias: [
+      {
+        find: /^@\/assets\/images\//,
+        replacement: `${path.resolve(__dirname, "./src/assets/images")}/`,
+      },
+      {
+        find: /^@\/assets\/videos\//,
+        replacement: `${path.resolve(__dirname, "./src/assets/videos")}/`,
+      },
+      {
+        find: /^@\/assets\//,
+        replacement: `${path.resolve(__dirname, "./src/assets/images")}/`,
+      },
+      {
+        find: /^@\//,
+        replacement: `${path.resolve(__dirname, "./src")}/`,
+      },
+    ],
   },
 }));

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, LucideIcon } from "lucide-react";
 import { motion } from "framer-motion";
+import { EnhancedImage } from "@/components/ui/enhanced-image";
 
 interface CapabilityCardProps {
   title: string;
@@ -9,6 +10,7 @@ interface CapabilityCardProps {
   icon?: LucideIcon;
   image?: string;
   metric?: string;
+  ctaLabel?: string;
   index?: number;
 }
 
@@ -19,6 +21,7 @@ export function CapabilityCard({
   icon: Icon,
   image,
   metric,
+  ctaLabel = "View Details",
   index = 0,
 }: CapabilityCardProps) {
   return (
@@ -30,16 +33,19 @@ export function CapabilityCard({
     >
       <Link
         to={href}
-        className="group block h-full bg-card rounded-xl border border-border overflow-hidden transition-all duration-200 hover:shadow-lg hover:border-border/60 hover:-translate-y-1"
+        className="group flex h-full flex-col card-premium transition-all duration-300"
       >
         {/* Image with overlay */}
         {image && (
           <div className="relative aspect-[16/10] overflow-hidden">
-            <img
+            <EnhancedImage
               src={image}
               alt={title}
-              loading="lazy"
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              wrapperClassName="h-full w-full"
+              className="w-full h-full"
+              sizes="(min-width: 1024px) 30vw, (min-width: 768px) 45vw, 100vw"
+              tone="vivid"
+              hoverZoom
             />
             {/* Subtle gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/15 to-transparent" />
@@ -68,17 +74,17 @@ export function CapabilityCard({
         )}
 
         {/* Content */}
-        <div className="p-5 md:p-6">
-          <h4 className="text-[16px] md:text-[17px] font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-200 font-heading">
+        <div className="flex flex-1 flex-col p-6 md:p-8">
+          <h4 className="text-[16px] md:text-[17px] font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-200 font-heading leading-snug">
             {title}
           </h4>
-          <p className="text-[14px] text-muted-foreground mb-4 leading-relaxed line-clamp-2">
+          <p className="text-[14px] text-muted-foreground mb-4 leading-relaxed line-clamp-3">
             {description}
           </p>
-          <span className="inline-flex items-center text-[13px] font-semibold text-primary">
-            Explore This Service
-            <ArrowRight className="ml-1.5 h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
-          </span>
+          <div className="mt-auto pt-4 flex items-center text-[13.5px] font-bold text-primary tracking-wide uppercase">
+            {ctaLabel}
+            <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />
+          </div>
         </div>
       </Link>
     </motion.div>

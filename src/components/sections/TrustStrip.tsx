@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 export function TrustStrip() {
   const stats = [
     { value: "100+", label: "KM HDD Installed", icon: Zap },
-    { value: "30+", label: "Years Experience", icon: Calendar },
+    { value: "34", label: "Years Experience", icon: Calendar },
     { value: "0", label: "Lost Time Incidents", icon: Shield },
     { value: "500+", label: "Workforce Capacity", icon: Users },
   ];

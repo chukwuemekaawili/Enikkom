@@ -33,7 +33,7 @@ export function CertificationsBlock({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.3, delay: index * 0.08 }}
-            className="flex items-center gap-2.5 px-4 py-2.5 bg-primary/10 rounded-xl border border-primary/10"
+            className="flex items-center gap-2.5 rounded-full border border-border bg-background px-4 py-2.5 shadow-[0_1px_2px_rgba(15,23,42,0.03)]"
           >
             <Award className="h-4 w-4 text-primary" />
             <span className="text-[13px] font-semibold text-foreground">{cert.name}</span>
@@ -60,7 +60,7 @@ export function CertificationsBlock({
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 md:gap-6">
           {certifications.map((cert, index) => (
             <motion.div
               key={cert.name}
@@ -68,9 +68,9 @@ export function CertificationsBlock({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="text-center p-6 md:p-8 bg-card rounded-xl border border-border shadow-sm hover:shadow-md transition-all duration-200"
+              className="card-premium text-center p-6 md:p-8"
             >
-              <div className="w-14 h-14 md:w-16 md:h-16 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
+              <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 md:h-16 md:w-16">
                 <Award className="h-7 w-7 md:h-8 md:w-8 text-primary" />
               </div>
               <h4 className="text-[17px] md:text-[18px] font-bold mb-2">{cert.name}</h4>

@@ -2,12 +2,8 @@ import { motion } from "framer-motion";
 import { MapPin, Calendar, Ruler, Building2 } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
-// Import project images
-import hddDrilling from "@/assets/capabilities/hdd-drilling.jpg";
-import pipelineConstruction from "@/assets/capabilities/pipeline-construction.jpg";
-import dredgingMarine from "@/assets/capabilities/dredging-marine.jpg";
-import jettyConstruction from "@/assets/capabilities/jetty-construction.jpg";
+import { EnhancedImage } from "@/components/ui/enhanced-image";
+import { getProjectImage } from "@/content/projectImageSelections";
 
 interface ProjectLocation {
   id: string;
@@ -19,135 +15,129 @@ interface ProjectLocation {
   client: string;
   year: string;
   metrics: string;
-  image: string;
+  image?: string;
   href?: string;
 }
 
 const projectLocations: ProjectLocation[] = [
   {
     id: "1",
-    name: "Gbaran Phase 3b – UZU CPF",
-    location: "Bayelsa State",
-    type: "Pipeline",
-    coordinates: { x: 52, y: 78 },
-    description: "8km & 10km x 16\" pipeline EPC",
-    client: "Shell",
-    year: "2024-2025",
-    metrics: "18km total pipeline",
-    image: pipelineConstruction,
-    href: "/projects/gbaran-phase-3b"
+    name: "OML34 — 10\" × 12km CHDD",
+    location: "Utorogun, Delta State",
+    type: "HDD",
+    coordinates: { x: 44, y: 72 },
+    description: "Nigeria's longest Continuous HDD — 12km of 10\" pipeline in a single operation.",
+    client: "NPDC / ND Western",
+    year: "2021",
+    metrics: "10\" × 12km — Nigeria Record",
+    image: getProjectImage("oml34-chdd", "projectMap"),
+    href: "/projects/oml34-chdd"
   },
   {
     id: "2",
-    name: "Nun River HDD Crossing",
-    location: "Bayelsa State",
+    name: "Atlas Cove–Mosimi — 16\" × 3.1km",
+    location: "Arepo, Ogun State",
     type: "HDD",
-    coordinates: { x: 48, y: 82 },
-    description: "16\" & 6\" dual HDD crossing under Nun River",
-    client: "Chevron",
-    year: "2024",
-    metrics: "1.2km crossing length",
-    image: hddDrilling,
-    href: "/projects/nun-river-crossing"
+    coordinates: { x: 26, y: 50 },
+    description: "Africa's longest single HDD drill — emergency reconstruction of petroleum products pipeline.",
+    client: "NNPC / PPMC",
+    year: "2016",
+    metrics: "16\" × 3.1km — Africa Record",
+    image: getProjectImage("atlas-cove-mosimi", "projectMap"),
+    href: "/projects/atlas-cove-mosimi"
   },
   {
     id: "3",
-    name: "Lagos Port Terminal",
-    location: "Lagos",
-    type: "Marine",
-    coordinates: { x: 28, y: 52 },
-    description: "500m quay wall construction",
-    client: "NLNG",
-    year: "2022",
-    metrics: "500m quay wall",
-    image: jettyConstruction,
-    href: "/projects/lagos-port-terminal"
+    name: "Otumara-Escravos Bundled HDD",
+    location: "Delta State",
+    type: "HDD",
+    coordinates: { x: 40, y: 74 },
+    description: "Africa's longest bundled HDD — 12\" & 3\" pipelines across 2.78km of Escravos River.",
+    client: "Saipem / SPDC",
+    year: "2016",
+    metrics: "2.78km bundled — Africa Record",
+    image: getProjectImage("otumara-escravos", "projectMap"),
   },
   {
     id: "4",
-    name: "Escravos Shore Approach",
-    location: "Delta State",
-    type: "Shore Approach",
-    coordinates: { x: 45, y: 72 },
-    description: "1.8km shore crossing installation",
-    client: "Shell",
-    year: "2021",
-    metrics: "1.8km shore crossing",
-    image: pipelineConstruction,
-    href: "/projects/escravos-shore-approach"
+    name: "OB3 River Niger — 48\" Direct Pipe",
+    location: "River Niger",
+    type: "HDD",
+    coordinates: { x: 50, y: 70 },
+    description: "Landmark 48\" × 1.8km crossing of the River Niger using HDD + Direct Pipe Installation.",
+    client: "NPDC",
+    year: "2020",
+    metrics: "48\" × 1.8km HDD + DPI",
+    image: getProjectImage("ob3-river-niger", "projectMap"),
+    href: "/projects/ob3-river-niger"
   },
   {
     id: "5",
-    name: "Bonny Island Flowline",
-    location: "Rivers State",
-    type: "Pipeline",
-    coordinates: { x: 58, y: 76 },
-    description: "12km flowline construction",
-    client: "Chevron",
+    name: "Escravos Shore Approach",
+    location: "Delta State",
+    type: "Shore Approach",
+    coordinates: { x: 38, y: 76 },
+    description: "1.8km shore crossing pipeline connecting offshore infrastructure to onshore facilities.",
+    client: "ECL / SPDC",
     year: "2021",
-    metrics: "12km x 14\" flowline",
-    image: pipelineConstruction,
-    href: "/projects/bonny-flowline"
+    metrics: "1.8km shore crossing",
+    image: getProjectImage("escravos-shore-approach", "projectMap"),
   },
   {
     id: "6",
-    name: "Trans-Niger Pipeline",
-    location: "Niger State",
+    name: "First HDD Crossing — River Niger",
+    location: "River Niger",
     type: "HDD",
     coordinates: { x: 48, y: 45 },
-    description: "Historic River Niger HDD crossing - first in Nigeria",
+    description: "Nigeria's historic first Horizontal Directional Drilling river crossing.",
     client: "NNPC",
     year: "2003",
-    metrics: "1.2km HDD crossing",
-    image: hddDrilling,
+    metrics: "Pioneer HDD in Nigeria",
   },
   {
     id: "7",
-    name: "Qua Iboe Terminal",
-    location: "Akwa Ibom",
-    type: "Marine",
-    coordinates: { x: 62, y: 80 },
-    description: "Terminal upgrade and jetty rehabilitation works",
-    client: "ExxonMobil",
-    year: "2021",
-    metrics: "Terminal rehabilitation",
-    image: jettyConstruction,
+    name: "Gbaran Phase 3b — 16\" EPC",
+    location: "Bayelsa State",
+    type: "Pipeline",
+    coordinates: { x: 52, y: 78 },
+    description: "EPC pipeline construction — 8km & 10km of 16\" pipeline for Gbaran–UZU CPF upgrade.",
+    client: "SPDC",
+    year: "2025",
+    metrics: "18km total pipeline",
   },
   {
     id: "8",
-    name: "Forcados Terminal",
-    location: "Delta State",
+    name: "Calabar Gas Transmission — 24\" × 21.5km",
+    location: "Cross River State",
     type: "Pipeline",
-    coordinates: { x: 43, y: 75 },
-    description: "6km x 20\" trunk line installation",
-    client: "Shell",
-    year: "2020",
-    metrics: "6km pipeline",
-    image: pipelineConstruction,
+    coordinates: { x: 70, y: 74 },
+    description: "Gas transmission pipeline with multiple HDD river crossings for power generation supply.",
+    client: "Zakhem / NDPHC",
+    year: "2015",
+    metrics: "24\" × 21.5km pipeline",
   },
   {
     id: "9",
-    name: "OML 34 Pipeline",
-    location: "Delta State",
+    name: "NIPCO Gas Distribution — 50km",
+    location: "Multiple Locations",
     type: "Pipeline",
-    coordinates: { x: 47, y: 73 },
-    description: "10\" x 12km pipeline construction",
-    client: "NNPC/NPDC",
-    year: "2023",
-    metrics: "12km pipeline",
-    image: pipelineConstruction,
+    coordinates: { x: 43, y: 64 },
+    description: "50km multi-diameter urban gas distribution network with extensive HDD crossings.",
+    client: "NIPCO",
+    year: "2009",
+    metrics: "50km network",
+    image: getProjectImage("nipco-gas-distribution", "projectMap"),
   },
   {
     id: "10",
-    name: "Bonny Terminal Dredging",
-    location: "Rivers State",
+    name: "OML34 Dredging & Cofferdam",
+    location: "Delta State",
     type: "Marine",
-    coordinates: { x: 60, y: 82 },
-    description: "Channel deepening and maintenance dredging",
-    client: "NLNG",
-    year: "2018",
-    metrics: "Channel deepening",
-    image: dredgingMarine,
+    coordinates: { x: 45, y: 73 },
+    description: "Cofferdam installation and dredging in support of the OML34 CHDD project.",
+    client: "NPDC",
+    year: "2021",
+    metrics: "Cofferdam & swamp dredging",
   },
 ];
 
@@ -284,21 +274,31 @@ export function ProjectMap() {
                   transition={{ duration: 0.15 }}
                   className={`absolute z-30 bottom-full left-1/2 -translate-x-1/2 mb-2 w-56 bg-card text-card-foreground rounded-lg shadow-xl overflow-hidden border ${typeBorderColors[project.type]}`}
                 >
-                  {/* Project Image */}
-                  <div className="relative h-20 overflow-hidden">
-                    <img 
-                      src={project.image} 
-                      alt={project.name}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                    <div className={`absolute top-1.5 right-1.5 px-1.5 py-0.5 rounded text-[9px] text-white ${typeColors[project.type]}`}>
-                      {project.type}
+                  {project.image && (
+                    <div className="relative h-20 overflow-hidden">
+                      <EnhancedImage
+                        src={project.image}
+                        alt={project.name}
+                        wrapperClassName="h-full w-full"
+                        className="h-full w-full"
+                        hoverZoom
+                        tone="natural"
+                        fallbackLabel={project.name}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                      <div className={`absolute top-1.5 right-1.5 px-1.5 py-0.5 rounded text-[9px] text-white ${typeColors[project.type]}`}>
+                        {project.type}
+                      </div>
                     </div>
-                  </div>
+                  )}
                   
                   {/* Project Info */}
                   <div className="p-2.5">
+                    {!project.image && (
+                      <div className={`mb-2 inline-flex rounded px-1.5 py-0.5 text-[9px] text-white ${typeColors[project.type]}`}>
+                        {project.type}
+                      </div>
+                    )}
                     <h4 className="font-semibold text-xs mb-0.5">{project.name}</h4>
                     <p className="text-[10px] text-muted-foreground mb-2 line-clamp-1">{project.description}</p>
                     

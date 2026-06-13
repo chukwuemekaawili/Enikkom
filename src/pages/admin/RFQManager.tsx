@@ -100,7 +100,7 @@ const RFQManager: React.FC = () => {
 
       toast.success('Status updated');
       fetchSubmissions();
-      
+
       if (selectedSubmission?.id === id) {
         setSelectedSubmission((prev) => prev ? { ...prev, status: newStatus } : null);
       }

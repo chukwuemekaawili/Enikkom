@@ -4,7 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "@/contexts/AuthContext";
-import { EditModeProvider } from "@/contexts/EditModeContext";
+import { AdminErrorBoundary } from "@/components/admin/AdminErrorBoundary";
 
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
@@ -40,50 +40,54 @@ const queryClient = new QueryClient();
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <AuthProvider>
-      <EditModeProvider>
-        <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          <BrowserRouter>
-            <Routes>
-              {/* Public routes */}
-              <Route path="/" element={<HomePage />} />
-              <Route path="/about" element={<AboutPage />} />
-              <Route path="/company-introduction" element={<CompanyIntroPage />} />
-              <Route path="/services" element={<ServicesPage />} />
-              <Route path="/our-services" element={<ServicesPage />} />
-              <Route path="/capabilities" element={<CapabilitiesPage />} />
-              <Route path="/capabilities/:slug" element={<CapabilityDetailPage />} />
-              <Route path="/projects" element={<ProjectsPage />} />
-              <Route path="/portfolio" element={<ProjectsPage />} />
-              <Route path="/projects/:slug" element={<ProjectDetailPage />} />
-              <Route path="/equipment" element={<EquipmentPage />} />
-              <Route path="/equipment/hdd" element={<HDDEquipmentPage />} />
-              <Route path="/hdd-equipment" element={<HDDEquipmentPage />} />
-              <Route path="/completed-projects" element={<CompletedProjectsPage />} />
-              <Route path="/gallery" element={<GalleryPage />} />
-              <Route path="/projects-gallery" element={<ProjectsGalleryPage />} />
-              <Route path="/project-map" element={<ProjectMapPage />} />
-              <Route path="/hse-quality" element={<HSEQualityPage />} />
-              <Route path="/testimonials" element={<TestimonialsPage />} />
-              <Route path="/resources" element={<ResourcesPage />} />
-              <Route path="/partners" element={<PartnersPage />} />
-              <Route path="/careers" element={<CareersPage />} />
-              <Route path="/contact" element={<ContactPage />} />
-              <Route path="/contact-us" element={<ContactPage />} />
-              <Route path="/management-team" element={<ManagementPage />} />
-              <Route path="/privacy" element={<PrivacyPage />} />
-              <Route path="/terms" element={<TermsPage />} />
-              
-              {/* Admin routes */}
-              <Route path="/admin" element={<AdminLoginPage />} />
-              <Route path="/admin/dashboard/*" element={<AdminDashboard />} />
-              
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </BrowserRouter>
-        </TooltipProvider>
-      </EditModeProvider>
+
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Routes>
+            {/* Public routes */}
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/company-introduction" element={<CompanyIntroPage />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/our-services" element={<ServicesPage />} />
+            <Route path="/capabilities" element={<CapabilitiesPage />} />
+            <Route path="/capabilities/:slug" element={<CapabilityDetailPage />} />
+            <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/portfolio" element={<ProjectsPage />} />
+            <Route path="/projects/:slug" element={<ProjectDetailPage />} />
+            <Route path="/equipment" element={<EquipmentPage />} />
+            <Route path="/equipment/hdd" element={<HDDEquipmentPage />} />
+            <Route path="/hdd-equipment" element={<HDDEquipmentPage />} />
+            <Route path="/completed-projects" element={<CompletedProjectsPage />} />
+            <Route path="/gallery" element={<GalleryPage />} />
+            <Route path="/projects-gallery" element={<ProjectsGalleryPage />} />
+            <Route path="/project-map" element={<ProjectMapPage />} />
+            <Route path="/hse-quality" element={<HSEQualityPage />} />
+            <Route path="/testimonials" element={<TestimonialsPage />} />
+            <Route path="/resources" element={<ResourcesPage />} />
+            <Route path="/partners" element={<PartnersPage />} />
+            <Route path="/careers" element={<CareersPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/contact-us" element={<ContactPage />} />
+            <Route path="/management-team" element={<ManagementPage />} />
+            <Route path="/privacy" element={<PrivacyPage />} />
+            <Route path="/terms" element={<TermsPage />} />
+
+            {/* Admin routes */}
+            <Route path="/admin" element={<AdminLoginPage />} />
+            <Route path="/admin/*" element={
+              <AdminErrorBoundary>
+                <AdminDashboard />
+              </AdminErrorBoundary>
+            } />
+
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+
     </AuthProvider>
   </QueryClientProvider>
 );

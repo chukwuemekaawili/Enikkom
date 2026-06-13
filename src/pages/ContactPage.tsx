@@ -5,35 +5,39 @@ import { EditableText } from "@/components/admin";
 import { usePageContent } from "@/hooks/useSiteSettings";
 import { MapPin, Phone, Mail, Clock, Building2, CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
-
-import contactOffice from "@/assets/projects/contact-office.jpg";
+import { siteImageSelections } from "@/content/siteImageSelections";
 
 // Verified office locations from Enikkom documents
 const defaultOffices = [
-  { 
-    name: "Abuja Head Office", 
-    address: "11, 65 Road Abuja Model City, Gwarinpa, FCT, Nigeria",
-    type: "Head Office"
+  {
+    name: "Abuja Head Office",
+    address: "11, 65 Road, Abuja Model City, Gwarinpa, FCT, Nigeria",
+    type: "Head Office",
   },
-  { 
-    name: "Lagos Corporate Office", 
-    address: "5b Theophilus Orji Street, Lekki Phase 1, Lagos, Nigeria",
-    type: "Corporate"
+  {
+    name: "Lagos Corporate Office",
+    address: "No 5b Theophilus Orji Street, Lekki Phase 1, Lagos, Nigeria",
+    type: "Corporate",
   },
-  { 
-    name: "Port Harcourt Fabrication Facility", 
-    address: "Obasi Brothers Industrial Park, Area C, East/West Road, Eleme, Port Harcourt, Rivers State, Nigeria",
-    type: "Fabrication"
-  },
-  { 
-    name: "Arepo Operations Base", 
+  {
+    name: "Base 1 — Arepo",
     address: "7 Joseph Ogunjobi Street, Praise Hill Estate, Arepo, Ogun State, Nigeria",
-    type: "Operations"
+    type: "Operations Base",
   },
-  { 
-    name: "Warri Operations Base", 
+  {
+    name: "Base 2 — Warri",
     address: "Km7-DCS Road, Warri, Delta State, Nigeria",
-    type: "Operations"
+    type: "Operations Base",
+  },
+  {
+    name: "Base 3 — Warri",
+    address: "Opposite Ejovi Jetty, Opete Road, Warri, Delta State, Nigeria",
+    type: "Operations Base",
+  },
+  {
+    name: "Base 4 — Warri",
+    address: "Old NNPC Filling Station, DCS Road, Warri, Delta State, Nigeria",
+    type: "Operations Base",
   },
 ];
 
@@ -41,6 +45,7 @@ export default function ContactPage() {
   const { content } = usePageContent('contact');
   const heroContent = content.hero || {};
   const contactDetails = content.contact_details || {};
+  const contactImages = siteImageSelections.contact;
 
   // Use offices from content or defaults
   const offices = content.offices?.list || defaultOffices;
@@ -50,7 +55,7 @@ export default function ContactPage() {
       <Hero 
         title={heroContent.title || "Contact Enikkom"} 
         subtitle={heroContent.subtitle || "Get in touch to discuss your infrastructure project requirements."} 
-        backgroundImage={heroContent.backgroundImage || contactOffice} 
+        backgroundImage={heroContent.backgroundImage || contactImages.hero} 
         size="small"
         pageSlug="contact"
         sectionKey="hero"
@@ -214,7 +219,7 @@ export default function ContactPage() {
                 <p className="section-eyebrow mb-2">Get Started</p>
                 <h2 className="text-[24px] md:text-[28px] font-bold mb-2">
                   <EditableText
-                    value={content.form?.title || "Request a Quote"}
+                    value={content.form?.title || "Contact Us"}
                     pageSlug="contact"
                     sectionKey="form"
                     field="title"

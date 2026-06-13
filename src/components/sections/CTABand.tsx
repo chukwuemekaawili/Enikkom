@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { ChevronRight, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+
+import { Button } from "@/components/ui/button";
 
 interface CTABandProps {
   headline?: string;
@@ -24,63 +25,60 @@ export function CTABand({
   secondaryCTA = { label: "View Our Track Record", href: "/projects" },
   variant = "dark",
 }: CTABandProps) {
+  const isPrimary = variant === "primary";
+
   return (
-    <section className="bg-charcoal py-16 md:py-20 lg:py-24 relative overflow-hidden">
-      {/* Subtle background pattern */}
-      <div 
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, white 1px, transparent 0)`,
-          backgroundSize: '32px 32px'
-        }}
-      />
-      
-      <div className="container-wide relative z-10">
-        <motion.div 
-          className="text-center max-w-2xl mx-auto"
-          initial={{ opacity: 0, y: 20 }}
+    <section className={`section-padding ${isPrimary ? "bg-background" : "bg-charcoal"}`}>
+      <div className="container-wide">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
+          className={`overflow-hidden rounded-[2rem] border ${
+            isPrimary
+              ? "border-border bg-muted/40"
+              : "border-white/10 bg-white/[0.04] text-white shadow-[0_28px_80px_rgba(0,0,0,0.16)]"
+          }`}
         >
-          <h2 
-            className="text-white text-[24px] md:text-[28px] lg:text-[32px] font-bold mb-4 leading-tight"
-            style={{ textShadow: '0 1px 8px rgba(0, 0, 0, 0.25)' }}
-          >
-            {headline}
-          </h2>
-          <p className="text-white/60 text-[15px] md:text-[16px] mb-8 leading-relaxed max-w-xl mx-auto">
-            {subhead}
-          </p>
+          <div className="grid gap-8 p-7 md:p-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
+            <div>
+              <p
+                className={`text-[10px] font-semibold uppercase tracking-[0.22em] ${
+                  isPrimary ? "text-primary" : "text-primary/80"
+                }`}
+              >
+                Project conversation
+              </p>
+              <h2 className={`mt-4 ${isPrimary ? "text-foreground" : "text-white"}`}>{headline}</h2>
+              <p
+                className={`mt-4 max-w-2xl text-[15px] leading-8 ${
+                  isPrimary ? "text-muted-foreground" : "text-white/62"
+                }`}
+              >
+                {subhead}
+              </p>
+            </div>
 
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Button
-              asChild
-              size="lg"
-              className="h-12 px-7 text-[14px] font-semibold bg-primary hover:bg-primary/90 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-0.5"
-            >
-              <Link to={primaryCTA.href}>
-                {primaryCTA.label}
-                <ChevronRight className="ml-1 h-4 w-4" />
-              </Link>
-            </Button>
+            <div className="lg:pl-10 lg:border-l lg:border-white/10">
+              <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
+                <Button asChild size="lg">
+                  <Link to={primaryCTA.href}>
+                    {primaryCTA.label}
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </Button>
 
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="h-12 px-7 text-[14px] font-semibold border-white/20 text-white bg-transparent hover:bg-white/8 hover:border-white/35 rounded-xl transition-all duration-200"
-            >
-              <Link to={secondaryCTA.href}>
-                {secondaryCTA.label}
-                <ArrowRight className="ml-1.5 h-4 w-4" />
-              </Link>
-            </Button>
+                <Button asChild size="lg" variant={isPrimary ? "outline" : "premium"}>
+                  <Link to={secondaryCTA.href}>{secondaryCTA.label}</Link>
+                </Button>
+              </div>
+
+              <p className={`mt-5 text-[12px] ${isPrimary ? "text-muted-foreground" : "text-white/42"}`}>
+                No obligation. Practical scoping. Response within 24 to 48 hours.
+              </p>
+            </div>
           </div>
-
-          <p className="text-white/40 text-[12px] mt-6 font-medium">
-            ✓ No obligation · ✓ Response within 24 hours · ✓ Free site assessment
-          </p>
         </motion.div>
       </div>
     </section>

@@ -1,13 +1,12 @@
 import { Layout } from "@/components/layout";
 import { Hero, CTABand, AnimatedKPIBand } from "@/components/sections";
 import { motion } from "framer-motion";
-import { Target, Eye, Award, Users, Wrench, Shield, Lightbulb, Heart, Rocket, TrendingUp } from "lucide-react";
-import { EditableText, EditableImage } from "@/components/admin";
+import { Award, Building, Globe, Heart, Lightbulb, Rocket, Shield, Target, TrendingUp } from "lucide-react";
+import { EditableText } from "@/components/admin";
 import { usePageContent } from "@/hooks/useSiteSettings";
-
-// Import authentic images from PDFs
-import heroHddRig from "@/assets/projects/hdd-night-panorama.jpg";
-import pipelineConstruction from "@/assets/projects/pipe-laying-crane.jpg";
+import { companyIntroduction, corporateStatements, corporateStructureChart } from "@/content/companyProfile";
+import { EnhancedImage } from "@/components/ui/enhanced-image";
+import { siteImageSelections } from "@/content/siteImageSelections";
 
 // PRICE Core Values from Enikkom documents
 const coreValues = [
@@ -40,193 +39,151 @@ const coreValues = [
 
 // Verified milestones from Enikkom documents
 const milestones = [
-  { year: "1995", event: "Engr. Edward Amene founded Enikkom Group in Lagos after 14 years with Shell" },
-  { year: "2003", event: "Pioneered HDD technology in Nigeria with historic River Niger crossing" },
-  { year: "2008", event: "Major fleet expansion with new HDD rigs and marine equipment" },
-  { year: "2010", event: "Completed Nigeria's largest pipeline crossing - 40\" x 760m at 100ft depth (Yenagoa) for Daewoo/SPDC" },
-  { year: "2012", event: "Strategic partnership formed with HDDThailand for advanced trenchless technology" },
-  { year: "2015", event: "Achieved ISO 9001, 14001, and OHSAS 18001 certifications" },
-  { year: "2016", event: "Completed Africa's longest bundled crossing - 12\"+3\" x 2.78km Otumara-Escravos for Saipem/SPDC" },
-  { year: "2017", event: "Completed Africa's longest single drill - 16\" x 3.1km Atlas Cove-Mosimi for NNPC/PPMC" },
-  { year: "2018", event: "Upgraded to ISO 45001 for occupational health and safety" },
-  { year: "2020", event: "HDDThailand-Enikkom Ltd formed; became West Africa's largest HDD fleet operator" },
-  { year: "2021", event: "Commenced 10\" x 12km OML34 CHDD project - Nigeria's longest continuous HDD" },
-  { year: "2025", event: "30 years of excellence - Over 100km HDD installed, zero LTI record, 92% Nigerian content" },
+  { year: "1995", event: "Engr. Edward Amene founded Enikkom Group in Lagos after 14 years as a Project Engineer with SPDC" },
+  { year: "2003", event: "Pioneered HDD technology in Nigeria with the historic first crossing of the River Niger" },
+  { year: "2009", event: "Enikkom Construction Limited (ECL) incorporated in March 2009 as the primary operating entity" },
+  { year: "2010", event: "Completed Nigeria's largest pipeline crossing — 40\" × 760m for Daewoo/SPDC at Yenagoa, Bayelsa State" },
+  { year: "2013", event: "The E-Place Limited acquired the interest of EISNL in ECL, restructuring the Group's ownership" },
+  { year: "2016", event: "Set three African records: longest single drill (16\"×3.1km), deepest crossing (36\"×1.2km, 80m) and longest bundled crossing (12\"+3\"×2.78km)" },
+  { year: "2018", event: "Achieved ISO 9001:2015, ISO 14001:2015, and ISO 45001:2018 management system certifications" },
+  { year: "2020", event: "HDDTEC Ltd formed in May 2020 by ECL and The E-Place Limited; operates Nigeria's largest in-country HDD fleet" },
+  { year: "2021", event: "Commenced 10\" × 12km OML34 CHDD project for NPDC/ND Western — Nigeria's longest Continuous HDD" },
+  { year: "2025", event: "34 years of experience — over 100km HDD installed, zero LTI record, and a proven in-country HDD fleet" },
 ];
 
 export default function CompanyIntroPage() {
   const { content } = usePageContent('company-intro');
+  const companyIntroImages = siteImageSelections.companyIntro;
   
   const heroContent = content.hero || {};
-  const aboutContent = content.about || {};
-  const missionContent = content.mission || {};
   const timelineContent = content.timeline || {};
+  const timelineTitle =
+    typeof timelineContent.title === "string" && timelineContent.title.toLowerCase().includes("year")
+      ? "34 Years of Experience"
+      : timelineContent.title || "34 Years of Experience";
 
   return (
     <Layout>
       <Hero
         title={heroContent.title || "Company Introduction"}
         subtitle={heroContent.subtitle || "Nigeria's foremost indigenous trenchless engineering and construction company since 1995."}
-        backgroundImage={heroContent.backgroundImage || heroHddRig}
+        backgroundImage={heroContent.backgroundImage || companyIntroImages.hero}
         size="default"
         pageSlug="company-intro"
         sectionKey="hero"
         imageField="backgroundImage"
       />
 
-      {/* Company Overview */}
+      {/* Company Introduction */}
       <section className="section-padding">
         <div className="container-wide">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              <h2 className="mb-6">
-                <EditableText
-                  value={aboutContent.title || "Who We Are"}
-                  pageSlug="company-intro"
-                  sectionKey="about"
-                  field="title"
-                />
-              </h2>
-              <p className="text-muted-foreground mb-4 leading-relaxed">
-                <EditableText
-                  value={aboutContent.paragraph1 || "Enikkom Construction Limited is a wholly Nigerian owned and managed engineering and construction company, established in 1995 by Engr. Edward Amene after 14 years as a Project Engineer with Shell Petroleum Development Company."}
-                  pageSlug="company-intro"
-                  sectionKey="about"
-                  field="paragraph1"
-                  multiline
-                />
-              </p>
-              <p className="text-muted-foreground mb-4 leading-relaxed">
-                <EditableText
-                  value={aboutContent.paragraph2 || "In 2003, we pioneered Horizontal Directional Drilling (HDD) technology in Nigeria with the historic River Niger crossing, establishing the company as the technical leader in trenchless technology across West Africa."}
-                  pageSlug="company-intro"
-                  sectionKey="about"
-                  field="paragraph2"
-                  multiline
-                />
-              </p>
-              <p className="text-muted-foreground mb-4 leading-relaxed">
-                <EditableText
-                  value={aboutContent.paragraph3 || "Today, we operate West Africa's largest fleet of HDD rigs (10+ maxi rigs up to 500T pullback) through our strategic partnership with HDDThailand, and hold the records for Nigeria's longest single drill (3.1km) and deepest crossing (80m)."}
-                  pageSlug="company-intro"
-                  sectionKey="about"
-                  field="paragraph3"
-                  multiline
-                />
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                <EditableText
-                  value={aboutContent.paragraph4 || "With a 92% Nigerian content rating and a highly skilled indigenous workforce of 500+, we deliver complex infrastructure projects for major IOCs and operators including Shell, Dangote, Saipem, NNPC, and Chevron."}
-                  pageSlug="company-intro"
-                  sectionKey="about"
-                  field="paragraph4"
-                  multiline
-                />
-              </p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="relative"
-            >
-              <EditableImage
-                src={aboutContent.image || pipelineConstruction}
-                alt="Enikkom pipeline construction"
-                className="rounded-lg shadow-lg w-full"
-                pageSlug="company-intro"
-                sectionKey="about"
-                field="image"
-              />
-              <div className="absolute -bottom-6 -left-6 bg-primary text-primary-foreground p-6 rounded-lg shadow-lg">
-                <p className="text-4xl font-bold">
-                  <EditableText
-                    value={aboutContent.badge_value || "29+"}
-                    pageSlug="company-intro"
-                    sectionKey="about"
-                    field="badge_value"
-                  />
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mx-auto max-w-6xl rounded-[2rem] border border-border/60 bg-white px-6 py-8 shadow-[0_24px_80px_rgba(15,23,42,0.08)] sm:px-8 lg:px-12 lg:py-12"
+          >
+            <div className="grid gap-10 xl:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] xl:gap-14">
+              <div>
+                <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-primary">
+                  {companyIntroduction.eyebrow}
                 </p>
-                <p className="text-sm">
-                  <EditableText
-                    value={aboutContent.badge_label || "Years of Excellence"}
-                    pageSlug="company-intro"
-                    sectionKey="about"
-                    field="badge_label"
-                  />
+                <h2 className="mb-6 text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
+                  {companyIntroduction.title}
+                </h2>
+                <p className="text-[17px] leading-8 text-slate-700 md:text-[18px]">
+                  {companyIntroduction.lead}
                 </p>
               </div>
-            </motion.div>
-          </div>
+
+              <div className="space-y-5 border-l-0 border-border/70 xl:border-l xl:pl-10">
+                {companyIntroduction.body.map((paragraph) => (
+                  <p
+                    key={paragraph}
+                    className="text-[15px] leading-8 text-muted-foreground md:text-[16px]"
+                  >
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-10 grid gap-6 lg:grid-cols-2">
+              {companyIntroduction.subsidiaries.map((entry, index) => {
+                const Icon = index === 0 ? Building : Globe;
+                return (
+                  <div
+                    key={entry.name}
+                    className="rounded-[1.75rem] border border-border/70 bg-slate-50/80 p-6 md:p-7"
+                  >
+                    <div className="mb-5 flex items-start gap-4">
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary/10">
+                        <Icon className="h-6 w-6 text-primary" />
+                      </div>
+                      <h3 className="pt-1 text-xl font-semibold tracking-tight text-foreground">
+                        {entry.name}
+                      </h3>
+                    </div>
+                    <div className="space-y-4">
+                      {entry.paragraphs.map((paragraph) => (
+                        <p
+                          key={paragraph}
+                          className="text-[14px] leading-7 text-muted-foreground md:text-[15px]"
+                        >
+                          {paragraph}
+                        </p>
+                      ))}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Mission & Vision - Updated from Enikkom documents */}
+      {/* Mission, Vision & Corporate Excellence */}
       <section className="section-padding bg-muted/30">
         <div className="container-wide">
-          <div className="grid md:grid-cols-2 gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4 }}
-              className="bg-card p-8 rounded-lg border"
-            >
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                <Target className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="text-xl font-semibold mb-4">
-                <EditableText
-                  value={missionContent.mission_title || "Our Mission"}
-                  pageSlug="company-intro"
-                  sectionKey="mission"
-                  field="mission_title"
-                />
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                <EditableText
-                  value={missionContent.mission_text || "To offer innovative and cost effective solutions to our Clients through the delivery of world-class engineering and construction services that meet the highest standards of quality, safety, and environmental responsibility."}
-                  pageSlug="company-intro"
-                  sectionKey="mission"
-                  field="mission_text"
-                  multiline
-                />
-              </p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.1 }}
-              className="bg-card p-8 rounded-lg border"
-            >
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                <Eye className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="text-xl font-semibold mb-4">
-                <EditableText
-                  value={missionContent.vision_title || "Our Vision"}
-                  pageSlug="company-intro"
-                  sectionKey="mission"
-                  field="vision_title"
-                />
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                <EditableText
-                  value={missionContent.vision_text || "To be the foremost and capable indigenous Engineering construction company in Nigeria, committed to pushing limits and breaking records in HDD, pipeline, and marine infrastructure delivery."}
-                  pageSlug="company-intro"
-                  sectionKey="mission"
-                  field="vision_text"
-                  multiline
-                />
-              </p>
-            </motion.div>
+          <div className="mb-12 text-center">
+            <p className="section-eyebrow mb-2">Purpose & Standards</p>
+            <h2 className="mb-4">Mission, Vision & Corporate Excellence</h2>
+            <p className="mx-auto max-w-3xl text-[15px] leading-7 text-muted-foreground md:text-[16px]">
+              The current corporate statements below are taken directly from the latest approved company profile documents.
+            </p>
+          </div>
+
+          <div className="grid gap-6 lg:grid-cols-3">
+            {corporateStatements.map((statement, index) => {
+              const Icon =
+                statement.key === "mission"
+                  ? Target
+                  : statement.key === "vision"
+                    ? Rocket
+                    : Award;
+
+              return (
+                <motion.div
+                  key={statement.key}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.08 }}
+                  className="rounded-[1.75rem] border border-border/70 bg-card p-7 shadow-sm"
+                >
+                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10">
+                    <Icon className="h-6 w-6 text-primary" />
+                  </div>
+                  <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.24em] text-primary/80">
+                    {statement.title}
+                  </p>
+                  <p className="text-[17px] leading-8 text-foreground md:text-[18px]">
+                    {statement.text}
+                  </p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -262,6 +219,33 @@ export default function CompanyIntroPage() {
         </div>
       </section>
 
+      {/* Corporate Structure */}
+      <section className="section-padding bg-muted/30">
+        <div className="container-wide">
+          <div className="text-center mb-12">
+            <p className="section-eyebrow mb-2">Organization</p>
+            <h2 className="mb-4">{corporateStructureChart.title}</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              {corporateStructureChart.description}
+            </p>
+          </div>
+          <div className="flex justify-center">
+            <div className="w-full max-w-5xl rounded-[1.75rem] border border-border/70 bg-white p-4 shadow-sm overflow-hidden">
+              <EnhancedImage
+                src={corporateStructureChart.imagePath}
+                alt={corporateStructureChart.alt}
+                className="w-full h-auto object-contain rounded-xl"
+                tone="natural"
+                fallbackLabel={corporateStructureChart.title}
+              />
+              <p className="text-center text-[13px] text-muted-foreground mt-4 block md:hidden">
+                {corporateStructureChart.mobileHint}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Timeline */}
       <section className="section-padding bg-charcoal text-white">
         <div className="container-wide">
@@ -276,7 +260,7 @@ export default function CompanyIntroPage() {
             </p>
             <h2 className="mb-4 text-white">
               <EditableText
-                value={timelineContent.title || "30 Years of Excellence"}
+                value={timelineTitle}
                 pageSlug="company-intro"
                 sectionKey="timeline"
                 field="title"

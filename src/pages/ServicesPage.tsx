@@ -1,104 +1,111 @@
 import { Layout } from "@/components/layout";
 import { Hero, CTABand, CapabilityCard, CertificationsBlock } from "@/components/sections";
-import { Drill, PipetteIcon, Anchor, Building2, Waves, Wrench } from "lucide-react";
+import { Drill, PipetteIcon, Anchor, Factory, Shield, Briefcase } from "lucide-react";
 import { motion } from "framer-motion";
 import { usePageContent } from "@/hooks/useSiteSettings";
 import { EditableText, EditableImage } from "@/components/admin";
+import { siteImageSelections } from "@/content/siteImageSelections";
 
-// Import UNIQUE images for Services page (different from other pages)
-import heroServices from "@/assets/projects/hdd-team-1.jpg";
-import svcHdd from "@/assets/projects/hdd-operations-2.jpg";
-import svcPipeline from "@/assets/projects/pipeline-crew.jpg";
-import svcDredging from "@/assets/projects/dredging-hero.jpg";
-import svcJetty from "@/assets/projects/crane-operations.jpg";
-import svcShore from "@/assets/projects/shore-approach.jpg";
-import svcFacilities from "@/assets/projects/safety-signage.jpg";
+const serviceImages = siteImageSelections.services;
 
+// Service categories — sourced from approved Index Page and About Structure documents
 const services = [
   {
-    title: "Trenchless Crossings (HDD)",
-    description: "Pioneers of Horizontal Directional Drilling in Nigeria with the largest fleet of HDD rigs (up to 500T pullback) for river, road, railway and environmental crossings.",
-    href: "/capabilities/hdd",
+    title: "Horizontal Directional Drilling (HDD)",
+    description: "Our HDD and Direct Pipe services provide safe, trenchless solutions to accurately and efficiently install underground pipelines and utilities across roads, railways, rivers, and other obstacles. We deliver safe, economical, and environmentally friendly projects across Nigeria.",
+    href: "/services",
     icon: Drill,
-    image: svcHdd,
-    metric: "Up to 48\" diameter, 3km span",
+    image: serviceImages.hdd,
+    metric: "3.1km span",
     features: [
-      "HDD river & creek crossings",
-      "Road & railway crossings",
-      "Thrust boring & pipe ramming",
-      "Micro tunneling"
+      "Horizontal Directional Drilling (HDD)",
+      "Guided Boring (Thrust Boring)",
+      "Micro-Tunneling (Slurry Spoil Removal)",
+      "Direct Pipe Technology",
+      "Horizontal Boring (Hole Hog)",
+      "Pipe Ramming (Casing Installation)",
+      "HDD Rescue Operations",
     ],
   },
   {
-    title: "Pipeline Construction",
-    description: "Complete EPC services for oil, gas and water pipelines including fabrication, welding, coating, installation and hydrotesting in land, swamp and offshore environments.",
-    href: "/capabilities/pipelines-flowlines",
+    title: "Pipeline Works",
+    description: "We provide comprehensive pipeline and flowline infrastructure construction, fabrication, replacement, repair, and maintenance services to pipeline owners throughout Nigeria. We deliver irrespective of terrain — land, swamp, and offshore.",
+    href: "/services",
     icon: PipetteIcon,
-    image: svcPipeline,
-    metric: "Up to 48\" diameter capacity",
+    image: serviceImages.pipelines,
+    metric: "Land, Swamp & Offshore",
     features: [
-      "Land, swamp & offshore pipelines",
-      "Flowline construction",
-      "Field joint coating",
-      "Hydrostatic testing"
+      "Land pipeline construction",
+      "Swamp flowline installation",
+      "Offshore pipeline works",
+      "Fabrication & welding",
+      "Hydrostatic testing",
+      "Field joint coating (FJC)",
     ],
   },
   {
-    title: "Dredging & Piling",
-    description: "Marine dredging for channel deepening, reclamation and maintenance. Foundation piling including bored, driven and sheet piles for marine and civil structures.",
-    href: "/capabilities/dredging-piling",
+    title: "Dredging",
+    description: "We operate some of the most modern and versatile dredging fleets in the industry, in every size and segment, providing flexible solutions for sand filling, reclamation works, and piling. We specialise in the difficult swamps of Nigeria.",
+    href: "/services",
     icon: Anchor,
-    image: svcDredging,
-    metric: "Multiple dredgers available",
+    image: serviceImages.dredging,
+    metric: "Sand filling, Reclamation & Piling",
     features: [
+      "Sand filling & land reclamation",
+      "Slot & access sweeping",
       "Capital & maintenance dredging",
-      "Land reclamation",
-      "Driven & bored piling",
-      "Sheet pile walls"
+      "Pile driving & extraction",
+      "Cofferdam installation",
+      "Shore protection piling",
     ],
   },
   {
-    title: "Jetty & Quay Walls",
-    description: "Design and construction of jetties, quay walls, wharves and marine terminal structures to international standards for ports and industrial facilities.",
-    href: "/capabilities/jetty-quay-walls",
-    icon: Building2,
-    image: svcJetty,
-    metric: "Heavy-duty marine structures",
+    title: "Fabrication",
+    description: "We provide fit-for-purpose, integrated production systems for maximising recovery, accelerating production, managing risk, and improving project economics. Our services are designed to international standards and equipped with leading process technologies.",
+    href: "/services",
+    icon: Factory,
+    image: serviceImages.facilities,
+    metric: "Flow stations, Wellheads & Structural",
     features: [
-      "Jetty construction",
-      "Quay wall installation",
-      "Berthing facilities",
-      "Marine terminal structures"
+      "Flow station construction",
+      "Wellhead upgrade & maintenance",
+      "Manifold inspection & maintenance",
+      "Plant turnaround maintenance",
+      "Structural construction",
+      "Pipeline pigging operations",
     ],
   },
   {
-    title: "Shore Approach",
-    description: "Pipeline shore approach construction including beach crossings, nearshore installations and tie-in works for onshore-offshore infrastructure connections.",
-    href: "/capabilities/shore-approach",
-    icon: Waves,
-    image: svcShore,
-    metric: "Beach to platform connections",
+    title: "Project Management & Support",
+    description: "Integrated planning, execution support, field coordination, and project controls for complex HDD, pipeline, dredging, and facilities packages from mobilisation through close-out.",
+    href: "/services",
+    icon: Briefcase,
+    image: serviceImages.projectManagement,
+    metric: "Planning, Controls & Field Support",
     features: [
-      "Beach crossings",
-      "Nearshore installation",
-      "Shore pull operations",
-      "Tie-in works"
+      "Project planning & scheduling",
+      "Field coordination & reporting",
+      "Vendor and subcontractor interface",
+      "QA/QC and HSE documentation support",
+      "Mobilisation and close-out support",
     ],
   },
   {
-    title: "Facilities Construction",
-    description: "Wellhead upgrades, manifold maintenance, structural fabrication and installation for oil & gas production facilities and flow stations.",
-    href: "/capabilities/facilities",
-    icon: Wrench,
-    image: svcFacilities,
-    metric: "Brownfield & greenfield",
+    title: "Pipeline Security & Monitoring",
+    description: "Solutions focused on the strength of research and development; our innovation is tailored to combat pipeline vandalism. We are capable of monitoring and detecting tampering on pipelines in real time, protecting critical energy infrastructure.",
+    href: "/services",
+    icon: Shield,
+    image: serviceImages.security,
+    metric: "Real-time detection & monitoring",
     features: [
-      "Wellhead platform upgrades",
-      "Manifold maintenance",
-      "Structural fabrication",
-      "Piping installation"
+      "Real-time pipeline monitoring",
+      "Anti-vandalism systems",
+      "Tampering detection",
+      "Security operations coordination",
+      "Pipeline integrity management",
     ],
   },
+
 ];
 
 export default function ServicesPage() {
@@ -112,9 +119,9 @@ export default function ServicesPage() {
       <Hero
         title={heroContent.title || "Our Services"}
         subtitle={heroContent.subtitle || "Comprehensive engineering and construction solutions for Nigeria's most demanding infrastructure projects. From trenchless crossings to marine civil works."}
-        primaryCTA={{ label: "Request a Quote", href: "/contact" }}
+        primaryCTA={{ label: "Contact Us", href: "/contact" }}
         secondaryCTA={{ label: "View Projects", href: "/projects" }}
-        backgroundImage={heroContent.backgroundImage || heroServices}
+        backgroundImage={heroContent.backgroundImage || serviceImages.hero}
         size="default"
         pageSlug="services"
         sectionKey="hero"
@@ -208,7 +215,7 @@ export default function ServicesPage() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { value: whyUsContent.stat1_value || "29+", label: whyUsContent.stat1_label || "Years Experience" },
+              { value: "34", label: whyUsContent.stat1_label || "Years in Operation" },
               { value: whyUsContent.stat2_value || "100+", label: whyUsContent.stat2_label || "KM HDD Installed" },
               { value: whyUsContent.stat3_value || "500+", label: whyUsContent.stat3_label || "Strong Workforce" },
               { value: whyUsContent.stat4_value || "Zero", label: whyUsContent.stat4_label || "LTI Record" },
@@ -239,6 +246,80 @@ export default function ServicesPage() {
                 </div>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Scope of Work Differentiation Table */}
+      <section className="section-padding bg-background">
+        <div className="container-wide">
+          <motion.div
+            className="text-center mb-10"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <p className="text-[11px] md:text-xs font-semibold uppercase tracking-widest text-primary mb-3">
+              Project Experience
+            </p>
+            <h2 className="mb-3">Scope of Work — At a Glance</h2>
+            <p className="text-[14px] md:text-[15px] text-muted-foreground max-w-xl mx-auto">
+              A summary of the major work categories Enikkom Group has executed across Nigeria.
+            </p>
+          </motion.div>
+
+          <div className="overflow-x-auto rounded-xl border border-border">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="bg-muted/60 border-b border-border">
+                  <th className="text-left px-4 py-3 font-semibold text-foreground">Service Category</th>
+                  <th className="text-left px-4 py-3 font-semibold text-foreground">Scope / Sub-types</th>
+                  <th className="text-left px-4 py-3 font-semibold text-foreground">Example Projects</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border">
+                {[
+                  {
+                    category: "Horizontal Directional Drilling (HDD)",
+                    scope: "HDD, Guided Boring, Microtunneling, Direct Pipe, Pipe Ramming, HDD Rescue",
+                    examples: "OML34 CHDD (10\"×12km), River Niger OB3 (48\"×2km), Atlas Cove-Mosimi (16\"×3.1km)",
+                  },
+                  {
+                    category: "Pipeline Works",
+                    scope: "Land, Swamp & Offshore flowlines; Fabrication; Welding; Hydrotesting; FJC",
+                    examples: "NIPCO 8km×18\", Zakhem Projects, CMEs Pipeline Calabar (NDPHC)",
+                  },
+                  {
+                    category: "Dredging",
+                    scope: "Sand filling, Reclamation, Capital dredging, Pile driving, Cofferdam installation",
+                    examples: "OML34 Cofferdam Works, OB3 Sheet Piling, Conoil Reclamation",
+                  },
+                  {
+                    category: "Fabrication",
+                    scope: "Flow station works, Wellhead upgrades, Manifold maintenance, Plant turnaround",
+                    examples: "Flow station & wellhead operations, Pigging operations",
+                  },
+                  {
+                    category: "Project Management & Support",
+                    scope: "Project planning, controls, site coordination, QA/QC & HSE reporting, mobilisation support, close-out",
+                    examples: "Integrated delivery support across HDD, pipeline, dredging, and facilities packages",
+                  },
+                  {
+                    category: "Pipeline Security & Monitoring",
+                    scope: "Real-time tampering detection, Monitoring systems, Integrity management",
+                    examples: "PIEJV pipeline security operations across Niger Delta",
+                  },
+
+                ].map((row, i) => (
+                  <tr key={i} className={i % 2 === 0 ? "bg-background" : "bg-muted/20"}>
+                    <td className="px-4 py-3 font-medium text-foreground whitespace-nowrap">{row.category}</td>
+                    <td className="px-4 py-3 text-muted-foreground">{row.scope}</td>
+                    <td className="px-4 py-3 text-muted-foreground">{row.examples}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </section>

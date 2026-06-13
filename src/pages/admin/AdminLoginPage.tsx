@@ -43,7 +43,7 @@ const AdminLoginPage: React.FC = () => {
 
     try {
       const { error: signInError } = await signIn(email, password);
-      
+
       if (signInError) {
         if (signInError.message.includes('Invalid login credentials')) {
           setError('Invalid email or password. Please try again.');
@@ -90,6 +90,12 @@ const AdminLoginPage: React.FC = () => {
               <Alert variant="destructive">
                 <AlertCircle className="h-4 w-4" />
                 <AlertDescription>{error}</AlertDescription>
+              </Alert>
+            )}
+            {!isLoading && user && !isAdmin && (
+              <Alert variant="destructive">
+                <AlertCircle className="h-4 w-4" />
+                <AlertDescription>Login successful, but Admin Check failed. Contact support.</AlertDescription>
               </Alert>
             )}
 

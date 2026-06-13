@@ -16,7 +16,7 @@ interface KPIStatsBandProps {
 const defaultStats: KPIStat[] = [
   { value: "100", label: "KM HDD Installed", icon: Shield, suffix: "+" },
   { value: "500", label: "Workforce", icon: Users, suffix: "+" },
-  { value: "30", label: "Years Experience", icon: Clock, suffix: "+" },
+  { value: "34", label: "Years Experience", icon: Clock },
   { value: "0", label: "LTI Record", icon: Award },
 ];
 

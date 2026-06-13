@@ -1,0 +1,234 @@
+from __future__ import annotations
+
+from collections import Counter
+from dataclasses import dataclass
+from pathlib import Path
+from typing import Iterable, Sequence
+
+from PIL import Image
+
+
+ROOT = Path(__file__).resolve().parents[1]
+IMAGES_ROOT = ROOT / "src" / "assets" / "images"
+RESPONSIVE_ROOT = IMAGES_ROOT / "_responsive"
+GENERATED_ROOT = ROOT / "src" / "generated"
+
+INCLUDED_TOP_LEVEL_DIRS = {"projects", "selected", "team"}
+EXCLUDED_SEGMENTS = {"_responsive", "_review", "logos"}
+SOURCE_EXTENSIONS = {".jpg", ".jpeg", ".png"}
+TARGET_WIDTHS = (480, 960, 1600)
+
+
+@dataclass(frozen=True)
+class VariantRecord:
+    import_path: str
+    width: int
+    type: str = "image/webp"
+
+
+@dataclass(frozen=True)
+class ImageRecord:
+    import_path: str
+    width: int
+    height: int
+    variants: tuple[VariantRecord, ...]
+
+
+def iter_source_images() -> Iterable[Path]:
+    for path in IMAGES_ROOT.rglob("*"):
+        if not path.is_file() or path.suffix.lower() not in SOURCE_EXTENSIONS:
+            continue
+
+        relative = path.relative_to(IMAGES_ROOT)
+        if relative.parts[0] not in INCLUDED_TOP_LEVEL_DIRS:
+            continue
+        if EXCLUDED_SEGMENTS.intersection(relative.parts):
+            continue
+
+        yield path
+
+
+def build_collision_key(image_path: Path) -> tuple[str, str]:
+    relative = image_path.relative_to(IMAGES_ROOT)
+    return (relative.parent.as_posix(), image_path.stem.lower())
+
+
+def collect_colliding_stems(source_images: Sequence[Path]) -> set[tuple[str, str]]:
+    counts = Counter(build_collision_key(path) for path in source_images)
+    return {key for key, count in counts.items() if count > 1}
+
+
+def build_variant_basename(image_path: Path, colliding_stems: set[tuple[str, str]]) -> str:
+    if build_collision_key(image_path) in colliding_stems:
+        return f"{image_path.stem}-{image_path.suffix.lower().lstrip('.')}"
+    return image_path.stem
+
+
+def build_variant_widths(source_width: int) -> list[int]:
+    widths = sorted({min(source_width, width) for width in TARGET_WIDTHS})
+    if source_width < TARGET_WIDTHS[0]:
+        return [source_width]
+    return widths
+
+
+def ensure_mode(image: Image.Image) -> Image.Image:
+    if image.mode in {"RGB", "RGBA"}:
+        return image
+    if image.mode in {"P", "LA"}:
+        return image.convert("RGBA")
+    return image.convert("RGB")
+
+
+def save_variant(source: Image.Image, output_path: Path, target_width: int) -> None:
+    source = ensure_mode(source)
+    source_width, source_height = source.size
+
+    if target_width == source_width:
+        resized = source.copy()
+    else:
+        target_height = round(source_height * (target_width / source_width))
+        resized = source.resize((target_width, target_height), Image.Resampling.LANCZOS)
+
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    resized.save(
+        output_path,
+        format="WEBP",
+        quality=82,
+        method=6,
+    )
+
+
+def cleanup_stale_variants(expected_paths: set[Path]) -> None:
+    if not RESPONSIVE_ROOT.exists():
+        return
+
+    for existing_path in RESPONSIVE_ROOT.rglob("*.webp"):
+        if existing_path not in expected_paths:
+            existing_path.unlink()
+
+    nested_directories = sorted(
+        (path for path in RESPONSIVE_ROOT.rglob("*") if path.is_dir()),
+        key=lambda path: len(path.parts),
+        reverse=True,
+    )
+    for directory in nested_directories:
+        if directory == RESPONSIVE_ROOT:
+            continue
+        if not any(directory.iterdir()):
+            directory.rmdir()
+
+
+def generate_manifest(records: dict[str, ImageRecord]) -> None:
+    GENERATED_ROOT.mkdir(parents=True, exist_ok=True)
+    manifest_path = GENERATED_ROOT / "imageManifest.ts"
+    import_names: dict[str, str] = {}
+
+    def get_import_name(import_path: str) -> str:
+        import_name = import_names.get(import_path)
+        if import_name is None:
+            import_name = f"asset_{len(import_names)}"
+            import_names[import_path] = import_name
+        return import_name
+
+    body_lines = ["export const generatedImageManifest: Record<string, GeneratedImageRecord> = {"]
+
+    for relative_path, record in sorted(records.items()):
+        source_import_name = get_import_name(record.import_path)
+        body_lines.append(f'  "{relative_path}": {{')
+        body_lines.append(f"    src: {source_import_name},")
+        body_lines.append(f"    width: {record.width},")
+        body_lines.append(f"    height: {record.height},")
+        body_lines.append("    variants: [")
+        for variant in record.variants:
+            variant_import_name = get_import_name(variant.import_path)
+            body_lines.append(
+                f'      {{ src: {variant_import_name}, width: {variant.width}, type: "{variant.type}" }},'
+            )
+        body_lines.append("    ],")
+        body_lines.append("  },")
+
+    body_lines.extend(
+        [
+            "};",
+            "",
+        ]
+    )
+
+    lines = ["// Generated by scripts/generate_responsive_images.py"]
+    for import_path, import_name in import_names.items():
+        lines.append(f'import {import_name} from "{import_path}";')
+
+    lines.extend(
+        [
+            "",
+            "export interface GeneratedResponsiveVariant {",
+            "  src: string;",
+            "  width: number;",
+            '  type: "image/webp";',
+            "}",
+            "",
+            "export interface GeneratedImageRecord {",
+            "  src: string;",
+            "  width: number;",
+            "  height: number;",
+            "  variants: readonly GeneratedResponsiveVariant[];",
+            "}",
+            "",
+            *body_lines,
+        ]
+    )
+
+    temp_manifest_path = manifest_path.with_name(f".{manifest_path.name}.tmp")
+    temp_manifest_path.write_text("\n".join(lines), encoding="utf-8")
+    temp_manifest_path.replace(manifest_path)
+
+
+def main() -> None:
+    source_images = sorted(iter_source_images(), key=lambda path: path.as_posix())
+    colliding_stems = collect_colliding_stems(source_images)
+    records: dict[str, ImageRecord] = {}
+    generated_variant_paths: set[Path] = set()
+
+    for image_path in source_images:
+        relative_path = image_path.relative_to(IMAGES_ROOT).as_posix()
+        variant_basename = build_variant_basename(image_path, colliding_stems)
+
+        with Image.open(image_path) as source:
+            source.load()
+            width, height = source.size
+            variant_widths = build_variant_widths(width)
+            variants: list[VariantRecord] = []
+
+            for variant_width in variant_widths:
+                variant_relative_path = (
+                    Path("_responsive")
+                    / image_path.relative_to(IMAGES_ROOT).parent
+                    / f"{variant_basename}--w{variant_width}.webp"
+                )
+                variant_path = IMAGES_ROOT / variant_relative_path
+                save_variant(source, variant_path, variant_width)
+                generated_variant_paths.add(variant_path)
+                variants.append(
+                    VariantRecord(
+                        import_path=f"../assets/images/{variant_relative_path.as_posix()}",
+                        width=variant_width,
+                    )
+                )
+
+        records[relative_path] = ImageRecord(
+            import_path=f"../assets/images/{relative_path}",
+            width=width,
+            height=height,
+            variants=tuple(variants),
+        )
+
+    cleanup_stale_variants(generated_variant_paths)
+    generate_manifest(records)
+    print(
+        f"Generated responsive variants for {len(records)} images and "
+        f"{len(generated_variant_paths)} responsive files."
+    )
+
+
+if __name__ == "__main__":
+    main()

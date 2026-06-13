@@ -198,7 +198,7 @@ export default function PrivacyPage() {
                 </p>
                 <p className="text-muted-foreground">
                   Phone: <EditableText
-                    value={pageContent.contact_phone || "+234 803 508 2614"}
+                    value={pageContent.contact_phone || "+234 806 573 8555"}
                     pageSlug="privacy"
                     sectionKey="main"
                     field="contact_phone"

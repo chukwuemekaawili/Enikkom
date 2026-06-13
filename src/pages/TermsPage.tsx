@@ -246,7 +246,7 @@ export default function TermsPage() {
                 </p>
                 <p className="text-muted-foreground">
                   Phone: <EditableText
-                    value={pageContent.contact_phone || "+234 803 508 2614"}
+                    value={pageContent.contact_phone || "+234 806 573 8555"}
                     pageSlug="terms"
                     sectionKey="main"
                     field="contact_phone"

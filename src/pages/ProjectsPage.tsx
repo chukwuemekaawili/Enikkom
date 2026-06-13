@@ -2,66 +2,69 @@ import { useState } from "react";
 import { Layout } from "@/components/layout";
 import { Hero, CTABand, CaseStudyCard } from "@/components/sections";
 import { EditableText } from "@/components/admin";
-import { usePageContent } from "@/hooks/useSiteSettings";
+import { getProjectImage } from "@/content/projectImageSelections";
+import { siteImageSelections } from "@/content/siteImageSelections";
+import { usePageContent, useCollection } from "@/hooks/useSiteSettings";
 import { Button } from "@/components/ui/button";
+import { EnhancedImage } from "@/components/ui/enhanced-image";
 import { motion } from "framer-motion";
 
-// Import authentic project images - UNIQUE thumbnails for each project
-import heroProjects from "@/assets/projects/hero-hdd.jpg";
-import thumbOml34 from "@/assets/projects/hdd-rig-night.jpg";
-import thumbLekki from "@/assets/projects/lekki-gas-pipeline.jpg";
-import thumbAtlas from "@/assets/projects/atlas-cove-mosimi.jpg";
-import thumbOtumara from "@/assets/projects/otumara-escravos.jpg";
-import thumbYenagoa from "@/assets/projects/hdd-equipment-fleet-3.jpg";
-import thumbElps from "@/assets/projects/pipe-laying-crane.jpg";
-import thumbCalabar from "@/assets/projects/pipeline-construction.jpg";
-import thumbNipco from "@/assets/projects/nipco-ibafo.jpg";
-import thumbOb3 from "@/assets/projects/drilling-ops-6.jpg";
-import thumbEkiadolor from "@/assets/projects/drilling-ops-7.jpg";
-import thumbRiverNiger from "@/assets/projects/drilling-site-2.jpg";
-import thumbGbaran from "@/assets/projects/scope-operations-2.jpg";
-import thumbNunRiver from "@/assets/projects/scope-operations-3.jpg";
-import thumbEscravos from "@/assets/projects/shore-approach.jpg";
-
-// Gallery images (different set)
-import galleryImg1 from "@/assets/projects/hdd-night-panorama.jpg";
-import galleryImg2 from "@/assets/projects/multi-crane-operations.jpg";
-import galleryImg3 from "@/assets/projects/otumara-escravos-2.jpg";
-import galleryImg4 from "@/assets/projects/crane-operations.jpg";
-
 const projectTags = ["All", "HDD", "Pipeline", "Dredging", "CHDD", "Shore Approach"];
+
+const galleryImages = [
+  {
+    src: getProjectImage("oml34-chdd", "interactiveMap") || getProjectImage("oml34-chdd", "projectGallery"),
+    alt: "Aerial view of the OML34 continuous HDD project site in Delta State",
+    label: "OML34 Continuous HDD",
+  },
+  {
+    src: getProjectImage("nun-river-crossing", "projectGallery") || getProjectImage("nun-river-crossing", "projectList"),
+    alt: "River crossing drilling spread on a large Enikkom waterway crossing project",
+    label: "River Crossing Works",
+  },
+  {
+    src: getProjectImage("ob3-river-niger", "interactiveMap") || getProjectImage("ob3-river-niger", "projectGallery"),
+    alt: "Direct Pipe installation spread deployed on a major trenchless crossing",
+    label: "Direct Pipe Installation",
+  },
+  {
+    src: getProjectImage("escravos-shore-approach", "projectMap") || getProjectImage("escravos-shore-approach", "projectGallery"),
+    alt: "Heavy marine and shore construction spread supporting pipeline installation works",
+    label: "Marine Construction Spread",
+  },
+];
 
 // Real projects from Enikkom documents - each with unique thumbnail
 const defaultProjects = [
   {
-    title: "OML34 Continuous HDD - 10\" x 12km",
-    location: "Niger Delta, Nigeria",
+    title: "OML34 Continuous HDD — 10\" × 12km",
+    location: "Utorogun, Delta State",
     metric: "12km",
     metricLabel: "Nigeria's Longest CHDD",
     tags: ["HDD", "CHDD"],
     href: "/projects/oml34-chdd",
-    thumbnail: thumbOml34,
-    year: "2020",
+    thumbnail: getProjectImage("oml34-chdd", "projectList"),
+    year: "2021",
   },
   {
-    title: "Lekki Gas Pipeline (LGPP) - Dangote",
-    location: "Lagos, Nigeria",
-    metric: "36\" x 1.5km",
-    metricLabel: "Swamp/River HDD Crossing",
+    title: "Dangote Fertilizer — 36\" × 2km Lagoon Crossing",
+    location: "Ejirin, Lagos Lagoon",
+    metric: "36\" × 2km",
+    metricLabel: "Swamp / Lagoon HDD Crossing",
     tags: ["HDD", "Pipeline"],
-    href: "/projects/lekki-gas-pipeline",
-    thumbnail: thumbLekki,
-    year: "2019",
+    href: "/projects/dangote-lagoon",
+    thumbnail: getProjectImage("dangote-lagoon", "projectList"),
+    year: "2016",
   },
   {
-    title: "Atlas Cove-Mosimi Emergency Reconstruction",
-    location: "Lagos/Ogun, Nigeria",
-    metric: "16\" x 3km",
-    metricLabel: "Longest Single Drill in Africa",
+    title: "Atlas Cove–Mosimi — 16\" × 3.1km",
+    location: "Arepo / Imagbon, Ogun State",
+    metric: "16\" × 3.1km",
+    metricLabel: "Africa's Longest Single Drill",
     tags: ["HDD"],
     href: "/projects/atlas-cove-mosimi",
-    thumbnail: thumbAtlas,
-    year: "2017",
+    thumbnail: getProjectImage("atlas-cove-mosimi", "projectList"),
+    year: "2016",
   },
   {
     title: "Otumara-Escravos Bundled HDD Crossing",
@@ -70,37 +73,37 @@ const defaultProjects = [
     metricLabel: "Longest Bundled Crossing in Africa",
     tags: ["HDD", "Pipeline"],
     href: "/projects/otumara-escravos",
-    thumbnail: thumbOtumara,
+    thumbnail: getProjectImage("otumara-escravos", "projectList"),
     year: "2016",
   },
   {
     title: "Yenagoa 40\" HDD Crossing",
     location: "Bayelsa State, Nigeria",
-    metric: "40\" x 760m",
+    metric: "40\" × 760m",
     metricLabel: "Largest Pipeline Crossing in Nigeria",
     tags: ["HDD"],
     href: "/projects/yenagoa-40-crossing",
-    thumbnail: thumbYenagoa,
+    thumbnail: getProjectImage("yenagoa-40-crossing", "projectList"),
     year: "2010",
   },
   {
     title: "Escravos-Lagos Pipeline System Phase II",
     location: "Lagos/Delta, Nigeria",
-    metric: "36\" x 7.2km",
+    metric: "36\" × 7.2km",
     metricLabel: "Multiple HDD Sections",
     tags: ["HDD", "Pipeline"],
     href: "/projects/elps-phase-2",
-    thumbnail: thumbElps,
+    thumbnail: getProjectImage("elps-phase-2", "projectList"),
     year: "2018",
   },
   {
     title: "Calabar Gas Transmission Pipeline",
     location: "Cross River State, Nigeria",
-    metric: "24\" x 21.5km",
+    metric: "24\" × 21.5km",
     metricLabel: "Gas Transmission",
     tags: ["Pipeline"],
     href: "/projects/calabar-gas-transmission",
-    thumbnail: thumbCalabar,
+    thumbnail: getProjectImage("calabar-gas-transmission", "projectList"),
     year: "2015",
   },
   {
@@ -110,28 +113,28 @@ const defaultProjects = [
     metricLabel: "4\"/8\"/12\" Pipeline Network",
     tags: ["Pipeline"],
     href: "/projects/nipco-gas-distribution",
-    thumbnail: thumbNipco,
+    thumbnail: getProjectImage("nipco-gas-distribution", "projectList"),
     year: "2009",
   },
   {
-    title: "OB3 River Niger 48\" Microtunnelling",
+    title: "OB3 River Niger 48\" Direct Pipe Installation",
     location: "River Niger, Nigeria",
-    metric: "48\" x 1.8km",
+    metric: "48\" × 1.8km",
     metricLabel: "HDD + Direct Pipe Installation",
-    tags: ["HDD", "Microtunnelling"],
+    tags: ["HDD"],
     href: "/projects/ob3-river-niger",
-    thumbnail: thumbOb3,
-    year: "2019",
+    thumbnail: getProjectImage("ob3-river-niger", "projectList"),
+    year: "2020",
   },
   {
     title: "Ekiadolor Deep Valley Crossing",
     location: "Edo State, Nigeria",
-    metric: "36\" x 1.2km",
-    metricLabel: "80m Depth - Nigeria's Deepest",
+    metric: "36\" × 1.2km",
+    metricLabel: "80m Depth — Africa's Deepest HDD",
     tags: ["HDD"],
     href: "/projects/ekiadolor-deep-valley",
-    thumbnail: thumbEkiadolor,
-    year: "2018",
+    thumbnail: getProjectImage("ekiadolor-deep-valley", "projectList"),
+    year: "2016",
   },
   {
     title: "River Niger Historic Crossing",
@@ -140,7 +143,7 @@ const defaultProjects = [
     metricLabel: "HDD Crossing in Nigeria",
     tags: ["HDD"],
     href: "/projects/river-niger-historic",
-    thumbnail: thumbRiverNiger,
+    thumbnail: getProjectImage("river-niger-historic", "projectList"),
     year: "2003",
   },
   {
@@ -150,7 +153,7 @@ const defaultProjects = [
     metricLabel: "x 16\" pipeline EPC",
     tags: ["Pipeline"],
     href: "/projects/gbaran-phase-3b",
-    thumbnail: thumbGbaran,
+    thumbnail: getProjectImage("gbaran-phase-3b", "projectList"),
     year: "2025",
   },
   {
@@ -160,7 +163,7 @@ const defaultProjects = [
     metricLabel: "HDD crossing under Nun River",
     tags: ["HDD"],
     href: "/projects/nun-river-crossing",
-    thumbnail: thumbNunRiver,
+    thumbnail: getProjectImage("nun-river-crossing", "projectList"),
     year: "2024",
   },
   {
@@ -170,10 +173,15 @@ const defaultProjects = [
     metricLabel: "Shore Crossing",
     tags: ["Shore Approach", "Pipeline"],
     href: "/projects/escravos-shore-approach",
-    thumbnail: thumbEscravos,
+    thumbnail: getProjectImage("escravos-shore-approach", "projectList"),
     year: "2021",
   },
 ];
+
+function resolveProjectListThumbnail(project: { slug?: string; href?: string; thumbnail?: string }) {
+  const slugOrHref = project.slug || project.href || "";
+  return getProjectImage(slugOrHref, "projectList") || project.thumbnail;
+}
 
 export default function ProjectsPage() {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -181,7 +189,15 @@ export default function ProjectsPage() {
   const heroContent = content.hero || {};
   const recordsContent = content.records || {};
 
-  const projects = defaultProjects;
+
+  const { data: dbProjects } = useCollection('projects_list');
+
+  // Use DB projects if available, otherwise fallback to hardcoded defaults
+  const projects = (dbProjects.length > 0 ? dbProjects : defaultProjects).map((project: any) => ({
+    ...project,
+    thumbnail: resolveProjectListThumbnail(project),
+  }));
+
   const filteredProjects = activeFilter === "All"
     ? projects
     : projects.filter((p) => p.tags.includes(activeFilter));
@@ -193,7 +209,7 @@ export default function ProjectsPage() {
         subtitle={heroContent.subtitle || "Over 100km of HDD installations including Africa's longest single drill (3.1km) and Nigeria's longest Continuous HDD (12km). Trusted by Shell, Dangote, NNPC, Saipem, and more."}
         badge={heroContent.badge || "100+ KM HDD Installed"}
         primaryCTA={{ label: heroContent.primaryBtnText || "Start Your Project", href: heroContent.primaryBtnLink || "/contact" }}
-        backgroundImage={heroContent.backgroundImage || heroProjects}
+        backgroundImage={heroContent.backgroundImage || siteImageSelections.completedProjects.hero}
         size="default"
         pageSlug="projects"
         sectionKey="hero"
@@ -203,7 +219,7 @@ export default function ProjectsPage() {
       <section className="section-padding bg-background">
         <div className="container-wide">
           {/* Filter Bar */}
-          <motion.div 
+          <motion.div
             className="flex flex-wrap gap-3 mb-8 justify-center"
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -216,11 +232,10 @@ export default function ProjectsPage() {
                 variant={activeFilter === tag ? "default" : "outline"}
                 size="sm"
                 onClick={() => setActiveFilter(tag)}
-                className={`h-10 px-5 text-[13px] md:text-[14px] rounded-lg transition-all duration-200 min-w-[72px] ${
-                  activeFilter === tag 
-                    ? "bg-brand-primary hover:bg-brand-primary-hover" 
-                    : "border-border hover:bg-muted"
-                }`}
+                className={`h-10 px-5 text-[13px] md:text-[14px] rounded-lg transition-all duration-200 min-w-[72px] ${activeFilter === tag
+                  ? "bg-brand-primary hover:bg-brand-primary-hover"
+                  : "border-border hover:bg-muted"
+                  }`}
               >
                 {tag}
               </Button>
@@ -228,7 +243,7 @@ export default function ProjectsPage() {
           </motion.div>
 
           {/* Project Stats */}
-          <motion.div 
+          <motion.div
             className="text-center mb-8"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -256,7 +271,7 @@ export default function ProjectsPage() {
       {/* Records Section */}
       <section className="section-padding bg-charcoal">
         <div className="container-wide">
-          <motion.div 
+          <motion.div
             className="text-center mb-10"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -288,25 +303,25 @@ export default function ProjectsPage() {
               />
             </p>
           </motion.div>
-          
+
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
               { value: "3.1km", label: "Longest Single Drill", detail: "Africa Record" },
               { value: "12km", label: "Longest CHDD", detail: "Nigeria Record" },
-              { value: "40\"", label: "Largest Crossing", detail: "Nigeria Record" },
-              { value: "80m", label: "Deepest Crossing", detail: "In Nigeria" },
+              { value: "40\"", label: "Largest Pipe Crossing", detail: "Nigeria Record" },
+              { value: "80m", label: "Deepest HDD Crossing", detail: "Africa Record" },
             ].map((record, i) => (
               <motion.div
                 key={record.label}
-                className="bg-white/5 border border-white/10 rounded-[14px] p-5 text-center"
+                className="bg-black/60 border-2 border-primary/20 hover:border-primary p-6 md:p-8 text-center transition-colors duration-200"
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: i * 0.1 }}
               >
-                <div className="text-2xl md:text-3xl font-bold text-primary mb-1">{record.value}</div>
-                <div className="text-white text-[13px] font-medium mb-1">{record.label}</div>
-                <div className="text-white/50 text-[11px]">{record.detail}</div>
+                <div className="text-4xl md:text-5xl font-black text-white mb-2">{record.value}</div>
+                <div className="text-primary text-[14px] font-bold uppercase tracking-wide mb-1">{record.label}</div>
+                <div className="text-white/60 text-[12px]">{record.detail}</div>
               </motion.div>
             ))}
           </div>
@@ -316,7 +331,7 @@ export default function ProjectsPage() {
       {/* Gallery Section */}
       <section className="section-padding-sm bg-muted/30" id="gallery">
         <div className="container-wide">
-          <motion.div 
+          <motion.div
             className="text-center"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -340,21 +355,30 @@ export default function ProjectsPage() {
                 field="description"
               />
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-              {[galleryImg1, galleryImg2, galleryImg3, galleryImg4].map((img, i) => (
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {galleryImages.map((img, i) => (
                 <motion.div
-                  key={i}
-                  className="aspect-square rounded-[14px] overflow-hidden hover-lift"
+                  key={img.label}
+                  className="group aspect-[3/2] rounded-sm overflow-hidden hover-lift"
                   initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.3, delay: i * 0.05 }}
                 >
-                  <img 
-                    src={img} 
-                    alt={`Project gallery image ${i + 1}`} 
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  <EnhancedImage
+                    src={img.src}
+                    alt={img.alt}
+                    wrapperClassName="h-full w-full"
+                    className="w-full h-full"
+                    sizes="(min-width: 1024px) 22vw, (min-width: 768px) 25vw, 50vw"
+                    tone="vivid"
+                    hoverZoom
                   />
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0B1220]/90 via-[#0B1220]/35 to-transparent px-3 py-3">
+                    <p className="text-[12px] md:text-[13px] font-semibold text-white">
+                      {img.label}
+                    </p>
+                  </div>
                 </motion.div>
               ))}
             </div>
@@ -362,7 +386,7 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      <CTABand 
+      <CTABand
         headline={content.cta?.headline || "Your Project Could Be Next"}
         subhead={content.cta?.subhead || "Join Shell, Dangote, and NNPC. Get a detailed proposal for your infrastructure project."}
         secondaryCTA={{ label: "Explore Our Capabilities", href: "/capabilities" }}

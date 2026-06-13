@@ -2,31 +2,19 @@ import { useParams } from "react-router-dom";
 import { Layout } from "@/components/layout";
 import { Hero, CTABand, CaseStudyCard, CertificationsBlock } from "@/components/sections";
 import { motion } from "framer-motion";
-import { CheckCircle, Drill, PipetteIcon, Anchor, Building2, Waves, Settings, Shield, FileCheck, Search, Wrench, Truck, ShieldCheck } from "lucide-react";
+import { CheckCircle, Drill, PipetteIcon, Anchor, Factory, Settings, Shield, FileCheck, Truck, ShieldCheck, Briefcase } from "lucide-react";
+import { getProjectImage } from "@/content/projectImageSelections";
+import { siteImageSelections } from "@/content/siteImageSelections";
 import { usePageContent } from "@/hooks/useSiteSettings";
-import { EditableText, EditableImage, EditableRepeater } from "@/components/admin";
-
-// Import capability images
-import hddDrilling from "@/assets/capabilities/hdd-drilling.jpg";
-import pipelineConstruction from "@/assets/capabilities/pipeline-construction.jpg";
-import dredgingMarine from "@/assets/capabilities/dredging-marine.jpg";
-import jettyConstruction from "@/assets/capabilities/jetty-construction.jpg";
-import shoreApproach from "@/assets/projects/shore-approach.jpg";
-import heroHddRig from "@/assets/hero/hero-hdd-rig.jpg";
-import geotechnicalSurvey from "@/assets/projects/drilling-site.png";
-import capabilitiesHero from "@/assets/projects/partnership-hddthailand.jpg";
-import hseHero from "@/assets/projects/hse-safety.jpg";
-import equipmentHero from "@/assets/projects/hdd-equipment-fleet.jpg";
+import { EditableText } from "@/components/admin";
 
 // Slug to page_slug mapping
 const slugToPageSlug: Record<string, string> = {
   'hdd': 'cap-hdd',
   'pipelines-flowlines': 'cap-pipelines',
   'dredging-piling': 'cap-dredging',
-  'jetty-quay-walls': 'cap-jetty',
-  'shore-approach': 'cap-shore',
-  'geotechnical-survey': 'cap-geotechnical',
   'facilities': 'cap-facilities',
+  'project-management': 'cap-project-management',
   'pipeline-security': 'cap-security',
   'logistics': 'cap-logistics',
 };
@@ -47,7 +35,7 @@ const capabilityData: Record<string, CapabilityData> = {
     title: "Horizontal Directional Drilling (HDD)",
     description: "State-of-the-art trenchless technology for river, road, railway, and environmental crossings with minimal surface disruption and maximum efficiency.",
     icon: Drill,
-    heroImage: hddDrilling,
+    heroImage: siteImageSelections.capabilities.hdd,
     processSteps: [
       { title: "Site Survey & Design", description: "Comprehensive geotechnical investigation and crossing design" },
       { title: "Pilot Bore", description: "Initial drilling of pilot hole along planned trajectory" },
@@ -62,14 +50,30 @@ const capabilityData: Record<string, CapabilityData> = {
       { name: "Tracking System", specs: "Walkover & Gyro guidance" },
     ],
     relatedProjects: [
-      { title: "Niger Delta River Crossing", location: "Rivers State", metric: "2.5km", metricLabel: "length", tags: ["HDD"], href: "/projects/niger-delta-crossing", thumbnail: hddDrilling },
+      {
+        title: "OML34 Continuous HDD — 10\" × 12km",
+        location: "Utorogun, Delta State",
+        metric: "12km",
+        metricLabel: "Nigeria's Longest CHDD",
+        tags: ["HDD", "CHDD"],
+        href: "/projects/oml34-chdd",
+        thumbnail: getProjectImage("oml34-chdd", "related"),
+      },
+      {
+        title: "Atlas Cove–Mosimi — 16\" × 3.1km",
+        location: "Arepo / Imagbon, Ogun State",
+        metric: "3.1km",
+        metricLabel: "Africa's Longest Single Drill",
+        tags: ["HDD"],
+        href: "/projects/atlas-cove-mosimi",
+      },
     ],
   },
   "pipelines-flowlines": {
     title: "Pipelines & Flowlines Construction",
     description: "Complete pipeline construction services from fabrication to installation and testing for oil, gas, and water transmission systems.",
     icon: PipetteIcon,
-    heroImage: pipelineConstruction,
+    heroImage: siteImageSelections.capabilities.pipelines,
     processSteps: [
       { title: "Material Procurement", description: "Sourcing and inspection of pipe materials and fittings" },
       { title: "Fabrication & Coating", description: "Welding, NDT, and protective coating application" },
@@ -84,14 +88,30 @@ const capabilityData: Record<string, CapabilityData> = {
       { name: "NDT Equipment", specs: "Radiographic, UT, MT, PT" },
     ],
     relatedProjects: [
-      { title: "Flowline Installation Project", location: "Delta State", metric: "15km", metricLabel: "pipeline", tags: ["Pipeline"], href: "/projects/flowline-installation", thumbnail: pipelineConstruction },
+      {
+        title: "Calabar Gas Transmission — 24\" × 21.5km",
+        location: "Cross River State",
+        metric: "21.5km",
+        metricLabel: "Gas Transmission Pipeline",
+        tags: ["Pipeline"],
+        href: "/projects/calabar-gas-transmission",
+      },
+      {
+        title: "NIPCO Gas Distribution — 50km Network",
+        location: "Multiple Locations, Nigeria",
+        metric: "50km",
+        metricLabel: "4\"/8\"/12\" Network",
+        tags: ["Pipeline"],
+        href: "/projects/nipco-gas-distribution",
+        thumbnail: getProjectImage("nipco-gas-distribution", "related"),
+      },
     ],
   },
   "dredging-piling": {
     title: "Dredging & Piling",
     description: "Marine dredging for channel deepening, reclamation, and maintenance. Foundation piling for offshore platforms, bridges, and terminal structures.",
     icon: Anchor,
-    heroImage: dredgingMarine,
+    heroImage: siteImageSelections.capabilities.dredging,
     processSteps: [
       { title: "Bathymetric Survey", description: "Detailed seabed mapping and volume calculation" },
       { title: "Dredging Operations", description: "Cutter suction or trailing suction hopper dredging" },
@@ -105,81 +125,13 @@ const capabilityData: Record<string, CapabilityData> = {
       { name: "Pile Driver", specs: "Heavy duty impact hammers" },
       { name: "Survey Equipment", specs: "Multi-beam echosounder, RTK GPS" },
     ],
-    relatedProjects: [
-      { title: "Terminal Dredging Project", location: "Lagos", metric: "500,000m³", metricLabel: "dredged", tags: ["Dredging"], href: "/projects/terminal-dredging", thumbnail: dredgingMarine },
-    ],
-  },
-  "jetty-quay-walls": {
-    title: "Jetty & Quay Wall Construction",
-    description: "Design and construction of jetties, quay walls, wharves, and marine terminal structures to international standards.",
-    icon: Building2,
-    heroImage: jettyConstruction,
-    processSteps: [
-      { title: "Foundation Works", description: "Piling and seabed preparation" },
-      { title: "Sheet Pile Installation", description: "Steel sheet pile driving and anchoring" },
-      { title: "Concrete Works", description: "Capping beam and deck slab construction" },
-      { title: "Fender Installation", description: "Marine fender and bollard installation" },
-      { title: "Paving & Services", description: "Surface finishing and utility installation" },
-    ],
-    standards: ["BS 6349", "PIANC Reports", "EAU Guidelines", "OCIMF Guidelines"],
-    equipment: [
-      { name: "Crane Barge", specs: "4+ various lift capacities" },
-      { name: "Sheet Pile Vibro", specs: "Heavy duty vibratory hammers" },
-      { name: "Concrete Batching", specs: "Mobile batching plant" },
-    ],
-    relatedProjects: [
-      { title: "Lagos Port Quay Wall", location: "Lagos", metric: "300m", metricLabel: "quay wall", tags: ["Jetty"], href: "/projects/lagos-port-quay", thumbnail: jettyConstruction },
-    ],
-  },
-  "shore-approach": {
-    title: "Shore Approach Construction",
-    description: "Pipeline shore approach construction including beach crossings, nearshore installations, and tie-in works for onshore-offshore infrastructure.",
-    icon: Waves,
-    heroImage: shoreApproach,
-    processSteps: [
-      { title: "Beach Survey", description: "Topographic and bathymetric survey" },
-      { title: "Trenching", description: "Open-cut or HDD shore approach excavation" },
-      { title: "Pipe Pull", description: "Shore pull or float-and-sink installation" },
-      { title: "Backfill & Protection", description: "Trench backfill and rock dumping" },
-      { title: "Tie-in Works", description: "Connection to onshore facilities" },
-    ],
-    standards: ["DNV-OS-F101", "API RP 1111", "ASME B31.4", "Client Specifications"],
-    equipment: [
-      { name: "Winches", specs: "High capacity shore pull winches" },
-      { name: "Excavators", specs: "Long-reach and amphibious" },
-      { name: "Support Vessels", specs: "Tugs and anchor handlers" },
-    ],
-    relatedProjects: [
-      { title: "Escravos Shore Approach", location: "Delta State", metric: "1.8km", metricLabel: "shore crossing", tags: ["Shore Approach"], href: "/projects/escravos-shore-approach", thumbnail: shoreApproach },
-    ],
-  },
-  "geotechnical-survey": {
-    title: "Geotechnical Survey",
-    description: "Comprehensive soil investigation, site characterization, and geotechnical analysis for pipeline routing, foundation design, and HDD planning.",
-    icon: Search,
-    heroImage: geotechnicalSurvey,
-    processSteps: [
-      { title: "Desktop Study", description: "Review of existing geological data and site history" },
-      { title: "Field Investigation", description: "Borehole drilling, CPT, and in-situ testing" },
-      { title: "Laboratory Testing", description: "Soil classification, strength, and permeability tests" },
-      { title: "Data Analysis", description: "Interpretation and geotechnical modeling" },
-      { title: "Reporting", description: "Engineering recommendations and design parameters" },
-    ],
-    standards: ["ASTM D1586", "BS 5930", "EUROCODE 7", "API RP 2GEO"],
-    equipment: [
-      { name: "Drilling Rigs", specs: "Rotary and percussion boring equipment" },
-      { name: "CPT Equipment", specs: "Cone penetration testing systems" },
-      { name: "Lab Equipment", specs: "Full soil testing laboratory" },
-    ],
-    relatedProjects: [
-      { title: "Niger Delta Site Investigation", location: "Delta State", metric: "50+", metricLabel: "boreholes", tags: ["Geotechnical"], href: "/projects", thumbnail: geotechnicalSurvey },
-    ],
+    relatedProjects: [],
   },
   "facilities": {
-    title: "Facilities Construction",
-    description: "Flow station operations, wellhead platform upgrades, manifold inspection, and plant turnaround maintenance for oil & gas production facilities.",
-    icon: Wrench,
-    heroImage: capabilitiesHero,
+    title: "Production Facilities Construction",
+    description: "Fit-for-purpose integrated production systems — flow station construction, wellhead upgrades, manifold inspection, plant turnaround maintenance, and pigging operations.",
+    icon: Factory,
+    heroImage: siteImageSelections.capabilities.facilities,
     processSteps: [
       { title: "Scope Definition", description: "Detailed work scope and engineering review" },
       { title: "Mobilization", description: "Equipment and personnel deployment" },
@@ -195,11 +147,31 @@ const capabilityData: Record<string, CapabilityData> = {
     ],
     relatedProjects: [],
   },
+  "project-management": {
+    title: "Project Management & Support",
+    description: "Integrated planning, execution support, field coordination, and project controls for complex HDD, pipeline, dredging, and facilities packages from mobilisation through close-out.",
+    icon: Briefcase,
+    heroImage: siteImageSelections.capabilities.projectManagement,
+    processSteps: [
+      { title: "Project Planning", description: "Integrated scope, schedule, cost, and resource planning aligned to client priorities" },
+      { title: "Mobilization Readiness", description: "Field logistics, permits, procurement tracking, and site readiness coordination" },
+      { title: "Execution Control", description: "Daily coordination, progress tracking, risk management, and issue resolution across work fronts" },
+      { title: "Quality & HSE Assurance", description: "Documentation control, inspection planning, and compliance support throughout execution" },
+      { title: "Close-out & Handover", description: "Punch listing, as-built documentation, final reporting, and turnover support" },
+    ],
+    standards: ["ISO 9001", "Client QA/QC Requirements", "Project HSE Plans", "PMI-Aligned Controls"],
+    equipment: [
+      { name: "Planning Systems", specs: "Integrated scheduling, resource loading, and progress measurement tools" },
+      { name: "Field Coordination", specs: "Site reporting workflows, permit tracking, and subcontractor interface management" },
+      { name: "Project Controls", specs: "Cost monitoring, risk registers, change management, and close-out documentation" },
+    ],
+    relatedProjects: [],
+  },
   "pipeline-security": {
     title: "Pipeline Security & Monitoring",
     description: "Real-time pipeline surveillance, leak detection, and vandalism prevention in partnership with Ocean Marine Solutions.",
     icon: ShieldCheck,
-    heroImage: hseHero,
+    heroImage: siteImageSelections.capabilities.security,
     processSteps: [
       { title: "Risk Assessment", description: "Threat identification and vulnerability analysis" },
       { title: "System Design", description: "Surveillance and monitoring infrastructure" },
@@ -219,7 +191,7 @@ const capabilityData: Record<string, CapabilityData> = {
     title: "Logistics Support",
     description: "Land and swamp logistics with low bed trailers, flatbed barges, crew boats, and supply vessels for project mobilization.",
     icon: Truck,
-    heroImage: equipmentHero,
+    heroImage: siteImageSelections.equipment.hero,
     processSteps: [
       { title: "Planning", description: "Route survey and transport planning" },
       { title: "Permits", description: "Regulatory approvals and escorts" },
@@ -243,7 +215,7 @@ export default function CapabilityDetailPage() {
   
   // Get CMS content for this capability page
   const pageSlug = slug ? slugToPageSlug[slug] : '';
-  const { content, isLoading } = usePageContent(pageSlug);
+  const { content } = usePageContent(pageSlug);
 
   if (!capability) {
     return (
@@ -277,7 +249,7 @@ export default function CapabilityDetailPage() {
       <Hero
         title={title}
         subtitle={subtitle}
-        primaryCTA={{ label: "Request a Quote", href: "/contact" }}
+        primaryCTA={{ label: "Contact Us", href: "/contact" }}
         secondaryCTA={{ label: "View Projects", href: "/projects" }}
         backgroundImage={heroImage}
         size="default"

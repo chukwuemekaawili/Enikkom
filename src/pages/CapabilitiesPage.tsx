@@ -1,100 +1,72 @@
 import { Layout } from "@/components/layout";
 import { Hero, CTABand, CapabilityCard, CertificationsBlock } from "@/components/sections";
-import { EditableText, EditableImage } from "@/components/admin";
-import { usePageContent } from "@/hooks/useSiteSettings";
-import { Drill, PipetteIcon, Anchor, Building2, Waves, Wrench, Shield, Truck, Search } from "lucide-react";
+import { EditableText } from "@/components/admin";
+import { usePageContent, useCollection } from "@/hooks/useSiteSettings";
+import { Drill, PipetteIcon, Anchor, Factory, Shield, Briefcase } from "lucide-react";
+import { siteImageSelections } from "@/content/siteImageSelections";
 
-// Import UNIQUE images for Capabilities page
-import heroCapabilities from "@/assets/projects/partnership-hddthailand.jpg";
-import capHdd from "@/assets/projects/hdd-drill-string.jpg";
-import capPipeline from "@/assets/projects/welding-crew.jpg";
-import capDredging from "@/assets/projects/otumara-escravos-2.jpg";
-import capJetty from "@/assets/projects/jetty-construction.jpg";
-import capShore from "@/assets/projects/drilling-ops-5.jpg";
-import capFacilities from "@/assets/projects/nipco-ibafo-2.jpg";
-import capSecurity from "@/assets/projects/team-safety.jpg";
-import capLogistics from "@/assets/projects/nipco-ibafo-3.jpg";
-import capGeotechnical from "@/assets/projects/drilling-site.png";
+const capabilityImages = siteImageSelections.capabilities;
 
 const defaultCapabilities = [
   {
     title: "Horizontal Directional Drilling (HDD)",
-    description: "State-of-the-art trenchless technology for river, road, railway, and environmental crossings. Minimal surface disruption with maximum efficiency.",
+    description: "State-of-the-art trenchless technology for river, road, railway, and environmentally sensitive crossings with minimal disruption and maximum installation accuracy.",
     href: "/capabilities/hdd",
     icon: Drill,
-    image: capHdd,
-    metric: "Up to 48\" diameter, 3km span",
+    image: capabilityImages.hdd,
+    metric: "Long-distance trenchless crossings",
   },
   {
-    title: "Pipelines & Flowlines",
-    description: "Complete pipeline construction services including fabrication, installation, welding, coating, and hydrostatic testing for oil, gas, and water transmission.",
+    title: "Pipelines & Flowlines Construction",
+    description: "Complete pipeline construction services from fabrication and welding through installation, testing, and commissioning for oil, gas, and water transmission systems.",
     href: "/capabilities/pipelines-flowlines",
     icon: PipetteIcon,
-    image: capPipeline,
-    metric: "Up to 48\" diameter capacity",
+    image: capabilityImages.pipelines,
+    metric: "Land, swamp & offshore delivery",
   },
   {
     title: "Dredging & Piling",
-    description: "Marine dredging for channel deepening, reclamation, and maintenance. Foundation piling for offshore platforms, bridges, and terminal structures.",
+    description: "Marine dredging for channel deepening, reclamation, and maintenance, plus foundation piling for offshore platforms, bridges, and terminal structures.",
     href: "/capabilities/dredging-piling",
     icon: Anchor,
-    image: capDredging,
-    metric: "Multiple dredgers available",
+    image: capabilityImages.dredging,
+    metric: "Dredging, reclamation & piling",
   },
   {
-    title: "Jetty & Quay Walls",
-    description: "Design, engineering, and construction of jetties, quay walls, wharves, and marine terminal structures to international standards.",
-    href: "/capabilities/jetty-quay-walls",
-    icon: Building2,
-    image: capJetty,
-    metric: "Heavy-duty marine structures",
-  },
-  {
-    title: "Shore Approach",
-    description: "Pipeline shore approach construction including beach crossings, nearshore installations, and tie-in works for onshore-offshore infrastructure.",
-    href: "/capabilities/shore-approach",
-    icon: Waves,
-    image: capShore,
-    metric: "Beach to platform connections",
-  },
-  {
-    title: "Facilities Construction",
-    description: "Flow station operations, wellhead platform upgrades, manifold inspection, and plant turnaround maintenance for oil & gas production facilities.",
+    title: "Fabrication",
+    description: "Fit-for-purpose integrated production systems with flow station construction, wellhead upgrades, manifold inspection, plant turnaround maintenance, and pigging operations.",
     href: "/capabilities/facilities",
-    icon: Wrench,
-    image: capFacilities,
-    metric: "Brownfield & Greenfield",
+    icon: Factory,
+    image: capabilityImages.facilities,
+    metric: "Flow stations, wellheads & structural",
+  },
+  {
+    title: "Project Management & Support",
+    description: "Integrated planning, execution support, field coordination, and project controls for complex HDD, pipeline, dredging, and facilities packages from mobilisation through close-out.",
+    href: "/capabilities/project-management",
+    icon: Briefcase,
+    image: capabilityImages.projectManagement,
+    metric: "Planning, controls & field support",
   },
   {
     title: "Pipeline Security & Monitoring",
-    description: "Real-time pipeline surveillance, leak detection, and vandalism prevention in partnership with Ocean Marine Solutions.",
+    description: "Real-time pipeline monitoring and tampering detection systems designed to combat vandalism and protect critical energy infrastructure across the Niger Delta.",
     href: "/capabilities/pipeline-security",
     icon: Shield,
-    image: capSecurity,
-    metric: "24/7 Monitoring",
-  },
-  {
-    title: "Logistics Support",
-    description: "Land and swamp logistics with low bed trailers, flatbed barges, crew boats, and supply vessels for project mobilization.",
-    href: "/capabilities/logistics",
-    icon: Truck,
-    image: capLogistics,
-    metric: "Full Fleet Support",
-  },
-  {
-    title: "Geotechnical Survey",
-    description: "Comprehensive soil investigation, site characterization, and geotechnical analysis for pipeline routing, foundation design, and HDD planning.",
-    href: "/capabilities/geotechnical-survey",
-    icon: Search,
-    image: capGeotechnical,
-    metric: "Complete Site Analysis",
+    image: capabilityImages.security,
+    metric: "Real-time detection & monitoring",
   },
 ];
 
+
 export default function CapabilitiesPage() {
   const { content } = usePageContent('capabilities');
+  const { data: dbCapabilities } = useCollection('capabilities_list');
+
   const heroContent = content.hero || {};
   const introContent = content.introduction || {};
+
+  const capabilities = dbCapabilities.length > 0 ? dbCapabilities : defaultCapabilities;
 
   return (
     <Layout>
@@ -102,7 +74,7 @@ export default function CapabilitiesPage() {
         title={heroContent.title || "Our Capabilities"}
         subtitle={heroContent.subtitle || "Comprehensive engineering solutions for Nigeria's most demanding infrastructure projects. From trenchless crossings to marine civil works."}
         primaryCTA={{ label: heroContent.primaryBtnText || "Get Your Free Quote", href: heroContent.primaryBtnLink || "/contact" }}
-        backgroundImage={heroContent.backgroundImage || heroCapabilities}
+        backgroundImage={heroContent.backgroundImage || capabilityImages.hero}
         size="default"
         pageSlug="capabilities"
         sectionKey="hero"
@@ -139,7 +111,7 @@ export default function CapabilitiesPage() {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {defaultCapabilities.map((cap, index) => (
+            {capabilities.map((cap, index) => (
               <CapabilityCard
                 key={cap.title}
                 {...cap}
@@ -195,7 +167,7 @@ export default function CapabilitiesPage() {
       <CertificationsBlock />
 
       {/* CTA */}
-      <CTABand 
+      <CTABand
         headline={content.cta?.headline || "Ready to Discuss Your Requirements?"}
         subhead={content.cta?.subhead || "Our engineering team can scope your project and provide a detailed proposal within 48 hours."}
         secondaryCTA={{ label: "See Our Track Record", href: "/projects" }}

@@ -33,14 +33,14 @@ export function Layout({ children }: LayoutProps) {
       >
         Skip to main content
       </a>
-      
+
       <Header />
-      <main id="main-content" className="flex-1 pt-[88px] md:pt-[108px]">
+      <main id="main-content" className="flex-1 pt-[82px] xl:pt-[126px]">
         {children}
       </main>
       <Footer />
       {showMobileCTA && <MobileStickyCTA />}
-      
+
       {/* Admin live edit toolbar */}
       <LiveEditToolbar />
     </div>

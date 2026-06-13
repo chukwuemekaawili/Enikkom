@@ -6,20 +6,10 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/u
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { useTeamMembers, usePageContent } from "@/hooks/useSiteSettings";
 import { EditableText } from "@/components/admin";
+import { EnhancedImage } from "@/components/ui/enhanced-image";
+import { siteImageSelections } from "@/content/siteImageSelections";
 
-// Import hero image
-import heroHddRig from "@/assets/projects/hdd-night-panorama.jpg";
-
-// Import real team headshots from enikkom.com (fallback)
-import photoEdwardAmene from "@/assets/team/edward-amene.png";
-import photoSaleemKhan from "@/assets/team/saleem-khan.png";
-import photoFrancisAnatogu from "@/assets/team/francis-anatogu.png";
-import photoAdekunleAdewole from "@/assets/team/adekunle-adewole.png";
-import photoChibuikeNwachukwu from "@/assets/team/chibuike-nwachukwu.png";
-import photoTeddyAllen from "@/assets/team/teddy-allen.png";
-import photoIdigborEmeka from "@/assets/team/idigbor-emeka.png";
-import photoBiodunAdefila from "@/assets/team/biodun-adefila.jpg";
-import photoKenJames from "@/assets/team/ken-james.png";
+const managementImages = siteImageSelections.management;
 
 interface TeamMember {
   name: string;
@@ -36,55 +26,55 @@ const defaultLeadership: TeamMember[] = [
   {
     name: "Engr. Edward Amene",
     role: "Chief Executive Officer / Managing Director",
-    bio: "A Mechanical Engineering graduate from the University of Nigeria, Nsukka, with over 37 years of experience in pipeline construction and infrastructure development. Spent 14 years as a Project Engineer with Shell Petroleum Development Company before founding Enikkom Group in 1995. Pioneered Horizontal Directional Drilling (HDD) technology in Nigeria with the historic River Niger crossing in 2003.",
-    expertise: ["Pipeline Construction", "HDD Technology", "Strategic Leadership"],
-    photo: photoEdwardAmene,
-    highlight: "Pioneer of HDD technology in Nigeria — River Niger crossing, 2003",
+    bio: "A Mechanical Engineering graduate from the University of Nigeria, Nsukka, with over 37 years of experience in pipeline construction, including 14 years as a Project Engineer with SPDC. He founded Enikkom Group in 1995 and pioneered the use of trenchless technologies — including Horizontal Directional Drilling and Thrust Boring — in Nigeria's pipeline sector, completing the first HDD crossing of the River Niger in 2003.",
+    expertise: ["Pipeline Construction", "HDD & Trenchless Technology", "Strategic Leadership"],
+    photo: managementImages.photos.edwardAmene,
+    highlight: "Pioneer of HDD technology in Nigeria — first River Niger crossing, 2003",
     category: "management",
   },
   {
     name: "Engr. Saleem Ahmad Khan",
     role: "Chief Technical Officer",
-    bio: "A highly accomplished mechanical engineer from Pakistan with over 30 years of experience in pipeline construction, HDD, and heavy equipment operations. Has successfully led complex HDD crossings and pipeline projects for NNPC, Chevron, BP, Eni, and SSGC across Nigeria and Pakistan. Expertise spans the full spectrum of trenchless technology and pipeline engineering.",
-    expertise: ["HDD Operations", "Pipeline Engineering", "Heavy Equipment"],
-    photo: photoSaleemKhan,
-    highlight: "30+ years mastering trenchless technology across continents",
+    bio: "A mechanical engineer from Pakistan with over 30 years of experience, specialising in pipeline construction, HDD, heavy mechanical operations, and oil & gas infrastructure. Holds a bachelor's degree from NED University Karachi and a Diploma from the Swedish Institute. Has led complex projects for Marathon Construction, Zakhem Nigeria, and Business Supply & Technology, delivering HDD crossings, hot tapping, and pipeline expansions for clients including NNPC, Chevron, BP, Eni Pakistan, and SSGC. Expertise spans project management, quality control, site inspection, and cost management.",
+    expertise: ["HDD Operations", "Pipeline Engineering", "Project Management"],
+    photo: managementImages.photos.saleemKhan,
+    highlight: "30+ years of trenchless technology expertise across Nigeria and international markets",
     category: "management",
   },
   {
     name: "Mr. Francis Anatogu",
     role: "Chief Growth & Transformation Officer",
-    bio: "A seasoned business executive with 30 years of experience in oil & gas, infrastructure, and management consulting. Previously held leadership roles at Shell, Accenture, and Deloitte. Served as Executive Secretary of Nigeria's National Action Committee on AfCFTA. Holds an MBA from Cambridge University, driving Enikkom's business transformation and growth initiatives.",
-    expertise: ["Business Transformation", "Strategy Consulting", "Change Management"],
-    photo: photoFrancisAnatogu,
-    highlight: "Cambridge MBA driving Enikkom's strategic transformation",
+    bio: "A seasoned business executive with 30 years of experience spanning energy, consulting, trade policy, and international business development. Began his career in 1995 with Schlumberger and Shell before moving into consulting with Accenture and Deloitte, advising energy and resources companies on growth and operational improvement. Served as inaugural Executive Secretary of the National Committee Secretariat for AfCFTA, leading Nigeria's accession process. Holds a Mechanical Engineering degree from the University of Nigeria, Nsukka, and an MBA from the Judge Business School, University of Cambridge. Also serves as Non-Executive Director at Dryva Logistics and West Africa Advisor to the UK Institute of Directors.",
+    expertise: ["Business Transformation", "International Strategy", "Trade & Policy"],
+    photo: managementImages.photos.francisAnatogu,
+    highlight: "Cambridge MBA | ex-Schlumberger, Shell, Accenture, Deloitte — driving Enikkom's growth agenda",
     category: "management",
   },
   {
     name: "Adekunle Adewole, PhD",
     role: "Chief Operations & Strategy Officer",
-    bio: "Over 30 years of multi-sector experience, including serving as CEO of Livingtrust Mortgage Bank Plc. Holds a PhD in Strategic Management and a leadership diploma from Oxford University. Brings world-class operational excellence and strategic planning expertise to Enikkom's management team.",
-    expertise: ["Operations Excellence", "Strategic Management", "Executive Leadership"],
-    photo: photoAdekunleAdewole,
-    highlight: "Oxford-trained leader with PhD in Strategic Management",
+    bio: "A visionary financial and management executive with over 30 years of multi-sector experience, 9 of which in the C-Suite, spanning banking, corporate & structured finance, credit, advisory, aviation, and management consultancy. Holds a PhD in Business Administration (Strategic Management) and a post-doctoral diploma in Organisational Leadership from the University of Oxford, UK. Also holds a master's in Business Law and a Certificate in Global Management from INSEAD, Fontainebleau, France. Prior to joining Enikkom Group, served as CEO of Livingtrust Mortgage Bank Plc. Fellow of the Chartered Institute of Administrators and Honorary Senior Member of the Chartered Institute of Bankers.",
+    expertise: ["Strategic Management", "Corporate Finance", "Organisational Leadership"],
+    photo: managementImages.photos.adekunleAdewole,
+    highlight: "Oxford post-doctoral | INSEAD | PhD Strategic Management | ex-CEO Livingtrust Mortgage Bank",
     category: "management",
   },
   {
     name: "Mr. Chibuike Nwachukwu",
     role: "Executive Director",
-    bio: "Over 23 years of experience in organizational management and project execution, including 15 years as Managing Director of Enikkom Group. Deep expertise in project delivery, team leadership, business development, and stakeholder management across Nigeria's oil & gas and infrastructure sectors.",
-    expertise: ["Project Execution", "Organizational Management", "Business Development"],
-    photo: photoChibuikeNwachukwu,
-    highlight: "15 years as MD — the operational backbone of Enikkom",
+    bio: "A Nigerian administrator with 23 years of experience, including 15 years as Managing Director at Enikkom Group Limited. Holds an MSc in Peace & Conflict Studies and bachelor's degrees in Mathematics and Peace & Conflict Studies. Brings extensive expertise in administrative management across local and international organisations, driving operational efficiency, strategic leadership, and organisational excellence at Enikkom.",
+    expertise: ["Administrative Management", "Operational Efficiency", "Strategic Leadership"],
+    photo: managementImages.photos.chibuikeNwachukwu,
+    highlight: "15 years as Managing Director — operational backbone of Enikkom Group",
     category: "management",
   },
   {
     name: "Teddy Allen",
     role: "General Manager, Drilling",
-    bio: "An American drilling specialist with over 38 years of global experience in directional drilling and trenchless technology. Has worked across North America, Africa, and the Middle East, leading complex HDD operations for major oil & gas projects. Oversees Enikkom's drilling operations with a focus on technical excellence and safety.",
-    expertise: ["Directional Drilling", "Trenchless Technology", "International Operations"],
-    photo: photoTeddyAllen,
-    highlight: "38 years of global drilling expertise across 3 continents",
+    bio: "An American professional with 38 years of global experience in directional drilling and pipeline installation across diverse formations including swamps, sands, silts, shales, and granite. Skilled with various rig types — jack-ups, platforms, semi-submersibles, and directional drilling rigs — and trained in direct pipe procedures. Brings extensive expertise in drilling tools, fluids, recycling equipment, and down-hole surveying systems, with a strong track record in implementing and monitoring operational and safety standards.",
+    expertise: ["Directional Drilling", "Down-Hole Surveying", "Drilling Fluids & Tools"],
+    photo: managementImages.photos.teddyAllen,
+    highlight: "38 years global HDD expertise — diverse formations, direct pipe, and drilling systems",
     category: "management",
   },
   {
@@ -92,7 +82,7 @@ const defaultLeadership: TeamMember[] = [
     role: "Chief Accountant",
     bio: "A Fellow of the Institute of Chartered Accountants of Nigeria (ICAN) with over 20 years of experience in financial strategy, control, and corporate governance. Previously with UAC Restaurants Limited, bringing rigorous financial management, audit expertise, and governance standards to Enikkom.",
     expertise: ["Financial Strategy", "Corporate Governance", "Audit & Compliance"],
-    photo: photoIdigborEmeka,
+    photo: managementImages.photos.idigborEmeka,
     highlight: "FCA-certified excellence in financial governance",
     category: "management",
   },
@@ -104,7 +94,7 @@ const defaultBoardOfDirectors: TeamMember[] = [
     role: "Chairman, Board of Directors",
     bio: "Currently Managing Director of Spice360, a leading brand consultancy. Formerly Chief Operating Officer at SO&U Limited, one of Nigeria's foremost advertising agencies. Over 20 years of experience in brand management, marketing strategy, and corporate governance, bringing invaluable strategic insight to Enikkom's growth.",
     expertise: ["Brand Management", "Corporate Governance", "Marketing Strategy"],
-    photo: photoBiodunAdefila,
+    photo: managementImages.photos.biodunAdefila,
     highlight: "Driving strategic brand vision and governance excellence",
     category: "board",
   },
@@ -113,7 +103,7 @@ const defaultBoardOfDirectors: TeamMember[] = [
     role: "Non-Executive Director",
     bio: "Over 40 years of distinguished experience in oil and gas, marine services, and infrastructure development across West Africa. Provides strategic oversight and deep industry expertise to guide Enikkom's expansion in the energy and marine construction sectors.",
     expertise: ["Oil & Gas", "Marine Services", "Infrastructure Development"],
-    photo: photoKenJames,
+    photo: managementImages.photos.kenJames,
     highlight: "40+ years shaping West Africa's energy infrastructure",
     category: "board",
   },
@@ -150,10 +140,14 @@ const TeamMemberCard = ({
     {/* Photo with hover highlight overlay */}
     <div className="aspect-[4/3] relative overflow-hidden">
       {member.photo ? (
-        <img 
+        <EnhancedImage
           src={member.photo} 
           alt={`${member.name} — ${member.role}, Enikkom Construction Limited`}
-          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+          wrapperClassName="h-full w-full"
+          className="h-full w-full object-top"
+          hoverZoom
+          tone="natural"
+          fallbackLabel={member.name}
         />
       ) : (
         <div className="w-full h-full bg-muted flex items-center justify-center">
@@ -253,10 +247,13 @@ const TeamMemberModal = ({
               <div className="md:w-1/3 shrink-0">
                 <div className="aspect-square md:aspect-auto md:h-full relative">
                   {member.photo ? (
-                    <img 
+                    <EnhancedImage
                       src={member.photo} 
                       alt={`${member.name} — ${member.role}, Enikkom Construction Limited`}
-                      className="w-full h-full object-cover object-top"
+                      wrapperClassName="h-full w-full"
+                      className="h-full w-full object-top"
+                      tone="natural"
+                      fallbackLabel={member.name}
                     />
                   ) : (
                     <div className="w-full h-full bg-muted flex items-center justify-center">
@@ -396,7 +393,7 @@ export default function ManagementPage() {
       <Hero
         title={heroContent.title || "Management Team"}
         subtitle={heroContent.subtitle || "Experienced leaders driving excellence in engineering and construction across Nigeria and West Africa."}
-        backgroundImage={heroContent.backgroundImage || heroHddRig}
+        backgroundImage={heroContent.backgroundImage || managementImages.hero}
         size="default"
         pageSlug="management"
         sectionKey="hero"

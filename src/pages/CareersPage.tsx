@@ -5,10 +5,7 @@ import { Briefcase, GraduationCap, Shield, Heart, MapPin, Clock, ArrowRight } fr
 import { Button } from "@/components/ui/button";
 import { EditableText, EditableImage } from "@/components/admin";
 import { usePageContent } from "@/hooks/useSiteSettings";
-
-// Import unique images for Careers page
-import heroCareers from "@/assets/projects/careers-team.jpg";
-import cultureTeam from "@/assets/projects/hdd-team-1.jpg";
+import { siteImageSelections } from "@/content/siteImageSelections";
 
 const defaultBenefits = [
   { icon: GraduationCap, title: "Training & Development", description: "HSE certifications, technical training, and career development programs" },
@@ -26,6 +23,7 @@ const defaultOpenings = [
 
 export default function CareersPage() {
   const { content } = usePageContent('careers');
+  const careersImages = siteImageSelections.careers;
   
   const heroContent = content.hero || {};
   const benefitsContent = content.benefits || {};
@@ -36,8 +34,8 @@ export default function CareersPage() {
     <Layout>
       <Hero 
         title={heroContent.title || "Build Your Career at Enikkom"} 
-        subtitle={heroContent.subtitle || "Join West Africa's leading infrastructure contractor. Be part of a team of 500+ professionals delivering world-class projects across Nigeria."} 
-        backgroundImage={heroContent.backgroundImage || heroCareers} 
+        subtitle={heroContent.subtitle || "Join Nigeria's leading indigenous infrastructure contractor. Be part of a team of 500+ professionals delivering world-class projects across Nigeria."}
+        backgroundImage={heroContent.backgroundImage || careersImages.hero} 
         size="default"
         primaryCTA={{ label: "View Openings", href: "#openings" }}
         pageSlug="careers"
@@ -259,7 +257,7 @@ export default function CareersPage() {
                 <div className="bg-white/5 border border-white/10 rounded-xl p-5 text-center">
                   <div className="stat-value stat-value-white">
                     <EditableText
-                      value={cultureContent.stat2_value || "29+"}
+                      value={cultureContent.stat2_value || "34"}
                       pageSlug="careers"
                       sectionKey="culture"
                       field="stat2_value"
@@ -285,7 +283,7 @@ export default function CareersPage() {
               transition={{ duration: 0.5, delay: 0.1 }}
             >
               <EditableImage
-                src={cultureContent.image || cultureTeam}
+                src={cultureContent.image || careersImages.culture}
                 alt="Enikkom Team"
                 className="w-full h-[350px] md:h-[400px] object-cover rounded-xl"
                 pageSlug="careers"

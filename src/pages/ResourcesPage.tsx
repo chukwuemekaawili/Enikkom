@@ -1,12 +1,26 @@
 import { Layout } from "@/components/layout";
 import { Hero, CTABand } from "@/components/sections";
 import { motion } from "framer-motion";
-import { FileText, Download, ExternalLink, Book, Play, Youtube, Briefcase, Shield } from "lucide-react";
+import {
+  FileText,
+  Download,
+  ExternalLink,
+  Book,
+  Youtube,
+  Briefcase,
+  Shield,
+  Award,
+  Landmark,
+  Lock,
+  HeartHandshake,
+  HardHat,
+  FileX2,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { EditableText } from "@/components/admin";
 import { usePageContent } from "@/hooks/useSiteSettings";
-
-import heroHddRig from "@/assets/hero/hero-hdd-rig.jpg";
+import { EnhancedImage } from "@/components/ui/enhanced-image";
+import { siteImageSelections } from "@/content/siteImageSelections";
 
 const resources = {
   brochures: [
@@ -36,18 +50,22 @@ const resources = {
     },
   ],
   technical: [
-    { title: "HDD Equipment Specifications", description: "Complete specifications for our 10+ maxi HDD rigs (50T-500T pullback capacity).", type: "Link", size: "", url: "/equipment/hdd" },
+    { title: "HDD Equipment Specifications", description: "Model-level HDD, thrust boring, microtunneling, marine, and support-fleet tables sourced from the technical capacity schedule.", type: "Link", size: "", url: "/equipment/hdd" },
     { title: "General Equipment Fleet", description: "Full equipment fleet including thrust boring, micro tunnelling, marine, and support equipment.", type: "Link", size: "", url: "/equipment" },
-    { title: "HSE Policy Statement", description: "Our commitment to Health, Safety, and Environmental excellence with zero LTI record.", type: "PDF", size: "1.2 MB", url: "#" },
-    { title: "Quality Management System", description: "ISO 9001:2015, ISO 14001:2015, and ISO 45001:2018 certified quality management.", type: "PDF", size: "2.4 MB", url: "#" },
-  ],
-  certifications: [
-    { name: "ISO 9001:2015 - Quality Management", issuer: "Bureau Veritas" },
-    { name: "ISO 14001:2015 - Environmental Management", issuer: "Bureau Veritas" },
-    { name: "ISO 45001:2018 - Occupational Health & Safety", issuer: "Bureau Veritas" },
-    { name: "NIPEX Registration", issuer: "Nigerian Petroleum Exchange" },
-    { name: "NPC License", issuer: "Nigerian Ports Certified" },
-    { name: "NCDMB Certificate", issuer: "Nigerian Content Development Board" },
+    {
+      title: "ISO 9001:2015 Certificate",
+      description: "Current HDD Thailand-Enikkom quality management certificate sourced from the supplied compliance pack.",
+      type: "Image",
+      size: "",
+      url: "/downloads/compliance/hddtec-iso-9001-2015-certificate.jpeg",
+    },
+    {
+      title: "Quality Policy Statement",
+      description: "Current quality policy statement extracted from the approved QA/QC manual.",
+      type: "PDF",
+      size: "",
+      url: "/downloads/compliance/quality-policy-statement.pdf",
+    },
   ],
   videos: [
     { 
@@ -69,6 +87,71 @@ const resources = {
   ],
 };
 
+const complianceResources = {
+  certification: {
+    title: "ISO 9001:2015 Quality Management Certification",
+    description:
+      "The site now uses the current HDD Thailand-Enikkom Limited certificate file from the supplied document pack.",
+    meta: [
+      { label: "Certificate No.", value: "231031013401" },
+      { label: "Issued", value: "31 Oct 2023" },
+      { label: "Valid Until", value: "30 Oct 2026" },
+    ],
+    href: "/downloads/compliance/hddtec-iso-9001-2015-certificate.jpeg",
+    image: "/downloads/compliance/hddtec-iso-9001-2015-certificate.jpeg",
+  },
+  permits: [
+    {
+      title: "DPR / NUPRC Permit Bundle 2026",
+      authority: "Nigerian Upstream Petroleum Regulatory Commission",
+      description:
+        "Current permit bundle covering dredging, drilling and production, offshore pipeline laying, and special transportation services.",
+      href: "/downloads/compliance/dpr-nuprc-permits-2026-merged.pdf",
+      available: true,
+    },
+    {
+      title: "PENCOM Compliance Certificate",
+      authority: "National Pension Commission",
+      description:
+        "This certificate was requested in scope, but no standalone PENCOM file was present anywhere in the supplied ECLweb document set.",
+      available: false,
+    },
+    {
+      title: "NSITF Compliance Certificate",
+      authority: "Nigeria Social Insurance Trust Fund",
+      description:
+        "This certificate was requested in scope, but no standalone NSITF file was present anywhere in the supplied ECLweb document set.",
+      available: false,
+    },
+  ],
+  policies: [
+    {
+      icon: HeartHandshake,
+      title: "Community Management Policy",
+      description: "Current community relations policy statement for stakeholder and host-community engagement.",
+      href: "/downloads/compliance/community-management-policy.pdf",
+    },
+    {
+      icon: Award,
+      title: "Quality Policy",
+      description: "Current quality policy statement extracted from the approved QA/QC manual.",
+      href: "/downloads/compliance/quality-policy-statement.pdf",
+    },
+    {
+      icon: Lock,
+      title: "Security Policy",
+      description: "Current security policy statement covering personnel, property, and operational protection.",
+      href: "/downloads/compliance/security-policy.pdf",
+    },
+    {
+      icon: HardHat,
+      title: "Safety Policy",
+      description: "Current occupational health and safety policy statement from the approved HSE pack.",
+      href: "/downloads/compliance/safety-policy.pdf",
+    },
+  ],
+} as const;
+
 const industryLinks = [
   { title: "Nigerian Content Development", description: "NCDMB guidelines and requirements for Nigerian content compliance", url: "https://ncdmb.gov.ng", icon: ExternalLink },
   { title: "NUPRC Guidelines", description: "Nigerian Upstream Petroleum Regulatory Commission standards", url: "https://nuprc.gov.ng", icon: ExternalLink },
@@ -77,21 +160,18 @@ const industryLinks = [
 
 export default function ResourcesPage() {
   const { content } = usePageContent('resources');
+  const resourceImages = siteImageSelections.resources;
   
   const heroContent = content.hero || {};
   const brochuresContent = content.brochures || {};
   const videoContent = content.video || {};
-
-  const openYouTube = (youtubeId: string) => {
-    window.open(`https://www.youtube.com/watch?v=${youtubeId}`, '_blank');
-  };
 
   return (
     <Layout>
       <Hero
         title={heroContent.title || "Resources & Downloads"}
         subtitle={heroContent.subtitle || "Download our project brochures, company profile, technical documents, and watch our operations in action."}
-        backgroundImage={heroContent.backgroundImage || heroHddRig}
+        backgroundImage={heroContent.backgroundImage || resourceImages.hero}
         size="default"
         pageSlug="resources"
         sectionKey="hero"
@@ -287,7 +367,7 @@ export default function ResourcesPage() {
         </div>
       </section>
 
-      {/* Certifications */}
+      {/* Compliance Library */}
       <section className="section-padding bg-muted/30">
         <div className="container-wide">
           <motion.div 
@@ -298,29 +378,185 @@ export default function ResourcesPage() {
             transition={{ duration: 0.5 }}
           >
             <p className="section-eyebrow">Compliance</p>
-            <h2 className="section-title">Certifications & Accreditations</h2>
+            <h2 className="section-title">Certifications, Permits & Policies</h2>
             <p className="section-subtitle">
-              Enikkom maintains internationally recognized certifications for quality, safety, and environmental management.
+              Download the current compliance files sourced directly from the supplied corporate document pack.
             </p>
           </motion.div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
-            {resources.certifications.map((cert, index) => (
-              <motion.div
-                key={cert.name}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+
+          <div className="grid gap-12">
+            <div className="grid lg:grid-cols-[minmax(0,0.84fr)_minmax(0,1.16fr)] gap-8 items-center">
+              <motion.a
+                href={complianceResources.certification.href}
+                target="_blank"
+                rel="noreferrer"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: index * 0.05 }}
-                className="card-premium p-4 flex items-center gap-3"
+                transition={{ duration: 0.45 }}
+                className="block overflow-hidden rounded-[1.5rem] border border-border bg-white shadow-[0_20px_50px_rgba(15,23,42,0.08)]"
               >
-                <div className="w-2.5 h-2.5 rounded-full bg-primary flex-shrink-0" />
-                <div>
-                  <p className="text-[13px] font-semibold">{cert.name}</p>
-                  <p className="text-[11px] text-muted-foreground">{cert.issuer}</p>
+                <EnhancedImage
+                  src={complianceResources.certification.image}
+                  alt={complianceResources.certification.title}
+                  wrapperClassName="h-full w-full"
+                  className="h-full w-full"
+                  tone="natural"
+                  fallbackLabel={complianceResources.certification.title}
+                />
+              </motion.a>
+
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.45, delay: 0.08 }}
+                className="rounded-[1.5rem] border border-border bg-card p-7 md:p-8"
+              >
+                <div className="flex items-center gap-2 mb-3">
+                  <Award className="h-5 w-5 text-primary" />
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-primary">
+                    Current Certification
+                  </p>
                 </div>
+                <h3 className="text-2xl font-semibold tracking-tight mb-3">
+                  {complianceResources.certification.title}
+                </h3>
+                <p className="text-[14px] leading-7 text-muted-foreground mb-6">
+                  {complianceResources.certification.description}
+                </p>
+
+                <div className="grid sm:grid-cols-3 gap-4 mb-6">
+                  {complianceResources.certification.meta.map((item) => (
+                    <div key={item.label} className="rounded-xl border border-border/60 bg-muted/50 p-4">
+                      <p className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-1">
+                        {item.label}
+                      </p>
+                      <p className="text-[14px] font-semibold text-foreground">{item.value}</p>
+                    </div>
+                  ))}
+                </div>
+
+                <Button asChild className="h-11 gap-2 px-5">
+                  <a href={complianceResources.certification.href} target="_blank" rel="noreferrer">
+                    View Certificate
+                    <ExternalLink className="h-4 w-4" />
+                  </a>
+                </Button>
               </motion.div>
-            ))}
+            </div>
+
+            <div>
+              <motion.div
+                className="mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.45 }}
+              >
+                <div className="flex items-center gap-2 mb-2">
+                  <Landmark className="h-5 w-5 text-primary" />
+                  <p className="section-eyebrow">Registration</p>
+                </div>
+                <h3 className="text-[24px] md:text-[28px] font-semibold mb-3">Permits and Licenses</h3>
+                <p className="text-[14px] text-muted-foreground max-w-2xl">
+                  This sub-category lists the requested permit documents clearly, while staying honest about the files that were not present in the supplied source pack.
+                </p>
+              </motion.div>
+
+              <div className="grid md:grid-cols-3 gap-5">
+                {complianceResources.permits.map((permit, index) => (
+                  <motion.div
+                    key={permit.title}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.35, delay: index * 0.08 }}
+                    className="card-premium p-6 flex flex-col gap-4"
+                  >
+                    <div className="flex items-start gap-3">
+                      <div className={`w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 ${permit.available ? "bg-primary/10" : "bg-muted"}`}>
+                        {permit.available ? (
+                          <Landmark className="h-5 w-5 text-primary" />
+                        ) : (
+                          <FileX2 className="h-5 w-5 text-muted-foreground" />
+                        )}
+                      </div>
+                      <div>
+                        <h4 className="text-[15px] font-semibold mb-1">{permit.title}</h4>
+                        <p className="text-[12px] text-primary font-medium">{permit.authority}</p>
+                      </div>
+                    </div>
+
+                    <p className="text-[13px] leading-relaxed text-muted-foreground flex-1">
+                      {permit.description}
+                    </p>
+
+                    {permit.available ? (
+                      <Button variant="outline" className="h-10 w-fit gap-2" asChild>
+                        <a href={permit.href} target="_blank" rel="noreferrer">
+                          Open Document
+                          <ExternalLink className="h-4 w-4" />
+                        </a>
+                      </Button>
+                    ) : (
+                      <span className="inline-flex w-fit rounded-full border border-border bg-muted px-3 py-1 text-[11px] font-medium text-muted-foreground">
+                        Source Not Supplied
+                      </span>
+                    )}
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <motion.div
+                className="mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.45 }}
+              >
+                <div className="flex items-center gap-2 mb-2">
+                  <Shield className="h-5 w-5 text-primary" />
+                  <p className="section-eyebrow">Policies</p>
+                </div>
+                <h3 className="text-[24px] md:text-[28px] font-semibold mb-3">Approved Policy Documents</h3>
+                <p className="text-[14px] text-muted-foreground max-w-2xl">
+                  Only the four policies requested for this update are displayed here. All other policy text has been removed from this section.
+                </p>
+              </motion.div>
+
+              <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-5">
+                {complianceResources.policies.map((policy, index) => {
+                  const Icon = policy.icon;
+                  return (
+                    <motion.div
+                      key={policy.title}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.35, delay: index * 0.08 }}
+                      className="card-premium p-5 flex flex-col gap-4"
+                    >
+                      <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center">
+                        <Icon className="h-5 w-5 text-primary" />
+                      </div>
+                      <div>
+                        <h4 className="text-[15px] font-semibold mb-2">{policy.title}</h4>
+                        <p className="text-[12px] leading-relaxed text-muted-foreground">{policy.description}</p>
+                      </div>
+                      <Button variant="outline" className="h-10 w-fit gap-2 mt-auto" asChild>
+                        <a href={policy.href} target="_blank" rel="noreferrer">
+                          View Policy
+                          <ExternalLink className="h-4 w-4" />
+                        </a>
+                      </Button>
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </div>
           </div>
         </div>
       </section>

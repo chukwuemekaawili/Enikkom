@@ -6,22 +6,31 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
+// FAQ content — all answers verified against approved ECLweb source documents
 const faqs = [
   {
     question: "What services does Enikkom provide?",
-    answer: "Enikkom Construction Limited offers comprehensive infrastructure services including Horizontal Directional Drilling (HDD), Pipeline & Flowline Construction, Dredging & Piling, Jetty & Quay Wall Construction, Shore Approach works, Production Facilities Construction, Pipeline Security & Monitoring, Geotechnical Surveys, and Logistics Support. We provide end-to-end solutions from design through commissioning.",
+    answer: "Enikkom Group provides end-to-end EPCI services including: Trenchless Installations (HDD, Guided Boring, Microtunneling, Direct Pipe, Pipe Ramming, HDD Rescue); Pipeline & Flowline Construction on land, swamp, and offshore; Dredging & Piling Works including sand filling and reclamation; Production Facilities Construction including flow stations and wellhead works; Pipeline Security & Monitoring; and Logistics Support for land and swamp operations.",
   },
   {
-    question: "What is Horizontal Directional Drilling (HDD) and why is it important?",
-    answer: "Horizontal Directional Drilling (HDD) is a trenchless technology for installing pipelines underground without disturbing the surface. It's ideal for crossing rivers, roads, railways, and environmentally sensitive areas. HDD minimizes environmental impact, reduces construction time, and is often more cost-effective than traditional open-cut methods. Enikkom pioneered HDD in Nigeria with the historic River Niger crossing in 2003.",
+    question: "What is Horizontal Directional Drilling (HDD) and why is it used?",
+    answer: "Horizontal Directional Drilling (HDD) is a trenchless technology that installs pipelines underground without disturbing the surface. It is used to safely cross rivers, roads, railways, swamps, and environmentally sensitive areas. HDD eliminates the need for disruptive open-cut trenching, reduces environmental impact, and is often faster and more cost-effective for complex crossings. Enikkom pioneered HDD in Nigeria with the first crossing of the River Niger in 2003.",
   },
   {
-    question: "What is Enikkom's track record with HDD projects in Nigeria?",
-    answer: "Enikkom has installed over 100km of HDD pipelines in Nigeria since 2003. Our record-breaking projects include Africa's longest single drill at Atlas Cove-Mosimi (3.1km, 16\" pipeline) and Nigeria's longest Continuous HDD at OML34 (12km, 10\" pipeline). We've completed projects for Shell, NNPC, Dangote, Chevron, Total, and other major operators.",
+    question: "What records has Enikkom set in HDD and trenchless works?",
+    answer: "Enikkom holds multiple Africa-first and Nigeria-first records: Africa's longest single drill — 3.1km × 16\" (Atlas Cove-Mosimi, April 2016); Africa's deepest HDD crossing — 36\" × 1.2km at over 80m depth (Ekiadolor, February 2016); Africa's longest bundled crossing — 12\"+3\" × 2.78km (Otumara–Escravos, for Saipem/SPDC); Nigeria's longest CHDD — 10\" × 12km (OML34, Utorogun, Delta State); and Nigeria's largest pipe-size crossing at time of completion — 40\" × 760m (Daewoo/SPDC, January 2010).",
   },
   {
-    question: "Do you own your equipment or rely on subcontractors?",
-    answer: "Enikkom owns West Africa's largest HDD fleet with 10+ maxi rigs (up to 500 tons pullback capacity), supported by our strategic partnership with HDDThailand. We also own excavators, pipelayers, dredgers, crane barges, and support vessels. This ownership model ensures reliability, cost control, and immediate equipment availability for our clients' projects.",
+    question: "Does Enikkom own its equipment or rely on subcontractors?",
+    answer: "Enikkom owns Nigeria's largest HDD fleet — 9 HDD rigs with pullback capacities ranging from 50 to 500 tons — plus 6 Thrust Boring Machines (24\" to 72\"), 4 Micro-tunneling and Pipe Jacking units, dredgers, crane barges, excavators, pipelayers, and full support equipment. All equipment is held in-country in Nigeria. Our strategic partnership with HDDThailand further strengthens our technical capacity.",
+  },
+  {
+    question: "What certifications and compliance standards does Enikkom hold?",
+    answer: "The current published compliance pack on the site includes ISO 9001:2015 quality management certification, the active DPR / NUPRC permit bundle, and four core policy statements covering community management, quality, security, and safety. Additional registrations may be available in internal corporate files, but only the supplied document-backed items are displayed publicly.",
+  },
+  {
+    question: "Who are Enikkom's major clients?",
+    answer: "Enikkom has delivered projects for major operators and contractors including Shell Petroleum Development Company (SPDC), NPDC/ND Western, NNPC, Saipem Contracting Nigeria Limited, Dangote Fertilizer, NIPCO Plc, Niger Delta Power Holding Company (NDPHC), Oilserv Limited, Kaztec Engineering, Green Gas Plc, Zakhem Construction, PPMC, Oando Plc, and others across Nigeria.",
   },
 ];
 

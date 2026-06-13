@@ -11,6 +11,19 @@ node_modules
 dist
 dist-ssr
 *.local
+.tmp/
+vite.config.ts.timestamp-*.mjs
+
+# Environment variables — never commit secrets
+.env
+.env.*
+!.env.example
+
+# Build artifacts & temp dirs
+.codex-temp/
+.agents/
+.lovable/
+.claude/
 
 # Editor directories and files
 .vscode/*

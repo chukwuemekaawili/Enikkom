@@ -6,13 +6,12 @@ import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { EditableText } from "@/components/admin";
 import { usePageContent } from "@/hooks/useSiteSettings";
-
-import heroHddRig from "@/assets/hero/hero-hdd-rig.jpg";
+import { siteImageSelections } from "@/content/siteImageSelections";
 
 // Default testimonials from Enikkom documents
 const defaultTestimonials = [
   {
-    quote: "Outstanding job on the 36\" x 1.5km swamp/river crossing. Impressive drilling work done by your team. We look forward to more collaborations with Enikkom in the future.",
+    quote: "Outstanding job on the 36\" × 2km swamp/lagoon crossing. Impressive drilling work done by your team. We look forward to more collaborations with Enikkom in the future.",
     author: "Project Director",
     company: "Dangote Fertilizer Limited",
     project: "Lekki Gas Pipeline Project (LGPP)",
@@ -47,16 +46,16 @@ const defaultTestimonials = [
     rating: 5,
   },
   {
-    quote: "The Atlas Cove-Mosimi 16\" x 3km emergency reconstruction was completed in record time. Enikkom set a new benchmark for HDD capability in Africa with this project.",
+    quote: "The Atlas Cove-Mosimi 16\" × 3.1km emergency reconstruction was completed in record time. Enikkom set a new benchmark for HDD capability in Africa with this project.",
     author: "Pipeline Manager",
     company: "NNPC/PPMC",
-    project: "Atlas Cove-Mosimi Emergency Reconstruction",
+    project: "Atlas Cove-Mosimi 16\" × 3.1km — Africa's Longest Single Drill",
     rating: 5,
   },
 ];
 
 const defaultStats = [
-  { value: "30", label: "Years Experience" },
+  { value: "34", label: "Years Experience" },
   { value: "100+", label: "KM HDD Installed" },
   { value: "3.1km", label: "Longest Single Drill" },
   { value: "Zero", label: "LTI Record" },
@@ -64,6 +63,7 @@ const defaultStats = [
 
 export default function TestimonialsPage() {
   const { content } = usePageContent('testimonials');
+  const testimonialImages = siteImageSelections.testimonials;
   
   const heroContent = content.hero || {};
   const introContent = content.intro || {};
@@ -76,16 +76,20 @@ export default function TestimonialsPage() {
     : defaultTestimonials;
 
   // Get stats (from CMS or defaults)
-  const stats = statsContent.stats && statsContent.stats.length > 0 
+  const stats = (statsContent.stats && statsContent.stats.length > 0 
     ? statsContent.stats 
-    : defaultStats;
+    : defaultStats).map((stat: any) =>
+      typeof stat.label === "string" && stat.label.toLowerCase().includes("year")
+        ? { ...stat, value: "34" }
+        : stat
+    );
 
   return (
     <Layout>
       <Hero
         title={heroContent.title || "Client Testimonials"}
         subtitle={heroContent.subtitle || "Real feedback from the industry leaders who trust Enikkom for their critical infrastructure projects."}
-        backgroundImage={heroContent.backgroundImage || heroHddRig}
+        backgroundImage={heroContent.backgroundImage || testimonialImages.hero}
         size="default"
         pageSlug="testimonials"
         sectionKey="hero"
@@ -105,7 +109,7 @@ export default function TestimonialsPage() {
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               <EditableText
-                value={introContent.description || "Over 30 years of delivering excellence has earned us the trust of major IOCs, EPCs, and government agencies across Nigeria and West Africa."}
+                value={introContent.description || "Over 34 years of delivering excellence has earned us the trust of major IOCs, EPCs, and government agencies across Nigeria and West Africa."}
                 pageSlug="testimonials"
                 sectionKey="intro"
                 field="description"

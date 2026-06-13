@@ -5,29 +5,9 @@ import { useState, useEffect } from "react";
 import { X, ZoomIn, Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { EditableText } from "@/components/admin";
+import { EnhancedImage } from "@/components/ui/enhanced-image";
 import { usePageContent } from "@/hooks/useSiteSettings";
-
-// Import authentic project images - UNIQUE gallery set (fallback)
-import heroGallery from "@/assets/projects/brochure-hero.jpg";
-import galHddRig from "@/assets/projects/hdd-rig-operation.png";
-import galPipeline from "@/assets/projects/pipe-welding.png";
-import galDredging from "@/assets/projects/dredging-marine.png";
-import galJetty from "@/assets/projects/330b-excavator.jpg";
-import galShore from "@/assets/projects/drilling-site.png";
-import galWelding from "@/assets/projects/welding-crew.jpg";
-import galEquipment from "@/assets/projects/hdd-equipment-fleet-4.jpg";
-import galExcavator from "@/assets/projects/cat-excavator.jpg";
-import galScope from "@/assets/projects/scope-operations.jpg";
-import galDrillString from "@/assets/projects/hdd-drill-string.jpg";
-import galFleet from "@/assets/projects/equipment-fleet.jpg";
-import galRiver from "@/assets/projects/swamp-pipeline.png";
-import galAtlas from "@/assets/projects/pipeline-laying.png";
-import galLekki from "@/assets/projects/rig-setup.png";
-import galNipco from "@/assets/projects/nipco-pipeline.jpg";
-import galCrane from "@/assets/projects/pipe-handling.jpg";
-import galSafety from "@/assets/projects/workers-ppe.jpg";
-import galTeam from "@/assets/projects/hse-safety.jpg";
-import galTripping from "@/assets/projects/tripping-safety.jpg";
+import { siteImageSelections } from "@/content/siteImageSelections";
 
 interface GalleryItem {
   image: string;
@@ -36,28 +16,7 @@ interface GalleryItem {
   description: string;
 }
 
-// Default gallery items from codebase (fallback)
-const defaultGalleryItems: GalleryItem[] = [
-  { image: galHddRig, title: "500T Maxi HDD Rig Operation", category: "HDD", description: "500-ton maxi HDD rig performing directional drilling for major Niger Delta river crossing." },
-  { image: galPipeline, title: "36\" Pipeline Welding", category: "Pipelines", description: "API 1104 certified welders performing pipeline tie-in operations." },
-  { image: galDredging, title: "Marine Dredging Operations", category: "Marine Civil", description: "Dredging operations for channel deepening and reclamation." },
-  { image: galJetty, title: "330B Excavator Operations", category: "Equipment", description: "CAT 330B excavator supporting pipeline construction." },
-  { image: galShore, title: "Drilling Site Setup", category: "HDD", description: "Comprehensive HDD site setup with all support equipment." },
-  { image: galWelding, title: "Pipeline Welding Crew", category: "Pipelines", description: "Expert welding team performing pipeline fabrication." },
-  { image: galEquipment, title: "HDD Equipment Spread", category: "Equipment", description: "Complete HDD equipment spread including maxi rig and support equipment." },
-  { image: galExcavator, title: "Excavation Operations", category: "Equipment", description: "CAT excavator performing ROW preparation." },
-  { image: galScope, title: "Scope Rig Operations", category: "HDD", description: "Real-time trajectory monitoring during drilling operations." },
-  { image: galDrillString, title: "Drill String Assembly", category: "HDD", description: "Drill string assembly and preparation for deep crossing." },
-  { image: galFleet, title: "Equipment Fleet Overview", category: "Equipment", description: "Part of Enikkom's extensive fleet of 10+ maxi HDD rigs." },
-  { image: galRiver, title: "Swamp Pipeline Installation", category: "Pipelines", description: "Pipeline installation in challenging swamp terrain." },
-  { image: galAtlas, title: "Pipeline Laying Operations", category: "Pipelines", description: "Large diameter pipeline laying with specialized equipment." },
-  { image: galLekki, title: "Rig Setup Process", category: "HDD", description: "HDD rig setup and alignment for major crossing." },
-  { image: galNipco, title: "NIPCO Gas Network", category: "Pipelines", description: "Urban gas distribution network construction." },
-  { image: galCrane, title: "Pipe Handling Operations", category: "Marine Civil", description: "Specialized pipe handling for offshore installation." },
-  { image: galSafety, title: "PPE & Safety Compliance", category: "HSE", description: "Workers in full PPE maintaining safety standards." },
-  { image: galTeam, title: "HSE Safety Briefing", category: "HSE", description: "Daily safety briefing maintaining zero LTI record." },
-  { image: galTripping, title: "Tripping Operations Safety", category: "HSE", description: "Safe tripping operations during drill string handling." },
-];
+const defaultGalleryItems: GalleryItem[] = [...siteImageSelections.gallery.items];
 
 const categories = ["All", "HDD", "Pipelines", "Marine Civil", "Shore Approach", "Equipment", "HSE"];
 
@@ -112,7 +71,7 @@ export default function GalleryPage() {
       <Hero
         title={heroContent.title || "Project Gallery"}
         subtitle={heroContent.subtitle || "Visual documentation of our engineering excellence across HDD, pipelines, dredging, and marine construction projects."}
-        backgroundImage={heroContent.backgroundImage || heroGallery}
+        backgroundImage={heroContent.backgroundImage || siteImageSelections.gallery.hero}
         size="default"
         pageSlug="gallery"
         sectionKey="hero"
@@ -183,10 +142,14 @@ export default function GalleryPage() {
                     onClick={() => setSelectedImage(item)}
                   >
                     <div className="aspect-[4/3] overflow-hidden relative">
-                      <img
+                      <EnhancedImage
                         src={item.image}
                         alt={item.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        wrapperClassName="h-full w-full"
+                        className="h-full w-full"
+                        hoverZoom
+                        tone="natural"
+                        fallbackLabel={item.title}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                       
@@ -240,10 +203,14 @@ export default function GalleryPage() {
               transition={{ duration: 0.3 }}
               onClick={(e) => e.stopPropagation()}
             >
-              <img
+              <EnhancedImage
                 src={selectedImage.image}
                 alt={selectedImage.title}
-                className="w-full h-auto max-h-[70vh] object-contain rounded-xl"
+                wrapperClassName="w-full max-h-[70vh] rounded-xl"
+                className="w-full max-h-[70vh]"
+                fit="contain"
+                tone="natural"
+                fallbackLabel={selectedImage.title}
               />
               <div className="mt-5 text-center">
                 <span className="text-[11px] font-semibold text-primary bg-primary/20 px-3 py-1.5 rounded-md uppercase tracking-wide">

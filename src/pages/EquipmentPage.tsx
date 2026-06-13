@@ -4,69 +4,34 @@ import { EditableText } from "@/components/admin";
 import { usePageContent } from "@/hooks/useSiteSettings";
 import { motion } from "framer-motion";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Badge } from "@/components/ui/badge";
+import { EnhancedImage } from "@/components/ui/enhanced-image";
 import { Link } from "react-router-dom";
 import { ArrowRight, Wrench, Ship, Construction } from "lucide-react";
-
-// Import authentic project images from PDFs
-import equipmentFleet from "@/assets/projects/hdd-equipment-fleet.jpg";
-
-// Verified equipment data from Enikkom documents
-const hddRigs = [
-  { name: "500T HDD Rig", capacity: "Up to 48\" diameter, 3km span", pullback: "500 Ton", quantity: "2", status: "Certified" },
-  { name: "300T HDD Rig", capacity: "Up to 42\" diameter, 2km span", pullback: "300 Ton", quantity: "3", status: "Certified" },
-  { name: "200T HDD Rig", capacity: "Up to 36\" diameter, 1.5km span", pullback: "200 Ton", quantity: "2", status: "Certified" },
-  { name: "150T HDD Rig", capacity: "Up to 30\" diameter, 1.2km span", pullback: "150 Ton", quantity: "1", status: "Certified" },
-  { name: "100T HDD Rig", capacity: "Up to 24\" diameter, 1km span", pullback: "100 Ton", quantity: "1", status: "Certified" },
-  { name: "50T HDD Rig", capacity: "Up to 16\" diameter, 500m span", pullback: "50 Ton", quantity: "1", status: "Certified" },
-];
-
-const thrustBoringMachines = [
-  { name: "72-1200 NG Thrust Boring", capacity: "72\" diameter", quantity: "1", status: "Certified" },
-  { name: "48/54-G900 Thrust Boring", capacity: "48\"-54\" diameter", quantity: "1", status: "Certified" },
-  { name: "42\"/48\" G600 Thrust Boring", capacity: "42\"-48\" diameter", quantity: "1", status: "Certified" },
-  { name: "36\"/42\" 600 Pounds", capacity: "36\"-42\" diameter", quantity: "1", status: "Certified" },
-  { name: "36\" 340 Pounds", capacity: "36\" diameter", quantity: "1", status: "Certified" },
-  { name: "24-100 Thrust Boring", capacity: "24\" diameter", quantity: "1", status: "Certified" },
-];
-
-const microTunnelling = [
-  { name: "48\" Micro Tunnelling - MTS", capacity: "48\" diameter, high accuracy", quantity: "1", status: "Certified" },
-  { name: "800T Pipe Pusher - TSG", capacity: "800 Ton thrust capacity", quantity: "1", status: "Certified" },
-  { name: "750T Herrenknecht Thruster", capacity: "750 Ton thrust capacity", quantity: "1", status: "Certified" },
-  { name: "380T Pipe Pusher - Prime Drilling", capacity: "380 Ton thrust capacity", quantity: "1", status: "Certified" },
-];
-
-const marineEquipment = [
-  { name: "Cutter Suction Dredger", capacity: "Multiple capacities", quantity: "3+", status: "Certified" },
-  { name: "Crane Barge", capacity: "Various lift capacities", quantity: "4+", status: "Certified" },
-  { name: "Impact Pile Driver", capacity: "Heavy duty", quantity: "2+", status: "Certified" },
-  { name: "Lay Barge", capacity: "Pipeline installation", quantity: "2+", status: "Certified" },
-];
-
-const supportEquipment = [
-  { name: "CAT 320 Amphibious Excavators", capacity: "Swamp operations", quantity: "6+", status: "Certified" },
-  { name: "CAT 330/345 Track Excavators", capacity: "Various sizes", quantity: "15+", status: "Certified" },
-  { name: "CAT D6/D7 Dozers", capacity: "ROW clearing", quantity: "8+", status: "Certified" },
-  { name: "Sideboom Pipelayers", capacity: "Up to 48\" pipe", quantity: "12+", status: "Certified" },
-  { name: "Automatic Welding Sets", capacity: "All pipe sizes", quantity: "20+", status: "Certified" },
-  { name: "Mud Recycling Systems", capacity: "High volume", quantity: "Multiple", status: "Certified" },
-];
+import {
+  equipmentSourceNote,
+  hddRigSpecs,
+  thrustBoringSpecs,
+  microTunnelingSpecs,
+  marineFleetSpecs,
+  supportFleetSpecs,
+} from "@/content/equipmentSpecs";
+import { siteImageSelections } from "@/content/siteImageSelections";
 
 export default function EquipmentPage() {
   const { content } = usePageContent('equipment');
   const heroContent = content.hero || {};
   const hddContent = content.hdd_fleet || {};
   const thrustContent = content.thrust_boring || {};
+  const equipmentImages = siteImageSelections.equipment;
 
   return (
     <Layout>
       <Hero
-        title={heroContent.title || "Equipment & Fleet Capability"}
-        subtitle={heroContent.subtitle || "West Africa's largest HDD fleet with 10+ maxi rigs up to 500T pullback capacity. Modern, well-maintained equipment ready for deployment."}
-        badge={heroContent.badge || "West Africa's Largest Fleet"}
+        title={heroContent.title || "Technical Capacity & Equipment Fleet"}
+        subtitle={heroContent.subtitle || "Document-backed technical capacity for Enikkom's HDD, trench boring, microtunneling, marine, and support fleets. Model-specific engineering ratings now replace the old generic equipment copy."}
+        badge={heroContent.badge || "Nigeria's Largest HDD Fleet"}
         primaryCTA={{ label: heroContent.primaryBtnText || "View HDD Equipment Details", href: heroContent.primaryBtnLink || "/equipment/hdd" }}
-        backgroundImage={heroContent.backgroundImage || equipmentFleet}
+        backgroundImage={heroContent.backgroundImage || equipmentImages.hero}
         size="default"
         pageSlug="equipment"
         sectionKey="hero"
@@ -78,10 +43,10 @@ export default function EquipmentPage() {
         <div className="container-wide">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { value: "10+", label: "Maxi HDD Rigs" },
-              { value: "500T", label: "Max Pullback Capacity" },
-              { value: "48\"", label: "Max Pipe Diameter" },
-              { value: "6", label: "Thrust Boring Machines" },
+              { value: "500T", label: "Top HDD Pullback Class" },
+              { value: "4,893 kN", label: "DD-1100 Max Thrust" },
+              { value: "1.2M lb", label: "Largest Thrust Boring Rating" },
+              { value: "2 CSDs", label: "Owned Cutter Suction Dredgers" },
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}
@@ -124,7 +89,7 @@ export default function EquipmentPage() {
               </h2>
               <p className="text-[14px] md:text-[15px] text-muted-foreground max-w-2xl">
                 <EditableText
-                  value={hddContent.description || "10+ maxi HDD rigs from 50T to 500T pullback capacity through our partnership with HDDThailand."}
+                  value={hddContent.description || "Model-by-model HDD ratings sourced from the technical capacity sheets. DD-1100 and DD-1100 RS are shown as separate 500-ton rigs, and the table now uses rated thrust, kN conversions, torque, power, and fluid-flow figures instead of generic diameter claims."}
                   pageSlug="equipment"
                   sectionKey="hdd_fleet"
                   field="description"
@@ -149,25 +114,59 @@ export default function EquipmentPage() {
               <Table>
                 <TableHeader>
                   <TableRow className="bg-muted/50">
-                    <TableHead className="font-semibold">Equipment</TableHead>
-                    <TableHead className="font-semibold">Pullback</TableHead>
-                    <TableHead className="font-semibold">Capacity/Specs</TableHead>
-                    <TableHead className="font-semibold">Quantity</TableHead>
-                    <TableHead className="font-semibold">Status</TableHead>
+                    <TableHead className="font-semibold">Model</TableHead>
+                    <TableHead className="font-semibold">Inventory Label</TableHead>
+                    <TableHead className="font-semibold">Pullback Class</TableHead>
+                    <TableHead className="font-semibold">Rated Thrust / kN</TableHead>
+                    <TableHead className="font-semibold">Rotary Torque</TableHead>
+                    <TableHead className="font-semibold">Power / Flow</TableHead>
+                    <TableHead className="font-semibold">Qty</TableHead>
+                    <TableHead className="font-semibold">Year</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
-                  {hddRigs.map((item, i) => (
+                  {hddRigSpecs.map((item, i) => (
                     <TableRow key={i} className="hover:bg-muted/30 transition-colors">
-                      <TableCell className="font-medium text-[13px]">{item.name}</TableCell>
-                      <TableCell className="text-[13px] text-primary font-semibold">{item.pullback}</TableCell>
-                      <TableCell className="text-[13px] text-muted-foreground">{item.capacity}</TableCell>
+                      <TableCell className="font-medium text-[13px]">
+                        {item.model}
+                        {(item.model === "American Augers DD-1100" || item.model === "American Augers DD-1100 RS") && (
+                          <span className="ml-2 inline-block text-[10px] bg-primary/10 text-primary px-1.5 py-0.5 rounded font-semibold">
+                            500T
+                          </span>
+                        )}
+                      </TableCell>
+                      <TableCell className="text-[13px] text-muted-foreground whitespace-nowrap">{item.inventoryLabel}</TableCell>
+                      <TableCell className="text-[13px] text-primary font-semibold whitespace-nowrap">{item.pullbackClass}</TableCell>
+                      <TableCell className="text-[13px] text-muted-foreground min-w-[190px]">{item.thrustRating}</TableCell>
+                      <TableCell className="text-[13px] text-muted-foreground min-w-[170px]">{item.rotaryTorque}</TableCell>
+                      <TableCell className="text-[13px] text-muted-foreground min-w-[210px]">
+                        <div>{item.power}</div>
+                        <div className="text-[11px] mt-1">{item.fluidFlow}</div>
+                      </TableCell>
                       <TableCell className="text-[13px]">{item.quantity}</TableCell>
-                      <TableCell><Badge variant="outline" className="text-green-600 border-green-600/30">{item.status}</Badge></TableCell>
+                      <TableCell className="text-[13px]">{item.year}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
               </Table>
+            </div>
+            <p className="text-[12px] text-muted-foreground mt-3">
+              {equipmentSourceNote}
+            </p>
+            <div className="grid md:grid-cols-2 gap-3 mt-4">
+              {hddRigSpecs.filter((item) =>
+                [
+                  "American Augers DD-580",
+                  "American Augers DD-1100",
+                  "American Augers DD-1100 RS",
+                  "American Augers DD-625",
+                ].includes(item.model)
+              ).map((item) => (
+                <div key={item.model} className="rounded-[14px] border border-border bg-muted/20 p-4">
+                  <p className="text-[12px] font-semibold text-foreground mb-1">{item.model}</p>
+                  <p className="text-[12px] text-muted-foreground leading-relaxed">{item.note}</p>
+                </div>
+              ))}
             </div>
           </motion.div>
         </div>
@@ -197,7 +196,7 @@ export default function EquipmentPage() {
             </h2>
             <p className="text-[14px] md:text-[15px] text-muted-foreground max-w-2xl">
               <EditableText
-                value={thrustContent.description || "6 thrust boring machines and specialized micro tunnelling equipment for precise underground installations."}
+                value={thrustContent.description || "Rated push-capacity schedules for the American Augers thrust boring fleet and the dedicated microtunneling / pipe pusher spreads in the equipment register."}
                 pageSlug="equipment"
                 sectionKey="thrust_boring"
                 field="description"
@@ -219,15 +218,19 @@ export default function EquipmentPage() {
                   <TableHeader>
                     <TableRow className="bg-muted/50">
                       <TableHead className="font-semibold">Equipment</TableHead>
-                      <TableHead className="font-semibold">Capacity</TableHead>
+                      <TableHead className="font-semibold">Make</TableHead>
+                      <TableHead className="font-semibold">Rated Capacity</TableHead>
+                      <TableHead className="font-semibold">Year</TableHead>
                       <TableHead className="font-semibold">Qty</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
-                    {thrustBoringMachines.map((item, i) => (
+                    {thrustBoringSpecs.map((item, i) => (
                       <TableRow key={i} className="hover:bg-muted/30 transition-colors">
-                        <TableCell className="font-medium text-[13px]">{item.name}</TableCell>
-                        <TableCell className="text-[13px] text-muted-foreground">{item.capacity}</TableCell>
+                        <TableCell className="font-medium text-[13px]">{item.equipment}</TableCell>
+                        <TableCell className="text-[13px]">{item.make}</TableCell>
+                        <TableCell className="text-[13px] text-muted-foreground">{item.rating}</TableCell>
+                        <TableCell className="text-[13px]">{item.year}</TableCell>
                         <TableCell className="text-[13px]">{item.quantity}</TableCell>
                       </TableRow>
                     ))}
@@ -249,15 +252,19 @@ export default function EquipmentPage() {
                   <TableHeader>
                     <TableRow className="bg-muted/50">
                       <TableHead className="font-semibold">Equipment</TableHead>
-                      <TableHead className="font-semibold">Capacity</TableHead>
+                      <TableHead className="font-semibold">Make</TableHead>
+                      <TableHead className="font-semibold">Rated Capacity</TableHead>
+                      <TableHead className="font-semibold">Year</TableHead>
                       <TableHead className="font-semibold">Qty</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
-                    {microTunnelling.map((item, i) => (
+                    {microTunnelingSpecs.map((item, i) => (
                       <TableRow key={i} className="hover:bg-muted/30 transition-colors">
-                        <TableCell className="font-medium text-[13px]">{item.name}</TableCell>
-                        <TableCell className="text-[13px] text-muted-foreground">{item.capacity}</TableCell>
+                        <TableCell className="font-medium text-[13px]">{item.equipment}</TableCell>
+                        <TableCell className="text-[13px]">{item.make}</TableCell>
+                        <TableCell className="text-[13px] text-muted-foreground">{item.rating}</TableCell>
+                        <TableCell className="text-[13px]">{item.year}</TableCell>
                         <TableCell className="text-[13px]">{item.quantity}</TableCell>
                       </TableRow>
                     ))}
@@ -285,7 +292,7 @@ export default function EquipmentPage() {
             </div>
             <h2 className="mb-2">Marine & Support Equipment</h2>
             <p className="text-[14px] md:text-[15px] text-muted-foreground max-w-2xl">
-              Full fleet of dredgers, barges, excavators, and pipeline construction equipment.
+              Detailed marine, civil, and logistics fleet groupings from the owned-equipment schedule, including dredgers, excavators, sidebooms, cranes, transport, generators, and field vehicles.
             </p>
           </motion.div>
 
@@ -302,16 +309,16 @@ export default function EquipmentPage() {
                 <Table>
                   <TableHeader>
                     <TableRow className="bg-muted/50">
-                      <TableHead className="font-semibold">Equipment</TableHead>
-                      <TableHead className="font-semibold">Capacity</TableHead>
+                      <TableHead className="font-semibold">Asset Category</TableHead>
+                      <TableHead className="font-semibold">Documented Detail</TableHead>
                       <TableHead className="font-semibold">Qty</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
-                    {marineEquipment.map((item, i) => (
+                    {marineFleetSpecs.map((item, i) => (
                       <TableRow key={i} className="hover:bg-muted/30 transition-colors">
-                        <TableCell className="font-medium text-[13px]">{item.name}</TableCell>
-                        <TableCell className="text-[13px] text-muted-foreground">{item.capacity}</TableCell>
+                        <TableCell className="font-medium text-[13px]">{item.category}</TableCell>
+                        <TableCell className="text-[13px] text-muted-foreground">{item.detail}</TableCell>
                         <TableCell className="text-[13px]">{item.quantity}</TableCell>
                       </TableRow>
                     ))}
@@ -328,20 +335,36 @@ export default function EquipmentPage() {
               transition={{ duration: 0.4, delay: 0.2 }}
             >
               <h3 className="text-lg font-semibold mb-4">Support Equipment</h3>
+              <div className="mb-4 overflow-hidden rounded-[14px] border border-border bg-card">
+                <EnhancedImage
+                src={equipmentImages.support}
+                  alt="Heavy transport and support fleet assets mobilized for field operations"
+                  wrapperClassName="aspect-[16/10]"
+                  className="h-full w-full"
+                  tone="natural"
+                  fallbackLabel="Support fleet reference"
+                />
+                <div className="border-t border-border px-4 py-3">
+                  <p className="text-[13px] font-semibold text-foreground">Heavy Transport & Support Fleet Reference</p>
+                  <p className="mt-1 text-[12px] text-muted-foreground">
+                    Documentary fleet image used in place of the old logo-style placeholder so the support section reflects the actual transport, power, and field-logistics capability listed in the equipment schedule.
+                  </p>
+                </div>
+              </div>
               <div className="overflow-x-auto rounded-[14px] border border-border bg-card">
                 <Table>
                   <TableHeader>
                     <TableRow className="bg-muted/50">
-                      <TableHead className="font-semibold">Equipment</TableHead>
-                      <TableHead className="font-semibold">Capacity</TableHead>
+                      <TableHead className="font-semibold">Fleet Category</TableHead>
+                      <TableHead className="font-semibold">Documented Detail</TableHead>
                       <TableHead className="font-semibold">Qty</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
-                    {supportEquipment.map((item, i) => (
+                    {supportFleetSpecs.map((item, i) => (
                       <TableRow key={i} className="hover:bg-muted/30 transition-colors">
-                        <TableCell className="font-medium text-[13px]">{item.name}</TableCell>
-                        <TableCell className="text-[13px] text-muted-foreground">{item.capacity}</TableCell>
+                        <TableCell className="font-medium text-[13px]">{item.category}</TableCell>
+                        <TableCell className="text-[13px] text-muted-foreground">{item.detail}</TableCell>
                         <TableCell className="text-[13px]">{item.quantity}</TableCell>
                       </TableRow>
                     ))}
@@ -360,7 +383,7 @@ export default function EquipmentPage() {
             <div>
               <h3 className="text-lg font-semibold mb-2">
                 <EditableText
-                  value={content.partnership?.title || "Strategic Partnership with HDDThailand"}
+                  value={content.partnership?.title || "Technical Partnership with HDDThailand Co. Ltd"}
                   pageSlug="equipment"
                   sectionKey="partnership"
                   field="title"
@@ -368,7 +391,7 @@ export default function EquipmentPage() {
               </h3>
               <p className="text-[14px] text-muted-foreground max-w-2xl">
                 <EditableText
-                  value={content.partnership?.description || "Our partnership with HDDThailand Co. Ltd provides access to cutting-edge trenchless technology, specialized equipment, and international expertise for complex HDD projects."}
+                  value={content.partnership?.description || "HDDThailand Co. Ltd is a global leader in trenchless solutions with over 15 years of international experience. HDDThailand provides engineering services, project management services, and quality assurance procedures consistent with ISO-9001 certification for all directional drilling projects. This collaboration delivers world-class trenchless technology solutions to the oil and gas industry."}
                   pageSlug="equipment"
                   sectionKey="partnership"
                   field="description"

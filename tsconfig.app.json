@@ -24,6 +24,9 @@
 
     "baseUrl": ".",
     "paths": {
+      "@/assets/images/*": ["./src/assets/images/*"],
+      "@/assets/videos/*": ["./src/assets/videos/*"],
+      "@/assets/*": ["./src/assets/images/*"],
       "@/*": ["./src/*"]
     }
   },

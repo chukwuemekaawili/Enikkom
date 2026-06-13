@@ -1,25 +1,24 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { MessageSquare } from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface MobileStickyCTAProps {
   href?: string;
   label?: string;
+  phone?: string;
 }
 
-export function MobileStickyCTA({ 
-  href = "/contact", 
-  label = "Get Quote" 
+export function MobileStickyCTA({
+  href = "/contact",
+  label = "Contact Us",
+  phone = "+2348065738555",
 }: MobileStickyCTAProps) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      // Show after scrolling 2 viewport heights
-      const scrollThreshold = window.innerHeight * 2;
-      setIsVisible(window.scrollY > scrollThreshold);
+      setIsVisible(window.scrollY > window.innerHeight * 0.8);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -30,22 +29,30 @@ export function MobileStickyCTA({
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          className="fixed bottom-5 right-5 z-50 md:hidden"
-          initial={{ opacity: 0, scale: 0.8, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.8, y: 20 }}
-          transition={{ duration: 0.2, ease: "easeOut" }}
+          className="fixed bottom-0 left-0 right-0 z-50 md:hidden"
+          initial={{ y: 80, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: 80, opacity: 0 }}
+          transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
         >
-          <Button
-            asChild
-            size="lg"
-            className="h-12 px-5 text-[13px] font-semibold bg-primary hover:bg-primary/90 rounded-full shadow-xl shadow-primary/30"
-          >
-            <Link to={href}>
-              <MessageSquare className="mr-2 h-4 w-4" />
-              {label}
-            </Link>
-          </Button>
+          <div className="border-t border-white/10 bg-[#071630]/95 backdrop-blur-md px-4 py-3 pb-safe">
+            <div className="flex items-center gap-3">
+              <a
+                href={`tel:${phone}`}
+                className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/8 text-white transition-colors active:bg-white/15"
+                aria-label="Call us"
+              >
+                <Phone className="h-4.5 w-4.5" />
+              </a>
+              <Link
+                to={href}
+                className="flex flex-1 items-center justify-center gap-2 rounded-full bg-brand-amber px-5 py-3 text-[13px] font-bold uppercase tracking-[0.1em] text-white shadow-[0_4px_20px_rgba(245,158,11,0.35)] transition-all active:scale-[0.98]"
+              >
+                {label}
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </div>
         </motion.div>
       )}
     </AnimatePresence>

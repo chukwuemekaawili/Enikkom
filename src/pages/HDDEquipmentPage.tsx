@@ -5,62 +5,29 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { CheckCircle, Drill, Settings, Wrench } from "lucide-react";
 import { usePageContent } from "@/hooks/useSiteSettings";
 import { EditableText, EditableImage } from "@/components/admin";
-
-// Import authentic image from PDFs
-import hddDrilling from "@/assets/projects/hdd-rig-night.jpg";
-
-// Real HDD Rig Fleet from Enikkom documents
-const hddRigs = [
-  { model: "Maxi HDD Rig", pullback: "500T", diameter: "Up to 48\"", length: "Up to 3km", quantity: "2" },
-  { model: "Maxi HDD Rig", pullback: "300T", diameter: "Up to 42\"", length: "Up to 2.5km", quantity: "3" },
-  { model: "Maxi HDD Rig", pullback: "200T", diameter: "Up to 36\"", length: "Up to 2km", quantity: "2" },
-  { model: "Maxi HDD Rig", pullback: "150T", diameter: "Up to 30\"", length: "Up to 1.5km", quantity: "1" },
-  { model: "Maxi HDD Rig", pullback: "100T", diameter: "Up to 24\"", length: "Up to 1.2km", quantity: "1" },
-  { model: "Mini HDD Rig", pullback: "50T", diameter: "Up to 16\"", length: "Up to 800m", quantity: "1" },
-];
-
-// Real Thrust Boring & Micro Tunnelling Equipment from documents
-const thrustBoringEquipment = [
-  { type: "48\" Micro Tunnelling Machine", capacity: "48\" diameter", application: "Large utility crossings", quantity: "1 (MTS)" },
-  { type: "800T Pipe Pusher", capacity: "Up to 60\" diameter", application: "Major crossings", quantity: "1 (TSG)" },
-  { type: "750T Herrenknecht Thruster", capacity: "Up to 54\" diameter", application: "Road/Railway crossings", quantity: "1" },
-  { type: "380T Pipe Pusher", capacity: "Up to 42\" diameter", application: "Highway crossings", quantity: "1 (Prime Drilling)" },
-  { type: "Thrust Boring Machine 72-1200 NG", capacity: "Up to 72\" diameter", application: "Large crossings", quantity: "1" },
-  { type: "Thrust Boring Machine 48/54-G900", capacity: "48-54\" diameter", application: "Medium crossings", quantity: "1" },
-  { type: "Thrust Boring Machine 42\"/48\" G600", capacity: "42-48\" diameter", application: "Standard crossings", quantity: "1" },
-  { type: "Thrust Boring Machine 36\"/42\" 600 lbs", capacity: "36-42\" diameter", application: "Utility crossings", quantity: "1" },
-  { type: "Thrust Boring Machine 36\" 340 lbs", capacity: "36\" diameter", application: "Short crossings", quantity: "1" },
-  { type: "Thrust Boring Machine 24-100", capacity: "Up to 24\" diameter", application: "Small utility crossings", quantity: "1" },
-];
-
-const supportEquipment = [
-  "Mud Recycling Systems (Multiple capacities)",
-  "Mud Mixing Plants",
-  "Mud Pumps (Various sizes)",
-  "Drilling Fluid Systems",
-  "Reamers (Various sizes up to 48\")",
-  "Pipe Handling Equipment",
-  "Tracking & Guidance Systems (Paratrack, TruTracker)",
-  "Downhole Tools & Motors",
-  "Welding Sets (Automatic & Manual)",
-  "Power Generators",
-  "Support Vehicles & Cranes",
-  "CAT & Hitachi Excavators",
-];
+import {
+  equipmentSourceNote,
+  hddRigSpecs,
+  thrustBoringSpecs,
+  microTunnelingSpecs,
+  hddSupportSystems,
+} from "@/content/equipmentSpecs";
+import { siteImageSelections } from "@/content/siteImageSelections";
 
 export default function HDDEquipmentPage() {
   const { content } = usePageContent('hdd-equipment');
   const heroContent = content.hero || {};
   const overviewContent = content.overview || {};
   const partnerContent = content.partner || {};
+  const hddEquipmentImages = siteImageSelections.hddEquipment;
 
   return (
     <Layout>
       <Hero
         title={heroContent.title || "HDD & Trenchless Equipment"}
-        subtitle={heroContent.subtitle || "West Africa's largest fleet of Horizontal Directional Drilling rigs—10+ maxi rigs with capacities from 50T to 500T pullback. Plus micro-tunnelling and thrust boring equipment."}
-        badge={heroContent.badge || "10+ Maxi HDD Rigs Available"}
-        backgroundImage={heroContent.backgroundImage || hddDrilling}
+        subtitle={heroContent.subtitle || "Model-specific HDD technical capacity sourced from the approved fleet schedule, including separate DD-1100 and DD-1100 RS entries, rated thrust in kN, torque, power, mud systems, and trenchless support equipment."}
+        badge={heroContent.badge || "Technical Capacity Schedule"}
+        backgroundImage={heroContent.backgroundImage || hddEquipmentImages.hero}
         size="default"
         primaryCTA={{ label: "Request Equipment Specs", href: "/contact" }}
         pageSlug="hdd-equipment"
@@ -88,7 +55,7 @@ export default function HDDEquipmentPage() {
               </h2>
               <p className="text-muted-foreground text-[14px] md:text-[15px] mb-6 leading-relaxed">
                 <EditableText
-                  value={overviewContent.description || "Our strategic partnership with HDDThailand provides access to cutting-edge technology and the largest HDD equipment fleet in West Africa. From utility crossings to major river crossings up to 3km in length—we hold the record for Africa's longest single drill at 3.1km."}
+                  value={overviewContent.description || "The current equipment schedule lists named American Augers units across the fleet, including DD-580, DD-440 / DD-440T, DD-1100, DD-1100 RS, DD-625, DD-220T, DD-100, and the latest DD-600 inventory entry. This page now presents the engineering ratings exactly as they appear in the technical capacity pack instead of generic diameter placeholders."}
                   pageSlug="hdd-equipment"
                   sectionKey="overview"
                   field="description"
@@ -97,10 +64,10 @@ export default function HDDEquipmentPage() {
               </p>
               <div className="grid grid-cols-2 gap-3">
                 {[
-                  { icon: Drill, label: overviewContent.stat1 || "10+ Maxi HDD Rigs" },
-                  { icon: Settings, label: overviewContent.stat2 || "500T Max Pullback" },
-                  { icon: Wrench, label: overviewContent.stat3 || "48\" Max Diameter" },
-                  { icon: CheckCircle, label: overviewContent.stat4 || "3.1km Record Drill" },
+                  { icon: Drill, label: overviewContent.stat1 || "DD-1100 + DD-1100 RS Listed Separately" },
+                  { icon: Settings, label: overviewContent.stat2 || "500T Max Pullback Class" },
+                  { icon: Wrench, label: overviewContent.stat3 || "4,893 kN Max Thrust Rating" },
+                  { icon: CheckCircle, label: overviewContent.stat4 || "1,000 gpm Max Mud Flow" },
                 ].map((item, i) => (
                   <motion.div 
                     key={i} 
@@ -131,7 +98,7 @@ export default function HDDEquipmentPage() {
               transition={{ duration: 0.5, delay: 0.1 }}
             >
               <EditableImage
-                src={overviewContent.image || hddDrilling}
+                src={overviewContent.image || hddEquipmentImages.support}
                 alt="HDD Rig in Operation"
                 pageSlug="hdd-equipment"
                 sectionKey="overview"
@@ -160,20 +127,27 @@ export default function HDDEquipmentPage() {
               <Table>
                 <TableHeader>
                   <TableRow className="bg-muted/50">
-                    <TableHead className="font-semibold">Equipment Type</TableHead>
-                    <TableHead className="font-semibold">Pullback Capacity</TableHead>
-                    <TableHead className="font-semibold">Max Diameter</TableHead>
-                    <TableHead className="font-semibold">Max Length</TableHead>
+                    <TableHead className="font-semibold">Model</TableHead>
+                    <TableHead className="font-semibold">Inventory Label</TableHead>
+                    <TableHead className="font-semibold">Pullback Class</TableHead>
+                    <TableHead className="font-semibold">Rated Thrust / kN</TableHead>
+                    <TableHead className="font-semibold">Rotary Torque</TableHead>
+                    <TableHead className="font-semibold">Power / Fluid</TableHead>
                     <TableHead className="font-semibold">Quantity</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
-                  {hddRigs.map((rig, i) => (
+                  {hddRigSpecs.map((rig, i) => (
                     <TableRow key={i} className="hover:bg-muted/30 transition-colors">
                       <TableCell className="font-medium text-[13px]">{rig.model}</TableCell>
-                      <TableCell className="text-[13px] text-primary font-semibold">{rig.pullback}</TableCell>
-                      <TableCell className="text-[13px]">{rig.diameter}</TableCell>
-                      <TableCell className="text-[13px]">{rig.length}</TableCell>
+                      <TableCell className="text-[13px] text-muted-foreground whitespace-nowrap">{rig.inventoryLabel}</TableCell>
+                      <TableCell className="text-[13px] text-primary font-semibold whitespace-nowrap">{rig.pullbackClass}</TableCell>
+                      <TableCell className="text-[13px] text-muted-foreground min-w-[190px]">{rig.thrustRating}</TableCell>
+                      <TableCell className="text-[13px] text-muted-foreground min-w-[170px]">{rig.rotaryTorque}</TableCell>
+                      <TableCell className="text-[13px] text-muted-foreground min-w-[210px]">
+                        <div>{rig.power}</div>
+                        <div className="text-[11px] mt-1">{rig.fluidFlow}</div>
+                      </TableCell>
                       <TableCell className="text-[13px]">{rig.quantity}</TableCell>
                     </TableRow>
                   ))}
@@ -182,7 +156,7 @@ export default function HDDEquipmentPage() {
             </div>
             <p className="text-[12px] text-muted-foreground mt-2">
               <EditableText
-                value={content.hdd_table?.footer || "Total: 10+ Maxi HDD Rigs • Combined pullback capacity: 2,300+ tons"}
+                value={content.hdd_table?.footer || `Rated technical data shown here is drawn from the current equipment pack. ${equipmentSourceNote}`}
                 pageSlug="hdd-equipment"
                 sectionKey="hdd_table"
                 field="footer"
@@ -210,17 +184,19 @@ export default function HDDEquipmentPage() {
                 <TableHeader>
                   <TableRow className="bg-muted/50">
                     <TableHead className="font-semibold">Equipment Type</TableHead>
-                    <TableHead className="font-semibold">Capacity</TableHead>
-                    <TableHead className="font-semibold">Typical Application</TableHead>
+                    <TableHead className="font-semibold">Make</TableHead>
+                    <TableHead className="font-semibold">Rated Capacity</TableHead>
+                    <TableHead className="font-semibold">Year</TableHead>
                     <TableHead className="font-semibold">Quantity</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
-                  {thrustBoringEquipment.map((item, i) => (
+                  {[...thrustBoringSpecs, ...microTunnelingSpecs].map((item, i) => (
                     <TableRow key={i} className="hover:bg-muted/30 transition-colors">
-                      <TableCell className="font-medium text-[13px]">{item.type}</TableCell>
-                      <TableCell className="text-[13px]">{item.capacity}</TableCell>
-                      <TableCell className="text-[13px]">{item.application}</TableCell>
+                      <TableCell className="font-medium text-[13px]">{item.equipment}</TableCell>
+                      <TableCell className="text-[13px]">{item.make}</TableCell>
+                      <TableCell className="text-[13px] text-muted-foreground">{item.rating}</TableCell>
+                      <TableCell className="text-[13px]">{item.year}</TableCell>
                       <TableCell className="text-[13px]">{item.quantity}</TableCell>
                     </TableRow>
                   ))}
@@ -237,26 +213,31 @@ export default function HDDEquipmentPage() {
           >
             <h3 className="text-xl font-semibold mb-6">
               <EditableText
-                value={content.support?.title || "Support Equipment"}
+                value={content.support?.title || "Support Systems & Downhole Equipment"}
                 pageSlug="hdd-equipment"
                 sectionKey="support"
                 field="title"
               />
             </h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
-              {supportEquipment.map((item, i) => (
-                <motion.div 
-                  key={i} 
-                  className="flex items-center gap-2 p-3 bg-muted/30 rounded-[14px]"
-                  initial={{ opacity: 0, x: 8 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.25, delay: i * 0.03 }}
-                >
-                  <CheckCircle className="h-4 w-4 text-primary flex-shrink-0" />
-                  <span className="text-[13px]">{item}</span>
-                </motion.div>
-              ))}
+            <div className="overflow-x-auto rounded-[14px] border border-border">
+              <Table>
+                <TableHeader>
+                  <TableRow className="bg-muted/50">
+                    <TableHead className="font-semibold">System</TableHead>
+                    <TableHead className="font-semibold">Documented Detail</TableHead>
+                    <TableHead className="font-semibold">Quantity</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {hddSupportSystems.map((item, i) => (
+                    <TableRow key={i} className="hover:bg-muted/30 transition-colors">
+                      <TableCell className="font-medium text-[13px]">{item.system}</TableCell>
+                      <TableCell className="text-[13px] text-muted-foreground">{item.detail}</TableCell>
+                      <TableCell className="text-[13px]">{item.quantity}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
             </div>
           </motion.div>
         </div>
@@ -290,7 +271,7 @@ export default function HDDEquipmentPage() {
             </h2>
             <p className="text-[14px] md:text-[15px] text-muted-foreground max-w-2xl mx-auto">
               <EditableText
-                value={partnerContent.description || "Our strategic partnership with HDDThailand provides access to cutting-edge HDD technology, international expertise, and the largest equipment fleet in West Africa—ensuring we can tackle any crossing challenge."}
+                value={partnerContent.description || "HDDTEC Ltd — our joint venture with HDDThailand Co. Ltd — combines HDDThailand's 15+ years of international HDD experience (ISO 9001:2015 certified) with ECL's deep local knowledge, operating Nigeria's largest in-country fleet of 9 HDD rigs to tackle any crossing challenge."}
                 pageSlug="hdd-equipment"
                 sectionKey="partner"
                 field="description"
@@ -303,7 +284,7 @@ export default function HDDEquipmentPage() {
 
       <CTABand 
         headline="Need HDD Equipment for Your Project?"
-        primaryCTA={{ label: "Request a Quote", href: "/contact" }}
+        primaryCTA={{ label: "Contact Us", href: "/contact" }}
       />
     </Layout>
   );

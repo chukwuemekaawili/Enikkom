@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
+import { getAssetUrl } from '@/lib/assetMap';
 import { ExternalLink, RotateCcw, Upload, Video, Image as ImageIcon, Loader2 } from 'lucide-react';
 
 interface CurrentAssetPreviewProps {
@@ -32,6 +33,7 @@ export function CurrentAssetPreview({
 }: CurrentAssetPreviewProps) {
   const isUsingDefault = !currentUrl && defaultUrl;
   const displayUrl = currentUrl || defaultUrl;
+  const resolvedDisplayUrl = displayUrl ? getAssetUrl(displayUrl) : displayUrl;
 
   return (
     <Card className={isUsingDefault ? 'border-blue-200 bg-blue-50/50' : ''}>
@@ -72,11 +74,11 @@ export function CurrentAssetPreview({
       </CardHeader>
       <CardContent className="space-y-3">
         {/* Preview */}
-        {displayUrl && (
+        {resolvedDisplayUrl && (
           <div className="relative">
             {type === 'video' ? (
               <video
-                src={displayUrl}
+                src={resolvedDisplayUrl}
                 className="w-full h-32 object-cover rounded-lg bg-muted"
                 muted
                 loop
@@ -85,7 +87,7 @@ export function CurrentAssetPreview({
               />
             ) : (
               <img
-                src={displayUrl}
+                src={resolvedDisplayUrl}
                 alt="Preview"
                 className="w-full h-32 object-cover rounded-lg bg-muted"
               />

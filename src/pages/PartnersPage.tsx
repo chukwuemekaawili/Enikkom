@@ -6,22 +6,25 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { EditableText, EditableImage } from "@/components/admin";
 import { usePageContent } from "@/hooks/useSiteSettings";
-
-import heroHddRig from "@/assets/hero/hero-hdd-rig.jpg";
+import { EnhancedImage } from "@/components/ui/enhanced-image";
+import { siteImageSelections } from "@/content/siteImageSelections";
+import { findBrandEntity } from "@/content/brandRegistry";
 
 const defaultFeaturedPartners = [
   {
     name: "HDDThailand Co. Ltd",
     type: "Joint Venture Partner",
     since: "May 2020",
-    description: "Thailand-based HDD specialist providing advanced directional drilling technology, equipment supply, and technical training programs.",
+    description: "Thailand-based trenchless specialist with 15+ years international HDD experience across Asia, Africa and the Middle East. Provides advanced equipment, ISO 9001:2015 certified operations, and specialist engineer deployment to HDDTEC Ltd.",
     highlights: [
       "ISO 9001:2015 Certified Operations",
-      "10+ Maxi HDD Rigs (up to 500T)",
+      "9 HDD Rigs In-Country (up to 500T pullback)",
       "Advanced Downhole Tool Technology",
-      "International Engineer Exchange Program",
+      "International Engineer Exchange Programme",
     ],
     website: "https://hddthailand.com",
+    logoSrc: findBrandEntity("hddthailand")?.logoSrc,
+    logoWrapperClassName: "bg-white rounded-lg p-2",
   },
   {
     name: "Ocean Marine Solutions (OMS)",
@@ -40,13 +43,15 @@ const defaultFeaturedPartners = [
 
 const jointVentures = [
   {
-    name: "HDDThailand-Enikkom Ltd",
-    description: "Formed in May 2020 to combine international HDD expertise with local knowledge for mega-scale trenchless crossings across West Africa.",
+    name: "HDDTEC Ltd (HDDThailand-Enikkom)",
+    description: "Formed in May 2020 by ECL and The E-Place Limited. Operates Nigeria's largest in-country HDD fleet, executing mega-scale trenchless crossings for IOCs and operators across Nigeria.",
     icon: Globe,
+    logoSrc: findBrandEntity("hddtec")?.logoSrc,
+    logoWrapperClassName: "bg-transparent rounded-[0.65rem]",
   },
   {
-    name: "Pipeline Infrastructure Enikkom JV",
-    description: "Partnership with Ocean Marine Solutions for comprehensive pipeline security, monitoring, and infrastructure protection services.",
+    name: "PIEJV (Pipeline Infrastructure Enikkom JV)",
+    description: "Joint venture between Ocean Marine Solutions Ltd (OMS) and ECL for comprehensive pipeline security, monitoring, and infrastructure protection services across the Niger Delta.",
     icon: Shield,
   },
 ];
@@ -64,7 +69,7 @@ const partnershipBenefits = [
   },
   {
     title: "Equipment Fleet",
-    description: "West Africa's largest HDD fleet with 10+ maxi rigs offering 50T to 500T pullback capacity.",
+    description: "Nigeria's largest in-country HDD fleet — 9 maxi rigs from 50T to 500T pullback capacity, all based in-country.",
     icon: Building2,
   },
   {
@@ -90,6 +95,7 @@ const certifications = [
 
 export default function PartnersPage() {
   const { content } = usePageContent('partners');
+  const partnerImages = siteImageSelections.partners;
   
   const heroContent = content.hero || {};
   const featuredContent = content.featured_partners || {};
@@ -100,7 +106,7 @@ export default function PartnersPage() {
       <Hero
         title={heroContent.title || "Partners & Strategic Alliances"}
         subtitle={heroContent.subtitle || "Building Nigeria's infrastructure through world-class partnerships and technical collaborations that deliver excellence."}
-        backgroundImage={heroContent.backgroundImage || heroHddRig}
+        backgroundImage={heroContent.backgroundImage || partnerImages.hero}
         size="default"
         pageSlug="partners"
         sectionKey="hero"
@@ -154,8 +160,25 @@ export default function PartnersPage() {
                 className="card-premium p-8"
               >
                 <div className="flex items-start gap-4 mb-6">
-                  <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Handshake className="h-8 w-8 text-primary" />
+                  <div
+                    className={`w-16 h-16 rounded-xl flex items-center justify-center flex-shrink-0 overflow-hidden ${
+                      partner.logoSrc ? "border border-border/60 bg-white p-2 shadow-sm" : "bg-primary/10"
+                    }`}
+                  >
+                    {partner.logoSrc ? (
+                      <EnhancedImage
+                        src={partner.logoSrc}
+                        alt={partner.name}
+                        wrapperClassName={`h-full w-full bg-transparent ${partner.logoWrapperClassName || ""}`}
+                        className="h-full w-full"
+                        fit="contain"
+                        tone="logo"
+                        shimmer={false}
+                        sizes="64px"
+                      />
+                    ) : (
+                      <Handshake className="h-8 w-8 text-primary" />
+                    )}
                   </div>
                   <div>
                     <h3 className="text-xl font-bold mb-1">{partner.name}</h3>
@@ -218,8 +241,25 @@ export default function PartnersPage() {
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 className="card-premium p-6 flex items-start gap-4"
               >
-                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <jv.icon className="h-6 w-6 text-primary" />
+                <div
+                  className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 overflow-hidden ${
+                    jv.logoSrc ? "border border-border/60 bg-white p-2 shadow-sm" : "bg-primary/10"
+                  }`}
+                >
+                  {jv.logoSrc ? (
+                    <EnhancedImage
+                      src={jv.logoSrc}
+                      alt={jv.name}
+                      wrapperClassName={`h-full w-full bg-transparent ${jv.logoWrapperClassName || ""}`}
+                      className="h-full w-full"
+                      fit="contain"
+                      tone="logo"
+                      shimmer={false}
+                      sizes="48px"
+                    />
+                  ) : (
+                    <jv.icon className="h-6 w-6 text-primary" />
+                  )}
                 </div>
                 <div>
                   <h4 className="font-semibold text-[17px] mb-2">{jv.name}</h4>
@@ -343,7 +383,7 @@ export default function PartnersPage() {
         headline="Partner With Us"
         subhead="Interested in strategic collaboration? Let's discuss how we can work together."
         primaryCTA={{ label: "Contact Us", href: "/contact" }}
-        secondaryCTA={{ label: "View Capabilities", href: "/capabilities" }}
+        secondaryCTA={{ label: "View Services", href: "/services" }}
       />
     </Layout>
   );
