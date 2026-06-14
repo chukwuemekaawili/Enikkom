@@ -53,7 +53,7 @@ export function CTABand({
               <h2 className={`mt-4 ${isPrimary ? "text-foreground" : "text-white"}`}>{headline}</h2>
               <p
                 className={`mt-4 max-w-2xl text-[15px] leading-8 ${
-                  isPrimary ? "text-muted-foreground" : "text-white/62"
+                  isPrimary ? "text-muted-foreground" : "text-white/80"
                 }`}
               >
                 {subhead}
@@ -62,10 +62,10 @@ export function CTABand({
 
             <div className="lg:pl-10 lg:border-l lg:border-white/10">
               <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
-                <Button asChild size="lg">
+                <Button asChild size="xl">
                   <Link to={primaryCTA.href}>
                     {primaryCTA.label}
-                    <ArrowRight className="h-4 w-4" />
+                    <ArrowRight className="h-5 w-5" />
                   </Link>
                 </Button>
 
@@ -74,7 +74,7 @@ export function CTABand({
                 </Button>
               </div>
 
-              <p className={`mt-5 text-[12px] ${isPrimary ? "text-muted-foreground" : "text-white/42"}`}>
+              <p className={`mt-5 text-[12px] ${isPrimary ? "text-muted-foreground" : "text-white/65"}`}>
                 No obligation. Practical scoping. Response within 24 to 48 hours.
               </p>
             </div>

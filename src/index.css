@@ -27,7 +27,7 @@
     --page-bg: 0 0% 100%;
     --surface: 0 0% 100%;
     --text-primary: 210 16% 9%;
-    --text-muted: 215 10% 38%;
+    --text-muted: 215 14% 28%;
     --border-light: 214 14% 87%;
 
     /* Semantic tokens */
@@ -263,7 +263,7 @@
   }
 
   .section-eyebrow {
-    @apply text-[11px] md:text-[12px] font-semibold uppercase tracking-[0.24em] text-primary mb-4;
+    @apply text-[12px] md:text-[13px] font-semibold uppercase tracking-[0.22em] text-primary mb-4;
   }
 
   .section-title {
@@ -419,7 +419,7 @@
   .btn-amber {
     @apply h-11 md:h-12 px-6 md:px-7 text-[13px] font-semibold rounded-full tracking-[0.02em];
     background-color: hsl(var(--brand-amber));
-    color: white;
+    color: hsl(var(--charcoal));
     box-shadow: 0 0 0 1px rgba(245, 158, 11, 0.2), 0 8px 24px rgba(245, 158, 11, 0.22);
     transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
   }
@@ -648,7 +648,9 @@
   select:focus-visible,
   [role="button"]:focus-visible,
   [tabindex]:focus-visible {
-    @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background;
+    outline: 3px solid hsl(var(--brand-primary));
+    outline-offset: 3px;
+    border-radius: 4px;
   }
 
   /* Skip link styling */
