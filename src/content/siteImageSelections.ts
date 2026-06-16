@@ -144,7 +144,7 @@ export const siteImageSelections = {
     hero: selectedGeneralImage("rg-095.jpg"),
   },
   contact: {
-    hero: selectedEquipmentImage("eq-006.jpg"),
+    hero: selectedGeneralImage("about-field-team-enhanced.png"),
   },
   equipment: {
     hero: selectedEquipmentImage("eq-021.jpg"),
@@ -272,6 +272,7 @@ export const siteImageSelections = {
       saleemKhan: teamImage("04-team-photo-engr-saleem-ahmad-khan.png"),
       francisAnatogu: teamImage("05-team-photo-mr-francis-anatogu.png"),
       adekunleAdewole: teamImage("06-team-photo-adekunle-adewole-phd.png"),
+      uzomaNwagboso: teamImage("13-team-photo-uzoma-nwagboso.jpeg"),
       chibuikeNwachukwu: teamImage("09-team-photo-idigbor-emeka-fca.png"),
       teddyAllen: teamImage("08-team-photo-teddy-allen.png"),
       idigborEmeka: teamImage("12-idigbor-emeka.png"),

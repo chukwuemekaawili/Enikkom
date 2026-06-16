@@ -47,17 +47,6 @@ const hseStats = [
   { value: "ISO", label: "Certified Systems", icon: Award },
 ];
 
-const isoCertification = {
-  title: "ISO 9001:2015 Quality Management Certification",
-  company: "HDD Thailand-Enikkom Limited",
-  certificateNo: "231031013401",
-  issued: "31 Oct 2023",
-  validUntil: "30 Oct 2026",
-  href: "/downloads/compliance/hddtec-iso-9001-2015-certificate.jpeg",
-  image: "/downloads/compliance/hddtec-iso-9001-2015-certificate.jpeg",
-  scope:
-    "Pipeline construction, HDD, thrust boring, steel and metal fabrication, dredging works, procurement, and civil construction / project financing of turnkey projects.",
-};
 
 const permitsAndLicenses = [
   {
@@ -158,91 +147,6 @@ export default function HSEQualityPage() {
                 <div className="stat-label text-white/50">{stat.label}</div>
               </motion.div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ISO Certification */}
-      <section className="section-padding bg-muted/30">
-        <div className="container-wide">
-          <motion.div
-            className="text-center mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <p className="section-eyebrow">Certification</p>
-            <h2 className="section-title">Current ISO Certification</h2>
-            <p className="section-subtitle">
-              The incorrect ISO listing has been replaced with the current certificate file from the HDDTEC compliance pack.
-            </p>
-          </motion.div>
-
-          <div className="grid lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] gap-8 items-center">
-            <motion.a
-              href={isoCertification.href}
-              target="_blank"
-              rel="noreferrer"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.45 }}
-              className="block rounded-[1.75rem] overflow-hidden border border-border bg-white shadow-[0_24px_60px_rgba(15,23,42,0.08)]"
-            >
-              <EnhancedImage
-                src={isoCertification.image}
-                alt={isoCertification.title}
-                wrapperClassName="h-full w-full"
-                className="h-full w-full"
-                tone="natural"
-                fallbackLabel={isoCertification.title}
-              />
-            </motion.a>
-
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.45, delay: 0.08 }}
-              className="rounded-[1.75rem] border border-border bg-card p-7 md:p-9"
-            >
-              <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.24em] text-primary">
-                Verified Certificate
-              </p>
-              <h3 className="text-2xl font-semibold tracking-tight mb-2">
-                {isoCertification.title}
-              </h3>
-              <p className="text-[15px] text-muted-foreground leading-7 mb-6">
-                {isoCertification.company}
-              </p>
-
-              <div className="grid sm:grid-cols-3 gap-4 mb-6">
-                {[
-                  { label: "Certificate No.", value: isoCertification.certificateNo },
-                  { label: "Issued", value: isoCertification.issued },
-                  { label: "Valid Until", value: isoCertification.validUntil },
-                ].map((item) => (
-                  <div key={item.label} className="rounded-xl bg-muted/50 border border-border/60 p-4">
-                    <p className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-1">
-                      {item.label}
-                    </p>
-                    <p className="text-[14px] font-semibold text-foreground">{item.value}</p>
-                  </div>
-                ))}
-              </div>
-
-              <p className="text-[14px] leading-7 text-muted-foreground mb-6">
-                {isoCertification.scope}
-              </p>
-
-              <Button asChild className="h-11 px-5 gap-2">
-                <a href={isoCertification.href} target="_blank" rel="noreferrer">
-                  View Certificate
-                  <ExternalLink className="h-4 w-4" />
-                </a>
-              </Button>
-            </motion.div>
           </div>
         </div>
       </section>
@@ -533,10 +437,6 @@ export default function HSEQualityPage() {
         </div>
       </section>
 
-      <CTABand
-        headline={content.cta?.headline || "Need HSE Documentation?"}
-        primaryCTA={{ label: content.cta?.primaryBtnText || "Contact Us", href: content.cta?.primaryBtnLink || "/contact" }}
-      />
     </Layout>
   );
 }

@@ -144,20 +144,20 @@ export function TrustBlock({ variant = "light" }: TrustBlockProps) {
       </div>
 
       {/* Trusted By Label */}
-      <motion.p
-        className={`text-center text-[11px] font-semibold uppercase tracking-[0.15em] mb-6 ${isDark ? 'text-white/40' : 'text-muted-foreground'}`}
+      <motion.h3
+        className={`text-center text-[18px] md:text-[22px] font-bold mb-8 ${isDark ? 'text-white' : 'text-foreground'}`}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.4 }}
       >
         <EditableText
-          value={trustContent.label || "Trusted by Industry Leaders"}
+          value={trustContent.label || "Experience Across Energy, Infrastructure, and Industrial Projects"}
           pageSlug="home"
           sectionKey="trust_block"
           field="label"
         />
-      </motion.p>
+      </motion.h3>
 
       {/* Edit Mode: Logo Management */}
       {isEditMode && (
@@ -275,12 +275,12 @@ export function TrustBlock({ variant = "light" }: TrustBlockProps) {
                       : "bg-white hover:shadow-md border border-border/50"
                   }`}
                   style={{
-                    width: "100px",
-                    height: "60px",
+                    width: "140px",
+                    height: "80px",
                   }}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <div className="w-16 h-8 md:w-20 md:h-10 flex items-center justify-center opacity-85 hover:opacity-100 transition-opacity duration-300">
+                  <div className="w-24 h-12 md:w-28 md:h-14 flex items-center justify-center opacity-70 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300">
                     {brandDisplay.logoSrc ? (
                       <div className={`flex h-full w-full items-center justify-center ${brandDisplay.containerClassName || ""}`}>
                         <EnhancedImage

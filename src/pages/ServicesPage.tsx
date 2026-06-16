@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { usePageContent } from "@/hooks/useSiteSettings";
 import { EditableText, EditableImage } from "@/components/admin";
 import { siteImageSelections } from "@/content/siteImageSelections";
+import SEO from "@/components/ui/SEO";
 
 const serviceImages = siteImageSelections.services;
 
@@ -116,6 +117,7 @@ export default function ServicesPage() {
 
   return (
     <Layout>
+      <SEO title="Our Services" description="Comprehensive engineering and construction solutions for Nigeria's most demanding infrastructure projects." />
       <Hero
         title={heroContent.title || "Our Services"}
         subtitle={heroContent.subtitle || "Comprehensive engineering and construction solutions for Nigeria's most demanding infrastructure projects. From trenchless crossings to marine civil works."}

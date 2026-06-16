@@ -50,6 +50,7 @@ const defaultLeadership: TeamMember[] = [
     highlight: "Cambridge MBA | ex-Schlumberger, Shell, Accenture, Deloitte — driving Enikkom's growth agenda",
     category: "management",
   },
+
   {
     name: "Adekunle Adewole, PhD",
     role: "Chief Operations & Strategy Officer",
@@ -57,6 +58,15 @@ const defaultLeadership: TeamMember[] = [
     expertise: ["Strategic Management", "Corporate Finance", "Organisational Leadership"],
     photo: managementImages.photos.adekunleAdewole,
     highlight: "Oxford post-doctoral | INSEAD | PhD Strategic Management | ex-CEO Livingtrust Mortgage Bank",
+    category: "management",
+  },
+  {
+    name: "Uzoma Nwagboso",
+    role: "Chief Financial Officer",
+    bio: "Uzoma Nwagboso (Uzo) is a versatile and results-driven Senior Strategic Finance & Energy Executive with over 25 years of experience spanning Corporate Banking, Sustainable Energy Finance, and Oil & Gas Project Management. Combining a technical foundation in Engineering with specialized Finance expertise, he offers a unique ability to bridge the gap between complex engineering operations and strategic financial stewardship.\n\nWith core competencies in Strategic Finance and Energy Infrastructure, he has a proven track record of managing project finance portfolios exceeding $750M, spearheading massive digital transformations (SAP S/4HANA, SAGE), and delivering significant cost savings through business process optimization. His expertise lies in navigating the financial complexities of the Nigerian energy landscape, including Enterprise Risk Management, EPC Project Finance, LNG production, and International Trade Finance.\n\nA registered engineer (COREN), he holds a B.Eng. in Mechanical Engineering and both an MBA and MSc in Finance and Banking. His global perspective is furthered by executive education at Harvard Business School, where he completed the Finance for Senior Executives program.",
+    expertise: ["Strategic Finance", "Energy Infrastructure", "Project Management"],
+    photo: managementImages.photos.uzomaNwagboso,
+    highlight: "25+ years in Corporate Banking, Energy Finance, and O&G Project Management",
     category: "management",
   },
   {

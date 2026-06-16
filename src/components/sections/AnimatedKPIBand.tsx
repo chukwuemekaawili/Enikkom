@@ -19,7 +19,7 @@ const defaultStats: KPIStat[] = [
   { value: 100, label: "KM HDD Installed", icon: Shield, suffix: "+" },
   { value: 500, label: "Workforce Capacity", icon: Users, suffix: "+" },
   { value: 34, label: "Years Experience", icon: Clock },
-  { value: 0, label: "Lost Time Incidents", icon: Award },
+  { value: 9, label: "In-Country HDD Rigs", icon: Award },
 ];
 
 function AnimatedStat({ stat, index }: { stat: KPIStat; index: number }) {

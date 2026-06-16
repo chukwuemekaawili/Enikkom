@@ -112,9 +112,9 @@ export function Footer() {
             </div>
 
             <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
-              <Button asChild size="lg">
+              <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm border border-primary/20">
                 <Link to="/contact">
-                  Contact Us
+                  Request Assessment
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
@@ -124,11 +124,11 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="mt-8 grid gap-3 border-t border-white/10 pt-8 md:grid-cols-2 xl:grid-cols-4">
+          <div className="mt-8 grid gap-4 border-t border-white/10 pt-8 md:grid-cols-2 xl:grid-cols-4">
             {certifications.slice(0, 4).map((cert: any) => (
               <div
                 key={cert.name}
-                className="rounded-[1.35rem] border border-white/10 bg-black/10 px-4 py-4"
+                className="rounded-[1.35rem] border border-white/10 bg-white/5 hover:bg-white/10 transition-colors px-5 py-5"
               >
                 <p className="text-[13px] font-semibold text-white">{cert.name}</p>
                 <p className="mt-1 text-[12px] leading-6 text-white/46">
@@ -139,16 +139,16 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 grid gap-10 lg:grid-cols-[1.05fr_0.62fr_0.7fr_0.95fr]">
+        <div className="mt-16 grid gap-12 lg:grid-cols-[1.05fr_0.62fr_0.7fr_0.95fr]">
           <div>
             <Link to="/" className="inline-flex items-center">
               <img
                 src={getAssetUrl(branding.logoUrl || logoWhite)}
                 alt={branding.companyName || "Enikkom Construction Limited"}
-                className="h-10 w-auto object-contain"
+                className="h-12 w-auto object-contain"
               />
             </Link>
-            <p className="mt-5 max-w-sm text-[15px] leading-8 text-white/58">
+            <p className="mt-6 max-w-sm text-[15px] leading-relaxed text-white/60">
               {branding.tagline ||
                 "Indigenous specialist delivery across HDD, pipeline construction, dredging, facilities, and project support since 1995."}
             </p>

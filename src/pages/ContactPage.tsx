@@ -6,6 +6,7 @@ import { usePageContent } from "@/hooks/useSiteSettings";
 import { MapPin, Phone, Mail, Clock, Building2, CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import { siteImageSelections } from "@/content/siteImageSelections";
+import SEO from "@/components/ui/SEO";
 
 // Verified office locations from Enikkom documents
 const defaultOffices = [
@@ -52,6 +53,7 @@ export default function ContactPage() {
 
   return (
     <Layout>
+      <SEO title="Contact Us" description="Get in touch to discuss your infrastructure project requirements with Enikkom." />
       <Hero 
         title={heroContent.title || "Contact Enikkom"} 
         subtitle={heroContent.subtitle || "Get in touch to discuss your infrastructure project requirements."} 
@@ -62,6 +64,7 @@ export default function ContactPage() {
         imageField="backgroundImage"
       />
 
+      {/* Main Contact Form & Details Section */}
       <section className="section-padding bg-background">
         <div className="container-wide">
           <div className="grid lg:grid-cols-3 gap-10 lg:gap-12">
@@ -74,40 +77,8 @@ export default function ContactPage() {
               transition={{ duration: 0.5 }}
             >
               <div>
-                <p className="section-eyebrow mb-4">Locations</p>
+                <p className="section-eyebrow mb-2">Connect With Us</p>
                 <h3 className="text-[20px] font-semibold mb-5">
-                  <EditableText
-                    value={contactDetails.locationsTitle || "Office Locations"}
-                    pageSlug="contact"
-                    sectionKey="contact_details"
-                    field="locationsTitle"
-                  />
-                </h3>
-                <div className="space-y-4">
-                  {offices.map((office: any, i: number) => (
-                    <motion.div 
-                      key={office.name}
-                      className="flex gap-3 p-4 rounded-xl bg-muted/50 border border-border/50"
-                      initial={{ opacity: 0, y: 12 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.3, delay: i * 0.1 }}
-                    >
-                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                        <MapPin className="h-5 w-5 text-primary" />
-                      </div>
-                      <div>
-                        <p className="font-semibold text-[14px]">{office.name}</p>
-                        <span className="text-[11px] text-primary font-medium">{office.type}</span>
-                        <p className="text-[13px] text-muted-foreground mt-1">{office.address}</p>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="pt-2">
-                <h3 className="text-[18px] font-semibold mb-4">
                   <EditableText
                     value={contactDetails.detailsTitle || "Contact Details"}
                     pageSlug="contact"
@@ -215,7 +186,7 @@ export default function ContactPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              <div className="card-premium p-6 md:p-8">
+              <div className="card-premium p-6 md:p-8 h-full">
                 <p className="section-eyebrow mb-2">Get Started</p>
                 <h2 className="text-[24px] md:text-[28px] font-bold mb-2">
                   <EditableText
@@ -236,6 +207,52 @@ export default function ContactPage() {
                 <RFQForm />
               </div>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Locations Section */}
+      <section className="section-padding bg-muted/30 border-t border-border">
+        <div className="container-wide">
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <p className="section-eyebrow mb-3">Our Presence</p>
+            <h2 className="text-3xl font-semibold">
+              <EditableText
+                value={contactDetails.locationsTitle || "Office Locations"}
+                pageSlug="contact"
+                sectionKey="contact_details"
+                field="locationsTitle"
+              />
+            </h2>
+            <p className="text-muted-foreground mt-3 max-w-2xl mx-auto">
+              We operate from our head office in Abuja, corporate office in Lagos, and multiple operational bases in the Niger Delta.
+            </p>
+          </motion.div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {offices.map((office: any, i: number) => (
+              <motion.div 
+                key={office.name}
+                className="flex flex-col p-6 rounded-2xl bg-card border border-border/60 hover:shadow-md transition-shadow"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.1 }}
+              >
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5">
+                  <MapPin className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="font-semibold text-[17px] mb-1">{office.name}</h3>
+                <span className="inline-block text-[12px] text-primary font-bold uppercase tracking-wider mb-3">{office.type}</span>
+                <p className="text-[14px] text-muted-foreground leading-relaxed flex-1">{office.address}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

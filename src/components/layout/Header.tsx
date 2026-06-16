@@ -42,7 +42,7 @@ function BrandLockup({
       onClick={onClick}
       title={dualBrandMicrocopy}
       aria-label={dualBrandMicrocopy}
-      className="group flex shrink-0 items-center gap-4"
+      className="group flex shrink-0 items-center gap-5"
     >
       <img
         src={logoSrc}
@@ -74,7 +74,6 @@ const defaultNavItems = [
     href: "/about",
     children: [
       { label: "Company Overview", href: "/about" },
-      { label: "Company Introduction", href: "/company-introduction" },
       { label: "Management Team", href: "/management-team" },
       { label: "Partners & Affiliates", href: "/partners" },
       { label: "HSE & Quality", href: "/hse-quality" },
@@ -120,7 +119,6 @@ const defaultMobileNavGroups = [
     label: "About",
     items: [
       { label: "Company Overview", href: "/about" },
-      { label: "Company Introduction", href: "/company-introduction" },
       { label: "Management Team", href: "/management-team" },
       { label: "Partners & Affiliates", href: "/partners" },
       { label: "HSE & Quality", href: "/hse-quality" },
@@ -270,7 +268,7 @@ export function Header() {
             >
               <BrandLockup logoSrc={logoWhite} dark />
 
-              <div className="hidden flex-1 items-center justify-center gap-1 xl:flex">
+              <div className="hidden flex-1 items-center justify-center gap-1 lg:flex">
                 {navItems.map((item: any) => (
                   <div
                     key={item.label}
@@ -334,24 +332,18 @@ export function Header() {
                 ))}
               </div>
 
-              <div className="ml-auto hidden items-center gap-3 xl:flex">
+              <div className="ml-auto hidden items-center gap-3 lg:flex">
                 <Link
                   to="/projects"
                   className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/50 transition-colors hover:text-white"
                 >
                   Track Record
                 </Link>
-                <Button asChild size="lg" className="h-11 px-6">
-                  <Link to="/contact">
-                    Contact Us
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </Button>
               </div>
 
               <button
                 type="button"
-                className="ml-auto inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white transition-colors hover:bg-white/18 xl:hidden"
+                className="ml-auto inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white transition-colors hover:bg-white/18 lg:hidden"
                 onClick={() => setMobileMenuOpen((current) => !current)}
                 aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
               >
@@ -370,7 +362,7 @@ export function Header() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="fixed inset-0 z-40 bg-black/45 backdrop-blur-sm xl:hidden"
+              className="fixed inset-0 z-40 bg-black/45 backdrop-blur-sm lg:hidden"
               onClick={closeMobileMenu}
             />
 
@@ -379,7 +371,7 @@ export function Header() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
-              className="fixed right-0 top-0 z-50 flex h-screen w-full max-w-[390px] flex-col overflow-hidden border-l border-border bg-white shadow-[0_24px_80px_rgba(15,23,42,0.2)] xl:hidden"
+              className="fixed right-0 top-0 z-50 flex h-screen w-full max-w-[390px] flex-col overflow-hidden border-l border-border bg-white shadow-[0_24px_80px_rgba(15,23,42,0.2)] lg:hidden"
             >
               <div className="border-b border-border/70 px-5 py-5">
                 <div className="flex items-start justify-between gap-4">
@@ -470,14 +462,7 @@ export function Header() {
               </div>
 
               <div className="border-t border-border/70 px-5 py-5">
-                <Button asChild size="lg" className="w-full">
-                  <Link to="/contact" onClick={closeMobileMenu}>
-                    Contact Us
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </Button>
-
-                <div className="mt-4 space-y-3 rounded-[1.5rem] bg-charcoal px-4 py-4 text-white">
+                <div className="space-y-3 rounded-[1.5rem] bg-charcoal px-4 py-4 text-white">
                   <a
                     href={`tel:${(contact.phone || "+234 806 573 8555").replace(/\s/g, "")}`}
                     className="flex items-center gap-3 text-[13px] text-white/72"

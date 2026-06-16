@@ -53,13 +53,6 @@ const resources = {
     { title: "HDD Equipment Specifications", description: "Model-level HDD, thrust boring, microtunneling, marine, and support-fleet tables sourced from the technical capacity schedule.", type: "Link", size: "", url: "/equipment/hdd" },
     { title: "General Equipment Fleet", description: "Full equipment fleet including thrust boring, micro tunnelling, marine, and support equipment.", type: "Link", size: "", url: "/equipment" },
     {
-      title: "ISO 9001:2015 Certificate",
-      description: "Current HDD Thailand-Enikkom quality management certificate sourced from the supplied compliance pack.",
-      type: "Image",
-      size: "",
-      url: "/downloads/compliance/hddtec-iso-9001-2015-certificate.jpeg",
-    },
-    {
       title: "Quality Policy Statement",
       description: "Current quality policy statement extracted from the approved QA/QC manual.",
       type: "PDF",
@@ -88,18 +81,6 @@ const resources = {
 };
 
 const complianceResources = {
-  certification: {
-    title: "ISO 9001:2015 Quality Management Certification",
-    description:
-      "The site now uses the current HDD Thailand-Enikkom Limited certificate file from the supplied document pack.",
-    meta: [
-      { label: "Certificate No.", value: "231031013401" },
-      { label: "Issued", value: "31 Oct 2023" },
-      { label: "Valid Until", value: "30 Oct 2026" },
-    ],
-    href: "/downloads/compliance/hddtec-iso-9001-2015-certificate.jpeg",
-    image: "/downloads/compliance/hddtec-iso-9001-2015-certificate.jpeg",
-  },
   permits: [
     {
       title: "DPR / NUPRC Permit Bundle 2026",
@@ -385,66 +366,6 @@ export default function ResourcesPage() {
           </motion.div>
 
           <div className="grid gap-12">
-            <div className="grid lg:grid-cols-[minmax(0,0.84fr)_minmax(0,1.16fr)] gap-8 items-center">
-              <motion.a
-                href={complianceResources.certification.href}
-                target="_blank"
-                rel="noreferrer"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.45 }}
-                className="block overflow-hidden rounded-[1.5rem] border border-border bg-white shadow-[0_20px_50px_rgba(15,23,42,0.08)]"
-              >
-                <EnhancedImage
-                  src={complianceResources.certification.image}
-                  alt={complianceResources.certification.title}
-                  wrapperClassName="h-full w-full"
-                  className="h-full w-full"
-                  tone="natural"
-                  fallbackLabel={complianceResources.certification.title}
-                />
-              </motion.a>
-
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.45, delay: 0.08 }}
-                className="rounded-[1.5rem] border border-border bg-card p-7 md:p-8"
-              >
-                <div className="flex items-center gap-2 mb-3">
-                  <Award className="h-5 w-5 text-primary" />
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-primary">
-                    Current Certification
-                  </p>
-                </div>
-                <h3 className="text-2xl font-semibold tracking-tight mb-3">
-                  {complianceResources.certification.title}
-                </h3>
-                <p className="text-[14px] leading-7 text-muted-foreground mb-6">
-                  {complianceResources.certification.description}
-                </p>
-
-                <div className="grid sm:grid-cols-3 gap-4 mb-6">
-                  {complianceResources.certification.meta.map((item) => (
-                    <div key={item.label} className="rounded-xl border border-border/60 bg-muted/50 p-4">
-                      <p className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-1">
-                        {item.label}
-                      </p>
-                      <p className="text-[14px] font-semibold text-foreground">{item.value}</p>
-                    </div>
-                  ))}
-                </div>
-
-                <Button asChild className="h-11 gap-2 px-5">
-                  <a href={complianceResources.certification.href} target="_blank" rel="noreferrer">
-                    View Certificate
-                    <ExternalLink className="h-4 w-4" />
-                  </a>
-                </Button>
-              </motion.div>
-            </div>
 
             <div>
               <motion.div

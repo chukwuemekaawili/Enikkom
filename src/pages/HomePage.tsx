@@ -25,6 +25,7 @@ import { Layout } from "@/components/layout";
 import { CTABand, TrustBlock, FAQSection } from "@/components/sections";
 import { Button } from "@/components/ui/button";
 import { EnhancedImage } from "@/components/ui/enhanced-image";
+import SEO from "@/components/ui/SEO";
 import { getProjectImage } from "@/content/projectImageSelections";
 import { siteImageSelections } from "@/content/siteImageSelections";
 import { usePageContent } from "@/hooks/usePageContent";
@@ -134,7 +135,7 @@ const RECORDS = [
   {
     index: "01",
     stat: "3.1 km × 16\"",
-    label: "Africa's Longest Single HDD Drill",
+    label: "Record-Scale Single HDD Drill",
     detail: "Atlas Cove–Mosimi pipeline crossing, Arepo/Imagbon, Ogun State.",
     image: getProjectImage("atlas-cove-mosimi", "homeRecord") || getProjectImage("atlas-cove-mosimi", "hero"),
   },
@@ -148,7 +149,7 @@ const RECORDS = [
   {
     index: "03",
     stat: "> 80 m depth",
-    label: "Africa's Deepest HDD Crossing",
+    label: "Landmark Deep Valley Crossing",
     detail: "36-inch Ekiadolor Deep Valley crossing, February 2016.",
     image: getProjectImage("ekiadolor-deep-valley", "homeRecord") || getProjectImage("ekiadolor-deep-valley", "hero"),
   },
@@ -162,7 +163,7 @@ const RECORDS = [
   {
     index: "05",
     stat: "12\"+3\" × 2.78 km",
-    label: "Africa's Longest Bundled Crossing",
+    label: "Record-Scale Bundled Crossing",
     detail: "Otumara–Escravos pipeline package for Saipem / SPDC.",
     image: getProjectImage("otumara-escravos", "homeRecord") || getProjectImage("otumara-escravos", "hero"),
   },
@@ -181,7 +182,7 @@ const CAPABILITIES = [
     metricLabel: "Longest single drill in Africa",
   },
   {
-    title: "Pipelines & Flowlines",
+    title: "Pipeline Crossing Support",
     short: "Pipeline Systems",
     description:
       "Fabrication, construction, repair, and maintenance of pipeline infrastructure across land, swamp, and offshore environments.",
@@ -192,7 +193,7 @@ const CAPABILITIES = [
     metricLabel: "Land, swamp & offshore",
   },
   {
-    title: "Dredging & Piling",
+    title: "Infrastructure Project Delivery",
     short: "Marine Civil",
     description:
       "Marine civil delivery for sand filling, reclamation, piling, access improvement, and difficult swamp operations.",
@@ -203,7 +204,7 @@ const CAPABILITIES = [
     metricLabel: "Reclamation & piling",
   },
   {
-    title: "Production Facilities",
+    title: "QHSE & Site Coordination",
     short: "Facilities",
     description:
       "Integrated production systems, wellhead upgrades, structural works, and plant support designed to international standards.",
@@ -280,7 +281,7 @@ const QHSE_PILLARS = [
     title: "Safety",
     description:
       "Certified equipment, preventive maintenance, and disciplined work planning on every site.",
-    stat: "Zero LTI",
+    stat: "Safety First",
   },
   {
     icon: Award,
@@ -398,6 +399,7 @@ export default function HomePage() {
 
   return (
     <Layout>
+      <SEO title="Home" />
       {/* ═══════════════════════════════════════════════════
           01 · HERO — Full-screen cinematic
       ═══════════════════════════════════════════════════ */}
@@ -425,8 +427,8 @@ export default function HomePage() {
         ))}
 
         {/* Gradient overlays */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#071630]/90 via-[#071630]/56 to-[#071630]/14" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#060b14]/78 via-[#060b14]/10 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#071630]/95 via-[#071630]/75 to-transparent/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#060b14]/85 via-[#060b14]/20 to-transparent" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_18%,rgba(255,196,87,0.12),transparent_32%)]" />
 
         {/* Accent glow */}
@@ -461,25 +463,15 @@ export default function HomePage() {
 
               <p className="mt-6 max-w-xl text-[16px] leading-[1.7] text-white/75 md:text-[18px]">
                 {heroContent.subtitle ||
-                  "Nigeria's specialist partner for trenchless crossings, pipeline systems, dredging, and complex energy infrastructure—end-to-end."}
+                  "Specialist HDD, pipeline, and infrastructure delivery for critical river crossings, road crossings, wetlands, and energy-sector projects across Nigeria and West Africa."}
               </p>
 
-              <div className="mt-10 flex flex-wrap items-center gap-4">
-                <Button asChild size="lg" className="h-13 px-8 text-[15px] bg-brand-amber hover:bg-brand-amber-hover text-white border-0 shadow-[0_0_0_1px_rgba(245,158,11,0.25),0_8px_28px_rgba(245,158,11,0.28)]">
-                  <Link to={heroContent.primaryBtnLink || "/capabilities"}>
-                    {heroContent.primaryBtnText || "Explore Capabilities"}
+
+              <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                <Button asChild size="lg" className="h-13 px-8 text-[15px] w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground border-0 shadow-[0_8px_28px_rgba(37,99,235,0.25)]">
+                  <Link to={heroContent.primaryBtnLink || "/contact"}>
+                    {heroContent.primaryBtnText || "Contact Us"}
                     <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </Button>
-                <Button
-                  asChild
-                  variant="ghost"
-                  size="lg"
-                  className="h-13 border border-white/20 px-8 text-[15px] text-white hover:bg-white/8 hover:text-white"
-                >
-                  <Link to={heroContent.secondaryBtnLink || "/projects"}>
-                    {heroContent.secondaryBtnText || "See Track Record"}
-                    <ArrowUpRight className="h-4 w-4" />
                   </Link>
                 </Button>
               </div>
@@ -514,43 +506,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════
-          02 · KPI BAND — Animated metrics
-      ═══════════════════════════════════════════════════ */}
-      <section className="bg-[#071630] border-y border-white/6">
-        <div className="container-wide">
-          <div className="grid grid-cols-2 divide-x divide-white/6 lg:grid-cols-4">
-            {DEFAULT_KPI.map((stat: typeof DEFAULT_KPI[number], i: number) => {
-              const isZeroLTI = i === 3;
-              return (
-                <motion.div
-                  key={stat.label}
-                  className="flex flex-col items-start gap-3 px-6 py-10 md:px-10"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.09 }}
-                >
-                  <div className={`text-[52px] font-extrabold leading-none tracking-tight md:text-[68px] ${isZeroLTI ? "text-brand-amber" : "text-white"}`}>
-                    <AnimatedNumber
-                      value={stat.value}
-                      suffix={stat.suffix}
-                    />
-                  </div>
-                  <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/50">
-                    {stat.label}
-                  </div>
-                  {isZeroLTI && (
-                    <div className="text-[10px] font-bold uppercase tracking-[0.18em] text-brand-amber/60">
-                      Safety Record
-                    </div>
-                  )}
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+
 
       {/* ═══════════════════════════════════════════════════
           03 · GROUP STORY — One group, two arms
@@ -570,7 +526,7 @@ export default function HomePage() {
               <br />
               Two Specialist
               <br />
-              <span className="text-brand-amber">Operating Arms.</span>
+              <span className="text-brand-amber">Delivery Arms.</span>
             </h2>
             <p className="mt-6 max-w-lg text-[16px] leading-[1.75] text-muted-foreground">
               Enikkom drives pipeline, facilities, dredging, and project support delivery,
@@ -614,13 +570,13 @@ export default function HomePage() {
 
           {/* Right — photo mosaic */}
           <motion.div
-            className="grid grid-cols-2 gap-3"
+            className="grid grid-cols-2 gap-4"
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <div className="relative overflow-hidden rounded-[20px] aspect-[4/5]">
+            <div className="relative overflow-hidden rounded-[20px] aspect-[4/5] shadow-premium">
               <EnhancedImage
                 src={siteImageSelections.home.introMosaic.fieldLeadership}
                 alt="Field leadership team reviewing pipeline work on site"
@@ -632,8 +588,8 @@ export default function HomePage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
             </div>
-            <div className="flex flex-col gap-3">
-              <div className="relative overflow-hidden rounded-[20px] aspect-square">
+            <div className="flex flex-col gap-4">
+              <div className="relative overflow-hidden rounded-[20px] aspect-square shadow-premium">
                 <EnhancedImage
                   src={siteImageSelections.home.introMosaic.main}
                   alt="Premium trenchless drilling close-up"
@@ -644,7 +600,7 @@ export default function HomePage() {
                   style={{ objectPosition: "center 48%" }}
                 />
               </div>
-              <div className="relative overflow-hidden rounded-[20px] flex-1">
+              <div className="relative overflow-hidden rounded-[20px] flex-1 shadow-premium min-h-[140px]">
                 <EnhancedImage
                   src={siteImageSelections.home.introMosaic.riverDelivery}
                   alt="Marine civil and dredging spread operating at dusk"
@@ -654,9 +610,9 @@ export default function HomePage() {
                   className="h-full w-full object-cover"
                   style={{ objectPosition: "center 55%" }}
                 />
-                <div className="absolute bottom-3 left-3 right-3 rounded-2xl bg-white/90 px-4 py-3 backdrop-blur-sm border border-blue-100 shadow-sm">
-                  <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-primary">In-Country Fleet</div>
-                  <div className="mt-0.5 text-[18px] font-extrabold text-foreground">9 HDD Rigs</div>
+                <div className="absolute bottom-3 left-3 right-3 rounded-2xl bg-white/95 px-4 py-3 backdrop-blur-sm border border-border shadow-sm">
+                  <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">In-Country Fleet</div>
+                  <div className="mt-0.5 text-[16px] font-extrabold text-foreground">9 HDD Rigs</div>
                 </div>
               </div>
             </div>
@@ -708,51 +664,46 @@ export default function HomePage() {
           </div>
 
           {/* Cards grid */}
-          <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+          <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
             {capabilities.map((cap: any, i: number) => {
               const Icon = cap.icon || Drill;
               return (
                 <motion.div
                   key={cap.title}
-                  className="group relative overflow-hidden rounded-[24px] bg-slate-900"
-                  style={{ aspectRatio: "3/4" }}
-                  initial={{ opacity: 0, y: 30 }}
+                  className="group bg-white rounded-[20px] overflow-hidden border border-border hover:shadow-lg hover:border-primary/20 transition-all duration-300 flex flex-col"
+                  initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.09 }}
+                  transition={{ duration: 0.4, delay: i * 0.07 }}
                 >
-                  {/* Background image */}
+                  {/* Image */}
                   {cap.image && (
-                    <EnhancedImage
-                      src={cap.image}
-                      alt={cap.title}
-                      tone="cinematic"
-                      wrapperClassName="absolute inset-0"
-                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-108"
-                      style={{ transform: "scale(1.02)" }}
-                    />
+                    <div className="relative h-48 overflow-hidden">
+                      <EnhancedImage
+                        src={cap.image}
+                        alt={cap.title}
+                        tone="natural"
+                        wrapperClassName="h-full w-full"
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
                   )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#060b14]/95 via-[#060b14]/50 to-[#060b14]/10" />
-
                   {/* Content */}
-                  <div className="absolute inset-0 flex flex-col justify-end p-6">
-                    <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-2xl bg-primary/20 backdrop-blur-sm">
+                  <div className="flex flex-col flex-1 gap-3 p-6">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/8">
                       <Icon className="h-5 w-5 text-primary" />
                     </div>
-                    <div className="text-[10px] font-bold uppercase tracking-[0.22em] text-primary mb-2">
-                      {cap.metric || cap.short || ""}
-                    </div>
-                    <h3 className="text-[18px] font-bold leading-tight text-white">
+                    <h3 className="text-[17px] font-bold text-foreground leading-snug">
                       {cap.title}
                     </h3>
-                    <p className="mt-2 text-[13px] leading-relaxed text-white/70 line-clamp-3">
+                    <p className="text-[14px] leading-relaxed text-muted-foreground flex-1">
                       {cap.description}
                     </p>
                     <Link
                       to={cap.href}
-                      className="mt-5 inline-flex items-center gap-2 text-[12px] font-bold uppercase tracking-[0.16em] text-primary opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-1"
+                      className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-primary hover:gap-3 transition-all duration-200 mt-2"
                     >
-                      Explore
+                      Learn more
                       <ArrowRight className="h-3.5 w-3.5" />
                     </Link>
                   </div>
@@ -764,26 +715,18 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════════════════════════════════════════════
-          05 · RECORD ACHIEVEMENTS — Editorial dark
+          05 · RECORD ACHIEVEMENTS — Editorial clean
       ═══════════════════════════════════════════════════ */}
-      <section className="bg-[#071630] py-24 lg:py-32">
+      <section className="bg-slate-50 py-20 lg:py-28">
         <div className="container-wide">
-          {/* Section header */}
-          <div className="mb-16 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              <Label variant="dark">Africa-First · Nigeria-First</Label>
-              <h2 className="mt-4 text-[38px] font-bold leading-[1.1] text-white md:text-[50px]">
-                Record-Breaking
-                <br />
-                Achievements
+          <div className="mb-12 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+            <div>
+              <Label variant="color">Track Record</Label>
+              <h2 className="mt-3 text-[34px] font-bold leading-tight md:text-[44px]">
+                Record-Breaking Achievements
               </h2>
-            </motion.div>
-            <Button asChild variant="outline" size="sm" className="h-10 px-6 border-white/15 text-white hover:bg-white/8 hover:border-white/30 self-start md:self-auto">
+            </div>
+            <Button asChild variant="outline" size="sm" className="h-10 px-6 self-start md:self-auto">
               <Link to="/projects">
                 View Full Track Record
                 <ArrowRight className="h-4 w-4" />
@@ -791,73 +734,30 @@ export default function HomePage() {
             </Button>
           </div>
 
-          {/* Headline record */}
-          <motion.div
-            className="mb-6 relative overflow-hidden rounded-[28px] border border-white/8"
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <EnhancedImage
-              src={RECORDS[0].image}
-              alt={RECORDS[0].label}
-              tone="cinematic"
-              wrapperClassName="absolute inset-0"
-              className="absolute inset-0 h-full w-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#071630]/97 via-[#071630]/80 to-[#071630]/40" />
-            <div className="relative p-8 md:p-12 lg:p-16">
-              <div className="flex items-start gap-6">
-                <div className="text-[11px] font-bold text-primary/60 mt-2">
-                  {RECORDS[0].index}
-                </div>
-                <div className="flex-1">
-                  <div className="text-[11px] font-bold uppercase tracking-[0.25em] text-brand-amber/70 mb-4">
-                    Africa Record
-                  </div>
-                  <div className="text-[52px] font-extrabold leading-none tracking-tight text-brand-amber md:text-[72px] lg:text-[88px]">
-                    {RECORDS[0].stat}
-                  </div>
-                  <div className="mt-4 text-[22px] font-semibold text-white md:text-[28px]">
-                    {RECORDS[0].label}
-                  </div>
-                  <p className="mt-3 max-w-lg text-[15px] leading-relaxed text-white/55">
-                    {RECORDS[0].detail}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Other records */}
-          <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-            {RECORDS.slice(1).map((r, i) => (
+          {/* Clean table-style list */}
+          <div className="divide-y divide-border rounded-[20px] border border-border overflow-hidden bg-white">
+            {RECORDS.map((r, i) => (
               <motion.div
                 key={r.label}
-                className="group relative overflow-hidden rounded-[22px] border border-white/8 bg-white/4 p-6 transition-colors duration-200 hover:bg-white/7 hover:border-white/15"
-                initial={{ opacity: 0, y: 24 }}
+                className="flex flex-col gap-1 px-6 py-5 sm:flex-row sm:items-center sm:gap-8 hover:bg-slate-50 transition-colors duration-150"
+                initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.45, delay: i * 0.07 }}
+                transition={{ duration: 0.35, delay: i * 0.06 }}
               >
-                <div className="text-[11px] font-bold text-white/40 mb-4">
-                  {r.index}
-                </div>
-                <div className="text-[26px] font-extrabold leading-none text-brand-amber md:text-[30px]">
-                  {r.stat}
-                </div>
-                <div className="mt-3 text-[15px] font-semibold text-white">
-                  {r.label}
-                </div>
-                <div className="mt-2 text-[12px] leading-relaxed text-white/60">
-                  {r.detail}
+                <div className="w-5 shrink-0 text-[12px] font-semibold text-muted-foreground/50">{r.index}</div>
+                <div className="w-36 shrink-0 text-[22px] font-extrabold text-primary tracking-tight">{r.stat}</div>
+                <div className="flex-1">
+                  <div className="text-[15px] font-semibold text-foreground">{r.label}</div>
+                  <div className="mt-0.5 text-[13px] text-muted-foreground">{r.detail}</div>
                 </div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
+
+
 
       {/* ═══════════════════════════════════════════════════
           06 · FEATURED PROJECTS — Photo-first grid
@@ -908,7 +808,7 @@ export default function HomePage() {
                   wrapperClassName="absolute inset-0"
                   className="absolute inset-0 h-full w-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#071630]/95 via-[#071630]/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#071630]/95 via-[#071630]/60 to-transparent/30" />
                 <div className="absolute inset-0 flex flex-col justify-end p-7 md:p-10">
                   <div className="flex flex-wrap gap-2 mb-4">
                     {(curatedProjects[0].tags || []).map((tag: string) => (
@@ -959,7 +859,7 @@ export default function HomePage() {
                   wrapperClassName="absolute inset-0"
                   className="absolute inset-0 h-full w-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#071630]/95 via-[#071630]/50 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#071630]/95 via-[#071630]/65 to-transparent/30" />
                 <div className="absolute inset-0 flex flex-col justify-end p-6">
                   <div className="text-[28px] font-extrabold leading-none text-white mb-1">
                     {project.metric}
@@ -996,7 +896,7 @@ export default function HomePage() {
                 {videoContent.subtitle || "Featured Project"}
               </Label>
               <h2 className="mt-4 text-[34px] font-bold leading-[1.1] md:text-[44px]">
-                {videoContent.title || "OML34 — Nigeria's Longest CHDD at 12 km"}
+                {videoContent.title || "OML34: A Landmark Pipeline Infrastructure Delivery"}
               </h2>
               <p className="mt-4 text-[15px] leading-[1.75] text-muted-foreground">
                 {videoContent.description ||
@@ -1092,12 +992,15 @@ export default function HomePage() {
               className="lg:border-l lg:border-border lg:pl-10"
             >
               <p className="text-[16px] leading-[1.75] text-muted-foreground">
-                Quality, Health, Safety & Environment is part of the operating model—not an
-                isolated compliance claim. It shapes planning, mobilisation, execution, and handover.
+                Quality, Health, Safety & Environment is rigorously embedded into our operating model—not an
+                isolated compliance claim. It dictates planning, mobilisation, disciplined execution, and handover.
+              </p>
+              <p className="mt-3 text-[13px] font-medium text-muted-foreground/80 italic">
+                *Certifications and compliance documentation available on request.
               </p>
               <Button asChild variant="outline" size="sm" className="mt-5 h-10 px-5">
                 <Link to="/hse-quality">
-                  Certifications & Policies
+                  View Safety Policies
                   <ArrowUpRight className="h-4 w-4" />
                 </Link>
               </Button>
@@ -1153,19 +1056,15 @@ export default function HomePage() {
               transition={{ duration: 0.5 }}
             >
               <h2 className="text-[38px] font-bold leading-[1.1] md:text-[50px]">
-                An Indigenous Group
+                An Indigenous Infrastructure Group
                 <br />
-                <span className="text-brand-amber">Built to Last.</span>
+                <span className="text-brand-amber">Built for Long-Term Delivery.</span>
               </h2>
               <p className="mt-6 text-[16px] leading-[1.75] text-muted-foreground">
-                Enikkom Group provides end-to-end engineering, procurement, fabrication,
-                construction, and installation support for onshore and offshore flowlines,
-                pipelines, and facilities across Nigeria.
+                We combine local terrain knowledge, specialist engineering capability, and disciplined project execution to support critical pipeline and infrastructure projects.
               </p>
               <p className="mt-4 text-[15px] leading-[1.75] text-muted-foreground">
-                With roots dating to 1995, the group combines local operating knowledge, modern
-                equipment, and strategic trenchless capability to deliver infrastructure packages
-                that need both speed and technical control.
+                With roots dating to 1995, the group brings modern equipment and strategic trenchless capability to deliver complex infrastructure packages that demand both speed and technical control.
               </p>
 
               <div className="mt-10 grid gap-4 sm:grid-cols-2">
@@ -1271,17 +1170,16 @@ export default function HomePage() {
       ═══════════════════════════════════════════════════ */}
       <CTABand
         headline={
-          ctaContent.headline || "Ready to scope your next infrastructure package?"
+          ctaContent.headline || "Planning a pipeline crossing or critical infrastructure project?"
         }
         subhead={
           ctaContent.subhead ||
-          "Tell us the crossing, terrain, or facility challenge. Our team will come back with a practical conversation starter—not generic boilerplate."
+          "Share your project scope with our team. We'll come back with a practical, expert response."
         }
         primaryCTA={{
           label: ctaContent.primaryBtnText || "Contact Us",
           href: ctaContent.primaryBtnLink || "/contact",
         }}
-        secondaryCTA={{ label: "View Projects", href: "/projects" }}
       />
     </Layout>
   );

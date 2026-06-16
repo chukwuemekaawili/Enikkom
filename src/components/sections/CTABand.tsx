@@ -20,9 +20,9 @@ interface CTABandProps {
 
 export function CTABand({
   headline = "Start Your Project Today",
-  subhead = "Get a detailed proposal within 48 hours. Our engineering team is ready to scope your next infrastructure challenge.",
-  primaryCTA = { label: "Get Your Free Quote", href: "/contact" },
-  secondaryCTA = { label: "View Our Track Record", href: "/projects" },
+  subhead = "Our engineering team is ready to scope your next infrastructure challenge.",
+  primaryCTA = { label: "Contact Us", href: "/contact" },
+  secondaryCTA,
   variant = "dark",
 }: CTABandProps) {
   const isPrimary = variant === "primary";
@@ -41,42 +41,40 @@ export function CTABand({
               : "border-white/10 bg-white/[0.04] text-white shadow-[0_28px_80px_rgba(0,0,0,0.16)]"
           }`}
         >
-          <div className="grid gap-8 p-7 md:p-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
+          <div className="grid gap-8 p-7 md:p-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <div>
-              <p
-                className={`text-[10px] font-semibold uppercase tracking-[0.22em] ${
-                  isPrimary ? "text-primary" : "text-primary/80"
-                }`}
-              >
-                Project conversation
-              </p>
-              <h2 className={`mt-4 ${isPrimary ? "text-foreground" : "text-white"}`}>{headline}</h2>
-              <p
-                className={`mt-4 max-w-2xl text-[15px] leading-8 ${
-                  isPrimary ? "text-muted-foreground" : "text-white/80"
-                }`}
-              >
-                {subhead}
-              </p>
+              <h2 className={`${isPrimary ? "text-foreground" : "text-white"}`}>{headline}</h2>
+              {subhead && (
+                <p
+                  className={`mt-4 max-w-2xl text-[15px] leading-8 ${
+                    isPrimary ? "text-muted-foreground" : "text-white/80"
+                  }`}
+                >
+                  {subhead}
+                </p>
+              )}
             </div>
 
             <div className="lg:pl-10 lg:border-l lg:border-white/10">
               <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
-                <Button asChild size="xl">
+                <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
                   <Link to={primaryCTA.href}>
                     {primaryCTA.label}
-                    <ArrowRight className="h-5 w-5" />
+                    <ArrowRight className="h-4 w-4" />
                   </Link>
                 </Button>
 
-                <Button asChild size="lg" variant={isPrimary ? "outline" : "premium"}>
-                  <Link to={secondaryCTA.href}>{secondaryCTA.label}</Link>
-                </Button>
+                {secondaryCTA && (
+                  <Button
+                    asChild
+                    size="lg"
+                    variant="outline"
+                    className={isPrimary ? "" : "border-white/25 text-white hover:bg-white/10"}
+                  >
+                    <Link to={secondaryCTA.href}>{secondaryCTA.label}</Link>
+                  </Button>
+                )}
               </div>
-
-              <p className={`mt-5 text-[12px] ${isPrimary ? "text-muted-foreground" : "text-white/65"}`}>
-                No obligation. Practical scoping. Response within 24 to 48 hours.
-              </p>
             </div>
           </div>
         </motion.div>
