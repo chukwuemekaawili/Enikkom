@@ -107,7 +107,7 @@ export default function AboutPage() {
             </div>
 
             <div className="mt-10 grid gap-4 lg:grid-cols-[1.35fr_0.65fr]">
-              <div className="group relative min-h-[340px] overflow-hidden rounded-xl border border-border/70 bg-slate-950">
+              <div className="group relative min-h-[340px] overflow-hidden rounded-xl border border-border/70" style={{ backgroundColor: "var(--enk-navy)" }}>
                 <EnhancedImage
                   src={aboutImages.introMain}
                   alt="Pipeline crew executing welding and line installation work"
@@ -117,7 +117,7 @@ export default function AboutPage() {
                   className="absolute inset-0 h-full w-full object-cover"
                   style={{ objectPosition: "center 48%" }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-[#071630]/82 via-[#071630]/36 to-transparent" />
+                <div className="absolute inset-0" style={{ background: "linear-gradient(to right, oklch(0.13 0.03 255 / 0.82), oklch(0.13 0.03 255 / 0.36), transparent)" }} />
                 <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
                   <p className="enk-kicker enk-kicker--on-dark mb-2">Built In-Country</p>
                   <h3 className="enk-display max-w-md text-[clamp(1.4rem,2.6vw,1.9rem)] text-[var(--enk-on-dark)]">
@@ -131,7 +131,7 @@ export default function AboutPage() {
               </div>
 
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
-                <div className="group relative min-h-[160px] overflow-hidden rounded-xl border border-border/70 bg-slate-900">
+                <div className="group relative min-h-[160px] overflow-hidden rounded-xl border border-border/70" style={{ backgroundColor: "var(--enk-navy)" }}>
                   <EnhancedImage
                     src={aboutImages.introSideField}
                     alt="Enikkom field team reviewing live pipeline operations"
@@ -141,7 +141,7 @@ export default function AboutPage() {
                     className="absolute inset-0 h-full w-full object-cover"
                     style={{ objectPosition: "center 45%" }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#071630]/90 via-[#071630]/20 to-transparent" />
+                  <div className="absolute inset-0" style={{ background: "linear-gradient(to top, oklch(0.13 0.03 255 / 0.9), oklch(0.13 0.03 255 / 0.2), transparent)" }} />
                   <div className="absolute inset-x-0 bottom-0 p-5">
                     <div className="enk-kicker enk-kicker--on-dark mb-1">
                       Field Leadership
@@ -152,7 +152,7 @@ export default function AboutPage() {
                   </div>
                 </div>
 
-                <div className="group relative min-h-[160px] overflow-hidden rounded-xl border border-border/70 bg-slate-900">
+                <div className="group relative min-h-[160px] overflow-hidden rounded-xl border border-border/70" style={{ backgroundColor: "var(--enk-navy)" }}>
                   <EnhancedImage
                     src={aboutImages.introSideRiver}
                     alt="River-crossing installation works on a coastal project corridor"
@@ -162,7 +162,7 @@ export default function AboutPage() {
                     className="absolute inset-0 h-full w-full object-cover"
                     style={{ objectPosition: "center 52%" }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#071630]/90 via-[#071630]/20 to-transparent" />
+                  <div className="absolute inset-0" style={{ background: "linear-gradient(to top, oklch(0.13 0.03 255 / 0.9), oklch(0.13 0.03 255 / 0.2), transparent)" }} />
                   <div className="absolute inset-x-0 bottom-0 p-5">
                     <div className="enk-kicker enk-kicker--on-dark mb-1">
                       River & Swamp Delivery
@@ -246,7 +246,7 @@ export default function AboutPage() {
                   className="absolute inset-0 h-full w-full object-cover"
                   style={{ objectPosition: "center 42%" }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#071630]/35" />
+                <div className="absolute inset-0" style={{ background: "linear-gradient(to right, transparent, transparent, oklch(0.13 0.03 255 / 0.35))" }} />
               </div>
               <div className="flex flex-col justify-center p-8 md:p-10">
                 <p className="enk-kicker enk-kicker--on-dark mb-3">Indigenous Strength</p>
