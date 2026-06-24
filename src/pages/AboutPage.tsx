@@ -181,10 +181,10 @@ export default function AboutPage() {
                 return (
                   <div
                     key={entry.name}
-                    className="rounded-xl border border-border/70 bg-slate-50/80 p-6 md:p-7"
+                    className="enk-card p-6 md:p-7"
                   >
                     <div className="mb-5 flex items-start gap-4">
-                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-muted">
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-muted">
                         <Icon className="h-6 w-6" style={{ color: "var(--enk-navy)" }} />
                       </div>
                       <h3 className="pt-1 text-xl font-semibold tracking-tight text-foreground">
@@ -280,7 +280,7 @@ export default function AboutPage() {
                   transition={{ duration: 0.45, delay: index * 0.08 }}
                   className="rounded-xl border border-white/10 bg-white/5 p-7"
                 >
-                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10">
+                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-white/10">
                     <Icon className="h-6 w-6" style={{ color: "var(--enk-gold)" }} />
                   </div>
                   <p className="enk-kicker enk-kicker--on-dark mb-3">{statement.title}</p>
@@ -374,7 +374,7 @@ export default function AboutPage() {
                 >
                   {/* Content card */}
                   <div className={`flex-1 w-full lg:w-auto ${index % 2 === 0 ? 'lg:text-right' : 'lg:text-left'}`}>
-                    <div className="bg-card p-6 md:p-8 rounded-2xl border border-border/50 shadow-sm hover:shadow-xl transition-all duration-300 inline-block w-full lg:max-w-lg group">
+                    <div className="enk-card enk-card--hover p-6 md:p-8 inline-block w-full lg:max-w-lg">
                       <span className="font-mono text-[13px] tracking-[0.14em] mb-2 block lg:hidden" style={{ color: "var(--enk-bronze)" }}>{milestone.year}</span>
                       <h5 className="text-xl font-bold mb-3 text-foreground">{milestone.title}</h5>
                       <p className="text-[15px] text-muted-foreground leading-relaxed">{milestone.description}</p>
