@@ -375,7 +375,7 @@ export default function ProjectsPage() {
                     tone="vivid"
                     hoverZoom
                   />
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0B1220]/90 via-[#0B1220]/35 to-transparent px-3 py-3">
+                  <div className="absolute inset-x-0 bottom-0 px-3 py-3" style={{ background: "linear-gradient(0deg, oklch(0.13 0.03 255 / 0.9), oklch(0.13 0.03 255 / 0.35), transparent)" }}>
                     <p className="text-[12px] md:text-[13px] font-semibold text-white">
                       {img.label}
                     </p>

@@ -277,7 +277,7 @@ const TeamMemberModal = ({
                       <span className="text-6xl text-muted-foreground">{member.name.charAt(0)}</span>
                     </div>
                   )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent md:bg-gradient-to-r pointer-events-none" />
+                  <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(0deg, oklch(0.13 0.03 255 / 0.3), transparent)" }} />
                 </div>
               </div>
               

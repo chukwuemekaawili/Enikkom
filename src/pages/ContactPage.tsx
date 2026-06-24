@@ -240,7 +240,7 @@ export default function ContactPage() {
             {offices.map((office: any, i: number) => (
               <motion.div 
                 key={office.name}
-                className="flex flex-col p-6 rounded-2xl bg-card border border-border/60 hover:shadow-md transition-shadow"
+                className="enk-card flex flex-col p-6"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}

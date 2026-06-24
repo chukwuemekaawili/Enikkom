@@ -830,7 +830,7 @@ export function InteractiveProjectMap({
                     tone="natural"
                     fallbackLabel={selectedProject.name}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 to-transparent" />
+                  <div className="absolute inset-0" style={{ background: "linear-gradient(0deg, oklch(0.13 0.03 255 / 0.8), transparent 55%)" }} />
                   <div className="absolute bottom-3 left-3 right-3">
                     <div className="flex items-center gap-4 text-sm">
                       <div className="flex items-center gap-1.5 text-white/80">

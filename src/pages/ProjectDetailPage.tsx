@@ -1025,7 +1025,7 @@ export default function ProjectDetailPage() {
                     tone="natural"
                     fallbackLabel={image.alt}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ background: "linear-gradient(0deg, oklch(0.13 0.03 255 / 0.6), transparent)" }} />
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
                       <ZoomIn className="h-5 w-5 text-white" />

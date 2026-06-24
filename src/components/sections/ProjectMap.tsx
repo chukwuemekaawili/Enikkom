@@ -285,7 +285,7 @@ export function ProjectMap() {
                         tone="natural"
                         fallbackLabel={project.name}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                      <div className="absolute inset-0" style={{ background: "linear-gradient(0deg, oklch(0.13 0.03 255 / 0.5), transparent)" }} />
                       <div className={`absolute top-1.5 right-1.5 px-1.5 py-0.5 rounded text-[9px] text-white ${typeColors[project.type]}`}>
                         {project.type}
                       </div>
