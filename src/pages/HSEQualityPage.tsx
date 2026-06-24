@@ -343,7 +343,7 @@ export default function HSEQualityPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: i * 0.07 }}
-                  className="flex flex-col gap-4 p-6 bg-card rounded-xl border border-border hover:shadow-sm transition-shadow"
+                  className="enk-card enk-card--hover flex flex-col gap-4 p-6"
                 >
                   <div className="flex items-start gap-3">
                     <div className={`w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 ${permit.available ? "bg-primary/10" : "bg-muted"}`}>
@@ -403,7 +403,7 @@ export default function HSEQualityPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: i * 0.08 }}
-                  className="flex flex-col gap-4 p-6 bg-card rounded-xl border border-border hover:shadow-md transition-shadow"
+                  className="enk-card enk-card--hover flex flex-col gap-4 p-6"
                 >
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">

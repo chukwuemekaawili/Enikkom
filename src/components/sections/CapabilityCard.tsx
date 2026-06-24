@@ -42,10 +42,7 @@ export function CapabilityCard({
             aria-hidden="true"
           />
           {metric && (
-            <span
-              className="absolute left-4 top-4 rounded-md px-2.5 py-1 text-[11px] font-semibold text-white"
-              style={{ backgroundColor: "var(--enk-navy)" }}
-            >
+            <span className="enk-chip enk-chip--on-dark absolute left-4 top-4">
               {metric}
             </span>
           )}
