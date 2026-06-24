@@ -283,9 +283,7 @@ export default function AboutPage() {
                   <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10">
                     <Icon className="h-6 w-6" style={{ color: "var(--enk-gold)" }} />
                   </div>
-                  <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.24em] text-white/45">
-                    {statement.title}
-                  </p>
+                  <p className="enk-kicker enk-kicker--on-dark mb-3">{statement.title}</p>
                   <p className="text-[18px] leading-8 text-white md:text-[19px]">
                     {statement.text}
                   </p>
@@ -338,7 +336,7 @@ export default function AboutPage() {
       </section>
 
       {/* Company History Timeline */}
-      <section className="section-padding bg-slate-50 dark:bg-background relative overflow-hidden">
+      <section className="section-padding bg-background relative overflow-hidden">
         {/* Decorative elements */}
         <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-border to-transparent opacity-50" />
         
@@ -377,18 +375,16 @@ export default function AboutPage() {
                   {/* Content card */}
                   <div className={`flex-1 w-full lg:w-auto ${index % 2 === 0 ? 'lg:text-right' : 'lg:text-left'}`}>
                     <div className="bg-card p-6 md:p-8 rounded-2xl border border-border/50 shadow-sm hover:shadow-xl transition-all duration-300 inline-block w-full lg:max-w-lg group">
-                      <span className="text-primary font-bold text-sm tracking-wider uppercase mb-2 block lg:hidden">{milestone.year}</span>
-                      <h5 className="text-xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors">{milestone.title}</h5>
+                      <span className="font-mono text-[13px] tracking-[0.14em] mb-2 block lg:hidden" style={{ color: "var(--enk-bronze)" }}>{milestone.year}</span>
+                      <h5 className="text-xl font-bold mb-3 text-foreground">{milestone.title}</h5>
                       <p className="text-[15px] text-muted-foreground leading-relaxed">{milestone.description}</p>
                     </div>
                   </div>
                   
-                  {/* Year marker with icon */}
-                  <div className="relative z-10 flex-shrink-0 hidden lg:flex items-center justify-center">
-                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary to-primary/80 text-primary-foreground flex flex-col items-center justify-center shadow-lg border-4 border-slate-50 dark:border-background transform hover:scale-110 transition-transform duration-300">
-                      <milestone.icon className="h-5 w-5 mb-1" />
-                      <span className="font-bold text-[13px] tracking-wide">{milestone.year}</span>
-                    </div>
+                  {/* Year marker */}
+                  <div className="relative z-10 flex-shrink-0 hidden lg:flex flex-col items-center justify-center w-20">
+                    <span className="font-mono text-[13px] tracking-[0.14em]" style={{ color: "var(--enk-bronze)" }}>{milestone.year}</span>
+                    <div className="mt-2 w-2 h-2 rounded-full border-2" style={{ borderColor: "var(--enk-navy)" }} />
                   </div>
                   
                   {/* Empty space for alternating layout */}
