@@ -2,11 +2,11 @@ import { useParams } from "react-router-dom";
 import { Layout } from "@/components/layout";
 import { Hero, CTABand, CaseStudyCard, CertificationsBlock } from "@/components/sections";
 import { motion } from "framer-motion";
-import { CheckCircle, Drill, PipetteIcon, Anchor, Factory, Settings, Shield, FileCheck, Truck, ShieldCheck, Briefcase } from "lucide-react";
+import { CheckCircle, Drill, PipetteIcon, Anchor, Factory, Truck, ShieldCheck, Briefcase } from "lucide-react";
 import { getProjectImage } from "@/content/projectImageSelections";
 import { siteImageSelections } from "@/content/siteImageSelections";
 import { usePageContent } from "@/hooks/useSiteSettings";
-import { EditableText } from "@/components/admin";
+import { EditableText } from "@/components/content";
 
 // Slug to page_slug mapping
 const slugToPageSlug: Record<string, string> = {
@@ -33,11 +33,11 @@ interface CapabilityData {
 const capabilityData: Record<string, CapabilityData> = {
   hdd: {
     title: "Horizontal Directional Drilling (HDD)",
-    description: "State-of-the-art trenchless technology for river, road, railway, and environmental crossings with minimal surface disruption and maximum efficiency.",
+    description: "Trenchless technology for river, road, railway, and environmental crossings, with minimal surface disruption and high efficiency.",
     icon: Drill,
     heroImage: siteImageSelections.capabilities.hdd,
     processSteps: [
-      { title: "Site Survey & Design", description: "Comprehensive geotechnical investigation and crossing design" },
+      { title: "Site Survey & Design", description: "Geotechnical investigation and crossing design" },
       { title: "Pilot Bore", description: "Initial drilling of pilot hole along planned trajectory" },
       { title: "Reaming Operations", description: "Progressive enlargement to required diameter" },
       { title: "Pipe Installation", description: "Pullback of pre-fabricated pipeline string" },
@@ -51,7 +51,7 @@ const capabilityData: Record<string, CapabilityData> = {
     ],
     relatedProjects: [
       {
-        title: "OML34 Continuous HDD — 10\" × 12km",
+        title: "OML34 Continuous HDD, 10\" × 12km",
         location: "Utorogun, Delta State",
         metric: "12km",
         metricLabel: "Nigeria's Longest CHDD",
@@ -60,7 +60,7 @@ const capabilityData: Record<string, CapabilityData> = {
         thumbnail: getProjectImage("oml34-chdd", "related"),
       },
       {
-        title: "Atlas Cove–Mosimi — 16\" × 3.1km",
+        title: "Atlas Cove-Mosimi, 16\" × 3.1km",
         location: "Arepo / Imagbon, Ogun State",
         metric: "3.1km",
         metricLabel: "Africa's Longest Single Drill",
@@ -89,7 +89,7 @@ const capabilityData: Record<string, CapabilityData> = {
     ],
     relatedProjects: [
       {
-        title: "Calabar Gas Transmission — 24\" × 21.5km",
+        title: "Calabar Gas Transmission, 24\" × 21.5km",
         location: "Cross River State",
         metric: "21.5km",
         metricLabel: "Gas Transmission Pipeline",
@@ -97,7 +97,7 @@ const capabilityData: Record<string, CapabilityData> = {
         href: "/projects/calabar-gas-transmission",
       },
       {
-        title: "NIPCO Gas Distribution — 50km Network",
+        title: "NIPCO Gas Distribution, 50km Network",
         location: "Multiple Locations, Nigeria",
         metric: "50km",
         metricLabel: "4\"/8\"/12\" Network",
@@ -129,7 +129,7 @@ const capabilityData: Record<string, CapabilityData> = {
   },
   "facilities": {
     title: "Production Facilities Construction",
-    description: "Fit-for-purpose integrated production systems — flow station construction, wellhead upgrades, manifold inspection, plant turnaround maintenance, and pigging operations.",
+    description: "Integrated production systems covering flow station construction, wellhead upgrades, manifold inspection, plant turnaround maintenance, and pigging operations.",
     icon: Factory,
     heroImage: siteImageSelections.capabilities.facilities,
     processSteps: [
@@ -221,7 +221,7 @@ export default function CapabilityDetailPage() {
     return (
       <Layout>
         <div className="section-padding container-wide text-center">
-          <h1>Capability Not Found</h1>
+          <h1 className="enk-display text-[clamp(1.8rem,4vw,2.6rem)] mb-4">Capability Not Found</h1>
           <p className="text-muted-foreground">The requested capability page does not exist.</p>
         </div>
       </Layout>
@@ -249,8 +249,8 @@ export default function CapabilityDetailPage() {
       <Hero
         title={title}
         subtitle={subtitle}
+        badge="Capability"
         primaryCTA={{ label: "Contact Us", href: "/contact" }}
-        secondaryCTA={{ label: "View Projects", href: "/projects" }}
         backgroundImage={heroImage}
         size="default"
         pageSlug={pageSlug}
@@ -258,36 +258,11 @@ export default function CapabilityDetailPage() {
         imageField="backgroundImage"
       />
 
-      {/* Editable Hero Overlay for Admin */}
-      <section className="py-8 bg-muted/30">
-        <div className="container-wide">
-          <div className="max-w-3xl">
-            <h2 className="text-2xl font-semibold mb-4">
-              <EditableText
-                value={title}
-                pageSlug={pageSlug}
-                sectionKey="hero"
-                field="title"
-              />
-            </h2>
-            <p className="text-muted-foreground leading-relaxed">
-              <EditableText
-                value={subtitle}
-                pageSlug={pageSlug}
-                sectionKey="hero"
-                field="subtitle"
-                multiline
-              />
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Process & Method */}
       <section className="section-padding">
         <div className="container-wide">
-          <div className="flex items-center gap-3 mb-8">
-            <Settings className="h-6 w-6 text-primary" />
+          <div className="mb-8">
+            <p className="enk-kicker mb-3">Method</p>
             <h2>
               <EditableText
                 value={stepsContent.section_title || "Process & Method"}
@@ -306,11 +281,11 @@ export default function CapabilityDetailPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="relative bg-card p-5 rounded-lg border"
+                className="relative enk-card enk-card--hover p-5"
               >
-                <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm mb-3">
-                  {index + 1}
-                </div>
+                <span className="block font-mono text-[13px] font-medium tracking-[0.14em] mb-3" style={{ color: "var(--enk-bronze)" }}>
+                  {String(index + 1).padStart(2, "0")}
+                </span>
                 <h4 className="font-semibold mb-2 text-sm">
                   <EditableText
                     value={step.title}
@@ -336,8 +311,8 @@ export default function CapabilityDetailPage() {
       {/* Standards & Compliance */}
       <section className="section-padding-sm bg-muted/30">
         <div className="container-wide">
-          <div className="flex items-center gap-3 mb-8">
-            <Shield className="h-6 w-6 text-primary" />
+          <div className="mb-8">
+            <p className="enk-kicker mb-3">Compliance</p>
             <h2>
               <EditableText
                 value={standardsContent.section_title || "Applicable Standards"}
@@ -350,8 +325,8 @@ export default function CapabilityDetailPage() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {standards.map((standard: string, index: number) => (
-              <div key={index} className="flex items-center gap-3 bg-card p-4 rounded-lg border">
-                <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0" />
+              <div key={index} className="flex items-center gap-3 enk-card enk-card--hover p-4">
+                <CheckCircle className="h-5 w-5 flex-shrink-0" style={{ color: "var(--enk-navy)" }} />
                 <span className="text-sm font-medium">
                   <EditableText
                     value={standard}
@@ -369,8 +344,8 @@ export default function CapabilityDetailPage() {
       {/* Equipment Readiness */}
       <section className="section-padding-sm">
         <div className="container-wide">
-          <div className="flex items-center gap-3 mb-8">
-            <FileCheck className="h-6 w-6 text-primary" />
+          <div className="mb-8">
+            <p className="enk-kicker mb-3">Readiness</p>
             <h2>
               <EditableText
                 value={equipmentContent.section_title || "Equipment Readiness"}
@@ -389,9 +364,9 @@ export default function CapabilityDetailPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="bg-card p-6 rounded-lg border"
+                className="enk-card enk-card--hover p-6"
               >
-                <Icon className="h-8 w-8 text-primary mb-3" />
+                <Icon className="h-8 w-8 mb-3" style={{ color: "var(--enk-navy)" }} />
                 <h4 className="font-semibold mb-1">
                   <EditableText
                     value={item.name}
@@ -436,7 +411,11 @@ export default function CapabilityDetailPage() {
       <CertificationsBlock />
 
       {/* CTA */}
-      <CTABand />
+      <CTABand
+        headline={`Ready to discuss your ${capability.title.split(" (")[0]} requirements?`}
+        subhead="Send your alignment, drawings or RFP and our technical team will assess feasibility, risk and approach, with no obligation."
+        primaryCTA={{ label: "Request a Crossing Assessment", href: "/contact" }}
+      />
     </Layout>
   );
 }

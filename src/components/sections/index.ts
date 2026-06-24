@@ -14,4 +14,5 @@ export { ClientLogos } from "./ClientLogos";
 export { LogoMarquee } from "./LogoMarquee";
 export { MobileCapabilityCarousel } from "./MobileCapabilityCarousel";
 export { MobileStickyCTA } from "./MobileStickyCTA";
+export { BackToTopButton } from "./BackToTopButton";
 export { FAQSection } from "./FAQSection";

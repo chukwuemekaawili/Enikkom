@@ -16,32 +16,27 @@ export function LogoMarquee({ variant = "light", showTitle = true, speed = 35 }:
   const [isDragging, setIsDragging] = useState(false);
   
   const isDark = variant === "dark";
-  const bgClass = isDark ? "bg-charcoal" : "bg-muted/30";
-  const textClass = isDark ? "text-white" : "text-foreground";
-  const mutedClass = isDark ? "text-white/60" : "text-muted-foreground";
+  const sectionBg = isDark ? "var(--enk-navy)" : "var(--enk-bg-muted)";
+  const fadeColor = isDark ? "var(--enk-navy)" : "var(--enk-bg-muted)";
+  const textClass = isDark ? "text-[var(--enk-on-dark)]" : "text-[var(--enk-ink)]";
+  const mutedClass = isDark ? "text-[var(--enk-on-dark-muted)]" : "text-[var(--enk-steel)]";
 
   // Duplicate logos for seamless loop
   const duplicatedClients = [...approvedClientBrands, ...approvedClientBrands];
 
   return (
-    <section className={`py-16 md:py-20 overflow-hidden ${bgClass}`}>
-      <div className="container-wide">
+    <section className="enk-section overflow-hidden" style={{ backgroundColor: sectionBg }}>
+      <div className="enk-container">
         {showTitle && (
-          <motion.div 
-            className="text-center mb-10 md:mb-14"
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <p className="section-eyebrow">Our Clients</p>
-            <h2 className={`text-[24px] md:text-[30px] lg:text-[36px] font-bold mb-4 ${textClass}`}>
+          <div className="mx-auto mb-12 max-w-2xl text-center">
+            <p className={`enk-kicker justify-center ${isDark ? "enk-kicker--on-dark" : ""}`}>Our Clients</p>
+            <h2 className={`enk-display mt-4 text-[clamp(1.6rem,3vw,2.2rem)] ${textClass}`}>
               Trusted By Industry Leaders
             </h2>
-            <p className={`text-[15px] md:text-[16px] max-w-lg mx-auto ${mutedClass}`}>
-              Partnering with Nigeria's leading oil & gas operators for over 30 years.
+            <p className={`mx-auto mt-4 max-w-lg text-[15px] leading-relaxed ${mutedClass}`}>
+              Partnering with Nigeria's leading oil &amp; gas operators for over 30 years.
             </p>
-          </motion.div>
+          </div>
         )}
       </div>
 
@@ -55,21 +50,13 @@ export function LogoMarquee({ variant = "light", showTitle = true, speed = 35 }:
         onTouchEnd={() => setTimeout(() => setIsPaused(false), 2000)}
       >
         {/* Gradient Fade Edges */}
-        <div 
+        <div
           className="absolute left-0 top-0 bottom-0 w-20 md:w-32 z-10 pointer-events-none"
-          style={{
-            background: isDark 
-              ? "linear-gradient(to right, hsl(220 50% 9% / 1) 0%, hsl(220 50% 9% / 0) 100%)"
-              : "linear-gradient(to right, hsl(220 30% 96% / 1) 0%, hsl(220 30% 96% / 0) 100%)"
-          }}
+          style={{ background: `linear-gradient(to right, ${fadeColor} 0%, transparent 100%)` }}
         />
-        <div 
+        <div
           className="absolute right-0 top-0 bottom-0 w-20 md:w-32 z-10 pointer-events-none"
-          style={{
-            background: isDark 
-              ? "linear-gradient(to left, hsl(220 50% 9% / 1) 0%, hsl(220 50% 9% / 0) 100%)"
-              : "linear-gradient(to left, hsl(220 30% 96% / 1) 0%, hsl(220 30% 96% / 0) 100%)"
-          }}
+          style={{ background: `linear-gradient(to left, ${fadeColor} 0%, transparent 100%)` }}
         />
 
         {/* Scrolling Track */}

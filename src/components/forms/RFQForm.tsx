@@ -9,9 +9,12 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { toast } from "sonner";
-import { Loader2, Upload, CheckCircle, ChevronDown } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
+import { Upload, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+
+// Online RFQ submission is disabled, the site has no backend. Submissions
+// direct the user to contact Enikkom directly instead.
+const CONTACT_EMAIL = "info@enikkom.com";
 
 const rfqSchema = z.object({
   fullName: z.string().min(2, "Name is required").max(200, "Name too long"),
@@ -31,8 +34,6 @@ const rfqSchema = z.object({
 type RFQFormData = z.infer<typeof rfqSchema>;
 
 export function RFQForm() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
   const [files, setFiles] = useState<File[]>([]);
   const [showTechnicalDetails, setShowTechnicalDetails] = useState(false);
 
@@ -48,41 +49,10 @@ export function RFQForm() {
     }
   };
 
-  const onSubmit = async (data: RFQFormData) => {
-    setIsSubmitting(true);
-    try {
-      const { data: response, error } = await supabase.functions.invoke("submit-rfq", {
-        body: data,
-      });
-
-      if (error) {
-        throw new Error(error.message || "Submission failed");
-      }
-
-      if (!response?.success) {
-        const errorMessage = response?.details?.join(", ") || response?.error || "Submission failed";
-        throw new Error(errorMessage);
-      }
-
-      setIsSuccess(true);
-      toast.success("Request submitted successfully!");
-    } catch (error) {
-      const message = error instanceof Error ? error.message : "Submission failed. Please try again.";
-      toast.error(message);
-    } finally {
-      setIsSubmitting(false);
-    }
+  const onSubmit = () => {
+    // Online submission is disabled (no backend). Point the user to email.
+    toast.info(`Online submissions are currently unavailable. Please email your request to ${CONTACT_EMAIL}.`);
   };
-
-  if (isSuccess) {
-    return (
-      <div className="text-center py-12">
-        <CheckCircle className="h-16 w-16 text-green-600 mx-auto mb-4" />
-        <h3 className="text-xl font-semibold mb-2">Request Received</h3>
-        <p className="text-muted-foreground">We'll respond within 48 business hours.</p>
-      </div>
-    );
-  }
 
   return (
     <Form {...form}>
@@ -199,12 +169,13 @@ export function RFQForm() {
             </FormItem>
           )} />
 
-          <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
-            {isSubmitting ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" />Submitting...</> : "Submit Request"}
+          <Button type="submit" size="lg" className="w-full">
+            Submit Request
           </Button>
-          
+
           <p className="text-xs text-center text-muted-foreground">
-            Response within 24-48 business hours
+            Online submissions are currently unavailable. Please email your request to{" "}
+            <a href={`mailto:${CONTACT_EMAIL}`} className="text-primary hover:underline">{CONTACT_EMAIL}</a>.
           </p>
         </div>
       </form>

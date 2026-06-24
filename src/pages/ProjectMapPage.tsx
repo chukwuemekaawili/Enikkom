@@ -2,7 +2,7 @@ import { Layout } from "@/components/layout";
 import { Hero, CTABand } from "@/components/sections";
 import { InteractiveProjectMap } from "@/components/sections/InteractiveProjectMap";
 import { usePageContent } from "@/hooks/useSiteSettings";
-import { EditableText } from "@/components/admin";
+import { EditableText } from "@/components/content";
 import { siteImageSelections } from "@/content/siteImageSelections";
 
 export default function ProjectMapPage() {
@@ -30,7 +30,8 @@ export default function ProjectMapPage() {
       <section className="py-8 bg-muted/30">
         <div className="container-wide">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl font-semibold mb-3">
+            <p className="enk-kicker justify-center mb-3">Nigeria Operations</p>
+            <h2 className="enk-display text-[clamp(1.4rem,2.2vw,1.7rem)] text-[var(--enk-ink)] mb-3">
               <EditableText
                 value={heroContent.section_title || "Our Project Footprint"}
                 pageSlug="project-map"

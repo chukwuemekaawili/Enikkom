@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Handshake, Globe, Shield, Users, Wrench, MapPin, Award, Building2, Link2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { EditableText, EditableImage } from "@/components/admin";
+import { EditableText, EditableImage } from "@/components/content";
 import { usePageContent } from "@/hooks/useSiteSettings";
 import { EnhancedImage } from "@/components/ui/enhanced-image";
 import { siteImageSelections } from "@/content/siteImageSelections";
@@ -47,11 +47,11 @@ const jointVentures = [
     description: "Formed in May 2020 by ECL and The E-Place Limited. Operates Nigeria's largest in-country HDD fleet, executing mega-scale trenchless crossings for IOCs and operators across Nigeria.",
     icon: Globe,
     logoSrc: findBrandEntity("hddtec")?.logoSrc,
-    logoWrapperClassName: "bg-transparent rounded-[0.65rem]",
+    logoWrapperClassName: "bg-transparent rounded-xl",
   },
   {
     name: "PIEJV (Pipeline Infrastructure Enikkom JV)",
-    description: "Joint venture between Ocean Marine Solutions Ltd (OMS) and ECL for comprehensive pipeline security, monitoring, and infrastructure protection services across the Niger Delta.",
+    description: "Joint venture between Ocean Marine Solutions Ltd (OMS) and ECL for pipeline security, monitoring, and infrastructure protection services across the Niger Delta.",
     icon: Shield,
   },
 ];
@@ -59,17 +59,17 @@ const jointVentures = [
 const partnershipBenefits = [
   {
     title: "Technology Transfer",
-    description: "Access to cutting-edge HDD rigs, GPS guidance systems, and advanced downhole tools from international partners.",
+    description: "Access to modern HDD rigs, GPS guidance systems, and downhole tools from international partners.",
     icon: Wrench,
   },
   {
     title: "Technical Expertise",
-    description: "International engineers and training programs ensuring world-class execution on every project.",
+    description: "International engineers and training programs supporting consistent execution on every project.",
     icon: Users,
   },
   {
     title: "Equipment Fleet",
-    description: "Nigeria's largest in-country HDD fleet — 9 maxi rigs from 50T to 500T pullback capacity, all based in-country.",
+    description: "Nigeria's largest in-country HDD fleet, 9 maxi rigs from 50T to 500T pullback capacity, all based in-country.",
     icon: Building2,
   },
   {
@@ -105,7 +105,7 @@ export default function PartnersPage() {
     <Layout>
       <Hero
         title={heroContent.title || "Partners & Strategic Alliances"}
-        subtitle={heroContent.subtitle || "Building Nigeria's infrastructure through world-class partnerships and technical collaborations that deliver excellence."}
+        subtitle={heroContent.subtitle || "Building Nigeria's infrastructure through technical partnerships and collaborations."}
         backgroundImage={heroContent.backgroundImage || partnerImages.hero}
         size="default"
         pageSlug="partners"
@@ -123,7 +123,7 @@ export default function PartnersPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="section-eyebrow">
+            <p className="enk-kicker justify-center">
               <EditableText
                 value={featuredContent.eyebrow || "Strategic Alliances"}
                 pageSlug="partners"
@@ -141,7 +141,7 @@ export default function PartnersPage() {
             </h2>
             <p className="section-subtitle">
               <EditableText
-                value={featuredContent.description || "We collaborate with leading international and local companies to deliver world-class infrastructure solutions."}
+                value={featuredContent.description || "We collaborate with established international and local companies to deliver infrastructure projects."}
                 pageSlug="partners"
                 sectionKey="featured_partners"
                 field="description"
@@ -157,7 +157,7 @@ export default function PartnersPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="card-premium p-8"
+                className="enk-card enk-card--hover p-8"
               >
                 <div className="flex items-start gap-4 mb-6">
                   <div
@@ -182,7 +182,7 @@ export default function PartnersPage() {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold mb-1">{partner.name}</h3>
-                    <p className="text-sm text-primary font-medium">{partner.type}</p>
+                    <p className="text-[12px] font-mono uppercase tracking-[0.1em]" style={{ color: "var(--enk-bronze)" }}>{partner.type}</p>
                     <p className="text-xs text-muted-foreground">Since {partner.since}</p>
                   </div>
                 </div>
@@ -194,7 +194,7 @@ export default function PartnersPage() {
                 <div className="space-y-3 mb-6">
                   {partner.highlights.map((highlight, idx) => (
                     <div key={idx} className="flex items-center gap-3">
-                      <div className="w-2 h-2 rounded-full bg-primary flex-shrink-0" />
+                      <div className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: "var(--enk-navy)" }} />
                       <span className="text-[14px]">{highlight}</span>
                     </div>
                   ))}
@@ -224,7 +224,7 @@ export default function PartnersPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="section-eyebrow">Joint Ventures</p>
+            <p className="enk-kicker justify-center">Joint Ventures</p>
             <h2 className="section-title">Our JV Companies</h2>
             <p className="section-subtitle">
               Dedicated joint venture entities formed to deliver specialized services.
@@ -239,7 +239,7 @@ export default function PartnersPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="card-premium p-6 flex items-start gap-4"
+                className="enk-card enk-card--hover p-6 flex items-start gap-4"
               >
                 <div
                   className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 overflow-hidden ${
@@ -281,7 +281,7 @@ export default function PartnersPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="section-eyebrow text-primary">
+            <p className="enk-kicker enk-kicker--on-dark justify-center">
               <EditableText
                 value={benefitsContent.eyebrow || "Capabilities"}
                 pageSlug="partners"
@@ -317,7 +317,7 @@ export default function PartnersPage() {
                 transition={{ duration: 0.4, delay: index * 0.08 }}
                 className="p-6 rounded-xl border border-white/10 bg-white/5"
               >
-                <benefit.icon className="h-8 w-8 text-primary mb-4" />
+                <benefit.icon className="h-8 w-8 mb-4" style={{ color: "var(--enk-gold)" }} />
                 <h4 className="font-semibold text-white mb-2">{benefit.title}</h4>
                 <p className="text-white/60 text-[14px] leading-relaxed">{benefit.description}</p>
               </motion.div>
@@ -327,7 +327,7 @@ export default function PartnersPage() {
       </section>
 
       {/* Major Clients */}
-      <section className="py-16 bg-background">
+      <section className="section-padding-sm bg-background">
         <div className="container-wide">
           <motion.div
             className="text-center mb-8"
@@ -336,8 +336,8 @@ export default function PartnersPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="section-eyebrow">Trusted By</p>
-            <h2 className="text-2xl font-bold">Our Major Clients</h2>
+            <p className="enk-kicker justify-center">Trusted By</p>
+            <h2 className="enk-display text-[clamp(1.6rem,3vw,2.2rem)] text-[var(--enk-ink)]">Our Major Clients</h2>
           </motion.div>
           
           <LogoMarquee showTitle={false} />
@@ -354,7 +354,7 @@ export default function PartnersPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="section-eyebrow">Compliance</p>
+            <p className="enk-kicker justify-center">Compliance</p>
             <h2 className="section-title">Certifications Through Partnerships</h2>
             <p className="section-subtitle">
               Our partnerships enable us to maintain internationally recognized certifications.
@@ -369,9 +369,9 @@ export default function PartnersPage() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: index * 0.05 }}
-                className="card-premium p-4 flex items-center gap-3"
+                className="enk-card enk-card--hover p-4 flex items-center gap-3"
               >
-                <div className="w-2.5 h-2.5 rounded-full bg-primary flex-shrink-0" />
+                <div className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: "var(--enk-navy)" }} />
                 <p className="text-[13px] font-medium">{cert}</p>
               </motion.div>
             ))}
@@ -383,7 +383,7 @@ export default function PartnersPage() {
         headline="Partner With Us"
         subhead="Interested in strategic collaboration? Let's discuss how we can work together."
         primaryCTA={{ label: "Contact Us", href: "/contact" }}
-        secondaryCTA={{ label: "View Services", href: "/services" }}
+        secondaryCTA={{ label: "View Capabilities", href: "/capabilities" }}
       />
     </Layout>
   );

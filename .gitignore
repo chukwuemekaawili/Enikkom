@@ -14,6 +14,10 @@ dist-ssr
 .tmp/
 vite.config.ts.timestamp-*.mjs
 
+# Source/reference material — large raw archives kept locally, not in git.
+# See resources/README.md. Served assets live in public/ and src/assets/.
+/resources/
+
 # Environment variables — never commit secrets
 .env
 .env.*

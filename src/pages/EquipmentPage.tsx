@@ -1,12 +1,12 @@
 import { Layout } from "@/components/layout";
 import { Hero, CTABand } from "@/components/sections";
-import { EditableText } from "@/components/admin";
+import { EditableText } from "@/components/content";
 import { usePageContent } from "@/hooks/useSiteSettings";
 import { motion } from "framer-motion";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { EnhancedImage } from "@/components/ui/enhanced-image";
 import { Link } from "react-router-dom";
-import { ArrowRight, Wrench, Ship, Construction } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import {
   equipmentSourceNote,
   hddRigSpecs,
@@ -75,10 +75,7 @@ export default function EquipmentPage() {
             transition={{ duration: 0.5 }}
           >
             <div>
-              <div className="flex items-center gap-2 mb-2">
-                <Wrench className="h-5 w-5 text-primary" />
-                <p className="section-eyebrow">Core Fleet</p>
-              </div>
+              <p className="enk-kicker mb-2">Core Fleet</p>
               <h2 className="mb-2">
                 <EditableText
                   value={hddContent.title || "HDD Rig Fleet"}
@@ -110,7 +107,7 @@ export default function EquipmentPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: 0.1 }}
           >
-            <div className="overflow-x-auto rounded-[14px] border border-border">
+            <div className="overflow-x-auto rounded-xl border border-border">
               <Table>
                 <TableHeader>
                   <TableRow className="bg-muted/50">
@@ -130,7 +127,7 @@ export default function EquipmentPage() {
                       <TableCell className="font-medium text-[13px]">
                         {item.model}
                         {(item.model === "American Augers DD-1100" || item.model === "American Augers DD-1100 RS") && (
-                          <span className="ml-2 inline-block text-[10px] bg-primary/10 text-primary px-1.5 py-0.5 rounded font-semibold">
+                          <span className="enk-chip ml-2 text-[9px]">
                             500T
                           </span>
                         )}
@@ -162,7 +159,7 @@ export default function EquipmentPage() {
                   "American Augers DD-625",
                 ].includes(item.model)
               ).map((item) => (
-                <div key={item.model} className="rounded-[14px] border border-border bg-muted/20 p-4">
+                <div key={item.model} className="rounded-xl border border-border bg-muted/20 p-4">
                   <p className="text-[12px] font-semibold text-foreground mb-1">{item.model}</p>
                   <p className="text-[12px] text-muted-foreground leading-relaxed">{item.note}</p>
                 </div>
@@ -182,10 +179,7 @@ export default function EquipmentPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <div className="flex items-center gap-2 mb-2">
-              <Construction className="h-5 w-5 text-primary" />
-              <p className="section-eyebrow">Trenchless Technology</p>
-            </div>
+            <p className="enk-kicker mb-2">Trenchless Technology</p>
             <h2 className="mb-2">
               <EditableText
                 value={thrustContent.title || "Thrust Boring & Micro Tunnelling"}
@@ -213,7 +207,7 @@ export default function EquipmentPage() {
               transition={{ duration: 0.4, delay: 0.1 }}
             >
               <h3 className="text-lg font-semibold mb-4">Thrust Boring Machines</h3>
-              <div className="overflow-x-auto rounded-[14px] border border-border bg-card">
+              <div className="overflow-x-auto rounded-xl border border-border bg-card">
                 <Table>
                   <TableHeader>
                     <TableRow className="bg-muted/50">
@@ -247,7 +241,7 @@ export default function EquipmentPage() {
               transition={{ duration: 0.4, delay: 0.2 }}
             >
               <h3 className="text-lg font-semibold mb-4">Micro Tunnelling Equipment</h3>
-              <div className="overflow-x-auto rounded-[14px] border border-border bg-card">
+              <div className="overflow-x-auto rounded-xl border border-border bg-card">
                 <Table>
                   <TableHeader>
                     <TableRow className="bg-muted/50">
@@ -286,10 +280,7 @@ export default function EquipmentPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <div className="flex items-center gap-2 mb-2">
-              <Ship className="h-5 w-5 text-primary" />
-              <p className="section-eyebrow">Marine & Support</p>
-            </div>
+            <p className="enk-kicker mb-2">Marine & Support</p>
             <h2 className="mb-2">Marine & Support Equipment</h2>
             <p className="text-[14px] md:text-[15px] text-muted-foreground max-w-2xl">
               Detailed marine, civil, and logistics fleet groupings from the owned-equipment schedule, including dredgers, excavators, sidebooms, cranes, transport, generators, and field vehicles.
@@ -305,7 +296,7 @@ export default function EquipmentPage() {
               transition={{ duration: 0.4, delay: 0.1 }}
             >
               <h3 className="text-lg font-semibold mb-4">Marine Equipment</h3>
-              <div className="overflow-x-auto rounded-[14px] border border-border bg-card">
+              <div className="overflow-x-auto rounded-xl border border-border bg-card">
                 <Table>
                   <TableHeader>
                     <TableRow className="bg-muted/50">
@@ -335,7 +326,7 @@ export default function EquipmentPage() {
               transition={{ duration: 0.4, delay: 0.2 }}
             >
               <h3 className="text-lg font-semibold mb-4">Support Equipment</h3>
-              <div className="mb-4 overflow-hidden rounded-[14px] border border-border bg-card">
+              <div className="mb-4 overflow-hidden rounded-xl border border-border bg-card">
                 <EnhancedImage
                 src={equipmentImages.support}
                   alt="Heavy transport and support fleet assets mobilized for field operations"
@@ -351,7 +342,7 @@ export default function EquipmentPage() {
                   </p>
                 </div>
               </div>
-              <div className="overflow-x-auto rounded-[14px] border border-border bg-card">
+              <div className="overflow-x-auto rounded-xl border border-border bg-card">
                 <Table>
                   <TableHeader>
                     <TableRow className="bg-muted/50">
@@ -377,7 +368,7 @@ export default function EquipmentPage() {
       </section>
 
       {/* Partnership Note */}
-      <section className="py-12 bg-primary/5 border-y border-primary/10">
+      <section className="py-12 bg-muted/40 border-y border-border">
         <div className="container-wide">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
@@ -391,7 +382,7 @@ export default function EquipmentPage() {
               </h3>
               <p className="text-[14px] text-muted-foreground max-w-2xl">
                 <EditableText
-                  value={content.partnership?.description || "HDDThailand Co. Ltd is a global leader in trenchless solutions with over 15 years of international experience. HDDThailand provides engineering services, project management services, and quality assurance procedures consistent with ISO-9001 certification for all directional drilling projects. This collaboration delivers world-class trenchless technology solutions to the oil and gas industry."}
+                  value={content.partnership?.description || "HDDThailand Co. Ltd is an international trenchless specialist with over 15 years of experience. HDDThailand provides engineering services, project management services, and quality assurance procedures consistent with ISO-9001 certification for all directional drilling projects. This collaboration brings proven trenchless technology to the oil and gas industry."}
                   pageSlug="equipment"
                   sectionKey="partnership"
                   field="description"

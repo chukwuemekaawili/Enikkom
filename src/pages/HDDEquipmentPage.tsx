@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { CheckCircle, Drill, Settings, Wrench } from "lucide-react";
 import { usePageContent } from "@/hooks/useSiteSettings";
-import { EditableText, EditableImage } from "@/components/admin";
+import { EditableText, EditableImage } from "@/components/content";
 import {
   equipmentSourceNote,
   hddRigSpecs,
@@ -71,13 +71,13 @@ export default function HDDEquipmentPage() {
                 ].map((item, i) => (
                   <motion.div 
                     key={i} 
-                    className="flex items-center gap-3 p-3 bg-muted/50 rounded-[14px]"
+                    className="enk-card flex items-center gap-3 p-3"
                     initial={{ opacity: 0, y: 12 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.3, delay: 0.1 + i * 0.05 }}
                   >
-                    <item.icon className="h-5 w-5 text-primary" />
+                    <item.icon className="h-5 w-5 flex-shrink-0" style={{ color: "var(--enk-navy)" }} />
                     <span className="text-[13px] font-medium">
                       <EditableText
                         value={item.label}
@@ -123,7 +123,7 @@ export default function HDDEquipmentPage() {
                 field="title"
               />
             </h3>
-            <div className="overflow-x-auto rounded-[14px] border border-border">
+            <div className="overflow-x-auto rounded-xl border border-border">
               <Table>
                 <TableHeader>
                   <TableRow className="bg-muted/50">
@@ -141,7 +141,7 @@ export default function HDDEquipmentPage() {
                     <TableRow key={i} className="hover:bg-muted/30 transition-colors">
                       <TableCell className="font-medium text-[13px]">{rig.model}</TableCell>
                       <TableCell className="text-[13px] text-muted-foreground whitespace-nowrap">{rig.inventoryLabel}</TableCell>
-                      <TableCell className="text-[13px] text-primary font-semibold whitespace-nowrap">{rig.pullbackClass}</TableCell>
+                      <TableCell className="text-[13px] font-semibold whitespace-nowrap" style={{ color: "var(--enk-navy)" }}>{rig.pullbackClass}</TableCell>
                       <TableCell className="text-[13px] text-muted-foreground min-w-[190px]">{rig.thrustRating}</TableCell>
                       <TableCell className="text-[13px] text-muted-foreground min-w-[170px]">{rig.rotaryTorque}</TableCell>
                       <TableCell className="text-[13px] text-muted-foreground min-w-[210px]">
@@ -179,7 +179,7 @@ export default function HDDEquipmentPage() {
                 field="title"
               />
             </h3>
-            <div className="overflow-x-auto rounded-[14px] border border-border">
+            <div className="overflow-x-auto rounded-xl border border-border">
               <Table>
                 <TableHeader>
                   <TableRow className="bg-muted/50">
@@ -219,7 +219,7 @@ export default function HDDEquipmentPage() {
                 field="title"
               />
             </h3>
-            <div className="overflow-x-auto rounded-[14px] border border-border">
+            <div className="overflow-x-auto rounded-xl border border-border">
               <Table>
                 <TableHeader>
                   <TableRow className="bg-muted/50">
@@ -253,7 +253,7 @@ export default function HDDEquipmentPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="text-[11px] md:text-xs font-semibold uppercase tracking-widest text-primary mb-3">
+            <p className="enk-kicker justify-center mb-3">
               <EditableText
                 value={partnerContent.subtitle || "Strategic Partnership"}
                 pageSlug="hdd-equipment"
@@ -271,7 +271,7 @@ export default function HDDEquipmentPage() {
             </h2>
             <p className="text-[14px] md:text-[15px] text-muted-foreground max-w-2xl mx-auto">
               <EditableText
-                value={partnerContent.description || "HDDTEC Ltd — our joint venture with HDDThailand Co. Ltd — combines HDDThailand's 15+ years of international HDD experience (ISO 9001:2015 certified) with ECL's deep local knowledge, operating Nigeria's largest in-country fleet of 9 HDD rigs to tackle any crossing challenge."}
+                value={partnerContent.description || "HDDTEC Ltd, our joint venture with HDDThailand Co. Ltd, combines HDDThailand's 15+ years of international HDD experience (ISO 9001:2015 certified) with ECL's deep local knowledge, operating Nigeria's largest in-country fleet of 9 HDD rigs to tackle any crossing challenge."}
                 pageSlug="hdd-equipment"
                 sectionKey="partner"
                 field="description"

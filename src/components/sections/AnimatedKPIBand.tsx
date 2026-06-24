@@ -29,7 +29,7 @@ function AnimatedStat({ stat, index }: { stat: KPIStat; index: number }) {
   return (
     <motion.div 
       ref={ref} 
-      className="card-premium p-6 md:p-8 flex flex-col items-center justify-center text-center group h-full"
+      className="enk-card enk-card--hover p-6 md:p-8 flex flex-col items-center justify-center text-center group h-full"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}

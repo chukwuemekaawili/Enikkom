@@ -21,20 +21,20 @@ interface Project {
 const hddProjects: Project[] = [
   {
     image: getProjectImage("oml34-chdd", "projectGallery"),
-    title: "OML34 Continuous HDD — 10\" × 12km",
+    title: "OML34 Continuous HDD, 10\" × 12km",
     client: "NPDC / ND Western",
     location: "Utorogun, Delta State",
     year: "2021",
-    description: "Nigeria's longest Continuous HDD — 12km of 10-inch pipeline installed in a single continuous operation through the Niger Delta. Record-breaking achievement.",
-    specs: ["12km total length", "10\" diameter", "500T CHDD — Nigeria record"],
+    description: "Nigeria's longest Continuous HDD, 12km of 10-inch pipeline installed in a single continuous operation through the Niger Delta. Record-breaking achievement.",
+    specs: ["12km total length", "10\" diameter", "500T CHDD, Nigeria record"],
   },
   {
     image: getProjectImage("atlas-cove-mosimi", "projectGallery"),
-    title: "Atlas Cove–Mosimi — 16\" × 3.1km",
+    title: "Atlas Cove-Mosimi, 16\" × 3.1km",
     client: "NNPC / PPMC",
     location: "Arepo / Imagbon, Ogun State",
     year: "2016",
-    description: "Africa's longest single HDD drill — emergency reconstruction of the Atlas Cove to Mosimi petroleum products pipeline.",
+    description: "Africa's longest single HDD drill, emergency reconstruction of the Atlas Cove to Mosimi petroleum products pipeline.",
     specs: ["3.1km single drill", "16\" diameter", "Africa record"],
   },
   {
@@ -43,7 +43,7 @@ const hddProjects: Project[] = [
     client: "Saipem / SPDC",
     location: "Delta State, Nigeria",
     year: "2016",
-    description: "Africa's longest bundled HDD crossing — 12\" and 3\" pipelines installed simultaneously across 2.78km of the Escravos River system.",
+    description: "Africa's longest bundled HDD crossing, 12\" and 3\" pipelines installed simultaneously across 2.78km of the Escravos River system.",
     specs: ["2.78km bundled crossing", "12\" + 3\" pipes", "Africa record"],
   },
   {
@@ -69,16 +69,16 @@ const hddProjects: Project[] = [
 const pipelineProjects: Project[] = [
   {
     image: getProjectImage("gbaran-phase-3b", "projectGallery"),
-    title: "Gbaran Phase 3b — 16\" Pipeline EPC",
+    title: "Gbaran Phase 3b, 16\" Pipeline EPC",
     client: "SPDC",
     location: "Bayelsa State, Nigeria",
     year: "2025",
-    description: "EPC pipeline construction — 8km and 10km of 16-inch pipeline for the Gbaran–UZU CPF upgrade project.",
+    description: "EPC pipeline construction, 8km and 10km of 16-inch pipeline for the Gbaran-UZU CPF upgrade project.",
     specs: ["8km & 10km", "16\" diameter", "EPC contract"],
   },
   {
     image: getProjectImage("calabar-gas-transmission", "projectGallery"),
-    title: "Calabar Gas Transmission — 24\" × 21.5km",
+    title: "Calabar Gas Transmission, 24\" × 21.5km",
     client: "Zakhem / NDPHC",
     location: "Cross River State, Nigeria",
     year: "2015",
@@ -96,7 +96,7 @@ const pipelineProjects: Project[] = [
   },
   {
     image: getProjectImage("elps-phase-2", "projectGallery"),
-    title: "ELPS Phase II — 36\" × 7.2km HDD",
+    title: "ELPS Phase II, 36\" × 7.2km HDD",
     client: "Zakhem / NNPC",
     location: "Lagos / Delta State",
     year: "2018",
@@ -135,7 +135,7 @@ const marineProjects: Project[] = [
   },
   {
     image: getProjectImage("dangote-lagoon", "projectGallery"),
-    title: "Dangote Lagoon Crossing — 36\" × 2km",
+    title: "Dangote Lagoon Crossing, 36\" × 2km",
     client: "Dangote Fertilizer",
     location: "Ejirin, Lagos Lagoon",
     year: "2016",
@@ -164,7 +164,7 @@ export default function ProjectsGalleryPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.3, delay: index * 0.05 }}
-            className="group cursor-pointer bg-card rounded-lg border overflow-hidden"
+            className="group cursor-pointer enk-card enk-card--hover overflow-hidden flex flex-col"
             onClick={() => setSelectedProject(project)}
           >
             <div className="aspect-[4/3] overflow-hidden relative">
@@ -177,25 +177,30 @@ export default function ProjectsGalleryPage() {
                 tone="natural"
                 fallbackLabel={project.title}
               />
+              <div
+                className="absolute inset-0"
+                aria-hidden="true"
+                style={{ background: "linear-gradient(0deg, oklch(0.13 0.03 255 / 0.5), transparent 55%)" }}
+              />
               {project.year && (
-                <div className="absolute top-3 right-3 bg-primary text-primary-foreground text-xs font-bold px-2 py-1 rounded">
+                <span className="enk-chip enk-chip--on-dark absolute left-3 top-3">
                   {project.year}
-                </div>
+                </span>
               )}
             </div>
-            <div className="p-5">
-              <h4 className="font-semibold text-lg mb-1 group-hover:text-primary transition-colors">{project.title}</h4>
+            <div className="flex flex-1 flex-col p-5" style={{ backgroundColor: "var(--enk-navy)" }}>
+              <h4 className="font-semibold text-[16px] mb-1 text-[var(--enk-on-dark)] group-hover:text-[var(--enk-gold)] transition-colors">{project.title}</h4>
               {project.client && (
-                <p className="text-sm text-primary font-medium mb-2">{project.client}</p>
+                <p className="text-[12px] font-mono uppercase tracking-[0.1em] mb-2" style={{ color: "var(--enk-gold)" }}>{project.client}</p>
               )}
               {project.location && (
-                <p className="text-xs text-muted-foreground mb-3">{project.location}</p>
+                <p className="text-[12px] text-[var(--enk-on-dark-muted)] mb-2">{project.location}</p>
               )}
-              <p className="text-sm text-muted-foreground line-clamp-2">{project.description}</p>
+              <p className="text-[13px] text-[var(--enk-on-dark-muted)] line-clamp-2 flex-1">{project.description}</p>
               {project.specs && (
-                <div className="flex flex-wrap gap-2 mt-3">
+                <div className="flex flex-wrap gap-1.5 mt-3">
                   {project.specs.slice(0, 2).map((spec) => (
-                    <span key={spec} className="text-xs bg-muted px-2 py-1 rounded">
+                    <span key={spec} className="enk-chip enk-chip--on-dark text-[10px]">
                       {spec}
                     </span>
                   ))}
@@ -226,24 +231,24 @@ export default function ProjectsGalleryPage() {
       />
 
       {/* Stats Band */}
-      <section className="bg-primary py-8">
+      <section className="py-8" style={{ backgroundColor: "var(--enk-navy)" }}>
         <div className="container-wide">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div>
-              <div className="text-3xl font-bold text-primary-foreground">120+</div>
-              <div className="text-sm text-primary-foreground/80">KM Pipeline Installed</div>
+              <div className="text-3xl font-bold text-white">120+</div>
+              <div className="text-sm text-white/60">KM Pipeline Installed</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-primary-foreground">50+</div>
-              <div className="text-sm text-primary-foreground/80">HDD Crossings</div>
+              <div className="text-3xl font-bold text-white">50+</div>
+              <div className="text-sm text-white/60">HDD Crossings</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-primary-foreground">15+</div>
-              <div className="text-sm text-primary-foreground/80">Marine Projects</div>
+              <div className="text-3xl font-bold text-white">15+</div>
+              <div className="text-sm text-white/60">Marine Projects</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-primary-foreground">0</div>
-              <div className="text-sm text-primary-foreground/80">LTI Record</div>
+              <div className="text-3xl font-bold text-white">0</div>
+              <div className="text-sm text-white/60">LTI Record</div>
             </div>
           </div>
         </div>
@@ -257,11 +262,12 @@ export default function ProjectsGalleryPage() {
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
-                className={`px-5 py-2.5 rounded-full text-sm font-medium transition-colors ${
+                className={`px-5 py-2 rounded-[var(--enk-radius)] text-[13px] font-medium transition-colors ${
                   activeCategory === category
-                    ? "bg-primary text-primary-foreground"
+                    ? "text-white"
                     : "bg-muted text-muted-foreground hover:bg-muted/80"
                 }`}
+                style={activeCategory === category ? { backgroundColor: "var(--enk-navy)" } : undefined}
               >
                 {category}
               </button>
@@ -316,7 +322,7 @@ export default function ProjectsGalleryPage() {
             <div className="p-6 md:p-8">
               <div className="flex flex-wrap items-center gap-3 mb-4">
                 {selectedProject.year && (
-                  <span className="text-xs font-bold text-primary bg-primary/10 px-3 py-1 rounded-full">
+                  <span className="enk-chip">
                     {selectedProject.year}
                   </span>
                 )}
@@ -334,16 +340,16 @@ export default function ProjectsGalleryPage() {
               {selectedProject.specs && (
                 <div className="flex flex-wrap gap-2">
                   {selectedProject.specs.map((spec) => (
-                    <span key={spec} className="text-sm bg-muted px-3 py-1.5 rounded-full font-medium">
+                    <span key={spec} className="enk-chip">
                       {spec}
                     </span>
                   ))}
                 </div>
               )}
               <div className="mt-8 pt-6 border-t">
-                <Link 
-                  to="/contact" 
-                  className="inline-flex items-center gap-2 text-primary hover:underline font-medium"
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-2 font-semibold enk-link"
                 >
                   Discuss a similar project <ChevronRight className="h-4 w-4" />
                 </Link>

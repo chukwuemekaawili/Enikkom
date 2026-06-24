@@ -1,7 +1,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { Quote, Plus, X } from "lucide-react";
 import { useState } from "react";
-import { EditableText, EditableImage } from "@/components/admin";
+import { EditableText, EditableImage } from "@/components/content";
 import { usePageContent } from "@/hooks/useSiteSettings";
 import { useEditMode } from "@/contexts/EditModeContext";
 import { Button } from "@/components/ui/button";
@@ -27,12 +27,12 @@ export function TrustBlock({ variant = "light" }: TrustBlockProps) {
   const { content } = usePageContent('home');
   const trustContent = content.trust_block || {};
 
-  // Default testimonial — sourced from approved 1.2 TESTIMONIALS document
+  // Default testimonial, sourced from approved 1.2 TESTIMONIALS document
   const defaultTestimonial = {
     quote: "We are delighted with our experience of working with ENIKKOM over the duration of our project. We have found all staff from senior management down to the site delivery team to be friendly, cooperative, helpful and very professional. It was a pleasure working with the team and we definitely will look forward to our next project together.",
     author: "Project Management Team",
     company: "Saipem Contracting Nigeria Limited",
-    project: "SPDC Otumara–Escravos Pipeline Project",
+    project: "SPDC Otumara-Escravos Pipeline Project",
   };
 
   const testimonial = {

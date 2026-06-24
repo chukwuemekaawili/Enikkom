@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Layout } from "@/components/layout";
 import { Hero, CTABand, CaseStudyCard } from "@/components/sections";
-import { EditableText } from "@/components/admin";
+import { EditableText } from "@/components/content";
 import { getProjectImage } from "@/content/projectImageSelections";
 import { siteImageSelections } from "@/content/siteImageSelections";
 import { usePageContent, useCollection } from "@/hooks/useSiteSettings";
@@ -37,7 +37,7 @@ const galleryImages = [
 // Real projects from Enikkom documents - each with unique thumbnail
 const defaultProjects = [
   {
-    title: "OML34 Continuous HDD — 10\" × 12km",
+    title: "OML34 Continuous HDD, 10\" × 12km",
     location: "Utorogun, Delta State",
     metric: "12km",
     metricLabel: "Nigeria's Longest CHDD",
@@ -47,7 +47,7 @@ const defaultProjects = [
     year: "2021",
   },
   {
-    title: "Dangote Fertilizer — 36\" × 2km Lagoon Crossing",
+    title: "Dangote Fertilizer, 36\" × 2km Lagoon Crossing",
     location: "Ejirin, Lagos Lagoon",
     metric: "36\" × 2km",
     metricLabel: "Swamp / Lagoon HDD Crossing",
@@ -57,7 +57,7 @@ const defaultProjects = [
     year: "2016",
   },
   {
-    title: "Atlas Cove–Mosimi — 16\" × 3.1km",
+    title: "Atlas Cove-Mosimi, 16\" × 3.1km",
     location: "Arepo / Imagbon, Ogun State",
     metric: "16\" × 3.1km",
     metricLabel: "Africa's Longest Single Drill",
@@ -130,7 +130,7 @@ const defaultProjects = [
     title: "Ekiadolor Deep Valley Crossing",
     location: "Edo State, Nigeria",
     metric: "36\" × 1.2km",
-    metricLabel: "80m Depth — Africa's Deepest HDD",
+    metricLabel: "80m Depth, Africa's Deepest HDD",
     tags: ["HDD"],
     href: "/projects/ekiadolor-deep-valley",
     thumbnail: getProjectImage("ekiadolor-deep-valley", "projectList"),
@@ -147,7 +147,7 @@ const defaultProjects = [
     year: "2003",
   },
   {
-    title: "Gbaran Phase 3b – UZU CPF Upgrade",
+    title: "Gbaran Phase 3b - UZU CPF Upgrade",
     location: "Bayelsa State, Nigeria",
     metric: "8km & 10km",
     metricLabel: "x 16\" pipeline EPC",
@@ -232,10 +232,11 @@ export default function ProjectsPage() {
                 variant={activeFilter === tag ? "default" : "outline"}
                 size="sm"
                 onClick={() => setActiveFilter(tag)}
-                className={`h-10 px-5 text-[13px] md:text-[14px] rounded-lg transition-all duration-200 min-w-[72px] ${activeFilter === tag
-                  ? "bg-brand-primary hover:bg-brand-primary-hover"
+                className={`h-10 px-5 text-[13px] md:text-[14px] rounded-[var(--enk-radius)] transition-all duration-200 min-w-[72px] ${activeFilter === tag
+                  ? "text-white border-transparent"
                   : "border-border hover:bg-muted"
                   }`}
+                style={activeFilter === tag ? { backgroundColor: "var(--enk-navy)" } : undefined}
               >
                 {tag}
               </Button>
@@ -278,7 +279,7 @@ export default function ProjectsPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="text-[11px] md:text-xs font-semibold uppercase tracking-widest text-primary mb-3">
+            <p className="enk-kicker enk-kicker--on-dark justify-center mb-3">
               <EditableText
                 value={recordsContent.subtitle || "Our Records"}
                 pageSlug="projects"
@@ -313,14 +314,14 @@ export default function ProjectsPage() {
             ].map((record, i) => (
               <motion.div
                 key={record.label}
-                className="bg-black/60 border-2 border-primary/20 hover:border-primary p-6 md:p-8 text-center transition-colors duration-200"
+                className="rounded-xl border border-white/10 bg-white/5 hover:border-white/20 p-6 md:p-8 text-center transition-colors duration-200"
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: i * 0.1 }}
               >
-                <div className="text-4xl md:text-5xl font-black text-white mb-2">{record.value}</div>
-                <div className="text-primary text-[14px] font-bold uppercase tracking-wide mb-1">{record.label}</div>
+                <div className="enk-display text-[clamp(2rem,4vw,2.6rem)] text-[var(--enk-on-dark)] mb-2">{record.value}</div>
+                <div className="text-[14px] font-bold uppercase tracking-wide mb-1" style={{ color: "var(--enk-gold)" }}>{record.label}</div>
                 <div className="text-white/60 text-[12px]">{record.detail}</div>
               </motion.div>
             ))}
@@ -338,7 +339,7 @@ export default function ProjectsPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="text-[11px] md:text-xs font-semibold uppercase tracking-widest text-primary mb-3">Gallery</p>
+            <p className="enk-kicker justify-center mb-3">Gallery</p>
             <h2 className="mb-3">
               <EditableText
                 value={content.gallery?.title || "Project Gallery"}
@@ -359,7 +360,7 @@ export default function ProjectsPage() {
               {galleryImages.map((img, i) => (
                 <motion.div
                   key={img.label}
-                  className="group aspect-[3/2] rounded-sm overflow-hidden hover-lift"
+                  className="group relative aspect-[3/2] rounded-xl overflow-hidden hover-lift"
                   initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}

@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { useTeamMembers, usePageContent } from "@/hooks/useSiteSettings";
-import { EditableText } from "@/components/admin";
+import { EditableText } from "@/components/content";
 import { EnhancedImage } from "@/components/ui/enhanced-image";
 import { siteImageSelections } from "@/content/siteImageSelections";
 
@@ -26,10 +26,10 @@ const defaultLeadership: TeamMember[] = [
   {
     name: "Engr. Edward Amene",
     role: "Chief Executive Officer / Managing Director",
-    bio: "A Mechanical Engineering graduate from the University of Nigeria, Nsukka, with over 37 years of experience in pipeline construction, including 14 years as a Project Engineer with SPDC. He founded Enikkom Group in 1995 and pioneered the use of trenchless technologies — including Horizontal Directional Drilling and Thrust Boring — in Nigeria's pipeline sector, completing the first HDD crossing of the River Niger in 2003.",
+    bio: "A Mechanical Engineering graduate from the University of Nigeria, Nsukka, with over 37 years of experience in pipeline construction, including 14 years as a Project Engineer with SPDC. He founded Enikkom Group in 1995 and pioneered the use of trenchless technologies, including Horizontal Directional Drilling and Thrust Boring, in Nigeria's pipeline sector, completing the first HDD crossing of the River Niger in 2003.",
     expertise: ["Pipeline Construction", "HDD & Trenchless Technology", "Strategic Leadership"],
     photo: managementImages.photos.edwardAmene,
-    highlight: "Pioneer of HDD technology in Nigeria — first River Niger crossing, 2003",
+    highlight: "Pioneer of HDD technology in Nigeria, first River Niger crossing, 2003",
     category: "management",
   },
   {
@@ -47,7 +47,7 @@ const defaultLeadership: TeamMember[] = [
     bio: "A seasoned business executive with 30 years of experience spanning energy, consulting, trade policy, and international business development. Began his career in 1995 with Schlumberger and Shell before moving into consulting with Accenture and Deloitte, advising energy and resources companies on growth and operational improvement. Served as inaugural Executive Secretary of the National Committee Secretariat for AfCFTA, leading Nigeria's accession process. Holds a Mechanical Engineering degree from the University of Nigeria, Nsukka, and an MBA from the Judge Business School, University of Cambridge. Also serves as Non-Executive Director at Dryva Logistics and West Africa Advisor to the UK Institute of Directors.",
     expertise: ["Business Transformation", "International Strategy", "Trade & Policy"],
     photo: managementImages.photos.francisAnatogu,
-    highlight: "Cambridge MBA | ex-Schlumberger, Shell, Accenture, Deloitte — driving Enikkom's growth agenda",
+    highlight: "Cambridge MBA | ex-Schlumberger, Shell, Accenture, Deloitte, driving Enikkom's growth agenda",
     category: "management",
   },
 
@@ -75,16 +75,16 @@ const defaultLeadership: TeamMember[] = [
     bio: "A Nigerian administrator with 23 years of experience, including 15 years as Managing Director at Enikkom Group Limited. Holds an MSc in Peace & Conflict Studies and bachelor's degrees in Mathematics and Peace & Conflict Studies. Brings extensive expertise in administrative management across local and international organisations, driving operational efficiency, strategic leadership, and organisational excellence at Enikkom.",
     expertise: ["Administrative Management", "Operational Efficiency", "Strategic Leadership"],
     photo: managementImages.photos.chibuikeNwachukwu,
-    highlight: "15 years as Managing Director — operational backbone of Enikkom Group",
+    highlight: "15 years as Managing Director, operational backbone of Enikkom Group",
     category: "management",
   },
   {
     name: "Teddy Allen",
     role: "General Manager, Drilling",
-    bio: "An American professional with 38 years of global experience in directional drilling and pipeline installation across diverse formations including swamps, sands, silts, shales, and granite. Skilled with various rig types — jack-ups, platforms, semi-submersibles, and directional drilling rigs — and trained in direct pipe procedures. Brings extensive expertise in drilling tools, fluids, recycling equipment, and down-hole surveying systems, with a strong track record in implementing and monitoring operational and safety standards.",
+    bio: "An American professional with 38 years of global experience in directional drilling and pipeline installation across diverse formations including swamps, sands, silts, shales, and granite. Skilled with various rig types, jack-ups, platforms, semi-submersibles, and directional drilling rigs, and trained in direct pipe procedures. Brings extensive expertise in drilling tools, fluids, recycling equipment, and down-hole surveying systems, with a strong track record in implementing and monitoring operational and safety standards.",
     expertise: ["Directional Drilling", "Down-Hole Surveying", "Drilling Fluids & Tools"],
     photo: managementImages.photos.teddyAllen,
-    highlight: "38 years global HDD expertise — diverse formations, direct pipe, and drilling systems",
+    highlight: "38 years global HDD expertise, diverse formations, direct pipe, and drilling systems",
     category: "management",
   },
   {
@@ -145,14 +145,14 @@ const TeamMemberCard = ({
     viewport={{ once: true }}
     transition={{ duration: 0.4, delay: (index % 3) * 0.05 }}
     onClick={() => onSelect(index)}
-    className="bg-card rounded-[14px] border overflow-hidden group hover-lift cursor-pointer"
+    className="enk-card enk-card--hover overflow-hidden group cursor-pointer flex flex-col"
   >
-    {/* Photo with hover highlight overlay */}
+    {/* Photo */}
     <div className="aspect-[4/3] relative overflow-hidden">
       {member.photo ? (
         <EnhancedImage
-          src={member.photo} 
-          alt={`${member.name} — ${member.role}, Enikkom Construction Limited`}
+          src={member.photo}
+          alt={`${member.name}, ${member.role}, Enikkom Construction Limited`}
           wrapperClassName="h-full w-full"
           className="h-full w-full object-top"
           hoverZoom
@@ -164,37 +164,44 @@ const TeamMemberCard = ({
           <span className="text-4xl text-muted-foreground">{member.name.charAt(0)}</span>
         </div>
       )}
-      {/* Default gradient */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none transition-opacity duration-300 group-hover:opacity-0" />
+      {/* Gradient scrim */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        aria-hidden="true"
+        style={{ background: "linear-gradient(0deg, oklch(0.13 0.03 255 / 0.55), transparent 55%)" }}
+      />
       {/* Hover highlight overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/60 to-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-4 md:p-5">
-        <p className="text-white text-center text-sm md:text-base font-medium leading-snug drop-shadow-lg">
+      <div
+        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-4 md:p-5"
+        style={{ background: "linear-gradient(0deg, oklch(0.13 0.03 255 / 0.92), oklch(0.13 0.03 255 / 0.5) 60%, transparent)" }}
+      >
+        <p className="text-white text-center text-sm font-medium leading-snug drop-shadow-lg">
           "{member.highlight || 'Industry leader at Enikkom'}"
         </p>
       </div>
     </div>
-    
-    <div className="p-4 md:p-5">
-      <h3 className="font-semibold text-[15px] md:text-lg mb-1">{member.name}</h3>
-      <p className="text-primary font-medium text-[12px] md:text-[13px] mb-2 md:mb-3">{member.role}</p>
-      <p className="text-[12px] md:text-[13px] text-muted-foreground mb-3 md:mb-4 leading-relaxed line-clamp-3 md:line-clamp-4">{member.bio}</p>
-      
+
+    <div className="flex flex-1 flex-col p-4 md:p-5" style={{ backgroundColor: "var(--enk-navy)" }}>
+      <h3 className="font-semibold text-[15px] md:text-[16px] mb-1 text-[var(--enk-on-dark)]">{member.name}</h3>
+      <p className="font-medium text-[11px] md:text-[12px] mb-2 md:mb-3 font-mono uppercase tracking-[0.1em]" style={{ color: "var(--enk-gold)" }}>{member.role}</p>
+      <p className="text-[12px] md:text-[13px] text-[var(--enk-on-dark-muted)] mb-3 md:mb-4 leading-relaxed line-clamp-3 md:line-clamp-4 flex-1">{member.bio}</p>
+
       {member.expertise.length > 0 && (
-        <div className="flex flex-wrap gap-1 md:gap-1.5">
+        <div className="flex flex-wrap gap-1 md:gap-1.5 mb-3">
           {member.expertise.slice(0, 3).map((skill) => (
-            <span 
-              key={skill} 
-              className="px-1.5 md:px-2 py-0.5 md:py-1 bg-muted text-[10px] md:text-[11px] font-medium rounded-md"
+            <span
+              key={skill}
+              className="enk-chip enk-chip--on-dark text-[9px] md:text-[10px]"
             >
               {skill}
             </span>
           ))}
         </div>
       )}
-      
-      <p className="text-primary text-[11px] md:text-xs font-medium mt-3 md:mt-4 group-hover:underline">
+
+      <span className="inline-flex items-center gap-1.5 text-[11px] md:text-[12px] font-semibold mt-auto" style={{ color: "var(--enk-gold)" }}>
         View full bio →
-      </p>
+      </span>
     </div>
   </motion.div>
 );
@@ -259,7 +266,7 @@ const TeamMemberModal = ({
                   {member.photo ? (
                     <EnhancedImage
                       src={member.photo} 
-                      alt={`${member.name} — ${member.role}, Enikkom Construction Limited`}
+                      alt={`${member.name}, ${member.role}, Enikkom Construction Limited`}
                       wrapperClassName="h-full w-full"
                       className="h-full w-full object-top"
                       tone="natural"
@@ -280,14 +287,14 @@ const TeamMemberModal = ({
                   <DialogTitle className="text-xl md:text-2xl font-semibold mb-1">
                     {member.name}
                   </DialogTitle>
-                  <p className="text-primary font-medium text-sm md:text-base">
+                  <p className="font-medium text-sm md:text-base" style={{ color: "oklch(0.79 0.15 84)" }}>
                     {member.role}
                   </p>
                 </DialogHeader>
                 
                 {/* Highlight quote */}
                 {member.highlight && (
-                  <div className="bg-primary/5 border-l-4 border-primary p-3 md:p-4 rounded-r-lg mb-5">
+                  <div className="p-3 md:p-4 rounded-r-lg mb-5" style={{ backgroundColor: "oklch(0.13 0.03 255 / 0.06)", borderLeft: "4px solid oklch(0.13 0.03 255)" }}>
                     <p className="text-sm md:text-base font-medium text-foreground italic">
                       "{member.highlight}"
                     </p>
@@ -308,9 +315,9 @@ const TeamMemberModal = ({
                     <h4 className="text-sm font-semibold text-foreground mb-2">Areas of Expertise</h4>
                     <div className="flex flex-wrap gap-2">
                       {member.expertise.map((skill) => (
-                        <span 
-                          key={skill} 
-                          className="px-3 py-1.5 bg-primary/10 text-primary text-xs md:text-sm font-medium rounded-full"
+                        <span
+                          key={skill}
+                          className="px-2.5 py-1 bg-muted text-foreground/80 text-[11px] md:text-[12px] font-medium rounded-md border border-border"
                         >
                           {skill}
                         </span>
@@ -412,13 +419,14 @@ export default function ManagementPage() {
 
       <section className="section-padding">
         <div className="container-wide">
-          <motion.div 
+          <motion.div
             className="text-center mb-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
+            <p className="enk-kicker justify-center mb-3">Leadership Team</p>
             <h2 className="mb-4">
               <EditableText
                 value={leadershipContent.title || "Our Leadership"}
@@ -454,13 +462,14 @@ export default function ManagementPage() {
       {/* Board of Directors Section */}
       <section className="section-padding bg-muted/30">
         <div className="container-wide">
-          <motion.div 
+          <motion.div
             className="text-center mb-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
+            <p className="enk-kicker justify-center mb-3">Governance</p>
             <h2 className="mb-4">
               <EditableText
                 value={boardContent.title || "Board of Directors"}

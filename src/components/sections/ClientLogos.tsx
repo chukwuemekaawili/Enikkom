@@ -27,7 +27,7 @@ export function ClientLogos({ variant = "light", showTitle = true }: ClientLogos
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
           >
-            <p className="section-eyebrow">Partners</p>
+            <p className={`enk-kicker${isDark ? " enk-kicker--on-dark" : ""} justify-center`}>Partners</p>
             <h2 className={`text-[22px] md:text-[26px] lg:text-[28px] font-bold mb-3 ${textClass}`}>
               Trusted By Industry Leaders
             </h2>

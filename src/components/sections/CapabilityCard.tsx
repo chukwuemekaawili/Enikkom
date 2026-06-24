@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, LucideIcon } from "lucide-react";
-import { motion } from "framer-motion";
-import { EnhancedImage } from "@/components/ui/enhanced-image";
 
 interface CapabilityCardProps {
   title: string;
@@ -14,6 +12,7 @@ interface CapabilityCardProps {
   index?: number;
 }
 
+/** Capability / service card, in the `.enk` design language. */
 export function CapabilityCard({
   title,
   description,
@@ -22,71 +21,62 @@ export function CapabilityCard({
   image,
   metric,
   ctaLabel = "View Details",
-  index = 0,
 }: CapabilityCardProps) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.4, delay: index * 0.08 }}
+    <Link
+      to={href}
+      className="enk-card enk-card--hover group flex h-full flex-col overflow-hidden focus-ring"
     >
-      <Link
-        to={href}
-        className="group flex h-full flex-col card-premium transition-all duration-300"
-      >
-        {/* Image with overlay */}
-        {image && (
-          <div className="relative aspect-[16/10] overflow-hidden">
-            <EnhancedImage
-              src={image}
-              alt={title}
-              wrapperClassName="h-full w-full"
-              className="w-full h-full"
-              sizes="(min-width: 1024px) 30vw, (min-width: 768px) 45vw, 100vw"
-              tone="vivid"
-              hoverZoom
-            />
-            {/* Subtle gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/15 to-transparent" />
-            
-            {/* Metric badge */}
-            {metric && (
-              <div className="absolute top-3 left-3 px-3 py-1.5 bg-primary text-white text-[11px] font-semibold rounded-lg shadow-md">
-                {metric}
-              </div>
-            )}
-            
-            {/* Icon badge */}
-            {Icon && (
-              <div 
-                className="absolute bottom-3 right-3 w-10 h-10 rounded-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
-                style={{
-                  backgroundColor: 'rgba(255, 255, 255, 0.12)',
-                  border: '1px solid rgba(255, 255, 255, 0.2)',
-                  backdropFilter: 'blur(4px)'
-                }}
-              >
-                <Icon className="h-5 w-5 text-white" />
-              </div>
-            )}
-          </div>
-        )}
-
-        {/* Content */}
-        <div className="flex flex-1 flex-col p-6 md:p-8">
-          <h4 className="text-[16px] md:text-[17px] font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-200 font-heading leading-snug">
-            {title}
-          </h4>
-          <p className="text-[14px] text-muted-foreground mb-4 leading-relaxed line-clamp-3">
-            {description}
-          </p>
-          <div className="mt-auto pt-4 flex items-center text-[13.5px] font-bold text-primary tracking-wide uppercase">
-            {ctaLabel}
-            <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />
-          </div>
+      {image && (
+        <div className="relative aspect-[16/10] overflow-hidden">
+          <img
+            src={image}
+            alt={title}
+            loading="lazy"
+            decoding="async"
+            className="h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-[1.04]"
+          />
+          <div
+            className="absolute inset-0"
+            style={{ background: "linear-gradient(0deg, oklch(0.13 0.03 255 / 0.55), transparent 55%)" }}
+            aria-hidden="true"
+          />
+          {metric && (
+            <span
+              className="absolute left-4 top-4 rounded-md px-2.5 py-1 text-[11px] font-semibold text-white"
+              style={{ backgroundColor: "var(--enk-navy)" }}
+            >
+              {metric}
+            </span>
+          )}
+          {Icon && (
+            <span
+              className="absolute bottom-4 right-4 inline-flex h-10 w-10 items-center justify-center rounded-md text-white"
+              style={{ backgroundColor: "var(--enk-navy)" }}
+              aria-hidden="true"
+            >
+              <Icon className="h-5 w-5" />
+            </span>
+          )}
         </div>
-      </Link>
-    </motion.div>
+      )}
+
+      <div className="flex flex-1 flex-col p-6" style={{ backgroundColor: "var(--enk-navy)" }}>
+        <h3 className="text-[18px] font-semibold leading-snug text-[var(--enk-on-dark)]">{title}</h3>
+        <p className="mt-2.5 flex-1 text-[14.5px] leading-relaxed text-[var(--enk-on-dark-muted)] line-clamp-3">
+          {description}
+        </p>
+        <span
+          className="mt-5 inline-flex items-center gap-2 text-[13.5px] font-semibold"
+          style={{ color: "var(--enk-gold)" }}
+        >
+          {ctaLabel}
+          <ArrowRight
+            className="h-4 w-4 transition-transform duration-150 ease-out group-hover:translate-x-0.5"
+            aria-hidden="true"
+          />
+        </span>
+      </div>
+    </Link>
   );
 }

@@ -38,8 +38,8 @@ const milestones: Milestone[] = [
   { year: "2010", title: "Record Breaking", description: "Completed Nigeria's largest pipeline crossing - 40\" x 760m at 100ft depth in Yenagoa for Daewoo/SPDC.", icon: Trophy },
   { year: "2013", title: "Strategic Investment", description: "The E-Place Limited acquired the interest of EISNL in ECL, injecting fresh managerial capacity and positioning the company for accelerated growth.", icon: Handshake },
   { year: "2015", title: "ISO Certifications", description: "Achieved ISO 9001:2015, ISO 14001:2015, and ISO 45001:2018 certifications, confirming compliance with international quality, environmental, and safety management standards.", icon: ShieldCheck },
-  { year: "2016", title: "Africa's Longest Bundled Crossing", description: "Completed 12\"+3\" × 2.78km Otumara–Escravos bundled crossing for Saipem/SPDC — the longest bundled crossing in Africa at the time of completion.", icon: Award },
-  { year: "2016", title: "Africa's Longest Single Drill", description: "Completed the 16\" × 3.1km Arepo/Imagbon line on the Atlas Cove–Mosimi Pipeline in April 2016 — Africa's longest single HDD drill at the time.", icon: Award },
+  { year: "2016", title: "Africa's Longest Bundled Crossing", description: "Completed 12\"+3\" × 2.78km Otumara-Escravos bundled crossing for Saipem/SPDC, the longest bundled crossing in Africa at the time of completion.", icon: Award },
+  { year: "2016", title: "Africa's Longest Single Drill", description: "Completed the 16\" × 3.1km Arepo/Imagbon line on the Atlas Cove-Mosimi Pipeline in April 2016, Africa's longest single HDD drill at the time.", icon: Award },
   { year: "2020", title: "Regional Leadership", description: "HDDThailand-Enikkom Ltd formed; became West Africa's largest HDD fleet operator with 10+ maxi rigs up to 500T.", icon: Trophy },
   { year: "2021", title: "Nigeria's Longest CHDD", description: "Commenced 10\" x 12km OML34 continuous HDD project for NPDC - longest functional CHDD in Nigeria.", icon: Rocket },
   { year: "2025", title: "34 Years Experience", description: "34 years of experience - Over 100km HDD installed, 500+ workforce, and a zero-LTI record across major project delivery.", icon: Award },
@@ -63,7 +63,7 @@ export default function AboutPage() {
     <Layout>
       <Hero
         title={heroContent.title || "About Enikkom Group"}
-        subtitle={heroContent.subtitle || "A leading indigenous EPCI company providing end-to-end engineering, procurement, fabrication, construction, and installation services for onshore and offshore pipelines and facilities across Nigeria since 1995."}
+        subtitle={heroContent.subtitle || "An indigenous EPCI company providing engineering, procurement, fabrication, construction, and installation services for onshore and offshore pipelines and facilities across Nigeria since 1995."}
         badge={heroContent.badge || "Since 1995"}
         primaryCTA={{ label: heroContent.primaryBtnText || "Discuss Your Project", href: heroContent.primaryBtnLink || "/contact" }}
         backgroundImage={heroContent.backgroundImage || aboutImages.hero}
@@ -81,14 +81,12 @@ export default function AboutPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.55 }}
-            className="rounded-[2rem] border border-border/60 bg-white px-6 py-8 shadow-[0_24px_80px_rgba(15,23,42,0.08)] sm:px-8 lg:px-12 lg:py-12"
+            className="rounded-xl border border-border/60 bg-white px-6 py-8 shadow-[var(--enk-shadow-md)] sm:px-8 lg:px-12 lg:py-12"
           >
             <div className="grid gap-10 xl:grid-cols-[minmax(0,0.88fr)_minmax(0,1.12fr)] xl:gap-14">
               <div>
-                <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-primary">
-                  {companyIntroduction.eyebrow}
-                </p>
-                <h2 className="mb-6 text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
+                <p className="enk-kicker mb-3">{companyIntroduction.eyebrow}</p>
+                <h2 className="enk-display mb-6 text-[clamp(1.8rem,3.5vw,2.6rem)] text-[var(--enk-ink)]">
                   {companyIntroduction.title}
                 </h2>
                 <p className="text-[17px] leading-8 text-slate-700 md:text-[18px]">
@@ -109,7 +107,7 @@ export default function AboutPage() {
             </div>
 
             <div className="mt-10 grid gap-4 lg:grid-cols-[1.35fr_0.65fr]">
-              <div className="group relative min-h-[340px] overflow-hidden rounded-[1.75rem] border border-border/70 bg-slate-950">
+              <div className="group relative min-h-[340px] overflow-hidden rounded-xl border border-border/70 bg-slate-950">
                 <EnhancedImage
                   src={aboutImages.introMain}
                   alt="Pipeline crew executing welding and line installation work"
@@ -121,10 +119,8 @@ export default function AboutPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-[#071630]/82 via-[#071630]/36 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
-                  <div className="mb-2 text-[10px] font-bold uppercase tracking-[0.24em] text-primary">
-                    Built In-Country
-                  </div>
-                  <h3 className="max-w-md text-[24px] font-bold leading-tight text-white md:text-[30px]">
+                  <p className="enk-kicker enk-kicker--on-dark mb-2">Built In-Country</p>
+                  <h3 className="enk-display max-w-md text-[clamp(1.4rem,2.6vw,1.9rem)] text-[var(--enk-on-dark)]">
                     Engineering Depth Backed by Field Precision
                   </h3>
                   <p className="mt-3 max-w-lg text-[14px] leading-7 text-white/70">
@@ -135,7 +131,7 @@ export default function AboutPage() {
               </div>
 
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
-                <div className="group relative min-h-[160px] overflow-hidden rounded-[1.5rem] border border-border/70 bg-slate-900">
+                <div className="group relative min-h-[160px] overflow-hidden rounded-xl border border-border/70 bg-slate-900">
                   <EnhancedImage
                     src={aboutImages.introSideField}
                     alt="Enikkom field team reviewing live pipeline operations"
@@ -147,7 +143,7 @@ export default function AboutPage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#071630]/90 via-[#071630]/20 to-transparent" />
                   <div className="absolute inset-x-0 bottom-0 p-5">
-                    <div className="text-[10px] font-bold uppercase tracking-[0.22em] text-primary">
+                    <div className="enk-kicker enk-kicker--on-dark mb-1">
                       Field Leadership
                     </div>
                     <p className="mt-1 text-[13px] leading-6 text-white/75">
@@ -156,7 +152,7 @@ export default function AboutPage() {
                   </div>
                 </div>
 
-                <div className="group relative min-h-[160px] overflow-hidden rounded-[1.5rem] border border-border/70 bg-slate-900">
+                <div className="group relative min-h-[160px] overflow-hidden rounded-xl border border-border/70 bg-slate-900">
                   <EnhancedImage
                     src={aboutImages.introSideRiver}
                     alt="River-crossing installation works on a coastal project corridor"
@@ -168,7 +164,7 @@ export default function AboutPage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#071630]/90 via-[#071630]/20 to-transparent" />
                   <div className="absolute inset-x-0 bottom-0 p-5">
-                    <div className="text-[10px] font-bold uppercase tracking-[0.22em] text-primary">
+                    <div className="enk-kicker enk-kicker--on-dark mb-1">
                       River & Swamp Delivery
                     </div>
                     <p className="mt-1 text-[13px] leading-6 text-white/75">
@@ -185,11 +181,11 @@ export default function AboutPage() {
                 return (
                   <div
                     key={entry.name}
-                    className="rounded-[1.75rem] border border-border/70 bg-slate-50/80 p-6 md:p-7"
+                    className="rounded-xl border border-border/70 bg-slate-50/80 p-6 md:p-7"
                   >
                     <div className="mb-5 flex items-start gap-4">
-                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary/10">
-                        <Icon className="h-6 w-6 text-primary" />
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-muted">
+                        <Icon className="h-6 w-6" style={{ color: "var(--enk-navy)" }} />
                       </div>
                       <h3 className="pt-1 text-xl font-semibold tracking-tight text-foreground">
                         {entry.name}
@@ -223,12 +219,9 @@ export default function AboutPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.25em] text-primary">
-              <Target className="h-3.5 w-3.5" />
-              Purpose & Standards
-            </div>
-            <h2 className="mb-4 text-3xl font-semibold tracking-tight text-white md:text-5xl">
-              Mission, Vision & Corporate Excellence
+            <p className="enk-kicker enk-kicker--on-dark justify-center mb-4">Purpose &amp; Standards</p>
+            <h2 className="enk-display mb-4 text-[clamp(2rem,5vw,3.2rem)] text-[var(--enk-on-dark)]">
+              Mission, Vision &amp; Corporate Excellence
             </h2>
             <p className="mx-auto max-w-3xl text-[15px] leading-7 text-white/65 md:text-[16px]">
               Updated directly from the latest corporate documents to reflect the current direction of the Enikkom Group.
@@ -240,7 +233,7 @@ export default function AboutPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.05 }}
-            className="mb-10 overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.04]"
+            className="mb-10 overflow-hidden rounded-xl border border-white/10 bg-white/5"
           >
             <div className="grid lg:grid-cols-[1.05fr_0.95fr]">
               <div className="relative min-h-[280px]">
@@ -256,10 +249,8 @@ export default function AboutPage() {
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#071630]/35" />
               </div>
               <div className="flex flex-col justify-center p-8 md:p-10">
-                <div className="mb-3 text-[10px] font-bold uppercase tracking-[0.24em] text-primary">
-                  Indigenous Strength
-                </div>
-                <h3 className="text-[28px] font-bold leading-tight text-white md:text-[34px]">
+                <p className="enk-kicker enk-kicker--on-dark mb-3">Indigenous Strength</p>
+                <h3 className="enk-display text-[clamp(1.6rem,3vw,2.2rem)] text-[var(--enk-on-dark)]">
                   Standards, Discipline, and Real Operating Experience
                 </h3>
                 <p className="mt-4 max-w-xl text-[15px] leading-7 text-white/65">
@@ -287,10 +278,10 @@ export default function AboutPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-80px" }}
                   transition={{ duration: 0.45, delay: index * 0.08 }}
-                  className="rounded-[1.75rem] border border-white/10 bg-white/6 p-7 backdrop-blur-sm"
+                  className="rounded-xl border border-white/10 bg-white/5 p-7"
                 >
                   <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10">
-                    <Icon className="h-6 w-6 text-primary" />
+                    <Icon className="h-6 w-6" style={{ color: "var(--enk-gold)" }} />
                   </div>
                   <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.24em] text-white/45">
                     {statement.title}
@@ -308,11 +299,11 @@ export default function AboutPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="mt-10 rounded-[2rem] border border-white/10 bg-white/5 p-8 md:p-10"
+            className="mt-10 rounded-xl border border-white/10 bg-white/5 p-8 md:p-10"
           >
             <div className="mb-8 flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
               <div>
-                <h3 className="text-2xl font-semibold text-white md:text-3xl">
+                <h3 className="enk-display text-[clamp(1.4rem,2.4vw,1.9rem)] text-[var(--enk-on-dark)]">
                   The PRICE of Excellence
                 </h3>
                 <p className="mt-2 text-[14px] leading-7 text-white/55">
@@ -331,10 +322,10 @@ export default function AboutPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.35, delay: 0.16 + index * 0.06 }}
-                    className="rounded-[1.25rem] border border-white/10 bg-black/10 p-5"
+                    className="rounded-xl border border-white/10 bg-white/5 p-5"
                   >
-                    <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-primary/12">
-                      <Icon className="h-5 w-5 text-primary" />
+                    <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-white/10">
+                      <Icon className="h-5 w-5" style={{ color: "var(--enk-gold)" }} />
                     </div>
                     <h4 className="mb-2 text-[16px] font-semibold text-white">{value.title}</h4>
                     <p className="text-[13px] leading-6 text-white/55">{value.description}</p>
@@ -359,10 +350,8 @@ export default function AboutPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-[11px] font-bold uppercase tracking-widest mb-4">
-              Our Journey
-            </div>
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">34 Years of Experience</h2>
+            <p className="enk-kicker justify-center mb-4">Our Journey</p>
+            <h2 className="enk-display text-[clamp(2rem,5vw,3.2rem)] text-[var(--enk-ink)] mb-4">34 Years of Experience</h2>
             <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
               From our founding in 1995 to becoming West Africa's leading HDD and pipeline contractor, our trajectory is defined by continuous innovation.
             </p>
@@ -376,7 +365,7 @@ export default function AboutPage() {
             <div className="space-y-12 lg:space-y-20">
               {milestones.map((milestone, index) => (
                 <motion.div
-                  key={milestone.year}
+                  key={`${milestone.year}-${milestone.title}`}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}

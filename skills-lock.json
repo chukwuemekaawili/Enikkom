@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "skills": {
+    "design-sprint": {
+      "source": "wondelai/skills",
+      "sourceType": "github",
+      "skillPath": "design-sprint/SKILL.md",
+      "computedHash": "8eeaf66ba00eac843056d4b7858ded298cd32dc91d62411c685afe412d8147f6"
+    },
+    "hooked-ux": {
+      "source": "wondelai/skills",
+      "sourceType": "github",
+      "skillPath": "hooked-ux/SKILL.md",
+      "computedHash": "05ba72072dca4355c8945112e47b36a5f589dc391fc5624afa3f352d3e106f7d"
+    },
+    "ios-hig-design": {
+      "source": "wondelai/skills",
+      "sourceType": "github",
+      "skillPath": "ios-hig-design/SKILL.md",
+      "computedHash": "84b32c438556b90c2850b76eedd49ff14e3a955639fc0b0f66a7de44bee2d56c"
+    },
+    "refactoring-ui": {
+      "source": "wondelai/skills",
+      "sourceType": "github",
+      "skillPath": "refactoring-ui/SKILL.md",
+      "computedHash": "80d7e5510891fa23348a2cc13646021195f680a9d49d5d92b42fcd73dd0bb53e"
+    },
+    "ux-heuristics": {
+      "source": "wondelai/skills",
+      "sourceType": "github",
+      "skillPath": "ux-heuristics/SKILL.md",
+      "computedHash": "0727a3f16bd080b64d4ba8dd031292793ca3f6ec6647e83705a2145b7a4d883b"
+    }
+  }
+}

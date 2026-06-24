@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap');
+/* Fonts loaded via <link> in index.html (Schibsted Grotesk, IBM Plex Sans, IBM Plex Mono) */
 
 @tailwind base;
 @tailwind components;
@@ -19,6 +19,8 @@
     --brand-red: 6 78% 52%;
     --brand-amber: 38 92% 50%;
     --brand-amber-hover: 38 92% 42%;
+    /* Bronze: AA-safe accent for light backgrounds (gold is dark-bg only) */
+    --brand-bronze: 32 68% 32%;
 
     /* Neutrals - Deep Navy */
     --header-bg: 220 60% 10%;
@@ -104,14 +106,15 @@
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 108px;
+    overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    font-family: 'IBM Plex Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    overflow-x: hidden;
   }
 
   /* ==========================================
@@ -120,7 +123,7 @@
      ========================================== */
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Space Grotesk', system-ui, sans-serif;
+    font-family: 'Schibsted Grotesk', system-ui, sans-serif;
     color: hsl(var(--foreground));
     font-weight: 700;
   }
@@ -220,7 +223,7 @@
      ========================================== */
 
   .card-premium {
-    @apply bg-card rounded-2xl border border-border relative overflow-hidden;
+    @apply bg-card rounded-[8px] border border-border relative overflow-hidden;
     box-shadow: var(--shadow-xs);
     transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
   }
@@ -268,7 +271,7 @@
 
   .section-title {
     @apply mb-4;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Schibsted Grotesk', sans-serif;
   }
 
   .section-subtitle {
@@ -331,14 +334,15 @@
      PREMIUM BADGE SYSTEM
      ========================================== */
 
+  /* Squared technical chips (no pills) */
   .badge-primary {
-    @apply inline-flex items-center px-3 py-1.5 rounded-full text-[10px] font-semibold uppercase tracking-[0.18em];
+    @apply inline-flex items-center px-3 py-1.5 rounded-md text-[10px] font-semibold uppercase tracking-[0.18em];
     background-color: hsl(var(--brand-primary));
     color: white;
   }
 
   .badge-secondary {
-    @apply inline-flex items-center px-3 py-1.5 rounded-full text-[10px] font-semibold uppercase tracking-[0.18em];
+    @apply inline-flex items-center px-3 py-1.5 rounded-md text-[10px] font-semibold uppercase tracking-[0.18em];
     background-color: hsl(var(--muted));
     color: hsl(var(--foreground));
   }
@@ -350,7 +354,7 @@
   }
 
   .badge-outline {
-    @apply inline-flex items-center px-3 py-1.5 rounded-full text-[10px] font-semibold uppercase tracking-[0.18em] border;
+    @apply inline-flex items-center px-3 py-1.5 rounded-md text-[10px] font-semibold uppercase tracking-[0.18em] border;
     border-color: hsl(var(--border));
     color: hsl(var(--foreground));
   }
@@ -365,7 +369,9 @@
 
   .stat-value {
     @apply text-[28px] sm:text-[36px] md:text-[44px] lg:text-[52px] font-bold leading-none;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'IBM Plex Mono', 'Schibsted Grotesk', monospace;
+    font-feature-settings: 'tnum';
+    letter-spacing: -0.02em;
   }
 
   .stat-value-primary {
@@ -434,12 +440,14 @@
     transform: translateY(0);
   }
 
+  /* Amber utilities now resolve to AA-safe bronze on light backgrounds.
+     Bright gold is reserved for dark surfaces via the scoped .enk layer. */
   .text-amber {
-    color: hsl(var(--brand-amber));
+    color: hsl(var(--brand-bronze));
   }
 
   .stat-value-amber {
-    color: hsl(var(--brand-amber));
+    color: hsl(var(--brand-bronze));
   }
 
   /* ==========================================
@@ -470,10 +478,9 @@
   }
 
   .cert-badge {
-    @apply flex items-center gap-2.5 px-4 py-2.5 rounded-full;
+    @apply flex items-center gap-2.5 px-4 py-2.5 rounded-md;
     background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
   }
 
   /* ==========================================
@@ -677,3 +684,163 @@
     white-space: normal;
   }
 }
+
+/* ============================================================
+   ENIKKOM REDESIGN 2026  -  scoped design system (.enk)
+   OKLCH tokens · navy/steel/blue · gold(dark) / bronze(light)
+   Tier-1 EPC / procurement-grade. Squared, industrial, AA.
+   ============================================================ */
+
+.enk {
+  /* Surfaces (neutrals tinted toward navy, never pure #fff/#000) */
+  --enk-bg: oklch(0.99 0.004 255);
+  --enk-bg-muted: oklch(0.965 0.006 255);
+  --enk-navy: oklch(0.20 0.035 255);
+  --enk-navy-2: oklch(0.25 0.04 255);
+  --enk-navy-3: oklch(0.30 0.04 255);
+
+  /* Text */
+  --enk-ink: oklch(0.26 0.02 260);        /* primary on light  ~ 11:1 */
+  --enk-steel: oklch(0.46 0.02 260);      /* muted on light    ~ 4.8:1 */
+  --enk-on-dark: oklch(0.97 0.005 255);   /* primary on navy */
+  --enk-on-dark-muted: oklch(0.80 0.015 255);
+
+  /* Brand */
+  --enk-blue: oklch(0.50 0.14 252);       /* action; white text on it ~ AA */
+  --enk-blue-hover: oklch(0.43 0.13 252);
+  --enk-gold: oklch(0.81 0.13 85);        /* accent - DARK backgrounds only */
+  --enk-bronze: oklch(0.47 0.09 65);      /* accent - LIGHT backgrounds; ~5.5:1 */
+  --enk-safety: oklch(0.56 0.12 150);     /* QHSE positive */
+
+  /* Lines & elevation */
+  --enk-line: oklch(0.90 0.008 255);
+  --enk-line-strong: oklch(0.84 0.012 255);
+  --enk-line-dark: oklch(0.32 0.03 255);
+  --enk-shadow-sm: 0 1px 2px oklch(0.20 0.04 255 / 0.06);
+  --enk-shadow-md: 0 14px 40px oklch(0.20 0.04 255 / 0.10);
+
+  --enk-radius: 8px;
+
+  background-color: var(--enk-bg);
+  color: var(--enk-ink);
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+}
+
+.enk ::selection { background: var(--enk-blue); color: #fff; }
+
+/* Layout */
+.enk-container { width: 100%; max-width: 1240px; margin-inline: auto; padding-inline: 1.25rem; }
+@media (min-width: 768px) { .enk-container { padding-inline: 2rem; } }
+.enk-section { padding-block: 4.5rem; }
+@media (min-width: 768px) { .enk-section { padding-block: 6.5rem; } }
+.enk-section--tight { padding-block: 3rem; }
+
+/* Eyebrow / small-caps metadata (accent lives here, not in the H1) */
+.enk-kicker {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--enk-bronze);
+}
+.enk-kicker--on-dark { color: var(--enk-gold); }
+.enk-kicker::before { content: ""; width: 1.75rem; height: 2px; background: currentColor; opacity: 0.9; }
+
+/* Squared technical chip (no pills, no emoji) */
+.enk-chip {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  padding: 0.3rem 0.6rem; border-radius: 6px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+  border: 1px solid var(--enk-line-strong); color: var(--enk-steel); background: var(--enk-bg);
+}
+.enk-chip--on-dark { border-color: oklch(1 0 0 / 0.22); color: var(--enk-on-dark); background: var(--enk-navy); }
+
+/* Buttons - enterprise: opacity/border/background/elevation only, <=180ms ease-out, >=44px */
+.enk-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  min-height: 48px; padding: 0 1.5rem; border-radius: var(--enk-radius);
+  font-family: 'IBM Plex Sans', sans-serif; font-size: 0.95rem; font-weight: 600; letter-spacing: 0.01em;
+  border: 1.5px solid transparent; cursor: pointer; text-align: center;
+  transition: background-color 0.18s ease-out, border-color 0.18s ease-out, color 0.18s ease-out, box-shadow 0.18s ease-out;
+}
+.enk-btn--primary { background: var(--enk-blue); color: #fff; box-shadow: var(--enk-shadow-sm); }
+.enk-btn--primary:hover { background: var(--enk-blue-hover); box-shadow: var(--enk-shadow-md); }
+.enk-btn--outline { background: transparent; color: var(--enk-ink); border-color: var(--enk-line-strong); }
+.enk-btn--outline:hover { border-color: var(--enk-blue); color: var(--enk-blue); }
+.enk-btn--on-dark { background: transparent; color: var(--enk-on-dark); border-color: oklch(1 0 0 / 0.28); }
+.enk-btn--on-dark:hover { background: oklch(1 0 0 / 0.08); border-color: oklch(1 0 0 / 0.5); }
+.enk-btn--gold { background: var(--enk-gold); color: var(--enk-navy); }
+.enk-btn--gold:hover { background: oklch(0.75 0.13 85); }
+
+/* Text link */
+.enk-link {
+  display: inline-flex; align-items: center; gap: 0.4rem; font-weight: 600; color: var(--enk-blue);
+  border-bottom: 1.5px solid transparent; transition: border-color 0.18s ease-out, gap 0.18s ease-out;
+}
+.enk-link:hover { border-bottom-color: var(--enk-blue); gap: 0.6rem; }
+
+/* Card - soft-rectangular, full hairline border (no side-stripes), subtle depth */
+.enk-card {
+  background: var(--enk-bg); border: 1px solid var(--enk-line); border-radius: var(--enk-radius);
+  box-shadow: var(--enk-shadow-sm);
+  transition: border-color 0.18s ease-out, box-shadow 0.18s ease-out, transform 0.18s ease-out;
+}
+.enk-card--hover:hover { border-color: var(--enk-line-strong); box-shadow: var(--enk-shadow-md); transform: translateY(-2px); }
+
+/* Stat number - tabular mono */
+.enk-stat {
+  font-family: 'IBM Plex Mono', monospace; font-weight: 600; line-height: 1;
+  font-feature-settings: 'tnum'; letter-spacing: -0.02em;
+}
+
+/* Hero left scrim - guarantees subtext contrast (AA) over bright imagery.
+   Stronger on the left where the copy sits; also darkens the top to blend the
+   header seam and the bottom to seat the next band. */
+.enk-scrim {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(90deg, oklch(0.14 0.03 255 / 0.96) 0%, oklch(0.14 0.03 255 / 0.86) 38%, oklch(0.14 0.03 255 / 0.5) 78%, oklch(0.14 0.03 255 / 0.32) 100%),
+    linear-gradient(180deg, oklch(0.14 0.03 255 / 0.55) 0%, oklch(0.14 0.03 255 / 0.0) 22%, oklch(0.14 0.03 255 / 0.0) 70%, oklch(0.14 0.03 255 / 0.45) 100%);
+}
+
+/* Display heading helper. Colour is set per-instance via utility/inline style so
+   light and dark surfaces stay correct (no blanket color override here - it would
+   beat the text-color utilities and break on-dark headings). */
+.enk-display { font-family: 'Schibsted Grotesk', sans-serif; font-weight: 700; letter-spacing: -0.03em; line-height: 1.04; }
+
+/* Logo marquee - seamless infinite scroll, edge-fade mask, pause on hover.
+   Linear is correct for continuous transport (not a button micro-interaction). */
+.enk-marquee-mask {
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+}
+.enk-marquee {
+  display: flex;
+  width: max-content;
+  flex-wrap: nowrap;
+  will-change: transform;
+  animation: enk-marquee-l 48s linear infinite;
+}
+.enk-marquee--reverse { animation-name: enk-marquee-r; animation-duration: 56s; }
+.enk-marquee-mask:hover .enk-marquee { animation-play-state: paused; }
+@keyframes enk-marquee-l { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes enk-marquee-r { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+
+.enk-logo-card {
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  height: 104px; width: 232px; margin-inline: 0.5rem; padding-inline: 1.75rem;
+  background: #fff; border: 1px solid var(--enk-line); border-radius: 10px;
+  box-shadow: var(--enk-shadow-sm);
+  transition: border-color 0.18s ease-out, box-shadow 0.18s ease-out, transform 0.18s ease-out;
+}
+.enk-logo-card:hover { border-color: var(--enk-line-strong); box-shadow: var(--enk-shadow-md); transform: translateY(-2px); }
+.enk-logo-card img { max-height: 64px; max-width: 170px; width: auto; object-fit: contain; }
+/* Dangote ships as a white-on-transparent mark (built for dark backgrounds),
+   so it vanishes on the white logo card - recolor it to a clean black monochrome.
+   Swap in a colour-on-transparent asset later to restore brand colour. */
+.enk-logo-card img[src*="dangote"] { filter: brightness(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  .enk-marquee { animation: none; width: auto; flex-wrap: wrap; justify-content: center; }
+}
+

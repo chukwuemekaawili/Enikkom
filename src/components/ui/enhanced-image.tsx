@@ -91,7 +91,9 @@ export function EnhancedImage({
             height={height ?? responsiveImageInfo?.height}
             sizes={sizes}
             loading={priority ? "eager" : loading ?? "lazy"}
-            fetchPriority={priority ? "high" : fetchPriority ?? "auto"}
+            // React 18 expects the lowercase DOM attribute; pass it via spread to
+            // avoid the "React does not recognize the `fetchPriority` prop" warning.
+            {...{ fetchpriority: priority ? "high" : fetchPriority ?? "auto" }}
             decoding={decoding ?? "async"}
             onLoad={(event) => {
               setIsLoaded(true);

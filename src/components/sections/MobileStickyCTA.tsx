@@ -12,7 +12,7 @@ interface MobileStickyCTAProps {
 export function MobileStickyCTA({
   href = "/contact",
   label = "Contact Us",
-  phone = "+2348065738555",
+  phone = "+2348035082614",
 }: MobileStickyCTAProps) {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -46,7 +46,8 @@ export function MobileStickyCTA({
               </a>
               <Link
                 to={href}
-                className="flex flex-1 items-center justify-center gap-2 rounded-full bg-brand-amber px-5 py-3 text-[13px] font-bold uppercase tracking-[0.1em] text-white shadow-[0_4px_20px_rgba(245,158,11,0.35)] transition-all active:scale-[0.98]"
+                className="flex flex-1 items-center justify-center gap-2 rounded-[var(--enk-radius)] px-5 py-3 text-[13px] font-bold uppercase tracking-[0.1em] transition-all active:scale-[0.98]"
+                style={{ backgroundColor: "var(--enk-gold)", color: "var(--enk-navy)" }}
               >
                 {label}
                 <ArrowRight className="h-4 w-4" />
