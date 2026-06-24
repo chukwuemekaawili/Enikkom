@@ -1,6 +1,5 @@
 import { Layout } from "@/components/layout";
 import { Hero, CTABand, CapabilityCard, CertificationsBlock } from "@/components/sections";
-import { EditableText } from "@/components/admin";
 import { usePageContent, useCollection } from "@/hooks/useSiteSettings";
 import { Drill, PipetteIcon, Anchor, Factory, Shield, Briefcase } from "lucide-react";
 import { siteImageSelections } from "@/content/siteImageSelections";
@@ -10,7 +9,7 @@ const capabilityImages = siteImageSelections.capabilities;
 const defaultCapabilities = [
   {
     title: "Horizontal Directional Drilling (HDD)",
-    description: "State-of-the-art trenchless technology for river, road, railway, and environmentally sensitive crossings with minimal disruption and maximum installation accuracy.",
+    description: "Trenchless technology for river, road, railway, and environmentally sensitive crossings, with minimal surface disruption and high installation accuracy.",
     href: "/capabilities/hdd",
     icon: Drill,
     image: capabilityImages.hdd,
@@ -34,7 +33,7 @@ const defaultCapabilities = [
   },
   {
     title: "Fabrication",
-    description: "Fit-for-purpose integrated production systems with flow station construction, wellhead upgrades, manifold inspection, plant turnaround maintenance, and pigging operations.",
+    description: "Integrated production systems covering flow station construction, wellhead upgrades, manifold inspection, plant turnaround maintenance, and pigging operations.",
     href: "/capabilities/facilities",
     icon: Factory,
     image: capabilityImages.facilities,
@@ -58,6 +57,16 @@ const defaultCapabilities = [
   },
 ];
 
+const standards = [
+  "API Standards",
+  "ASME Codes",
+  "DIN Standards",
+  "ISO Certifications",
+  "NACE Requirements",
+  "AWS Welding",
+  "DNV Guidelines",
+  "Client Specifications",
+];
 
 export default function CapabilitiesPage() {
   const { content } = usePageContent('capabilities');
@@ -72,91 +81,50 @@ export default function CapabilitiesPage() {
     <Layout>
       <Hero
         title={heroContent.title || "Our Capabilities"}
-        subtitle={heroContent.subtitle || "Comprehensive engineering solutions for Nigeria's most demanding infrastructure projects. From trenchless crossings to marine civil works."}
-        primaryCTA={{ label: heroContent.primaryBtnText || "Get Your Free Quote", href: heroContent.primaryBtnLink || "/contact" }}
+        subtitle={heroContent.subtitle || "Engineering services for Nigeria's most demanding infrastructure projects, from trenchless crossings to marine civil works."}
+        primaryCTA={{ label: heroContent.primaryBtnText || "Request a Crossing Assessment", href: heroContent.primaryBtnLink || "/contact" }}
         backgroundImage={heroContent.backgroundImage || capabilityImages.hero}
         size="default"
-        pageSlug="capabilities"
-        sectionKey="hero"
-        imageField="backgroundImage"
       />
 
       {/* Capabilities Grid */}
-      <section className="section-padding">
-        <div className="container-wide">
-          <div className="text-center mb-10">
-            <p className="text-[11px] md:text-xs font-semibold uppercase tracking-widest text-primary mb-3">
-              <EditableText
-                value={introContent.subtitle || "What We Do"}
-                pageSlug="capabilities"
-                sectionKey="introduction"
-                field="subtitle"
-              />
-            </p>
-            <h2 className="mb-3">
-              <EditableText
-                value={introContent.title || "Full-Service Engineering Solutions"}
-                pageSlug="capabilities"
-                sectionKey="introduction"
-                field="title"
-              />
+      <section className="enk-section">
+        <div className="enk-container">
+          <div className="mx-auto mb-12 max-w-2xl text-center">
+            <p className="enk-kicker justify-center">{introContent.subtitle || "What We Do"}</p>
+            <h2 className="enk-display mt-4 text-[clamp(1.6rem,3vw,2.2rem)] text-[var(--enk-ink)]">
+              {introContent.title || "Full-Service Engineering Solutions"}
             </h2>
-            <p className="text-[14px] md:text-[15px] text-muted-foreground max-w-xl mx-auto">
-              <EditableText
-                value={introContent.description || "End-to-end capabilities for oil & gas infrastructure, marine construction, and specialized engineering projects."}
-                pageSlug="capabilities"
-                sectionKey="introduction"
-                field="description"
-              />
+            <p className="mt-4 text-[15px] leading-relaxed text-[var(--enk-steel)]">
+              {introContent.description || "Full capabilities for oil & gas infrastructure, marine construction, and specialised engineering projects."}
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {capabilities.map((cap, index) => (
-              <CapabilityCard
-                key={cap.title}
-                {...cap}
-                index={index}
-              />
+              <CapabilityCard key={cap.title} {...cap} index={index} />
             ))}
           </div>
         </div>
       </section>
 
       {/* Standards */}
-      <section className="section-padding-sm bg-muted/30">
-        <div className="container-wide">
-          <div className="text-center mb-10">
-            <h2 className="mb-4">
-              <EditableText
-                value={content.standards?.title || "Standards & Compliance"}
-                pageSlug="capabilities"
-                sectionKey="standards"
-                field="title"
-              />
+      <section className="enk-section" style={{ backgroundColor: "var(--enk-bg-muted)" }}>
+        <div className="enk-container">
+          <div className="mx-auto mb-12 max-w-2xl text-center">
+            <p className="enk-kicker justify-center">Standards</p>
+            <h2 className="enk-display mt-4 text-[clamp(1.6rem,3vw,2.2rem)] text-[var(--enk-ink)]">
+              {content.standards?.title || "Standards & Compliance"}
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              <EditableText
-                value={content.standards?.description || "All our operations comply with international industry standards and best practices."}
-                pageSlug="capabilities"
-                sectionKey="standards"
-                field="description"
-              />
+            <p className="mt-4 text-[15px] leading-relaxed text-[var(--enk-steel)]">
+              {content.standards?.description || "All our operations comply with international industry standards and best practices."}
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[
-              "API Standards",
-              "ASME Codes",
-              "DIN Standards",
-              "ISO Certifications",
-              "NACE Requirements",
-              "AWS Welding",
-              "DNV Guidelines",
-              "Client Specifications",
-            ].map((standard) => (
-              <div key={standard} className="bg-card p-4 rounded-lg border text-center">
-                <span className="text-sm font-medium">{standard}</span>
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+            {standards.map((standard) => (
+              <div key={standard} className="enk-card flex items-center justify-center p-5 text-center">
+                <span className="text-[14px] font-medium text-[var(--enk-ink)]">{standard}</span>
               </div>
             ))}
           </div>
@@ -170,7 +138,7 @@ export default function CapabilitiesPage() {
       <CTABand
         headline={content.cta?.headline || "Ready to Discuss Your Requirements?"}
         subhead={content.cta?.subhead || "Our engineering team can scope your project and provide a detailed proposal within 48 hours."}
-        secondaryCTA={{ label: "See Our Track Record", href: "/projects" }}
+        secondaryCTA={{ label: "View Projects", href: "/projects" }}
       />
     </Layout>
   );

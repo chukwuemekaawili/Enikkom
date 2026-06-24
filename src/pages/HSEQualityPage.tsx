@@ -1,6 +1,6 @@
 import { Layout } from "@/components/layout";
 import { Hero, CTABand } from "@/components/sections";
-import { EditableText } from "@/components/admin";
+import { EditableText } from "@/components/content";
 import { usePageContent } from "@/hooks/useSiteSettings";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -31,7 +31,7 @@ const hseSteps = [
 
 const defaultHseCommitments = [
   "Zero tolerance for unsafe acts and conditions",
-  "Comprehensive PTW (Permit to Work) system",
+  "Full PTW (Permit to Work) system",
   "International Safety Management (ISM) code compliance",
   "Job Hazard Analysis before every task",
   "Environmental protection and sustainable development",
@@ -120,7 +120,7 @@ export default function HSEQualityPage() {
     <Layout>
       <Hero
         title={heroContent.title || "HSE & Quality Excellence"}
-        subtitle={heroContent.subtitle || "Safety First. Quality Always. Our unwavering commitment to zero incidents and world-class standards drives everything we do."}
+        subtitle={heroContent.subtitle || "Safety First. Quality Always. A firm commitment to zero incidents and high standards guides everything we do."}
         primaryCTA={{ label: heroContent.primaryBtnText || "Request HSE Documentation", href: heroContent.primaryBtnLink || "/contact" }}
         backgroundImage={heroContent.backgroundImage || hseImages.hero}
         size="default"
@@ -161,7 +161,7 @@ export default function HSEQualityPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="section-eyebrow">
+            <p className="enk-kicker justify-center">
               <EditableText
                 value={qmsContent.subtitle || "Quality System"}
                 pageSlug="hse"
@@ -195,11 +195,11 @@ export default function HSEQualityPage() {
                 whileInView={{ opacity: 1, y: 0 }} 
                 viewport={{ once: true }} 
                 transition={{ duration: 0.4, delay: i * 0.1 }} 
-                className="relative text-center card-premium p-6 pt-8"
+                className="relative text-center enk-card enk-card--hover p-6 pt-7"
               >
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-7 h-7 rounded-full bg-primary text-white text-[12px] font-bold flex items-center justify-center shadow-md">
-                  {i + 1}
-                </div>
+                <span className="block font-mono text-[13px] font-medium tracking-[0.14em] mb-3" style={{ color: "var(--enk-bronze)" }}>
+                  {String(i + 1).padStart(2, "0")}
+                </span>
                 <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
                   <step.icon className="h-7 w-7 text-primary" />
                 </div>
@@ -221,7 +221,7 @@ export default function HSEQualityPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <p className="section-eyebrow mb-3">
+              <p className="enk-kicker mb-3">
                 <EditableText
                   value={commitmentContent.subtitle || "Commitment"}
                   pageSlug="hse"
@@ -239,7 +239,7 @@ export default function HSEQualityPage() {
               </h2>
               <p className="text-muted-foreground text-[15px] mb-8 leading-relaxed">
                 <EditableText
-                  value={commitmentContent.description || "At Enikkom, HSE is not just a policy—it's a core value embedded in every aspect of our operations. We are committed to protecting our people, communities, and the environment."}
+                  value={commitmentContent.description || "At Enikkom, HSE is more than a policy. It is a core value embedded in every aspect of our operations. We are committed to protecting our people, communities, and the environment."}
                   pageSlug="hse"
                   sectionKey="commitment"
                   field="description"
@@ -257,7 +257,7 @@ export default function HSEQualityPage() {
                     transition={{ duration: 0.3, delay: i * 0.08 }}
                     className="flex items-center gap-3 p-3 rounded-xl bg-white border border-border/50"
                   >
-                    <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0" />
+                    <CheckCircle className="h-5 w-5 flex-shrink-0" style={{ color: "var(--enk-safety)" }} />
                     <span className="text-[14px] font-medium">{commitment}</span>
                   </motion.div>
                 ))}
@@ -282,7 +282,8 @@ export default function HSEQualityPage() {
                 />
               </div>
               <motion.div 
-                className="absolute bottom-4 left-4 right-4 bg-green-600 text-white p-4 rounded-xl shadow-lg"
+                className="absolute bottom-4 left-4 right-4 text-white p-4 rounded-xl"
+                style={{ backgroundColor: "var(--enk-safety)" }}
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -325,9 +326,7 @@ export default function HSEQualityPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="text-[11px] md:text-xs font-semibold uppercase tracking-widest text-primary mb-3">
-              Regulatory Compliance
-            </p>
+            <p className="enk-kicker justify-center mb-3">Regulatory Compliance</p>
             <h2 className="mb-3">Permits and Licenses</h2>
             <p className="text-[14px] md:text-[15px] text-muted-foreground max-w-xl mx-auto">
               Compliance documents currently verified from the supplied corporate document pack.
@@ -368,9 +367,7 @@ export default function HSEQualityPage() {
                       </a>
                     </Button>
                   ) : (
-                    <span className="inline-flex w-fit rounded-full border border-border bg-muted px-3 py-1 text-[11px] font-medium text-muted-foreground">
-                      Source Not Supplied
-                    </span>
+                    <span className="enk-chip w-fit">Source Not Supplied</span>
                   )}
                 </motion.div>
               );
@@ -379,7 +376,7 @@ export default function HSEQualityPage() {
         </div>
       </section>
 
-      {/* Corporate Policies — exactly 4 approved policies */}
+      {/* Corporate Policies, exactly 4 approved policies */}
       <section className="section-padding bg-muted/30">
         <div className="container-wide">
           <motion.div
@@ -389,9 +386,7 @@ export default function HSEQualityPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="text-[11px] md:text-xs font-semibold uppercase tracking-widest text-primary mb-3">
-              Corporate Governance
-            </p>
+            <p className="enk-kicker justify-center mb-3">Corporate Governance</p>
             <h2 className="mb-3">Our Policies</h2>
             <p className="text-[14px] md:text-[15px] text-muted-foreground max-w-xl mx-auto">
               Only the four approved policies below are displayed, with direct access to the current source documents.

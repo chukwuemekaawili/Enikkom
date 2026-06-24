@@ -1,6 +1,6 @@
 import { Layout } from "@/components/layout";
 import { usePageContent } from "@/hooks/useSiteSettings";
-import { EditableText } from "@/components/admin";
+import { EditableText } from "@/components/content";
 
 export default function PrivacyPage() {
   const { content } = usePageContent('privacy');
@@ -30,7 +30,7 @@ export default function PrivacyPage() {
             </p>
 
             <section className="mb-10">
-              <h2 className="text-2xl font-semibold mb-4">
+              <h2 className="text-2xl font-bold mb-4">
                 <EditableText
                   value={pageContent.section1_title || "1. Introduction"}
                   pageSlug="privacy"
@@ -50,7 +50,7 @@ export default function PrivacyPage() {
             </section>
 
             <section className="mb-10">
-              <h2 className="text-2xl font-semibold mb-4">
+              <h2 className="text-2xl font-bold mb-4">
                 <EditableText
                   value={pageContent.section2_title || "2. Information We Collect"}
                   pageSlug="privacy"
@@ -85,7 +85,7 @@ export default function PrivacyPage() {
             </section>
 
             <section className="mb-10">
-              <h2 className="text-2xl font-semibold mb-4">
+              <h2 className="text-2xl font-bold mb-4">
                 <EditableText
                   value={pageContent.section3_title || "3. How We Use Your Information"}
                   pageSlug="privacy"
@@ -108,7 +108,7 @@ export default function PrivacyPage() {
             </section>
 
             <section className="mb-10">
-              <h2 className="text-2xl font-semibold mb-4">
+              <h2 className="text-2xl font-bold mb-4">
                 <EditableText
                   value={pageContent.section4_title || "4. Information Sharing"}
                   pageSlug="privacy"
@@ -128,7 +128,7 @@ export default function PrivacyPage() {
             </section>
 
             <section className="mb-10">
-              <h2 className="text-2xl font-semibold mb-4">
+              <h2 className="text-2xl font-bold mb-4">
                 <EditableText
                   value={pageContent.section5_title || "5. Data Security"}
                   pageSlug="privacy"
@@ -148,7 +148,7 @@ export default function PrivacyPage() {
             </section>
 
             <section className="mb-10">
-              <h2 className="text-2xl font-semibold mb-4">
+              <h2 className="text-2xl font-bold mb-4">
                 <EditableText
                   value={pageContent.section6_title || "6. Your Rights"}
                   pageSlug="privacy"
@@ -168,7 +168,7 @@ export default function PrivacyPage() {
             </section>
 
             <section className="mb-10">
-              <h2 className="text-2xl font-semibold mb-4">
+              <h2 className="text-2xl font-bold mb-4">
                 <EditableText
                   value={pageContent.section7_title || "7. Contact Us"}
                   pageSlug="privacy"
@@ -179,7 +179,7 @@ export default function PrivacyPage() {
               <p className="text-muted-foreground leading-relaxed">
                 If you have questions about this Privacy Policy or our data practices, please contact us at:
               </p>
-              <div className="mt-4 p-4 bg-muted rounded-lg">
+              <div className="mt-4 enk-card p-4">
                 <p className="font-medium">
                   <EditableText
                     value={pageContent.contact_company || "Enikkom Construction Limited"}
@@ -198,7 +198,7 @@ export default function PrivacyPage() {
                 </p>
                 <p className="text-muted-foreground">
                   Phone: <EditableText
-                    value={pageContent.contact_phone || "+234 806 573 8555"}
+                    value={pageContent.contact_phone || "+234 803 508 2614"}
                     pageSlug="privacy"
                     sectionKey="main"
                     field="contact_phone"

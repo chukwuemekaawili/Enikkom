@@ -3,14 +3,14 @@ import { Hero, CTABand } from "@/components/sections";
 import { motion } from "framer-motion";
 import { Briefcase, GraduationCap, Shield, Heart, MapPin, Clock, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { EditableText, EditableImage } from "@/components/admin";
+import { EditableText, EditableImage } from "@/components/content";
 import { usePageContent } from "@/hooks/useSiteSettings";
 import { siteImageSelections } from "@/content/siteImageSelections";
 
 const defaultBenefits = [
   { icon: GraduationCap, title: "Training & Development", description: "HSE certifications, technical training, and career development programs" },
-  { icon: Shield, title: "Safety Culture", description: "Industry-leading safety standards with zero LTI record across all projects" },
-  { icon: Heart, title: "Health Coverage", description: "Comprehensive health insurance for employees and dependents" },
+  { icon: Shield, title: "Safety Culture", description: "Strong safety standards with a zero LTI record across all projects" },
+  { icon: Heart, title: "Health Coverage", description: "Health insurance for employees and dependents" },
   { icon: Briefcase, title: "Career Growth", description: "Opportunities across HDD, pipeline, marine, and corporate functions" },
 ];
 
@@ -34,7 +34,7 @@ export default function CareersPage() {
     <Layout>
       <Hero 
         title={heroContent.title || "Build Your Career at Enikkom"} 
-        subtitle={heroContent.subtitle || "Join Nigeria's leading indigenous infrastructure contractor. Be part of a team of 500+ professionals delivering world-class projects across Nigeria."}
+        subtitle={heroContent.subtitle || "Join one of Nigeria's established indigenous infrastructure contractors. Be part of a team of 500+ professionals delivering projects across Nigeria."}
         backgroundImage={heroContent.backgroundImage || careersImages.hero} 
         size="default"
         primaryCTA={{ label: "View Openings", href: "#openings" }}
@@ -53,7 +53,7 @@ export default function CareersPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="section-eyebrow">
+            <p className="enk-kicker justify-center">
               <EditableText
                 value={benefitsContent.eyebrow || "Benefits"}
                 pageSlug="careers"
@@ -87,7 +87,7 @@ export default function CareersPage() {
                 whileInView={{ opacity: 1, y: 0 }} 
                 viewport={{ once: true }} 
                 transition={{ duration: 0.4, delay: i * 0.1 }} 
-                className="card-premium text-center p-6"
+                className="enk-card enk-card--hover text-center p-6"
               >
                 <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
                   <b.icon className="h-7 w-7 text-primary" />
@@ -110,7 +110,7 @@ export default function CareersPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="section-eyebrow">
+            <p className="enk-kicker justify-center">
               <EditableText
                 value={openingsContent.eyebrow || "Opportunities"}
                 pageSlug="careers"
@@ -144,9 +144,9 @@ export default function CareersPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="card-interactive p-6 group"
+                className="enk-card enk-card--hover p-6 group"
               >
-                <h3 className="font-semibold text-lg mb-3 group-hover:text-primary transition-colors">{job.title}</h3>
+                <h3 className="font-semibold text-lg mb-3 group-hover:text-[var(--enk-navy)] transition-colors">{job.title}</h3>
                 <div className="flex flex-wrap gap-4 text-[14px] text-muted-foreground">
                   <div className="flex items-center gap-2">
                     <MapPin className="h-4 w-4 text-primary" />
@@ -159,8 +159,8 @@ export default function CareersPage() {
                 </div>
                 <div className="mt-4 pt-4 border-t border-border">
                   <a 
-                    href="mailto:careers@enikkom.com" 
-                    className="inline-flex items-center gap-2 text-[13px] font-semibold text-primary hover:underline"
+                    href="mailto:careers@enikkom.com"
+                    className="inline-flex items-center gap-2 text-[13px] font-semibold enk-link"
                   >
                     Apply Now
                     <ArrowRight className="h-3.5 w-3.5" />
@@ -180,9 +180,9 @@ export default function CareersPage() {
             <p className="text-muted-foreground mb-4">
               Don't see the right role? Send your CV to:
             </p>
-            <a 
-              href="mailto:careers@enikkom.com" 
-              className="text-xl font-bold text-primary hover:underline"
+            <a
+              href="mailto:careers@enikkom.com"
+              className="text-xl font-bold enk-link"
             >
               careers@enikkom.com
             </a>
@@ -200,7 +200,7 @@ export default function CareersPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <p className="section-eyebrow">
+              <p className="enk-kicker enk-kicker--on-dark">
                 <EditableText
                   value={cultureContent.eyebrow || "Culture"}
                   pageSlug="careers"
@@ -227,7 +227,7 @@ export default function CareersPage() {
               </p>
               <p className="text-white/60 text-[15px] mb-8 leading-relaxed">
                 <EditableText
-                  value={cultureContent.description2 || "Our diverse workforce of over 500 professionals brings together expertise from across Nigeria and beyond, united by a shared commitment to delivering world-class infrastructure."}
+                  value={cultureContent.description2 || "Our workforce of over 500 professionals brings together expertise from across Nigeria and beyond, united by a shared commitment to delivering quality infrastructure."}
                   pageSlug="careers"
                   sectionKey="culture"
                   field="description2"

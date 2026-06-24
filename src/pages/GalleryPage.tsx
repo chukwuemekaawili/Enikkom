@@ -1,10 +1,9 @@
 import { Layout } from "@/components/layout";
 import { Hero, CTABand } from "@/components/sections";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect } from "react";
-import { X, ZoomIn, Loader2 } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
-import { EditableText } from "@/components/admin";
+import { useState } from "react";
+import { X, ZoomIn } from "lucide-react";
+import { EditableText } from "@/components/content";
 import { EnhancedImage } from "@/components/ui/enhanced-image";
 import { usePageContent } from "@/hooks/useSiteSettings";
 import { siteImageSelections } from "@/content/siteImageSelections";
@@ -23,44 +22,10 @@ const categories = ["All", "HDD", "Pipelines", "Marine Civil", "Shore Approach",
 export default function GalleryPage() {
   const [activeCategory, setActiveCategory] = useState("All");
   const [selectedImage, setSelectedImage] = useState<GalleryItem | null>(null);
-  const [galleryItems, setGalleryItems] = useState<GalleryItem[]>(defaultGalleryItems);
-  const [isLoading, setIsLoading] = useState(true);
-  
+  const galleryItems = defaultGalleryItems;
+
   const { content } = usePageContent('gallery');
   const heroContent = content.hero || {};
-
-  // Fetch gallery items from database
-  useEffect(() => {
-    const fetchGalleryItems = async () => {
-      try {
-        const { data, error } = await supabase
-          .from('gallery_items')
-          .select('*')
-          .eq('is_visible', true)
-          .order('display_order', { ascending: true });
-
-        if (error) throw error;
-
-        // If DB has items, use them; otherwise use defaults
-        if (data && data.length > 0) {
-          const dbItems: GalleryItem[] = data.map((item: any) => ({
-            image: item.image_url,
-            title: item.title,
-            category: item.category,
-            description: item.description || '',
-          }));
-          setGalleryItems(dbItems);
-        }
-      } catch (error) {
-        console.error('Error fetching gallery items:', error);
-        // Keep default items on error
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchGalleryItems();
-  }, []);
 
   const filteredItems = activeCategory === "All" 
     ? galleryItems 
@@ -88,7 +53,7 @@ export default function GalleryPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
           >
-            <p className="section-eyebrow">
+            <p className="enk-kicker justify-center">
               <EditableText
                 value={heroContent.eyebrow || "Our Work"}
                 pageSlug="gallery"
@@ -110,25 +75,20 @@ export default function GalleryPage() {
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
-                className={`px-5 py-2.5 rounded-xl text-[13px] font-semibold transition-all duration-200 ${
+                className={`px-5 py-2.5 rounded-[var(--enk-radius)] text-[13px] font-semibold transition-all duration-200 ${
                   activeCategory === category
-                    ? "bg-primary text-primary-foreground shadow-md"
+                    ? "text-white"
                     : "bg-muted text-muted-foreground hover:bg-muted/80 hover:text-foreground"
                 }`}
+                style={activeCategory === category ? { backgroundColor: "var(--enk-navy)" } : undefined}
               >
                 {category}
               </button>
             ))}
           </motion.div>
 
-          {/* Loading State */}
-          {isLoading ? (
-            <div className="flex justify-center py-12">
-              <Loader2 className="h-8 w-8 animate-spin text-primary" />
-            </div>
-          ) : (
-            /* Gallery Grid */
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {/* Gallery Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
               <AnimatePresence mode="popLayout">
                 {filteredItems.map((item, index) => (
                   <motion.div
@@ -138,10 +98,10 @@ export default function GalleryPage() {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.9 }}
                     transition={{ duration: 0.3, delay: index * 0.03 }}
-                    className="group cursor-pointer card-interactive overflow-hidden"
+                    className="group cursor-pointer enk-card enk-card--hover flex flex-col overflow-hidden"
                     onClick={() => setSelectedImage(item)}
                   >
-                    <div className="aspect-[4/3] overflow-hidden relative">
+                    <div className="relative aspect-[4/3] overflow-hidden">
                       <EnhancedImage
                         src={item.image}
                         alt={item.title}
@@ -151,28 +111,27 @@ export default function GalleryPage() {
                         tone="natural"
                         fallbackLabel={item.title}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                      
-                      {/* Zoom Icon */}
-                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                          <ZoomIn className="h-5 w-5 text-white" />
-                        </div>
+                      <div
+                        className="absolute inset-0"
+                        aria-hidden="true"
+                        style={{ background: "linear-gradient(0deg, oklch(0.13 0.03 255 / 0.5), transparent 55%)" }}
+                      />
+                      <span className="enk-chip enk-chip--on-dark absolute left-4 top-4">
+                        {item.category}
+                      </span>
+                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                        <ZoomIn className="h-6 w-6 text-white drop-shadow-md" />
                       </div>
-                      
-                      {/* Info Overlay */}
-                      <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                        <span className="text-[10px] font-semibold text-primary bg-primary/20 px-2.5 py-1 rounded-md uppercase tracking-wide">
-                          {item.category}
-                        </span>
-                        <h3 className="text-white font-semibold text-[15px] mt-2">{item.title}</h3>
-                      </div>
+                    </div>
+                    <div className="flex flex-col p-5" style={{ backgroundColor: "var(--enk-navy)" }}>
+                      <h3 className="text-[15px] font-semibold leading-snug text-[var(--enk-on-dark)]">
+                        {item.title}
+                      </h3>
                     </div>
                   </motion.div>
                 ))}
               </AnimatePresence>
-            </div>
-          )}
+          </div>
         </div>
       </section>
 
@@ -213,7 +172,7 @@ export default function GalleryPage() {
                 fallbackLabel={selectedImage.title}
               />
               <div className="mt-5 text-center">
-                <span className="text-[11px] font-semibold text-primary bg-primary/20 px-3 py-1.5 rounded-md uppercase tracking-wide">
+                <span className="enk-chip">
                   {selectedImage.category}
                 </span>
                 <h3 className="text-white text-xl font-bold mt-3">{selectedImage.title}</h3>

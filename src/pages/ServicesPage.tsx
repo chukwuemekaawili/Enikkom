@@ -3,13 +3,13 @@ import { Hero, CTABand, CapabilityCard, CertificationsBlock } from "@/components
 import { Drill, PipetteIcon, Anchor, Factory, Shield, Briefcase } from "lucide-react";
 import { motion } from "framer-motion";
 import { usePageContent } from "@/hooks/useSiteSettings";
-import { EditableText, EditableImage } from "@/components/admin";
+import { EditableText, EditableImage } from "@/components/content";
 import { siteImageSelections } from "@/content/siteImageSelections";
 import SEO from "@/components/ui/SEO";
 
 const serviceImages = siteImageSelections.services;
 
-// Service categories — sourced from approved Index Page and About Structure documents
+// Service categories, sourced from approved Index Page and About Structure documents
 const services = [
   {
     title: "Horizontal Directional Drilling (HDD)",
@@ -30,7 +30,7 @@ const services = [
   },
   {
     title: "Pipeline Works",
-    description: "We provide comprehensive pipeline and flowline infrastructure construction, fabrication, replacement, repair, and maintenance services to pipeline owners throughout Nigeria. We deliver irrespective of terrain — land, swamp, and offshore.",
+    description: "We provide pipeline and flowline construction, fabrication, replacement, repair, and maintenance for pipeline owners throughout Nigeria, across land, swamp, and offshore terrain.",
     href: "/services",
     icon: PipetteIcon,
     image: serviceImages.pipelines,
@@ -62,7 +62,7 @@ const services = [
   },
   {
     title: "Fabrication",
-    description: "We provide fit-for-purpose, integrated production systems for maximising recovery, accelerating production, managing risk, and improving project economics. Our services are designed to international standards and equipped with leading process technologies.",
+    description: "We provide integrated production systems for maximising recovery, accelerating production, managing risk, and improving project economics. Our services are designed to international standards using proven process technologies.",
     href: "/services",
     icon: Factory,
     image: serviceImages.facilities,
@@ -93,7 +93,7 @@ const services = [
   },
   {
     title: "Pipeline Security & Monitoring",
-    description: "Solutions focused on the strength of research and development; our innovation is tailored to combat pipeline vandalism. We are capable of monitoring and detecting tampering on pipelines in real time, protecting critical energy infrastructure.",
+    description: "Research-driven systems built to combat pipeline vandalism. We monitor and detect tampering on pipelines in real time, protecting critical energy infrastructure.",
     href: "/services",
     icon: Shield,
     image: serviceImages.security,
@@ -117,10 +117,10 @@ export default function ServicesPage() {
 
   return (
     <Layout>
-      <SEO title="Our Services" description="Comprehensive engineering and construction solutions for Nigeria's most demanding infrastructure projects." />
+      <SEO title="Our Services" description="Engineering and construction services for Nigeria's most demanding infrastructure projects." />
       <Hero
         title={heroContent.title || "Our Services"}
-        subtitle={heroContent.subtitle || "Comprehensive engineering and construction solutions for Nigeria's most demanding infrastructure projects. From trenchless crossings to marine civil works."}
+        subtitle={heroContent.subtitle || "Engineering and construction services for Nigeria's most demanding infrastructure projects, from trenchless crossings to marine civil works."}
         primaryCTA={{ label: "Contact Us", href: "/contact" }}
         secondaryCTA={{ label: "View Projects", href: "/projects" }}
         backgroundImage={heroContent.backgroundImage || serviceImages.hero}
@@ -140,7 +140,7 @@ export default function ServicesPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="text-[11px] md:text-xs font-semibold uppercase tracking-widest text-primary mb-3">
+            <p className="enk-kicker justify-center mb-3">
               <EditableText
                 value={introContent.subtitle || "What We Do"}
                 pageSlug="services"
@@ -158,7 +158,7 @@ export default function ServicesPage() {
             </h2>
             <p className="text-[14px] md:text-[15px] text-muted-foreground max-w-xl mx-auto">
               <EditableText
-                value={introContent.description || "From conceptual engineering through construction and commissioning, we provide end-to-end solutions backed by Nigeria's most experienced teams and equipment fleet."}
+                value={introContent.description || "From conceptual engineering through construction and commissioning, we cover the full project cycle, backed by experienced teams and a large equipment fleet."}
                 pageSlug="services"
                 sectionKey="intro"
                 field="description"
@@ -189,7 +189,7 @@ export default function ServicesPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="text-[11px] md:text-xs font-semibold uppercase tracking-widest text-primary mb-3">
+            <p className="enk-kicker enk-kicker--on-dark justify-center mb-3">
               <EditableText
                 value={whyUsContent.subtitle || "Why Us"}
                 pageSlug="services"
@@ -207,7 +207,7 @@ export default function ServicesPage() {
             </h2>
             <p className="text-white/60 text-[14px] md:text-[15px] max-w-lg mx-auto">
               <EditableText
-                value={whyUsContent.description || "Proven expertise, unmatched equipment, and unwavering commitment to safety and quality."}
+                value={whyUsContent.description || "Proven expertise, a strong equipment fleet, and a firm commitment to safety and quality."}
                 pageSlug="services"
                 sectionKey="why_us"
                 field="description"
@@ -224,13 +224,13 @@ export default function ServicesPage() {
             ].map((stat, index) => (
               <motion.div 
                 key={index} 
-                className="text-center p-5 bg-white/5 rounded-[14px] border border-white/10 hover:bg-white/8 transition-colors duration-200"
+                className="text-center p-5 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition-colors duration-200"
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: index * 0.05 }}
               >
-                <div className="text-2xl md:text-3xl font-bold text-primary mb-1">
+                <div className="text-2xl md:text-3xl font-bold mb-1" style={{ color: "var(--enk-gold)" }}>
                   <EditableText
                     value={stat.value}
                     pageSlug="services"
@@ -262,10 +262,8 @@ export default function ServicesPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="text-[11px] md:text-xs font-semibold uppercase tracking-widest text-primary mb-3">
-              Project Experience
-            </p>
-            <h2 className="mb-3">Scope of Work — At a Glance</h2>
+            <p className="enk-kicker justify-center mb-3">Project Experience</p>
+            <h2 className="mb-3">Scope of Work at a Glance</h2>
             <p className="text-[14px] md:text-[15px] text-muted-foreground max-w-xl mx-auto">
               A summary of the major work categories Enikkom Group has executed across Nigeria.
             </p>
@@ -330,7 +328,11 @@ export default function ServicesPage() {
       <CertificationsBlock />
 
       {/* CTA */}
-      <CTABand />
+      <CTABand
+        headline="Ready to discuss your next infrastructure project?"
+        subhead="Send us your scope, drawings or RFP and our team will assess feasibility, approach and mobilisation timeline — with no obligation."
+        primaryCTA={{ label: "Request an Assessment", href: "/contact" }}
+      />
     </Layout>
   );
 }

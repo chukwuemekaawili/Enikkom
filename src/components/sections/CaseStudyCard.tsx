@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 import { MapPin, ArrowRight } from "lucide-react";
-import { motion } from "framer-motion";
-import { EnhancedImage } from "@/components/ui/enhanced-image";
 import { currentProjectImage } from "@/content/siteImageSelections";
 
 interface CaseStudyCardProps {
@@ -17,6 +15,7 @@ interface CaseStudyCardProps {
   index?: number;
 }
 
+/** Project / case-study card, in the `.enk` design language. */
 export function CaseStudyCard({
   title,
   location,
@@ -26,72 +25,65 @@ export function CaseStudyCard({
   tags,
   href,
   year,
-  index = 0,
 }: CaseStudyCardProps) {
   const resolvedThumbnail = thumbnail || currentProjectImage("hdd-night-panorama-cropped.jpg");
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.4, delay: index * 0.08 }}
+    <Link
+      to={href}
+      className="enk-card enk-card--hover group flex h-full flex-col overflow-hidden focus-ring"
     >
-      <Link
-        to={href}
-        className="group flex flex-col h-full card-premium transition-all duration-300"
-      >
-        {/* Thumbnail */}
-        <div className="relative aspect-[16/10] overflow-hidden bg-muted">
-          <EnhancedImage
-            src={resolvedThumbnail}
-            alt={title}
-            wrapperClassName="h-full w-full"
-            className="w-full h-full"
-            sizes="(min-width: 1024px) 30vw, (min-width: 768px) 45vw, 100vw"
-            tone="vivid"
-            hoverZoom
-            fallbackLabel={title}
-          />
-          
-          {/* Gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-          
-          {/* Top left badge */}
-          {(year || tags.length > 0) && (
-            <div 
-              className="absolute top-3 left-3 px-3 py-1.5 text-white text-[11px] font-semibold rounded-lg shadow-md"
-              style={{ backgroundColor: 'rgba(11, 18, 32, 0.88)', backdropFilter: 'blur(4px)' }}
+      <div className="relative aspect-[16/10] overflow-hidden">
+        <img
+          src={resolvedThumbnail}
+          alt={title}
+          loading="lazy"
+          decoding="async"
+          className="h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-[1.04]"
+        />
+        <div
+          className="absolute inset-0"
+          style={{ background: "linear-gradient(0deg, oklch(0.13 0.03 255 / 0.5), transparent 55%)" }}
+          aria-hidden="true"
+        />
+        {(year || tags.length > 0) && (
+          <span className="enk-chip enk-chip--on-dark absolute left-4 top-4">{year || tags[0]}</span>
+        )}
+      </div>
+
+      <div className="flex flex-1 flex-col p-6" style={{ backgroundColor: "var(--enk-navy)" }}>
+        <div className="mb-2 flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.14em] text-[var(--enk-on-dark-muted)]">
+          <MapPin className="h-3 w-3 shrink-0" aria-hidden="true" />
+          <span>{location}</span>
+        </div>
+
+        <h3 className="text-[17px] font-semibold leading-snug text-[var(--enk-on-dark)] line-clamp-2">
+          {title}
+        </h3>
+
+        {metric && metricLabel && (
+          <dl className="mt-2 flex flex-wrap items-baseline gap-1.5">
+            <dt
+              className="font-mono text-[11px] uppercase tracking-[0.12em]"
+              style={{ color: "var(--enk-gold)" }}
             >
-              {year || tags[0]}
-            </div>
-          )}
-        </div>
+              {metricLabel}
+            </dt>
+            <dd className="text-[13.5px] font-medium text-[var(--enk-on-dark)]">{metric}</dd>
+          </dl>
+        )}
 
-        {/* Content */}
-        <div className="p-6 md:p-8 flex flex-col flex-grow">
-          {/* Location */}
-          <div className="flex items-center gap-1.5 text-[12px] text-muted-foreground mb-2">
-            <MapPin className="h-3.5 w-3.5" />
-            <span>{location}</span>
-          </div>
-
-          <h4 className="text-[15px] md:text-[16px] font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-200 line-clamp-2 font-heading leading-snug">
-            {title}
-          </h4>
-
-          {metric && metricLabel && (
-            <p className="text-[13px] md:text-[14px] text-muted-foreground mb-4">
-              <span className="font-semibold text-foreground">{metric}</span> {metricLabel}
-            </p>
-          )}
-
-          <div className="mt-auto pt-4 flex items-center text-[13.5px] font-bold text-primary tracking-wide uppercase">
-            Full Case Study
-            <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />
-          </div>
-        </div>
-      </Link>
-    </motion.div>
+        <span
+          className="mt-5 inline-flex items-center gap-2 text-[13.5px] font-semibold"
+          style={{ color: "var(--enk-gold)" }}
+        >
+          Full Case Study
+          <ArrowRight
+            className="h-4 w-4 transition-transform duration-150 ease-out group-hover:translate-x-0.5"
+            aria-hidden="true"
+          />
+        </span>
+      </div>
+    </Link>
   );
 }

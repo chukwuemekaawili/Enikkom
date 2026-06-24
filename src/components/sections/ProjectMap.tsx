@@ -22,27 +22,27 @@ interface ProjectLocation {
 const projectLocations: ProjectLocation[] = [
   {
     id: "1",
-    name: "OML34 — 10\" × 12km CHDD",
+    name: "OML34, 10\" × 12km CHDD",
     location: "Utorogun, Delta State",
     type: "HDD",
     coordinates: { x: 44, y: 72 },
-    description: "Nigeria's longest Continuous HDD — 12km of 10\" pipeline in a single operation.",
+    description: "Nigeria's longest Continuous HDD, 12km of 10\" pipeline in a single operation.",
     client: "NPDC / ND Western",
     year: "2021",
-    metrics: "10\" × 12km — Nigeria Record",
+    metrics: "10\" × 12km, Nigeria Record",
     image: getProjectImage("oml34-chdd", "projectMap"),
     href: "/projects/oml34-chdd"
   },
   {
     id: "2",
-    name: "Atlas Cove–Mosimi — 16\" × 3.1km",
+    name: "Atlas Cove-Mosimi, 16\" × 3.1km",
     location: "Arepo, Ogun State",
     type: "HDD",
     coordinates: { x: 26, y: 50 },
-    description: "Africa's longest single HDD drill — emergency reconstruction of petroleum products pipeline.",
+    description: "Africa's longest single HDD drill, emergency reconstruction of petroleum products pipeline.",
     client: "NNPC / PPMC",
     year: "2016",
-    metrics: "16\" × 3.1km — Africa Record",
+    metrics: "16\" × 3.1km, Africa Record",
     image: getProjectImage("atlas-cove-mosimi", "projectMap"),
     href: "/projects/atlas-cove-mosimi"
   },
@@ -52,15 +52,15 @@ const projectLocations: ProjectLocation[] = [
     location: "Delta State",
     type: "HDD",
     coordinates: { x: 40, y: 74 },
-    description: "Africa's longest bundled HDD — 12\" & 3\" pipelines across 2.78km of Escravos River.",
+    description: "Africa's longest bundled HDD, 12\" & 3\" pipelines across 2.78km of Escravos River.",
     client: "Saipem / SPDC",
     year: "2016",
-    metrics: "2.78km bundled — Africa Record",
+    metrics: "2.78km bundled, Africa Record",
     image: getProjectImage("otumara-escravos", "projectMap"),
   },
   {
     id: "4",
-    name: "OB3 River Niger — 48\" Direct Pipe",
+    name: "OB3 River Niger, 48\" Direct Pipe",
     location: "River Niger",
     type: "HDD",
     coordinates: { x: 50, y: 70 },
@@ -85,7 +85,7 @@ const projectLocations: ProjectLocation[] = [
   },
   {
     id: "6",
-    name: "First HDD Crossing — River Niger",
+    name: "First HDD Crossing, River Niger",
     location: "River Niger",
     type: "HDD",
     coordinates: { x: 48, y: 45 },
@@ -96,18 +96,18 @@ const projectLocations: ProjectLocation[] = [
   },
   {
     id: "7",
-    name: "Gbaran Phase 3b — 16\" EPC",
+    name: "Gbaran Phase 3b, 16\" EPC",
     location: "Bayelsa State",
     type: "Pipeline",
     coordinates: { x: 52, y: 78 },
-    description: "EPC pipeline construction — 8km & 10km of 16\" pipeline for Gbaran–UZU CPF upgrade.",
+    description: "EPC pipeline construction, 8km & 10km of 16\" pipeline for Gbaran-UZU CPF upgrade.",
     client: "SPDC",
     year: "2025",
     metrics: "18km total pipeline",
   },
   {
     id: "8",
-    name: "Calabar Gas Transmission — 24\" × 21.5km",
+    name: "Calabar Gas Transmission, 24\" × 21.5km",
     location: "Cross River State",
     type: "Pipeline",
     coordinates: { x: 70, y: 74 },
@@ -118,7 +118,7 @@ const projectLocations: ProjectLocation[] = [
   },
   {
     id: "9",
-    name: "NIPCO Gas Distribution — 50km",
+    name: "NIPCO Gas Distribution, 50km",
     location: "Multiple Locations",
     type: "Pipeline",
     coordinates: { x: 43, y: 64 },
@@ -169,7 +169,7 @@ export function ProjectMap() {
           transition={{ duration: 0.3 }}
           className="text-center mb-8"
         >
-          <p className="text-xs font-medium uppercase tracking-widest text-primary/80 mb-2">Nationwide Coverage</p>
+          <p className="enk-kicker enk-kicker--on-dark justify-center mb-2">Nationwide Coverage</p>
           <h2 className="text-white text-xl md:text-2xl font-semibold mb-2">Project Locations</h2>
           <p className="text-white/50 text-sm max-w-lg mx-auto">
             Operating across Nigeria's key oil & gas regions.

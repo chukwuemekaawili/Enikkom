@@ -5,8 +5,6 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
-import { AuthProvider } from "@/contexts/AuthContext";
-import { AdminErrorBoundary } from "@/components/admin/AdminErrorBoundary";
 import { PublicErrorBoundary } from "@/components/layout/PublicErrorBoundary";
 
 // Lazy loaded public pages
@@ -21,6 +19,9 @@ const HDDEquipmentPage = React.lazy(() => import("./pages/HDDEquipmentPage"));
 const CompletedProjectsPage = React.lazy(() => import("./pages/CompletedProjectsPage"));
 const HSEQualityPage = React.lazy(() => import("./pages/HSEQualityPage"));
 const CareersPage = React.lazy(() => import("./pages/CareersPage"));
+const SustainabilityPage = React.lazy(() => import("./pages/SustainabilityPage"));
+const NewsInsightsPage = React.lazy(() => import("./pages/NewsInsightsPage"));
+const SearchPage = React.lazy(() => import("./pages/SearchPage"));
 const ContactPage = React.lazy(() => import("./pages/ContactPage"));
 const ServicesPage = React.lazy(() => import("./pages/ServicesPage"));
 const ManagementPage = React.lazy(() => import("./pages/ManagementPage"));
@@ -34,10 +35,6 @@ const PrivacyPage = React.lazy(() => import("./pages/PrivacyPage"));
 const TermsPage = React.lazy(() => import("./pages/TermsPage"));
 const NotFound = React.lazy(() => import("./pages/NotFound"));
 
-// Lazy loaded Admin pages
-const AdminLoginPage = React.lazy(() => import("./pages/admin/AdminLoginPage"));
-const AdminDashboard = React.lazy(() => import("./pages/admin/AdminDashboard"));
-
 const queryClient = new QueryClient();
 
 const FallbackLoader = () => (
@@ -49,13 +46,12 @@ const FallbackLoader = () => (
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <HelmetProvider>
-      <AuthProvider>
-        <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          <BrowserRouter>
-            <Suspense fallback={<FallbackLoader />}>
-              <Routes>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Suspense fallback={<FallbackLoader />}>
+            <Routes>
                 {/* Public routes */}
                 <Route path="/" element={<PublicErrorBoundary><HomePage /></PublicErrorBoundary>} />
                 <Route path="/about" element={<PublicErrorBoundary><AboutPage /></PublicErrorBoundary>} />
@@ -78,26 +74,20 @@ const App = () => (
                 <Route path="/resources" element={<PublicErrorBoundary><ResourcesPage /></PublicErrorBoundary>} />
                 <Route path="/partners" element={<PublicErrorBoundary><PartnersPage /></PublicErrorBoundary>} />
                 <Route path="/careers" element={<PublicErrorBoundary><CareersPage /></PublicErrorBoundary>} />
+                <Route path="/sustainability" element={<PublicErrorBoundary><SustainabilityPage /></PublicErrorBoundary>} />
+                <Route path="/news-insights" element={<PublicErrorBoundary><NewsInsightsPage /></PublicErrorBoundary>} />
+                <Route path="/search" element={<PublicErrorBoundary><SearchPage /></PublicErrorBoundary>} />
                 <Route path="/contact" element={<PublicErrorBoundary><ContactPage /></PublicErrorBoundary>} />
                 <Route path="/contact-us" element={<PublicErrorBoundary><ContactPage /></PublicErrorBoundary>} />
                 <Route path="/management-team" element={<PublicErrorBoundary><ManagementPage /></PublicErrorBoundary>} />
                 <Route path="/privacy" element={<PublicErrorBoundary><PrivacyPage /></PublicErrorBoundary>} />
                 <Route path="/terms" element={<PublicErrorBoundary><TermsPage /></PublicErrorBoundary>} />
 
-                {/* Admin routes */}
-                <Route path="/admin" element={<AdminLoginPage />} />
-                <Route path="/admin/*" element={
-                  <AdminErrorBoundary>
-                    <AdminDashboard />
-                  </AdminErrorBoundary>
-                } />
-
                 <Route path="*" element={<PublicErrorBoundary><NotFound /></PublicErrorBoundary>} />
               </Routes>
             </Suspense>
           </BrowserRouter>
-        </TooltipProvider>
-      </AuthProvider>
+      </TooltipProvider>
     </HelmetProvider>
   </QueryClientProvider>
 );

@@ -7,8 +7,6 @@ import {
   ExternalLink,
   Book,
   Youtube,
-  Briefcase,
-  Shield,
   Award,
   Landmark,
   Lock,
@@ -17,7 +15,7 @@ import {
   FileX2,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { EditableText } from "@/components/admin";
+import { EditableText } from "@/components/content";
 import { usePageContent } from "@/hooks/useSiteSettings";
 import { EnhancedImage } from "@/components/ui/enhanced-image";
 import { siteImageSelections } from "@/content/siteImageSelections";
@@ -26,7 +24,7 @@ const resources = {
   brochures: [
     { 
       title: "ECL Project Brochure - Part 1", 
-      description: "Comprehensive project portfolio showcasing our HDD crossings, pipeline construction, and major infrastructure works across Nigeria.", 
+      description: "Project portfolio covering our HDD crossings, pipeline construction, and major infrastructure works across Nigeria.",
       type: "PDF", 
       size: "8.2 MB", 
       url: "/downloads/ECL_Project_Brochure_Part1.pdf",
@@ -71,9 +69,9 @@ const resources = {
     },
     { 
       title: "NIPITECS 2019: New Technology to Displace Pipeline Vandals", 
-      description: "Enikkom's presentation at the Nigerian International Petroleum Technology Conference (NIPITECS) 2019 in Abuja, showcasing HDD technology as the solution to pipeline vandalism and theft.", 
-      thumbnail: "https://img.youtube.com/vi/PrMQDDb6ELA/maxresdefault.jpg", 
-      youtubeId: "PrMQDDb6ELA", 
+      description: "Enikkom's presentation at the Nigerian International Petroleum Technology Conference (NIPITECS) 2019 in Abuja, presenting HDD technology as a solution to pipeline vandalism and theft.",
+      thumbnail: "https://img.youtube.com/vi/PrMQDDb6ELA/hqdefault.jpg",
+      youtubeId: "PrMQDDb6ELA",
       duration: "5:23",
       featured: true
     },
@@ -169,17 +167,14 @@ export default function ResourcesPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <div className="flex items-center gap-2 mb-2">
-              <Briefcase className="h-5 w-5 text-primary" />
-              <p className="section-eyebrow">
-                <EditableText
-                  value={brochuresContent.eyebrow || "Downloads"}
-                  pageSlug="resources"
-                  sectionKey="brochures"
-                  field="eyebrow"
-                />
-              </p>
-            </div>
+            <p className="enk-kicker mb-2">
+              <EditableText
+                value={brochuresContent.eyebrow || "Downloads"}
+                pageSlug="resources"
+                sectionKey="brochures"
+                field="eyebrow"
+              />
+            </p>
             <h2 className="mb-3">
               <EditableText
                 value={brochuresContent.title || "Company & Project Brochures"}
@@ -206,7 +201,7 @@ export default function ResourcesPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="card-premium p-6 flex flex-col"
+                className="enk-card enk-card--hover p-6 flex flex-col"
               >
                 <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
                   <FileText className="h-7 w-7 text-primary" />
@@ -216,9 +211,9 @@ export default function ResourcesPage() {
                 <div className="flex items-center justify-between pt-4 border-t">
                   <span className="text-[12px] text-muted-foreground font-medium">{item.type} • {item.size}</span>
                   <Button variant="default" size="sm" className="h-9 gap-2" asChild>
-                    <a href={item.url} download>
-                      <Download className="h-4 w-4" />
-                      Download
+                    <a href={item.url} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="h-4 w-4" />
+                      View
                     </a>
                   </Button>
                 </div>
@@ -234,11 +229,8 @@ export default function ResourcesPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <div className="flex items-center gap-2 mb-2">
-              <Shield className="h-5 w-5 text-primary" />
-              <p className="section-eyebrow">Technical</p>
-            </div>
-            <h2 className="text-[26px] md:text-[30px] mb-3">Technical Documents & Specifications</h2>
+            <p className="enk-kicker mb-2">Technical</p>
+            <h2 className="enk-display text-[clamp(1.6rem,3vw,2rem)] text-[var(--enk-ink)] mb-3">Technical Documents &amp; Specifications</h2>
             <p className="text-muted-foreground text-[15px]">
               Access our equipment specifications, HSE policies, and quality management documentation.
             </p>
@@ -252,7 +244,7 @@ export default function ResourcesPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="card-premium p-5"
+                className="enk-card enk-card--hover p-5"
               >
                 <Book className="h-7 w-7 text-primary mb-3" />
                 <h4 className="font-semibold text-[15px] mb-2">{item.title}</h4>
@@ -283,7 +275,7 @@ export default function ResourcesPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="section-eyebrow">
+            <p className="enk-kicker enk-kicker--on-dark">
               <EditableText
                 value={videoContent.eyebrow || "Featured Project"}
                 pageSlug="resources"
@@ -358,7 +350,7 @@ export default function ResourcesPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="section-eyebrow">Compliance</p>
+            <p className="enk-kicker justify-center">Compliance</p>
             <h2 className="section-title">Certifications, Permits & Policies</h2>
             <p className="section-subtitle">
               Download the current compliance files sourced directly from the supplied corporate document pack.
@@ -375,11 +367,8 @@ export default function ResourcesPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.45 }}
               >
-                <div className="flex items-center gap-2 mb-2">
-                  <Landmark className="h-5 w-5 text-primary" />
-                  <p className="section-eyebrow">Registration</p>
-                </div>
-                <h3 className="text-[24px] md:text-[28px] font-semibold mb-3">Permits and Licenses</h3>
+                <p className="enk-kicker mb-2">Registration</p>
+                <h3 className="enk-display text-[clamp(1.4rem,2.4vw,1.75rem)] text-[var(--enk-ink)] mb-3">Permits and Licenses</h3>
                 <p className="text-[14px] text-muted-foreground max-w-2xl">
                   This sub-category lists the requested permit documents clearly, while staying honest about the files that were not present in the supplied source pack.
                 </p>
@@ -393,7 +382,7 @@ export default function ResourcesPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.35, delay: index * 0.08 }}
-                    className="card-premium p-6 flex flex-col gap-4"
+                    className="enk-card enk-card--hover p-6 flex flex-col gap-4"
                   >
                     <div className="flex items-start gap-3">
                       <div className={`w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 ${permit.available ? "bg-primary/10" : "bg-muted"}`}>
@@ -421,9 +410,7 @@ export default function ResourcesPage() {
                         </a>
                       </Button>
                     ) : (
-                      <span className="inline-flex w-fit rounded-full border border-border bg-muted px-3 py-1 text-[11px] font-medium text-muted-foreground">
-                        Source Not Supplied
-                      </span>
+                      <span className="enk-chip w-fit">Source Not Supplied</span>
                     )}
                   </motion.div>
                 ))}
@@ -438,11 +425,8 @@ export default function ResourcesPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.45 }}
               >
-                <div className="flex items-center gap-2 mb-2">
-                  <Shield className="h-5 w-5 text-primary" />
-                  <p className="section-eyebrow">Policies</p>
-                </div>
-                <h3 className="text-[24px] md:text-[28px] font-semibold mb-3">Approved Policy Documents</h3>
+                <p className="enk-kicker mb-2">Policies</p>
+                <h3 className="enk-display text-[clamp(1.4rem,2.4vw,1.75rem)] text-[var(--enk-ink)] mb-3">Approved Policy Documents</h3>
                 <p className="text-[14px] text-muted-foreground max-w-2xl">
                   Only the four policies requested for this update are displayed here. All other policy text has been removed from this section.
                 </p>
@@ -458,7 +442,7 @@ export default function ResourcesPage() {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.35, delay: index * 0.08 }}
-                      className="card-premium p-5 flex flex-col gap-4"
+                      className="enk-card enk-card--hover p-5 flex flex-col gap-4"
                     >
                       <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center">
                         <Icon className="h-5 w-5 text-primary" />
@@ -492,7 +476,7 @@ export default function ResourcesPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="section-eyebrow">Industry</p>
+            <p className="enk-kicker justify-center">Industry</p>
             <h2 className="section-title">Industry Resources</h2>
             <p className="section-subtitle">
               Useful links to Nigerian oil & gas regulatory bodies.
@@ -510,7 +494,7 @@ export default function ResourcesPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="card-interactive p-6 group"
+                className="enk-card enk-card--hover p-6 group"
               >
                 <ExternalLink className="h-6 w-6 text-primary mb-4 group-hover:translate-x-1 transition-transform" />
                 <h4 className="font-semibold text-[16px] mb-2">{link.title}</h4>

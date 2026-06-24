@@ -2,12 +2,12 @@ import { useParams, Link } from "react-router-dom";
 import { Layout } from "@/components/layout";
 import { Hero, CTABand, CaseStudyCard } from "@/components/sections";
 import { motion, AnimatePresence } from "framer-motion";
-import { MapPin, Calendar, Shield, CheckCircle, ArrowLeft, Quote, Users, Gauge, Trophy, Play, X, ZoomIn, ImageIcon } from "lucide-react";
+import { MapPin, Calendar, Shield, CheckCircle, ArrowLeft, Quote, Users, Gauge, Trophy, Play, X, ZoomIn } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { getProjectGalleryImages, getProjectImage } from "@/content/projectImageSelections";
 import { usePageContent } from "@/hooks/useSiteSettings";
-import { EditableText, EditableImage } from "@/components/admin";
+import { EditableText, EditableImage } from "@/components/content";
 import { EnhancedImage } from "@/components/ui/enhanced-image";
 
 // Import all authentic project images from PDFs
@@ -87,14 +87,14 @@ const slugToPageSlug: Record<string, string> = {
 // Verified project data from Enikkom documents with dedicated galleries
 const baseProjectData: Record<string, ProjectData> = {
   "oml34-chdd": {
-    title: "OML34 Continuous HDD — 10\" × 12km",
+    title: "OML34 Continuous HDD, 10\" × 12km",
     client: "NPDC / ND Western",
     location: "Utorogun, Delta State, Nigeria",
     year: "2020-2021",
     capabilities: ["HDD", "Pipeline", "CHDD"],
     overview: "Nigeria's longest functional Continuous Horizontal Directional Drilling (CHDD) project - installing 12 kilometers of 10-inch pipeline in a single continuous operation through challenging Niger Delta terrain.",
     challenge: "The OML34 field required a 12km pipeline crossing through extremely difficult swamp and riverine terrain with multiple water bodies, protected areas, and communities that made conventional pipeline installation impossible. The project demanded the longest continuous HDD ever attempted in Nigeria.",
-    solution: "Enikkom deployed our advanced HDD fleet with 500T pullback capacity rigs and established a continuous drilling operation spanning months. Our partnership with HDDThailand provided specialized downhole tools and technical expertise. Comprehensive mud management and real-time trajectory monitoring ensured precision throughout the 12km distance.",
+    solution: "Enikkom deployed our HDD fleet with 500T pullback capacity rigs and established a continuous drilling operation spanning months. Our partnership with HDDThailand provided specialised downhole tools and technical expertise. Careful mud management and real-time trajectory monitoring maintained precision throughout the 12km distance.",
     results: [
       { label: "Total Length", value: "12 km" },
       { label: "Pipe Diameter", value: "10 inches" },
@@ -102,7 +102,7 @@ const baseProjectData: Record<string, ProjectData> = {
       { label: "Duration", value: "14 months" },
       { label: "LTI Record", value: "Zero" },
     ],
-    hseNotes: "The project maintained an impeccable safety record with zero LTI throughout the 14-month duration. Daily JSA reviews, comprehensive toolbox talks, and environmental monitoring ensured zero ecological impact to the sensitive Niger Delta environment.",
+    hseNotes: "The project maintained a strong safety record with zero LTI throughout the 14-month duration. Daily JSA reviews, regular toolbox talks, and environmental monitoring protected the sensitive Niger Delta environment.",
     clientQuote: {
       text: "Enikkom demonstrated exceptional capability in delivering this record-breaking CHDD project. Their technical expertise and commitment to safety made this complex crossing a complete success.",
       author: "Project Manager",
@@ -151,7 +151,7 @@ const baseProjectData: Record<string, ProjectData> = {
       { label: "Completion", value: "April 2016" },
       { label: "LTI Record", value: "Zero" },
     ],
-    hseNotes: "The project was completed with zero incidents despite the technical complexity. Environmental monitoring confirmed zero impact on the Escravos River ecosystem. Daily safety briefings and comprehensive PTW system ensured continuous safety awareness.",
+    hseNotes: "The project was completed with zero incidents despite the technical complexity. Environmental monitoring confirmed zero impact on the Escravos River ecosystem. Daily safety briefings and a full PTW system maintained continuous safety awareness.",
     clientQuote: {
       text: "We are delighted with our experience of working with ENIKKOM on this challenging crossing. The team demonstrated unmatched professionalism. It was a pleasure working with the team.",
       author: "Construction Manager",
@@ -182,9 +182,9 @@ const baseProjectData: Record<string, ProjectData> = {
     ]
   },
   "atlas-cove-mosimi": {
-    title: "Atlas Cove–Mosimi — 16\" × 3.1km",
+    title: "Atlas Cove-Mosimi, 16\" × 3.1km",
     client: "NNPC / PPMC",
-    location: "Arepo / Imagbon, Lagos–Ogun States, Nigeria",
+    location: "Arepo / Imagbon, Lagos-Ogun States, Nigeria",
     year: "2016",
     capabilities: ["HDD", "Pipeline"],
     overview: "Africa's longest single HDD drill - a 3.1km, 16-inch pipeline crossing for the emergency reconstruction of the Atlas Cove to Mosimi petroleum products pipeline, a critical national infrastructure asset.",
@@ -222,14 +222,14 @@ const baseProjectData: Record<string, ProjectData> = {
     ]
   },
   "dangote-lagoon": {
-    title: "Dangote Fertilizer — 36\" × 2km Lagoon Crossing",
+    title: "Dangote Fertilizer, 36\" × 2km Lagoon Crossing",
     client: "Dangote Fertilizer Limited",
     location: "Ejirin, Lagos Lagoon, Lagos State, Nigeria",
     year: "2016",
     capabilities: ["HDD", "Pipeline"],
     overview: "36-inch × 2km swamp and lagoon HDD crossing delivering gas supply infrastructure to Dangote's fertilizer complex at Lekki. One of the largest diameter lagoon HDD crossings in Nigeria.",
     challenge: "The project required crossing the Lagos Lagoon with a 36-inch pipeline through challenging swamp and open-water conditions. Tidal variations, soft marine sediments, and strict timelines to support the fertilizer plant's commissioning schedule added significant complexity.",
-    solution: "Enikkom deployed our 500T HDD rig with advanced gyro guidance for the 2km crossing. The 36-inch steel pipeline was pre-fabricated onshore and pulled back in a single operation. Comprehensive geotechnical investigation informed the crossing design to handle the soft lagoon sediments.",
+    solution: "Enikkom deployed our 500T HDD rig with gyro guidance for the 2km crossing. The 36-inch steel pipeline was pre-fabricated onshore and pulled back in a single operation. A detailed geotechnical investigation informed the crossing design to handle the soft lagoon sediments.",
     results: [
       { label: "Crossing Length", value: "2 km" },
       { label: "Pipe Diameter", value: "36 inches" },
@@ -317,7 +317,7 @@ const baseProjectData: Record<string, ProjectData> = {
       { label: "Duration", value: "18 months" },
       { label: "LTI Record", value: "Zero" },
     ],
-    hseNotes: "Comprehensive HSE management system implementation across all 8 crossing sites. Regular third-party audits confirmed compliance with international standards. Zero environmental incidents.",
+    hseNotes: "HSE management system implemented across all 8 crossing sites. Regular third-party audits confirmed compliance with international standards. Zero environmental incidents.",
     clientQuote: {
       text: "ECL brings a level of client-side understanding to each and every project. Their technical capability and local expertise are unmatched. We have no hesitation in recommending ECL for HDD projects.",
       author: "Project Director",
@@ -330,7 +330,7 @@ const baseProjectData: Record<string, ProjectData> = {
       "36\" pipeline fabrication and coating",
       "Sequential crossing execution",
       "Tie-in works at all locations",
-      "Comprehensive testing program"
+      "Full testing program"
     ],
     gallery: [
       { src: pipeLaying, alt: "Pipeline Laying", caption: "36\" pipeline construction" },
@@ -630,7 +630,7 @@ export default function ProjectDetailPage() {
     return (
       <Layout>
         <div className="section-padding container-wide text-center py-24">
-          <h1 className="mb-4">Project Not Found</h1>
+          <h1 className="enk-display text-[clamp(1.8rem,4vw,2.6rem)] mb-4">Project Not Found</h1>
           <p className="text-muted-foreground mb-6">The requested project page does not exist or is coming soon.</p>
           <Button asChild>
             <Link to="/projects">
@@ -680,7 +680,7 @@ export default function ProjectDetailPage() {
       <section className="section-padding">
         <div className="container-wide">
           {/* Back Link */}
-          <Link to="/projects" className="inline-flex items-center text-sm text-primary hover:underline mb-8">
+          <Link to="/projects" className="enk-link inline-flex items-center text-sm mb-8">
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to all projects
           </Link>
@@ -692,8 +692,8 @@ export default function ProjectDetailPage() {
               animate={{ opacity: 1, y: 0 }}
               className="mb-8"
             >
-              <span className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold">
-                <Trophy className="h-4 w-4" />
+              <span className="enk-chip gap-2 px-4 py-2 text-[13px]">
+                <Trophy className="h-3.5 w-3.5" aria-hidden="true" />
                 {displayRecordBadge}
               </span>
             </motion.div>
@@ -715,7 +715,7 @@ export default function ProjectDetailPage() {
             </div>
             <div className="flex gap-2">
               {project.capabilities.map((cap) => (
-                <span key={cap} className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full font-medium">
+                <span key={cap} className="enk-chip">
                   {cap}
                 </span>
               ))}
@@ -731,8 +731,8 @@ export default function ProjectDetailPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                 >
-                  <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                    <Play className="h-5 w-5 text-primary" />
+                  <h2 className="enk-display text-[clamp(1.3rem,2.2vw,1.6rem)] mb-4 flex items-center gap-2">
+                    <Play className="h-5 w-5" style={{ color: "var(--enk-navy)" }} aria-hidden="true" />
                     Project Video
                   </h2>
                   <div className="aspect-video rounded-xl overflow-hidden shadow-lg">
@@ -756,7 +756,7 @@ export default function ProjectDetailPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-xl font-semibold mb-4">
+                <h2 className="enk-display text-[clamp(1.3rem,2.2vw,1.6rem)] mb-4">
                   <EditableText
                     value={overviewContent.section_title || "Project Overview"}
                     pageSlug={pageSlug}
@@ -782,7 +782,7 @@ export default function ProjectDetailPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                 >
-                  <h2 className="text-xl font-semibold mb-4">
+                  <h2 className="enk-display text-[clamp(1.3rem,2.2vw,1.6rem)] mb-4">
                     <EditableText
                       value={scopeContent.section_title || "Scope of Work"}
                       pageSlug={pageSlug}
@@ -793,7 +793,7 @@ export default function ProjectDetailPage() {
                   <ul className="space-y-2">
                     {displayScope.map((item: string, index: number) => (
                       <li key={index} className="flex items-start gap-3">
-                        <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                        <CheckCircle className="h-5 w-5 flex-shrink-0 mt-0.5" style={{ color: "var(--enk-navy)" }} />
                         <span className="text-muted-foreground">
                           <EditableText
                             value={item}
@@ -814,7 +814,7 @@ export default function ProjectDetailPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-xl font-semibold mb-4">
+                <h2 className="enk-display text-[clamp(1.3rem,2.2vw,1.6rem)] mb-4">
                   <EditableText
                     value={challengeContent.section_title || "The Challenge"}
                     pageSlug={pageSlug}
@@ -839,7 +839,7 @@ export default function ProjectDetailPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-xl font-semibold mb-4">
+                <h2 className="enk-display text-[clamp(1.3rem,2.2vw,1.6rem)] mb-4">
                   <EditableText
                     value={solutionContent.section_title || "Our Solution"}
                     pageSlug={pageSlug}
@@ -863,11 +863,12 @@ export default function ProjectDetailPage() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="bg-green-50 dark:bg-green-950/20 p-6 rounded-lg border border-green-200 dark:border-green-900"
+                className="enk-card p-6"
+                style={{ borderColor: "var(--enk-safety)", backgroundColor: "oklch(0.56 0.12 150 / 0.06)" }}
               >
                 <div className="flex items-center gap-2 mb-4">
-                  <Shield className="h-5 w-5 text-green-600" />
-                  <h2 className="text-xl font-semibold">
+                  <Shield className="h-5 w-5" style={{ color: "var(--enk-safety)" }} aria-hidden="true" />
+                  <h2 className="enk-display text-[clamp(1.3rem,2.2vw,1.6rem)]">
                     <EditableText
                       value={content.hse?.section_title || "HSE & Quality Performance"}
                       pageSlug={pageSlug}
@@ -893,9 +894,10 @@ export default function ProjectDetailPage() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  className="bg-muted/30 p-8 rounded-lg border-l-4 border-primary"
+                  className="enk-card p-8 border-l-4"
+                  style={{ borderLeftColor: "var(--enk-navy)" }}
                 >
-                  <Quote className="h-8 w-8 text-primary/30 mb-4" />
+                  <Quote className="h-8 w-8 mb-4" style={{ color: "var(--enk-navy)", opacity: 0.3 }} />
                   <blockquote className="text-lg italic text-foreground mb-4">
                     "<EditableText
                       value={content.quote?.text || project.clientQuote.text}
@@ -906,8 +908,8 @@ export default function ProjectDetailPage() {
                     />"
                   </blockquote>
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                      <Users className="h-5 w-5 text-primary" />
+                    <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center">
+                      <Users className="h-5 w-5" style={{ color: "var(--enk-navy)" }} />
                     </div>
                     <div>
                       <p className="font-semibold">
@@ -938,10 +940,10 @@ export default function ProjectDetailPage() {
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="bg-card border rounded-xl p-6 sticky top-24"
+                className="enk-card p-6 sticky top-24"
               >
                 <h3 className="text-lg font-semibold mb-6 flex items-center gap-2">
-                  <Gauge className="h-5 w-5 text-primary" />
+                  <Gauge className="h-5 w-5" style={{ color: "var(--enk-navy)" }} />
                   <EditableText
                     value={resultsContent.section_title || "Project Results"}
                     pageSlug={pageSlug}
@@ -960,7 +962,7 @@ export default function ProjectDetailPage() {
                           field={`result_${index}_label`}
                         />
                       </span>
-                      <span className="font-semibold text-primary">
+                      <span className="font-semibold" style={{ color: "var(--enk-navy)" }}>
                         <EditableText
                           value={result.value}
                           pageSlug={pageSlug}
@@ -996,10 +998,7 @@ export default function ProjectDetailPage() {
               viewport={{ once: true }}
               className="text-center mb-10"
             >
-              <div className="flex items-center justify-center gap-2 mb-3">
-                <ImageIcon className="h-5 w-5 text-primary" />
-                <p className="text-[11px] md:text-xs font-semibold uppercase tracking-widest text-primary">Project Gallery</p>
-              </div>
+              <p className="enk-kicker justify-center mb-3">Project Gallery</p>
               <h2 className="mb-3">Project Documentation</h2>
               <p className="text-muted-foreground max-w-lg mx-auto">
                 Authentic photographs documenting our work on this project.
@@ -1095,7 +1094,8 @@ export default function ProjectDetailPage() {
       {filteredRelatedProjects.length > 0 && (
         <section className="section-padding">
           <div className="container-wide">
-            <h2 className="text-2xl font-semibold mb-8">Related Projects</h2>
+            <p className="enk-kicker mb-2">See Also</p>
+            <h2 className="mb-8">Related Projects</h2>
             <div className="grid md:grid-cols-3 gap-6">
               {filteredRelatedProjects.map((project) => (
                 <CaseStudyCard

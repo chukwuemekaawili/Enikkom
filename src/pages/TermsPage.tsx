@@ -1,6 +1,6 @@
 import { Layout } from "@/components/layout";
 import { usePageContent } from "@/hooks/useSiteSettings";
-import { EditableText } from "@/components/admin";
+import { EditableText } from "@/components/content";
 
 export default function TermsPage() {
   const { content } = usePageContent('terms');
@@ -30,7 +30,7 @@ export default function TermsPage() {
             </p>
 
             <section className="mb-10">
-              <h2 className="text-2xl font-semibold mb-4">
+              <h2 className="text-2xl font-bold mb-4">
                 <EditableText
                   value={pageContent.section1_title || "1. Acceptance of Terms"}
                   pageSlug="terms"
@@ -50,7 +50,7 @@ export default function TermsPage() {
             </section>
 
             <section className="mb-10">
-              <h2 className="text-2xl font-semibold mb-4">
+              <h2 className="text-2xl font-bold mb-4">
                 <EditableText
                   value={pageContent.section2_title || "2. Use of Website"}
                   pageSlug="terms"
@@ -76,7 +76,7 @@ export default function TermsPage() {
             </section>
 
             <section className="mb-10">
-              <h2 className="text-2xl font-semibold mb-4">
+              <h2 className="text-2xl font-bold mb-4">
                 <EditableText
                   value={pageContent.section3_title || "3. Intellectual Property"}
                   pageSlug="terms"
@@ -96,7 +96,7 @@ export default function TermsPage() {
             </section>
 
             <section className="mb-10">
-              <h2 className="text-2xl font-semibold mb-4">
+              <h2 className="text-2xl font-bold mb-4">
                 <EditableText
                   value={pageContent.section4_title || "4. Request for Quotation (RFQ)"}
                   pageSlug="terms"
@@ -116,7 +116,7 @@ export default function TermsPage() {
             </section>
 
             <section className="mb-10">
-              <h2 className="text-2xl font-semibold mb-4">
+              <h2 className="text-2xl font-bold mb-4">
                 <EditableText
                   value={pageContent.section5_title || "5. Disclaimer of Warranties"}
                   pageSlug="terms"
@@ -136,7 +136,7 @@ export default function TermsPage() {
             </section>
 
             <section className="mb-10">
-              <h2 className="text-2xl font-semibold mb-4">
+              <h2 className="text-2xl font-bold mb-4">
                 <EditableText
                   value={pageContent.section6_title || "6. Limitation of Liability"}
                   pageSlug="terms"
@@ -156,7 +156,7 @@ export default function TermsPage() {
             </section>
 
             <section className="mb-10">
-              <h2 className="text-2xl font-semibold mb-4">
+              <h2 className="text-2xl font-bold mb-4">
                 <EditableText
                   value={pageContent.section7_title || "7. Third-Party Links"}
                   pageSlug="terms"
@@ -176,7 +176,7 @@ export default function TermsPage() {
             </section>
 
             <section className="mb-10">
-              <h2 className="text-2xl font-semibold mb-4">
+              <h2 className="text-2xl font-bold mb-4">
                 <EditableText
                   value={pageContent.section8_title || "8. Governing Law"}
                   pageSlug="terms"
@@ -196,7 +196,7 @@ export default function TermsPage() {
             </section>
 
             <section className="mb-10">
-              <h2 className="text-2xl font-semibold mb-4">
+              <h2 className="text-2xl font-bold mb-4">
                 <EditableText
                   value={pageContent.section9_title || "9. Changes to Terms"}
                   pageSlug="terms"
@@ -216,7 +216,7 @@ export default function TermsPage() {
             </section>
 
             <section className="mb-10">
-              <h2 className="text-2xl font-semibold mb-4">
+              <h2 className="text-2xl font-bold mb-4">
                 <EditableText
                   value={pageContent.section10_title || "10. Contact Information"}
                   pageSlug="terms"
@@ -227,7 +227,7 @@ export default function TermsPage() {
               <p className="text-muted-foreground leading-relaxed">
                 For questions regarding these Terms of Service, please contact us at:
               </p>
-              <div className="mt-4 p-4 bg-muted rounded-lg">
+              <div className="mt-4 enk-card p-4">
                 <p className="font-medium">
                   <EditableText
                     value={pageContent.contact_company || "Enikkom Construction Limited"}
@@ -246,7 +246,7 @@ export default function TermsPage() {
                 </p>
                 <p className="text-muted-foreground">
                   Phone: <EditableText
-                    value={pageContent.contact_phone || "+234 806 573 8555"}
+                    value={pageContent.contact_phone || "+234 803 508 2614"}
                     pageSlug="terms"
                     sectionKey="main"
                     field="contact_phone"

@@ -1,5 +1,4 @@
 import { LucideIcon, Shield, Clock, Award, Users } from "lucide-react";
-import { motion } from "framer-motion";
 
 interface KPIStat {
   value: string;
@@ -20,58 +19,52 @@ const defaultStats: KPIStat[] = [
   { value: "0", label: "LTI Record", icon: Award },
 ];
 
+/** KPI stat band, in the `.enk` design language. */
 export function KPIStatsBand({ stats = defaultStats, variant = "dark" }: KPIStatsBandProps) {
-  const isDark = variant === "dark";
+  const dark = variant === "dark";
 
   return (
-    <section className={`${isDark ? "bg-charcoal" : "bg-muted/50"} py-14 md:py-20 lg:py-24 relative overflow-hidden`}>
-      {/* Subtle background pattern for dark variant */}
-      {isDark && (
-        <div 
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, white 1px, transparent 0)`,
-            backgroundSize: '40px 40px'
-          }}
-        />
-      )}
-      
-      <div className="container-wide relative z-10">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 lg:gap-16">
-          {stats.map((stat, index) => {
+    <section
+      className="enk-section"
+      style={{ backgroundColor: dark ? "var(--enk-navy)" : "var(--enk-bg-muted)" }}
+    >
+      <div className="enk-container">
+        <dl className="grid grid-cols-2 gap-8 lg:grid-cols-4">
+          {stats.map((stat) => {
             const Icon = stat.icon;
             return (
-              <motion.div 
-                key={stat.label} 
-                className="text-center"
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-              >
+              <div key={stat.label} className="text-center">
                 {Icon && (
-                  <div className={`w-12 h-12 md:w-14 md:h-14 rounded-xl mx-auto mb-4 flex items-center justify-center ${
-                    isDark 
-                      ? "bg-white/8 text-white/80" 
-                      : "bg-primary/10 text-primary"
-                  }`}>
-                    <Icon className="h-5 w-5 md:h-6 md:w-6" />
+                  <div
+                    className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-md"
+                    style={{
+                      backgroundColor: dark ? "oklch(1 0 0 / 0.08)" : "oklch(0.81 0.13 85 / 0.14)",
+                      color: dark ? "var(--enk-on-dark)" : "var(--enk-bronze)",
+                    }}
+                    aria-hidden="true"
+                  >
+                    <Icon className="h-6 w-6" />
                   </div>
                 )}
-                <div className={`text-[32px] md:text-[40px] lg:text-[48px] font-bold mb-2 font-heading leading-none ${
-                  isDark ? "text-white" : "text-foreground"
-                }`}>
-                  {stat.value}{stat.suffix}
-                </div>
-                <div className={`text-[11px] md:text-[12px] font-semibold uppercase tracking-[0.1em] ${
-                  isDark ? "text-white/50" : "text-muted-foreground"
-                }`}>
+                <dd
+                  className={`enk-display text-[clamp(2rem,5vw,3rem)] leading-none ${
+                    dark ? "text-[var(--enk-on-dark)]" : "text-[var(--enk-ink)]"
+                  }`}
+                >
+                  {stat.value}
+                  {stat.suffix}
+                </dd>
+                <dt
+                  className={`mt-2 text-[12px] font-semibold uppercase tracking-[0.1em] ${
+                    dark ? "text-[var(--enk-on-dark-muted)]" : "text-[var(--enk-steel)]"
+                  }`}
+                >
                   {stat.label}
-                </div>
-              </motion.div>
+                </dt>
+              </div>
             );
           })}
-        </div>
+        </dl>
       </div>
     </section>
   );

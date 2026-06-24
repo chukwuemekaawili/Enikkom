@@ -68,12 +68,12 @@ const baseProjectLocations: ProjectLocation[] = [
   },
   {
     id: "3",
-    name: "Atlas Cove–Mosimi 16\" × 3.1km (Arepo)",
+    name: "Atlas Cove-Mosimi 16\" × 3.1km (Arepo)",
     location: "Arepo Swamp, Ogun State",
     state: "Ogun",
     type: "HDD",
     coordinates: { x: 26, y: 50 },
-    description: "Emergency reconstruction of vandalised pipeline section using HDD Intersect Method — LONGEST SINGLE DRILL IN AFRICA (3.1km) at time of completion.",
+    description: "Emergency reconstruction of vandalised pipeline section using HDD Intersect Method, LONGEST SINGLE DRILL IN AFRICA (3.1km) at time of completion.",
     client: "NNPC / PPMC",
     year: "2016",
     metrics: "16\" × 3.1km Africa Record",
@@ -87,7 +87,7 @@ const baseProjectLocations: ProjectLocation[] = [
     state: "Edo",
     type: "HDD",
     coordinates: { x: 42, y: 62 },
-    description: "36\" × 1.3km Gas Transmission Pipeline across Ekiadolor Rock Valley — DEEPEST HDD CROSSING IN AFRICA at over 80m depth.",
+    description: "36\" × 1.3km Gas Transmission Pipeline across Ekiadolor Rock Valley, DEEPEST HDD CROSSING IN AFRICA at over 80m depth.",
     client: "SPDC",
     year: "2016",
     metrics: "36\" × 1.3km @ 80m depth",
@@ -96,15 +96,15 @@ const baseProjectLocations: ProjectLocation[] = [
   },
   {
     id: "5",
-    name: "OML34 — 10\" × 12km Continuous HDD",
+    name: "OML34, 10\" × 12km Continuous HDD",
     location: "Utorogun, Delta State",
     state: "Delta",
     type: "HDD",
     coordinates: { x: 44, y: 72 },
-    description: "Installation of 10\" × 12km Pipeline by Continuous Horizontal Directional Drilling — LONGEST FUNCTIONAL CONTINUOUS HDD CROSSING IN NIGERIA.",
+    description: "Installation of 10\" × 12km Pipeline by Continuous Horizontal Directional Drilling, LONGEST FUNCTIONAL CONTINUOUS HDD CROSSING IN NIGERIA.",
     client: "NPDC / ND Western",
     year: "2021",
-    metrics: "10\" × 12km CHDD — Nigeria Record",
+    metrics: "10\" × 12km CHDD, Nigeria Record",
     scope: "Complete CHDD installation with extended reach technology",
     image: projOml34,
   },
@@ -124,7 +124,7 @@ const baseProjectLocations: ProjectLocation[] = [
   },
   {
     id: "7",
-    name: "OB3 River Niger — 48\" Direct Pipe Installation",
+    name: "OB3 River Niger, 48\" Direct Pipe Installation",
     location: "River Niger, Nigeria",
     state: "Rivers",
     type: "HDD",
@@ -654,9 +654,9 @@ export function InteractiveProjectMap({
                 <button
                   key={type}
                   onClick={() => setActiveFilter(type)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 flex items-center gap-2 ${
+                  className={`px-4 py-2 rounded-md text-[13px] font-medium transition-all duration-200 flex items-center gap-2 ${
                     activeFilter === type
-                      ? "bg-primary text-white shadow-lg shadow-primary/25"
+                      ? "bg-primary text-white"
                       : "bg-white/10 text-white/70 hover:bg-white/20 hover:text-white"
                   }`}
                 >

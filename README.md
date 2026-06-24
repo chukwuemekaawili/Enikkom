@@ -1,15 +1,17 @@
 # Enikkom Construction Limited - Official Website
 
-This is the repository for the **Enikkom Construction Limited** official website. The site is built with React, Vite, Tailwind CSS, and typically integrated with Supabase for dynamic content management.
+This is the repository for the **Enikkom Construction Limited** official website.
+It is a **fully static** marketing site built with React, Vite, and Tailwind CSS.
+There is no backend — all content is served from the code and bundled assets.
 
 ## 🏗️ Project Overview
 
 Enikkom Construction Limited is a leading Nigerian contractor specializing in Horizontal Directional Drilling (HDD), pipeline construction, dredging, and marine civil works.
 
 ### Key Features
-- **Dynamic CMS:** Custom Admin Dashboard for managing Projects, Capabilities, Team, and Site Settings.
+- **Static site:** All page content ships with the build — no database or API required.
 - **Responsive Design:** Optimized for all devices (Mobile, Tablet, Desktop).
-- **Performance:** Built with Vite for fast loading and optimized assets.
+- **Performance:** Built with Vite for fast loading and optimized, responsive images.
 
 ## 🚀 Getting Started
 
@@ -31,29 +33,32 @@ To run this project locally:
     npm run dev
     ```
 
+4.  **Build for production**
+    ```bash
+    npm run build
+    ```
+
 ## 🛠️ Tech Stack
 
 -   **Frontend Framework:** React (Vite)
 -   **Styling:** Tailwind CSS, Shadcn UI
--   **Backend/Database:** Supabase (PostgreSQL)
 -   **State Management:** React Context + Hooks
 -   **Icons:** Lucide React
 
 ## 📂 Project Structure
 
 -   `/src/components`: Reusable UI components.
--   `/src/pages`: Route components (Admin, Public).
--   `/src/hooks`: Custom React hooks (e.g., `useCollection`, `useSiteSettings`).
--   `/src/assets`: Images and static files.
+-   `/src/pages`: Public route components.
+-   `/src/content`: Static content (company profile, equipment specs, image selections).
+-   `/src/hooks`: Custom React hooks (e.g., `useSiteSettings`).
+-   `/src/assets`: Images and video imported by the build.
+-   `/public`: Files served at the site root (downloads/PDFs, brand logos, client logos).
+-   `/resources`: Local-only source/reference archives (not in git — see `resources/README.md`).
 
-## 📝 Admin & CMS
+## 📨 Contact / RFQ form
 
-The project includes a comprehensive Admin Panel (`/admin`) that allows content management for:
--   **Projects & Case Studies**
--   **Capabilities & Services**
--   **Team Members**
--   **Media Gallery**
--   **Site Menus & Navigation** (Main Header, Footer)
+The site is static, so the Request-for-Quote form does not submit to a server.
+On submit it directs visitors to email **info@enikkom.com** directly.
 
 ## 📄 License
 

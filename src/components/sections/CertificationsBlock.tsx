@@ -1,5 +1,4 @@
 import { Award } from "lucide-react";
-import { motion } from "framer-motion";
 
 interface Certification {
   name: string;
@@ -18,6 +17,7 @@ const defaultCertifications: Certification[] = [
   { name: "ISO 45001:2018", description: "Occupational Health & Safety" },
 ];
 
+/** Certifications, in the `.enk` design language. */
 export function CertificationsBlock({
   certifications = defaultCertifications,
   title = "Certified Excellence",
@@ -25,59 +25,44 @@ export function CertificationsBlock({
 }: CertificationsBlockProps) {
   if (variant === "inline") {
     return (
-      <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4">
-        {certifications.map((cert, index) => (
-          <motion.div
-            key={cert.name}
-            initial={{ opacity: 0, y: 8 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.3, delay: index * 0.08 }}
-            className="flex items-center gap-2.5 rounded-full border border-border bg-background px-4 py-2.5 shadow-[0_1px_2px_rgba(15,23,42,0.03)]"
-          >
-            <Award className="h-4 w-4 text-primary" />
-            <span className="text-[13px] font-semibold text-foreground">{cert.name}</span>
-          </motion.div>
+      <div className="flex flex-wrap items-center justify-center gap-2.5">
+        {certifications.map((cert) => (
+          <span key={cert.name} className="enk-chip" title={cert.description}>
+            <Award className="h-3.5 w-3.5 text-[var(--enk-bronze)]" aria-hidden="true" />
+            {cert.name}
+          </span>
         ))}
       </div>
     );
   }
 
   return (
-    <section className="section-padding bg-muted/30">
-      <div className="container-wide">
-        <motion.div 
-          className="text-center mb-10 md:mb-12"
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4 }}
-        >
-          <p className="section-eyebrow">Certifications</p>
-          <h2 className="text-[24px] md:text-[28px] lg:text-[32px] font-bold mb-3">{title}</h2>
-          <p className="text-[14px] md:text-[15px] text-muted-foreground max-w-2xl mx-auto">
-            Our operations are certified to international standards, ensuring quality, safety, and environmental responsibility.
+    <section className="enk-section" style={{ backgroundColor: "var(--enk-bg-muted)" }}>
+      <div className="enk-container">
+        <div className="mx-auto mb-12 max-w-2xl text-center">
+          <p className="enk-kicker justify-center">Certifications</p>
+          <h2 className="enk-display mt-4 text-[clamp(1.6rem,3vw,2.2rem)] text-[var(--enk-ink)]">{title}</h2>
+          <p className="mt-4 text-[15px] leading-relaxed text-[var(--enk-steel)]">
+            Our operations are certified to international standards, ensuring quality, safety, and
+            environmental responsibility.
           </p>
-        </motion.div>
+        </div>
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 md:gap-6">
-          {certifications.map((cert, index) => (
-            <motion.div
-              key={cert.name}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="card-premium text-center p-6 md:p-8"
-            >
-              <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 md:h-16 md:w-16">
-                <Award className="h-7 w-7 md:h-8 md:w-8 text-primary" />
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
+          {certifications.map((cert) => (
+            <div key={cert.name} className="enk-card p-7 text-center">
+              <div
+                className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-md"
+                style={{ backgroundColor: "oklch(0.81 0.13 85 / 0.14)", color: "var(--enk-bronze)" }}
+                aria-hidden="true"
+              >
+                <Award className="h-7 w-7" />
               </div>
-              <h4 className="text-[17px] md:text-[18px] font-bold mb-2">{cert.name}</h4>
+              <h3 className="text-[18px] font-semibold text-[var(--enk-ink)]">{cert.name}</h3>
               {cert.description && (
-                <p className="text-[13px] md:text-[14px] text-muted-foreground">{cert.description}</p>
+                <p className="mt-2 text-[14px] text-[var(--enk-steel)]">{cert.description}</p>
               )}
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

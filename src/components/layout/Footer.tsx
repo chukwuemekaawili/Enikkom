@@ -96,12 +96,10 @@ export function Footer() {
   return (
     <footer className="bg-charcoal text-white">
       <div className="container-wide py-16 md:py-20">
-        <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-7 shadow-[0_24px_80px_rgba(0,0,0,0.16)] md:p-10">
+        <div className="rounded-xl border border-white/10 bg-white/[0.04] p-7 shadow-[var(--enk-shadow-md)] md:p-10">
           <div className="grid gap-8 lg:grid-cols-[1.08fr_0.92fr] lg:items-end">
             <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-primary/85">
-                Start a conversation
-              </p>
+              <p className="enk-kicker enk-kicker--on-dark mb-0">Start a conversation</p>
               <h2 className="mt-4 max-w-2xl text-white">
                 Planning a crossing, pipeline package, or high-stakes delivery program?
               </h2>
@@ -128,7 +126,7 @@ export function Footer() {
             {certifications.slice(0, 4).map((cert: any) => (
               <div
                 key={cert.name}
-                className="rounded-[1.35rem] border border-white/10 bg-white/5 hover:bg-white/10 transition-colors px-5 py-5"
+                className="rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition-colors px-5 py-5"
               >
                 <p className="text-[13px] font-semibold text-white">{cert.name}</p>
                 <p className="mt-1 text-[12px] leading-6 text-white/46">

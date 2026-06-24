@@ -2,9 +2,7 @@ import { Layout } from "@/components/layout";
 import { Hero, CTABand } from "@/components/sections";
 import { motion } from "framer-motion";
 import { Quote, Star } from "lucide-react";
-import { useQuery } from "@tanstack/react-query";
-import { supabase } from "@/integrations/supabase/client";
-import { EditableText } from "@/components/admin";
+import { EditableText } from "@/components/content";
 import { usePageContent } from "@/hooks/useSiteSettings";
 import { siteImageSelections } from "@/content/siteImageSelections";
 
@@ -49,7 +47,7 @@ const defaultTestimonials = [
     quote: "The Atlas Cove-Mosimi 16\" × 3.1km emergency reconstruction was completed in record time. Enikkom set a new benchmark for HDD capability in Africa with this project.",
     author: "Pipeline Manager",
     company: "NNPC/PPMC",
-    project: "Atlas Cove-Mosimi 16\" × 3.1km — Africa's Longest Single Drill",
+    project: "Atlas Cove-Mosimi 16\" × 3.1km, Africa's Longest Single Drill",
     rating: 5,
   },
 ];
@@ -99,6 +97,7 @@ export default function TestimonialsPage() {
       <section className="section-padding">
         <div className="container-wide">
           <div className="text-center mb-12">
+            <p className="enk-kicker justify-center mb-3">Client Feedback</p>
             <h2 className="mb-4">
               <EditableText
                 value={introContent.title || "What Our Clients Say"}
@@ -125,13 +124,13 @@ export default function TestimonialsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="bg-card rounded-[14px] border p-6 relative hover-lift"
+                className="enk-card enk-card--hover p-6 relative"
               >
-                <Quote className="h-10 w-10 text-primary/20 absolute top-4 right-4" />
+                <Quote className="h-10 w-10 absolute top-4 right-4" style={{ color: "var(--enk-navy)", opacity: 0.2 }} />
                 
                 <div className="flex gap-1 mb-4">
                   {[...Array(testimonial.rating || 5)].map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-primary text-primary" />
+                    <Star key={i} className="h-4 w-4" style={{ fill: "var(--enk-gold)", color: "var(--enk-gold)" }} />
                   ))}
                 </div>
                 
@@ -141,7 +140,7 @@ export default function TestimonialsPage() {
                 
                 <div className="border-t pt-4">
                   <p className="font-medium text-sm">{testimonial.author}</p>
-                  <p className="text-sm text-primary">{testimonial.company}</p>
+                  <p className="text-sm font-mono uppercase tracking-[0.08em]" style={{ color: "var(--enk-bronze)" }}>{testimonial.company}</p>
                   <p className="text-xs text-muted-foreground mt-1">{testimonial.project}</p>
                 </div>
               </motion.div>
@@ -153,6 +152,7 @@ export default function TestimonialsPage() {
       <section className="section-padding bg-muted/30">
         <div className="container-wide">
           <div className="text-center">
+            <p className="enk-kicker justify-center mb-3">Track Record</p>
             <h2 className="mb-4">
               <EditableText
                 value={statsContent.title || "Trusted by Industry Leaders"}
@@ -172,7 +172,7 @@ export default function TestimonialsPage() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto">
               {stats.map((stat: any, index: number) => (
                 <div key={index} className="text-center">
-                  <p className="text-4xl font-bold text-primary">{stat.value}</p>
+                  <p className="text-4xl font-bold" style={{ color: "var(--enk-navy)" }}>{stat.value}</p>
                   <p className="text-sm text-muted-foreground">{stat.label}</p>
                 </div>
               ))}

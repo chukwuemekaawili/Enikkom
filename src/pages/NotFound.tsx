@@ -48,7 +48,7 @@ const NotFound = () => {
             <p className="text-sm text-muted-foreground mb-4">Popular pages:</p>
             <div className="flex flex-wrap gap-2 justify-center">
               <Button asChild variant="ghost" size="sm">
-                <Link to="/capabilities">Our Services</Link>
+                <Link to="/capabilities">Capabilities</Link>
               </Button>
               <Button asChild variant="ghost" size="sm">
                 <Link to="/projects">Projects</Link>
@@ -57,7 +57,10 @@ const NotFound = () => {
                 <Link to="/about">About Us</Link>
               </Button>
               <Button asChild variant="ghost" size="sm">
-                <Link to="/equipment">Equipment</Link>
+                <Link to="/hse-quality">QHSE &amp; Quality</Link>
+              </Button>
+              <Button asChild variant="ghost" size="sm">
+                <Link to="/contact">Contact</Link>
               </Button>
             </div>
           </div>

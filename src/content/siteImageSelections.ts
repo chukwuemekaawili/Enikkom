@@ -265,6 +265,12 @@ export const siteImageSelections = {
     hero: selectedGeneralImage("rg-079.jpg"),
     briefing: currentProjectImage("workers-ppe.jpg"),
   },
+  sustainability: {
+    hero: selectedGeneralImage("rg-038.jpg"),
+  },
+  newsInsights: {
+    hero: selectedGeneralImage("rg-105.jpg"),
+  },
   management: {
     hero: teamImage("02-hero-management-team-hero-background.png"),
     photos: {

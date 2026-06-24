@@ -1,11 +1,12 @@
 import { Layout } from "@/components/layout";
 import { Hero } from "@/components/sections";
 import { RFQForm } from "@/components/forms/RFQForm";
-import { EditableText } from "@/components/admin";
+import { EditableText } from "@/components/content";
 import { usePageContent } from "@/hooks/useSiteSettings";
 import { MapPin, Phone, Mail, Clock, Building2, CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import { siteImageSelections } from "@/content/siteImageSelections";
+import { contact } from "@/content/home";
 import SEO from "@/components/ui/SEO";
 
 // Verified office locations from Enikkom documents
@@ -21,22 +22,22 @@ const defaultOffices = [
     type: "Corporate",
   },
   {
-    name: "Base 1 — Arepo",
+    name: "Base 1, Arepo",
     address: "7 Joseph Ogunjobi Street, Praise Hill Estate, Arepo, Ogun State, Nigeria",
     type: "Operations Base",
   },
   {
-    name: "Base 2 — Warri",
+    name: "Base 2, Warri",
     address: "Km7-DCS Road, Warri, Delta State, Nigeria",
     type: "Operations Base",
   },
   {
-    name: "Base 3 — Warri",
+    name: "Base 3, Warri",
     address: "Opposite Ejovi Jetty, Opete Road, Warri, Delta State, Nigeria",
     type: "Operations Base",
   },
   {
-    name: "Base 4 — Warri",
+    name: "Base 4, Warri",
     address: "Old NNPC Filling Station, DCS Road, Warri, Delta State, Nigeria",
     type: "Operations Base",
   },
@@ -77,7 +78,7 @@ export default function ContactPage() {
               transition={{ duration: 0.5 }}
             >
               <div>
-                <p className="section-eyebrow mb-2">Connect With Us</p>
+                <p className="enk-kicker mb-2">Connect With Us</p>
                 <h3 className="text-[20px] font-semibold mb-5">
                   <EditableText
                     value={contactDetails.detailsTitle || "Contact Details"}
@@ -87,8 +88,8 @@ export default function ContactPage() {
                   />
                 </h3>
                 <div className="space-y-3">
-                  <a 
-                    href={`tel:${contactDetails.phone || '+2348065738555'}`}
+                  <a
+                    href={contactDetails.phone ? `tel:${contactDetails.phone}` : contact.phoneHref}
                     className="flex items-center gap-3 p-3 rounded-xl bg-muted/30 hover:bg-muted/50 transition-colors group"
                   >
                     <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
@@ -96,7 +97,7 @@ export default function ContactPage() {
                     </div>
                     <span className="text-[15px] group-hover:text-primary transition-colors">
                       <EditableText
-                        value={contactDetails.phone || "+234 806 573 8555"}
+                        value={contactDetails.phone || contact.phone}
                         pageSlug="contact"
                         sectionKey="contact_details"
                         field="phone"
@@ -104,7 +105,7 @@ export default function ContactPage() {
                     </span>
                   </a>
                   <a 
-                    href={`mailto:${contactDetails.email || 'info@enikkom.com'}`}
+                    href={`mailto:${contactDetails.email || contact.email}`}
                     className="flex items-center gap-3 p-3 rounded-xl bg-muted/30 hover:bg-muted/50 transition-colors group"
                   >
                     <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
@@ -112,7 +113,7 @@ export default function ContactPage() {
                     </div>
                     <span className="text-[15px] group-hover:text-primary transition-colors">
                       <EditableText
-                        value={contactDetails.email || "info@enikkom.com"}
+                        value={contactDetails.email || contact.email}
                         pageSlug="contact"
                         sectionKey="contact_details"
                         field="email"
@@ -122,7 +123,7 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="p-5 bg-primary/5 border border-primary/15 rounded-xl">
+              <div className="enk-card p-5">
                 <div className="flex items-center gap-3 mb-2">
                   <Clock className="h-5 w-5 text-primary" />
                   <span className="font-semibold text-[15px]">Response Time</span>
@@ -186,9 +187,9 @@ export default function ContactPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              <div className="card-premium p-6 md:p-8 h-full">
-                <p className="section-eyebrow mb-2">Get Started</p>
-                <h2 className="text-[24px] md:text-[28px] font-bold mb-2">
+              <div className="enk-card p-6 md:p-8 h-full">
+                <p className="enk-kicker mb-2">Get Started</p>
+                <h2 className="enk-display text-[clamp(1.4rem,2.4vw,1.75rem)] text-[var(--enk-ink)] mb-2">
                   <EditableText
                     value={content.form?.title || "Contact Us"}
                     pageSlug="contact"
@@ -221,8 +222,8 @@ export default function ContactPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="section-eyebrow mb-3">Our Presence</p>
-            <h2 className="text-3xl font-semibold">
+            <p className="enk-kicker mb-3">Our Presence</p>
+            <h2 className="enk-display text-[clamp(1.6rem,3vw,2.2rem)] text-[var(--enk-ink)]">
               <EditableText
                 value={contactDetails.locationsTitle || "Office Locations"}
                 pageSlug="contact"
@@ -249,7 +250,7 @@ export default function ContactPage() {
                   <MapPin className="h-6 w-6 text-primary" />
                 </div>
                 <h3 className="font-semibold text-[17px] mb-1">{office.name}</h3>
-                <span className="inline-block text-[12px] text-primary font-bold uppercase tracking-wider mb-3">{office.type}</span>
+                <span className="enk-chip mb-3">{office.type}</span>
                 <p className="text-[14px] text-muted-foreground leading-relaxed flex-1">{office.address}</p>
               </motion.div>
             ))}
