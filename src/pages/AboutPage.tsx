@@ -107,69 +107,68 @@ export default function AboutPage() {
             </div>
 
             <div className="mt-10 grid gap-4 lg:grid-cols-[1.35fr_0.65fr]">
-              <div className="group relative min-h-[340px] overflow-hidden rounded-xl border border-border/70" style={{ backgroundColor: "var(--enk-navy)" }}>
-                <EnhancedImage
-                  src={aboutImages.introMain}
-                  alt="Pipeline crew executing welding and line installation work"
-                  tone="cinematic"
-                  hoverZoom
-                  wrapperClassName="absolute inset-0"
-                  className="absolute inset-0 h-full w-full object-cover"
-                  style={{ objectPosition: "center 48%" }}
-                />
-                <div className="absolute inset-0" style={{ background: "linear-gradient(to right, oklch(0.13 0.03 255 / 0.82), oklch(0.13 0.03 255 / 0.36), transparent)" }} />
-                <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
-                  <p className="enk-kicker enk-kicker--on-dark mb-2">Built In-Country</p>
-                  <h3 className="enk-display max-w-md text-[clamp(1.4rem,2.6vw,1.9rem)] text-[var(--enk-on-dark)]">
+              <div className="enk-card group flex flex-col overflow-hidden">
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <EnhancedImage
+                    src={aboutImages.introMain}
+                    alt="Pipeline crew executing welding and line installation work"
+                    tone="cinematic"
+                    hoverZoom
+                    wrapperClassName="absolute inset-0"
+                    className="absolute inset-0 h-full w-full object-cover"
+                    style={{ objectPosition: "center 48%" }}
+                  />
+                  <div className="absolute inset-0" style={{ background: "linear-gradient(0deg, oklch(0.13 0.03 255 / 0.5), transparent 55%)" }} aria-hidden="true" />
+                  <span className="enk-chip enk-chip--on-dark absolute left-4 top-4">Built In-Country</span>
+                </div>
+                <div className="flex flex-col p-6" style={{ backgroundColor: "var(--enk-navy)" }}>
+                  <h3 className="text-[17px] font-semibold leading-snug text-[var(--enk-on-dark)]">
                     Engineering Depth Backed by Field Precision
                   </h3>
-                  <p className="mt-3 max-w-lg text-[14px] leading-7 text-white/70">
-                    The group combines indigenous operating knowledge, specialist HDD capability,
-                    and disciplined project delivery across complex terrains in Nigeria.
+                  <p className="mt-2 text-[13px] leading-6 text-[var(--enk-on-dark-muted)]">
+                    Indigenous operating knowledge, specialist HDD capability, and disciplined project delivery across complex terrains.
                   </p>
                 </div>
               </div>
 
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
-                <div className="group relative min-h-[160px] overflow-hidden rounded-xl border border-border/70" style={{ backgroundColor: "var(--enk-navy)" }}>
-                  <EnhancedImage
-                    src={aboutImages.introSideField}
-                    alt="Enikkom field team reviewing live pipeline operations"
-                    tone="cinematic"
-                    hoverZoom
-                    wrapperClassName="absolute inset-0"
-                    className="absolute inset-0 h-full w-full object-cover"
-                    style={{ objectPosition: "center 45%" }}
-                  />
-                  <div className="absolute inset-0" style={{ background: "linear-gradient(to top, oklch(0.13 0.03 255 / 0.9), oklch(0.13 0.03 255 / 0.2), transparent)" }} />
-                  <div className="absolute inset-x-0 bottom-0 p-5">
-                    <div className="enk-kicker enk-kicker--on-dark mb-1">
-                      Field Leadership
-                    </div>
-                    <p className="mt-1 text-[13px] leading-6 text-white/75">
-                      People, process, and technical control on site.
-                    </p>
+                <div className="enk-card group flex flex-col overflow-hidden">
+                  <div className="relative aspect-[4/3] overflow-hidden">
+                    <EnhancedImage
+                      src={aboutImages.introSideField}
+                      alt="Enikkom field team reviewing live pipeline operations"
+                      tone="cinematic"
+                      hoverZoom
+                      wrapperClassName="absolute inset-0"
+                      className="absolute inset-0 h-full w-full object-cover"
+                      style={{ objectPosition: "center 45%" }}
+                    />
+                    <div className="absolute inset-0" style={{ background: "linear-gradient(0deg, oklch(0.13 0.03 255 / 0.5), transparent 55%)" }} aria-hidden="true" />
+                    <span className="enk-chip enk-chip--on-dark absolute left-4 top-4">Field Operations</span>
+                  </div>
+                  <div className="flex flex-col p-5" style={{ backgroundColor: "var(--enk-navy)" }}>
+                    <h4 className="text-[15px] font-semibold text-[var(--enk-on-dark)]">Field Leadership</h4>
+                    <p className="mt-1 text-[13px] leading-6 text-[var(--enk-on-dark-muted)]">People, process, and technical control on site.</p>
                   </div>
                 </div>
 
-                <div className="group relative min-h-[160px] overflow-hidden rounded-xl border border-border/70" style={{ backgroundColor: "var(--enk-navy)" }}>
-                  <EnhancedImage
-                    src={aboutImages.introSideRiver}
-                    alt="River-crossing installation works on a coastal project corridor"
-                    tone="cinematic"
-                    hoverZoom
-                    wrapperClassName="absolute inset-0"
-                    className="absolute inset-0 h-full w-full object-cover"
-                    style={{ objectPosition: "center 52%" }}
-                  />
-                  <div className="absolute inset-0" style={{ background: "linear-gradient(to top, oklch(0.13 0.03 255 / 0.9), oklch(0.13 0.03 255 / 0.2), transparent)" }} />
-                  <div className="absolute inset-x-0 bottom-0 p-5">
-                    <div className="enk-kicker enk-kicker--on-dark mb-1">
-                      River & Swamp Delivery
-                    </div>
-                    <p className="mt-1 text-[13px] leading-6 text-white/75">
-                      Specialist execution across crossings and sensitive corridors.
-                    </p>
+                <div className="enk-card group flex flex-col overflow-hidden">
+                  <div className="relative aspect-[4/3] overflow-hidden">
+                    <EnhancedImage
+                      src={aboutImages.introSideRiver}
+                      alt="River-crossing installation works on a coastal project corridor"
+                      tone="cinematic"
+                      hoverZoom
+                      wrapperClassName="absolute inset-0"
+                      className="absolute inset-0 h-full w-full object-cover"
+                      style={{ objectPosition: "center 52%" }}
+                    />
+                    <div className="absolute inset-0" style={{ background: "linear-gradient(0deg, oklch(0.13 0.03 255 / 0.5), transparent 55%)" }} aria-hidden="true" />
+                    <span className="enk-chip enk-chip--on-dark absolute left-4 top-4">River & Swamp</span>
+                  </div>
+                  <div className="flex flex-col p-5" style={{ backgroundColor: "var(--enk-navy)" }}>
+                    <h4 className="text-[15px] font-semibold text-[var(--enk-on-dark)]">River & Swamp Delivery</h4>
+                    <p className="mt-1 text-[13px] leading-6 text-[var(--enk-on-dark-muted)]">Specialist execution across crossings and sensitive corridors.</p>
                   </div>
                 </div>
               </div>
