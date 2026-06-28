@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, LucideIcon } from "lucide-react";
+import { ArrowRight, type LucideIcon } from "lucide-react";
 
 interface CapabilityCardProps {
   title: string;
@@ -17,7 +17,6 @@ export function CapabilityCard({
   title,
   description,
   href,
-  icon: Icon,
   image,
   metric,
   ctaLabel = "View Details",
@@ -44,15 +43,6 @@ export function CapabilityCard({
           {metric && (
             <span className="enk-chip enk-chip--on-dark absolute left-4 top-4">
               {metric}
-            </span>
-          )}
-          {Icon && (
-            <span
-              className="absolute bottom-4 right-4 inline-flex h-10 w-10 items-center justify-center rounded-md text-white"
-              style={{ backgroundColor: "var(--enk-navy)" }}
-              aria-hidden="true"
-            >
-              <Icon className="h-5 w-5" />
             </span>
           )}
         </div>

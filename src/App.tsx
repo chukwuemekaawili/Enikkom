@@ -5,6 +5,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
+import { MotionConfig } from "framer-motion";
 import { PublicErrorBoundary } from "@/components/layout/PublicErrorBoundary";
 
 // Lazy loaded public pages
@@ -46,6 +47,10 @@ const FallbackLoader = () => (
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <HelmetProvider>
+      {/* Calms blanket scroll animations site-wide: disables transform/slide
+          reveals (the AI-generated "everything flies up" tell), leaving only a
+          restrained opacity fade — consistent with the static homepage. */}
+      <MotionConfig reducedMotion="always">
       <TooltipProvider>
         <Toaster />
         <Sonner />
@@ -88,6 +93,7 @@ const App = () => (
             </Suspense>
           </BrowserRouter>
       </TooltipProvider>
+      </MotionConfig>
     </HelmetProvider>
   </QueryClientProvider>
 );

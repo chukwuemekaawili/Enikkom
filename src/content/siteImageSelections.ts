@@ -116,7 +116,7 @@ export const siteImageSelections = {
     missionBlock: selectedGeneralImage("about-safety-briefing-enhanced.png"),
   },
   services: {
-    hero: selectedGeneralImage("pl-02.jpg"),
+    hero: selectedGeneralImage("pl-04.jpg"),
     hdd: selectedRecentImage("im-040.png"),
     pipelines: currentProjectImage("cap_pipeline.jpg"),
     dredging: currentProjectImage("service-dredging-vessel.jpg"),
