@@ -7,7 +7,7 @@
  * pipelines. Figures here mirror those sourced values, nothing is invented.
  * Anything still unverified ships as a [[PLACEHOLDER: …]] token.
  */
-import { siteImageSelections } from "./siteImageSelections";
+import { siteImageSelections, selectedRecentImage } from "./siteImageSelections";
 import { getProjectImage } from "./projectImageSelections";
 
 export const PH = (label: string) => `[[PLACEHOLDER: ${label}]]`;
@@ -336,6 +336,49 @@ export const faqs: Faq[] = [
   {
     q: "How do we submit drawings or an RFP?",
     a: `Email your drawings, alignment sheets or RFP to ${contact.email} and our technical team will respond. A full request route is below.`,
+  },
+];
+
+/**
+ * Recent operations, a "live now" signal drawn from on-site photography of
+ * current works (2026). Captions describe the visible activity only, with no
+ * unverified location or client claims.
+ */
+export interface RecentOp {
+  image: string;
+  category: string;
+  caption: string;
+}
+export const recentOps: RecentOp[] = [
+  {
+    image: selectedRecentImage("op-02.jpg"),
+    category: "HDD",
+    caption: "Directional drilling rig on station for a live trenchless crossing.",
+  },
+  {
+    image: selectedRecentImage("op-01.jpg"),
+    category: "HDD",
+    caption: "HDD spread mobilised to a new project front.",
+  },
+  {
+    image: selectedRecentImage("op-04.jpg"),
+    category: "Pipelines",
+    caption: "Pipe-laying along a built-up road corridor.",
+  },
+  {
+    image: selectedRecentImage("op-05.jpg"),
+    category: "Pipelines",
+    caption: "Crew stringing and aligning line pipe on a live corridor.",
+  },
+  {
+    image: selectedRecentImage("op-07.jpg"),
+    category: "Trenchless",
+    caption: "Entry-side works supporting a crossing under live infrastructure.",
+  },
+  {
+    image: selectedRecentImage("op-08.jpg"),
+    category: "Pipelines",
+    caption: "Excavation and pipe installation in a constrained urban setting.",
   },
 ];
 

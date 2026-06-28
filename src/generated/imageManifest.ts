@@ -287,383 +287,494 @@ import asset_284 from "../assets/images/_responsive/selected/equipment/eq-024--w
 import asset_285 from "../assets/images/selected/equipment/eq-025.jpg";
 import asset_286 from "../assets/images/_responsive/selected/equipment/eq-025--w480.webp";
 import asset_287 from "../assets/images/_responsive/selected/equipment/eq-025--w716.webp";
-import asset_288 from "../assets/images/selected/general/about-aerial-site-enhanced.png";
-import asset_289 from "../assets/images/_responsive/selected/general/about-aerial-site-enhanced--w480.webp";
-import asset_290 from "../assets/images/_responsive/selected/general/about-aerial-site-enhanced--w960.webp";
-import asset_291 from "../assets/images/_responsive/selected/general/about-aerial-site-enhanced--w1600.webp";
-import asset_292 from "../assets/images/selected/general/about-field-team-enhanced.png";
-import asset_293 from "../assets/images/_responsive/selected/general/about-field-team-enhanced--w480.webp";
-import asset_294 from "../assets/images/_responsive/selected/general/about-field-team-enhanced--w960.webp";
-import asset_295 from "../assets/images/_responsive/selected/general/about-field-team-enhanced--w1086.webp";
-import asset_296 from "../assets/images/selected/general/about-pipe-yard-enhanced.png";
-import asset_297 from "../assets/images/_responsive/selected/general/about-pipe-yard-enhanced--w480.webp";
-import asset_298 from "../assets/images/_responsive/selected/general/about-pipe-yard-enhanced--w960.webp";
-import asset_299 from "../assets/images/_responsive/selected/general/about-pipe-yard-enhanced--w1448.webp";
-import asset_300 from "../assets/images/selected/general/about-safety-briefing-enhanced.png";
-import asset_301 from "../assets/images/_responsive/selected/general/about-safety-briefing-enhanced--w480.webp";
-import asset_302 from "../assets/images/_responsive/selected/general/about-safety-briefing-enhanced--w960.webp";
-import asset_303 from "../assets/images/_responsive/selected/general/about-safety-briefing-enhanced--w1449.webp";
-import asset_304 from "../assets/images/selected/general/about-site-equipment-enhanced.png";
-import asset_305 from "../assets/images/_responsive/selected/general/about-site-equipment-enhanced--w480.webp";
-import asset_306 from "../assets/images/_responsive/selected/general/about-site-equipment-enhanced--w960.webp";
-import asset_307 from "../assets/images/_responsive/selected/general/about-site-equipment-enhanced--w1600.webp";
-import asset_308 from "../assets/images/selected/general/rg-025.jpg";
-import asset_309 from "../assets/images/_responsive/selected/general/rg-025--w480.webp";
-import asset_310 from "../assets/images/_responsive/selected/general/rg-025--w960.webp";
-import asset_311 from "../assets/images/_responsive/selected/general/rg-025--w1280.webp";
-import asset_312 from "../assets/images/selected/general/rg-027.jpg";
-import asset_313 from "../assets/images/_responsive/selected/general/rg-027--w480.webp";
-import asset_314 from "../assets/images/_responsive/selected/general/rg-027--w960.webp";
-import asset_315 from "../assets/images/_responsive/selected/general/rg-027--w1080.webp";
-import asset_316 from "../assets/images/selected/general/rg-031.jpg";
-import asset_317 from "../assets/images/_responsive/selected/general/rg-031--w480.webp";
-import asset_318 from "../assets/images/_responsive/selected/general/rg-031--w960.webp";
-import asset_319 from "../assets/images/_responsive/selected/general/rg-031--w1080.webp";
-import asset_320 from "../assets/images/selected/general/rg-033.jpg";
-import asset_321 from "../assets/images/_responsive/selected/general/rg-033--w480.webp";
-import asset_322 from "../assets/images/_responsive/selected/general/rg-033--w960.webp";
-import asset_323 from "../assets/images/_responsive/selected/general/rg-033--w1080.webp";
-import asset_324 from "../assets/images/selected/general/rg-035.jpg";
-import asset_325 from "../assets/images/_responsive/selected/general/rg-035--w480.webp";
-import asset_326 from "../assets/images/_responsive/selected/general/rg-035--w960.webp";
-import asset_327 from "../assets/images/_responsive/selected/general/rg-035--w1080.webp";
-import asset_328 from "../assets/images/selected/general/rg-037.jpg";
-import asset_329 from "../assets/images/_responsive/selected/general/rg-037--w480.webp";
-import asset_330 from "../assets/images/_responsive/selected/general/rg-037--w810.webp";
-import asset_331 from "../assets/images/selected/general/rg-038.jpg";
-import asset_332 from "../assets/images/_responsive/selected/general/rg-038--w480.webp";
-import asset_333 from "../assets/images/_responsive/selected/general/rg-038--w960.webp";
-import asset_334 from "../assets/images/selected/general/rg-039.jpg";
-import asset_335 from "../assets/images/_responsive/selected/general/rg-039--w480.webp";
-import asset_336 from "../assets/images/_responsive/selected/general/rg-039--w960.webp";
-import asset_337 from "../assets/images/_responsive/selected/general/rg-039--w1080.webp";
-import asset_338 from "../assets/images/selected/general/rg-045.jpg";
-import asset_339 from "../assets/images/_responsive/selected/general/rg-045--w480.webp";
-import asset_340 from "../assets/images/_responsive/selected/general/rg-045--w960.webp";
-import asset_341 from "../assets/images/_responsive/selected/general/rg-045--w1080.webp";
-import asset_342 from "../assets/images/selected/general/rg-046.jpg";
-import asset_343 from "../assets/images/_responsive/selected/general/rg-046--w480.webp";
-import asset_344 from "../assets/images/_responsive/selected/general/rg-046--w960.webp";
-import asset_345 from "../assets/images/selected/general/rg-049.jpg";
-import asset_346 from "../assets/images/_responsive/selected/general/rg-049--w480.webp";
-import asset_347 from "../assets/images/_responsive/selected/general/rg-049--w960.webp";
-import asset_348 from "../assets/images/_responsive/selected/general/rg-049--w1040.webp";
-import asset_349 from "../assets/images/selected/general/rg-052.jpg";
-import asset_350 from "../assets/images/_responsive/selected/general/rg-052--w480.webp";
-import asset_351 from "../assets/images/_responsive/selected/general/rg-052--w960.webp";
-import asset_352 from "../assets/images/_responsive/selected/general/rg-052--w1280.webp";
-import asset_353 from "../assets/images/selected/general/rg-054.jpg";
-import asset_354 from "../assets/images/_responsive/selected/general/rg-054--w480.webp";
-import asset_355 from "../assets/images/_responsive/selected/general/rg-054--w960.webp";
-import asset_356 from "../assets/images/_responsive/selected/general/rg-054--w1600.webp";
-import asset_357 from "../assets/images/selected/general/rg-055.jpg";
-import asset_358 from "../assets/images/_responsive/selected/general/rg-055--w480.webp";
-import asset_359 from "../assets/images/_responsive/selected/general/rg-055--w960.webp";
-import asset_360 from "../assets/images/_responsive/selected/general/rg-055--w1080.webp";
-import asset_361 from "../assets/images/selected/general/rg-061.jpg";
-import asset_362 from "../assets/images/_responsive/selected/general/rg-061--w480.webp";
-import asset_363 from "../assets/images/_responsive/selected/general/rg-061--w960.webp";
-import asset_364 from "../assets/images/_responsive/selected/general/rg-061--w1080.webp";
-import asset_365 from "../assets/images/selected/general/rg-063.jpg";
-import asset_366 from "../assets/images/_responsive/selected/general/rg-063--w480.webp";
-import asset_367 from "../assets/images/_responsive/selected/general/rg-063--w960.webp";
-import asset_368 from "../assets/images/_responsive/selected/general/rg-063--w1280.webp";
-import asset_369 from "../assets/images/selected/general/rg-066.jpg";
-import asset_370 from "../assets/images/_responsive/selected/general/rg-066--w480.webp";
-import asset_371 from "../assets/images/_responsive/selected/general/rg-066--w960.webp";
-import asset_372 from "../assets/images/_responsive/selected/general/rg-066--w1080.webp";
-import asset_373 from "../assets/images/selected/general/rg-067.jpg";
-import asset_374 from "../assets/images/_responsive/selected/general/rg-067--w480.webp";
-import asset_375 from "../assets/images/_responsive/selected/general/rg-067--w960.webp";
-import asset_376 from "../assets/images/_responsive/selected/general/rg-067--w1086.webp";
-import asset_377 from "../assets/images/selected/general/rg-071.jpg";
-import asset_378 from "../assets/images/_responsive/selected/general/rg-071--w480.webp";
-import asset_379 from "../assets/images/_responsive/selected/general/rg-071--w810.webp";
-import asset_380 from "../assets/images/selected/general/rg-072.jpg";
-import asset_381 from "../assets/images/_responsive/selected/general/rg-072--w480.webp";
-import asset_382 from "../assets/images/_responsive/selected/general/rg-072--w960.webp";
-import asset_383 from "../assets/images/_responsive/selected/general/rg-072--w1280.webp";
-import asset_384 from "../assets/images/selected/general/rg-074.jpg";
-import asset_385 from "../assets/images/_responsive/selected/general/rg-074--w480.webp";
-import asset_386 from "../assets/images/_responsive/selected/general/rg-074--w960.webp";
-import asset_387 from "../assets/images/_responsive/selected/general/rg-074--w1080.webp";
-import asset_388 from "../assets/images/selected/general/rg-079.jpg";
-import asset_389 from "../assets/images/_responsive/selected/general/rg-079--w480.webp";
-import asset_390 from "../assets/images/_responsive/selected/general/rg-079--w960.webp";
-import asset_391 from "../assets/images/selected/general/rg-086.jpg";
-import asset_392 from "../assets/images/_responsive/selected/general/rg-086--w480.webp";
-import asset_393 from "../assets/images/_responsive/selected/general/rg-086--w960.webp";
-import asset_394 from "../assets/images/_responsive/selected/general/rg-086--w1600.webp";
-import asset_395 from "../assets/images/selected/general/rg-087.jpg";
-import asset_396 from "../assets/images/_responsive/selected/general/rg-087--w480.webp";
-import asset_397 from "../assets/images/_responsive/selected/general/rg-087--w812.webp";
-import asset_398 from "../assets/images/selected/general/rg-093.jpg";
-import asset_399 from "../assets/images/_responsive/selected/general/rg-093--w480.webp";
-import asset_400 from "../assets/images/_responsive/selected/general/rg-093--w960.webp";
-import asset_401 from "../assets/images/_responsive/selected/general/rg-093--w1280.webp";
-import asset_402 from "../assets/images/selected/general/rg-094.jpg";
-import asset_403 from "../assets/images/_responsive/selected/general/rg-094--w480.webp";
-import asset_404 from "../assets/images/_responsive/selected/general/rg-094--w960.webp";
-import asset_405 from "../assets/images/_responsive/selected/general/rg-094--w1600.webp";
-import asset_406 from "../assets/images/selected/general/rg-095.jpg";
-import asset_407 from "../assets/images/_responsive/selected/general/rg-095--w480.webp";
-import asset_408 from "../assets/images/_responsive/selected/general/rg-095--w960.webp";
-import asset_409 from "../assets/images/_responsive/selected/general/rg-095--w1600.webp";
-import asset_410 from "../assets/images/selected/general/rg-098.jpg";
-import asset_411 from "../assets/images/_responsive/selected/general/rg-098--w480.webp";
-import asset_412 from "../assets/images/_responsive/selected/general/rg-098--w960.webp";
-import asset_413 from "../assets/images/_responsive/selected/general/rg-098--w1080.webp";
-import asset_414 from "../assets/images/selected/general/rg-100.jpg";
-import asset_415 from "../assets/images/_responsive/selected/general/rg-100--w480.webp";
-import asset_416 from "../assets/images/_responsive/selected/general/rg-100--w960.webp";
-import asset_417 from "../assets/images/selected/general/rg-101.jpg";
-import asset_418 from "../assets/images/_responsive/selected/general/rg-101--w480.webp";
-import asset_419 from "../assets/images/_responsive/selected/general/rg-101--w960.webp";
-import asset_420 from "../assets/images/_responsive/selected/general/rg-101--w1600.webp";
-import asset_421 from "../assets/images/selected/general/rg-103.jpg";
-import asset_422 from "../assets/images/_responsive/selected/general/rg-103--w480.webp";
-import asset_423 from "../assets/images/_responsive/selected/general/rg-103--w960.webp";
-import asset_424 from "../assets/images/_responsive/selected/general/rg-103--w1280.webp";
-import asset_425 from "../assets/images/selected/general/rg-105.jpg";
-import asset_426 from "../assets/images/_responsive/selected/general/rg-105--w480.webp";
-import asset_427 from "../assets/images/_responsive/selected/general/rg-105--w960.webp";
-import asset_428 from "../assets/images/_responsive/selected/general/rg-105--w1280.webp";
-import asset_429 from "../assets/images/selected/general/rg-121.jpeg";
-import asset_430 from "../assets/images/_responsive/selected/general/rg-121--w480.webp";
-import asset_431 from "../assets/images/_responsive/selected/general/rg-121--w960.webp";
-import asset_432 from "../assets/images/_responsive/selected/general/rg-121--w1600.webp";
-import asset_433 from "../assets/images/selected/general/rg-122.jpeg";
-import asset_434 from "../assets/images/_responsive/selected/general/rg-122--w480.webp";
-import asset_435 from "../assets/images/_responsive/selected/general/rg-122--w960.webp";
-import asset_436 from "../assets/images/_responsive/selected/general/rg-122--w1280.webp";
-import asset_437 from "../assets/images/selected/general/rg-125.jpeg";
-import asset_438 from "../assets/images/_responsive/selected/general/rg-125--w480.webp";
-import asset_439 from "../assets/images/_responsive/selected/general/rg-125--w960.webp";
-import asset_440 from "../assets/images/_responsive/selected/general/rg-125--w1536.webp";
-import asset_441 from "../assets/images/selected/general/rg-126.jpeg";
-import asset_442 from "../assets/images/_responsive/selected/general/rg-126--w480.webp";
-import asset_443 from "../assets/images/_responsive/selected/general/rg-126--w960.webp";
-import asset_444 from "../assets/images/_responsive/selected/general/rg-126--w1280.webp";
-import asset_445 from "../assets/images/selected/general/rg-128.jpeg";
-import asset_446 from "../assets/images/_responsive/selected/general/rg-128--w480.webp";
-import asset_447 from "../assets/images/_responsive/selected/general/rg-128--w960.webp";
-import asset_448 from "../assets/images/_responsive/selected/general/rg-128--w1280.webp";
-import asset_449 from "../assets/images/selected/general/rg-129.jpeg";
-import asset_450 from "../assets/images/_responsive/selected/general/rg-129--w480.webp";
-import asset_451 from "../assets/images/_responsive/selected/general/rg-129--w960.webp";
-import asset_452 from "../assets/images/_responsive/selected/general/rg-129--w1280.webp";
-import asset_453 from "../assets/images/selected/general/rg-131.jpeg";
-import asset_454 from "../assets/images/_responsive/selected/general/rg-131--w480.webp";
-import asset_455 from "../assets/images/_responsive/selected/general/rg-131--w960.webp";
-import asset_456 from "../assets/images/selected/general/rg-135.jpeg";
-import asset_457 from "../assets/images/_responsive/selected/general/rg-135--w480.webp";
-import asset_458 from "../assets/images/_responsive/selected/general/rg-135--w960.webp";
-import asset_459 from "../assets/images/selected/general/rg-141.jpeg";
-import asset_460 from "../assets/images/_responsive/selected/general/rg-141--w477.webp";
-import asset_461 from "../assets/images/selected/general/rg-142.jpeg";
-import asset_462 from "../assets/images/_responsive/selected/general/rg-142--w480.webp";
-import asset_463 from "../assets/images/_responsive/selected/general/rg-142--w960.webp";
-import asset_464 from "../assets/images/_responsive/selected/general/rg-142--w1280.webp";
-import asset_465 from "../assets/images/selected/general/rg-143.jpeg";
-import asset_466 from "../assets/images/_responsive/selected/general/rg-143--w480.webp";
-import asset_467 from "../assets/images/_responsive/selected/general/rg-143--w863.webp";
-import asset_468 from "../assets/images/selected/projects/pa-043.jpg";
-import asset_469 from "../assets/images/_responsive/selected/projects/pa-043--w480.webp";
-import asset_470 from "../assets/images/_responsive/selected/projects/pa-043--w554.webp";
-import asset_471 from "../assets/images/selected/projects/pa-046.jpg";
-import asset_472 from "../assets/images/_responsive/selected/projects/pa-046--w480.webp";
-import asset_473 from "../assets/images/_responsive/selected/projects/pa-046--w600.webp";
-import asset_474 from "../assets/images/selected/projects/pa-054.jpg";
-import asset_475 from "../assets/images/_responsive/selected/projects/pa-054--w480.webp";
-import asset_476 from "../assets/images/_responsive/selected/projects/pa-054--w544.webp";
-import asset_477 from "../assets/images/selected/projects/pa-055.jpg";
-import asset_478 from "../assets/images/_responsive/selected/projects/pa-055--w480.webp";
-import asset_479 from "../assets/images/_responsive/selected/projects/pa-055--w554.webp";
-import asset_480 from "../assets/images/selected/projects/pa-063.jpg";
-import asset_481 from "../assets/images/_responsive/selected/projects/pa-063--w480.webp";
-import asset_482 from "../assets/images/_responsive/selected/projects/pa-063--w555.webp";
-import asset_483 from "../assets/images/selected/projects/pa-067.jpg";
-import asset_484 from "../assets/images/_responsive/selected/projects/pa-067--w480.webp";
-import asset_485 from "../assets/images/_responsive/selected/projects/pa-067--w565.webp";
-import asset_486 from "../assets/images/selected/projects/pa-074.jpg";
-import asset_487 from "../assets/images/_responsive/selected/projects/pa-074--w480.webp";
-import asset_488 from "../assets/images/_responsive/selected/projects/pa-074--w543.webp";
-import asset_489 from "../assets/images/selected/projects/pa-080.jpg";
-import asset_490 from "../assets/images/_responsive/selected/projects/pa-080--w480.webp";
-import asset_491 from "../assets/images/_responsive/selected/projects/pa-080--w544.webp";
-import asset_492 from "../assets/images/selected/projects/pa-103.jpg";
-import asset_493 from "../assets/images/_responsive/selected/projects/pa-103--w480.webp";
-import asset_494 from "../assets/images/_responsive/selected/projects/pa-103--w565.webp";
-import asset_495 from "../assets/images/selected/projects/pa-105.jpg";
-import asset_496 from "../assets/images/_responsive/selected/projects/pa-105--w480.webp";
-import asset_497 from "../assets/images/_responsive/selected/projects/pa-105--w960.webp";
-import asset_498 from "../assets/images/_responsive/selected/projects/pa-105--w1444.webp";
-import asset_499 from "../assets/images/selected/projects/pa-110.jpg";
-import asset_500 from "../assets/images/_responsive/selected/projects/pa-110--w480.webp";
-import asset_501 from "../assets/images/_responsive/selected/projects/pa-110--w544.webp";
-import asset_502 from "../assets/images/selected/projects/pa-121.jpg";
-import asset_503 from "../assets/images/_responsive/selected/projects/pa-121--w480.webp";
-import asset_504 from "../assets/images/_responsive/selected/projects/pa-121--w554.webp";
-import asset_505 from "../assets/images/selected/projects/pa-126.jpg";
-import asset_506 from "../assets/images/_responsive/selected/projects/pa-126--w480.webp";
-import asset_507 from "../assets/images/_responsive/selected/projects/pa-126--w960.webp";
-import asset_508 from "../assets/images/_responsive/selected/projects/pa-126--w1399.webp";
-import asset_509 from "../assets/images/selected/projects/pa-129.jpg";
-import asset_510 from "../assets/images/_responsive/selected/projects/pa-129--w480.webp";
-import asset_511 from "../assets/images/_responsive/selected/projects/pa-129--w554.webp";
-import asset_512 from "../assets/images/selected/projects/pa-131.jpg";
-import asset_513 from "../assets/images/_responsive/selected/projects/pa-131--w480.webp";
-import asset_514 from "../assets/images/_responsive/selected/projects/pa-131--w543.webp";
-import asset_515 from "../assets/images/selected/projects/pa-133.jpg";
-import asset_516 from "../assets/images/_responsive/selected/projects/pa-133--w480.webp";
-import asset_517 from "../assets/images/_responsive/selected/projects/pa-133--w564.webp";
-import asset_518 from "../assets/images/selected/projects/pp-009.jpg";
-import asset_519 from "../assets/images/_responsive/selected/projects/pp-009--w480.webp";
-import asset_520 from "../assets/images/_responsive/selected/projects/pp-009--w730.webp";
-import asset_521 from "../assets/images/selected/projects/pp-010.jpg";
-import asset_522 from "../assets/images/_responsive/selected/projects/pp-010--w480.webp";
-import asset_523 from "../assets/images/_responsive/selected/projects/pp-010--w714.webp";
-import asset_524 from "../assets/images/selected/projects/pp-011.jpg";
-import asset_525 from "../assets/images/_responsive/selected/projects/pp-011--w480.webp";
-import asset_526 from "../assets/images/_responsive/selected/projects/pp-011--w694.webp";
-import asset_527 from "../assets/images/selected/projects/pp-017.jpg";
-import asset_528 from "../assets/images/_responsive/selected/projects/pp-017--w480.webp";
-import asset_529 from "../assets/images/_responsive/selected/projects/pp-017--w960.webp";
-import asset_530 from "../assets/images/_responsive/selected/projects/pp-017--w1496.webp";
-import asset_531 from "../assets/images/selected/projects/pp-021.jpg";
-import asset_532 from "../assets/images/_responsive/selected/projects/pp-021--w480.webp";
-import asset_533 from "../assets/images/_responsive/selected/projects/pp-021--w694.webp";
-import asset_534 from "../assets/images/selected/projects/pp-024.jpg";
-import asset_535 from "../assets/images/_responsive/selected/projects/pp-024--w480.webp";
-import asset_536 from "../assets/images/_responsive/selected/projects/pp-024--w694.webp";
-import asset_537 from "../assets/images/selected/projects/pp-034.jpg";
-import asset_538 from "../assets/images/_responsive/selected/projects/pp-034--w480.webp";
-import asset_539 from "../assets/images/_responsive/selected/projects/pp-034--w656.webp";
-import asset_540 from "../assets/images/selected/projects/pp-038.jpg";
-import asset_541 from "../assets/images/_responsive/selected/projects/pp-038--w480.webp";
-import asset_542 from "../assets/images/_responsive/selected/projects/pp-038--w656.webp";
-import asset_543 from "../assets/images/selected/projects/pp-040.jpg";
-import asset_544 from "../assets/images/_responsive/selected/projects/pp-040--w480.webp";
-import asset_545 from "../assets/images/_responsive/selected/projects/pp-040--w694.webp";
-import asset_546 from "../assets/images/selected/projects/pp-043.jpg";
-import asset_547 from "../assets/images/_responsive/selected/projects/pp-043--w480.webp";
-import asset_548 from "../assets/images/_responsive/selected/projects/pp-043--w960.webp";
-import asset_549 from "../assets/images/_responsive/selected/projects/pp-043--w1586.webp";
-import asset_550 from "../assets/images/selected/projects/pp-045.jpg";
-import asset_551 from "../assets/images/_responsive/selected/projects/pp-045--w480.webp";
-import asset_552 from "../assets/images/_responsive/selected/projects/pp-045--w723.webp";
-import asset_553 from "../assets/images/selected/projects/pp-048.jpg";
-import asset_554 from "../assets/images/_responsive/selected/projects/pp-048--w480.webp";
-import asset_555 from "../assets/images/_responsive/selected/projects/pp-048--w719.webp";
-import asset_556 from "../assets/images/selected/projects/pp-051.jpg";
-import asset_557 from "../assets/images/_responsive/selected/projects/pp-051--w480.webp";
-import asset_558 from "../assets/images/_responsive/selected/projects/pp-051--w710.webp";
-import asset_559 from "../assets/images/selected/projects/pp-053.jpg";
-import asset_560 from "../assets/images/_responsive/selected/projects/pp-053--w480.webp";
-import asset_561 from "../assets/images/_responsive/selected/projects/pp-053--w656.webp";
-import asset_562 from "../assets/images/selected/projects/pp-055.jpg";
-import asset_563 from "../assets/images/_responsive/selected/projects/pp-055--w480.webp";
-import asset_564 from "../assets/images/_responsive/selected/projects/pp-055--w731.webp";
-import asset_565 from "../assets/images/selected/projects/pp-056.jpg";
-import asset_566 from "../assets/images/_responsive/selected/projects/pp-056--w480.webp";
-import asset_567 from "../assets/images/_responsive/selected/projects/pp-056--w960.webp";
-import asset_568 from "../assets/images/_responsive/selected/projects/pp-056--w1514.webp";
-import asset_569 from "../assets/images/selected/projects/pp-057.jpg";
-import asset_570 from "../assets/images/_responsive/selected/projects/pp-057--w480.webp";
-import asset_571 from "../assets/images/_responsive/selected/projects/pp-057--w728.webp";
-import asset_572 from "../assets/images/selected/projects/pp-059.jpg";
-import asset_573 from "../assets/images/_responsive/selected/projects/pp-059--w480.webp";
-import asset_574 from "../assets/images/_responsive/selected/projects/pp-059--w656.webp";
-import asset_575 from "../assets/images/selected/projects/pp-060.jpg";
-import asset_576 from "../assets/images/_responsive/selected/projects/pp-060--w480.webp";
-import asset_577 from "../assets/images/_responsive/selected/projects/pp-060--w657.webp";
-import asset_578 from "../assets/images/selected/projects/pp-061.jpg";
-import asset_579 from "../assets/images/_responsive/selected/projects/pp-061--w480.webp";
-import asset_580 from "../assets/images/_responsive/selected/projects/pp-061--w734.webp";
-import asset_581 from "../assets/images/selected/projects/pp-062.jpg";
-import asset_582 from "../assets/images/_responsive/selected/projects/pp-062--w480.webp";
-import asset_583 from "../assets/images/_responsive/selected/projects/pp-062--w683.webp";
-import asset_584 from "../assets/images/selected/projects/pp-063.jpg";
-import asset_585 from "../assets/images/_responsive/selected/projects/pp-063--w480.webp";
-import asset_586 from "../assets/images/_responsive/selected/projects/pp-063--w656.webp";
-import asset_587 from "../assets/images/selected/projects/pp-065.jpg";
-import asset_588 from "../assets/images/_responsive/selected/projects/pp-065--w480.webp";
-import asset_589 from "../assets/images/_responsive/selected/projects/pp-065--w657.webp";
-import asset_590 from "../assets/images/selected/projects/pp-069.jpg";
-import asset_591 from "../assets/images/_responsive/selected/projects/pp-069--w480.webp";
-import asset_592 from "../assets/images/_responsive/selected/projects/pp-069--w730.webp";
-import asset_593 from "../assets/images/selected/projects/pp-071.jpg";
-import asset_594 from "../assets/images/_responsive/selected/projects/pp-071--w480.webp";
-import asset_595 from "../assets/images/_responsive/selected/projects/pp-071--w685.webp";
-import asset_596 from "../assets/images/selected/projects/pp-072.jpg";
-import asset_597 from "../assets/images/_responsive/selected/projects/pp-072--w480.webp";
-import asset_598 from "../assets/images/_responsive/selected/projects/pp-072--w727.webp";
-import asset_599 from "../assets/images/selected/projects/pp-075.jpg";
-import asset_600 from "../assets/images/_responsive/selected/projects/pp-075--w480.webp";
-import asset_601 from "../assets/images/_responsive/selected/projects/pp-075--w667.webp";
-import asset_602 from "../assets/images/selected/recent/im-030.jpeg";
-import asset_603 from "../assets/images/_responsive/selected/recent/im-030--w480.webp";
-import asset_604 from "../assets/images/_responsive/selected/recent/im-030--w960.webp";
-import asset_605 from "../assets/images/selected/recent/im-033.jpeg";
-import asset_606 from "../assets/images/_responsive/selected/recent/im-033--w480.webp";
-import asset_607 from "../assets/images/_responsive/selected/recent/im-033--w960.webp";
-import asset_608 from "../assets/images/selected/recent/im-036.jpeg";
-import asset_609 from "../assets/images/_responsive/selected/recent/im-036--w480.webp";
-import asset_610 from "../assets/images/_responsive/selected/recent/im-036--w960.webp";
-import asset_611 from "../assets/images/_responsive/selected/recent/im-036--w1280.webp";
-import asset_612 from "../assets/images/selected/recent/im-040.png";
-import asset_613 from "../assets/images/_responsive/selected/recent/im-040--w440.webp";
-import asset_614 from "../assets/images/selected/recent/im-047.jpeg";
-import asset_615 from "../assets/images/_responsive/selected/recent/im-047--w480.webp";
-import asset_616 from "../assets/images/_responsive/selected/recent/im-047--w762.webp";
-import asset_617 from "../assets/images/team/00-site-logo-enikkom-construction-limited.png";
-import asset_618 from "../assets/images/_responsive/team/00-site-logo-enikkom-construction-limited--w480.webp";
-import asset_619 from "../assets/images/_responsive/team/00-site-logo-enikkom-construction-limited--w960.webp";
-import asset_620 from "../assets/images/_responsive/team/00-site-logo-enikkom-construction-limited--w1536.webp";
-import asset_621 from "../assets/images/team/01-partner-logo-hddtec-limited.png";
-import asset_622 from "../assets/images/_responsive/team/01-partner-logo-hddtec-limited--w480.webp";
-import asset_623 from "../assets/images/_responsive/team/01-partner-logo-hddtec-limited--w960.webp";
-import asset_624 from "../assets/images/_responsive/team/01-partner-logo-hddtec-limited--w1254.webp";
-import asset_625 from "../assets/images/team/02-hero-management-team-hero-background.png";
-import asset_626 from "../assets/images/_responsive/team/02-hero-management-team-hero-background--w480.webp";
-import asset_627 from "../assets/images/_responsive/team/02-hero-management-team-hero-background--w960.webp";
-import asset_628 from "../assets/images/_responsive/team/02-hero-management-team-hero-background--w1087.webp";
-import asset_629 from "../assets/images/team/03-team-photo-engr-edward-amene.png";
-import asset_630 from "../assets/images/_responsive/team/03-team-photo-engr-edward-amene--w480.webp";
-import asset_631 from "../assets/images/_responsive/team/03-team-photo-engr-edward-amene--w960.webp";
-import asset_632 from "../assets/images/_responsive/team/03-team-photo-engr-edward-amene--w1254.webp";
-import asset_633 from "../assets/images/team/04-team-photo-engr-saleem-ahmad-khan.png";
-import asset_634 from "../assets/images/_responsive/team/04-team-photo-engr-saleem-ahmad-khan--w480.webp";
-import asset_635 from "../assets/images/_responsive/team/04-team-photo-engr-saleem-ahmad-khan--w960.webp";
-import asset_636 from "../assets/images/_responsive/team/04-team-photo-engr-saleem-ahmad-khan--w1254.webp";
-import asset_637 from "../assets/images/team/05-team-photo-mr-francis-anatogu.png";
-import asset_638 from "../assets/images/_responsive/team/05-team-photo-mr-francis-anatogu--w480.webp";
-import asset_639 from "../assets/images/_responsive/team/05-team-photo-mr-francis-anatogu--w960.webp";
-import asset_640 from "../assets/images/_responsive/team/05-team-photo-mr-francis-anatogu--w1254.webp";
-import asset_641 from "../assets/images/team/06-team-photo-adekunle-adewole-phd.png";
-import asset_642 from "../assets/images/_responsive/team/06-team-photo-adekunle-adewole-phd--w480.webp";
-import asset_643 from "../assets/images/_responsive/team/06-team-photo-adekunle-adewole-phd--w960.webp";
-import asset_644 from "../assets/images/_responsive/team/06-team-photo-adekunle-adewole-phd--w1254.webp";
-import asset_645 from "../assets/images/team/07-team-photo-mr-chibuike-nwachukwu.png";
-import asset_646 from "../assets/images/_responsive/team/07-team-photo-mr-chibuike-nwachukwu--w480.webp";
-import asset_647 from "../assets/images/_responsive/team/07-team-photo-mr-chibuike-nwachukwu--w960.webp";
-import asset_648 from "../assets/images/_responsive/team/07-team-photo-mr-chibuike-nwachukwu--w1254.webp";
-import asset_649 from "../assets/images/team/08-team-photo-teddy-allen.png";
-import asset_650 from "../assets/images/_responsive/team/08-team-photo-teddy-allen--w480.webp";
-import asset_651 from "../assets/images/_responsive/team/08-team-photo-teddy-allen--w960.webp";
-import asset_652 from "../assets/images/_responsive/team/08-team-photo-teddy-allen--w1254.webp";
-import asset_653 from "../assets/images/team/09-team-photo-idigbor-emeka-fca.png";
-import asset_654 from "../assets/images/_responsive/team/09-team-photo-idigbor-emeka-fca--w480.webp";
-import asset_655 from "../assets/images/_responsive/team/09-team-photo-idigbor-emeka-fca--w960.webp";
-import asset_656 from "../assets/images/_responsive/team/09-team-photo-idigbor-emeka-fca--w1254.webp";
-import asset_657 from "../assets/images/team/10-team-photo-biodun-adefila.png";
-import asset_658 from "../assets/images/_responsive/team/10-team-photo-biodun-adefila--w480.webp";
-import asset_659 from "../assets/images/_responsive/team/10-team-photo-biodun-adefila--w960.webp";
-import asset_660 from "../assets/images/_responsive/team/10-team-photo-biodun-adefila--w1085.webp";
-import asset_661 from "../assets/images/team/11-team-photo-ken-james.png";
-import asset_662 from "../assets/images/_responsive/team/11-team-photo-ken-james--w480.webp";
-import asset_663 from "../assets/images/_responsive/team/11-team-photo-ken-james--w960.webp";
-import asset_664 from "../assets/images/_responsive/team/11-team-photo-ken-james--w1600.webp";
+import asset_288 from "../assets/images/selected/equipment/eq-026.jpg";
+import asset_289 from "../assets/images/_responsive/selected/equipment/eq-026--w480.webp";
+import asset_290 from "../assets/images/_responsive/selected/equipment/eq-026--w960.webp";
+import asset_291 from "../assets/images/_responsive/selected/equipment/eq-026--w1600.webp";
+import asset_292 from "../assets/images/selected/equipment/eq-027.jpg";
+import asset_293 from "../assets/images/_responsive/selected/equipment/eq-027--w480.webp";
+import asset_294 from "../assets/images/_responsive/selected/equipment/eq-027--w960.webp";
+import asset_295 from "../assets/images/_responsive/selected/equipment/eq-027--w1600.webp";
+import asset_296 from "../assets/images/selected/equipment/eq-028.jpg";
+import asset_297 from "../assets/images/_responsive/selected/equipment/eq-028--w480.webp";
+import asset_298 from "../assets/images/_responsive/selected/equipment/eq-028--w960.webp";
+import asset_299 from "../assets/images/_responsive/selected/equipment/eq-028--w1600.webp";
+import asset_300 from "../assets/images/selected/equipment/eq-029.jpg";
+import asset_301 from "../assets/images/_responsive/selected/equipment/eq-029--w480.webp";
+import asset_302 from "../assets/images/_responsive/selected/equipment/eq-029--w960.webp";
+import asset_303 from "../assets/images/_responsive/selected/equipment/eq-029--w1600.webp";
+import asset_304 from "../assets/images/selected/equipment/eq-030.jpg";
+import asset_305 from "../assets/images/_responsive/selected/equipment/eq-030--w480.webp";
+import asset_306 from "../assets/images/_responsive/selected/equipment/eq-030--w960.webp";
+import asset_307 from "../assets/images/_responsive/selected/equipment/eq-030--w1600.webp";
+import asset_308 from "../assets/images/selected/general/about-aerial-site-enhanced.png";
+import asset_309 from "../assets/images/_responsive/selected/general/about-aerial-site-enhanced--w480.webp";
+import asset_310 from "../assets/images/_responsive/selected/general/about-aerial-site-enhanced--w960.webp";
+import asset_311 from "../assets/images/_responsive/selected/general/about-aerial-site-enhanced--w1600.webp";
+import asset_312 from "../assets/images/selected/general/about-field-team-enhanced.png";
+import asset_313 from "../assets/images/_responsive/selected/general/about-field-team-enhanced--w480.webp";
+import asset_314 from "../assets/images/_responsive/selected/general/about-field-team-enhanced--w960.webp";
+import asset_315 from "../assets/images/_responsive/selected/general/about-field-team-enhanced--w1086.webp";
+import asset_316 from "../assets/images/selected/general/about-pipe-yard-enhanced.png";
+import asset_317 from "../assets/images/_responsive/selected/general/about-pipe-yard-enhanced--w480.webp";
+import asset_318 from "../assets/images/_responsive/selected/general/about-pipe-yard-enhanced--w960.webp";
+import asset_319 from "../assets/images/_responsive/selected/general/about-pipe-yard-enhanced--w1448.webp";
+import asset_320 from "../assets/images/selected/general/about-safety-briefing-enhanced.png";
+import asset_321 from "../assets/images/_responsive/selected/general/about-safety-briefing-enhanced--w480.webp";
+import asset_322 from "../assets/images/_responsive/selected/general/about-safety-briefing-enhanced--w960.webp";
+import asset_323 from "../assets/images/_responsive/selected/general/about-safety-briefing-enhanced--w1449.webp";
+import asset_324 from "../assets/images/selected/general/about-site-equipment-enhanced.png";
+import asset_325 from "../assets/images/_responsive/selected/general/about-site-equipment-enhanced--w480.webp";
+import asset_326 from "../assets/images/_responsive/selected/general/about-site-equipment-enhanced--w960.webp";
+import asset_327 from "../assets/images/_responsive/selected/general/about-site-equipment-enhanced--w1600.webp";
+import asset_328 from "../assets/images/selected/general/pl-01.jpg";
+import asset_329 from "../assets/images/_responsive/selected/general/pl-01--w480.webp";
+import asset_330 from "../assets/images/_responsive/selected/general/pl-01--w960.webp";
+import asset_331 from "../assets/images/_responsive/selected/general/pl-01--w1600.webp";
+import asset_332 from "../assets/images/selected/general/pl-02.jpg";
+import asset_333 from "../assets/images/_responsive/selected/general/pl-02--w480.webp";
+import asset_334 from "../assets/images/_responsive/selected/general/pl-02--w960.webp";
+import asset_335 from "../assets/images/_responsive/selected/general/pl-02--w1600.webp";
+import asset_336 from "../assets/images/selected/general/pl-03.jpg";
+import asset_337 from "../assets/images/_responsive/selected/general/pl-03--w480.webp";
+import asset_338 from "../assets/images/_responsive/selected/general/pl-03--w960.webp";
+import asset_339 from "../assets/images/_responsive/selected/general/pl-03--w1600.webp";
+import asset_340 from "../assets/images/selected/general/pl-04.jpg";
+import asset_341 from "../assets/images/_responsive/selected/general/pl-04--w480.webp";
+import asset_342 from "../assets/images/_responsive/selected/general/pl-04--w960.webp";
+import asset_343 from "../assets/images/_responsive/selected/general/pl-04--w1600.webp";
+import asset_344 from "../assets/images/selected/general/pl-05.jpg";
+import asset_345 from "../assets/images/_responsive/selected/general/pl-05--w480.webp";
+import asset_346 from "../assets/images/_responsive/selected/general/pl-05--w960.webp";
+import asset_347 from "../assets/images/_responsive/selected/general/pl-05--w1600.webp";
+import asset_348 from "../assets/images/selected/general/pl-06.jpg";
+import asset_349 from "../assets/images/_responsive/selected/general/pl-06--w480.webp";
+import asset_350 from "../assets/images/_responsive/selected/general/pl-06--w960.webp";
+import asset_351 from "../assets/images/_responsive/selected/general/pl-06--w1600.webp";
+import asset_352 from "../assets/images/selected/general/pl-07.jpg";
+import asset_353 from "../assets/images/_responsive/selected/general/pl-07--w480.webp";
+import asset_354 from "../assets/images/_responsive/selected/general/pl-07--w960.webp";
+import asset_355 from "../assets/images/_responsive/selected/general/pl-07--w1600.webp";
+import asset_356 from "../assets/images/selected/general/pl-08.jpg";
+import asset_357 from "../assets/images/_responsive/selected/general/pl-08--w480.webp";
+import asset_358 from "../assets/images/_responsive/selected/general/pl-08--w960.webp";
+import asset_359 from "../assets/images/_responsive/selected/general/pl-08--w1600.webp";
+import asset_360 from "../assets/images/selected/general/pl-09.jpg";
+import asset_361 from "../assets/images/_responsive/selected/general/pl-09--w480.webp";
+import asset_362 from "../assets/images/_responsive/selected/general/pl-09--w960.webp";
+import asset_363 from "../assets/images/_responsive/selected/general/pl-09--w1600.webp";
+import asset_364 from "../assets/images/selected/general/pl-10.jpg";
+import asset_365 from "../assets/images/_responsive/selected/general/pl-10--w480.webp";
+import asset_366 from "../assets/images/_responsive/selected/general/pl-10--w960.webp";
+import asset_367 from "../assets/images/_responsive/selected/general/pl-10--w1600.webp";
+import asset_368 from "../assets/images/selected/general/pl-11.jpg";
+import asset_369 from "../assets/images/_responsive/selected/general/pl-11--w480.webp";
+import asset_370 from "../assets/images/_responsive/selected/general/pl-11--w960.webp";
+import asset_371 from "../assets/images/_responsive/selected/general/pl-11--w1600.webp";
+import asset_372 from "../assets/images/selected/general/pl-12.jpg";
+import asset_373 from "../assets/images/_responsive/selected/general/pl-12--w480.webp";
+import asset_374 from "../assets/images/_responsive/selected/general/pl-12--w960.webp";
+import asset_375 from "../assets/images/_responsive/selected/general/pl-12--w1600.webp";
+import asset_376 from "../assets/images/selected/general/pl-13.jpg";
+import asset_377 from "../assets/images/_responsive/selected/general/pl-13--w480.webp";
+import asset_378 from "../assets/images/_responsive/selected/general/pl-13--w960.webp";
+import asset_379 from "../assets/images/_responsive/selected/general/pl-13--w1600.webp";
+import asset_380 from "../assets/images/selected/general/pl-14.jpg";
+import asset_381 from "../assets/images/_responsive/selected/general/pl-14--w480.webp";
+import asset_382 from "../assets/images/_responsive/selected/general/pl-14--w960.webp";
+import asset_383 from "../assets/images/_responsive/selected/general/pl-14--w1600.webp";
+import asset_384 from "../assets/images/selected/general/pl-15.jpg";
+import asset_385 from "../assets/images/_responsive/selected/general/pl-15--w480.webp";
+import asset_386 from "../assets/images/_responsive/selected/general/pl-15--w960.webp";
+import asset_387 from "../assets/images/_responsive/selected/general/pl-15--w1600.webp";
+import asset_388 from "../assets/images/selected/general/pl-16.jpg";
+import asset_389 from "../assets/images/_responsive/selected/general/pl-16--w480.webp";
+import asset_390 from "../assets/images/_responsive/selected/general/pl-16--w960.webp";
+import asset_391 from "../assets/images/_responsive/selected/general/pl-16--w1600.webp";
+import asset_392 from "../assets/images/selected/general/pl-17.jpg";
+import asset_393 from "../assets/images/_responsive/selected/general/pl-17--w480.webp";
+import asset_394 from "../assets/images/_responsive/selected/general/pl-17--w960.webp";
+import asset_395 from "../assets/images/_responsive/selected/general/pl-17--w1600.webp";
+import asset_396 from "../assets/images/selected/general/pl-18.jpg";
+import asset_397 from "../assets/images/_responsive/selected/general/pl-18--w480.webp";
+import asset_398 from "../assets/images/_responsive/selected/general/pl-18--w960.webp";
+import asset_399 from "../assets/images/_responsive/selected/general/pl-18--w1600.webp";
+import asset_400 from "../assets/images/selected/general/pl-19.jpg";
+import asset_401 from "../assets/images/_responsive/selected/general/pl-19--w480.webp";
+import asset_402 from "../assets/images/_responsive/selected/general/pl-19--w960.webp";
+import asset_403 from "../assets/images/_responsive/selected/general/pl-19--w1600.webp";
+import asset_404 from "../assets/images/selected/general/pl-20.jpg";
+import asset_405 from "../assets/images/_responsive/selected/general/pl-20--w480.webp";
+import asset_406 from "../assets/images/_responsive/selected/general/pl-20--w960.webp";
+import asset_407 from "../assets/images/_responsive/selected/general/pl-20--w1600.webp";
+import asset_408 from "../assets/images/selected/general/pl-21.jpg";
+import asset_409 from "../assets/images/_responsive/selected/general/pl-21--w480.webp";
+import asset_410 from "../assets/images/_responsive/selected/general/pl-21--w960.webp";
+import asset_411 from "../assets/images/_responsive/selected/general/pl-21--w1600.webp";
+import asset_412 from "../assets/images/selected/general/pl-22.jpg";
+import asset_413 from "../assets/images/_responsive/selected/general/pl-22--w480.webp";
+import asset_414 from "../assets/images/_responsive/selected/general/pl-22--w960.webp";
+import asset_415 from "../assets/images/_responsive/selected/general/pl-22--w1600.webp";
+import asset_416 from "../assets/images/selected/general/rg-025.jpg";
+import asset_417 from "../assets/images/_responsive/selected/general/rg-025--w480.webp";
+import asset_418 from "../assets/images/_responsive/selected/general/rg-025--w960.webp";
+import asset_419 from "../assets/images/_responsive/selected/general/rg-025--w1280.webp";
+import asset_420 from "../assets/images/selected/general/rg-027.jpg";
+import asset_421 from "../assets/images/_responsive/selected/general/rg-027--w480.webp";
+import asset_422 from "../assets/images/_responsive/selected/general/rg-027--w960.webp";
+import asset_423 from "../assets/images/_responsive/selected/general/rg-027--w1080.webp";
+import asset_424 from "../assets/images/selected/general/rg-031.jpg";
+import asset_425 from "../assets/images/_responsive/selected/general/rg-031--w480.webp";
+import asset_426 from "../assets/images/_responsive/selected/general/rg-031--w960.webp";
+import asset_427 from "../assets/images/_responsive/selected/general/rg-031--w1080.webp";
+import asset_428 from "../assets/images/selected/general/rg-033.jpg";
+import asset_429 from "../assets/images/_responsive/selected/general/rg-033--w480.webp";
+import asset_430 from "../assets/images/_responsive/selected/general/rg-033--w960.webp";
+import asset_431 from "../assets/images/_responsive/selected/general/rg-033--w1080.webp";
+import asset_432 from "../assets/images/selected/general/rg-035.jpg";
+import asset_433 from "../assets/images/_responsive/selected/general/rg-035--w480.webp";
+import asset_434 from "../assets/images/_responsive/selected/general/rg-035--w960.webp";
+import asset_435 from "../assets/images/_responsive/selected/general/rg-035--w1080.webp";
+import asset_436 from "../assets/images/selected/general/rg-037.jpg";
+import asset_437 from "../assets/images/_responsive/selected/general/rg-037--w480.webp";
+import asset_438 from "../assets/images/_responsive/selected/general/rg-037--w810.webp";
+import asset_439 from "../assets/images/selected/general/rg-038.jpg";
+import asset_440 from "../assets/images/_responsive/selected/general/rg-038--w480.webp";
+import asset_441 from "../assets/images/_responsive/selected/general/rg-038--w960.webp";
+import asset_442 from "../assets/images/selected/general/rg-039.jpg";
+import asset_443 from "../assets/images/_responsive/selected/general/rg-039--w480.webp";
+import asset_444 from "../assets/images/_responsive/selected/general/rg-039--w960.webp";
+import asset_445 from "../assets/images/_responsive/selected/general/rg-039--w1080.webp";
+import asset_446 from "../assets/images/selected/general/rg-045.jpg";
+import asset_447 from "../assets/images/_responsive/selected/general/rg-045--w480.webp";
+import asset_448 from "../assets/images/_responsive/selected/general/rg-045--w960.webp";
+import asset_449 from "../assets/images/_responsive/selected/general/rg-045--w1080.webp";
+import asset_450 from "../assets/images/selected/general/rg-046.jpg";
+import asset_451 from "../assets/images/_responsive/selected/general/rg-046--w480.webp";
+import asset_452 from "../assets/images/_responsive/selected/general/rg-046--w960.webp";
+import asset_453 from "../assets/images/selected/general/rg-049.jpg";
+import asset_454 from "../assets/images/_responsive/selected/general/rg-049--w480.webp";
+import asset_455 from "../assets/images/_responsive/selected/general/rg-049--w960.webp";
+import asset_456 from "../assets/images/_responsive/selected/general/rg-049--w1040.webp";
+import asset_457 from "../assets/images/selected/general/rg-052.jpg";
+import asset_458 from "../assets/images/_responsive/selected/general/rg-052--w480.webp";
+import asset_459 from "../assets/images/_responsive/selected/general/rg-052--w960.webp";
+import asset_460 from "../assets/images/_responsive/selected/general/rg-052--w1280.webp";
+import asset_461 from "../assets/images/selected/general/rg-055.jpg";
+import asset_462 from "../assets/images/_responsive/selected/general/rg-055--w480.webp";
+import asset_463 from "../assets/images/_responsive/selected/general/rg-055--w960.webp";
+import asset_464 from "../assets/images/_responsive/selected/general/rg-055--w1080.webp";
+import asset_465 from "../assets/images/selected/general/rg-063.jpg";
+import asset_466 from "../assets/images/_responsive/selected/general/rg-063--w480.webp";
+import asset_467 from "../assets/images/_responsive/selected/general/rg-063--w960.webp";
+import asset_468 from "../assets/images/_responsive/selected/general/rg-063--w1280.webp";
+import asset_469 from "../assets/images/selected/general/rg-066.jpg";
+import asset_470 from "../assets/images/_responsive/selected/general/rg-066--w480.webp";
+import asset_471 from "../assets/images/_responsive/selected/general/rg-066--w960.webp";
+import asset_472 from "../assets/images/_responsive/selected/general/rg-066--w1080.webp";
+import asset_473 from "../assets/images/selected/general/rg-067.jpg";
+import asset_474 from "../assets/images/_responsive/selected/general/rg-067--w480.webp";
+import asset_475 from "../assets/images/_responsive/selected/general/rg-067--w960.webp";
+import asset_476 from "../assets/images/_responsive/selected/general/rg-067--w1086.webp";
+import asset_477 from "../assets/images/selected/general/rg-071.jpg";
+import asset_478 from "../assets/images/_responsive/selected/general/rg-071--w480.webp";
+import asset_479 from "../assets/images/_responsive/selected/general/rg-071--w810.webp";
+import asset_480 from "../assets/images/selected/general/rg-072.jpg";
+import asset_481 from "../assets/images/_responsive/selected/general/rg-072--w480.webp";
+import asset_482 from "../assets/images/_responsive/selected/general/rg-072--w960.webp";
+import asset_483 from "../assets/images/_responsive/selected/general/rg-072--w1280.webp";
+import asset_484 from "../assets/images/selected/general/rg-074.jpg";
+import asset_485 from "../assets/images/_responsive/selected/general/rg-074--w480.webp";
+import asset_486 from "../assets/images/_responsive/selected/general/rg-074--w960.webp";
+import asset_487 from "../assets/images/_responsive/selected/general/rg-074--w1080.webp";
+import asset_488 from "../assets/images/selected/general/rg-087.jpg";
+import asset_489 from "../assets/images/_responsive/selected/general/rg-087--w480.webp";
+import asset_490 from "../assets/images/_responsive/selected/general/rg-087--w812.webp";
+import asset_491 from "../assets/images/selected/general/rg-093.jpg";
+import asset_492 from "../assets/images/_responsive/selected/general/rg-093--w480.webp";
+import asset_493 from "../assets/images/_responsive/selected/general/rg-093--w960.webp";
+import asset_494 from "../assets/images/_responsive/selected/general/rg-093--w1280.webp";
+import asset_495 from "../assets/images/selected/general/rg-094.jpg";
+import asset_496 from "../assets/images/_responsive/selected/general/rg-094--w480.webp";
+import asset_497 from "../assets/images/_responsive/selected/general/rg-094--w960.webp";
+import asset_498 from "../assets/images/_responsive/selected/general/rg-094--w1600.webp";
+import asset_499 from "../assets/images/selected/general/rg-098.jpg";
+import asset_500 from "../assets/images/_responsive/selected/general/rg-098--w480.webp";
+import asset_501 from "../assets/images/_responsive/selected/general/rg-098--w960.webp";
+import asset_502 from "../assets/images/_responsive/selected/general/rg-098--w1080.webp";
+import asset_503 from "../assets/images/selected/general/rg-105.jpg";
+import asset_504 from "../assets/images/_responsive/selected/general/rg-105--w480.webp";
+import asset_505 from "../assets/images/_responsive/selected/general/rg-105--w960.webp";
+import asset_506 from "../assets/images/_responsive/selected/general/rg-105--w1280.webp";
+import asset_507 from "../assets/images/selected/general/rg-121.jpeg";
+import asset_508 from "../assets/images/_responsive/selected/general/rg-121--w480.webp";
+import asset_509 from "../assets/images/_responsive/selected/general/rg-121--w960.webp";
+import asset_510 from "../assets/images/_responsive/selected/general/rg-121--w1600.webp";
+import asset_511 from "../assets/images/selected/general/rg-122.jpeg";
+import asset_512 from "../assets/images/_responsive/selected/general/rg-122--w480.webp";
+import asset_513 from "../assets/images/_responsive/selected/general/rg-122--w960.webp";
+import asset_514 from "../assets/images/_responsive/selected/general/rg-122--w1280.webp";
+import asset_515 from "../assets/images/selected/general/rg-125.jpeg";
+import asset_516 from "../assets/images/_responsive/selected/general/rg-125--w480.webp";
+import asset_517 from "../assets/images/_responsive/selected/general/rg-125--w960.webp";
+import asset_518 from "../assets/images/_responsive/selected/general/rg-125--w1536.webp";
+import asset_519 from "../assets/images/selected/general/rg-126.jpeg";
+import asset_520 from "../assets/images/_responsive/selected/general/rg-126--w480.webp";
+import asset_521 from "../assets/images/_responsive/selected/general/rg-126--w960.webp";
+import asset_522 from "../assets/images/_responsive/selected/general/rg-126--w1280.webp";
+import asset_523 from "../assets/images/selected/general/rg-128.jpeg";
+import asset_524 from "../assets/images/_responsive/selected/general/rg-128--w480.webp";
+import asset_525 from "../assets/images/_responsive/selected/general/rg-128--w960.webp";
+import asset_526 from "../assets/images/_responsive/selected/general/rg-128--w1280.webp";
+import asset_527 from "../assets/images/selected/general/rg-129.jpeg";
+import asset_528 from "../assets/images/_responsive/selected/general/rg-129--w480.webp";
+import asset_529 from "../assets/images/_responsive/selected/general/rg-129--w960.webp";
+import asset_530 from "../assets/images/_responsive/selected/general/rg-129--w1280.webp";
+import asset_531 from "../assets/images/selected/general/rg-131.jpeg";
+import asset_532 from "../assets/images/_responsive/selected/general/rg-131--w480.webp";
+import asset_533 from "../assets/images/_responsive/selected/general/rg-131--w960.webp";
+import asset_534 from "../assets/images/selected/general/rg-135.jpeg";
+import asset_535 from "../assets/images/_responsive/selected/general/rg-135--w480.webp";
+import asset_536 from "../assets/images/_responsive/selected/general/rg-135--w960.webp";
+import asset_537 from "../assets/images/selected/general/rg-141.jpeg";
+import asset_538 from "../assets/images/_responsive/selected/general/rg-141--w477.webp";
+import asset_539 from "../assets/images/selected/general/rg-143.jpeg";
+import asset_540 from "../assets/images/_responsive/selected/general/rg-143--w480.webp";
+import asset_541 from "../assets/images/_responsive/selected/general/rg-143--w863.webp";
+import asset_542 from "../assets/images/selected/projects/pa-043.jpg";
+import asset_543 from "../assets/images/_responsive/selected/projects/pa-043--w480.webp";
+import asset_544 from "../assets/images/_responsive/selected/projects/pa-043--w554.webp";
+import asset_545 from "../assets/images/selected/projects/pa-046.jpg";
+import asset_546 from "../assets/images/_responsive/selected/projects/pa-046--w480.webp";
+import asset_547 from "../assets/images/_responsive/selected/projects/pa-046--w600.webp";
+import asset_548 from "../assets/images/selected/projects/pa-054.jpg";
+import asset_549 from "../assets/images/_responsive/selected/projects/pa-054--w480.webp";
+import asset_550 from "../assets/images/_responsive/selected/projects/pa-054--w544.webp";
+import asset_551 from "../assets/images/selected/projects/pa-055.jpg";
+import asset_552 from "../assets/images/_responsive/selected/projects/pa-055--w480.webp";
+import asset_553 from "../assets/images/_responsive/selected/projects/pa-055--w554.webp";
+import asset_554 from "../assets/images/selected/projects/pa-063.jpg";
+import asset_555 from "../assets/images/_responsive/selected/projects/pa-063--w480.webp";
+import asset_556 from "../assets/images/_responsive/selected/projects/pa-063--w555.webp";
+import asset_557 from "../assets/images/selected/projects/pa-067.jpg";
+import asset_558 from "../assets/images/_responsive/selected/projects/pa-067--w480.webp";
+import asset_559 from "../assets/images/_responsive/selected/projects/pa-067--w565.webp";
+import asset_560 from "../assets/images/selected/projects/pa-074.jpg";
+import asset_561 from "../assets/images/_responsive/selected/projects/pa-074--w480.webp";
+import asset_562 from "../assets/images/_responsive/selected/projects/pa-074--w543.webp";
+import asset_563 from "../assets/images/selected/projects/pa-080.jpg";
+import asset_564 from "../assets/images/_responsive/selected/projects/pa-080--w480.webp";
+import asset_565 from "../assets/images/_responsive/selected/projects/pa-080--w544.webp";
+import asset_566 from "../assets/images/selected/projects/pa-103.jpg";
+import asset_567 from "../assets/images/_responsive/selected/projects/pa-103--w480.webp";
+import asset_568 from "../assets/images/_responsive/selected/projects/pa-103--w565.webp";
+import asset_569 from "../assets/images/selected/projects/pa-105.jpg";
+import asset_570 from "../assets/images/_responsive/selected/projects/pa-105--w480.webp";
+import asset_571 from "../assets/images/_responsive/selected/projects/pa-105--w960.webp";
+import asset_572 from "../assets/images/_responsive/selected/projects/pa-105--w1444.webp";
+import asset_573 from "../assets/images/selected/projects/pa-110.jpg";
+import asset_574 from "../assets/images/_responsive/selected/projects/pa-110--w480.webp";
+import asset_575 from "../assets/images/_responsive/selected/projects/pa-110--w544.webp";
+import asset_576 from "../assets/images/selected/projects/pa-121.jpg";
+import asset_577 from "../assets/images/_responsive/selected/projects/pa-121--w480.webp";
+import asset_578 from "../assets/images/_responsive/selected/projects/pa-121--w554.webp";
+import asset_579 from "../assets/images/selected/projects/pa-126.jpg";
+import asset_580 from "../assets/images/_responsive/selected/projects/pa-126--w480.webp";
+import asset_581 from "../assets/images/_responsive/selected/projects/pa-126--w960.webp";
+import asset_582 from "../assets/images/_responsive/selected/projects/pa-126--w1399.webp";
+import asset_583 from "../assets/images/selected/projects/pa-129.jpg";
+import asset_584 from "../assets/images/_responsive/selected/projects/pa-129--w480.webp";
+import asset_585 from "../assets/images/_responsive/selected/projects/pa-129--w554.webp";
+import asset_586 from "../assets/images/selected/projects/pa-131.jpg";
+import asset_587 from "../assets/images/_responsive/selected/projects/pa-131--w480.webp";
+import asset_588 from "../assets/images/_responsive/selected/projects/pa-131--w543.webp";
+import asset_589 from "../assets/images/selected/projects/pa-133.jpg";
+import asset_590 from "../assets/images/_responsive/selected/projects/pa-133--w480.webp";
+import asset_591 from "../assets/images/_responsive/selected/projects/pa-133--w564.webp";
+import asset_592 from "../assets/images/selected/projects/pp-009.jpg";
+import asset_593 from "../assets/images/_responsive/selected/projects/pp-009--w480.webp";
+import asset_594 from "../assets/images/_responsive/selected/projects/pp-009--w730.webp";
+import asset_595 from "../assets/images/selected/projects/pp-010.jpg";
+import asset_596 from "../assets/images/_responsive/selected/projects/pp-010--w480.webp";
+import asset_597 from "../assets/images/_responsive/selected/projects/pp-010--w714.webp";
+import asset_598 from "../assets/images/selected/projects/pp-011.jpg";
+import asset_599 from "../assets/images/_responsive/selected/projects/pp-011--w480.webp";
+import asset_600 from "../assets/images/_responsive/selected/projects/pp-011--w694.webp";
+import asset_601 from "../assets/images/selected/projects/pp-017.jpg";
+import asset_602 from "../assets/images/_responsive/selected/projects/pp-017--w480.webp";
+import asset_603 from "../assets/images/_responsive/selected/projects/pp-017--w960.webp";
+import asset_604 from "../assets/images/_responsive/selected/projects/pp-017--w1496.webp";
+import asset_605 from "../assets/images/selected/projects/pp-021.jpg";
+import asset_606 from "../assets/images/_responsive/selected/projects/pp-021--w480.webp";
+import asset_607 from "../assets/images/_responsive/selected/projects/pp-021--w694.webp";
+import asset_608 from "../assets/images/selected/projects/pp-024.jpg";
+import asset_609 from "../assets/images/_responsive/selected/projects/pp-024--w480.webp";
+import asset_610 from "../assets/images/_responsive/selected/projects/pp-024--w694.webp";
+import asset_611 from "../assets/images/selected/projects/pp-034.jpg";
+import asset_612 from "../assets/images/_responsive/selected/projects/pp-034--w480.webp";
+import asset_613 from "../assets/images/_responsive/selected/projects/pp-034--w656.webp";
+import asset_614 from "../assets/images/selected/projects/pp-038.jpg";
+import asset_615 from "../assets/images/_responsive/selected/projects/pp-038--w480.webp";
+import asset_616 from "../assets/images/_responsive/selected/projects/pp-038--w656.webp";
+import asset_617 from "../assets/images/selected/projects/pp-040.jpg";
+import asset_618 from "../assets/images/_responsive/selected/projects/pp-040--w480.webp";
+import asset_619 from "../assets/images/_responsive/selected/projects/pp-040--w694.webp";
+import asset_620 from "../assets/images/selected/projects/pp-043.jpg";
+import asset_621 from "../assets/images/_responsive/selected/projects/pp-043--w480.webp";
+import asset_622 from "../assets/images/_responsive/selected/projects/pp-043--w960.webp";
+import asset_623 from "../assets/images/_responsive/selected/projects/pp-043--w1586.webp";
+import asset_624 from "../assets/images/selected/projects/pp-045.jpg";
+import asset_625 from "../assets/images/_responsive/selected/projects/pp-045--w480.webp";
+import asset_626 from "../assets/images/_responsive/selected/projects/pp-045--w723.webp";
+import asset_627 from "../assets/images/selected/projects/pp-048.jpg";
+import asset_628 from "../assets/images/_responsive/selected/projects/pp-048--w480.webp";
+import asset_629 from "../assets/images/_responsive/selected/projects/pp-048--w719.webp";
+import asset_630 from "../assets/images/selected/projects/pp-051.jpg";
+import asset_631 from "../assets/images/_responsive/selected/projects/pp-051--w480.webp";
+import asset_632 from "../assets/images/_responsive/selected/projects/pp-051--w710.webp";
+import asset_633 from "../assets/images/selected/projects/pp-053.jpg";
+import asset_634 from "../assets/images/_responsive/selected/projects/pp-053--w480.webp";
+import asset_635 from "../assets/images/_responsive/selected/projects/pp-053--w656.webp";
+import asset_636 from "../assets/images/selected/projects/pp-055.jpg";
+import asset_637 from "../assets/images/_responsive/selected/projects/pp-055--w480.webp";
+import asset_638 from "../assets/images/_responsive/selected/projects/pp-055--w731.webp";
+import asset_639 from "../assets/images/selected/projects/pp-056.jpg";
+import asset_640 from "../assets/images/_responsive/selected/projects/pp-056--w480.webp";
+import asset_641 from "../assets/images/_responsive/selected/projects/pp-056--w960.webp";
+import asset_642 from "../assets/images/_responsive/selected/projects/pp-056--w1514.webp";
+import asset_643 from "../assets/images/selected/projects/pp-057.jpg";
+import asset_644 from "../assets/images/_responsive/selected/projects/pp-057--w480.webp";
+import asset_645 from "../assets/images/_responsive/selected/projects/pp-057--w728.webp";
+import asset_646 from "../assets/images/selected/projects/pp-059.jpg";
+import asset_647 from "../assets/images/_responsive/selected/projects/pp-059--w480.webp";
+import asset_648 from "../assets/images/_responsive/selected/projects/pp-059--w656.webp";
+import asset_649 from "../assets/images/selected/projects/pp-060.jpg";
+import asset_650 from "../assets/images/_responsive/selected/projects/pp-060--w480.webp";
+import asset_651 from "../assets/images/_responsive/selected/projects/pp-060--w657.webp";
+import asset_652 from "../assets/images/selected/projects/pp-061.jpg";
+import asset_653 from "../assets/images/_responsive/selected/projects/pp-061--w480.webp";
+import asset_654 from "../assets/images/_responsive/selected/projects/pp-061--w734.webp";
+import asset_655 from "../assets/images/selected/projects/pp-062.jpg";
+import asset_656 from "../assets/images/_responsive/selected/projects/pp-062--w480.webp";
+import asset_657 from "../assets/images/_responsive/selected/projects/pp-062--w683.webp";
+import asset_658 from "../assets/images/selected/projects/pp-063.jpg";
+import asset_659 from "../assets/images/_responsive/selected/projects/pp-063--w480.webp";
+import asset_660 from "../assets/images/_responsive/selected/projects/pp-063--w656.webp";
+import asset_661 from "../assets/images/selected/projects/pp-065.jpg";
+import asset_662 from "../assets/images/_responsive/selected/projects/pp-065--w480.webp";
+import asset_663 from "../assets/images/_responsive/selected/projects/pp-065--w657.webp";
+import asset_664 from "../assets/images/selected/projects/pp-069.jpg";
+import asset_665 from "../assets/images/_responsive/selected/projects/pp-069--w480.webp";
+import asset_666 from "../assets/images/_responsive/selected/projects/pp-069--w730.webp";
+import asset_667 from "../assets/images/selected/projects/pp-071.jpg";
+import asset_668 from "../assets/images/_responsive/selected/projects/pp-071--w480.webp";
+import asset_669 from "../assets/images/_responsive/selected/projects/pp-071--w685.webp";
+import asset_670 from "../assets/images/selected/projects/pp-072.jpg";
+import asset_671 from "../assets/images/_responsive/selected/projects/pp-072--w480.webp";
+import asset_672 from "../assets/images/_responsive/selected/projects/pp-072--w727.webp";
+import asset_673 from "../assets/images/selected/projects/pp-075.jpg";
+import asset_674 from "../assets/images/_responsive/selected/projects/pp-075--w480.webp";
+import asset_675 from "../assets/images/_responsive/selected/projects/pp-075--w667.webp";
+import asset_676 from "../assets/images/selected/recent/im-030.jpeg";
+import asset_677 from "../assets/images/_responsive/selected/recent/im-030--w480.webp";
+import asset_678 from "../assets/images/_responsive/selected/recent/im-030--w960.webp";
+import asset_679 from "../assets/images/selected/recent/im-033.jpeg";
+import asset_680 from "../assets/images/_responsive/selected/recent/im-033--w480.webp";
+import asset_681 from "../assets/images/_responsive/selected/recent/im-033--w960.webp";
+import asset_682 from "../assets/images/selected/recent/im-036.jpeg";
+import asset_683 from "../assets/images/_responsive/selected/recent/im-036--w480.webp";
+import asset_684 from "../assets/images/_responsive/selected/recent/im-036--w960.webp";
+import asset_685 from "../assets/images/_responsive/selected/recent/im-036--w1280.webp";
+import asset_686 from "../assets/images/selected/recent/im-040.png";
+import asset_687 from "../assets/images/_responsive/selected/recent/im-040--w440.webp";
+import asset_688 from "../assets/images/selected/recent/im-047.jpeg";
+import asset_689 from "../assets/images/_responsive/selected/recent/im-047--w480.webp";
+import asset_690 from "../assets/images/_responsive/selected/recent/im-047--w762.webp";
+import asset_691 from "../assets/images/selected/recent/op-01.jpg";
+import asset_692 from "../assets/images/_responsive/selected/recent/op-01--w480.webp";
+import asset_693 from "../assets/images/_responsive/selected/recent/op-01--w810.webp";
+import asset_694 from "../assets/images/selected/recent/op-02.jpg";
+import asset_695 from "../assets/images/_responsive/selected/recent/op-02--w480.webp";
+import asset_696 from "../assets/images/_responsive/selected/recent/op-02--w960.webp";
+import asset_697 from "../assets/images/_responsive/selected/recent/op-02--w1080.webp";
+import asset_698 from "../assets/images/selected/recent/op-03.jpg";
+import asset_699 from "../assets/images/_responsive/selected/recent/op-03--w480.webp";
+import asset_700 from "../assets/images/_responsive/selected/recent/op-03--w810.webp";
+import asset_701 from "../assets/images/selected/recent/op-04.jpg";
+import asset_702 from "../assets/images/_responsive/selected/recent/op-04--w480.webp";
+import asset_703 from "../assets/images/_responsive/selected/recent/op-04--w810.webp";
+import asset_704 from "../assets/images/selected/recent/op-05.jpg";
+import asset_705 from "../assets/images/_responsive/selected/recent/op-05--w480.webp";
+import asset_706 from "../assets/images/_responsive/selected/recent/op-05--w810.webp";
+import asset_707 from "../assets/images/selected/recent/op-06.jpg";
+import asset_708 from "../assets/images/_responsive/selected/recent/op-06--w480.webp";
+import asset_709 from "../assets/images/_responsive/selected/recent/op-06--w810.webp";
+import asset_710 from "../assets/images/selected/recent/op-07.jpg";
+import asset_711 from "../assets/images/_responsive/selected/recent/op-07--w480.webp";
+import asset_712 from "../assets/images/_responsive/selected/recent/op-07--w810.webp";
+import asset_713 from "../assets/images/selected/recent/op-08.jpg";
+import asset_714 from "../assets/images/_responsive/selected/recent/op-08--w480.webp";
+import asset_715 from "../assets/images/_responsive/selected/recent/op-08--w810.webp";
+import asset_716 from "../assets/images/team/00-site-logo-enikkom-construction-limited.png";
+import asset_717 from "../assets/images/_responsive/team/00-site-logo-enikkom-construction-limited--w480.webp";
+import asset_718 from "../assets/images/_responsive/team/00-site-logo-enikkom-construction-limited--w960.webp";
+import asset_719 from "../assets/images/_responsive/team/00-site-logo-enikkom-construction-limited--w1536.webp";
+import asset_720 from "../assets/images/team/01-partner-logo-hddtec-limited.png";
+import asset_721 from "../assets/images/_responsive/team/01-partner-logo-hddtec-limited--w480.webp";
+import asset_722 from "../assets/images/_responsive/team/01-partner-logo-hddtec-limited--w960.webp";
+import asset_723 from "../assets/images/_responsive/team/01-partner-logo-hddtec-limited--w1254.webp";
+import asset_724 from "../assets/images/team/02-hero-management-team-hero-background.png";
+import asset_725 from "../assets/images/_responsive/team/02-hero-management-team-hero-background--w480.webp";
+import asset_726 from "../assets/images/_responsive/team/02-hero-management-team-hero-background--w960.webp";
+import asset_727 from "../assets/images/_responsive/team/02-hero-management-team-hero-background--w1087.webp";
+import asset_728 from "../assets/images/team/03-team-photo-engr-edward-amene.png";
+import asset_729 from "../assets/images/_responsive/team/03-team-photo-engr-edward-amene--w480.webp";
+import asset_730 from "../assets/images/_responsive/team/03-team-photo-engr-edward-amene--w960.webp";
+import asset_731 from "../assets/images/_responsive/team/03-team-photo-engr-edward-amene--w1254.webp";
+import asset_732 from "../assets/images/team/04-team-photo-engr-saleem-ahmad-khan.png";
+import asset_733 from "../assets/images/_responsive/team/04-team-photo-engr-saleem-ahmad-khan--w480.webp";
+import asset_734 from "../assets/images/_responsive/team/04-team-photo-engr-saleem-ahmad-khan--w960.webp";
+import asset_735 from "../assets/images/_responsive/team/04-team-photo-engr-saleem-ahmad-khan--w1254.webp";
+import asset_736 from "../assets/images/team/05-team-photo-mr-francis-anatogu.png";
+import asset_737 from "../assets/images/_responsive/team/05-team-photo-mr-francis-anatogu--w480.webp";
+import asset_738 from "../assets/images/_responsive/team/05-team-photo-mr-francis-anatogu--w960.webp";
+import asset_739 from "../assets/images/_responsive/team/05-team-photo-mr-francis-anatogu--w1254.webp";
+import asset_740 from "../assets/images/team/06-team-photo-adekunle-adewole-phd.png";
+import asset_741 from "../assets/images/_responsive/team/06-team-photo-adekunle-adewole-phd--w480.webp";
+import asset_742 from "../assets/images/_responsive/team/06-team-photo-adekunle-adewole-phd--w960.webp";
+import asset_743 from "../assets/images/_responsive/team/06-team-photo-adekunle-adewole-phd--w1254.webp";
+import asset_744 from "../assets/images/team/07-team-photo-mr-chibuike-nwachukwu.png";
+import asset_745 from "../assets/images/_responsive/team/07-team-photo-mr-chibuike-nwachukwu--w480.webp";
+import asset_746 from "../assets/images/_responsive/team/07-team-photo-mr-chibuike-nwachukwu--w960.webp";
+import asset_747 from "../assets/images/_responsive/team/07-team-photo-mr-chibuike-nwachukwu--w1254.webp";
+import asset_748 from "../assets/images/team/08-team-photo-teddy-allen.png";
+import asset_749 from "../assets/images/_responsive/team/08-team-photo-teddy-allen--w480.webp";
+import asset_750 from "../assets/images/_responsive/team/08-team-photo-teddy-allen--w960.webp";
+import asset_751 from "../assets/images/_responsive/team/08-team-photo-teddy-allen--w1254.webp";
+import asset_752 from "../assets/images/team/09-team-photo-idigbor-emeka-fca.png";
+import asset_753 from "../assets/images/_responsive/team/09-team-photo-idigbor-emeka-fca--w480.webp";
+import asset_754 from "../assets/images/_responsive/team/09-team-photo-idigbor-emeka-fca--w960.webp";
+import asset_755 from "../assets/images/_responsive/team/09-team-photo-idigbor-emeka-fca--w1254.webp";
+import asset_756 from "../assets/images/team/10-team-photo-biodun-adefila.png";
+import asset_757 from "../assets/images/_responsive/team/10-team-photo-biodun-adefila--w480.webp";
+import asset_758 from "../assets/images/_responsive/team/10-team-photo-biodun-adefila--w960.webp";
+import asset_759 from "../assets/images/_responsive/team/10-team-photo-biodun-adefila--w1085.webp";
+import asset_760 from "../assets/images/team/11-team-photo-ken-james.png";
+import asset_761 from "../assets/images/_responsive/team/11-team-photo-ken-james--w480.webp";
+import asset_762 from "../assets/images/_responsive/team/11-team-photo-ken-james--w960.webp";
+import asset_763 from "../assets/images/_responsive/team/11-team-photo-ken-james--w1600.webp";
+import asset_764 from "../assets/images/team/12-idigbor-emeka.png";
+import asset_765 from "../assets/images/_responsive/team/12-idigbor-emeka--w480.webp";
+import asset_766 from "../assets/images/_responsive/team/12-idigbor-emeka--w960.webp";
+import asset_767 from "../assets/images/_responsive/team/12-idigbor-emeka--w1254.webp";
+import asset_768 from "../assets/images/team/13-team-photo-uzoma-nwagboso.jpeg";
+import asset_769 from "../assets/images/_responsive/team/13-team-photo-uzoma-nwagboso-jpeg--w480.webp";
+import asset_770 from "../assets/images/_responsive/team/13-team-photo-uzoma-nwagboso-jpeg--w960.webp";
+import asset_771 from "../assets/images/_responsive/team/13-team-photo-uzoma-nwagboso-jpeg--w1536.webp";
+import asset_772 from "../assets/images/team/13-team-photo-uzoma-nwagboso.png";
+import asset_773 from "../assets/images/_responsive/team/13-team-photo-uzoma-nwagboso-png--w480.webp";
+import asset_774 from "../assets/images/_responsive/team/13-team-photo-uzoma-nwagboso-png--w960.webp";
+import asset_775 from "../assets/images/_responsive/team/13-team-photo-uzoma-nwagboso-png--w1296.webp";
 
 export interface GeneratedResponsiveVariant {
   src: string;
@@ -1483,1029 +1594,1314 @@ export const generatedImageManifest: Record<string, GeneratedImageRecord> = {
       { src: asset_287, width: 716, type: "image/webp" },
     ],
   },
-  "selected/general/about-aerial-site-enhanced.png": {
+  "selected/equipment/eq-026.jpg": {
     src: asset_288,
-    width: 1672,
-    height: 941,
+    width: 2400,
+    height: 1600,
     variants: [
       { src: asset_289, width: 480, type: "image/webp" },
       { src: asset_290, width: 960, type: "image/webp" },
       { src: asset_291, width: 1600, type: "image/webp" },
     ],
   },
-  "selected/general/about-field-team-enhanced.png": {
+  "selected/equipment/eq-027.jpg": {
     src: asset_292,
-    width: 1086,
-    height: 1448,
+    width: 2400,
+    height: 1600,
     variants: [
       { src: asset_293, width: 480, type: "image/webp" },
       { src: asset_294, width: 960, type: "image/webp" },
-      { src: asset_295, width: 1086, type: "image/webp" },
+      { src: asset_295, width: 1600, type: "image/webp" },
     ],
   },
-  "selected/general/about-pipe-yard-enhanced.png": {
+  "selected/equipment/eq-028.jpg": {
     src: asset_296,
-    width: 1448,
-    height: 1086,
+    width: 2400,
+    height: 1600,
     variants: [
       { src: asset_297, width: 480, type: "image/webp" },
       { src: asset_298, width: 960, type: "image/webp" },
-      { src: asset_299, width: 1448, type: "image/webp" },
+      { src: asset_299, width: 1600, type: "image/webp" },
     ],
   },
-  "selected/general/about-safety-briefing-enhanced.png": {
+  "selected/equipment/eq-029.jpg": {
     src: asset_300,
-    width: 1449,
-    height: 1086,
+    width: 2400,
+    height: 1600,
     variants: [
       { src: asset_301, width: 480, type: "image/webp" },
       { src: asset_302, width: 960, type: "image/webp" },
-      { src: asset_303, width: 1449, type: "image/webp" },
+      { src: asset_303, width: 1600, type: "image/webp" },
     ],
   },
-  "selected/general/about-site-equipment-enhanced.png": {
+  "selected/equipment/eq-030.jpg": {
     src: asset_304,
-    width: 1673,
-    height: 940,
+    width: 2400,
+    height: 1600,
     variants: [
       { src: asset_305, width: 480, type: "image/webp" },
       { src: asset_306, width: 960, type: "image/webp" },
       { src: asset_307, width: 1600, type: "image/webp" },
     ],
   },
-  "selected/general/rg-025.jpg": {
+  "selected/general/about-aerial-site-enhanced.png": {
     src: asset_308,
-    width: 1280,
-    height: 719,
+    width: 1672,
+    height: 941,
     variants: [
       { src: asset_309, width: 480, type: "image/webp" },
       { src: asset_310, width: 960, type: "image/webp" },
-      { src: asset_311, width: 1280, type: "image/webp" },
+      { src: asset_311, width: 1600, type: "image/webp" },
     ],
   },
-  "selected/general/rg-027.jpg": {
+  "selected/general/about-field-team-enhanced.png": {
     src: asset_312,
-    width: 1080,
-    height: 798,
-    variants: [
-      { src: asset_313, width: 480, type: "image/webp" },
-      { src: asset_314, width: 960, type: "image/webp" },
-      { src: asset_315, width: 1080, type: "image/webp" },
-    ],
-  },
-  "selected/general/rg-031.jpg": {
-    src: asset_316,
-    width: 1080,
-    height: 810,
-    variants: [
-      { src: asset_317, width: 480, type: "image/webp" },
-      { src: asset_318, width: 960, type: "image/webp" },
-      { src: asset_319, width: 1080, type: "image/webp" },
-    ],
-  },
-  "selected/general/rg-033.jpg": {
-    src: asset_320,
-    width: 1080,
-    height: 608,
-    variants: [
-      { src: asset_321, width: 480, type: "image/webp" },
-      { src: asset_322, width: 960, type: "image/webp" },
-      { src: asset_323, width: 1080, type: "image/webp" },
-    ],
-  },
-  "selected/general/rg-035.jpg": {
-    src: asset_324,
-    width: 1080,
-    height: 607,
-    variants: [
-      { src: asset_325, width: 480, type: "image/webp" },
-      { src: asset_326, width: 960, type: "image/webp" },
-      { src: asset_327, width: 1080, type: "image/webp" },
-    ],
-  },
-  "selected/general/rg-037.jpg": {
-    src: asset_328,
-    width: 810,
-    height: 1080,
-    variants: [
-      { src: asset_329, width: 480, type: "image/webp" },
-      { src: asset_330, width: 810, type: "image/webp" },
-    ],
-  },
-  "selected/general/rg-038.jpg": {
-    src: asset_331,
-    width: 960,
-    height: 540,
-    variants: [
-      { src: asset_332, width: 480, type: "image/webp" },
-      { src: asset_333, width: 960, type: "image/webp" },
-    ],
-  },
-  "selected/general/rg-039.jpg": {
-    src: asset_334,
-    width: 1080,
-    height: 608,
-    variants: [
-      { src: asset_335, width: 480, type: "image/webp" },
-      { src: asset_336, width: 960, type: "image/webp" },
-      { src: asset_337, width: 1080, type: "image/webp" },
-    ],
-  },
-  "selected/general/rg-045.jpg": {
-    src: asset_338,
-    width: 1080,
-    height: 810,
-    variants: [
-      { src: asset_339, width: 480, type: "image/webp" },
-      { src: asset_340, width: 960, type: "image/webp" },
-      { src: asset_341, width: 1080, type: "image/webp" },
-    ],
-  },
-  "selected/general/rg-046.jpg": {
-    src: asset_342,
-    width: 960,
-    height: 540,
-    variants: [
-      { src: asset_343, width: 480, type: "image/webp" },
-      { src: asset_344, width: 960, type: "image/webp" },
-    ],
-  },
-  "selected/general/rg-049.jpg": {
-    src: asset_345,
-    width: 1040,
-    height: 780,
-    variants: [
-      { src: asset_346, width: 480, type: "image/webp" },
-      { src: asset_347, width: 960, type: "image/webp" },
-      { src: asset_348, width: 1040, type: "image/webp" },
-    ],
-  },
-  "selected/general/rg-052.jpg": {
-    src: asset_349,
-    width: 1280,
-    height: 719,
-    variants: [
-      { src: asset_350, width: 480, type: "image/webp" },
-      { src: asset_351, width: 960, type: "image/webp" },
-      { src: asset_352, width: 1280, type: "image/webp" },
-    ],
-  },
-  "selected/general/rg-054.jpg": {
-    src: asset_353,
-    width: 1672,
-    height: 941,
-    variants: [
-      { src: asset_354, width: 480, type: "image/webp" },
-      { src: asset_355, width: 960, type: "image/webp" },
-      { src: asset_356, width: 1600, type: "image/webp" },
-    ],
-  },
-  "selected/general/rg-055.jpg": {
-    src: asset_357,
-    width: 1080,
-    height: 608,
-    variants: [
-      { src: asset_358, width: 480, type: "image/webp" },
-      { src: asset_359, width: 960, type: "image/webp" },
-      { src: asset_360, width: 1080, type: "image/webp" },
-    ],
-  },
-  "selected/general/rg-061.jpg": {
-    src: asset_361,
-    width: 1080,
-    height: 608,
-    variants: [
-      { src: asset_362, width: 480, type: "image/webp" },
-      { src: asset_363, width: 960, type: "image/webp" },
-      { src: asset_364, width: 1080, type: "image/webp" },
-    ],
-  },
-  "selected/general/rg-063.jpg": {
-    src: asset_365,
-    width: 1280,
-    height: 719,
-    variants: [
-      { src: asset_366, width: 480, type: "image/webp" },
-      { src: asset_367, width: 960, type: "image/webp" },
-      { src: asset_368, width: 1280, type: "image/webp" },
-    ],
-  },
-  "selected/general/rg-066.jpg": {
-    src: asset_369,
-    width: 1080,
-    height: 720,
-    variants: [
-      { src: asset_370, width: 480, type: "image/webp" },
-      { src: asset_371, width: 960, type: "image/webp" },
-      { src: asset_372, width: 1080, type: "image/webp" },
-    ],
-  },
-  "selected/general/rg-067.jpg": {
-    src: asset_373,
     width: 1086,
     height: 1448,
     variants: [
-      { src: asset_374, width: 480, type: "image/webp" },
-      { src: asset_375, width: 960, type: "image/webp" },
-      { src: asset_376, width: 1086, type: "image/webp" },
+      { src: asset_313, width: 480, type: "image/webp" },
+      { src: asset_314, width: 960, type: "image/webp" },
+      { src: asset_315, width: 1086, type: "image/webp" },
     ],
   },
-  "selected/general/rg-071.jpg": {
-    src: asset_377,
-    width: 810,
-    height: 1080,
+  "selected/general/about-pipe-yard-enhanced.png": {
+    src: asset_316,
+    width: 1448,
+    height: 1086,
     variants: [
-      { src: asset_378, width: 480, type: "image/webp" },
-      { src: asset_379, width: 810, type: "image/webp" },
+      { src: asset_317, width: 480, type: "image/webp" },
+      { src: asset_318, width: 960, type: "image/webp" },
+      { src: asset_319, width: 1448, type: "image/webp" },
     ],
   },
-  "selected/general/rg-072.jpg": {
+  "selected/general/about-safety-briefing-enhanced.png": {
+    src: asset_320,
+    width: 1449,
+    height: 1086,
+    variants: [
+      { src: asset_321, width: 480, type: "image/webp" },
+      { src: asset_322, width: 960, type: "image/webp" },
+      { src: asset_323, width: 1449, type: "image/webp" },
+    ],
+  },
+  "selected/general/about-site-equipment-enhanced.png": {
+    src: asset_324,
+    width: 1673,
+    height: 940,
+    variants: [
+      { src: asset_325, width: 480, type: "image/webp" },
+      { src: asset_326, width: 960, type: "image/webp" },
+      { src: asset_327, width: 1600, type: "image/webp" },
+    ],
+  },
+  "selected/general/pl-01.jpg": {
+    src: asset_328,
+    width: 2400,
+    height: 1600,
+    variants: [
+      { src: asset_329, width: 480, type: "image/webp" },
+      { src: asset_330, width: 960, type: "image/webp" },
+      { src: asset_331, width: 1600, type: "image/webp" },
+    ],
+  },
+  "selected/general/pl-02.jpg": {
+    src: asset_332,
+    width: 2400,
+    height: 1600,
+    variants: [
+      { src: asset_333, width: 480, type: "image/webp" },
+      { src: asset_334, width: 960, type: "image/webp" },
+      { src: asset_335, width: 1600, type: "image/webp" },
+    ],
+  },
+  "selected/general/pl-03.jpg": {
+    src: asset_336,
+    width: 2400,
+    height: 1600,
+    variants: [
+      { src: asset_337, width: 480, type: "image/webp" },
+      { src: asset_338, width: 960, type: "image/webp" },
+      { src: asset_339, width: 1600, type: "image/webp" },
+    ],
+  },
+  "selected/general/pl-04.jpg": {
+    src: asset_340,
+    width: 2400,
+    height: 1600,
+    variants: [
+      { src: asset_341, width: 480, type: "image/webp" },
+      { src: asset_342, width: 960, type: "image/webp" },
+      { src: asset_343, width: 1600, type: "image/webp" },
+    ],
+  },
+  "selected/general/pl-05.jpg": {
+    src: asset_344,
+    width: 2400,
+    height: 3600,
+    variants: [
+      { src: asset_345, width: 480, type: "image/webp" },
+      { src: asset_346, width: 960, type: "image/webp" },
+      { src: asset_347, width: 1600, type: "image/webp" },
+    ],
+  },
+  "selected/general/pl-06.jpg": {
+    src: asset_348,
+    width: 2400,
+    height: 3345,
+    variants: [
+      { src: asset_349, width: 480, type: "image/webp" },
+      { src: asset_350, width: 960, type: "image/webp" },
+      { src: asset_351, width: 1600, type: "image/webp" },
+    ],
+  },
+  "selected/general/pl-07.jpg": {
+    src: asset_352,
+    width: 2400,
+    height: 3463,
+    variants: [
+      { src: asset_353, width: 480, type: "image/webp" },
+      { src: asset_354, width: 960, type: "image/webp" },
+      { src: asset_355, width: 1600, type: "image/webp" },
+    ],
+  },
+  "selected/general/pl-08.jpg": {
+    src: asset_356,
+    width: 2400,
+    height: 1600,
+    variants: [
+      { src: asset_357, width: 480, type: "image/webp" },
+      { src: asset_358, width: 960, type: "image/webp" },
+      { src: asset_359, width: 1600, type: "image/webp" },
+    ],
+  },
+  "selected/general/pl-09.jpg": {
+    src: asset_360,
+    width: 2400,
+    height: 1600,
+    variants: [
+      { src: asset_361, width: 480, type: "image/webp" },
+      { src: asset_362, width: 960, type: "image/webp" },
+      { src: asset_363, width: 1600, type: "image/webp" },
+    ],
+  },
+  "selected/general/pl-10.jpg": {
+    src: asset_364,
+    width: 2400,
+    height: 1600,
+    variants: [
+      { src: asset_365, width: 480, type: "image/webp" },
+      { src: asset_366, width: 960, type: "image/webp" },
+      { src: asset_367, width: 1600, type: "image/webp" },
+    ],
+  },
+  "selected/general/pl-11.jpg": {
+    src: asset_368,
+    width: 2400,
+    height: 1600,
+    variants: [
+      { src: asset_369, width: 480, type: "image/webp" },
+      { src: asset_370, width: 960, type: "image/webp" },
+      { src: asset_371, width: 1600, type: "image/webp" },
+    ],
+  },
+  "selected/general/pl-12.jpg": {
+    src: asset_372,
+    width: 2400,
+    height: 1722,
+    variants: [
+      { src: asset_373, width: 480, type: "image/webp" },
+      { src: asset_374, width: 960, type: "image/webp" },
+      { src: asset_375, width: 1600, type: "image/webp" },
+    ],
+  },
+  "selected/general/pl-13.jpg": {
+    src: asset_376,
+    width: 2400,
+    height: 1722,
+    variants: [
+      { src: asset_377, width: 480, type: "image/webp" },
+      { src: asset_378, width: 960, type: "image/webp" },
+      { src: asset_379, width: 1600, type: "image/webp" },
+    ],
+  },
+  "selected/general/pl-14.jpg": {
     src: asset_380,
-    width: 1280,
-    height: 719,
+    width: 2400,
+    height: 1600,
     variants: [
       { src: asset_381, width: 480, type: "image/webp" },
       { src: asset_382, width: 960, type: "image/webp" },
-      { src: asset_383, width: 1280, type: "image/webp" },
+      { src: asset_383, width: 1600, type: "image/webp" },
     ],
   },
-  "selected/general/rg-074.jpg": {
+  "selected/general/pl-15.jpg": {
     src: asset_384,
-    width: 1080,
-    height: 810,
+    width: 2400,
+    height: 1600,
     variants: [
       { src: asset_385, width: 480, type: "image/webp" },
       { src: asset_386, width: 960, type: "image/webp" },
-      { src: asset_387, width: 1080, type: "image/webp" },
+      { src: asset_387, width: 1600, type: "image/webp" },
     ],
   },
-  "selected/general/rg-079.jpg": {
+  "selected/general/pl-16.jpg": {
     src: asset_388,
-    width: 960,
-    height: 540,
+    width: 2400,
+    height: 1600,
     variants: [
       { src: asset_389, width: 480, type: "image/webp" },
       { src: asset_390, width: 960, type: "image/webp" },
+      { src: asset_391, width: 1600, type: "image/webp" },
     ],
   },
-  "selected/general/rg-086.jpg": {
-    src: asset_391,
-    width: 1672,
-    height: 941,
+  "selected/general/pl-17.jpg": {
+    src: asset_392,
+    width: 2400,
+    height: 1722,
     variants: [
-      { src: asset_392, width: 480, type: "image/webp" },
-      { src: asset_393, width: 960, type: "image/webp" },
-      { src: asset_394, width: 1600, type: "image/webp" },
+      { src: asset_393, width: 480, type: "image/webp" },
+      { src: asset_394, width: 960, type: "image/webp" },
+      { src: asset_395, width: 1600, type: "image/webp" },
     ],
   },
-  "selected/general/rg-087.jpg": {
-    src: asset_395,
-    width: 812,
-    height: 1080,
+  "selected/general/pl-18.jpg": {
+    src: asset_396,
+    width: 2400,
+    height: 1600,
     variants: [
-      { src: asset_396, width: 480, type: "image/webp" },
-      { src: asset_397, width: 812, type: "image/webp" },
+      { src: asset_397, width: 480, type: "image/webp" },
+      { src: asset_398, width: 960, type: "image/webp" },
+      { src: asset_399, width: 1600, type: "image/webp" },
     ],
   },
-  "selected/general/rg-093.jpg": {
-    src: asset_398,
+  "selected/general/pl-19.jpg": {
+    src: asset_400,
+    width: 2400,
+    height: 1600,
+    variants: [
+      { src: asset_401, width: 480, type: "image/webp" },
+      { src: asset_402, width: 960, type: "image/webp" },
+      { src: asset_403, width: 1600, type: "image/webp" },
+    ],
+  },
+  "selected/general/pl-20.jpg": {
+    src: asset_404,
+    width: 2400,
+    height: 1920,
+    variants: [
+      { src: asset_405, width: 480, type: "image/webp" },
+      { src: asset_406, width: 960, type: "image/webp" },
+      { src: asset_407, width: 1600, type: "image/webp" },
+    ],
+  },
+  "selected/general/pl-21.jpg": {
+    src: asset_408,
+    width: 2400,
+    height: 3039,
+    variants: [
+      { src: asset_409, width: 480, type: "image/webp" },
+      { src: asset_410, width: 960, type: "image/webp" },
+      { src: asset_411, width: 1600, type: "image/webp" },
+    ],
+  },
+  "selected/general/pl-22.jpg": {
+    src: asset_412,
+    width: 2400,
+    height: 1722,
+    variants: [
+      { src: asset_413, width: 480, type: "image/webp" },
+      { src: asset_414, width: 960, type: "image/webp" },
+      { src: asset_415, width: 1600, type: "image/webp" },
+    ],
+  },
+  "selected/general/rg-025.jpg": {
+    src: asset_416,
     width: 1280,
     height: 719,
     variants: [
-      { src: asset_399, width: 480, type: "image/webp" },
-      { src: asset_400, width: 960, type: "image/webp" },
-      { src: asset_401, width: 1280, type: "image/webp" },
+      { src: asset_417, width: 480, type: "image/webp" },
+      { src: asset_418, width: 960, type: "image/webp" },
+      { src: asset_419, width: 1280, type: "image/webp" },
     ],
   },
-  "selected/general/rg-094.jpg": {
-    src: asset_402,
-    width: 1675,
-    height: 939,
+  "selected/general/rg-027.jpg": {
+    src: asset_420,
+    width: 1080,
+    height: 798,
     variants: [
-      { src: asset_403, width: 480, type: "image/webp" },
-      { src: asset_404, width: 960, type: "image/webp" },
-      { src: asset_405, width: 1600, type: "image/webp" },
+      { src: asset_421, width: 480, type: "image/webp" },
+      { src: asset_422, width: 960, type: "image/webp" },
+      { src: asset_423, width: 1080, type: "image/webp" },
     ],
   },
-  "selected/general/rg-095.jpg": {
-    src: asset_406,
-    width: 2200,
-    height: 1236,
+  "selected/general/rg-031.jpg": {
+    src: asset_424,
+    width: 1080,
+    height: 810,
     variants: [
-      { src: asset_407, width: 480, type: "image/webp" },
-      { src: asset_408, width: 960, type: "image/webp" },
-      { src: asset_409, width: 1600, type: "image/webp" },
+      { src: asset_425, width: 480, type: "image/webp" },
+      { src: asset_426, width: 960, type: "image/webp" },
+      { src: asset_427, width: 1080, type: "image/webp" },
     ],
   },
-  "selected/general/rg-098.jpg": {
-    src: asset_410,
+  "selected/general/rg-033.jpg": {
+    src: asset_428,
     width: 1080,
     height: 608,
     variants: [
-      { src: asset_411, width: 480, type: "image/webp" },
-      { src: asset_412, width: 960, type: "image/webp" },
-      { src: asset_413, width: 1080, type: "image/webp" },
+      { src: asset_429, width: 480, type: "image/webp" },
+      { src: asset_430, width: 960, type: "image/webp" },
+      { src: asset_431, width: 1080, type: "image/webp" },
     ],
   },
-  "selected/general/rg-100.jpg": {
-    src: asset_414,
+  "selected/general/rg-035.jpg": {
+    src: asset_432,
+    width: 1080,
+    height: 607,
+    variants: [
+      { src: asset_433, width: 480, type: "image/webp" },
+      { src: asset_434, width: 960, type: "image/webp" },
+      { src: asset_435, width: 1080, type: "image/webp" },
+    ],
+  },
+  "selected/general/rg-037.jpg": {
+    src: asset_436,
+    width: 810,
+    height: 1080,
+    variants: [
+      { src: asset_437, width: 480, type: "image/webp" },
+      { src: asset_438, width: 810, type: "image/webp" },
+    ],
+  },
+  "selected/general/rg-038.jpg": {
+    src: asset_439,
     width: 960,
     height: 540,
     variants: [
-      { src: asset_415, width: 480, type: "image/webp" },
-      { src: asset_416, width: 960, type: "image/webp" },
+      { src: asset_440, width: 480, type: "image/webp" },
+      { src: asset_441, width: 960, type: "image/webp" },
     ],
   },
-  "selected/general/rg-101.jpg": {
-    src: asset_417,
-    width: 1672,
-    height: 941,
+  "selected/general/rg-039.jpg": {
+    src: asset_442,
+    width: 1080,
+    height: 608,
     variants: [
-      { src: asset_418, width: 480, type: "image/webp" },
-      { src: asset_419, width: 960, type: "image/webp" },
-      { src: asset_420, width: 1600, type: "image/webp" },
+      { src: asset_443, width: 480, type: "image/webp" },
+      { src: asset_444, width: 960, type: "image/webp" },
+      { src: asset_445, width: 1080, type: "image/webp" },
     ],
   },
-  "selected/general/rg-103.jpg": {
-    src: asset_421,
-    width: 1280,
-    height: 719,
+  "selected/general/rg-045.jpg": {
+    src: asset_446,
+    width: 1080,
+    height: 810,
     variants: [
-      { src: asset_422, width: 480, type: "image/webp" },
-      { src: asset_423, width: 960, type: "image/webp" },
-      { src: asset_424, width: 1280, type: "image/webp" },
+      { src: asset_447, width: 480, type: "image/webp" },
+      { src: asset_448, width: 960, type: "image/webp" },
+      { src: asset_449, width: 1080, type: "image/webp" },
     ],
   },
-  "selected/general/rg-105.jpg": {
-    src: asset_425,
-    width: 1280,
-    height: 719,
-    variants: [
-      { src: asset_426, width: 480, type: "image/webp" },
-      { src: asset_427, width: 960, type: "image/webp" },
-      { src: asset_428, width: 1280, type: "image/webp" },
-    ],
-  },
-  "selected/general/rg-121.jpeg": {
-    src: asset_429,
-    width: 1666,
-    height: 944,
-    variants: [
-      { src: asset_430, width: 480, type: "image/webp" },
-      { src: asset_431, width: 960, type: "image/webp" },
-      { src: asset_432, width: 1600, type: "image/webp" },
-    ],
-  },
-  "selected/general/rg-122.jpeg": {
-    src: asset_433,
-    width: 1280,
-    height: 725,
-    variants: [
-      { src: asset_434, width: 480, type: "image/webp" },
-      { src: asset_435, width: 960, type: "image/webp" },
-      { src: asset_436, width: 1280, type: "image/webp" },
-    ],
-  },
-  "selected/general/rg-125.jpeg": {
-    src: asset_437,
-    width: 1536,
-    height: 1024,
-    variants: [
-      { src: asset_438, width: 480, type: "image/webp" },
-      { src: asset_439, width: 960, type: "image/webp" },
-      { src: asset_440, width: 1536, type: "image/webp" },
-    ],
-  },
-  "selected/general/rg-126.jpeg": {
-    src: asset_441,
-    width: 1280,
-    height: 853,
-    variants: [
-      { src: asset_442, width: 480, type: "image/webp" },
-      { src: asset_443, width: 960, type: "image/webp" },
-      { src: asset_444, width: 1280, type: "image/webp" },
-    ],
-  },
-  "selected/general/rg-128.jpeg": {
-    src: asset_445,
-    width: 1280,
-    height: 725,
-    variants: [
-      { src: asset_446, width: 480, type: "image/webp" },
-      { src: asset_447, width: 960, type: "image/webp" },
-      { src: asset_448, width: 1280, type: "image/webp" },
-    ],
-  },
-  "selected/general/rg-129.jpeg": {
-    src: asset_449,
-    width: 1280,
-    height: 960,
-    variants: [
-      { src: asset_450, width: 480, type: "image/webp" },
-      { src: asset_451, width: 960, type: "image/webp" },
-      { src: asset_452, width: 1280, type: "image/webp" },
-    ],
-  },
-  "selected/general/rg-131.jpeg": {
-    src: asset_453,
+  "selected/general/rg-046.jpg": {
+    src: asset_450,
     width: 960,
-    height: 1280,
+    height: 540,
+    variants: [
+      { src: asset_451, width: 480, type: "image/webp" },
+      { src: asset_452, width: 960, type: "image/webp" },
+    ],
+  },
+  "selected/general/rg-049.jpg": {
+    src: asset_453,
+    width: 1040,
+    height: 780,
     variants: [
       { src: asset_454, width: 480, type: "image/webp" },
       { src: asset_455, width: 960, type: "image/webp" },
+      { src: asset_456, width: 1040, type: "image/webp" },
     ],
   },
-  "selected/general/rg-135.jpeg": {
-    src: asset_456,
-    width: 960,
-    height: 1280,
-    variants: [
-      { src: asset_457, width: 480, type: "image/webp" },
-      { src: asset_458, width: 960, type: "image/webp" },
-    ],
-  },
-  "selected/general/rg-141.jpeg": {
-    src: asset_459,
-    width: 477,
-    height: 1008,
-    variants: [
-      { src: asset_460, width: 477, type: "image/webp" },
-    ],
-  },
-  "selected/general/rg-142.jpeg": {
-    src: asset_461,
+  "selected/general/rg-052.jpg": {
+    src: asset_457,
     width: 1280,
-    height: 725,
+    height: 719,
+    variants: [
+      { src: asset_458, width: 480, type: "image/webp" },
+      { src: asset_459, width: 960, type: "image/webp" },
+      { src: asset_460, width: 1280, type: "image/webp" },
+    ],
+  },
+  "selected/general/rg-055.jpg": {
+    src: asset_461,
+    width: 1080,
+    height: 608,
     variants: [
       { src: asset_462, width: 480, type: "image/webp" },
       { src: asset_463, width: 960, type: "image/webp" },
-      { src: asset_464, width: 1280, type: "image/webp" },
+      { src: asset_464, width: 1080, type: "image/webp" },
     ],
   },
-  "selected/general/rg-143.jpeg": {
+  "selected/general/rg-063.jpg": {
     src: asset_465,
-    width: 863,
-    height: 1823,
+    width: 1280,
+    height: 719,
     variants: [
       { src: asset_466, width: 480, type: "image/webp" },
-      { src: asset_467, width: 863, type: "image/webp" },
+      { src: asset_467, width: 960, type: "image/webp" },
+      { src: asset_468, width: 1280, type: "image/webp" },
     ],
   },
-  "selected/projects/pa-043.jpg": {
-    src: asset_468,
-    width: 554,
-    height: 449,
+  "selected/general/rg-066.jpg": {
+    src: asset_469,
+    width: 1080,
+    height: 720,
     variants: [
-      { src: asset_469, width: 480, type: "image/webp" },
-      { src: asset_470, width: 554, type: "image/webp" },
+      { src: asset_470, width: 480, type: "image/webp" },
+      { src: asset_471, width: 960, type: "image/webp" },
+      { src: asset_472, width: 1080, type: "image/webp" },
     ],
   },
-  "selected/projects/pa-046.jpg": {
-    src: asset_471,
-    width: 600,
-    height: 487,
+  "selected/general/rg-067.jpg": {
+    src: asset_473,
+    width: 1086,
+    height: 1448,
     variants: [
-      { src: asset_472, width: 480, type: "image/webp" },
-      { src: asset_473, width: 600, type: "image/webp" },
+      { src: asset_474, width: 480, type: "image/webp" },
+      { src: asset_475, width: 960, type: "image/webp" },
+      { src: asset_476, width: 1086, type: "image/webp" },
     ],
   },
-  "selected/projects/pa-054.jpg": {
-    src: asset_474,
-    width: 544,
-    height: 434,
-    variants: [
-      { src: asset_475, width: 480, type: "image/webp" },
-      { src: asset_476, width: 544, type: "image/webp" },
-    ],
-  },
-  "selected/projects/pa-055.jpg": {
+  "selected/general/rg-071.jpg": {
     src: asset_477,
-    width: 554,
-    height: 449,
+    width: 810,
+    height: 1080,
     variants: [
       { src: asset_478, width: 480, type: "image/webp" },
-      { src: asset_479, width: 554, type: "image/webp" },
+      { src: asset_479, width: 810, type: "image/webp" },
     ],
   },
-  "selected/projects/pa-063.jpg": {
+  "selected/general/rg-072.jpg": {
     src: asset_480,
-    width: 555,
-    height: 408,
+    width: 1280,
+    height: 719,
     variants: [
       { src: asset_481, width: 480, type: "image/webp" },
-      { src: asset_482, width: 555, type: "image/webp" },
+      { src: asset_482, width: 960, type: "image/webp" },
+      { src: asset_483, width: 1280, type: "image/webp" },
     ],
   },
-  "selected/projects/pa-067.jpg": {
-    src: asset_483,
-    width: 565,
-    height: 436,
+  "selected/general/rg-074.jpg": {
+    src: asset_484,
+    width: 1080,
+    height: 810,
     variants: [
-      { src: asset_484, width: 480, type: "image/webp" },
-      { src: asset_485, width: 565, type: "image/webp" },
+      { src: asset_485, width: 480, type: "image/webp" },
+      { src: asset_486, width: 960, type: "image/webp" },
+      { src: asset_487, width: 1080, type: "image/webp" },
     ],
   },
-  "selected/projects/pa-074.jpg": {
-    src: asset_486,
-    width: 543,
-    height: 396,
+  "selected/general/rg-087.jpg": {
+    src: asset_488,
+    width: 812,
+    height: 1080,
     variants: [
-      { src: asset_487, width: 480, type: "image/webp" },
-      { src: asset_488, width: 543, type: "image/webp" },
+      { src: asset_489, width: 480, type: "image/webp" },
+      { src: asset_490, width: 812, type: "image/webp" },
     ],
   },
-  "selected/projects/pa-080.jpg": {
-    src: asset_489,
-    width: 544,
-    height: 410,
+  "selected/general/rg-093.jpg": {
+    src: asset_491,
+    width: 1280,
+    height: 719,
     variants: [
-      { src: asset_490, width: 480, type: "image/webp" },
-      { src: asset_491, width: 544, type: "image/webp" },
+      { src: asset_492, width: 480, type: "image/webp" },
+      { src: asset_493, width: 960, type: "image/webp" },
+      { src: asset_494, width: 1280, type: "image/webp" },
     ],
   },
-  "selected/projects/pa-103.jpg": {
-    src: asset_492,
-    width: 565,
-    height: 435,
-    variants: [
-      { src: asset_493, width: 480, type: "image/webp" },
-      { src: asset_494, width: 565, type: "image/webp" },
-    ],
-  },
-  "selected/projects/pa-105.jpg": {
+  "selected/general/rg-094.jpg": {
     src: asset_495,
-    width: 1444,
-    height: 1089,
+    width: 1675,
+    height: 939,
     variants: [
       { src: asset_496, width: 480, type: "image/webp" },
       { src: asset_497, width: 960, type: "image/webp" },
-      { src: asset_498, width: 1444, type: "image/webp" },
+      { src: asset_498, width: 1600, type: "image/webp" },
     ],
   },
-  "selected/projects/pa-110.jpg": {
+  "selected/general/rg-098.jpg": {
     src: asset_499,
-    width: 544,
-    height: 443,
+    width: 1080,
+    height: 608,
     variants: [
       { src: asset_500, width: 480, type: "image/webp" },
-      { src: asset_501, width: 544, type: "image/webp" },
+      { src: asset_501, width: 960, type: "image/webp" },
+      { src: asset_502, width: 1080, type: "image/webp" },
     ],
   },
-  "selected/projects/pa-121.jpg": {
-    src: asset_502,
-    width: 554,
-    height: 441,
-    variants: [
-      { src: asset_503, width: 480, type: "image/webp" },
-      { src: asset_504, width: 554, type: "image/webp" },
-    ],
-  },
-  "selected/projects/pa-126.jpg": {
-    src: asset_505,
-    width: 1399,
-    height: 1124,
-    variants: [
-      { src: asset_506, width: 480, type: "image/webp" },
-      { src: asset_507, width: 960, type: "image/webp" },
-      { src: asset_508, width: 1399, type: "image/webp" },
-    ],
-  },
-  "selected/projects/pa-129.jpg": {
-    src: asset_509,
-    width: 554,
-    height: 434,
-    variants: [
-      { src: asset_510, width: 480, type: "image/webp" },
-      { src: asset_511, width: 554, type: "image/webp" },
-    ],
-  },
-  "selected/projects/pa-131.jpg": {
-    src: asset_512,
-    width: 543,
-    height: 443,
-    variants: [
-      { src: asset_513, width: 480, type: "image/webp" },
-      { src: asset_514, width: 543, type: "image/webp" },
-    ],
-  },
-  "selected/projects/pa-133.jpg": {
-    src: asset_515,
-    width: 564,
-    height: 449,
-    variants: [
-      { src: asset_516, width: 480, type: "image/webp" },
-      { src: asset_517, width: 564, type: "image/webp" },
-    ],
-  },
-  "selected/projects/pp-009.jpg": {
-    src: asset_518,
-    width: 730,
-    height: 452,
-    variants: [
-      { src: asset_519, width: 480, type: "image/webp" },
-      { src: asset_520, width: 730, type: "image/webp" },
-    ],
-  },
-  "selected/projects/pp-010.jpg": {
-    src: asset_521,
-    width: 714,
-    height: 488,
-    variants: [
-      { src: asset_522, width: 480, type: "image/webp" },
-      { src: asset_523, width: 714, type: "image/webp" },
-    ],
-  },
-  "selected/projects/pp-011.jpg": {
-    src: asset_524,
-    width: 694,
-    height: 475,
-    variants: [
-      { src: asset_525, width: 480, type: "image/webp" },
-      { src: asset_526, width: 694, type: "image/webp" },
-    ],
-  },
-  "selected/projects/pp-017.jpg": {
-    src: asset_527,
-    width: 1496,
-    height: 1051,
-    variants: [
-      { src: asset_528, width: 480, type: "image/webp" },
-      { src: asset_529, width: 960, type: "image/webp" },
-      { src: asset_530, width: 1496, type: "image/webp" },
-    ],
-  },
-  "selected/projects/pp-021.jpg": {
-    src: asset_531,
-    width: 694,
-    height: 475,
-    variants: [
-      { src: asset_532, width: 480, type: "image/webp" },
-      { src: asset_533, width: 694, type: "image/webp" },
-    ],
-  },
-  "selected/projects/pp-024.jpg": {
-    src: asset_534,
-    width: 694,
-    height: 475,
-    variants: [
-      { src: asset_535, width: 480, type: "image/webp" },
-      { src: asset_536, width: 694, type: "image/webp" },
-    ],
-  },
-  "selected/projects/pp-034.jpg": {
-    src: asset_537,
-    width: 656,
-    height: 469,
-    variants: [
-      { src: asset_538, width: 480, type: "image/webp" },
-      { src: asset_539, width: 656, type: "image/webp" },
-    ],
-  },
-  "selected/projects/pp-038.jpg": {
-    src: asset_540,
-    width: 656,
-    height: 474,
-    variants: [
-      { src: asset_541, width: 480, type: "image/webp" },
-      { src: asset_542, width: 656, type: "image/webp" },
-    ],
-  },
-  "selected/projects/pp-040.jpg": {
-    src: asset_543,
-    width: 694,
-    height: 486,
-    variants: [
-      { src: asset_544, width: 480, type: "image/webp" },
-      { src: asset_545, width: 694, type: "image/webp" },
-    ],
-  },
-  "selected/projects/pp-043.jpg": {
-    src: asset_546,
-    width: 1586,
-    height: 992,
-    variants: [
-      { src: asset_547, width: 480, type: "image/webp" },
-      { src: asset_548, width: 960, type: "image/webp" },
-      { src: asset_549, width: 1586, type: "image/webp" },
-    ],
-  },
-  "selected/projects/pp-045.jpg": {
-    src: asset_550,
-    width: 723,
-    height: 514,
-    variants: [
-      { src: asset_551, width: 480, type: "image/webp" },
-      { src: asset_552, width: 723, type: "image/webp" },
-    ],
-  },
-  "selected/projects/pp-048.jpg": {
-    src: asset_553,
-    width: 719,
-    height: 486,
-    variants: [
-      { src: asset_554, width: 480, type: "image/webp" },
-      { src: asset_555, width: 719, type: "image/webp" },
-    ],
-  },
-  "selected/projects/pp-051.jpg": {
-    src: asset_556,
-    width: 710,
-    height: 463,
-    variants: [
-      { src: asset_557, width: 480, type: "image/webp" },
-      { src: asset_558, width: 710, type: "image/webp" },
-    ],
-  },
-  "selected/projects/pp-053.jpg": {
-    src: asset_559,
-    width: 656,
-    height: 475,
-    variants: [
-      { src: asset_560, width: 480, type: "image/webp" },
-      { src: asset_561, width: 656, type: "image/webp" },
-    ],
-  },
-  "selected/projects/pp-055.jpg": {
-    src: asset_562,
-    width: 731,
-    height: 486,
-    variants: [
-      { src: asset_563, width: 480, type: "image/webp" },
-      { src: asset_564, width: 731, type: "image/webp" },
-    ],
-  },
-  "selected/projects/pp-056.jpg": {
-    src: asset_565,
-    width: 1514,
-    height: 1039,
-    variants: [
-      { src: asset_566, width: 480, type: "image/webp" },
-      { src: asset_567, width: 960, type: "image/webp" },
-      { src: asset_568, width: 1514, type: "image/webp" },
-    ],
-  },
-  "selected/projects/pp-057.jpg": {
-    src: asset_569,
-    width: 728,
-    height: 451,
-    variants: [
-      { src: asset_570, width: 480, type: "image/webp" },
-      { src: asset_571, width: 728, type: "image/webp" },
-    ],
-  },
-  "selected/projects/pp-059.jpg": {
-    src: asset_572,
-    width: 656,
-    height: 472,
-    variants: [
-      { src: asset_573, width: 480, type: "image/webp" },
-      { src: asset_574, width: 656, type: "image/webp" },
-    ],
-  },
-  "selected/projects/pp-060.jpg": {
-    src: asset_575,
-    width: 657,
-    height: 664,
-    variants: [
-      { src: asset_576, width: 480, type: "image/webp" },
-      { src: asset_577, width: 657, type: "image/webp" },
-    ],
-  },
-  "selected/projects/pp-061.jpg": {
-    src: asset_578,
-    width: 734,
-    height: 924,
-    variants: [
-      { src: asset_579, width: 480, type: "image/webp" },
-      { src: asset_580, width: 734, type: "image/webp" },
-    ],
-  },
-  "selected/projects/pp-062.jpg": {
-    src: asset_581,
-    width: 683,
-    height: 470,
-    variants: [
-      { src: asset_582, width: 480, type: "image/webp" },
-      { src: asset_583, width: 683, type: "image/webp" },
-    ],
-  },
-  "selected/projects/pp-063.jpg": {
-    src: asset_584,
-    width: 656,
-    height: 460,
-    variants: [
-      { src: asset_585, width: 480, type: "image/webp" },
-      { src: asset_586, width: 656, type: "image/webp" },
-    ],
-  },
-  "selected/projects/pp-065.jpg": {
-    src: asset_587,
-    width: 657,
-    height: 487,
-    variants: [
-      { src: asset_588, width: 480, type: "image/webp" },
-      { src: asset_589, width: 657, type: "image/webp" },
-    ],
-  },
-  "selected/projects/pp-069.jpg": {
-    src: asset_590,
-    width: 730,
-    height: 487,
-    variants: [
-      { src: asset_591, width: 480, type: "image/webp" },
-      { src: asset_592, width: 730, type: "image/webp" },
-    ],
-  },
-  "selected/projects/pp-071.jpg": {
-    src: asset_593,
-    width: 685,
-    height: 484,
-    variants: [
-      { src: asset_594, width: 480, type: "image/webp" },
-      { src: asset_595, width: 685, type: "image/webp" },
-    ],
-  },
-  "selected/projects/pp-072.jpg": {
-    src: asset_596,
-    width: 727,
-    height: 452,
-    variants: [
-      { src: asset_597, width: 480, type: "image/webp" },
-      { src: asset_598, width: 727, type: "image/webp" },
-    ],
-  },
-  "selected/projects/pp-075.jpg": {
-    src: asset_599,
-    width: 667,
-    height: 728,
-    variants: [
-      { src: asset_600, width: 480, type: "image/webp" },
-      { src: asset_601, width: 667, type: "image/webp" },
-    ],
-  },
-  "selected/recent/im-030.jpeg": {
-    src: asset_602,
-    width: 960,
-    height: 1280,
-    variants: [
-      { src: asset_603, width: 480, type: "image/webp" },
-      { src: asset_604, width: 960, type: "image/webp" },
-    ],
-  },
-  "selected/recent/im-033.jpeg": {
-    src: asset_605,
-    width: 960,
-    height: 1280,
-    variants: [
-      { src: asset_606, width: 480, type: "image/webp" },
-      { src: asset_607, width: 960, type: "image/webp" },
-    ],
-  },
-  "selected/recent/im-036.jpeg": {
-    src: asset_608,
+  "selected/general/rg-105.jpg": {
+    src: asset_503,
     width: 1280,
-    height: 960,
+    height: 719,
     variants: [
-      { src: asset_609, width: 480, type: "image/webp" },
-      { src: asset_610, width: 960, type: "image/webp" },
-      { src: asset_611, width: 1280, type: "image/webp" },
+      { src: asset_504, width: 480, type: "image/webp" },
+      { src: asset_505, width: 960, type: "image/webp" },
+      { src: asset_506, width: 1280, type: "image/webp" },
     ],
   },
-  "selected/recent/im-040.png": {
-    src: asset_612,
-    width: 440,
-    height: 363,
+  "selected/general/rg-121.jpeg": {
+    src: asset_507,
+    width: 1666,
+    height: 944,
     variants: [
-      { src: asset_613, width: 440, type: "image/webp" },
+      { src: asset_508, width: 480, type: "image/webp" },
+      { src: asset_509, width: 960, type: "image/webp" },
+      { src: asset_510, width: 1600, type: "image/webp" },
     ],
   },
-  "selected/recent/im-047.jpeg": {
-    src: asset_614,
-    width: 762,
-    height: 1096,
+  "selected/general/rg-122.jpeg": {
+    src: asset_511,
+    width: 1280,
+    height: 725,
     variants: [
-      { src: asset_615, width: 480, type: "image/webp" },
-      { src: asset_616, width: 762, type: "image/webp" },
+      { src: asset_512, width: 480, type: "image/webp" },
+      { src: asset_513, width: 960, type: "image/webp" },
+      { src: asset_514, width: 1280, type: "image/webp" },
     ],
   },
-  "team/00-site-logo-enikkom-construction-limited.png": {
-    src: asset_617,
+  "selected/general/rg-125.jpeg": {
+    src: asset_515,
     width: 1536,
     height: 1024,
     variants: [
+      { src: asset_516, width: 480, type: "image/webp" },
+      { src: asset_517, width: 960, type: "image/webp" },
+      { src: asset_518, width: 1536, type: "image/webp" },
+    ],
+  },
+  "selected/general/rg-126.jpeg": {
+    src: asset_519,
+    width: 1280,
+    height: 853,
+    variants: [
+      { src: asset_520, width: 480, type: "image/webp" },
+      { src: asset_521, width: 960, type: "image/webp" },
+      { src: asset_522, width: 1280, type: "image/webp" },
+    ],
+  },
+  "selected/general/rg-128.jpeg": {
+    src: asset_523,
+    width: 1280,
+    height: 725,
+    variants: [
+      { src: asset_524, width: 480, type: "image/webp" },
+      { src: asset_525, width: 960, type: "image/webp" },
+      { src: asset_526, width: 1280, type: "image/webp" },
+    ],
+  },
+  "selected/general/rg-129.jpeg": {
+    src: asset_527,
+    width: 1280,
+    height: 960,
+    variants: [
+      { src: asset_528, width: 480, type: "image/webp" },
+      { src: asset_529, width: 960, type: "image/webp" },
+      { src: asset_530, width: 1280, type: "image/webp" },
+    ],
+  },
+  "selected/general/rg-131.jpeg": {
+    src: asset_531,
+    width: 960,
+    height: 1280,
+    variants: [
+      { src: asset_532, width: 480, type: "image/webp" },
+      { src: asset_533, width: 960, type: "image/webp" },
+    ],
+  },
+  "selected/general/rg-135.jpeg": {
+    src: asset_534,
+    width: 960,
+    height: 1280,
+    variants: [
+      { src: asset_535, width: 480, type: "image/webp" },
+      { src: asset_536, width: 960, type: "image/webp" },
+    ],
+  },
+  "selected/general/rg-141.jpeg": {
+    src: asset_537,
+    width: 477,
+    height: 1008,
+    variants: [
+      { src: asset_538, width: 477, type: "image/webp" },
+    ],
+  },
+  "selected/general/rg-143.jpeg": {
+    src: asset_539,
+    width: 863,
+    height: 1823,
+    variants: [
+      { src: asset_540, width: 480, type: "image/webp" },
+      { src: asset_541, width: 863, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pa-043.jpg": {
+    src: asset_542,
+    width: 554,
+    height: 449,
+    variants: [
+      { src: asset_543, width: 480, type: "image/webp" },
+      { src: asset_544, width: 554, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pa-046.jpg": {
+    src: asset_545,
+    width: 600,
+    height: 487,
+    variants: [
+      { src: asset_546, width: 480, type: "image/webp" },
+      { src: asset_547, width: 600, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pa-054.jpg": {
+    src: asset_548,
+    width: 544,
+    height: 434,
+    variants: [
+      { src: asset_549, width: 480, type: "image/webp" },
+      { src: asset_550, width: 544, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pa-055.jpg": {
+    src: asset_551,
+    width: 554,
+    height: 449,
+    variants: [
+      { src: asset_552, width: 480, type: "image/webp" },
+      { src: asset_553, width: 554, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pa-063.jpg": {
+    src: asset_554,
+    width: 555,
+    height: 408,
+    variants: [
+      { src: asset_555, width: 480, type: "image/webp" },
+      { src: asset_556, width: 555, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pa-067.jpg": {
+    src: asset_557,
+    width: 565,
+    height: 436,
+    variants: [
+      { src: asset_558, width: 480, type: "image/webp" },
+      { src: asset_559, width: 565, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pa-074.jpg": {
+    src: asset_560,
+    width: 543,
+    height: 396,
+    variants: [
+      { src: asset_561, width: 480, type: "image/webp" },
+      { src: asset_562, width: 543, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pa-080.jpg": {
+    src: asset_563,
+    width: 544,
+    height: 410,
+    variants: [
+      { src: asset_564, width: 480, type: "image/webp" },
+      { src: asset_565, width: 544, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pa-103.jpg": {
+    src: asset_566,
+    width: 565,
+    height: 435,
+    variants: [
+      { src: asset_567, width: 480, type: "image/webp" },
+      { src: asset_568, width: 565, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pa-105.jpg": {
+    src: asset_569,
+    width: 1444,
+    height: 1089,
+    variants: [
+      { src: asset_570, width: 480, type: "image/webp" },
+      { src: asset_571, width: 960, type: "image/webp" },
+      { src: asset_572, width: 1444, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pa-110.jpg": {
+    src: asset_573,
+    width: 544,
+    height: 443,
+    variants: [
+      { src: asset_574, width: 480, type: "image/webp" },
+      { src: asset_575, width: 544, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pa-121.jpg": {
+    src: asset_576,
+    width: 554,
+    height: 441,
+    variants: [
+      { src: asset_577, width: 480, type: "image/webp" },
+      { src: asset_578, width: 554, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pa-126.jpg": {
+    src: asset_579,
+    width: 1399,
+    height: 1124,
+    variants: [
+      { src: asset_580, width: 480, type: "image/webp" },
+      { src: asset_581, width: 960, type: "image/webp" },
+      { src: asset_582, width: 1399, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pa-129.jpg": {
+    src: asset_583,
+    width: 554,
+    height: 434,
+    variants: [
+      { src: asset_584, width: 480, type: "image/webp" },
+      { src: asset_585, width: 554, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pa-131.jpg": {
+    src: asset_586,
+    width: 543,
+    height: 443,
+    variants: [
+      { src: asset_587, width: 480, type: "image/webp" },
+      { src: asset_588, width: 543, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pa-133.jpg": {
+    src: asset_589,
+    width: 564,
+    height: 449,
+    variants: [
+      { src: asset_590, width: 480, type: "image/webp" },
+      { src: asset_591, width: 564, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pp-009.jpg": {
+    src: asset_592,
+    width: 730,
+    height: 452,
+    variants: [
+      { src: asset_593, width: 480, type: "image/webp" },
+      { src: asset_594, width: 730, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pp-010.jpg": {
+    src: asset_595,
+    width: 714,
+    height: 488,
+    variants: [
+      { src: asset_596, width: 480, type: "image/webp" },
+      { src: asset_597, width: 714, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pp-011.jpg": {
+    src: asset_598,
+    width: 694,
+    height: 475,
+    variants: [
+      { src: asset_599, width: 480, type: "image/webp" },
+      { src: asset_600, width: 694, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pp-017.jpg": {
+    src: asset_601,
+    width: 1496,
+    height: 1051,
+    variants: [
+      { src: asset_602, width: 480, type: "image/webp" },
+      { src: asset_603, width: 960, type: "image/webp" },
+      { src: asset_604, width: 1496, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pp-021.jpg": {
+    src: asset_605,
+    width: 694,
+    height: 475,
+    variants: [
+      { src: asset_606, width: 480, type: "image/webp" },
+      { src: asset_607, width: 694, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pp-024.jpg": {
+    src: asset_608,
+    width: 694,
+    height: 475,
+    variants: [
+      { src: asset_609, width: 480, type: "image/webp" },
+      { src: asset_610, width: 694, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pp-034.jpg": {
+    src: asset_611,
+    width: 656,
+    height: 469,
+    variants: [
+      { src: asset_612, width: 480, type: "image/webp" },
+      { src: asset_613, width: 656, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pp-038.jpg": {
+    src: asset_614,
+    width: 656,
+    height: 474,
+    variants: [
+      { src: asset_615, width: 480, type: "image/webp" },
+      { src: asset_616, width: 656, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pp-040.jpg": {
+    src: asset_617,
+    width: 694,
+    height: 486,
+    variants: [
       { src: asset_618, width: 480, type: "image/webp" },
-      { src: asset_619, width: 960, type: "image/webp" },
-      { src: asset_620, width: 1536, type: "image/webp" },
+      { src: asset_619, width: 694, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pp-043.jpg": {
+    src: asset_620,
+    width: 1586,
+    height: 992,
+    variants: [
+      { src: asset_621, width: 480, type: "image/webp" },
+      { src: asset_622, width: 960, type: "image/webp" },
+      { src: asset_623, width: 1586, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pp-045.jpg": {
+    src: asset_624,
+    width: 723,
+    height: 514,
+    variants: [
+      { src: asset_625, width: 480, type: "image/webp" },
+      { src: asset_626, width: 723, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pp-048.jpg": {
+    src: asset_627,
+    width: 719,
+    height: 486,
+    variants: [
+      { src: asset_628, width: 480, type: "image/webp" },
+      { src: asset_629, width: 719, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pp-051.jpg": {
+    src: asset_630,
+    width: 710,
+    height: 463,
+    variants: [
+      { src: asset_631, width: 480, type: "image/webp" },
+      { src: asset_632, width: 710, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pp-053.jpg": {
+    src: asset_633,
+    width: 656,
+    height: 475,
+    variants: [
+      { src: asset_634, width: 480, type: "image/webp" },
+      { src: asset_635, width: 656, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pp-055.jpg": {
+    src: asset_636,
+    width: 731,
+    height: 486,
+    variants: [
+      { src: asset_637, width: 480, type: "image/webp" },
+      { src: asset_638, width: 731, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pp-056.jpg": {
+    src: asset_639,
+    width: 1514,
+    height: 1039,
+    variants: [
+      { src: asset_640, width: 480, type: "image/webp" },
+      { src: asset_641, width: 960, type: "image/webp" },
+      { src: asset_642, width: 1514, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pp-057.jpg": {
+    src: asset_643,
+    width: 728,
+    height: 451,
+    variants: [
+      { src: asset_644, width: 480, type: "image/webp" },
+      { src: asset_645, width: 728, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pp-059.jpg": {
+    src: asset_646,
+    width: 656,
+    height: 472,
+    variants: [
+      { src: asset_647, width: 480, type: "image/webp" },
+      { src: asset_648, width: 656, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pp-060.jpg": {
+    src: asset_649,
+    width: 657,
+    height: 664,
+    variants: [
+      { src: asset_650, width: 480, type: "image/webp" },
+      { src: asset_651, width: 657, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pp-061.jpg": {
+    src: asset_652,
+    width: 734,
+    height: 924,
+    variants: [
+      { src: asset_653, width: 480, type: "image/webp" },
+      { src: asset_654, width: 734, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pp-062.jpg": {
+    src: asset_655,
+    width: 683,
+    height: 470,
+    variants: [
+      { src: asset_656, width: 480, type: "image/webp" },
+      { src: asset_657, width: 683, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pp-063.jpg": {
+    src: asset_658,
+    width: 656,
+    height: 460,
+    variants: [
+      { src: asset_659, width: 480, type: "image/webp" },
+      { src: asset_660, width: 656, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pp-065.jpg": {
+    src: asset_661,
+    width: 657,
+    height: 487,
+    variants: [
+      { src: asset_662, width: 480, type: "image/webp" },
+      { src: asset_663, width: 657, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pp-069.jpg": {
+    src: asset_664,
+    width: 730,
+    height: 487,
+    variants: [
+      { src: asset_665, width: 480, type: "image/webp" },
+      { src: asset_666, width: 730, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pp-071.jpg": {
+    src: asset_667,
+    width: 685,
+    height: 484,
+    variants: [
+      { src: asset_668, width: 480, type: "image/webp" },
+      { src: asset_669, width: 685, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pp-072.jpg": {
+    src: asset_670,
+    width: 727,
+    height: 452,
+    variants: [
+      { src: asset_671, width: 480, type: "image/webp" },
+      { src: asset_672, width: 727, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pp-075.jpg": {
+    src: asset_673,
+    width: 667,
+    height: 728,
+    variants: [
+      { src: asset_674, width: 480, type: "image/webp" },
+      { src: asset_675, width: 667, type: "image/webp" },
+    ],
+  },
+  "selected/recent/im-030.jpeg": {
+    src: asset_676,
+    width: 960,
+    height: 1280,
+    variants: [
+      { src: asset_677, width: 480, type: "image/webp" },
+      { src: asset_678, width: 960, type: "image/webp" },
+    ],
+  },
+  "selected/recent/im-033.jpeg": {
+    src: asset_679,
+    width: 960,
+    height: 1280,
+    variants: [
+      { src: asset_680, width: 480, type: "image/webp" },
+      { src: asset_681, width: 960, type: "image/webp" },
+    ],
+  },
+  "selected/recent/im-036.jpeg": {
+    src: asset_682,
+    width: 1280,
+    height: 960,
+    variants: [
+      { src: asset_683, width: 480, type: "image/webp" },
+      { src: asset_684, width: 960, type: "image/webp" },
+      { src: asset_685, width: 1280, type: "image/webp" },
+    ],
+  },
+  "selected/recent/im-040.png": {
+    src: asset_686,
+    width: 440,
+    height: 363,
+    variants: [
+      { src: asset_687, width: 440, type: "image/webp" },
+    ],
+  },
+  "selected/recent/im-047.jpeg": {
+    src: asset_688,
+    width: 762,
+    height: 1096,
+    variants: [
+      { src: asset_689, width: 480, type: "image/webp" },
+      { src: asset_690, width: 762, type: "image/webp" },
+    ],
+  },
+  "selected/recent/op-01.jpg": {
+    src: asset_691,
+    width: 810,
+    height: 1080,
+    variants: [
+      { src: asset_692, width: 480, type: "image/webp" },
+      { src: asset_693, width: 810, type: "image/webp" },
+    ],
+  },
+  "selected/recent/op-02.jpg": {
+    src: asset_694,
+    width: 1080,
+    height: 810,
+    variants: [
+      { src: asset_695, width: 480, type: "image/webp" },
+      { src: asset_696, width: 960, type: "image/webp" },
+      { src: asset_697, width: 1080, type: "image/webp" },
+    ],
+  },
+  "selected/recent/op-03.jpg": {
+    src: asset_698,
+    width: 810,
+    height: 1080,
+    variants: [
+      { src: asset_699, width: 480, type: "image/webp" },
+      { src: asset_700, width: 810, type: "image/webp" },
+    ],
+  },
+  "selected/recent/op-04.jpg": {
+    src: asset_701,
+    width: 810,
+    height: 1080,
+    variants: [
+      { src: asset_702, width: 480, type: "image/webp" },
+      { src: asset_703, width: 810, type: "image/webp" },
+    ],
+  },
+  "selected/recent/op-05.jpg": {
+    src: asset_704,
+    width: 810,
+    height: 1080,
+    variants: [
+      { src: asset_705, width: 480, type: "image/webp" },
+      { src: asset_706, width: 810, type: "image/webp" },
+    ],
+  },
+  "selected/recent/op-06.jpg": {
+    src: asset_707,
+    width: 810,
+    height: 1080,
+    variants: [
+      { src: asset_708, width: 480, type: "image/webp" },
+      { src: asset_709, width: 810, type: "image/webp" },
+    ],
+  },
+  "selected/recent/op-07.jpg": {
+    src: asset_710,
+    width: 810,
+    height: 1080,
+    variants: [
+      { src: asset_711, width: 480, type: "image/webp" },
+      { src: asset_712, width: 810, type: "image/webp" },
+    ],
+  },
+  "selected/recent/op-08.jpg": {
+    src: asset_713,
+    width: 810,
+    height: 1080,
+    variants: [
+      { src: asset_714, width: 480, type: "image/webp" },
+      { src: asset_715, width: 810, type: "image/webp" },
+    ],
+  },
+  "team/00-site-logo-enikkom-construction-limited.png": {
+    src: asset_716,
+    width: 1536,
+    height: 1024,
+    variants: [
+      { src: asset_717, width: 480, type: "image/webp" },
+      { src: asset_718, width: 960, type: "image/webp" },
+      { src: asset_719, width: 1536, type: "image/webp" },
     ],
   },
   "team/01-partner-logo-hddtec-limited.png": {
-    src: asset_621,
+    src: asset_720,
     width: 1254,
     height: 1254,
     variants: [
-      { src: asset_622, width: 480, type: "image/webp" },
-      { src: asset_623, width: 960, type: "image/webp" },
-      { src: asset_624, width: 1254, type: "image/webp" },
+      { src: asset_721, width: 480, type: "image/webp" },
+      { src: asset_722, width: 960, type: "image/webp" },
+      { src: asset_723, width: 1254, type: "image/webp" },
     ],
   },
   "team/02-hero-management-team-hero-background.png": {
-    src: asset_625,
+    src: asset_724,
     width: 1087,
     height: 1447,
     variants: [
-      { src: asset_626, width: 480, type: "image/webp" },
-      { src: asset_627, width: 960, type: "image/webp" },
-      { src: asset_628, width: 1087, type: "image/webp" },
+      { src: asset_725, width: 480, type: "image/webp" },
+      { src: asset_726, width: 960, type: "image/webp" },
+      { src: asset_727, width: 1087, type: "image/webp" },
     ],
   },
   "team/03-team-photo-engr-edward-amene.png": {
-    src: asset_629,
+    src: asset_728,
     width: 1254,
     height: 1254,
     variants: [
-      { src: asset_630, width: 480, type: "image/webp" },
-      { src: asset_631, width: 960, type: "image/webp" },
-      { src: asset_632, width: 1254, type: "image/webp" },
+      { src: asset_729, width: 480, type: "image/webp" },
+      { src: asset_730, width: 960, type: "image/webp" },
+      { src: asset_731, width: 1254, type: "image/webp" },
     ],
   },
   "team/04-team-photo-engr-saleem-ahmad-khan.png": {
-    src: asset_633,
+    src: asset_732,
     width: 1254,
     height: 1254,
     variants: [
-      { src: asset_634, width: 480, type: "image/webp" },
-      { src: asset_635, width: 960, type: "image/webp" },
-      { src: asset_636, width: 1254, type: "image/webp" },
+      { src: asset_733, width: 480, type: "image/webp" },
+      { src: asset_734, width: 960, type: "image/webp" },
+      { src: asset_735, width: 1254, type: "image/webp" },
     ],
   },
   "team/05-team-photo-mr-francis-anatogu.png": {
-    src: asset_637,
+    src: asset_736,
     width: 1254,
     height: 1254,
     variants: [
-      { src: asset_638, width: 480, type: "image/webp" },
-      { src: asset_639, width: 960, type: "image/webp" },
-      { src: asset_640, width: 1254, type: "image/webp" },
+      { src: asset_737, width: 480, type: "image/webp" },
+      { src: asset_738, width: 960, type: "image/webp" },
+      { src: asset_739, width: 1254, type: "image/webp" },
     ],
   },
   "team/06-team-photo-adekunle-adewole-phd.png": {
-    src: asset_641,
+    src: asset_740,
     width: 1254,
     height: 1254,
     variants: [
-      { src: asset_642, width: 480, type: "image/webp" },
-      { src: asset_643, width: 960, type: "image/webp" },
-      { src: asset_644, width: 1254, type: "image/webp" },
+      { src: asset_741, width: 480, type: "image/webp" },
+      { src: asset_742, width: 960, type: "image/webp" },
+      { src: asset_743, width: 1254, type: "image/webp" },
     ],
   },
   "team/07-team-photo-mr-chibuike-nwachukwu.png": {
-    src: asset_645,
+    src: asset_744,
     width: 1254,
     height: 1254,
     variants: [
-      { src: asset_646, width: 480, type: "image/webp" },
-      { src: asset_647, width: 960, type: "image/webp" },
-      { src: asset_648, width: 1254, type: "image/webp" },
+      { src: asset_745, width: 480, type: "image/webp" },
+      { src: asset_746, width: 960, type: "image/webp" },
+      { src: asset_747, width: 1254, type: "image/webp" },
     ],
   },
   "team/08-team-photo-teddy-allen.png": {
-    src: asset_649,
+    src: asset_748,
     width: 1254,
     height: 1254,
     variants: [
-      { src: asset_650, width: 480, type: "image/webp" },
-      { src: asset_651, width: 960, type: "image/webp" },
-      { src: asset_652, width: 1254, type: "image/webp" },
+      { src: asset_749, width: 480, type: "image/webp" },
+      { src: asset_750, width: 960, type: "image/webp" },
+      { src: asset_751, width: 1254, type: "image/webp" },
     ],
   },
   "team/09-team-photo-idigbor-emeka-fca.png": {
-    src: asset_653,
+    src: asset_752,
     width: 1254,
     height: 1254,
     variants: [
-      { src: asset_654, width: 480, type: "image/webp" },
-      { src: asset_655, width: 960, type: "image/webp" },
-      { src: asset_656, width: 1254, type: "image/webp" },
+      { src: asset_753, width: 480, type: "image/webp" },
+      { src: asset_754, width: 960, type: "image/webp" },
+      { src: asset_755, width: 1254, type: "image/webp" },
     ],
   },
   "team/10-team-photo-biodun-adefila.png": {
-    src: asset_657,
+    src: asset_756,
     width: 1085,
     height: 1450,
     variants: [
-      { src: asset_658, width: 480, type: "image/webp" },
-      { src: asset_659, width: 960, type: "image/webp" },
-      { src: asset_660, width: 1085, type: "image/webp" },
+      { src: asset_757, width: 480, type: "image/webp" },
+      { src: asset_758, width: 960, type: "image/webp" },
+      { src: asset_759, width: 1085, type: "image/webp" },
     ],
   },
   "team/11-team-photo-ken-james.png": {
-    src: asset_661,
+    src: asset_760,
     width: 2048,
     height: 2048,
     variants: [
-      { src: asset_662, width: 480, type: "image/webp" },
-      { src: asset_663, width: 960, type: "image/webp" },
-      { src: asset_664, width: 1600, type: "image/webp" },
+      { src: asset_761, width: 480, type: "image/webp" },
+      { src: asset_762, width: 960, type: "image/webp" },
+      { src: asset_763, width: 1600, type: "image/webp" },
+    ],
+  },
+  "team/12-idigbor-emeka.png": {
+    src: asset_764,
+    width: 1254,
+    height: 1254,
+    variants: [
+      { src: asset_765, width: 480, type: "image/webp" },
+      { src: asset_766, width: 960, type: "image/webp" },
+      { src: asset_767, width: 1254, type: "image/webp" },
+    ],
+  },
+  "team/13-team-photo-uzoma-nwagboso.jpeg": {
+    src: asset_768,
+    width: 1536,
+    height: 1023,
+    variants: [
+      { src: asset_769, width: 480, type: "image/webp" },
+      { src: asset_770, width: 960, type: "image/webp" },
+      { src: asset_771, width: 1536, type: "image/webp" },
+    ],
+  },
+  "team/13-team-photo-uzoma-nwagboso.png": {
+    src: asset_772,
+    width: 1296,
+    height: 4096,
+    variants: [
+      { src: asset_773, width: 480, type: "image/webp" },
+      { src: asset_774, width: 960, type: "image/webp" },
+      { src: asset_775, width: 1296, type: "image/webp" },
     ],
   },
 };

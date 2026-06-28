@@ -4,6 +4,7 @@ import { HomeHero } from "@/components/home/HomeHero";
 import { TrustSnapshot } from "@/components/home/TrustSnapshot";
 import { Capabilities } from "@/components/home/Capabilities";
 import { CaseStudies } from "@/components/home/CaseStudies";
+import { RecentOps } from "@/components/home/RecentOps";
 import { Process } from "@/components/home/Process";
 import { Qhse } from "@/components/home/Qhse";
 import { FinalCta } from "@/components/home/FinalCta";
@@ -18,7 +19,7 @@ import { BackToTopButton } from "@/components/sections/BackToTopButton";
  * Each idea has one home, in a single deliberate narrative:
  *   Hero (value proposition) -> Trust snapshot (stats + logos) ->
  *   Capabilities (what we do) -> Case studies (the proof section:
- *   benchmarks + flagship + projects) -> Process (how we deliver) ->
+ *   benchmarks + flagship + projects) -> Recent operations (live works) ->
  *   QHSE (safety & quality assurance) -> single Conversion (CTA).
  */
 export default function HomePage() {
@@ -53,6 +54,7 @@ export default function HomePage() {
         <Capabilities />
         <Process />
         <CaseStudies />
+        <RecentOps />
         <Qhse />
         <FinalCta />
       </main>
