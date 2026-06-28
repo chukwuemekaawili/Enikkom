@@ -1,7 +1,6 @@
 import { Layout } from "@/components/layout";
 import { Hero, CTABand, CapabilityCard, CertificationsBlock } from "@/components/sections";
 import { Drill, PipetteIcon, Anchor, Factory, Shield, Briefcase } from "lucide-react";
-import { motion } from "framer-motion";
 import { usePageContent } from "@/hooks/useSiteSettings";
 import { EditableText, EditableImage } from "@/components/content";
 import { siteImageSelections } from "@/content/siteImageSelections";
@@ -133,13 +132,7 @@ export default function ServicesPage() {
       {/* Services Grid */}
       <section className="section-padding bg-background">
         <div className="container-wide">
-          <motion.div 
-            className="text-center mb-10 md:mb-14"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
+          <div className="text-center mb-10 md:mb-14">
             <p className="enk-kicker justify-center mb-3">
               <EditableText
                 value={introContent.subtitle || "What We Do"}
@@ -165,7 +158,7 @@ export default function ServicesPage() {
                 multiline
               />
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {services.map((service, index) => (
@@ -182,13 +175,7 @@ export default function ServicesPage() {
       {/* Why Choose Us */}
       <section className="section-padding bg-charcoal">
         <div className="container-wide">
-          <motion.div 
-            className="text-center mb-10"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
+          <div className="text-center mb-10">
             <p className="enk-kicker enk-kicker--on-dark justify-center mb-3">
               <EditableText
                 value={whyUsContent.subtitle || "Why Us"}
@@ -213,7 +200,7 @@ export default function ServicesPage() {
                 field="description"
               />
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
@@ -222,15 +209,11 @@ export default function ServicesPage() {
               { value: whyUsContent.stat3_value || "500+", label: whyUsContent.stat3_label || "Strong Workforce" },
               { value: whyUsContent.stat4_value || "Zero", label: whyUsContent.stat4_label || "LTI Record" },
             ].map((stat, index) => (
-              <motion.div 
-                key={index} 
+              <div
+                key={index}
                 className="text-center p-5 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition-colors duration-200"
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: index * 0.05 }}
               >
-                <div className="text-2xl md:text-3xl font-bold mb-1" style={{ color: "var(--enk-gold)" }}>
+                <div className="text-2xl md:text-3xl font-bold mb-1" style={{ color: "var(--enk-accent-on-dark)" }}>
                   <EditableText
                     value={stat.value}
                     pageSlug="services"
@@ -246,7 +229,7 @@ export default function ServicesPage() {
                     field={`stat${index + 1}_label`}
                   />
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -255,19 +238,13 @@ export default function ServicesPage() {
       {/* Scope of Work Differentiation Table */}
       <section className="section-padding bg-background">
         <div className="container-wide">
-          <motion.div
-            className="text-center mb-10"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
+          <div className="text-center mb-10">
             <p className="enk-kicker justify-center mb-3">Project Experience</p>
             <h2 className="mb-3">Scope of Work at a Glance</h2>
             <p className="text-[14px] md:text-[15px] text-muted-foreground max-w-xl mx-auto">
               A summary of the major work categories Enikkom Group has executed across Nigeria.
             </p>
-          </motion.div>
+          </div>
 
           <div className="overflow-x-auto rounded-xl border border-border">
             <table className="w-full text-sm">

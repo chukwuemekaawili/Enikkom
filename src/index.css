@@ -13,19 +13,20 @@
 @layer base {
   :root {
     /* Brand Colors - Premium Corporate Blue + Industrial Amber */
-    --brand-primary: 221 83% 48%;
-    --brand-primary-hover: 221 83% 40%;
+    --brand-primary: 217 84% 50%;
+    --brand-primary-hover: 217 84% 42%;
     --brand-cyan: 195 80% 50%;
     --brand-red: 6 78% 52%;
-    --brand-amber: 38 92% 50%;
-    --brand-amber-hover: 38 92% 42%;
-    /* Bronze: AA-safe accent for light backgrounds (gold is dark-bg only) */
-    --brand-bronze: 32 68% 32%;
+    /* Amber/bronze retired — repointed to the single blue accent so any legacy
+       markup using these tokens renders in-system instead of off-palette. */
+    --brand-amber: 217 84% 50%;
+    --brand-amber-hover: 217 84% 42%;
+    --brand-bronze: 217 78% 40%;
 
-    /* Neutrals - Deep Navy */
-    --header-bg: 220 60% 10%;
-    --charcoal: 220 60% 10%;
-    --charcoal-light: 220 55% 15%;
+    /* Neutrals - Deep Navy (matched to --enk-navy so both token systems agree) */
+    --header-bg: 222 28% 14%;
+    --charcoal: 222 28% 14%;
+    --charcoal-light: 222 26% 19%;
     --page-bg: 0 0% 100%;
     --surface: 0 0% 100%;
     --text-primary: 210 16% 9%;
@@ -42,7 +43,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 210 16% 9%;
 
-    --primary: 221 83% 48%;
+    --primary: 217 84% 50%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 210 18% 96%;
@@ -51,7 +52,7 @@
     --muted: 210 20% 96%;
     --muted-foreground: 215 10% 38%;
 
-    --accent: 221 83% 60%;
+    --accent: 217 84% 60%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 357 82% 53%;
@@ -59,7 +60,7 @@
 
     --border: 214 16% 87%;
     --input: 214 16% 87%;
-    --ring: 221 83% 48%;
+    --ring: 217 84% 50%;
 
     --radius: 0.75rem;
 
@@ -128,14 +129,14 @@
     font-weight: 700;
   }
 
-  /* H1 - Hero Headlines */
+  /* H1 - Hero Headlines (calmed for a more restrained, corporate scale) */
   h1 {
-    @apply text-[36px] sm:text-[46px] md:text-[58px] lg:text-[68px] leading-[1.02] tracking-[-0.04em];
+    @apply text-[34px] sm:text-[42px] md:text-[50px] lg:text-[60px] leading-[1.04] tracking-[-0.035em];
   }
 
   /* H2 - Section Titles */
   h2 {
-    @apply text-[28px] sm:text-[34px] md:text-[42px] lg:text-[48px] leading-[1.06] tracking-[-0.03em];
+    @apply text-[26px] sm:text-[32px] md:text-[38px] lg:text-[44px] leading-[1.08] tracking-[-0.025em];
   }
 
   /* H3 - Subsection Titles */
@@ -222,40 +223,9 @@
      Unified card styles with hover states
      ========================================== */
 
-  .card-premium {
-    @apply bg-card rounded-[8px] border border-border relative overflow-hidden;
-    box-shadow: var(--shadow-xs);
-    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
-  }
-
-  .card-premium:hover {
-    box-shadow: var(--shadow-md);
-    border-color: hsl(var(--primary) / 0.32);
-    transform: translateY(-1px);
-  }
-
-  .card-elevated {
-    @apply bg-card rounded-xl;
-    box-shadow: var(--shadow-md);
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .card-elevated:hover {
-    box-shadow: var(--shadow-xl);
-    transform: translateY(-3px);
-  }
-
-  .card-interactive {
-    @apply bg-card rounded-xl border border-border cursor-pointer;
-    box-shadow: var(--shadow-xs);
-    transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .card-interactive:hover {
-    box-shadow: var(--shadow-md);
-    border-color: hsl(var(--primary) / 0.2);
-    transform: translateY(-1px);
-  }
+  /* Legacy card/button/badge component classes removed — the site now uses the
+     single `.enk-*` system (see the scoped `.enk` layer below). Cards: `.enk-card`.
+     Buttons: `.enk-btn`. Chips: `.enk-chip`. */
 
   /* ==========================================
      SECTION HEADER - Premium Typography
@@ -279,41 +249,6 @@
   }
 
   /* ==========================================
-     HERO OVERLAYS - Premium Gradients
-     ========================================== */
-
-  .hero-overlay {
-    @apply absolute inset-0;
-    background: linear-gradient(
-      to right,
-      rgba(11, 18, 32, 0.82) 0%,
-      rgba(11, 18, 32, 0.68) 50%,
-      rgba(11, 18, 32, 0.52) 100%
-    );
-  }
-
-  .overlay-gradient-dark {
-    @apply absolute inset-0;
-    background: linear-gradient(
-      135deg,
-      rgba(11, 18, 32, 0.88) 0%,
-      rgba(11, 18, 32, 0.78) 30%,
-      rgba(11, 18, 32, 0.58) 65%,
-      rgba(11, 18, 32, 0.42) 100%
-    );
-  }
-
-  .hero-overlay-center {
-    @apply absolute inset-0;
-    background: linear-gradient(
-      to bottom,
-      rgba(11, 18, 32, 0.6) 0%,
-      rgba(11, 18, 32, 0.72) 50%,
-      rgba(11, 18, 32, 0.82) 100%
-    );
-  }
-
-  /* ==========================================
      DARK SECTION BACKGROUNDS
      ========================================== */
 
@@ -334,31 +269,6 @@
      PREMIUM BADGE SYSTEM
      ========================================== */
 
-  /* Squared technical chips (no pills) */
-  .badge-primary {
-    @apply inline-flex items-center px-3 py-1.5 rounded-md text-[10px] font-semibold uppercase tracking-[0.18em];
-    background-color: hsl(var(--brand-primary));
-    color: white;
-  }
-
-  .badge-secondary {
-    @apply inline-flex items-center px-3 py-1.5 rounded-md text-[10px] font-semibold uppercase tracking-[0.18em];
-    background-color: hsl(var(--muted));
-    color: hsl(var(--foreground));
-  }
-
-  .badge-accent {
-    @apply inline-flex items-center px-2.5 py-1 rounded text-[10px] font-semibold uppercase tracking-wide;
-    background-color: hsl(var(--brand-red));
-    color: white;
-  }
-
-  .badge-outline {
-    @apply inline-flex items-center px-3 py-1.5 rounded-md text-[10px] font-semibold uppercase tracking-[0.18em] border;
-    border-color: hsl(var(--border));
-    color: hsl(var(--foreground));
-  }
-
   /* ==========================================
      STATS & KPI STYLING
      ========================================== */
@@ -375,7 +285,7 @@
   }
 
   .stat-value-primary {
-    color: hsl(var(--brand-primary));
+    color: hsl(var(--primary));
   }
 
   .stat-value-white {
@@ -387,61 +297,8 @@
     color: hsl(var(--text-muted));
   }
 
-  /* ==========================================
-     2026 PREMIUM BUTTON STYLES
-     ========================================== */
-
-  .btn-premium {
-    @apply h-11 md:h-12 px-6 md:px-7 text-[13px] font-semibold rounded-full tracking-[0.02em];
-    background-color: hsl(var(--brand-primary));
-    color: white;
-    box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.18);
-    transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .btn-premium:hover {
-    background-color: hsl(var(--brand-primary-hover));
-    box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.24), 0 16px 32px rgba(37, 99, 235, 0.16);
-    transform: translateY(-1px);
-  }
-
-  .btn-premium:active {
-    transform: translateY(0);
-  }
-
-  .btn-secondary-premium {
-    @apply h-11 md:h-12 px-6 md:px-7 text-[13px] font-semibold rounded-full tracking-[0.02em];
-    background-color: transparent;
-    border: 1.5px solid rgba(255, 255, 255, 0.25);
-    color: white;
-    transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .btn-secondary-premium:hover {
-    background-color: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.4);
-  }
-
-  .btn-amber {
-    @apply h-11 md:h-12 px-6 md:px-7 text-[13px] font-semibold rounded-full tracking-[0.02em];
-    background-color: hsl(var(--brand-amber));
-    color: hsl(var(--charcoal));
-    box-shadow: 0 0 0 1px rgba(245, 158, 11, 0.2), 0 8px 24px rgba(245, 158, 11, 0.22);
-    transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .btn-amber:hover {
-    background-color: hsl(var(--brand-amber-hover));
-    box-shadow: 0 0 0 1px rgba(245, 158, 11, 0.28), 0 16px 36px rgba(245, 158, 11, 0.28);
-    transform: translateY(-1px);
-  }
-
-  .btn-amber:active {
-    transform: translateY(0);
-  }
-
-  /* Amber utilities now resolve to AA-safe bronze on light backgrounds.
-     Bright gold is reserved for dark surfaces via the scoped .enk layer. */
+  /* Legacy emphasis utilities — kept as in-system aliases to the single blue
+     accent so any remaining markup stays on-palette. */
   .text-amber {
     color: hsl(var(--brand-bronze));
   }
@@ -705,11 +562,19 @@
   --enk-on-dark: oklch(0.97 0.005 255);   /* primary on navy */
   --enk-on-dark-muted: oklch(0.80 0.015 255);
 
-  /* Brand */
-  --enk-blue: oklch(0.50 0.14 252);       /* action; white text on it ~ AA */
-  --enk-blue-hover: oklch(0.43 0.13 252);
-  --enk-gold: oklch(0.81 0.13 85);        /* accent - DARK backgrounds only */
-  --enk-bronze: oklch(0.47 0.09 65);      /* accent - LIGHT backgrounds; ~5.5:1 */
+  /* Brand — single engineered-blue accent system.
+     Blue is the ONE action + emphasis colour. The two tokens below are kept
+     under their legacy names (gold/bronze) so existing markup recolours
+     automatically; both now hold blue tints, not metallics.
+       --enk-accent-on-dark : light azure that reads clearly on navy (eyebrows,
+                              CTAs, key stats on dark surfaces)
+       --enk-accent         : AA-safe azure for light surfaces (~5:1 on white) */
+  --enk-blue: oklch(0.52 0.15 250);        /* action; white text on it ~ AA */
+  --enk-blue-hover: oklch(0.45 0.14 250);
+  --enk-accent-on-dark: oklch(0.72 0.14 250);
+  --enk-accent: oklch(0.48 0.15 250);
+  --enk-gold: var(--enk-accent-on-dark);  /* legacy alias → azure on DARK */
+  --enk-bronze: var(--enk-accent);        /* legacy alias → azure on LIGHT */
   --enk-safety: oklch(0.56 0.12 150);     /* QHSE positive */
 
   /* Lines & elevation */
@@ -769,8 +634,9 @@
 .enk-btn--outline:hover { border-color: var(--enk-blue); color: var(--enk-blue); }
 .enk-btn--on-dark { background: transparent; color: var(--enk-on-dark); border-color: oklch(1 0 0 / 0.28); }
 .enk-btn--on-dark:hover { background: oklch(1 0 0 / 0.08); border-color: oklch(1 0 0 / 0.5); }
-.enk-btn--gold { background: var(--enk-gold); color: var(--enk-navy); }
-.enk-btn--gold:hover { background: oklch(0.75 0.13 85); }
+/* Legacy name kept for drop-in compatibility; renders as the primary blue CTA. */
+.enk-btn--gold { background: var(--enk-blue); color: #fff; box-shadow: var(--enk-shadow-sm); }
+.enk-btn--gold:hover { background: var(--enk-blue-hover); box-shadow: var(--enk-shadow-md); }
 
 /* Text link */
 .enk-link {
