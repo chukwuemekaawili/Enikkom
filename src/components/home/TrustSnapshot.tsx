@@ -19,7 +19,7 @@ function LogoCard({ logo, hidden = false }: { logo: Logo; hidden?: boolean }) {
 /** One seamless marquee row: real set + an aria-hidden duplicate for the loop. */
 function MarqueeRow({ logos, reverse = false }: { logos: Logo[]; reverse?: boolean }) {
   return (
-    <div className="enk-marquee-mask overflow-hidden py-1.5">
+    <div className="enk-marquee-mask overflow-hidden py-1">
       <div className={`enk-marquee ${reverse ? "enk-marquee--reverse" : ""}`}>
         {logos.map((l) => (
           <LogoCard key={`a-${l.slug}`} logo={l} />
@@ -54,11 +54,11 @@ export function TrustSnapshot() {
       {/* One unified credibility band: a single context line, the headline
           figures, then the operator/EPC logos, read as one compact strip,
           not stacked credibility blocks. */}
-      <div className="enk-container pt-12 md:pt-14">
-        <p className="enk-kicker mb-8 justify-center text-center">
+      <div className="enk-container pt-10 md:pt-12">
+        <p className="enk-kicker mb-6 justify-center text-center">
           Trusted by Nigeria&apos;s major operators &amp; EPC partners
         </p>
-        <dl className="mx-auto grid max-w-3xl grid-cols-3 gap-x-6 gap-y-8 sm:gap-x-12">
+        <dl className="mx-auto grid max-w-3xl grid-cols-3 gap-x-6 gap-y-6 sm:gap-x-12">
           {kpis.slice(0, 3).map((kpi) => (
             <div key={kpi.label} className="min-w-0 border-l-2 border-[var(--enk-blue)] pl-4">
               <dd className="text-[var(--enk-ink)]">
@@ -70,8 +70,8 @@ export function TrustSnapshot() {
         </dl>
       </div>
 
-      <div className="pb-12 pt-9">
-        <div className="flex flex-col gap-3">
+      <div className="pb-10 pt-7">
+        <div className="flex flex-col gap-2.5">
           <MarqueeRow logos={rowA} />
           <MarqueeRow logos={rowB} reverse />
         </div>
