@@ -114,7 +114,7 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'IBM Plex Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: Arial, Roboto, Helvetica, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     overflow-x: hidden;
   }
 
@@ -123,50 +123,56 @@
      Space Grotesk for headings, Inter for body
      ========================================== */
 
+  /* ==========================================
+     SHELL TYPOGRAPHY — humanist Jost headings.
+     letter-spacing: NORMAL (negative tracking removed — critical),
+     editorial ~1.2-1.5 line-heights, responsive clamps, weight 700.
+     ========================================== */
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Schibsted Grotesk', system-ui, sans-serif;
-    color: hsl(var(--foreground));
+    font-family: 'Jost', 'Futura PT', 'Questrial', Arial, sans-serif;
+    color: var(--enk-ink);
     font-weight: 700;
+    letter-spacing: normal;
   }
 
-  /* H1 - Hero Headlines (calmed for a more restrained, corporate scale) */
+  /* H1 - Hero / page headlines */
   h1 {
-    @apply text-[34px] sm:text-[42px] md:text-[50px] lg:text-[60px] leading-[1.04] tracking-[-0.035em];
+    font-size: clamp(28px, 5vw, 48px);
+    line-height: 1.15;
   }
 
   /* H2 - Section Titles */
   h2 {
-    @apply text-[26px] sm:text-[32px] md:text-[38px] lg:text-[44px] leading-[1.08] tracking-[-0.025em];
+    font-size: clamp(24px, 3.5vw, 32px);
+    line-height: 1.2;
   }
 
   /* H3 - Subsection Titles */
   h3 {
-    @apply text-[22px] sm:text-[24px] md:text-[30px] lg:text-[34px] leading-[1.1] tracking-[-0.022em];
-    font-weight: 600;
+    font-size: clamp(19px, 2vw, 22px);
+    line-height: 1.35;
   }
 
   /* H4 - Card Titles */
   h4 {
-    @apply text-[17px] md:text-[19px] lg:text-[21px] leading-[1.18];
-    font-weight: 600;
+    font-size: clamp(17px, 1.6vw, 19px);
+    line-height: 1.4;
   }
 
   /* H5 - Small Headings */
   h5 {
-    @apply text-[15px] md:text-[16px] leading-[1.35];
-    font-weight: 600;
+    @apply text-[15px] md:text-[16px] leading-[1.4];
   }
 
   /* H6 - Labels */
   h6 {
-    @apply text-[13px] md:text-[14px] leading-[1.4];
-    font-weight: 600;
+    @apply text-[13px] md:text-[14px] leading-[1.45];
   }
 
-  /* Body Text */
+  /* Body Text — Arial 14px / 21px (1.5) */
   p, li {
-    @apply text-[15px] md:text-[16px] lg:text-[17px] leading-[1.72];
-    color: hsl(var(--text-muted));
+    @apply text-[14px] leading-[21px] md:text-[15px] md:leading-[22px];
+    color: var(--enk-steel);
   }
 
   /* Small/Caption Text */
@@ -211,7 +217,7 @@
 
   /* Container - Max 1240px */
   .container-wide {
-    @apply max-w-[1320px] mx-auto px-5 sm:px-7 lg:px-10;
+    @apply max-w-[1300px] mx-auto px-5 sm:px-7 lg:px-10;
   }
 
   .container-narrow {
@@ -236,12 +242,16 @@
   }
 
   .section-eyebrow {
-    @apply text-[12px] md:text-[13px] font-semibold uppercase tracking-[0.22em] text-primary mb-4;
+    @apply text-[13px] font-bold mb-4;
+    font-family: var(--font-body);
+    letter-spacing: normal;
+    color: var(--enk-bronze);
   }
 
   .section-title {
     @apply mb-4;
-    font-family: 'Schibsted Grotesk', sans-serif;
+    font-family: var(--font-heading);
+    letter-spacing: normal;
   }
 
   .section-subtitle {
@@ -504,7 +514,8 @@
     @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2;
   }
 
-  /* Enhanced focus states for all interactive elements */
+  /* Enhanced focus states for all interactive elements (Shell spec:
+     2px accent-on-dark outline, 2px offset — reads on both navy and light). */
   a:focus-visible,
   button:focus-visible,
   input:focus-visible,
@@ -512,10 +523,16 @@
   select:focus-visible,
   [role="button"]:focus-visible,
   [tabindex]:focus-visible {
-    outline: 3px solid hsl(var(--brand-primary));
-    outline-offset: 3px;
+    outline: 2px solid var(--color-accent-on-dark, #6EA8FF);
+    outline-offset: 2px;
     border-radius: 4px;
   }
+
+  /* Active / disabled defaults for native controls */
+  button:active,
+  [role="button"]:active { transform: translateY(0.5px); }
+  button:disabled,
+  [aria-disabled="true"] { opacity: 0.5; pointer-events: none; cursor: not-allowed; }
 
   /* Skip link styling */
   .sr-only {
@@ -549,73 +566,95 @@
    ============================================================ */
 
 .enk {
-  /* Surfaces (neutrals tinted toward navy, never pure #fff/#000) */
-  --enk-bg: oklch(0.99 0.004 255);
-  --enk-bg-muted: oklch(0.965 0.006 255);
-  --enk-navy: oklch(0.20 0.035 255);
-  --enk-navy-2: oklch(0.25 0.04 255);
-  --enk-navy-3: oklch(0.30 0.04 255);
+  /* ----------------------------------------------------------------
+     SHELL DESIGN LANGUAGE — exact hex tokens (from real Shell CSS),
+     recoloured to Steel Blue. Canonical --color-* names below; the
+     established --enk-* names alias onto them so every existing
+     component recolours centrally with no per-file edits.
+     Surfaces: HYBRID — dark hero/cards + selected light content bands.
+     ---------------------------------------------------------------- */
+  --color-bg:            #1D232A;  /* Shell navy — dark sections, cards, header */
+  --color-surface-light: #F4F6F8;  /* light content band (hybrid) */
+  --color-footer:        #14181D;
+  --color-text:          #E0E0E0;  /* body + headings on dark */
+  --color-text-muted:    #B8BEC4;
+  --color-text-on-light: #13171B;
+  --color-accent:         #2563EB; /* fills/buttons (white text on top) */
+  --color-accent-hover:   #1D4FD8;
+  --color-accent-on-dark: #6EA8FF; /* links/icons/text ON navy (WCAG) */
+  --radius-card:    16px;
+  --radius-control: 8px;
+  --card-pad:       24px;
+  --transition:     200ms ease;
+  --container-max:  1300px;
+  --font-heading:   'Jost', 'Futura PT', 'Questrial', Arial, sans-serif;
+  --font-body:      Arial, Roboto, Helvetica, sans-serif;
+
+  /* Surfaces (light base for hybrid light sections; dark sections opt in) */
+  --enk-bg: #FFFFFF;
+  --enk-bg-muted: var(--color-surface-light);
+  --enk-navy: var(--color-bg);
+  --enk-navy-2: #262D35;
+  --enk-navy-3: #2F3741;
+  --enk-footer: var(--color-footer);
 
   /* Text */
-  --enk-ink: oklch(0.26 0.02 260);        /* primary on light  ~ 11:1 */
-  --enk-steel: oklch(0.46 0.02 260);      /* muted on light    ~ 4.8:1 */
-  --enk-on-dark: oklch(0.97 0.005 255);   /* primary on navy */
-  --enk-on-dark-muted: oklch(0.80 0.015 255);
+  --enk-ink: var(--color-text-on-light);  /* primary on light  ~ 15:1 */
+  --enk-steel: #4A5258;                    /* muted on light    ~ 7:1 */
+  --enk-on-dark: var(--color-text);        /* primary on navy   ~ 11:1 */
+  --enk-on-dark-muted: var(--color-text-muted);
 
-  /* Brand — single engineered-blue accent system.
-     Blue is the ONE action + emphasis colour. The two tokens below are kept
-     under their legacy names (gold/bronze) so existing markup recolours
-     automatically; both now hold blue tints, not metallics.
-       --enk-accent-on-dark : light azure that reads clearly on navy (eyebrows,
-                              CTAs, key stats on dark surfaces)
-       --enk-accent         : AA-safe azure for light surfaces (~5:1 on white) */
-  --enk-blue: oklch(0.52 0.15 250);        /* action; white text on it ~ AA */
-  --enk-blue-hover: oklch(0.45 0.14 250);
-  --enk-accent-on-dark: oklch(0.72 0.14 250);
-  --enk-accent: oklch(0.48 0.15 250);
-  --enk-gold: var(--enk-accent-on-dark);  /* legacy alias → azure on DARK */
-  --enk-bronze: var(--enk-accent);        /* legacy alias → azure on LIGHT */
+  /* Brand — Steel Blue single accent (KEPT, never yellow).
+       --enk-accent-on-dark : brighter blue that clears WCAG on navy
+       --enk-accent         : darker blue for text on light surfaces (~6:1) */
+  --enk-blue: var(--color-accent);
+  --enk-blue-hover: var(--color-accent-hover);
+  --enk-accent-on-dark: var(--color-accent-on-dark);
+  --enk-accent: var(--color-accent-hover);
+  --enk-gold: var(--enk-accent-on-dark);  /* legacy alias → blue on DARK */
+  --enk-bronze: var(--enk-accent);        /* legacy alias → blue on LIGHT */
   --enk-safety: oklch(0.56 0.12 150);     /* QHSE positive */
 
   /* Lines & elevation */
-  --enk-line: oklch(0.90 0.008 255);
-  --enk-line-strong: oklch(0.84 0.012 255);
-  --enk-line-dark: oklch(0.32 0.03 255);
-  --enk-shadow-sm: 0 1px 2px oklch(0.20 0.04 255 / 0.06);
-  --enk-shadow-md: 0 14px 40px oklch(0.20 0.04 255 / 0.10);
+  --enk-line: #E3E7EB;
+  --enk-line-strong: #CDD3D9;
+  --enk-line-dark: rgba(255, 255, 255, 0.12);
+  --enk-shadow-sm: 0 1px 2px rgba(20, 24, 29, 0.06);
+  --enk-shadow-md: 0 14px 40px rgba(20, 24, 29, 0.12);
 
-  --enk-radius: 8px;
+  --enk-radius: var(--radius-control);
 
   background-color: var(--enk-bg);
   color: var(--enk-ink);
-  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  font-family: Arial, Roboto, Helvetica, system-ui, sans-serif;
 }
 
 .enk ::selection { background: var(--enk-blue); color: #fff; }
 
-/* Layout */
-.enk-container { width: 100%; max-width: 1240px; margin-inline: auto; padding-inline: 1.25rem; }
+/* Layout — Shell container 1300px, Shell-dense section rhythm (64-72px) */
+.enk-container { width: 100%; max-width: 1300px; margin-inline: auto; padding-inline: 1.25rem; }
 @media (min-width: 768px) { .enk-container { padding-inline: 2rem; } }
-.enk-section { padding-block: 4.5rem; }
-@media (min-width: 768px) { .enk-section { padding-block: 6.5rem; } }
-.enk-section--tight { padding-block: 3rem; }
+.enk-section { padding-block: 4rem; }
+@media (min-width: 768px) { .enk-section { padding-block: 4.5rem; } }
+.enk-section--tight { padding-block: 2.5rem; }
 
-/* Eyebrow / small-caps metadata (accent lives here, not in the H1) */
+/* Eyebrow — Shell style: humanist body font, NORMAL tracking, blue accent.
+   (Was IBM Plex Mono + wide tracking — removed.) */
 .enk-kicker {
   display: inline-flex; align-items: center; gap: 0.6rem;
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.72rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase;
+  font-family: var(--font-body, Arial, sans-serif);
+  font-size: 0.8125rem; font-weight: 700; letter-spacing: normal; text-transform: none;
   color: var(--enk-bronze);
 }
-.enk-kicker--on-dark { color: var(--enk-gold); }
+.enk-kicker--on-dark { color: var(--enk-accent-on-dark); }
 .enk-kicker::before { content: ""; width: 1.75rem; height: 2px; background: currentColor; opacity: 0.9; }
 
 /* Squared technical chip (no pills, no emoji) */
 .enk-chip {
   display: inline-flex; align-items: center; gap: 0.4rem;
   padding: 0.3rem 0.6rem; border-radius: 6px;
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.7rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+  font-family: var(--font-body);
+  font-size: 0.72rem; font-weight: 700; letter-spacing: normal; text-transform: none;
   border: 1px solid var(--enk-line-strong); color: var(--enk-steel); background: var(--enk-bg);
 }
 .enk-chip--on-dark { border-color: oklch(1 0 0 / 0.22); color: var(--enk-on-dark); background: var(--enk-navy); }
@@ -623,8 +662,8 @@
 /* Buttons - enterprise: opacity/border/background/elevation only, <=180ms ease-out, >=44px */
 .enk-btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
-  min-height: 48px; padding: 0 1.5rem; border-radius: var(--enk-radius);
-  font-family: 'IBM Plex Sans', sans-serif; font-size: 0.95rem; font-weight: 600; letter-spacing: 0.01em;
+  min-height: 48px; padding: 0 1.5rem; border-radius: var(--radius-control);
+  font-family: var(--font-body); font-size: 0.95rem; font-weight: 700; letter-spacing: normal;
   border: 1.5px solid transparent; cursor: pointer; text-align: center;
   transition: background-color 0.18s ease-out, border-color 0.18s ease-out, color 0.18s ease-out, box-shadow 0.18s ease-out;
 }
@@ -645,13 +684,38 @@
 }
 .enk-link:hover { border-bottom-color: var(--enk-blue); gap: 0.6rem; }
 
-/* Card - soft-rectangular, full hairline border (no side-stripes), subtle depth */
+/* Card - Shell pattern: 16px radius, clips full-bleed image, subtle depth.
+   Light variant by default; dark photo-cards set their own navy text block. */
 .enk-card {
-  background: var(--enk-bg); border: 1px solid var(--enk-line); border-radius: var(--enk-radius);
-  box-shadow: var(--enk-shadow-sm);
-  transition: border-color 0.18s ease-out, box-shadow 0.18s ease-out, transform 0.18s ease-out;
+  background: var(--enk-bg); border: 1px solid var(--enk-line); border-radius: var(--radius-card);
+  box-shadow: var(--enk-shadow-sm); overflow: hidden;
+  transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
 }
 .enk-card--hover:hover { border-color: var(--enk-line-strong); box-shadow: var(--enk-shadow-md); transform: translateY(-2px); }
+/* Dark navy card surface (the canonical Shell card) */
+.enk-card--dark { background: var(--enk-navy); border-color: var(--enk-line-dark); }
+
+/* Unified "Read more →" affordance for cards/links on dark surfaces */
+.enk-readmore {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-family: var(--font-body); font-size: 14px; font-weight: 700;
+  color: var(--enk-accent-on-dark); transition: color var(--transition);
+}
+.enk-readmore svg, .enk-readmore .enk-readmore__arrow { transition: transform var(--transition); }
+.group:hover .enk-readmore { color: var(--enk-blue-hover); }
+.group:hover .enk-readmore svg, .group:hover .enk-readmore__arrow { transform: translateX(3px); }
+
+/* Quick-links block ("How can we help?") — stacked dark rows, blue text + icon */
+.enk-quicklink {
+  display: flex; align-items: center; gap: 0.85rem;
+  padding: 1rem 1.25rem; border-radius: var(--radius-control);
+  background: var(--enk-navy); border: 1px solid var(--enk-line-dark);
+  font-family: var(--font-body); font-weight: 700; font-size: 15px;
+  color: var(--enk-accent-on-dark);
+  transition: background-color var(--transition), border-color var(--transition);
+}
+.enk-quicklink:hover { background: var(--enk-navy-2); border-color: var(--enk-accent-on-dark); }
+.enk-quicklink svg { flex-shrink: 0; }
 
 /* Stat number - tabular mono */
 .enk-stat {
@@ -672,7 +736,7 @@
 /* Display heading helper. Colour is set per-instance via utility/inline style so
    light and dark surfaces stay correct (no blanket color override here - it would
    beat the text-color utilities and break on-dark headings). */
-.enk-display { font-family: 'Schibsted Grotesk', sans-serif; font-weight: 700; letter-spacing: -0.03em; line-height: 1.04; }
+.enk-display { font-family: var(--font-heading); font-weight: 700; letter-spacing: normal; line-height: 1.15; }
 
 /* Logo marquee - seamless infinite scroll, edge-fade mask, pause on hover.
    Linear is correct for continuous transport (not a button micro-interaction). */

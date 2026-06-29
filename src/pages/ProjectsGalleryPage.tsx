@@ -191,7 +191,7 @@ export default function ProjectsGalleryPage() {
             <div className="flex flex-1 flex-col p-5" style={{ backgroundColor: "var(--enk-navy)" }}>
               <h4 className="font-semibold text-[16px] mb-1 text-[var(--enk-on-dark)] group-hover:text-[var(--enk-gold)] transition-colors">{project.title}</h4>
               {project.client && (
-                <p className="text-[12px] font-mono uppercase tracking-[0.1em] mb-2" style={{ color: "var(--enk-gold)" }}>{project.client}</p>
+                <p className="text-[12px] font-bold mb-2" style={{ color: "var(--enk-gold)" }}>{project.client}</p>
               )}
               {project.location && (
                 <p className="text-[12px] text-[var(--enk-on-dark-muted)] mb-2">{project.location}</p>

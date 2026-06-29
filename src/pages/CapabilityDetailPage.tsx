@@ -283,7 +283,7 @@ export default function CapabilityDetailPage() {
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 className="relative enk-card enk-card--hover p-5"
               >
-                <span className="block font-mono text-[13px] font-medium tracking-[0.14em] mb-3" style={{ color: "var(--enk-bronze)" }}>
+                <span className="block text-[14px] font-bold mb-3" style={{ color: "var(--enk-bronze)" }}>
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 <h4 className="font-semibold mb-2 text-sm">

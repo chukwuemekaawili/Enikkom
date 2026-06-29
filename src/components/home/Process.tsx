@@ -38,18 +38,18 @@ export function Process() {
           intro="Every scope runs through the same disciplined sequence, engineered, executed and documented in-house, with a single point of accountability."
         />
 
-        <ol className="mt-12 grid gap-px overflow-hidden rounded-[10px] border border-[var(--enk-line)] bg-[var(--enk-line)] md:grid-cols-2 lg:grid-cols-4">
+        <ol className="mt-12 grid gap-px overflow-hidden rounded-[var(--radius-card)] border border-[var(--enk-line-dark)] bg-[var(--enk-line-dark)] md:grid-cols-2 lg:grid-cols-4">
           {steps.map((s) => (
             <li
               key={s.no}
               className="flex flex-col gap-3 p-7 lg:p-8"
-              style={{ backgroundColor: "var(--enk-bg)" }}
+              style={{ backgroundColor: "var(--enk-navy)" }}
             >
-              <span className="font-mono text-[13px] font-medium tracking-[0.14em] text-[var(--enk-gold)]">
+              <span className="text-[14px] font-bold text-[var(--enk-accent-on-dark)]">
                 {s.no}
               </span>
-              <h3 className="text-[18px] font-semibold text-[var(--enk-ink)]">{s.title}</h3>
-              <p className="text-[14.5px] leading-relaxed text-[var(--enk-steel)]">{s.body}</p>
+              <h3 className="text-[18px] font-bold text-[var(--enk-on-dark)]">{s.title}</h3>
+              <p className="text-[14px] leading-relaxed text-[var(--enk-on-dark-muted)]">{s.body}</p>
             </li>
           ))}
         </ol>

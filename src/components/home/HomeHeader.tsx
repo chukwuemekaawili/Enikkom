@@ -71,7 +71,7 @@ function NavDropdown({ menu, active }: { menu: NavMenu; active: boolean }) {
           if (e.key === "Escape") setOpen(false);
           if (e.key === "ArrowDown") { e.preventDefault(); setOpen(true); }
         }}
-        className={`relative inline-flex h-11 items-center gap-1 rounded-md px-3 text-[14px] font-medium transition-colors duration-150 focus-ring ${
+        className={`relative inline-flex h-11 shrink-0 items-center gap-1 whitespace-nowrap rounded-md px-3 text-[14px] font-medium transition-colors duration-150 focus-ring ${
           active ? "text-[var(--enk-on-dark)]" : "text-[var(--enk-on-dark-muted)] hover:text-[var(--enk-on-dark)]"
         }`}
       >
@@ -125,17 +125,6 @@ function MobileMenu({ onNavigate }: { onNavigate: () => void }) {
         const expanded = openIdx === i;
         return (
           <Fragment key={menu.label}>
-            {menu.label === "Contact" &&
-              extraLinks.map((link) => (
-                <Link
-                  key={link.label}
-                  to={link.href}
-                  onClick={onNavigate}
-                  className="flex min-h-[52px] w-full items-center border-b border-[var(--enk-line-dark)] px-1 py-3 text-[16px] font-semibold text-[var(--enk-on-dark)] focus-ring"
-                >
-                  {link.label}
-                </Link>
-              ))}
             <div className="border-b border-[var(--enk-line-dark)]">
             <button
               type="button"
@@ -164,6 +153,16 @@ function MobileMenu({ onNavigate }: { onNavigate: () => void }) {
           </Fragment>
         );
       })}
+      {extraLinks.map((link) => (
+        <Link
+          key={link.label}
+          to={link.href}
+          onClick={onNavigate}
+          className="flex min-h-[52px] w-full items-center border-b border-[var(--enk-line-dark)] px-1 py-3 text-[16px] font-semibold text-[var(--enk-on-dark)] focus-ring"
+        >
+          {link.label}
+        </Link>
+      ))}
     </nav>
   );
 }
@@ -213,15 +212,15 @@ export function HomeHeader() {
       }}
     >
       <div className="enk-container">
-        <div className={`flex items-center justify-between lg:justify-start gap-4 transition-[height] duration-200 ${scrolled ? "h-[64px]" : "h-[64px] md:h-[80px]"}`}>
-          <BrandLockup compact={scrolled} />
+        <div className="flex h-[68px] items-center justify-between gap-4 md:h-[84px] xl:justify-start">
+          <BrandLockup compact={false} />
 
-          <nav aria-label="Primary" className="hidden lg:block lg:ml-10">
+          <nav aria-label="Primary" className="hidden xl:block xl:ml-10">
             <ul className="flex items-center gap-1">
               <li>
                 <Link
                   to="/"
-                  className={`relative inline-flex h-11 items-center rounded-md px-3 text-[14px] font-medium transition-colors duration-150 focus-ring ${
+                  className={`relative inline-flex h-11 shrink-0 items-center whitespace-nowrap rounded-md px-3 text-[14px] font-medium transition-colors duration-150 focus-ring ${
                     location.pathname === "/"
                       ? "text-[var(--enk-on-dark)]"
                       : "text-[var(--enk-on-dark-muted)] hover:text-[var(--enk-on-dark)]"
@@ -234,35 +233,33 @@ export function HomeHeader() {
                 </Link>
               </li>
               {navMenus.map((menu) => (
-                <Fragment key={menu.label}>
-                  {menu.label === "Contact" &&
-                    extraLinks.map((link) => (
-                      <li key={link.label}>
-                        <Link
-                          to={link.href}
-                          className={`relative inline-flex h-11 items-center rounded-md px-3 text-[14px] font-medium transition-colors duration-150 focus-ring ${
-                            location.pathname === link.href
-                              ? "text-[var(--enk-on-dark)]"
-                              : "text-[var(--enk-on-dark-muted)] hover:text-[var(--enk-on-dark)]"
-                          }`}
-                        >
-                          {link.label}
-                          {location.pathname === link.href && (
-                            <span aria-hidden="true" className="absolute inset-x-3 -bottom-0.5 h-[2px] rounded-full" style={{ backgroundColor: "var(--enk-gold)" }} />
-                          )}
-                        </Link>
-                      </li>
-                    ))}
-                  <NavDropdown
-                    menu={menu}
-                    active={location.pathname === menu.href || location.pathname.startsWith(`${menu.href}/`)}
-                  />
-                </Fragment>
+                <NavDropdown
+                  key={menu.label}
+                  menu={menu}
+                  active={location.pathname === menu.href || location.pathname.startsWith(`${menu.href}/`)}
+                />
+              ))}
+              {extraLinks.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    to={link.href}
+                    className={`relative inline-flex h-11 shrink-0 items-center whitespace-nowrap rounded-md px-3 text-[14px] font-medium transition-colors duration-150 focus-ring ${
+                      location.pathname === link.href
+                        ? "text-[var(--enk-on-dark)]"
+                        : "text-[var(--enk-on-dark-muted)] hover:text-[var(--enk-on-dark)]"
+                    }`}
+                  >
+                    {link.label}
+                    {location.pathname === link.href && (
+                      <span aria-hidden="true" className="absolute inset-x-3 -bottom-0.5 h-[2px] rounded-full" style={{ backgroundColor: "var(--enk-accent-on-dark)" }} />
+                    )}
+                  </Link>
+                </li>
               ))}
             </ul>
           </nav>
 
-          <div className="flex items-center gap-2 lg:ml-auto">
+          <div className="flex items-center gap-2 xl:ml-auto">
             <Link
               to="/search"
               aria-label="Search the site"
@@ -276,7 +273,7 @@ export function HomeHeader() {
               aria-expanded={open}
               aria-controls="mobile-nav"
               aria-label={open ? "Close menu" : "Open menu"}
-              className="inline-flex h-11 w-11 items-center justify-center rounded-md text-[var(--enk-on-dark)] transition-colors hover:bg-white/10 focus-ring lg:hidden"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-md text-[var(--enk-on-dark)] transition-colors hover:bg-white/10 focus-ring xl:hidden"
             >
               {open ? <X className="h-6 w-6" aria-hidden="true" /> : <Menu className="h-6 w-6" aria-hidden="true" />}
             </button>
@@ -285,7 +282,7 @@ export function HomeHeader() {
       </div>
 
       {open && (
-        <div id="mobile-nav" className="max-h-[calc(100vh-60px)] overflow-y-auto lg:hidden" style={{ backgroundColor: "var(--enk-navy)" }}>
+        <div id="mobile-nav" className="max-h-[calc(100vh-60px)] overflow-y-auto xl:hidden" style={{ backgroundColor: "var(--enk-navy)" }}>
           <MobileMenu onNavigate={() => setOpen(false)} />
         </div>
       )}

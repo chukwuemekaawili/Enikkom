@@ -1,5 +1,12 @@
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, FileText, Layers, FolderOpen } from "lucide-react";
+
+/** Shell-style quick-links ("How can we help?"), mapped to existing routes. */
+const quickLinks = [
+  { label: "Request a quote", href: "/contact", Icon: FileText },
+  { label: "Our capabilities", href: "/capabilities", Icon: Layers },
+  { label: "View projects", href: "/projects", Icon: FolderOpen },
+];
 
 /** The single final CTA band, strong headline, conversion copy, fast path. */
 export function FinalCta() {
@@ -30,6 +37,19 @@ export function FinalCta() {
               Request a Crossing Assessment
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
+          </div>
+
+          {/* Quick links — Shell "How can we help?" pattern, recoloured blue */}
+          <div className="mt-10">
+            <p className="text-[13px] font-bold text-[var(--enk-on-dark-muted)]">How can we help?</p>
+            <div className="mt-4 grid gap-3 sm:grid-cols-3">
+              {quickLinks.map(({ label, href, Icon }) => (
+                <Link key={label} to={href} className="enk-quicklink focus-ring">
+                  <Icon className="h-6 w-6" fill="currentColor" aria-hidden="true" />
+                  {label}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </div>

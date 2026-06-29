@@ -38,7 +38,7 @@ export function KPIStatsBand({ stats = defaultStats, variant = "dark" }: KPIStat
                   <div
                     className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-md"
                     style={{
-                      backgroundColor: dark ? "oklch(1 0 0 / 0.08)" : "oklch(0.81 0.13 85 / 0.14)",
+                      backgroundColor: dark ? "oklch(1 0 0 / 0.08)" : "rgba(37, 99, 235, 0.12)",
                       color: dark ? "var(--enk-on-dark)" : "var(--enk-bronze)",
                     }}
                     aria-hidden="true"

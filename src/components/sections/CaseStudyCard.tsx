@@ -52,36 +52,27 @@ export function CaseStudyCard({
       </div>
 
       <div className="flex flex-1 flex-col p-6" style={{ backgroundColor: "var(--enk-navy)" }}>
-        <div className="mb-2 flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.14em] text-[var(--enk-on-dark-muted)]">
-          <MapPin className="h-3 w-3 shrink-0" aria-hidden="true" />
+        <div className="mb-2 flex items-center gap-1.5 text-[12px] font-semibold text-[var(--enk-on-dark-muted)]">
+          <MapPin className="h-4 w-4 shrink-0" aria-hidden="true" />
           <span>{location}</span>
         </div>
 
-        <h3 className="text-[17px] font-semibold leading-snug text-[var(--enk-on-dark)] line-clamp-2">
+        <h3 className="text-[17px] font-bold leading-snug text-[var(--enk-on-dark)] line-clamp-2">
           {title}
         </h3>
 
         {metric && metricLabel && (
           <dl className="mt-2 flex flex-wrap items-baseline gap-1.5">
-            <dt
-              className="font-mono text-[11px] uppercase tracking-[0.12em]"
-              style={{ color: "var(--enk-gold)" }}
-            >
+            <dt className="text-[12px] font-bold text-[var(--enk-accent-on-dark)]">
               {metricLabel}
             </dt>
-            <dd className="text-[13.5px] font-medium text-[var(--enk-on-dark)]">{metric}</dd>
+            <dd className="text-[14px] font-medium text-[var(--enk-on-dark)]">{metric}</dd>
           </dl>
         )}
 
-        <span
-          className="mt-5 inline-flex items-center gap-2 text-[13.5px] font-semibold"
-          style={{ color: "var(--enk-gold)" }}
-        >
+        <span className="enk-readmore mt-5">
           Full Case Study
-          <ArrowRight
-            className="h-4 w-4 transition-transform duration-150 ease-out group-hover:translate-x-0.5"
-            aria-hidden="true"
-          />
+          <ArrowRight className="h-4 w-4" aria-hidden="true" />
         </span>
       </div>
     </Link>

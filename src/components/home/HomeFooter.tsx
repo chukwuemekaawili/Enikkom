@@ -37,8 +37,9 @@ const columns = [
 
 export function HomeFooter() {
   return (
-    <footer style={{ backgroundColor: "oklch(0.16 0.03 255)" }} className="text-[var(--enk-on-dark-muted)]">
+    <footer style={{ backgroundColor: "var(--enk-footer)" }} className="text-[var(--enk-on-dark-muted)]">
       <div className="enk-container py-16">
+        <p className="mb-10 text-[12px] text-[var(--enk-on-dark-muted)]">Page last updated: 29 June 2026</p>
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
             <Link to="/" title={brand.microcopy} aria-label={`Enikkom and HDDTEC, home. ${brand.microcopy}`} className="inline-flex items-center gap-4 rounded-md focus-ring">
@@ -69,7 +70,7 @@ export function HomeFooter() {
 
           {columns.map((col) => (
             <nav key={col.title} aria-label={col.title}>
-              <h3 className="font-mono text-[12px] font-semibold uppercase tracking-[0.16em] text-[var(--enk-on-dark)]">{col.title}</h3>
+              <h3 className="text-[14px] font-bold text-[var(--enk-on-dark)]">{col.title}</h3>
               <ul className="mt-4 space-y-2.5">
                 {col.links.map((l) => (
                   <li key={l.label}>

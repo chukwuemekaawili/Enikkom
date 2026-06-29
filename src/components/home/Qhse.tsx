@@ -26,7 +26,7 @@ export function Qhse() {
             {/* Safety record, stated once, here */}
             <dl className="mt-8 grid grid-cols-2 gap-6">
               {safetyStats.map((s) => (
-                <div key={s.label} className="border-l-2 border-[var(--enk-gold)] pl-4">
+                <div key={s.label} className="border-l-2 border-[var(--enk-blue)] pl-4">
                   <dd className="enk-display text-[clamp(1.5rem,4vw,2.2rem)] text-[var(--enk-ink)]">{s.value}</dd>
                   <dt className="mt-1.5 text-[12.5px] leading-snug text-[var(--enk-steel)]">{s.label}</dt>
                 </div>
@@ -58,8 +58,8 @@ export function Qhse() {
 
           {/* Policy downloads */}
           <div className="enk-card p-6 md:p-8">
-            <h3 className="flex items-center gap-2.5 text-[16px] font-semibold text-[var(--enk-ink)]">
-              <FileText className="h-5 w-5 text-[var(--enk-bronze)]" aria-hidden="true" />
+            <h3 className="flex items-center gap-2.5 text-[16px] font-bold text-[var(--enk-ink)]">
+              <FileText className="h-6 w-6 text-[var(--enk-bronze)]" fill="currentColor" aria-hidden="true" />
               Policies &amp; statements
             </h3>
             <ul className="mt-5 divide-y divide-[var(--enk-line)]">

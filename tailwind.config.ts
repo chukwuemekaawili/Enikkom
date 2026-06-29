@@ -10,13 +10,13 @@ export default {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1240px",
+        "2xl": "1300px",
       },
     },
     extend: {
       fontFamily: {
-        sans: ['IBM Plex Sans', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-        heading: ['Schibsted Grotesk', 'system-ui', 'sans-serif'],
+        sans: ['Arial', 'Roboto', 'Helvetica', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+        heading: ['Jost', 'Futura PT', 'Questrial', 'Arial', 'sans-serif'],
         mono: ['IBM Plex Mono', 'ui-monospace', 'SFMono-Regular', 'monospace'],
       },
       colors: {

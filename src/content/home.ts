@@ -83,15 +83,6 @@ export const navMenus: NavMenu[] = [
       { label: "Leadership", href: "/management-team" },
     ],
   },
-  {
-    label: "Contact",
-    href: "/contact",
-    items: [
-      { label: "RFP / Drawing Upload", href: "mailto:info@enikkom.com?subject=RFP%20%2F%20Drawing%20Upload", external: true },
-      { label: "Call +234 803 508 2614", href: "tel:+2348035082614", external: true },
-      { label: "Email info@enikkom.com", href: "mailto:info@enikkom.com", external: true },
-    ],
-  },
 ];
 
 /** Dual-brand: one group, two delivery arms. */

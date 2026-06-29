@@ -89,10 +89,10 @@ export default function NewsInsightsPage() {
                   <span className="enk-chip enk-chip--on-dark absolute left-4 top-4">{item.category}</span>
                 </div>
                 <div className="flex flex-1 flex-col p-6" style={{ backgroundColor: "var(--enk-navy)" }}>
-                  <div className="flex items-center gap-2 mb-3 font-mono text-[11px] uppercase tracking-[0.12em] text-[var(--enk-on-dark-muted)]">
+                  <div className="flex items-center gap-2 mb-3 text-[12px] font-semibold text-[var(--enk-on-dark-muted)]">
                     <span>{item.date}</span>
                   </div>
-                  <h4 className="font-semibold text-[17px] mb-2 text-[var(--enk-on-dark)] group-hover:text-[var(--enk-gold)] transition-colors">{item.title}</h4>
+                  <h4 className="text-[20px] font-bold mb-2 underline underline-offset-4 text-[var(--enk-on-dark)] group-hover:text-[var(--enk-gold)] transition-colors">{item.title}</h4>
                   <p className="text-[13.5px] text-[var(--enk-on-dark-muted)] leading-relaxed flex-1">{item.description}</p>
                   <div className="mt-4 pt-4 border-t border-white/10 flex items-center gap-2 text-[13px] font-semibold" style={{ color: "var(--enk-gold)" }}>
                     Watch on YouTube
@@ -129,7 +129,7 @@ export default function NewsInsightsPage() {
                 className="rounded-xl border border-dashed border-border bg-background p-6 flex flex-col items-start gap-3"
               >
                 <CircleDashed className="h-6 w-6 text-muted-foreground opacity-70" aria-hidden="true" />
-                <p className="font-mono text-[12px] uppercase tracking-[0.06em] text-muted-foreground">
+                <p className="text-[12px] font-semibold text-muted-foreground">
                   To be supplied, {phLabel(entry)}
                 </p>
               </div>

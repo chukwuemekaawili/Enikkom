@@ -545,7 +545,7 @@ const typeColors: Record<string, string> = {
   Pipeline: "bg-emerald-500",
   Marine: "bg-blue-500",
   Dredging: "bg-cyan-500",
-  "Shore Approach": "bg-amber-500",
+  "Shore Approach": "bg-rose-500",
   "Thrust Boring": "bg-violet-500",
 };
 
@@ -554,7 +554,7 @@ const typeBorderColors: Record<string, string> = {
   Pipeline: "border-emerald-500",
   Marine: "border-blue-500",
   Dredging: "border-cyan-500",
-  "Shore Approach": "border-amber-500",
+  "Shore Approach": "border-rose-500",
   "Thrust Boring": "border-violet-500",
 };
 

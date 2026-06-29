@@ -145,14 +145,14 @@ const typeColors: Record<string, string> = {
   HDD: "bg-primary",
   Pipeline: "bg-emerald-500",
   Marine: "bg-blue-500",
-  "Shore Approach": "bg-amber-500",
+  "Shore Approach": "bg-rose-500",
 };
 
 const typeBorderColors: Record<string, string> = {
   HDD: "border-primary",
   Pipeline: "border-emerald-500",
   Marine: "border-blue-500",
-  "Shore Approach": "border-amber-500",
+  "Shore Approach": "border-rose-500",
 };
 
 export function ProjectMap() {

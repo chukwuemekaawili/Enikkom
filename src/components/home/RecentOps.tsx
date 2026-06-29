@@ -16,7 +16,7 @@ function OpCard({ op }: { op: RecentOp }) {
         />
       </div>
       <div className="flex flex-col p-5" style={{ backgroundColor: "var(--enk-navy)" }}>
-        <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-[var(--enk-gold)]">
+        <span className="text-[12px] font-bold text-[var(--enk-accent-on-dark)]">
           {op.category}
         </span>
         <p className="mt-2 text-[14.5px] leading-snug text-[var(--enk-on-dark)]">{op.caption}</p>

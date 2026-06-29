@@ -197,7 +197,7 @@ export default function HSEQualityPage() {
                 transition={{ duration: 0.4, delay: i * 0.1 }} 
                 className="relative text-center enk-card enk-card--hover p-6 pt-7"
               >
-                <span className="block font-mono text-[13px] font-medium tracking-[0.14em] mb-3" style={{ color: "var(--enk-bronze)" }}>
+                <span className="block text-[14px] font-bold mb-3" style={{ color: "var(--enk-bronze)" }}>
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">

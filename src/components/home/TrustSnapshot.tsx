@@ -60,7 +60,7 @@ export function TrustSnapshot() {
         </p>
         <dl className="mx-auto grid max-w-3xl grid-cols-3 gap-x-6 gap-y-8 sm:gap-x-12">
           {kpis.slice(0, 3).map((kpi) => (
-            <div key={kpi.label} className="min-w-0 border-l-2 border-[var(--enk-gold)] pl-4">
+            <div key={kpi.label} className="min-w-0 border-l-2 border-[var(--enk-blue)] pl-4">
               <dd className="text-[var(--enk-ink)]">
                 <StatValue value={kpi.value} numberClassName="block text-[clamp(1.5rem,4vw,2.2rem)] text-[var(--enk-ink)]" />
               </dd>

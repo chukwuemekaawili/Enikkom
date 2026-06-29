@@ -182,7 +182,7 @@ export default function PartnersPage() {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold mb-1">{partner.name}</h3>
-                    <p className="text-[12px] font-mono uppercase tracking-[0.1em]" style={{ color: "var(--enk-bronze)" }}>{partner.type}</p>
+                    <p className="text-[12px] font-bold" style={{ color: "var(--enk-bronze)" }}>{partner.type}</p>
                     <p className="text-xs text-muted-foreground">Since {partner.since}</p>
                   </div>
                 </div>

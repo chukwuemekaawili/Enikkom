@@ -24,30 +24,24 @@ function Tile({ project }: { project: Project }) {
         {isPlaceholder(project.location) ? (
           <PlaceholderTag value={project.location} onDark />
         ) : (
-          <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-[var(--enk-on-dark-muted)]">
+          <span className="text-[12px] font-semibold text-[var(--enk-on-dark-muted)]">
             {project.location}
           </span>
         )}
         {isPlaceholder(project.name) ? (
           <PlaceholderTag value={project.name} onDark />
         ) : (
-          <h3 className="mt-2 text-[18px] font-semibold leading-snug text-[var(--enk-on-dark)]">{project.name}</h3>
+          <h3 className="mt-2 text-[18px] font-bold leading-snug text-[var(--enk-on-dark)]">{project.name}</h3>
         )}
         <dl className="mt-2 flex flex-1 flex-wrap items-baseline gap-2">
-          <dt className="font-mono text-[11px] uppercase tracking-[0.12em] text-[var(--enk-gold)]">Result</dt>
-          <dd className="text-[13.5px] font-medium text-[var(--enk-on-dark)]">
+          <dt className="text-[12px] font-bold text-[var(--enk-accent-on-dark)]">Result</dt>
+          <dd className="text-[14px] font-medium text-[var(--enk-on-dark)]">
             {isPlaceholder(project.result) ? <PlaceholderTag value={project.result} onDark /> : project.result}
           </dd>
         </dl>
-        <span
-          className="mt-5 inline-flex items-center gap-2 text-[13.5px] font-semibold"
-          style={{ color: "var(--enk-gold)" }}
-        >
+        <span className="enk-readmore mt-5">
           Read case study
-          <ArrowUpRight
-            className="h-4 w-4 transition-transform duration-150 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-            aria-hidden="true"
-          />
+          <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
         </span>
       </div>
     </Link>
@@ -83,27 +77,21 @@ function FlagshipTile({ project }: { project: Project }) {
         }}
       />
       <div className="relative p-7 md:p-9">
-        <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-[var(--enk-gold)]">
+        <span className="text-[12px] font-bold text-[var(--enk-accent-on-dark)]">
           Flagship project
         </span>
-        <span className="mt-3 block font-mono text-[11px] uppercase tracking-[0.14em] text-[var(--enk-on-dark-muted)]">
+        <span className="mt-3 block text-[12px] font-semibold text-[var(--enk-on-dark-muted)]">
           {project.location}
         </span>
-        <h3 className="mt-1.5 text-[22px] font-semibold leading-snug text-[var(--enk-on-dark)] md:text-[27px]">
+        <h3 className="mt-1.5 text-[22px] font-bold leading-snug text-[var(--enk-on-dark)] md:text-[27px]">
           {project.name}
         </h3>
         <p className="mt-4 enk-display text-[clamp(1.35rem,2.4vw,1.9rem)] leading-tight text-[var(--enk-on-dark)]">
           {project.result}
         </p>
-        <span
-          className="mt-6 inline-flex items-center gap-2 text-[14px] font-semibold"
-          style={{ color: "var(--enk-gold)" }}
-        >
+        <span className="enk-readmore mt-6">
           Read case study
-          <ArrowUpRight
-            className="h-4 w-4 transition-transform duration-150 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-            aria-hidden="true"
-          />
+          <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
         </span>
       </div>
     </Link>
