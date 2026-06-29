@@ -2,7 +2,7 @@ import { Fragment, useEffect, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X, ChevronDown, Search } from "lucide-react";
 import { navMenus, brand, type NavMenu, type NavLink } from "@/content/home";
-import enikkomLogoWhite from "@/assets/images/logos/enikkom-logo-white.png";
+import enikkomLogoWhite from "@/assets/images/logos/enikkom-logo-white-trimmed.png";
 
 const hddtecLogo = brand.hddtecLogo;
 
@@ -21,7 +21,9 @@ const extraLinks: NavLink[] = [
 function BrandLockup({ compact, onClick }: { compact: boolean; onClick?: () => void }) {
   // Equal co-brand lockup: Enikkom and HDDTEC at equal optical height on one
   // baseline, separated by a clean divider, [ Enikkom ] | [ HDDTEC ].
-  const h = compact ? 32 : 40;
+  // Logo art is tightly trimmed (no dead padding) so these heights map to the
+  // actual mark — keep them generous enough that the wordmark stays legible.
+  const h = compact ? 38 : 48;
   return (
     <Link
       to="/"
