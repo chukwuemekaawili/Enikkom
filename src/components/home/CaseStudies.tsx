@@ -20,7 +20,7 @@ function Tile({ project }: { project: Project }) {
         />
       </div>
 
-      <div className="flex flex-1 flex-col p-6" style={{ backgroundColor: "var(--enk-navy)" }}>
+      <div className="flex flex-1 flex-col p-6" style={{ backgroundColor: "var(--enk-surface-card)" }}>
         {isPlaceholder(project.location) ? (
           <PlaceholderTag value={project.location} onDark />
         ) : (

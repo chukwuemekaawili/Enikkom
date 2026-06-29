@@ -23,44 +23,46 @@
     --brand-amber-hover: 217 84% 42%;
     --brand-bronze: 217 78% 40%;
 
-    /* Neutrals - Deep Navy (matched to --enk-navy so both token systems agree) */
-    --header-bg: 222 28% 14%;
-    --charcoal: 222 28% 14%;
-    --charcoal-light: 222 26% 19%;
-    --page-bg: 0 0% 100%;
-    --surface: 0 0% 100%;
-    --text-primary: 210 16% 9%;
-    --text-muted: 215 14% 28%;
-    --border-light: 214 14% 87%;
+    /* Neutrals - DARK (whole site is now dark; shadcn semantic tokens flipped
+       so any component using text-foreground / bg-card / bg-muted / border
+       reads correctly on the dual-navy surfaces). */
+    --header-bg: 210 18% 14%;
+    --charcoal: 210 18% 14%;
+    --charcoal-light: 210 19% 18%;
+    --page-bg: 210 18% 14%;
+    --surface: 210 19% 16%;
+    --text-primary: 0 0% 88%;
+    --text-muted: 210 9% 75%;
+    --border-light: 210 18% 20%;
 
-    /* Semantic tokens */
-    --background: 0 0% 100%;
-    --foreground: 210 16% 9%;
+    /* Semantic tokens - DARK theme */
+    --background: 210 18% 14%;   /* #1D232A page */
+    --foreground: 0 0% 88%;      /* #E0E0E0 */
 
-    --card: 0 0% 100%;
-    --card-foreground: 210 16% 9%;
+    --card: 210 19% 16%;         /* #222A32 card surface */
+    --card-foreground: 0 0% 88%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 210 16% 9%;
+    --popover: 210 19% 16%;
+    --popover-foreground: 0 0% 88%;
 
-    --primary: 217 84% 50%;
+    --primary: 217 84% 53%;      /* #2563EB steel blue */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 18% 96%;
-    --secondary-foreground: 210 16% 9%;
+    --secondary: 210 18% 20%;
+    --secondary-foreground: 0 0% 88%;
 
-    --muted: 210 20% 96%;
-    --muted-foreground: 215 10% 38%;
+    --muted: 210 18% 18%;
+    --muted-foreground: 210 9% 75%;  /* #B8BEC4 */
 
-    --accent: 217 84% 60%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 213 100% 71%;      /* #6EA8FF accent-on-dark */
+    --accent-foreground: 210 18% 14%;
 
     --destructive: 357 82% 53%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 214 16% 87%;
-    --input: 214 16% 87%;
-    --ring: 217 84% 50%;
+    --border: 210 18% 22%;
+    --input: 210 18% 24%;
+    --ring: 213 100% 71%;
 
     --radius: 0.75rem;
 
@@ -567,21 +569,27 @@
 
 .enk {
   /* ----------------------------------------------------------------
-     SHELL DESIGN LANGUAGE — exact hex tokens (from real Shell CSS),
-     recoloured to Steel Blue. Canonical --color-* names below; the
-     established --enk-* names alias onto them so every existing
-     component recolours centrally with no per-file edits.
-     Surfaces: HYBRID — dark hero/cards + selected light content bands.
+     SHELL DESIGN LANGUAGE — DUAL-NAVY all-dark surface system.
+     Three surfaces in ONE navy hue family create depth without
+     borders/shadows (Shell never floats dark cards on white):
+       deep band  #14191F  (section bands + footer)
+       page/hero  #1D232A  (page base, hero, header)
+       card       #222A32  (1 step lighter than page → lifts off bands)
+     Canonical --color-* names; established --enk-* names alias onto
+     them so every component recolours centrally with no per-file churn.
      ---------------------------------------------------------------- */
-  --color-bg:            #1D232A;  /* Shell navy — dark sections, cards, header */
-  --color-surface-light: #F4F6F8;  /* light content band (hybrid) */
-  --color-footer:        #14181D;
-  --color-text:          #E0E0E0;  /* body + headings on dark */
+  --color-bg-deep:       #14191F;  /* section bands + footer */
+  --color-bg:            #1D232A;  /* page + hero + header */
+  --color-surface-card:  #222A32;  /* cards (no border, no shadow) */
+  --color-surface-card-hover: #2A333C;
+  --color-surface-light: #F4F6F8;  /* logo tiles only */
+  --color-footer:        #14191F;
+  --color-text:          #E0E0E0;  /* off-white text on all dark surfaces */
   --color-text-muted:    #B8BEC4;
-  --color-text-on-light: #13171B;
+  --color-text-on-light: #13171B;  /* text inside light logo tiles / forms */
   --color-accent:         #2563EB; /* fills/buttons (white text on top) */
   --color-accent-hover:   #1D4FD8;
-  --color-accent-on-dark: #6EA8FF; /* links/icons/text ON navy (WCAG) */
+  --color-accent-on-dark: #6EA8FF; /* links/icons/small text ON navy (WCAG) */
   --radius-card:    16px;
   --radius-control: 8px;
   --card-pad:       24px;
@@ -590,37 +598,42 @@
   --font-heading:   'Jost', 'Futura PT', 'Questrial', Arial, sans-serif;
   --font-body:      Arial, Roboto, Helvetica, sans-serif;
 
-  /* Surfaces (light base for hybrid light sections; dark sections opt in) */
-  --enk-bg: #FFFFFF;
-  --enk-bg-muted: var(--color-surface-light);
-  --enk-navy: var(--color-bg);
+  /* Surfaces — all dark, same navy hue family */
+  --enk-bg: var(--color-bg);            /* page / hero base */
+  --enk-bg-muted: var(--color-bg-deep); /* section bands (was light) */
+  --enk-surface-card: var(--color-surface-card);
+  --enk-surface-card-hover: var(--color-surface-card-hover);
+  --enk-navy: var(--color-bg);          /* header, scrims, CTA bands */
   --enk-navy-2: #262D35;
   --enk-navy-3: #2F3741;
   --enk-footer: var(--color-footer);
 
-  /* Text */
-  --enk-ink: var(--color-text-on-light);  /* primary on light  ~ 15:1 */
-  --enk-steel: #4A5258;                    /* muted on light    ~ 7:1 */
-  --enk-on-dark: var(--color-text);        /* primary on navy   ~ 11:1 */
+  /* Text — now light everywhere (no light content surfaces remain).
+     ink/steel flip to off-white so the many text-[var(--enk-ink)] /
+     text-[var(--enk-steel)] usages read correctly on the dark bands. */
+  --enk-ink: var(--color-text);            /* primary on dark */
+  --enk-steel: var(--color-text-muted);    /* muted on dark */
+  --enk-on-dark: var(--color-text);
   --enk-on-dark-muted: var(--color-text-muted);
+  --enk-on-light: var(--color-text-on-light); /* for light logo tiles */
 
   /* Brand — Steel Blue single accent (KEPT, never yellow).
-       --enk-accent-on-dark : brighter blue that clears WCAG on navy
-       --enk-accent         : darker blue for text on light surfaces (~6:1) */
+     Fills use --enk-blue (#2563EB, white text on top). Small accent
+     text/icons on the dark navy use the brighter #6EA8FF for WCAG. */
   --enk-blue: var(--color-accent);
   --enk-blue-hover: var(--color-accent-hover);
   --enk-accent-on-dark: var(--color-accent-on-dark);
-  --enk-accent: var(--color-accent-hover);
-  --enk-gold: var(--enk-accent-on-dark);  /* legacy alias → blue on DARK */
-  --enk-bronze: var(--enk-accent);        /* legacy alias → blue on LIGHT */
-  --enk-safety: oklch(0.56 0.12 150);     /* QHSE positive */
+  --enk-accent: var(--color-accent-on-dark);  /* small accent text → #6EA8FF on dark */
+  --enk-gold: var(--enk-accent-on-dark);      /* legacy alias → #6EA8FF */
+  --enk-bronze: var(--enk-accent-on-dark);    /* legacy alias → #6EA8FF */
+  --enk-safety: oklch(0.66 0.13 150);         /* QHSE positive, lifted for dark */
 
-  /* Lines & elevation */
-  --enk-line: #E3E7EB;
-  --enk-line-strong: #CDD3D9;
-  --enk-line-dark: rgba(255, 255, 255, 0.12);
-  --enk-shadow-sm: 0 1px 2px rgba(20, 24, 29, 0.06);
-  --enk-shadow-md: 0 14px 40px rgba(20, 24, 29, 0.12);
+  /* Lines — subtle light hairlines on the dark surfaces */
+  --enk-line: rgba(255, 255, 255, 0.08);
+  --enk-line-strong: rgba(255, 255, 255, 0.14);
+  --enk-line-dark: rgba(255, 255, 255, 0.10);
+  --enk-shadow-sm: none;
+  --enk-shadow-md: none;
 
   --enk-radius: var(--radius-control);
 
@@ -655,9 +668,9 @@
   padding: 0.3rem 0.6rem; border-radius: 6px;
   font-family: var(--font-body);
   font-size: 0.72rem; font-weight: 700; letter-spacing: normal; text-transform: none;
-  border: 1px solid var(--enk-line-strong); color: var(--enk-steel); background: var(--enk-bg);
+  border: 1px solid var(--enk-line-strong); color: var(--enk-on-dark); background: rgba(255, 255, 255, 0.08);
 }
-.enk-chip--on-dark { border-color: oklch(1 0 0 / 0.22); color: var(--enk-on-dark); background: var(--enk-navy); }
+.enk-chip--on-dark { border-color: rgba(255, 255, 255, 0.18); color: var(--enk-on-dark); background: rgba(255, 255, 255, 0.08); }
 
 /* Buttons - enterprise: opacity/border/background/elevation only, <=180ms ease-out, >=44px */
 .enk-btn {
@@ -684,16 +697,17 @@
 }
 .enk-link:hover { border-bottom-color: var(--enk-blue); gap: 0.6rem; }
 
-/* Card - Shell pattern: 16px radius, clips full-bleed image, subtle depth.
-   Light variant by default; dark photo-cards set their own navy text block. */
+/* Card - Shell pattern: 16px radius, clips full-bleed image. Card surface
+   (#222A32) is one step LIGHTER than the deep section band (#14191F), so it
+   lifts off with NO border and NO shadow (the Shell way). */
 .enk-card {
-  background: var(--enk-bg); border: 1px solid var(--enk-line); border-radius: var(--radius-card);
-  box-shadow: var(--enk-shadow-sm); overflow: hidden;
-  transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+  background: var(--enk-surface-card); border: none; border-radius: var(--radius-card);
+  box-shadow: none; overflow: hidden;
+  transition: background-color var(--transition), transform var(--transition);
 }
-.enk-card--hover:hover { border-color: var(--enk-line-strong); box-shadow: var(--enk-shadow-md); transform: translateY(-2px); }
-/* Dark navy card surface (the canonical Shell card) */
-.enk-card--dark { background: var(--enk-navy); border-color: var(--enk-line-dark); }
+.enk-card--hover:hover { background: var(--enk-surface-card-hover); transform: translateY(-2px); }
+/* Canonical Shell card surface (alias for explicit dark usage) */
+.enk-card--dark { background: var(--enk-surface-card); border-color: transparent; }
 
 /* Unified "Read more →" affordance for cards/links on dark surfaces */
 .enk-readmore {
@@ -709,12 +723,12 @@
 .enk-quicklink {
   display: flex; align-items: center; gap: 0.85rem;
   padding: 1rem 1.25rem; border-radius: var(--radius-control);
-  background: var(--enk-navy); border: 1px solid var(--enk-line-dark);
+  background: var(--enk-surface-card); border: none;
   font-family: var(--font-body); font-weight: 700; font-size: 15px;
   color: var(--enk-accent-on-dark);
-  transition: background-color var(--transition), border-color var(--transition);
+  transition: background-color var(--transition);
 }
-.enk-quicklink:hover { background: var(--enk-navy-2); border-color: var(--enk-accent-on-dark); }
+.enk-quicklink:hover { background: var(--enk-surface-card-hover); }
 .enk-quicklink svg { flex-shrink: 0; }
 
 /* Stat number - tabular mono */

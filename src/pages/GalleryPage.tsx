@@ -80,7 +80,7 @@ export default function GalleryPage() {
                     ? "text-white"
                     : "bg-muted text-muted-foreground hover:bg-muted/80 hover:text-foreground"
                 }`}
-                style={activeCategory === category ? { backgroundColor: "var(--enk-navy)" } : undefined}
+                style={activeCategory === category ? { backgroundColor: "var(--enk-blue)" } : undefined}
               >
                 {category}
               </button>
@@ -123,7 +123,7 @@ export default function GalleryPage() {
                         <ZoomIn className="h-6 w-6 text-white drop-shadow-md" />
                       </div>
                     </div>
-                    <div className="flex flex-col p-5" style={{ backgroundColor: "var(--enk-navy)" }}>
+                    <div className="flex flex-col p-5" style={{ backgroundColor: "var(--enk-surface-card)" }}>
                       <h3 className="text-[15px] font-semibold leading-snug text-[var(--enk-on-dark)]">
                         {item.title}
                       </h3>

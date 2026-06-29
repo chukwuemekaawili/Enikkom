@@ -121,7 +121,7 @@ export default function AboutPage() {
                   <div className="absolute inset-0" style={{ background: "linear-gradient(0deg, oklch(0.13 0.03 255 / 0.5), transparent 55%)" }} aria-hidden="true" />
                   <span className="enk-chip enk-chip--on-dark absolute left-4 top-4">Built In-Country</span>
                 </div>
-                <div className="flex flex-col p-6" style={{ backgroundColor: "var(--enk-navy)" }}>
+                <div className="flex flex-col p-6" style={{ backgroundColor: "var(--enk-surface-card)" }}>
                   <h3 className="text-[17px] font-semibold leading-snug text-[var(--enk-on-dark)]">
                     Engineering Depth Backed by Field Precision
                   </h3>
@@ -146,7 +146,7 @@ export default function AboutPage() {
                     <div className="absolute inset-0" style={{ background: "linear-gradient(0deg, oklch(0.13 0.03 255 / 0.5), transparent 55%)" }} aria-hidden="true" />
                     <span className="enk-chip enk-chip--on-dark absolute left-4 top-4">Field Operations</span>
                   </div>
-                  <div className="flex flex-col p-5" style={{ backgroundColor: "var(--enk-navy)" }}>
+                  <div className="flex flex-col p-5" style={{ backgroundColor: "var(--enk-surface-card)" }}>
                     <h4 className="text-[15px] font-semibold text-[var(--enk-on-dark)]">Field Leadership</h4>
                     <p className="mt-1 text-[13px] leading-6 text-[var(--enk-on-dark-muted)]">People, process, and technical control on site.</p>
                   </div>
@@ -166,7 +166,7 @@ export default function AboutPage() {
                     <div className="absolute inset-0" style={{ background: "linear-gradient(0deg, oklch(0.13 0.03 255 / 0.5), transparent 55%)" }} aria-hidden="true" />
                     <span className="enk-chip enk-chip--on-dark absolute left-4 top-4">River & Swamp</span>
                   </div>
-                  <div className="flex flex-col p-5" style={{ backgroundColor: "var(--enk-navy)" }}>
+                  <div className="flex flex-col p-5" style={{ backgroundColor: "var(--enk-surface-card)" }}>
                     <h4 className="text-[15px] font-semibold text-[var(--enk-on-dark)]">River & Swamp Delivery</h4>
                     <p className="mt-1 text-[13px] leading-6 text-[var(--enk-on-dark-muted)]">Specialist execution across crossings and sensitive corridors.</p>
                   </div>
@@ -184,7 +184,7 @@ export default function AboutPage() {
                   >
                     <div className="mb-5 flex items-start gap-4">
                       <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-muted">
-                        <Icon className="h-6 w-6" style={{ color: "var(--enk-navy)" }} />
+                        <Icon className="h-6 w-6" style={{ color: "var(--enk-accent-on-dark)" }} />
                       </div>
                       <h3 className="pt-1 text-xl font-semibold tracking-tight text-foreground">
                         {entry.name}

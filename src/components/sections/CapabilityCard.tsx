@@ -48,20 +48,14 @@ export function CapabilityCard({
         </div>
       )}
 
-      <div className="flex flex-1 flex-col p-6" style={{ backgroundColor: "var(--enk-navy)" }}>
-        <h3 className="text-[18px] font-semibold leading-snug text-[var(--enk-on-dark)]">{title}</h3>
+      <div className="flex flex-1 flex-col p-6" style={{ backgroundColor: "var(--enk-surface-card)" }}>
+        <h3 className="text-[18px] font-bold leading-snug text-[var(--enk-on-dark)]">{title}</h3>
         <p className="mt-2.5 flex-1 text-[14.5px] leading-relaxed text-[var(--enk-on-dark-muted)] line-clamp-3">
           {description}
         </p>
-        <span
-          className="mt-5 inline-flex items-center gap-2 text-[13.5px] font-semibold"
-          style={{ color: "var(--enk-gold)" }}
-        >
+        <span className="enk-readmore mt-5">
           {ctaLabel}
-          <ArrowRight
-            className="h-4 w-4 transition-transform duration-150 ease-out group-hover:translate-x-0.5"
-            aria-hidden="true"
-          />
+          <ArrowRight className="h-4 w-4" aria-hidden="true" />
         </span>
       </div>
     </Link>

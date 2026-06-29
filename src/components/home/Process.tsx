@@ -43,7 +43,7 @@ export function Process() {
             <li
               key={s.no}
               className="flex flex-col gap-3 p-7 lg:p-8"
-              style={{ backgroundColor: "var(--enk-navy)" }}
+              style={{ backgroundColor: "var(--enk-surface-card)" }}
             >
               <span className="text-[14px] font-bold text-[var(--enk-accent-on-dark)]">
                 {s.no}

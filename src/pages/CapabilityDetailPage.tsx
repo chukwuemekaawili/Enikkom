@@ -326,7 +326,7 @@ export default function CapabilityDetailPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {standards.map((standard: string, index: number) => (
               <div key={index} className="flex items-center gap-3 enk-card enk-card--hover p-4">
-                <CheckCircle className="h-5 w-5 flex-shrink-0" style={{ color: "var(--enk-navy)" }} />
+                <CheckCircle className="h-5 w-5 flex-shrink-0" style={{ color: "var(--enk-accent-on-dark)" }} />
                 <span className="text-sm font-medium">
                   <EditableText
                     value={standard}
@@ -366,7 +366,7 @@ export default function CapabilityDetailPage() {
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 className="enk-card enk-card--hover p-6"
               >
-                <Icon className="h-8 w-8 mb-3" style={{ color: "var(--enk-navy)" }} />
+                <Icon className="h-8 w-8 mb-3" style={{ color: "var(--enk-accent-on-dark)" }} />
                 <h4 className="font-semibold mb-1">
                   <EditableText
                     value={item.name}

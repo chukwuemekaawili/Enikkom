@@ -163,7 +163,7 @@ export default function CompletedProjectsPage() {
                 variant={activeFilter === type ? "default" : "outline"}
                 size="sm"
                 onClick={() => setActiveFilter(type)}
-                style={activeFilter === type ? { backgroundColor: "var(--enk-navy)", color: "white" } : undefined}
+                style={activeFilter === type ? { backgroundColor: "var(--enk-blue)", color: "white" } : undefined}
               >
                 {type}
               </Button>

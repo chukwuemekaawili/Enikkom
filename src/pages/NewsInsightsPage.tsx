@@ -88,7 +88,7 @@ export default function NewsInsightsPage() {
                   />
                   <span className="enk-chip enk-chip--on-dark absolute left-4 top-4">{item.category}</span>
                 </div>
-                <div className="flex flex-1 flex-col p-6" style={{ backgroundColor: "var(--enk-navy)" }}>
+                <div className="flex flex-1 flex-col p-6" style={{ backgroundColor: "var(--enk-surface-card)" }}>
                   <div className="flex items-center gap-2 mb-3 text-[12px] font-semibold text-[var(--enk-on-dark-muted)]">
                     <span>{item.date}</span>
                   </div>

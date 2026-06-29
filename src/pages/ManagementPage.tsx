@@ -181,7 +181,7 @@ const TeamMemberCard = ({
       </div>
     </div>
 
-    <div className="flex flex-1 flex-col p-4 md:p-5" style={{ backgroundColor: "var(--enk-navy)" }}>
+    <div className="flex flex-1 flex-col p-4 md:p-5" style={{ backgroundColor: "var(--enk-surface-card)" }}>
       <h3 className="font-semibold text-[15px] md:text-[16px] mb-1 text-[var(--enk-on-dark)]">{member.name}</h3>
       <p className="font-bold text-[12px] md:text-[13px] mb-2 md:mb-3" style={{ color: "var(--enk-gold)" }}>{member.role}</p>
       <p className="text-[12px] md:text-[13px] text-[var(--enk-on-dark-muted)] mb-3 md:mb-4 leading-relaxed line-clamp-3 md:line-clamp-4 flex-1">{member.bio}</p>

@@ -146,7 +146,7 @@ export default function CareersPage() {
                 transition={{ duration: 0.4, delay: i * 0.1 }}
                 className="enk-card enk-card--hover p-6 group"
               >
-                <h3 className="font-semibold text-lg mb-3 group-hover:text-[var(--enk-navy)] transition-colors">{job.title}</h3>
+                <h3 className="font-semibold text-lg mb-3 text-[var(--enk-on-dark)] group-hover:text-[var(--enk-accent-on-dark)] transition-colors">{job.title}</h3>
                 <div className="flex flex-wrap gap-4 text-[14px] text-muted-foreground">
                   <div className="flex items-center gap-2">
                     <MapPin className="h-4 w-4 text-primary" />

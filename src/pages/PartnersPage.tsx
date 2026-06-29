@@ -194,7 +194,7 @@ export default function PartnersPage() {
                 <div className="space-y-3 mb-6">
                   {partner.highlights.map((highlight, idx) => (
                     <div key={idx} className="flex items-center gap-3">
-                      <div className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: "var(--enk-navy)" }} />
+                      <div className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: "var(--enk-accent-on-dark)" }} />
                       <span className="text-[14px]">{highlight}</span>
                     </div>
                   ))}

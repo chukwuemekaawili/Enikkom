@@ -51,7 +51,7 @@ export function CaseStudyCard({
         )}
       </div>
 
-      <div className="flex flex-1 flex-col p-6" style={{ backgroundColor: "var(--enk-navy)" }}>
+      <div className="flex flex-1 flex-col p-6" style={{ backgroundColor: "var(--enk-surface-card)" }}>
         <div className="mb-2 flex items-center gap-1.5 text-[12px] font-semibold text-[var(--enk-on-dark-muted)]">
           <MapPin className="h-4 w-4 shrink-0" aria-hidden="true" />
           <span>{location}</span>

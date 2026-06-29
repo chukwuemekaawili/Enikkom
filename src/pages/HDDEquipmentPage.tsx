@@ -77,7 +77,7 @@ export default function HDDEquipmentPage() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.3, delay: 0.1 + i * 0.05 }}
                   >
-                    <item.icon className="h-5 w-5 flex-shrink-0" style={{ color: "var(--enk-navy)" }} />
+                    <item.icon className="h-5 w-5 flex-shrink-0" style={{ color: "var(--enk-accent-on-dark)" }} />
                     <span className="text-[13px] font-medium">
                       <EditableText
                         value={item.label}
@@ -141,7 +141,7 @@ export default function HDDEquipmentPage() {
                     <TableRow key={i} className="hover:bg-muted/30 transition-colors">
                       <TableCell className="font-medium text-[13px]">{rig.model}</TableCell>
                       <TableCell className="text-[13px] text-muted-foreground whitespace-nowrap">{rig.inventoryLabel}</TableCell>
-                      <TableCell className="text-[13px] font-semibold whitespace-nowrap" style={{ color: "var(--enk-navy)" }}>{rig.pullbackClass}</TableCell>
+                      <TableCell className="text-[13px] font-semibold whitespace-nowrap" style={{ color: "var(--enk-accent-on-dark)" }}>{rig.pullbackClass}</TableCell>
                       <TableCell className="text-[13px] text-muted-foreground min-w-[190px]">{rig.thrustRating}</TableCell>
                       <TableCell className="text-[13px] text-muted-foreground min-w-[170px]">{rig.rotaryTorque}</TableCell>
                       <TableCell className="text-[13px] text-muted-foreground min-w-[210px]">

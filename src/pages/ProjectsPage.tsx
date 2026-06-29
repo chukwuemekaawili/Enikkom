@@ -236,7 +236,7 @@ export default function ProjectsPage() {
                   ? "text-white border-transparent"
                   : "border-border hover:bg-muted"
                   }`}
-                style={activeFilter === tag ? { backgroundColor: "var(--enk-navy)" } : undefined}
+                style={activeFilter === tag ? { backgroundColor: "var(--enk-blue)" } : undefined}
               >
                 {tag}
               </Button>

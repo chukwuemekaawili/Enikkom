@@ -126,7 +126,7 @@ export default function TestimonialsPage() {
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 className="enk-card enk-card--hover p-6 relative"
               >
-                <Quote className="h-10 w-10 absolute top-4 right-4" style={{ color: "var(--enk-navy)", opacity: 0.2 }} />
+                <Quote className="h-10 w-10 absolute top-4 right-4" style={{ color: "var(--enk-accent-on-dark)", opacity: 0.2 }} />
                 
                 <div className="flex gap-1 mb-4">
                   {[...Array(testimonial.rating || 5)].map((_, i) => (
@@ -172,7 +172,7 @@ export default function TestimonialsPage() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto">
               {stats.map((stat: any, index: number) => (
                 <div key={index} className="text-center">
-                  <p className="text-4xl font-bold" style={{ color: "var(--enk-navy)" }}>{stat.value}</p>
+                  <p className="text-4xl font-bold" style={{ color: "var(--enk-accent-on-dark)" }}>{stat.value}</p>
                   <p className="text-sm text-muted-foreground">{stat.label}</p>
                 </div>
               ))}

@@ -188,7 +188,7 @@ export default function ProjectsGalleryPage() {
                 </span>
               )}
             </div>
-            <div className="flex flex-1 flex-col p-5" style={{ backgroundColor: "var(--enk-navy)" }}>
+            <div className="flex flex-1 flex-col p-5" style={{ backgroundColor: "var(--enk-surface-card)" }}>
               <h4 className="font-semibold text-[16px] mb-1 text-[var(--enk-on-dark)] group-hover:text-[var(--enk-gold)] transition-colors">{project.title}</h4>
               {project.client && (
                 <p className="text-[12px] font-bold mb-2" style={{ color: "var(--enk-gold)" }}>{project.client}</p>
@@ -267,7 +267,7 @@ export default function ProjectsGalleryPage() {
                     ? "text-white"
                     : "bg-muted text-muted-foreground hover:bg-muted/80"
                 }`}
-                style={activeCategory === category ? { backgroundColor: "var(--enk-navy)" } : undefined}
+                style={activeCategory === category ? { backgroundColor: "var(--enk-blue)" } : undefined}
               >
                 {category}
               </button>

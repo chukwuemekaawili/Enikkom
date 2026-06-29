@@ -732,7 +732,7 @@ export default function ProjectDetailPage() {
                   viewport={{ once: true }}
                 >
                   <h2 className="enk-display text-[clamp(1.3rem,2.2vw,1.6rem)] mb-4 flex items-center gap-2">
-                    <Play className="h-5 w-5" style={{ color: "var(--enk-navy)" }} aria-hidden="true" />
+                    <Play className="h-5 w-5" style={{ color: "var(--enk-accent-on-dark)" }} aria-hidden="true" />
                     Project Video
                   </h2>
                   <div className="aspect-video rounded-xl overflow-hidden shadow-lg">
@@ -793,7 +793,7 @@ export default function ProjectDetailPage() {
                   <ul className="space-y-2">
                     {displayScope.map((item: string, index: number) => (
                       <li key={index} className="flex items-start gap-3">
-                        <CheckCircle className="h-5 w-5 flex-shrink-0 mt-0.5" style={{ color: "var(--enk-navy)" }} />
+                        <CheckCircle className="h-5 w-5 flex-shrink-0 mt-0.5" style={{ color: "var(--enk-accent-on-dark)" }} />
                         <span className="text-muted-foreground">
                           <EditableText
                             value={item}
@@ -895,9 +895,9 @@ export default function ProjectDetailPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   className="enk-card p-8 border-l-4"
-                  style={{ borderLeftColor: "var(--enk-navy)" }}
+                  style={{ borderLeftColor: "var(--enk-accent-on-dark)" }}
                 >
-                  <Quote className="h-8 w-8 mb-4" style={{ color: "var(--enk-navy)", opacity: 0.3 }} />
+                  <Quote className="h-8 w-8 mb-4" style={{ color: "var(--enk-accent-on-dark)", opacity: 0.3 }} />
                   <blockquote className="text-lg italic text-foreground mb-4">
                     "<EditableText
                       value={content.quote?.text || project.clientQuote.text}
@@ -909,7 +909,7 @@ export default function ProjectDetailPage() {
                   </blockquote>
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center">
-                      <Users className="h-5 w-5" style={{ color: "var(--enk-navy)" }} />
+                      <Users className="h-5 w-5" style={{ color: "var(--enk-accent-on-dark)" }} />
                     </div>
                     <div>
                       <p className="font-semibold">
@@ -943,7 +943,7 @@ export default function ProjectDetailPage() {
                 className="enk-card p-6 sticky top-24"
               >
                 <h3 className="text-lg font-semibold mb-6 flex items-center gap-2">
-                  <Gauge className="h-5 w-5" style={{ color: "var(--enk-navy)" }} />
+                  <Gauge className="h-5 w-5" style={{ color: "var(--enk-accent-on-dark)" }} />
                   <EditableText
                     value={resultsContent.section_title || "Project Results"}
                     pageSlug={pageSlug}
@@ -962,7 +962,7 @@ export default function ProjectDetailPage() {
                           field={`result_${index}_label`}
                         />
                       </span>
-                      <span className="font-semibold" style={{ color: "var(--enk-navy)" }}>
+                      <span className="font-semibold" style={{ color: "var(--enk-accent-on-dark)" }}>
                         <EditableText
                           value={result.value}
                           pageSlug={pageSlug}

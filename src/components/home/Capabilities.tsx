@@ -30,7 +30,7 @@ export function Capabilities() {
                   className="h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-105"
                 />
               </div>
-              <div className="flex flex-1 flex-col p-6" style={{ backgroundColor: "var(--enk-navy)" }}>
+              <div className="flex flex-1 flex-col p-6" style={{ backgroundColor: "var(--enk-surface-card)" }}>
                 <h3 className="text-[17px] font-semibold leading-snug text-[var(--enk-on-dark)]">{cap.name}</h3>
                 <p className="mt-2 flex-1 text-[14px] leading-relaxed text-[var(--enk-on-dark-muted)]">{cap.proof}</p>
                 <span className="enk-readmore mt-5">

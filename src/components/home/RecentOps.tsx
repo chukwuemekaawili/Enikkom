@@ -15,7 +15,7 @@ function OpCard({ op }: { op: RecentOp }) {
           className="h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-105"
         />
       </div>
-      <div className="flex flex-col p-5" style={{ backgroundColor: "var(--enk-navy)" }}>
+      <div className="flex flex-col p-5" style={{ backgroundColor: "var(--enk-surface-card)" }}>
         <span className="text-[12px] font-bold text-[var(--enk-accent-on-dark)]">
           {op.category}
         </span>
