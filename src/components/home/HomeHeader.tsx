@@ -201,16 +201,13 @@ export function HomeHeader() {
     <header
       className="sticky top-0 z-50 transition-[box-shadow] duration-200"
       style={{
-        // Solid-enough navy so nav text passes AA regardless of the hero photo;
-        // a gradient at the top state also smooths the seam into the hero.
-        // First load: a clean, intentional dark overlay (not a foggy glass band)
-        // so nav stays readable over the hero. Scroll: a slightly stronger,
-        // controlled navy, never heavier than the hero, no white blur.
-        background: scrolled
-          ? "oklch(0.14 0.025 255 / 0.94)"
-          : "linear-gradient(180deg, oklch(0.12 0.02 255 / 0.82) 0%, oklch(0.12 0.02 255 / 0.42) 100%)",
-        borderBottom: `1px solid ${scrolled ? "var(--enk-line-dark)" : "transparent"}`,
-        boxShadow: scrolled ? "var(--enk-shadow-sm)" : "none",
+        // Solid navy header bar (Shell-style clean, separated header — never a
+        // foggy translucent band or a white bar). Fully opaque in every state so
+        // it reads as a crisp, distinct bar above the content; a hairline divider
+        // + a shadow on scroll give it depth and separation from the hero below.
+        background: "var(--enk-navy)",
+        borderBottom: "1px solid var(--enk-line-dark)",
+        boxShadow: scrolled ? "var(--enk-shadow-md)" : "none",
       }}
     >
       <div className="enk-container">
