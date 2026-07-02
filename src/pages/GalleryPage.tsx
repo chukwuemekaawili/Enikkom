@@ -75,12 +75,9 @@ export default function GalleryPage() {
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
-                className={`px-5 py-2.5 rounded-[var(--enk-radius)] text-[13px] font-semibold transition-all duration-200 ${
-                  activeCategory === category
-                    ? "text-white"
-                    : "bg-muted text-muted-foreground hover:bg-muted/80 hover:text-foreground"
+                className={`enk-btn ${
+                  activeCategory === category ? "enk-btn--primary" : "enk-btn--outline"
                 }`}
-                style={activeCategory === category ? { backgroundColor: "var(--enk-blue)" } : undefined}
               >
                 {category}
               </button>

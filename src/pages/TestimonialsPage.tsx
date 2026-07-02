@@ -5,6 +5,7 @@ import { Quote, Star } from "lucide-react";
 import { EditableText } from "@/components/content";
 import { usePageContent } from "@/hooks/useSiteSettings";
 import { siteImageSelections } from "@/content/siteImageSelections";
+import { SectionHeading } from "@/components/home/SectionHeading";
 
 // Default testimonials from Enikkom documents
 const defaultTestimonials = [
@@ -96,24 +97,28 @@ export default function TestimonialsPage() {
 
       <section className="section-padding">
         <div className="container-wide">
-          <div className="text-center mb-12">
-            <p className="enk-kicker justify-center mb-3">Client Feedback</p>
-            <h2 className="mb-4">
-              <EditableText
-                value={introContent.title || "What Our Clients Say"}
-                pageSlug="testimonials"
-                sectionKey="intro"
-                field="title"
-              />
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              <EditableText
-                value={introContent.description || "Over 34 years of delivering excellence has earned us the trust of major IOCs, EPCs, and government agencies across Nigeria and West Africa."}
-                pageSlug="testimonials"
-                sectionKey="intro"
-                field="description"
-              />
-            </p>
+          <div className="mb-12">
+            <SectionHeading
+              kicker="Client Feedback"
+              title={
+                <EditableText
+                  value={introContent.title || "What Our Clients Say"}
+                  pageSlug="testimonials"
+                  sectionKey="intro"
+                  field="title"
+                />
+              }
+              intro={
+                <EditableText
+                  value={introContent.description || "Over 34 years of delivering excellence has earned us the trust of major IOCs, EPCs, and government agencies across Nigeria and West Africa."}
+                  pageSlug="testimonials"
+                  sectionKey="intro"
+                  field="description"
+                />
+              }
+              onDark
+              align="center"
+            />
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -126,22 +131,22 @@ export default function TestimonialsPage() {
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 className="enk-card enk-card--hover p-6 relative"
               >
-                <Quote className="h-10 w-10 absolute top-4 right-4" style={{ color: "var(--enk-accent-on-dark)", opacity: 0.2 }} />
-                
+                <Quote className="h-10 w-10 absolute top-4 right-4" style={{ color: "var(--enk-steel)", opacity: 0.25 }} aria-hidden="true" />
+
                 <div className="flex gap-1 mb-4">
                   {[...Array(testimonial.rating || 5)].map((_, i) => (
                     <Star key={i} className="h-4 w-4" style={{ fill: "var(--enk-gold)", color: "var(--enk-gold)" }} />
                   ))}
                 </div>
-                
-                <p className="text-muted-foreground mb-6 leading-relaxed italic text-[14px]">
+
+                <p className="mb-6 leading-relaxed italic text-[14px]" style={{ color: "var(--enk-on-dark-muted)" }}>
                   "{testimonial.quote}"
                 </p>
-                
-                <div className="border-t pt-4">
-                  <p className="font-medium text-sm">{testimonial.author}</p>
+
+                <div className="border-t border-white/10 pt-4">
+                  <p className="font-medium text-sm" style={{ color: "var(--enk-on-dark)" }}>{testimonial.author}</p>
                   <p className="text-sm font-mono uppercase tracking-[0.08em]" style={{ color: "var(--enk-bronze)" }}>{testimonial.company}</p>
-                  <p className="text-xs text-muted-foreground mt-1">{testimonial.project}</p>
+                  <p className="text-xs mt-1" style={{ color: "var(--enk-on-dark-muted)" }}>{testimonial.project}</p>
                 </div>
               </motion.div>
             ))}
@@ -152,28 +157,32 @@ export default function TestimonialsPage() {
       <section className="section-padding bg-muted/30">
         <div className="container-wide">
           <div className="text-center">
-            <p className="enk-kicker justify-center mb-3">Track Record</p>
-            <h2 className="mb-4">
-              <EditableText
-                value={statsContent.title || "Trusted by Industry Leaders"}
-                pageSlug="testimonials"
-                sectionKey="stats"
-                field="title"
-              />
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
-              <EditableText
-                value={statsContent.description || "Our track record speaks for itself: 100+ km of HDD installed, Africa's longest single drill, and zero LTI on major projects."}
-                pageSlug="testimonials"
-                sectionKey="stats"
-                field="description"
-              />
-            </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto">
+            <SectionHeading
+              kicker="Track Record"
+              title={
+                <EditableText
+                  value={statsContent.title || "Trusted by Industry Leaders"}
+                  pageSlug="testimonials"
+                  sectionKey="stats"
+                  field="title"
+                />
+              }
+              intro={
+                <EditableText
+                  value={statsContent.description || "Our track record speaks for itself: 100+ km of HDD installed, Africa's longest single drill, and zero LTI on major projects."}
+                  pageSlug="testimonials"
+                  sectionKey="stats"
+                  field="description"
+                />
+              }
+              onDark
+              align="center"
+            />
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto mt-8">
               {stats.map((stat: any, index: number) => (
                 <div key={index} className="text-center">
                   <p className="text-4xl font-bold" style={{ color: "var(--enk-accent-on-dark)" }}>{stat.value}</p>
-                  <p className="text-sm text-muted-foreground">{stat.label}</p>
+                  <p className="text-sm" style={{ color: "var(--enk-steel)" }}>{stat.label}</p>
                 </div>
               ))}
             </div>

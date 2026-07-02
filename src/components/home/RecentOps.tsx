@@ -6,13 +6,13 @@ import { SectionHeading } from "./SectionHeading";
 function OpCard({ op }: { op: RecentOp }) {
   return (
     <article className="enk-card enk-card--hover group overflow-hidden">
-      <div className="aspect-[4/3] overflow-hidden">
+      <div className="relative aspect-[4/3] overflow-hidden enk-photo-wrap">
         <img
           src={op.image}
-          alt={op.caption}
+          alt=""
           loading="lazy"
           decoding="async"
-          className="h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-105"
+          className="h-full w-full object-cover enk-photo--card transition-transform duration-300 ease-out group-hover:scale-105"
         />
       </div>
       <div className="flex flex-col p-5" style={{ backgroundColor: "var(--enk-surface-card)" }}>

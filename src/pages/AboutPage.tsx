@@ -17,6 +17,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { usePageContent } from "@/hooks/useSiteSettings";
+import { SectionHeading } from "@/components/home/SectionHeading";
 import {
   companyIntroduction,
   corporateStatements,
@@ -81,20 +82,20 @@ export default function AboutPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.55 }}
-            className="rounded-xl border border-border/60 bg-white px-6 py-8 shadow-[var(--enk-shadow-md)] sm:px-8 lg:px-12 lg:py-12"
+            className="enk-panel px-6 py-8 sm:px-8 lg:px-12 lg:py-12"
           >
             <div className="grid gap-10 xl:grid-cols-[minmax(0,0.88fr)_minmax(0,1.12fr)] xl:gap-14">
               <div>
-                <p className="enk-kicker mb-3">{companyIntroduction.eyebrow}</p>
-                <h2 className="enk-display mb-6 text-[clamp(1.8rem,3.5vw,2.6rem)] text-[var(--enk-ink)]">
-                  {companyIntroduction.title}
-                </h2>
-                <p className="text-[17px] leading-8 text-slate-700 md:text-[18px]">
-                  {companyIntroduction.lead}
-                </p>
+                <SectionHeading
+                  kicker={companyIntroduction.eyebrow}
+                  title={<>{companyIntroduction.title}</>}
+                  intro={companyIntroduction.lead}
+                  onDark
+                  align="left"
+                />
               </div>
 
-              <div className="space-y-5 border-l-0 border-border/70 xl:border-l xl:pl-10">
+              <div className="space-y-5 border-l-0 xl:border-l xl:pl-10" style={{ borderColor: "var(--enk-line)" }}>
                 {companyIntroduction.body.map((paragraph) => (
                   <p
                     key={paragraph}
@@ -209,22 +210,22 @@ export default function AboutPage() {
       </section>
 
       {/* Mission, Vision & Corporate Excellence */}
-      <section className="bg-charcoal section-padding relative overflow-hidden">
+      <section className="section-padding relative overflow-hidden">
         <div className="container-wide relative z-10">
           <motion.div
-            className="mb-12 text-center"
+            className="mb-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="enk-kicker enk-kicker--on-dark justify-center mb-4">Purpose &amp; Standards</p>
-            <h2 className="enk-display mb-4 text-[clamp(2rem,5vw,3.2rem)] text-[var(--enk-on-dark)]">
-              Mission, Vision &amp; Corporate Excellence
-            </h2>
-            <p className="mx-auto max-w-3xl text-[15px] leading-7 text-white/65 md:text-[16px]">
-              Updated directly from the latest corporate documents to reflect the current direction of the Enikkom Group.
-            </p>
+            <SectionHeading
+              kicker="Purpose & Standards"
+              title={<>Mission, Vision &amp; Corporate Excellence</>}
+              intro="Updated directly from the latest corporate documents to reflect the current direction of the Enikkom Group."
+              onDark
+              align="center"
+            />
           </motion.div>
 
           <motion.div
@@ -248,15 +249,13 @@ export default function AboutPage() {
                 <div className="absolute inset-0" style={{ background: "linear-gradient(to right, transparent, transparent, oklch(0.13 0.03 255 / 0.35))" }} />
               </div>
               <div className="flex flex-col justify-center p-8 md:p-10">
-                <p className="enk-kicker enk-kicker--on-dark mb-3">Indigenous Strength</p>
-                <h3 className="enk-display text-[clamp(1.6rem,3vw,2.2rem)] text-[var(--enk-on-dark)]">
-                  Standards, Discipline, and Real Operating Experience
-                </h3>
-                <p className="mt-4 max-w-xl text-[15px] leading-7 text-white/65">
-                  Enikkom's long-term advantage is not only equipment or reach. It is the ability
-                  to combine field-tested leadership, technical depth, and operational resilience
-                  under the realities of Nigerian terrain and project pressure.
-                </p>
+                <SectionHeading
+                  kicker="Indigenous Strength"
+                  title={<>Standards, Discipline, and Real Operating Experience</>}
+                  intro="Enikkom's long-term advantage is not only equipment or reach. It is the ability to combine field-tested leadership, technical depth, and operational resilience under the realities of Nigerian terrain and project pressure."
+                  onDark
+                  align="left"
+                />
               </div>
             </div>
           </motion.div>
@@ -299,14 +298,13 @@ export default function AboutPage() {
             className="mt-10 rounded-xl border border-white/10 bg-white/5 p-8 md:p-10"
           >
             <div className="mb-8 flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
-              <div>
-                <h3 className="enk-display text-[clamp(1.4rem,2.4vw,1.9rem)] text-[var(--enk-on-dark)]">
-                  The PRICE of Excellence
-                </h3>
-                <p className="mt-2 text-[14px] leading-7 text-white/55">
-                  Performance, Resilience, Innovation, Care, and Expertise continue to shape how we deliver.
-                </p>
-              </div>
+              <SectionHeading
+                kicker="Core Values"
+                title={<>The PRICE of Excellence</>}
+                intro="Performance, Resilience, Innovation, Care, and Expertise continue to shape how we deliver."
+                onDark
+                align="left"
+              />
             </div>
 
             <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-5">
@@ -340,18 +338,19 @@ export default function AboutPage() {
         <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-border to-transparent opacity-50" />
         
         <div className="container-wide">
-          <motion.div 
-            className="text-center mb-16 md:mb-24"
+          <motion.div
+            className="mb-16 md:mb-24"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <p className="enk-kicker justify-center mb-4">Our Journey</p>
-            <h2 className="enk-display text-[clamp(2rem,5vw,3.2rem)] text-[var(--enk-ink)] mb-4">34 Years of Experience</h2>
-            <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-              From our founding in 1995 to becoming West Africa's leading HDD and pipeline contractor, our trajectory is defined by continuous innovation.
-            </p>
+            <SectionHeading
+              kicker="Our Journey"
+              title={<>34 Years of Experience</>}
+              intro="From our founding in 1995 to becoming West Africa's leading HDD and pipeline contractor, our trajectory is defined by continuous innovation."
+              align="center"
+            />
           </motion.div>
           
           {/* Timeline */}

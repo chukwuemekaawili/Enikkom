@@ -19,6 +19,7 @@ import { EditableText } from "@/components/content";
 import { usePageContent } from "@/hooks/useSiteSettings";
 import { EnhancedImage } from "@/components/ui/enhanced-image";
 import { siteImageSelections } from "@/content/siteImageSelections";
+import { SectionHeading } from "@/components/home/SectionHeading";
 
 const resources = {
   brochures: [
@@ -160,39 +161,35 @@ export default function ResourcesPage() {
       {/* Featured Downloads */}
       <section className="section-padding bg-background">
         <div className="container-wide">
-          <motion.div 
+          <motion.div
             className="mb-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="enk-kicker mb-2">
-              <EditableText
+            <SectionHeading
+              kicker={<EditableText
                 value={brochuresContent.eyebrow || "Downloads"}
                 pageSlug="resources"
                 sectionKey="brochures"
                 field="eyebrow"
-              />
-            </p>
-            <h2 className="mb-3">
-              <EditableText
+              />}
+              title={<EditableText
                 value={brochuresContent.title || "Company & Project Brochures"}
                 pageSlug="resources"
                 sectionKey="brochures"
                 field="title"
-              />
-            </h2>
-            <p className="section-subtitle text-left mx-0">
-              <EditableText
+              />}
+              intro={<EditableText
                 value={brochuresContent.description || "Download our official brochures with detailed information on capabilities, projects, and equipment."}
                 pageSlug="resources"
                 sectionKey="brochures"
                 field="description"
-              />
-            </p>
+              />}
+            />
           </motion.div>
-          
+
           <div className="grid md:grid-cols-3 gap-6 mb-16">
             {resources.brochures.map((item, index) => (
               <motion.div
@@ -222,20 +219,20 @@ export default function ResourcesPage() {
           </div>
 
           {/* Technical Documents */}
-          <motion.div 
+          <motion.div
             className="mb-10"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="enk-kicker mb-2">Technical</p>
-            <h2 className="enk-display text-[clamp(1.6rem,3vw,2rem)] text-[var(--enk-ink)] mb-3">Technical Documents &amp; Specifications</h2>
-            <p className="text-muted-foreground text-[15px]">
-              Access our equipment specifications, HSE policies, and quality management documentation.
-            </p>
+            <SectionHeading
+              kicker="Technical"
+              title={<>Technical Documents &amp; Specifications</>}
+              intro="Access our equipment specifications, HSE policies, and quality management documentation."
+            />
           </motion.div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
             {resources.technical.map((item, index) => (
               <motion.div
@@ -266,41 +263,39 @@ export default function ResourcesPage() {
       </section>
 
       {/* Featured Video - OML34 */}
-      <section className="section-padding bg-charcoal">
+      <section className="section-padding">
         <div className="container-wide">
-          <motion.div 
-            className="text-center mb-12"
+          <motion.div
+            className="mb-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="enk-kicker enk-kicker--on-dark">
-              <EditableText
+            <SectionHeading
+              onDark
+              align="center"
+              kicker={<EditableText
                 value={videoContent.eyebrow || "Featured Project"}
                 pageSlug="resources"
                 sectionKey="video"
                 field="eyebrow"
-              />
-            </p>
-            <h2 className="text-white mb-4">
-              <EditableText
+              />}
+              title={<EditableText
                 value={videoContent.title || "OML34 Continuous HDD Project Video"}
                 pageSlug="resources"
                 sectionKey="video"
                 field="title"
-              />
-            </h2>
-            <p className="text-white/60 text-[15px] max-w-lg mx-auto">
-              <EditableText
+              />}
+              intro={<EditableText
                 value={videoContent.description || "Watch the documentary of Nigeria's longest functional Continuous HDD - 12km of 10\" pipeline installation."}
                 pageSlug="resources"
                 sectionKey="video"
                 field="description"
-              />
-            </p>
+              />}
+            />
           </motion.div>
-          
+
           {/* Featured Video - Large */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -343,18 +338,19 @@ export default function ResourcesPage() {
       {/* Compliance Library */}
       <section className="section-padding bg-muted/30">
         <div className="container-wide">
-          <motion.div 
-            className="text-center mb-12"
+          <motion.div
+            className="mb-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="enk-kicker justify-center">Compliance</p>
-            <h2 className="section-title">Certifications, Permits & Policies</h2>
-            <p className="section-subtitle">
-              Download the current compliance files sourced directly from the supplied corporate document pack.
-            </p>
+            <SectionHeading
+              align="center"
+              kicker="Compliance"
+              title={<>Certifications, Permits &amp; Policies</>}
+              intro="Download the current compliance files sourced directly from the supplied corporate document pack."
+            />
           </motion.div>
 
           <div className="grid gap-12">
@@ -367,11 +363,11 @@ export default function ResourcesPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.45 }}
               >
-                <p className="enk-kicker mb-2">Registration</p>
-                <h3 className="enk-display text-[clamp(1.4rem,2.4vw,1.75rem)] text-[var(--enk-ink)] mb-3">Permits and Licenses</h3>
-                <p className="text-[14px] text-muted-foreground max-w-2xl">
-                  This sub-category lists the requested permit documents clearly, while staying honest about the files that were not present in the supplied source pack.
-                </p>
+                <SectionHeading
+                  kicker="Registration"
+                  title={<>Permits and Licenses</>}
+                  intro="This sub-category lists the requested permit documents clearly, while staying honest about the files that were not present in the supplied source pack."
+                />
               </motion.div>
 
               <div className="grid md:grid-cols-3 gap-5">
@@ -425,11 +421,11 @@ export default function ResourcesPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.45 }}
               >
-                <p className="enk-kicker mb-2">Policies</p>
-                <h3 className="enk-display text-[clamp(1.4rem,2.4vw,1.75rem)] text-[var(--enk-ink)] mb-3">Approved Policy Documents</h3>
-                <p className="text-[14px] text-muted-foreground max-w-2xl">
-                  Only the four policies requested for this update are displayed here. All other policy text has been removed from this section.
-                </p>
+                <SectionHeading
+                  kicker="Policies"
+                  title={<>Approved Policy Documents</>}
+                  intro="Only the four policies requested for this update are displayed here. All other policy text has been removed from this section."
+                />
               </motion.div>
 
               <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-5">
@@ -469,20 +465,21 @@ export default function ResourcesPage() {
       {/* Industry Links */}
       <section className="section-padding bg-background">
         <div className="container-wide">
-          <motion.div 
-            className="text-center mb-12"
+          <motion.div
+            className="mb-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="enk-kicker justify-center">Industry</p>
-            <h2 className="section-title">Industry Resources</h2>
-            <p className="section-subtitle">
-              Useful links to Nigerian oil & gas regulatory bodies.
-            </p>
+            <SectionHeading
+              align="center"
+              kicker="Industry"
+              title={<>Industry Resources</>}
+              intro="Useful links to Nigerian oil & gas regulatory bodies."
+            />
           </motion.div>
-          
+
           <div className="grid md:grid-cols-3 gap-5 max-w-4xl mx-auto">
             {industryLinks.map((link, index) => (
               <motion.a

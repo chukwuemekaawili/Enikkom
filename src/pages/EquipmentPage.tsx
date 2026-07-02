@@ -1,6 +1,7 @@
 import { Layout } from "@/components/layout";
 import { Hero, CTABand } from "@/components/sections";
 import { EditableText } from "@/components/content";
+import { SectionHeading } from "@/components/home/SectionHeading";
 import { usePageContent } from "@/hooks/useSiteSettings";
 import { motion } from "framer-motion";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
@@ -39,7 +40,7 @@ export default function EquipmentPage() {
       />
 
       {/* Fleet Overview Stats */}
-      <section className="py-12 bg-charcoal">
+      <section className="py-12">
         <div className="container-wide">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
@@ -273,18 +274,18 @@ export default function EquipmentPage() {
       {/* Marine & Support Equipment */}
       <section className="section-padding">
         <div className="container-wide">
-          <motion.div 
+          <motion.div
             className="mb-8"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="enk-kicker mb-2">Marine & Support</p>
-            <h2 className="mb-2">Marine & Support Equipment</h2>
-            <p className="text-[14px] md:text-[15px] text-muted-foreground max-w-2xl">
-              Detailed marine, civil, and logistics fleet groupings from the owned-equipment schedule, including dredgers, excavators, sidebooms, cranes, transport, generators, and field vehicles.
-            </p>
+            <SectionHeading
+              kicker="Marine & Support"
+              title={<>Marine & Support Equipment</>}
+              intro="Detailed marine, civil, and logistics fleet groupings from the owned-equipment schedule, including dredgers, excavators, sidebooms, cranes, transport, generators, and field vehicles."
+            />
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-6">

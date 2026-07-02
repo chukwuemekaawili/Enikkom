@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { HomeHeader } from "@/components/home/HomeHeader";
 import { HomeHero } from "@/components/home/HomeHero";
+import { FlagshipProof } from "@/components/home/FlagshipProof";
 import { TrustSnapshot } from "@/components/home/TrustSnapshot";
 import { Capabilities } from "@/components/home/Capabilities";
 import { CaseStudies } from "@/components/home/CaseStudies";
@@ -17,9 +18,11 @@ import { BackToTopButton } from "@/components/sections/BackToTopButton";
  * rest of the site is unaffected during the phased redesign.
  *
  * Each idea has one home, in a single deliberate narrative:
- *   Hero (value proposition) -> Trust snapshot (stats + logos) ->
- *   Capabilities (what we do) -> Case studies (the proof section:
- *   benchmarks + flagship + projects) -> Recent operations (live works) ->
+ *   Hero (value proposition) -> Record benchmarks (three superlatives) ->
+ *   Trust snapshot (track-record stats + client logos) ->
+ *   Capabilities (what we do) -> Process (how we deliver) ->
+ *   Case studies (flagship + project records) ->
+ *   Recent operations (live works now) ->
  *   QHSE (safety & quality assurance) -> single Conversion (CTA).
  */
 export default function HomePage() {
@@ -50,6 +53,7 @@ export default function HomePage() {
 
       <main id="main">
         <HomeHero />
+        <FlagshipProof />
         <TrustSnapshot />
         <Capabilities />
         <Process />

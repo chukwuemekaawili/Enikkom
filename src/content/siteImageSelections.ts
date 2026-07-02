@@ -96,9 +96,9 @@ export const siteImageSelections = {
       selectedGeneralImage("pl-15.jpg"),
     ],
     capabilityCards: {
-      hdd: currentProjectImage("cap_hdd.jpg"),
+      hdd: currentProjectImage("cap_hdd_v2.png"),
       pipelines: selectedGeneralImage("pl-03.jpg"),
-      dredging: selectedGeneralImage("rg-143.jpeg"),
+      dredging: selectedGeneralImage("pl-dredging-piling.png"),
       facilities: currentProjectImage("home-facilities-wellhead.jpg"),
     },
     introMosaic: {
@@ -130,7 +130,7 @@ export const siteImageSelections = {
     pipelines: selectedGeneralImage("pl-03.jpg"),
     dredging: currentProjectImage("cap_dredging.jpg"),
     facilities: currentProjectImage("service-facilities-installation.png"),
-    projectManagement: selectedEquipmentImage("eq-010.jpg"),
+    projectManagement: selectedGeneralImage("pl-projectmgmt-review.png"),
     security: selectedGeneralImage("rg-141.jpeg"),
   },
   careers: {

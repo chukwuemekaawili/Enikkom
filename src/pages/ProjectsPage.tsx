@@ -1,11 +1,11 @@
 import { useState } from "react";
+import { RecentOps } from "@/components/home/RecentOps";
 import { Layout } from "@/components/layout";
 import { Hero, CTABand, CaseStudyCard } from "@/components/sections";
 import { EditableText } from "@/components/content";
 import { getProjectImage } from "@/content/projectImageSelections";
 import { siteImageSelections } from "@/content/siteImageSelections";
 import { usePageContent, useCollection } from "@/hooks/useSiteSettings";
-import { Button } from "@/components/ui/button";
 import { EnhancedImage } from "@/components/ui/enhanced-image";
 import { motion } from "framer-motion";
 
@@ -227,19 +227,15 @@ export default function ProjectsPage() {
             transition={{ duration: 0.4 }}
           >
             {projectTags.map((tag) => (
-              <Button
+              <button
                 key={tag}
-                variant={activeFilter === tag ? "default" : "outline"}
-                size="sm"
                 onClick={() => setActiveFilter(tag)}
-                className={`h-10 px-5 text-[13px] md:text-[14px] rounded-[var(--enk-radius)] transition-all duration-200 min-w-[72px] ${activeFilter === tag
-                  ? "text-white border-transparent"
-                  : "border-border hover:bg-muted"
-                  }`}
-                style={activeFilter === tag ? { backgroundColor: "var(--enk-blue)" } : undefined}
+                className={`enk-btn ${
+                  activeFilter === tag ? "enk-btn--primary" : "enk-btn--outline"
+                }`}
               >
                 {tag}
-              </Button>
+              </button>
             ))}
           </motion.div>
 
@@ -270,7 +266,7 @@ export default function ProjectsPage() {
       </section>
 
       {/* Records Section */}
-      <section className="section-padding bg-charcoal">
+      <section className="section-padding">
         <div className="container-wide">
           <motion.div
             className="text-center mb-10"
@@ -386,6 +382,8 @@ export default function ProjectsPage() {
           </motion.div>
         </div>
       </section>
+
+      <RecentOps />
 
       <CTABand
         headline={content.cta?.headline || "Your Project Could Be Next"}

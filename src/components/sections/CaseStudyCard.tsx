@@ -33,13 +33,13 @@ export function CaseStudyCard({
       to={href}
       className="enk-card enk-card--hover group flex h-full flex-col overflow-hidden focus-ring"
     >
-      <div className="relative aspect-[16/10] overflow-hidden">
+      <div className="enk-photo-wrap relative aspect-[16/10] overflow-hidden">
         <img
           src={resolvedThumbnail}
           alt={title}
           loading="lazy"
           decoding="async"
-          className="h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-[1.04]"
+          className="enk-photo enk-photo--card h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-[1.04]"
         />
         <div
           className="absolute inset-0"

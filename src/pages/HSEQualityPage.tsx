@@ -1,6 +1,7 @@
 import { Layout } from "@/components/layout";
 import { Hero, CTABand } from "@/components/sections";
 import { EditableText } from "@/components/content";
+import { SectionHeading } from "@/components/home/SectionHeading";
 import { usePageContent } from "@/hooks/useSiteSettings";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -130,7 +131,7 @@ export default function HSEQualityPage() {
       />
 
       {/* HSE Stats */}
-      <section className="bg-charcoal py-14">
+      <section className="py-14">
         <div className="container-wide">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
             {hseStats.map((stat, i) => (
@@ -154,39 +155,22 @@ export default function HSEQualityPage() {
       {/* HSE Process */}
       <section className="section-padding bg-background">
         <div className="container-wide">
-          <motion.div 
-            className="text-center mb-12"
+          <motion.div
+            className="mb-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="enk-kicker justify-center">
-              <EditableText
-                value={qmsContent.subtitle || "Quality System"}
-                pageSlug="hse"
-                sectionKey="qms"
-                field="subtitle"
-              />
-            </p>
-            <h2 className="section-title">
-              <EditableText
-                value={qmsContent.title || "4-Level Quality Management System"}
-                pageSlug="hse"
-                sectionKey="qms"
-                field="title"
-              />
-            </h2>
-            <p className="section-subtitle">
-              <EditableText
-                value={qmsContent.description || "Our ISO-certified QMS follows a structured four-level model ensuring consistent quality across all operations."}
-                pageSlug="hse"
-                sectionKey="qms"
-                field="description"
-              />
-            </p>
+            <SectionHeading
+              kicker={qmsContent.subtitle || "Quality System"}
+              title={<EditableText value={qmsContent.title || "4-Level Quality Management System"} pageSlug="hse" sectionKey="qms" field="title" />}
+              intro={<EditableText value={qmsContent.description || "Our ISO-certified QMS follows a structured four-level model ensuring consistent quality across all operations."} pageSlug="hse" sectionKey="qms" field="description" />}
+              onDark
+              align="center"
+            />
           </motion.div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
             {hseSteps.map((step, i) => (
               <motion.div 
@@ -221,32 +205,14 @@ export default function HSEQualityPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <p className="enk-kicker mb-3">
-                <EditableText
-                  value={commitmentContent.subtitle || "Commitment"}
-                  pageSlug="hse"
-                  sectionKey="commitment"
-                  field="subtitle"
-                />
-              </p>
-              <h2 className="mb-6">
-                <EditableText
-                  value={commitmentContent.title || "Our HSE Commitment"}
-                  pageSlug="hse"
-                  sectionKey="commitment"
-                  field="title"
-                />
-              </h2>
-              <p className="text-muted-foreground text-[15px] mb-8 leading-relaxed">
-                <EditableText
-                  value={commitmentContent.description || "At Enikkom, HSE is more than a policy. It is a core value embedded in every aspect of our operations. We are committed to protecting our people, communities, and the environment."}
-                  pageSlug="hse"
-                  sectionKey="commitment"
-                  field="description"
-                  multiline
-                />
-              </p>
-              
+              <SectionHeading
+                kicker={commitmentContent.subtitle || "Commitment"}
+                title={<EditableText value={commitmentContent.title || "Our HSE Commitment"} pageSlug="hse" sectionKey="commitment" field="title" />}
+                intro={<EditableText value={commitmentContent.description || "At Enikkom, HSE is more than a policy. It is a core value embedded in every aspect of our operations. We are committed to protecting our people, communities, and the environment."} pageSlug="hse" sectionKey="commitment" field="description" multiline />}
+                onDark
+              />
+              <div className="mb-8" />
+
               <div className="space-y-3">
                 {hseCommitments.map((commitment: string, i: number) => (
                   <motion.div
@@ -255,7 +221,7 @@ export default function HSEQualityPage() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.3, delay: i * 0.08 }}
-                    className="flex items-center gap-3 p-3 rounded-xl bg-white border border-border/50"
+                    className="enk-card flex items-center gap-3 p-3"
                   >
                     <CheckCircle className="h-5 w-5 flex-shrink-0" style={{ color: "var(--enk-safety)" }} />
                     <span className="text-[14px] font-medium">{commitment}</span>
@@ -320,17 +286,19 @@ export default function HSEQualityPage() {
       <section className="section-padding bg-background">
         <div className="container-wide">
           <motion.div
-            className="text-center mb-10"
+            className="mb-10"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="enk-kicker justify-center mb-3">Regulatory Compliance</p>
-            <h2 className="mb-3">Permits and Licenses</h2>
-            <p className="text-[14px] md:text-[15px] text-muted-foreground max-w-xl mx-auto">
-              Compliance documents currently verified from the supplied corporate document pack.
-            </p>
+            <SectionHeading
+              kicker="Regulatory Compliance"
+              title={<>Permits and Licenses</>}
+              intro="Compliance documents currently verified from the supplied corporate document pack."
+              onDark
+              align="center"
+            />
           </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
@@ -380,17 +348,19 @@ export default function HSEQualityPage() {
       <section className="section-padding bg-muted/30">
         <div className="container-wide">
           <motion.div
-            className="text-center mb-10"
+            className="mb-10"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="enk-kicker justify-center mb-3">Corporate Governance</p>
-            <h2 className="mb-3">Our Policies</h2>
-            <p className="text-[14px] md:text-[15px] text-muted-foreground max-w-xl mx-auto">
-              Only the four approved policies below are displayed, with direct access to the current source documents.
-            </p>
+            <SectionHeading
+              kicker="Corporate Governance"
+              title={<>Our Policies</>}
+              intro="Only the four approved policies below are displayed, with direct access to the current source documents."
+              onDark
+              align="center"
+            />
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-4xl mx-auto">

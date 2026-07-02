@@ -1,7 +1,12 @@
 import { Link } from "react-router-dom";
-import { MapPin, Phone, Mail } from "lucide-react";
+import { MapPin, Phone, Mail, ExternalLink } from "lucide-react";
 import { contact, brand } from "@/content/home";
 import enikkomLogoWhite from "@/assets/images/logos/enikkom-logo-white.png";
+
+const QHSE_CREDENTIALS_MAILTO =
+  `mailto:${contact.email}` +
+  `?subject=QHSE%20Credentials%20Request` +
+  `&body=Organisation%3A%0AProject%20context%3A%0ADocuments%20required%3A`;
 
 const columns = [
   {
@@ -11,26 +16,28 @@ const columns = [
       { label: "Pipeline Construction", href: "/capabilities/pipelines-flowlines" },
       { label: "Dredging & Piling", href: "/capabilities/dredging-piling" },
       { label: "Production Facilities", href: "/capabilities/facilities" },
+      { label: "Pipeline Security", href: "/capabilities/pipeline-security" },
+      { label: "Project Management", href: "/capabilities/project-management" },
     ],
   },
   {
     title: "Company",
     links: [
-      { label: "About", href: "/about" },
-      { label: "Projects", href: "/projects" },
+      { label: "About Enikkom", href: "/about" },
+      { label: "Project Records", href: "/projects" },
       { label: "QHSE & Quality", href: "/hse-quality" },
       { label: "Sustainability", href: "/sustainability" },
       { label: "Careers", href: "/careers" },
     ],
   },
   {
-    title: "Resources",
+    title: "Contact & Downloads",
     links: [
-      { label: "Capability Statement", href: contact.capabilityStatement },
-      { label: "Resources", href: "/resources" },
+      { label: "Contact Project Team", href: "/contact" },
+      { label: "Capability Statement (PDF)", href: contact.capabilityStatement },
+      { label: "Policies & Compliance", href: "/resources" },
       { label: "News & Insights", href: "/news-insights" },
       { label: "Partners", href: "/partners" },
-      { label: "Contact", href: "/contact" },
     ],
   },
 ];
@@ -39,7 +46,6 @@ export function HomeFooter() {
   return (
     <footer style={{ backgroundColor: "var(--enk-footer)" }} className="text-[var(--enk-on-dark-muted)]">
       <div className="enk-container py-16">
-        <p className="mb-10 text-[12px] text-[var(--enk-on-dark-muted)]">Page last updated: 29 June 2026</p>
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
             <Link to="/" title={brand.microcopy} aria-label={`Enikkom and HDDTEC, home. ${brand.microcopy}`} className="inline-flex items-center gap-4 rounded-md focus-ring">
@@ -54,15 +60,15 @@ export function HomeFooter() {
             </p>
             <ul className="mt-6 space-y-3 text-[13.5px]">
               <li className="flex items-start gap-2.5">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[var(--enk-gold)]" aria-hidden="true" />
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[var(--enk-accent-on-dark)]" aria-hidden="true" />
                 <span>{contact.address}</span>
               </li>
               <li className="flex items-center gap-2.5">
-                <Phone className="h-4 w-4 shrink-0 text-[var(--enk-gold)]" aria-hidden="true" />
+                <Phone className="h-4 w-4 shrink-0 text-[var(--enk-accent-on-dark)]" aria-hidden="true" />
                 <a href={contact.phoneHref} className="hover:text-[var(--enk-on-dark)] focus-ring rounded">{contact.phone}</a>
               </li>
               <li className="flex items-center gap-2.5">
-                <Mail className="h-4 w-4 shrink-0 text-[var(--enk-gold)]" aria-hidden="true" />
+                <Mail className="h-4 w-4 shrink-0 text-[var(--enk-accent-on-dark)]" aria-hidden="true" />
                 <a href={`mailto:${contact.email}`} className="hover:text-[var(--enk-on-dark)] focus-ring rounded">{contact.email}</a>
               </li>
             </ul>
@@ -75,8 +81,9 @@ export function HomeFooter() {
                 {col.links.map((l) => (
                   <li key={l.label}>
                     {l.href.startsWith("/downloads") ? (
-                      <a href={l.href} target="_blank" rel="noopener noreferrer" className="text-[14px] hover:text-[var(--enk-on-dark)] focus-ring rounded">
+                      <a href={l.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-[14px] hover:text-[var(--enk-on-dark)] focus-ring rounded">
                         {l.label}
+                        <ExternalLink className="h-3 w-3 shrink-0 opacity-60" aria-hidden="true" />
                       </a>
                     ) : (
                       <Link to={l.href} className="text-[14px] hover:text-[var(--enk-on-dark)] focus-ring rounded">
@@ -90,8 +97,27 @@ export function HomeFooter() {
           ))}
         </div>
 
-        <div className="mt-14 flex flex-col gap-4 border-t border-[var(--enk-line-dark)] pt-7 text-[13px] sm:flex-row sm:items-center sm:justify-between">
-          <p>© {2026} Enikkom Construction Limited. All rights reserved.</p>
+        {/* QHSE credentials fast-path — for procurement visitors reaching the footer */}
+        <div
+          className="mt-10 flex flex-col gap-3 rounded-md border p-5 sm:flex-row sm:items-center sm:justify-between"
+          style={{ borderColor: "var(--enk-line-dark)", backgroundColor: "rgba(255,255,255,0.03)" }}
+        >
+          <div>
+            <p className="text-[13.5px] font-semibold text-[var(--enk-on-dark)]">Need QHSE documentation for prequalification?</p>
+            <p className="mt-0.5 text-[12.5px] text-[var(--enk-on-dark-muted)]">Full credentials pack — ISO certificates, policies, and compliance records — available on request.</p>
+          </div>
+          <a
+            href={QHSE_CREDENTIALS_MAILTO}
+            className="shrink-0 inline-flex items-center gap-2 text-[13px] font-semibold text-[var(--enk-accent-primary-on-dark)] hover:underline focus-ring rounded whitespace-nowrap"
+            aria-label="Request QHSE credentials by email"
+          >
+            <Mail className="h-3.5 w-3.5" aria-hidden="true" />
+            Request QHSE Credentials
+          </a>
+        </div>
+
+        <div className="mt-8 flex flex-col gap-4 border-t border-[var(--enk-line-dark)] pt-7 text-[13px] sm:flex-row sm:items-center sm:justify-between">
+          <p>© {new Date().getFullYear()} Enikkom Construction Limited. All rights reserved. Lagos, Nigeria.</p>
           <div className="flex gap-6">
             <Link to="/privacy" className="hover:text-[var(--enk-on-dark)] focus-ring rounded">Privacy</Link>
             <Link to="/terms" className="hover:text-[var(--enk-on-dark)] focus-ring rounded">Terms</Link>

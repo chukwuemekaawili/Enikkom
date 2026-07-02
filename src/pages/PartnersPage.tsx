@@ -5,6 +5,7 @@ import { Handshake, Globe, Shield, Users, Wrench, MapPin, Award, Building2, Link
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { EditableText, EditableImage } from "@/components/content";
+import { SectionHeading } from "@/components/home/SectionHeading";
 import { usePageContent } from "@/hooks/useSiteSettings";
 import { EnhancedImage } from "@/components/ui/enhanced-image";
 import { siteImageSelections } from "@/content/siteImageSelections";
@@ -117,36 +118,19 @@ export default function PartnersPage() {
       <section className="section-padding bg-background">
         <div className="container-wide">
           <motion.div
-            className="text-center mb-16"
+            className="mb-16"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="enk-kicker justify-center">
-              <EditableText
-                value={featuredContent.eyebrow || "Strategic Alliances"}
-                pageSlug="partners"
-                sectionKey="featured_partners"
-                field="eyebrow"
-              />
-            </p>
-            <h2 className="section-title">
-              <EditableText
-                value={featuredContent.title || "Our Featured Partners"}
-                pageSlug="partners"
-                sectionKey="featured_partners"
-                field="title"
-              />
-            </h2>
-            <p className="section-subtitle">
-              <EditableText
-                value={featuredContent.description || "We collaborate with established international and local companies to deliver infrastructure projects."}
-                pageSlug="partners"
-                sectionKey="featured_partners"
-                field="description"
-              />
-            </p>
+            <SectionHeading
+              kicker={featuredContent.eyebrow || "Strategic Alliances"}
+              title={<EditableText value={featuredContent.title || "Our Featured Partners"} pageSlug="partners" sectionKey="featured_partners" field="title" />}
+              intro={<EditableText value={featuredContent.description || "We collaborate with established international and local companies to deliver infrastructure projects."} pageSlug="partners" sectionKey="featured_partners" field="description" />}
+              onDark
+              align="center"
+            />
           </motion.div>
 
           <div className="grid lg:grid-cols-2 gap-8">
@@ -160,12 +144,8 @@ export default function PartnersPage() {
                 className="enk-card enk-card--hover p-8"
               >
                 <div className="flex items-start gap-4 mb-6">
-                  <div
-                    className={`w-16 h-16 rounded-xl flex items-center justify-center flex-shrink-0 overflow-hidden ${
-                      partner.logoSrc ? "border border-border/60 bg-white p-2 shadow-sm" : "bg-primary/10"
-                    }`}
-                  >
-                    {partner.logoSrc ? (
+                  {partner.logoSrc ? (
+                    <div className="enk-logo-card !h-16 !w-16 flex-shrink-0 overflow-hidden">
                       <EnhancedImage
                         src={partner.logoSrc}
                         alt={partner.name}
@@ -176,10 +156,12 @@ export default function PartnersPage() {
                         shimmer={false}
                         sizes="64px"
                       />
-                    ) : (
+                    </div>
+                  ) : (
+                    <div className="w-16 h-16 rounded-xl flex items-center justify-center flex-shrink-0 bg-primary/10">
                       <Handshake className="h-8 w-8 text-primary" />
-                    )}
-                  </div>
+                    </div>
+                  )}
                   <div>
                     <h3 className="text-xl font-bold mb-1">{partner.name}</h3>
                     <p className="text-[12px] font-bold" style={{ color: "var(--enk-bronze)" }}>{partner.type}</p>
@@ -218,17 +200,19 @@ export default function PartnersPage() {
       <section className="section-padding bg-muted/30">
         <div className="container-wide">
           <motion.div
-            className="text-center mb-12"
+            className="mb-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="enk-kicker justify-center">Joint Ventures</p>
-            <h2 className="section-title">Our JV Companies</h2>
-            <p className="section-subtitle">
-              Dedicated joint venture entities formed to deliver specialized services.
-            </p>
+            <SectionHeading
+              kicker="Joint Ventures"
+              title={<>Our JV Companies</>}
+              intro="Dedicated joint venture entities formed to deliver specialized services."
+              onDark
+              align="center"
+            />
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
@@ -241,12 +225,8 @@ export default function PartnersPage() {
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 className="enk-card enk-card--hover p-6 flex items-start gap-4"
               >
-                <div
-                  className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 overflow-hidden ${
-                    jv.logoSrc ? "border border-border/60 bg-white p-2 shadow-sm" : "bg-primary/10"
-                  }`}
-                >
-                  {jv.logoSrc ? (
+                {jv.logoSrc ? (
+                  <div className="enk-logo-card !h-12 !w-12 flex-shrink-0 overflow-hidden">
                     <EnhancedImage
                       src={jv.logoSrc}
                       alt={jv.name}
@@ -257,10 +237,12 @@ export default function PartnersPage() {
                       shimmer={false}
                       sizes="48px"
                     />
-                  ) : (
+                  </div>
+                ) : (
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-primary/10">
                     <jv.icon className="h-6 w-6 text-primary" />
-                  )}
-                </div>
+                  </div>
+                )}
                 <div>
                   <h4 className="font-semibold text-[17px] mb-2">{jv.name}</h4>
                   <p className="text-[14px] text-muted-foreground leading-relaxed">{jv.description}</p>
@@ -272,39 +254,22 @@ export default function PartnersPage() {
       </section>
 
       {/* Partnership Benefits */}
-      <section className="section-padding bg-charcoal">
+      <section className="section-padding">
         <div className="container-wide">
           <motion.div
-            className="text-center mb-12"
+            className="mb-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="enk-kicker enk-kicker--on-dark justify-center">
-              <EditableText
-                value={benefitsContent.eyebrow || "Capabilities"}
-                pageSlug="partners"
-                sectionKey="benefits"
-                field="eyebrow"
-              />
-            </p>
-            <h2 className="section-title text-white">
-              <EditableText
-                value={benefitsContent.title || "Partnership Benefits"}
-                pageSlug="partners"
-                sectionKey="benefits"
-                field="title"
-              />
-            </h2>
-            <p className="text-white/60 text-[15px] max-w-2xl mx-auto">
-              <EditableText
-                value={benefitsContent.description || "Our strategic partnerships enable us to deliver exceptional value through technology, expertise, and resources."}
-                pageSlug="partners"
-                sectionKey="benefits"
-                field="description"
-              />
-            </p>
+            <SectionHeading
+              kicker={benefitsContent.eyebrow || "Capabilities"}
+              title={<EditableText value={benefitsContent.title || "Partnership Benefits"} pageSlug="partners" sectionKey="benefits" field="title" />}
+              intro={<EditableText value={benefitsContent.description || "Our strategic partnerships enable us to deliver exceptional value through technology, expertise, and resources."} pageSlug="partners" sectionKey="benefits" field="description" />}
+              onDark
+              align="center"
+            />
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -315,11 +280,11 @@ export default function PartnersPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.08 }}
-                className="p-6 rounded-xl border border-white/10 bg-white/5"
+                className="enk-card p-6"
               >
                 <benefit.icon className="h-8 w-8 mb-4" style={{ color: "var(--enk-gold)" }} />
-                <h4 className="font-semibold text-white mb-2">{benefit.title}</h4>
-                <p className="text-white/60 text-[14px] leading-relaxed">{benefit.description}</p>
+                <h4 className="font-semibold mb-2" style={{ color: "var(--enk-ink)" }}>{benefit.title}</h4>
+                <p className="text-[14px] leading-relaxed" style={{ color: "var(--enk-steel)" }}>{benefit.description}</p>
               </motion.div>
             ))}
           </div>
@@ -330,16 +295,15 @@ export default function PartnersPage() {
       <section className="section-padding-sm bg-background">
         <div className="container-wide">
           <motion.div
-            className="text-center mb-8"
+            className="mb-8"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="enk-kicker justify-center">Trusted By</p>
-            <h2 className="enk-display text-[clamp(1.6rem,3vw,2.2rem)] text-[var(--enk-ink)]">Our Major Clients</h2>
+            <SectionHeading kicker="Trusted By" title={<>Our Major Clients</>} onDark align="center" />
           </motion.div>
-          
+
           <LogoMarquee showTitle={false} />
         </div>
       </section>
@@ -348,17 +312,19 @@ export default function PartnersPage() {
       <section className="section-padding bg-muted/30">
         <div className="container-wide">
           <motion.div
-            className="text-center mb-12"
+            className="mb-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="enk-kicker justify-center">Compliance</p>
-            <h2 className="section-title">Certifications Through Partnerships</h2>
-            <p className="section-subtitle">
-              Our partnerships enable us to maintain internationally recognized certifications.
-            </p>
+            <SectionHeading
+              kicker="Compliance"
+              title={<>Certifications Through Partnerships</>}
+              intro="Our partnerships enable us to maintain internationally recognized certifications."
+              onDark
+              align="center"
+            />
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">

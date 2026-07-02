@@ -6,9 +6,18 @@ import path from "path";
 export default defineConfig(() => ({
   server: {
     host: "::",
-    port: 8080,
+    port: Number(process.env.PORT) || 8080,
     hmr: {
       overlay: false,
+    },
+    warmup: {
+      clientFiles: [
+        "./src/main.tsx",
+        "./src/App.tsx",
+        "./src/pages/HomePage.tsx",
+        "./src/content/siteImageSelections.ts",
+        "./src/content/home.ts",
+      ],
     },
   },
   plugins: [react()],

@@ -71,7 +71,7 @@ function NavDropdown({ menu, active }: { menu: NavMenu; active: boolean }) {
           if (e.key === "Escape") setOpen(false);
           if (e.key === "ArrowDown") { e.preventDefault(); setOpen(true); }
         }}
-        className={`relative inline-flex h-11 shrink-0 items-center gap-1 whitespace-nowrap rounded-md px-3 text-[14px] font-medium transition-colors duration-150 focus-ring ${
+        className={`relative inline-flex h-11 shrink-0 items-center gap-1 whitespace-nowrap rounded-md px-2 text-[14px] font-medium transition-colors duration-150 focus-ring ${
           active ? "text-[var(--enk-on-dark)]" : "text-[var(--enk-on-dark-muted)] hover:text-[var(--enk-on-dark)]"
         }`}
       >
@@ -220,7 +220,7 @@ export function HomeHeader() {
               <li>
                 <Link
                   to="/"
-                  className={`relative inline-flex h-11 shrink-0 items-center whitespace-nowrap rounded-md px-3 text-[14px] font-medium transition-colors duration-150 focus-ring ${
+                  className={`relative inline-flex h-11 shrink-0 items-center whitespace-nowrap rounded-md px-2 text-[14px] font-medium transition-colors duration-150 focus-ring ${
                     location.pathname === "/"
                       ? "text-[var(--enk-on-dark)]"
                       : "text-[var(--enk-on-dark-muted)] hover:text-[var(--enk-on-dark)]"
@@ -243,7 +243,7 @@ export function HomeHeader() {
                 <li key={link.label}>
                   <Link
                     to={link.href}
-                    className={`relative inline-flex h-11 shrink-0 items-center whitespace-nowrap rounded-md px-3 text-[14px] font-medium transition-colors duration-150 focus-ring ${
+                    className={`relative inline-flex h-11 shrink-0 items-center whitespace-nowrap rounded-md px-2 text-[14px] font-medium transition-colors duration-150 focus-ring ${
                       location.pathname === link.href
                         ? "text-[var(--enk-on-dark)]"
                         : "text-[var(--enk-on-dark-muted)] hover:text-[var(--enk-on-dark)]"
@@ -259,7 +259,7 @@ export function HomeHeader() {
             </ul>
           </nav>
 
-          <div className="flex items-center gap-2 xl:ml-auto">
+          <div className="flex items-center gap-2 lg:ml-auto">
             <Link
               to="/search"
               aria-label="Search the site"
@@ -282,7 +282,7 @@ export function HomeHeader() {
       </div>
 
       {open && (
-        <div id="mobile-nav" className="max-h-[calc(100vh-60px)] overflow-y-auto xl:hidden" style={{ backgroundColor: "var(--enk-navy)" }}>
+        <div id="mobile-nav" className="max-h-[calc(100vh-68px)] overflow-y-auto xl:hidden" style={{ backgroundColor: "var(--enk-navy)" }}>
           <MobileMenu onNavigate={() => setOpen(false)} />
         </div>
       )}

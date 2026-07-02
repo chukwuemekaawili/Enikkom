@@ -8,6 +8,7 @@ import { useTeamMembers, usePageContent } from "@/hooks/useSiteSettings";
 import { EditableText } from "@/components/content";
 import { EnhancedImage } from "@/components/ui/enhanced-image";
 import { siteImageSelections } from "@/content/siteImageSelections";
+import { SectionHeading } from "@/components/home/SectionHeading";
 
 const managementImages = siteImageSelections.management;
 
@@ -420,30 +421,33 @@ export default function ManagementPage() {
       <section className="section-padding">
         <div className="container-wide">
           <motion.div
-            className="text-center mb-12"
+            className="mb-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="enk-kicker justify-center mb-3">Leadership Team</p>
-            <h2 className="mb-4">
-              <EditableText
-                value={leadershipContent.title || "Our Leadership"}
-                pageSlug="management"
-                sectionKey="leadership"
-                field="title"
-              />
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-[14px] md:text-[15px]">
-              <EditableText
-                value={leadershipContent.description || "A team of industry veterans with deep expertise in HDD, pipeline construction, marine works, and project management, committed to delivering excellence on every project."}
-                pageSlug="management"
-                sectionKey="leadership"
-                field="description"
-                multiline
-              />
-            </p>
+            <SectionHeading
+              kicker="Leadership Team"
+              align="center"
+              title={
+                <EditableText
+                  value={leadershipContent.title || "Our Leadership"}
+                  pageSlug="management"
+                  sectionKey="leadership"
+                  field="title"
+                />
+              }
+              intro={
+                <EditableText
+                  value={leadershipContent.description || "A team of industry veterans with deep expertise in HDD, pipeline construction, marine works, and project management, committed to delivering excellence on every project."}
+                  pageSlug="management"
+                  sectionKey="leadership"
+                  field="description"
+                  multiline
+                />
+              }
+            />
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
@@ -463,30 +467,33 @@ export default function ManagementPage() {
       <section className="section-padding bg-muted/30">
         <div className="container-wide">
           <motion.div
-            className="text-center mb-12"
+            className="mb-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="enk-kicker justify-center mb-3">Governance</p>
-            <h2 className="mb-4">
-              <EditableText
-                value={boardContent.title || "Board of Directors"}
-                pageSlug="management"
-                sectionKey="board"
-                field="title"
-              />
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-[14px] md:text-[15px]">
-              <EditableText
-                value={boardContent.description || "Providing strategic guidance and governance to ensure Enikkom's continued growth and excellence."}
-                pageSlug="management"
-                sectionKey="board"
-                field="description"
-                multiline
-              />
-            </p>
+            <SectionHeading
+              kicker="Governance"
+              align="center"
+              title={
+                <EditableText
+                  value={boardContent.title || "Board of Directors"}
+                  pageSlug="management"
+                  sectionKey="board"
+                  field="title"
+                />
+              }
+              intro={
+                <EditableText
+                  value={boardContent.description || "Providing strategic guidance and governance to ensure Enikkom's continued growth and excellence."}
+                  pageSlug="management"
+                  sectionKey="board"
+                  field="description"
+                  multiline
+                />
+              }
+            />
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 max-w-4xl mx-auto">

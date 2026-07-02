@@ -5,6 +5,7 @@ import { ExternalLink, CircleDashed } from "lucide-react";
 import { PH } from "@/content/home";
 import { phLabel } from "@/components/home/Placeholder";
 import { siteImageSelections } from "@/content/siteImageSelections";
+import { SectionHeading } from "@/components/home/SectionHeading";
 
 const featured = [
   {
@@ -54,11 +55,12 @@ export default function NewsInsightsPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="enk-kicker">Featured</p>
-            <h2 className="mb-3">Latest from Enikkom</h2>
-            <p className="section-subtitle text-left mx-0">
-              Project reviews and industry presentations from our work across Nigeria.
-            </p>
+            <SectionHeading
+              kicker="Featured"
+              title={<>Latest from Enikkom</>}
+              intro="Project reviews and industry presentations from our work across Nigeria."
+              onDark
+            />
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -109,27 +111,29 @@ export default function NewsInsightsPage() {
       <section className="section-padding bg-muted/30">
         <div className="container-wide">
           <motion.div
-            className="text-center mb-12"
+            className="mb-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="enk-kicker">Coming Soon</p>
-            <h2 className="section-title">More Updates</h2>
-            <p className="section-subtitle">
-              Additional news and insights entries are in preparation and will appear here once published.
-            </p>
+            <SectionHeading
+              kicker="Coming Soon"
+              title={<>More Updates</>}
+              intro="Additional news and insights entries are in preparation and will appear here once published."
+              onDark
+              align="center"
+            />
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-5 max-w-4xl mx-auto">
             {upcoming.map((entry) => (
               <div
                 key={entry}
-                className="rounded-xl border border-dashed border-border bg-background p-6 flex flex-col items-start gap-3"
+                className="enk-card p-6 flex flex-col items-start gap-3"
               >
-                <CircleDashed className="h-6 w-6 text-muted-foreground opacity-70" aria-hidden="true" />
-                <p className="text-[12px] font-semibold text-muted-foreground">
+                <CircleDashed className="h-6 w-6 opacity-70" style={{ color: "var(--enk-steel)" }} aria-hidden="true" />
+                <p className="text-[12px] font-semibold" style={{ color: "var(--enk-steel)" }}>
                   To be supplied, {phLabel(entry)}
                 </p>
               </div>

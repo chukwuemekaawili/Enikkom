@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
 interface Props {
-  kicker: string;
+  kicker: ReactNode;
   title: ReactNode;
   intro?: ReactNode;
   onDark?: boolean;

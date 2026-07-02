@@ -5,6 +5,7 @@ import { Leaf, ShieldCheck, Users, GraduationCap, ExternalLink } from "lucide-re
 import { Button } from "@/components/ui/button";
 import { qhse, fpic, kpis } from "@/content/home";
 import { siteImageSelections } from "@/content/siteImageSelections";
+import { SectionHeading } from "@/components/home/SectionHeading";
 
 const pillars = [
   {
@@ -51,17 +52,18 @@ export default function SustainabilityPage() {
       <section className="section-padding bg-background">
         <div className="container-wide">
           <motion.div
-            className="text-center mb-12"
+            className="mb-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="enk-kicker">Our Approach</p>
-            <h2 className="section-title">Four Pillars of Responsible Operations</h2>
-            <p className="section-subtitle">
-              Sustainability at Enikkom is built on auditable systems, not statements, certified management systems, a documented safety record, and host-community policy.
-            </p>
+            <SectionHeading
+              align="center"
+              kicker="Our Approach"
+              title={<>Four Pillars of Responsible Operations</>}
+              intro="Sustainability at Enikkom is built on auditable systems, not statements, certified management systems, a documented safety record, and host-community policy."
+            />
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -89,14 +91,17 @@ export default function SustainabilityPage() {
       <section className="section-padding bg-muted/30">
         <div className="container-wide">
           <motion.div
-            className="text-center mb-12"
+            className="mb-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="enk-kicker">Community & Local Content</p>
-            <h2 className="section-title">Why Local Content Matters on Our Sites</h2>
+            <SectionHeading
+              align="center"
+              kicker="Community & Local Content"
+              title={<>Why Local Content Matters on Our Sites</>}
+            />
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -133,17 +138,21 @@ export default function SustainabilityPage() {
       </section>
 
       {/* Safety record, stated once with the same figures used sitewide */}
-      <section className="section-padding bg-charcoal">
+      <section className="section-padding">
         <div className="container-wide">
           <motion.div
-            className="text-center mb-10"
+            className="mb-10"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="enk-kicker enk-kicker--on-dark">Track Record</p>
-            <h2 className="text-white mb-3">The Record We Operate To</h2>
+            <SectionHeading
+              onDark
+              align="center"
+              kicker="Track Record"
+              title={<>The Record We Operate To</>}
+            />
           </motion.div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-3xl mx-auto">

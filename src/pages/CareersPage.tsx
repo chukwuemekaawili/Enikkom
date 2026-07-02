@@ -191,7 +191,7 @@ export default function CareersPage() {
       </section>
 
       {/* Culture Section */}
-      <section className="section-padding bg-charcoal">
+      <section className="section-padding">
         <div className="container-wide">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <motion.div

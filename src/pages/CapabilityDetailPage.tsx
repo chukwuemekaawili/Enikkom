@@ -7,6 +7,7 @@ import { getProjectImage } from "@/content/projectImageSelections";
 import { siteImageSelections } from "@/content/siteImageSelections";
 import { usePageContent } from "@/hooks/useSiteSettings";
 import { EditableText } from "@/components/content";
+import { SectionHeading } from "@/components/home/SectionHeading";
 
 // Slug to page_slug mapping
 const slugToPageSlug: Record<string, string> = {
@@ -259,34 +260,36 @@ export default function CapabilityDetailPage() {
       />
 
       {/* Process & Method */}
-      <section className="section-padding">
-        <div className="container-wide">
-          <div className="mb-8">
-            <p className="enk-kicker mb-3">Method</p>
-            <h2>
+      <section className="enk-section">
+        <div className="enk-container">
+          <SectionHeading
+            kicker="Method"
+            title={
               <EditableText
                 value={stepsContent.section_title || "Process & Method"}
                 pageSlug={pageSlug}
                 sectionKey="process_steps"
                 field="section_title"
               />
-            </h2>
-          </div>
+            }
+            onDark
+          />
 
-          <div className="grid md:grid-cols-5 gap-4">
+          <ol className="mt-12 grid gap-px overflow-hidden rounded-[var(--radius-card)] border border-[var(--enk-line-dark)] bg-[var(--enk-line-dark)] md:grid-cols-5">
             {processSteps.map((step: { title: string; description: string }, index: number) => (
-              <motion.div
+              <motion.li
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="relative enk-card enk-card--hover p-5"
+                className="flex flex-col gap-3 p-6"
+                style={{ backgroundColor: "var(--enk-surface-card)" }}
               >
-                <span className="block text-[14px] font-bold mb-3" style={{ color: "var(--enk-bronze)" }}>
+                <span className="text-[14px] font-bold tabular-nums text-[var(--enk-accent-on-dark)]">
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <h4 className="font-semibold mb-2 text-sm">
+                <h4 className="text-[16px] font-bold text-[var(--enk-on-dark)]">
                   <EditableText
                     value={step.title}
                     pageSlug={pageSlug}
@@ -294,7 +297,7 @@ export default function CapabilityDetailPage() {
                     field={`step_${index}_title`}
                   />
                 </h4>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-[14px] leading-relaxed text-[var(--enk-on-dark-muted)]">
                   <EditableText
                     value={step.description}
                     pageSlug={pageSlug}
@@ -302,32 +305,33 @@ export default function CapabilityDetailPage() {
                     field={`step_${index}_description`}
                   />
                 </p>
-              </motion.div>
+              </motion.li>
             ))}
-          </div>
+          </ol>
         </div>
       </section>
 
       {/* Standards & Compliance */}
-      <section className="section-padding-sm bg-muted/30">
-        <div className="container-wide">
-          <div className="mb-8">
-            <p className="enk-kicker mb-3">Compliance</p>
-            <h2>
+      <section className="enk-section" style={{ borderTop: "1px solid var(--enk-line-dark)" }}>
+        <div className="enk-container">
+          <SectionHeading
+            kicker="Compliance"
+            title={
               <EditableText
                 value={standardsContent.section_title || "Applicable Standards"}
                 pageSlug={pageSlug}
                 sectionKey="standards"
                 field="section_title"
               />
-            </h2>
-          </div>
+            }
+            onDark
+          />
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4">
             {standards.map((standard: string, index: number) => (
               <div key={index} className="flex items-center gap-3 enk-card enk-card--hover p-4">
                 <CheckCircle className="h-5 w-5 flex-shrink-0" style={{ color: "var(--enk-accent-on-dark)" }} />
-                <span className="text-sm font-medium">
+                <span className="text-sm font-medium text-[var(--enk-on-dark)]">
                   <EditableText
                     value={standard}
                     pageSlug={pageSlug}
@@ -342,21 +346,22 @@ export default function CapabilityDetailPage() {
       </section>
 
       {/* Equipment Readiness */}
-      <section className="section-padding-sm">
-        <div className="container-wide">
-          <div className="mb-8">
-            <p className="enk-kicker mb-3">Readiness</p>
-            <h2>
+      <section className="enk-section" style={{ borderTop: "1px solid var(--enk-line-dark)" }}>
+        <div className="enk-container">
+          <SectionHeading
+            kicker="Readiness"
+            title={
               <EditableText
                 value={equipmentContent.section_title || "Equipment Readiness"}
                 pageSlug={pageSlug}
                 sectionKey="equipment"
                 field="section_title"
               />
-            </h2>
-          </div>
+            }
+            onDark
+          />
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="mt-12 grid md:grid-cols-3 gap-6">
             {equipment.map((item: { name: string; specs: string }, index: number) => (
               <motion.div
                 key={index}
@@ -367,7 +372,7 @@ export default function CapabilityDetailPage() {
                 className="enk-card enk-card--hover p-6"
               >
                 <Icon className="h-8 w-8 mb-3" style={{ color: "var(--enk-accent-on-dark)" }} />
-                <h4 className="font-semibold mb-1">
+                <h4 className="font-semibold mb-1 text-[var(--enk-on-dark)]">
                   <EditableText
                     value={item.name}
                     pageSlug={pageSlug}
@@ -375,7 +380,7 @@ export default function CapabilityDetailPage() {
                     field={`equipment_${index}_name`}
                   />
                 </h4>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-[var(--enk-on-dark-muted)]">
                   <EditableText
                     value={item.specs}
                     pageSlug={pageSlug}
@@ -391,10 +396,10 @@ export default function CapabilityDetailPage() {
 
       {/* Related Projects */}
       {capability.relatedProjects.length > 0 && (
-        <section className="section-padding bg-muted/30">
-          <div className="container-wide">
-            <h2 className="mb-8">Related Projects</h2>
-            <div className="grid md:grid-cols-3 gap-6">
+        <section className="enk-section" style={{ borderTop: "1px solid var(--enk-line-dark)" }}>
+          <div className="enk-container">
+            <SectionHeading kicker="Proof" title="Related projects" onDark />
+            <div className="mt-12 grid md:grid-cols-3 gap-6">
               {capability.relatedProjects.map((project, index) => (
                 <CaseStudyCard
                   key={project.title}

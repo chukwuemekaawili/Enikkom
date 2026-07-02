@@ -9,6 +9,7 @@ import { getProjectGalleryImages, getProjectImage } from "@/content/projectImage
 import { usePageContent } from "@/hooks/useSiteSettings";
 import { EditableText, EditableImage } from "@/components/content";
 import { EnhancedImage } from "@/components/ui/enhanced-image";
+import { SectionHeading } from "@/components/home/SectionHeading";
 
 // Import all authentic project images from PDFs
 import hddNightPanorama from "@/assets/images/projects/hdd-night-panorama-cropped.jpg";
@@ -756,23 +757,26 @@ export default function ProjectDetailPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                <h2 className="enk-display text-[clamp(1.3rem,2.2vw,1.6rem)] mb-4">
-                  <EditableText
-                    value={overviewContent.section_title || "Project Overview"}
-                    pageSlug={pageSlug}
-                    sectionKey="overview"
-                    field="section_title"
-                  />
-                </h2>
-                <p className="text-muted-foreground leading-relaxed text-lg">
-                  <EditableText
-                    value={displayOverview}
-                    pageSlug={pageSlug}
-                    sectionKey="overview"
-                    field="overview"
-                    multiline
-                  />
-                </p>
+                <SectionHeading
+                  kicker="Project Overview"
+                  title={
+                    <EditableText
+                      value={overviewContent.section_title || "Project Overview"}
+                      pageSlug={pageSlug}
+                      sectionKey="overview"
+                      field="section_title"
+                    />
+                  }
+                  intro={
+                    <EditableText
+                      value={displayOverview}
+                      pageSlug={pageSlug}
+                      sectionKey="overview"
+                      field="overview"
+                      multiline
+                    />
+                  }
+                />
               </motion.div>
 
               {/* Scope of Work */}
@@ -782,15 +786,18 @@ export default function ProjectDetailPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                 >
-                  <h2 className="enk-display text-[clamp(1.3rem,2.2vw,1.6rem)] mb-4">
-                    <EditableText
-                      value={scopeContent.section_title || "Scope of Work"}
-                      pageSlug={pageSlug}
-                      sectionKey="scope"
-                      field="section_title"
-                    />
-                  </h2>
-                  <ul className="space-y-2">
+                  <SectionHeading
+                    kicker="Scope"
+                    title={
+                      <EditableText
+                        value={scopeContent.section_title || "Scope of Work"}
+                        pageSlug={pageSlug}
+                        sectionKey="scope"
+                        field="section_title"
+                      />
+                    }
+                  />
+                  <ul className="space-y-2 mt-6">
                     {displayScope.map((item: string, index: number) => (
                       <li key={index} className="flex items-start gap-3">
                         <CheckCircle className="h-5 w-5 flex-shrink-0 mt-0.5" style={{ color: "var(--enk-accent-on-dark)" }} />
@@ -814,23 +821,26 @@ export default function ProjectDetailPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                <h2 className="enk-display text-[clamp(1.3rem,2.2vw,1.6rem)] mb-4">
-                  <EditableText
-                    value={challengeContent.section_title || "The Challenge"}
-                    pageSlug={pageSlug}
-                    sectionKey="challenge"
-                    field="section_title"
-                  />
-                </h2>
-                <p className="text-muted-foreground leading-relaxed">
-                  <EditableText
-                    value={displayChallenge}
-                    pageSlug={pageSlug}
-                    sectionKey="challenge"
-                    field="challenge"
-                    multiline
-                  />
-                </p>
+                <SectionHeading
+                  kicker="The Challenge"
+                  title={
+                    <EditableText
+                      value={challengeContent.section_title || "The Challenge"}
+                      pageSlug={pageSlug}
+                      sectionKey="challenge"
+                      field="section_title"
+                    />
+                  }
+                  intro={
+                    <EditableText
+                      value={displayChallenge}
+                      pageSlug={pageSlug}
+                      sectionKey="challenge"
+                      field="challenge"
+                      multiline
+                    />
+                  }
+                />
               </motion.div>
 
               {/* Solution */}
@@ -839,23 +849,26 @@ export default function ProjectDetailPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                <h2 className="enk-display text-[clamp(1.3rem,2.2vw,1.6rem)] mb-4">
-                  <EditableText
-                    value={solutionContent.section_title || "Our Solution"}
-                    pageSlug={pageSlug}
-                    sectionKey="solution"
-                    field="section_title"
-                  />
-                </h2>
-                <p className="text-muted-foreground leading-relaxed">
-                  <EditableText
-                    value={displaySolution}
-                    pageSlug={pageSlug}
-                    sectionKey="solution"
-                    field="solution"
-                    multiline
-                  />
-                </p>
+                <SectionHeading
+                  kicker="Our Solution"
+                  title={
+                    <EditableText
+                      value={solutionContent.section_title || "Our Solution"}
+                      pageSlug={pageSlug}
+                      sectionKey="solution"
+                      field="section_title"
+                    />
+                  }
+                  intro={
+                    <EditableText
+                      value={displaySolution}
+                      pageSlug={pageSlug}
+                      sectionKey="solution"
+                      field="solution"
+                      multiline
+                    />
+                  }
+                />
               </motion.div>
 
               {/* HSE Notes */}
@@ -996,13 +1009,15 @@ export default function ProjectDetailPage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center mb-10"
+              className="mb-10"
             >
-              <p className="enk-kicker justify-center mb-3">Project Gallery</p>
-              <h2 className="mb-3">Project Documentation</h2>
-              <p className="text-muted-foreground max-w-lg mx-auto">
-                Authentic photographs documenting our work on this project.
-              </p>
+              <SectionHeading
+                kicker="Project Gallery"
+                title={<>Project Documentation</>}
+                intro="Authentic photographs documenting our work on this project."
+                onDark
+                align="center"
+              />
             </motion.div>
 
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -1094,9 +1109,12 @@ export default function ProjectDetailPage() {
       {filteredRelatedProjects.length > 0 && (
         <section className="section-padding">
           <div className="container-wide">
-            <p className="enk-kicker mb-2">See Also</p>
-            <h2 className="mb-8">Related Projects</h2>
-            <div className="grid md:grid-cols-3 gap-6">
+            <SectionHeading
+              kicker="See Also"
+              title={<>Related Projects</>}
+              onDark
+            />
+            <div className="grid md:grid-cols-3 gap-6 mt-8">
               {filteredRelatedProjects.map((project) => (
                 <CaseStudyCard
                   key={project.href}

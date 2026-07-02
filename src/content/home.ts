@@ -98,7 +98,7 @@ export interface Kpi {
 
 /** Above-fold trust strip, sourced from the company history + QHSE records. */
 export const kpis: Kpi[] = [
-  { value: "34+", label: "Years of industry experience" },
+  { value: "30+", label: "Years of industry experience" },
   { value: "100+", label: "Kilometres of HDD installed" },
   { value: "500+", label: "Skilled workforce" },
   { value: "5M+", label: "Safe man-hours" },
@@ -191,6 +191,8 @@ export interface Project {
   image: string;
   href: string;
   feature?: boolean;
+  method?: string;
+  terrain?: string;
 }
 
 /** Featured projects, names, locations and specs sourced from ProjectsPage. */
@@ -203,6 +205,7 @@ export const projects: Project[] = [
     image: projImg("oml34-chdd") as string,
     href: "/projects/oml34-chdd",
     feature: true,
+    method: "Continuous HDD",
   },
   {
     name: "Dangote Fertilizer Lagoon Crossing",
@@ -211,6 +214,8 @@ export const projects: Project[] = [
     result: '36" × 2 km',
     image: projImg("dangote-lagoon") as string,
     href: "/projects/dangote-lagoon",
+    method: "HDD",
+    terrain: "Swamp / lagoon",
   },
   {
     name: "Yenagoa 40\" HDD Crossing",
@@ -219,6 +224,7 @@ export const projects: Project[] = [
     result: '40" × 760 m',
     image: projImg("yenagoa-40-crossing") as string,
     href: "/projects/yenagoa-40-crossing",
+    method: "HDD",
   },
   {
     name: "Otumara-Escravos Bundled HDD",
@@ -227,6 +233,8 @@ export const projects: Project[] = [
     result: "2.78 km bundled",
     image: projImg("otumara-escravos") as string,
     href: "/projects/otumara-escravos",
+    method: "HDD (bundled)",
+    terrain: "Swamp",
   },
 ];
 

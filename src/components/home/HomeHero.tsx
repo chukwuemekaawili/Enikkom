@@ -38,78 +38,76 @@ export function HomeHero() {
 
   return (
     <>
+      {/* Outer wrapper — same margin as enk-panel so left edges align perfectly */}
+      <div className="mx-4 md:mx-6 lg:mx-8" style={{ marginTop: "0.75rem" }}>
       <section
         className="relative isolate overflow-hidden"
-        style={{ backgroundColor: "var(--enk-navy)", minHeight: "clamp(520px, 80vh, 860px)" }}
+        style={{ backgroundColor: "var(--enk-navy)", minHeight: "clamp(560px, 88vh, 960px)", borderRadius: "1rem", transform: "translateZ(0)", WebkitMaskImage: "-webkit-radial-gradient(white, black)" }}
         aria-labelledby="hero-heading"
       >
-        {/* Background video — swap /videos/hero.mp4 for the real asset */}
+        {/* Background video */}
         <video
           ref={bgVideoRef}
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover enk-photo--hero"
           autoPlay
           muted
           loop
           playsInline
+          preload="none"
           poster={heroImage}
           aria-hidden="true"
         >
           <source src="/videos/hero.mp4" type="video/mp4" />
-          {/* Fallback: shows poster image if no video file is present */}
         </video>
 
-        {/* Scrim — left-heavy like SLB */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(to right, rgba(6,14,30,0.82) 0%, rgba(6,14,30,0.60) 55%, rgba(6,14,30,0.30) 100%)",
-          }}
-          aria-hidden="true"
-        />
+        {/* Left edge vignette */}
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(6,14,30,0.96) 0%, rgba(6,14,30,0.55) 40%, transparent 70%)" }} aria-hidden="true" />
+        {/* Right edge vignette */}
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to left, rgba(6,14,30,0.85) 0%, transparent 45%)" }} aria-hidden="true" />
+        {/* Bottom fade */}
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(6,14,30,0.60) 0%, transparent 30%)" }} aria-hidden="true" />
 
-        <div className="enk-container relative flex items-center" style={{ minHeight: "inherit" }}>
-          <div className="max-w-2xl py-24 md:py-32 lg:py-40">
-            <p className="enk-kicker enk-kicker--on-dark mb-6">
+        {/* Content — vertically centred, left-aligned */}
+        <div className="enk-container relative h-full flex items-center" style={{ minHeight: "inherit" }}>
+          <div className="max-w-3xl py-16 sm:py-20 md:py-24">
+            <p className="enk-kicker enk-kicker--on-dark mb-5">
               Trenchless &amp; Pipeline Contractor · Nigeria
             </p>
-
             <h1
               id="hero-heading"
-              className="enk-display text-[var(--enk-on-dark)] text-[clamp(2.25rem,6vw,4.25rem)]"
+              className="font-extrabold text-white leading-[1.05] mb-5"
+              style={{ fontSize: "clamp(2.2rem, 5.5vw, 4rem)" }}
             >
-              Trenchless and pipeline construction for critical energy infrastructure.
+              Where Nigeria's toughest crossings get built.
             </h1>
-
-            <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-[var(--enk-on-dark-muted)] md:text-[18px]">
-              Enikkom engineers and constructs horizontal directional drilling, pipeline, dredging and
-              marine civil works for oil &amp; gas operators and EPC partners across Nigeria,
-              delivered to specification since 2003.
+            <p className="text-white/70 text-[17px] leading-relaxed mb-8 max-w-xl">
+              HDD, pipeline construction, dredging and marine civil works — delivered to specification for oil &amp; gas operators and EPC partners since 1995.
             </p>
 
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <Link to="/projects" className="enk-btn enk-btn--gold">
-                View Projects
-                <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+            <div className="flex flex-wrap gap-4 items-center">
+              <Link
+                to="/projects"
+                className="inline-flex items-center gap-2.5 font-semibold transition-colors duration-150"
+                style={{ background: "var(--enk-accent-primary)", color: "var(--enk-navy)", padding: "0.85rem 2rem", fontSize: "1rem", borderRadius: "var(--radius-control)" }}
+              >
+                View Project Records
+                <ArrowUpRight className="h-5 w-5" aria-hidden="true" />
               </Link>
 
-              {/* Watch Video — SLB-style ghost button with play circle */}
               <button
                 onClick={() => setVideoOpen(true)}
-                className="inline-flex items-center gap-2.5 text-[15px] font-semibold text-white/90 hover:text-white transition-colors duration-150 group"
+                className="inline-flex items-center gap-2.5 font-semibold text-white/80 hover:text-white border border-white/30 hover:border-white/60 hover:bg-white/8 transition-colors duration-150"
+                style={{ padding: "0.85rem 2rem", fontSize: "1rem", borderRadius: "var(--radius-control)" }}
                 aria-label="Watch Enikkom capabilities video"
               >
-                <span
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/35 bg-white/10 group-hover:bg-white/18 transition-colors duration-150"
-                >
-                  <Play className="h-4 w-4 fill-current ml-0.5" />
-                </span>
                 Watch Video
+                <Play className="h-5 w-5 fill-current" aria-hidden="true" />
               </button>
             </div>
           </div>
         </div>
       </section>
+      </div>
 
       {/* Video Modal / Lightbox */}
       {videoOpen && (
@@ -143,7 +141,7 @@ export function HomeHero() {
                 playsInline
                 poster={heroImage}
               >
-                <source src="/videos/hero.mp4" type="video/mp4" />
+                <source src="/videos/capabilities.mp4" type="video/mp4" />
               </video>
             </div>
           </div>

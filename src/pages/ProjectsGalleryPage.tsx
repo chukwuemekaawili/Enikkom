@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { EnhancedImage } from "@/components/ui/enhanced-image";
 import { getProjectImage } from "@/content/projectImageSelections";
 import { siteImageSelections } from "@/content/siteImageSelections";
+import { SectionHeading } from "@/components/home/SectionHeading";
 
 interface Project {
   image?: string;
@@ -152,35 +153,27 @@ export default function ProjectsGalleryPage() {
 
   const renderProjectGrid = (projects: Project[], title: string, description: string) => (
     <div className="mb-16">
-      <div className="mb-8">
-        <h3 className="text-2xl font-bold mb-2">{title}</h3>
-        <p className="text-muted-foreground">{description}</p>
-      </div>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <SectionHeading kicker="Portfolio" title={title} intro={description} onDark />
+      <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects.map((project, index) => (
-          <motion.div
+          <motion.article
             key={project.title}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.3, delay: index * 0.05 }}
-            className="group cursor-pointer enk-card enk-card--hover overflow-hidden flex flex-col"
+            className="group cursor-pointer enk-card enk-card--hover flex flex-col"
             onClick={() => setSelectedProject(project)}
           >
-            <div className="aspect-[4/3] overflow-hidden relative">
+            <div className="relative aspect-[4/3] overflow-hidden enk-photo-wrap">
               <EnhancedImage
                 src={project.image}
                 alt={project.title}
                 wrapperClassName="h-full w-full"
-                className="h-full w-full"
+                className="h-full w-full enk-photo--card"
                 hoverZoom
                 tone="natural"
                 fallbackLabel={project.title}
-              />
-              <div
-                className="absolute inset-0"
-                aria-hidden="true"
-                style={{ background: "linear-gradient(0deg, oklch(0.13 0.03 255 / 0.5), transparent 55%)" }}
               />
               {project.year && (
                 <span className="enk-chip enk-chip--on-dark absolute left-3 top-3">
@@ -189,9 +182,9 @@ export default function ProjectsGalleryPage() {
               )}
             </div>
             <div className="flex flex-1 flex-col p-5" style={{ backgroundColor: "var(--enk-surface-card)" }}>
-              <h4 className="font-semibold text-[16px] mb-1 text-[var(--enk-on-dark)] group-hover:text-[var(--enk-gold)] transition-colors">{project.title}</h4>
+              <h4 className="font-semibold text-[16px] mb-1 text-[var(--enk-on-dark)] group-hover:text-[var(--enk-accent-on-dark)] transition-colors">{project.title}</h4>
               {project.client && (
-                <p className="text-[12px] font-bold mb-2" style={{ color: "var(--enk-gold)" }}>{project.client}</p>
+                <p className="text-[12px] font-bold mb-2 text-[var(--enk-accent-on-dark)]">{project.client}</p>
               )}
               {project.location && (
                 <p className="text-[12px] text-[var(--enk-on-dark-muted)] mb-2">{project.location}</p>
@@ -207,7 +200,7 @@ export default function ProjectsGalleryPage() {
                 </div>
               )}
             </div>
-          </motion.div>
+          </motion.article>
         ))}
       </div>
     </div>
@@ -297,56 +290,57 @@ export default function ProjectsGalleryPage() {
 
       {/* Lightbox Modal */}
       {selectedProject && (
-        <div 
-          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 overflow-y-auto"
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 overflow-y-auto"
+          style={{ backgroundColor: "rgba(20, 25, 31, 0.92)" }}
           onClick={() => setSelectedProject(null)}
         >
           <button
-            className="absolute top-4 right-4 text-white hover:text-primary transition-colors z-10"
+            className="absolute top-4 right-4 text-white hover:text-[var(--enk-accent-on-dark)] transition-colors z-10"
             onClick={() => setSelectedProject(null)}
           >
             <X className="h-8 w-8" />
           </button>
-          <div 
-            className="max-w-5xl w-full bg-card rounded-lg overflow-hidden my-8"
+          <div
+            className="max-w-5xl w-full enk-card overflow-hidden my-8"
             onClick={(e) => e.stopPropagation()}
           >
             <EnhancedImage
               src={selectedProject.image}
               alt={selectedProject.title}
-              wrapperClassName="w-full max-h-[50vh]"
-              className="w-full max-h-[50vh]"
+              wrapperClassName="w-full max-h-[50vh] enk-photo-wrap"
+              className="w-full max-h-[50vh] enk-photo--card"
               tone="natural"
               fallbackLabel={selectedProject.title}
             />
-            <div className="p-6 md:p-8">
+            <div className="p-6 md:p-8" style={{ backgroundColor: "var(--enk-surface-card)" }}>
               <div className="flex flex-wrap items-center gap-3 mb-4">
                 {selectedProject.year && (
-                  <span className="enk-chip">
+                  <span className="enk-chip enk-chip--on-dark">
                     {selectedProject.year}
                   </span>
                 )}
                 {selectedProject.client && (
-                  <span className="text-sm text-muted-foreground">
-                    Client: <span className="font-medium text-foreground">{selectedProject.client}</span>
+                  <span className="text-sm text-[var(--enk-on-dark-muted)]">
+                    Client: <span className="font-medium text-[var(--enk-on-dark)]">{selectedProject.client}</span>
                   </span>
                 )}
               </div>
-              <h3 className="text-2xl font-bold mb-2">{selectedProject.title}</h3>
+              <h3 className="text-2xl font-bold mb-2 text-[var(--enk-on-dark)]">{selectedProject.title}</h3>
               {selectedProject.location && (
-                <p className="text-muted-foreground mb-4">{selectedProject.location}</p>
+                <p className="text-[var(--enk-on-dark-muted)] mb-4">{selectedProject.location}</p>
               )}
-              <p className="text-muted-foreground mb-6">{selectedProject.description}</p>
+              <p className="text-[var(--enk-on-dark-muted)] mb-6">{selectedProject.description}</p>
               {selectedProject.specs && (
                 <div className="flex flex-wrap gap-2">
                   {selectedProject.specs.map((spec) => (
-                    <span key={spec} className="enk-chip">
+                    <span key={spec} className="enk-chip enk-chip--on-dark">
                       {spec}
                     </span>
                   ))}
                 </div>
               )}
-              <div className="mt-8 pt-6 border-t">
+              <div className="mt-8 pt-6" style={{ borderTop: "1px solid var(--enk-line-dark)" }}>
                 <Link
                   to="/contact"
                   className="inline-flex items-center gap-2 font-semibold enk-link"

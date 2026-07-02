@@ -173,7 +173,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="section-padding bg-charcoal">
+      <section className="section-padding">
         <div className="container-wide">
           <div className="text-center mb-10">
             <p className="enk-kicker enk-kicker--on-dark justify-center mb-3">

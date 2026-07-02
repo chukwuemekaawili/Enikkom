@@ -371,6 +371,47 @@
   }
 
   /* ==========================================
+     DOCUMENTARY PHOTO TREATMENT
+     Restrained industrial grade: darker, higher
+     contrast, mild desaturation. No sepia, no
+     colour grading, no HDR. Keeps real site
+     photography feeling like field documentation,
+     not stock or cinematic renders.
+     ========================================== */
+
+  /* Base grade — img/video element, on its own */
+  .enk-photo {
+    filter: contrast(1.08) saturate(0.88) brightness(0.92);
+  }
+
+  /* Hero / full-bleed: marginally stronger because the scrim
+     compounds with it; keep both moderate or it stacks too dark. */
+  .enk-photo--hero {
+    filter: contrast(1.10) saturate(0.85) brightness(0.88);
+  }
+
+  /* Card thumbnails: subtlest grade — preserves colour detail at
+     small size; the wrap vignette handles depth, not the filter. */
+  .enk-photo--card {
+    filter: contrast(1.06) saturate(0.90) brightness(0.94);
+  }
+
+  /* Wrap container: restrained bottom-weighted vignette that seats
+     the image visually and lifts overlaid text. Parent must already
+     be position: relative and overflow: hidden. */
+  .enk-photo-wrap::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+      180deg,
+      rgba(5, 14, 24, 0.06) 0%,
+      rgba(5, 14, 24, 0.28) 100%
+    );
+  }
+
+  /* ==========================================
      DIVIDERS & SEPARATORS
      ========================================== */
 
@@ -569,19 +610,22 @@
 
 .enk {
   /* ----------------------------------------------------------------
-     SHELL DESIGN LANGUAGE — DUAL-NAVY all-dark surface system.
+     SHELL DESIGN LANGUAGE — all-dark surface system.
      Three surfaces in ONE navy hue family create depth without
-     borders/shadows (Shell never floats dark cards on white):
-       deep band  #14191F  (section bands + footer)
-       page/hero  #1D232A  (page base, hero, header)
-       card       #222A32  (1 step lighter than page → lifts off bands)
+     borders/shadows (Shell never floats dark cards on white).
+     Each step is lighter than the last so a card always lifts off
+     whatever surface holds it:
+       page / band  #14191F  (page base, hero, header, footer, bands)
+       panel        #171D24  (floating .enk-panel sections)
+       card         #1E2830  (1 step lighter than panel → always lifts)
      Canonical --color-* names; established --enk-* names alias onto
      them so every component recolours centrally with no per-file churn.
      ---------------------------------------------------------------- */
-  --color-bg-deep:       #14191F;  /* section bands + footer */
-  --color-bg:            #1D232A;  /* page + hero + header */
-  --color-surface-card:  #222A32;  /* cards (no border, no shadow) */
-  --color-surface-card-hover: #2A333C;
+  --color-bg-deep:       #14191F;  /* footer only */
+  --color-bg:            #14191F;  /* unified page background — one dark tone like Shell */
+  --color-surface-panel: #171D24;  /* floating panels — between page and card */
+  --color-surface-card:  #1E2830;  /* cards lift above both page and panels */
+  --color-surface-card-hover: #263038;
   --color-surface-light: #F4F6F8;  /* logo tiles only */
   --color-footer:        #14191F;
   --color-text:          #E0E0E0;  /* off-white text on all dark surfaces */
@@ -601,6 +645,7 @@
   /* Surfaces — all dark, same navy hue family */
   --enk-bg: var(--color-bg);            /* page / hero base */
   --enk-bg-muted: var(--color-bg-deep); /* section bands (was light) */
+  --enk-surface-panel: var(--color-surface-panel);
   --enk-surface-card: var(--color-surface-card);
   --enk-surface-card-hover: var(--color-surface-card-hover);
   --enk-navy: var(--color-bg);          /* header, scrims, CTA bands */
@@ -624,9 +669,27 @@
   --enk-blue-hover: var(--color-accent-hover);
   --enk-accent-on-dark: var(--color-accent-on-dark);
   --enk-accent: var(--color-accent-on-dark);  /* small accent text → #6EA8FF on dark */
-  --enk-gold: var(--enk-accent-on-dark);      /* legacy alias → #6EA8FF */
-  --enk-bronze: var(--enk-accent-on-dark);    /* legacy alias → #6EA8FF */
-  --enk-safety: oklch(0.66 0.13 150);         /* QHSE positive, lifted for dark */
+  --enk-gold: var(--enk-accent-primary-on-dark);  /* active nav indicators, section rules */
+  --enk-bronze: var(--enk-accent-on-dark);         /* kicker text → stays blue */
+  --enk-safety: oklch(0.66 0.13 150);              /* QHSE positive, lifted for dark */
+
+  /* Engineering yellow primary accent — contractor identity, not corporate blue.
+     CAT / Liebherr / Mammoet pattern: muted field yellow on dark.
+     Coherent with hi-vis PPE in site photography and warm logo element.
+     Fill buttons (#C4900E): dark navy text — ~9:1 WCAG AAA on #14191F.
+     Kicker rules / metric text on dark (#D4A832): ~7:1 on #14191F — WCAG AAA. */
+  --enk-accent-primary:        #C4900E;
+  --enk-accent-primary-hover:  #A67A0C;
+  --enk-accent-primary-on-dark:#D4A832;
+  --enk-accent-subtle:         rgba(196, 144, 14, 0.12);
+  --enk-accent-line:           rgba(196, 144, 14, 0.28);
+  /* Backward-compat aliases — any missed reference stays on-palette */
+  --enk-warm-accent:         var(--enk-accent-primary);
+  --enk-warm-accent-hover:   var(--enk-accent-primary-hover);
+  --enk-warm-accent-on-dark: var(--enk-accent-primary-on-dark);
+  --enk-orange:              var(--enk-accent-primary);
+  --enk-orange-hover:        var(--enk-accent-primary-hover);
+  --enk-orange-on-dark:      var(--enk-accent-primary-on-dark);
 
   /* Lines — subtle light hairlines on the dark surfaces */
   --enk-line: rgba(255, 255, 255, 0.08);
@@ -651,6 +714,16 @@
 @media (min-width: 768px) { .enk-section { padding-block: 4.5rem; } }
 .enk-section--tight { padding-block: 2.5rem; }
 
+/* Shell-style panel: rounded floating section with side margins and gap above */
+.enk-panel {
+  margin: 0.75rem 1rem 0;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: var(--enk-surface-panel);
+}
+@media (min-width: 768px) { .enk-panel { margin-inline: 1.5rem; } }
+@media (min-width: 1024px) { .enk-panel { margin-inline: 2rem; } }
+
 /* Eyebrow — Shell style: humanist body font, NORMAL tracking, blue accent.
    (Was IBM Plex Mono + wide tracking — removed.) */
 .enk-kicker {
@@ -660,7 +733,7 @@
   color: var(--enk-bronze);
 }
 .enk-kicker--on-dark { color: var(--enk-accent-on-dark); }
-.enk-kicker::before { content: ""; width: 1.75rem; height: 2px; background: currentColor; opacity: 0.9; }
+.enk-kicker::before { content: ""; width: 1.75rem; height: 2px; background: var(--enk-accent-primary-on-dark); opacity: 0.9; }
 
 /* Squared technical chip (no pills, no emoji) */
 .enk-chip {
@@ -680,15 +753,15 @@
   border: 1.5px solid transparent; cursor: pointer; text-align: center;
   transition: background-color 0.18s ease-out, border-color 0.18s ease-out, color 0.18s ease-out, box-shadow 0.18s ease-out;
 }
-.enk-btn--primary { background: var(--enk-blue); color: #fff; box-shadow: var(--enk-shadow-sm); }
-.enk-btn--primary:hover { background: var(--enk-blue-hover); box-shadow: var(--enk-shadow-md); }
+.enk-btn--primary { background: var(--enk-accent-primary); color: var(--enk-navy); box-shadow: var(--enk-shadow-sm); }
+.enk-btn--primary:hover { background: var(--enk-accent-primary-hover); box-shadow: var(--enk-shadow-md); }
 .enk-btn--outline { background: transparent; color: var(--enk-ink); border-color: var(--enk-line-strong); }
 .enk-btn--outline:hover { border-color: var(--enk-blue); color: var(--enk-blue); }
 .enk-btn--on-dark { background: transparent; color: var(--enk-on-dark); border-color: oklch(1 0 0 / 0.28); }
 .enk-btn--on-dark:hover { background: oklch(1 0 0 / 0.08); border-color: oklch(1 0 0 / 0.5); }
-/* Legacy name kept for drop-in compatibility; renders as the primary blue CTA. */
-.enk-btn--gold { background: var(--enk-blue); color: #fff; box-shadow: var(--enk-shadow-sm); }
-.enk-btn--gold:hover { background: var(--enk-blue-hover); box-shadow: var(--enk-shadow-md); }
+/* Legacy class name; renders with engineering yellow fill (navy text). */
+.enk-btn--gold { background: var(--enk-accent-primary); color: var(--enk-navy); box-shadow: var(--enk-shadow-sm); }
+.enk-btn--gold:hover { background: var(--enk-accent-primary-hover); box-shadow: var(--enk-shadow-md); }
 
 /* Text link */
 .enk-link {
@@ -772,24 +845,20 @@
 
 .enk-logo-card {
   display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-  height: 68px; width: 160px; margin-inline: 0.375rem; padding-inline: 1.25rem;
+  height: 52px; width: 124px; margin-inline: 0.3rem; padding-inline: 0.9rem;
   background: #f5f7f9; border: 1px solid var(--enk-line); border-radius: 8px;
   transition: border-color 0.18s ease-out, background 0.18s ease-out, transform 0.18s ease-out;
 }
 .enk-logo-card:hover { border-color: var(--enk-line-strong); background: #fff; transform: translateY(-2px); }
-/* Normalize every mark to one optical height + one tone, so the row reads as a
-   unified trust strip, not a clash of brand colours at random scales. Brand
-   colour returns on hover. */
+/* Real brand colour at rest — client-name recognition (Shell, Dangote, NNPC)
+   is a primary trust signal here, so marks are not flattened to mono.
+   Uniform tile height still keeps the row reading as one strip. */
 .enk-logo-card img {
-  height: 32px; width: auto; max-width: 124px; object-fit: contain;
-  filter: grayscale(1); opacity: 0.78;
-  transition: filter 0.18s ease-out, opacity 0.18s ease-out;
+  height: 24px; width: auto; max-width: 96px; object-fit: contain;
 }
-.enk-logo-card:hover img { filter: grayscale(0); opacity: 1; }
 /* Dangote ships as a white-on-transparent mark (built for dark backgrounds),
-   so it vanishes on the light logo plate - recolor it to a flat monochrome. */
-.enk-logo-card img[src*="dangote"] { filter: brightness(0) opacity(0.7); }
-.enk-logo-card:hover img[src*="dangote"] { filter: brightness(0); opacity: 1; }
+   so it vanishes on the light logo plate - recolor it to Dangote red. */
+.enk-logo-card img[src*="dangote"] { filter: brightness(0) saturate(100%) invert(20%) sepia(90%) saturate(2000%) hue-rotate(350deg); }
 
 @media (prefers-reduced-motion: reduce) {
   .enk-marquee { animation: none; width: auto; flex-wrap: wrap; justify-content: center; }

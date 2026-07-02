@@ -3,23 +3,23 @@ import { SectionHeading } from "./SectionHeading";
 const steps = [
   {
     no: "01",
-    title: "Feasibility & route survey",
-    body: "Route walkover, geotechnical and bathymetric survey to fix the corridor, entry and exit points and the viable crossing method.",
+    title: "Feasibility & site survey",
+    body: "Route walkover, geotechnical and bathymetric survey to fix the corridor, entry and exit points and the viable installation method.",
   },
   {
     no: "02",
-    title: "Engineering & bore design",
-    body: "Bore profile, drilling-fluid programme and rig spread selected and engineered in-house to the pipe spec and ground model.",
+    title: "Engineering & method design",
+    body: "Crossing or pipeline method, spread and installation sequence engineered in-house to the pipe spec, ground model and marine conditions.",
   },
   {
     no: "03",
-    title: "HDD spread execution",
-    body: "Rig mobilised for pilot bore, reaming and swabbing passes, with drilling parameters and the as-drilled profile tracked throughout.",
+    title: "Mobilisation & execution",
+    body: "Spread mobilised and the works executed — drilling, welding, dredging or piling — with parameters and as-built progress tracked throughout.",
   },
   {
     no: "04",
-    title: "Pullback, tie-in & commissioning",
-    body: "Pre-fabricated string pulled back, tied in and hydrotested, then handed over with complete as-built records.",
+    title: "Tie-in, test & handover",
+    body: "The line is tied in, hydrotested and commissioned, then handed over with complete as-built records.",
   },
 ];
 
@@ -30,7 +30,7 @@ const steps = [
  */
 export function Process() {
   return (
-    <section id="process" className="enk-section">
+    <section id="process" className="enk-section" style={{ borderTop: "1px solid var(--enk-line-dark)" }}>
       <div className="enk-container">
         <SectionHeading
           kicker="How we deliver"
@@ -45,7 +45,7 @@ export function Process() {
               className="flex flex-col gap-3 p-7 lg:p-8"
               style={{ backgroundColor: "var(--enk-surface-card)" }}
             >
-              <span className="text-[14px] font-bold text-[var(--enk-accent-on-dark)]">
+              <span className="text-[14px] font-bold tabular-nums text-[var(--enk-accent-on-dark)]">
                 {s.no}
               </span>
               <h3 className="text-[18px] font-bold text-[var(--enk-on-dark)]">{s.title}</h3>
