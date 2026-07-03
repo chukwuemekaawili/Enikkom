@@ -787,8 +787,7 @@
 .group:hover .enk-readmore { color: var(--enk-accent-primary-on-dark); }
 .group:hover .enk-readmore svg, .group:hover .enk-readmore__arrow { transform: translateX(3px); }
 
-/* Legacy quick-link utility. Kept for older sections; the home solutions grid
-   lives in `SolutionsOverview.tsx`. */
+/* Legacy quick-link utility. Kept for older sections. */
 .enk-quicklink {
   display: flex; align-items: center; gap: 0.85rem;
   padding: 1rem 1.25rem; border-radius: var(--radius-control);

@@ -7,7 +7,6 @@ import { Capabilities } from "@/components/home/Capabilities";
 import { CaseStudies } from "@/components/home/CaseStudies";
 import { RecentOps } from "@/components/home/RecentOps";
 import { Qhse } from "@/components/home/Qhse";
-import { SolutionsOverview } from "@/components/home/SolutionsOverview";
 import { HomeFooter } from "@/components/home/HomeFooter";
 import { BackToTopButton } from "@/components/sections/BackToTopButton";
 
@@ -17,10 +16,9 @@ import { BackToTopButton } from "@/components/sections/BackToTopButton";
  * rest of the site is unaffected during the phased redesign.
  *
  * Each idea has one home, in a single deliberate narrative:
- *   Hero (value proposition) -> Solutions overview (outcome-framed router) ->
- *   Record benchmarks (three superlatives) ->
+ *   Hero (value proposition) -> Record benchmarks (three superlatives) ->
  *   Trust snapshot (track-record stats + client logos) ->
- *   Capabilities (discipline-by-discipline) ->
+ *   Capabilities (the single what-we-do router, photo-led) ->
  *   Case studies (flagship + project records) ->
  *   Recent operations (live works now) ->
  *   QHSE (safety & quality assurance).
@@ -53,7 +51,6 @@ export default function HomePage() {
 
       <main id="main">
         <HomeHero />
-        <SolutionsOverview />
         <FlagshipProof />
         <TrustSnapshot />
         <Capabilities />
