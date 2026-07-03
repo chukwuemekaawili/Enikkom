@@ -1,3 +1,8 @@
+// NOTE: these globs must stay `eager: true`. getAssetUrl() is called
+// synchronously during render (see enhanced-image.tsx, used on nearly every
+// page) — switching to lazy globs would return loader functions instead of
+// URLs and force every image call site onto an async/Suspense path. The
+// trade-off is a larger dev/prod module graph; it's deliberate, not oversight.
 const logoAssets = import.meta.glob("../assets/images/logos/*.{jpg,jpeg,png,svg}", {
   eager: true,
   import: "default",
@@ -47,6 +52,11 @@ function findAssetByFileName(
   return undefined;
 }
 
+// Deliberately non-throwing: exactAssetMap below is built by calling this at
+// module scope, so a throw here would crash the entire app on import — one
+// renamed or deleted image file would white-screen every page, not just the
+// one that references it. Warn and fall back to an empty src (the consuming
+// <img>/EnhancedImage renders its alt text / fallback UI) instead.
 function findRequiredAsset(
   collections: Array<Record<string, string>>,
   fileName: string,
@@ -54,7 +64,8 @@ function findRequiredAsset(
 ) {
   const asset = findAssetByFileName(collections, fileName);
   if (!asset) {
-    throw new Error(`Missing ${label} asset "${fileName}" in bundled collections.`);
+    console.warn(`[assets] Missing ${label} asset "${fileName}" in bundled collections.`);
+    return "";
   }
   return asset;
 }
