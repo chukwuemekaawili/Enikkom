@@ -65,7 +65,7 @@ export function CrossingScopeCta() {
                 borderRadius: "var(--radius-control)",
               }}
             >
-              View Project Records
+              Check Supporting Records
             </Link>
           </div>
         </div>

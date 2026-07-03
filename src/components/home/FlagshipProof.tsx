@@ -28,10 +28,14 @@ export function FlagshipProof() {
               id="records-heading"
               className="text-[clamp(1.35rem,3vw,2rem)] font-extrabold leading-tight text-[var(--enk-on-dark)]"
             >
-              The longest and largest crossings on the African record.
+              Record crossings, tied to named project evidence.
             </h2>
+            <p className="mt-4 text-[13px] leading-relaxed text-[var(--enk-on-dark-muted)]">
+              Benchmarks below link to project records with diameter, length,
+              client or stakeholder context, year, method, and delivery notes.
+            </p>
             <Link to="/projects" className="enk-readmore mt-6 inline-flex">
-              View all project records
+              View project records
               <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </div>
@@ -56,6 +60,14 @@ export function FlagshipProof() {
                 <p className="mt-1 text-[12px] leading-snug text-[var(--enk-on-dark-muted)]">
                   {a.context}
                 </p>
+                <Link
+                  to={a.evidenceHref}
+                  className="enk-readmore mt-3 text-[12px]"
+                  aria-label={`Open project record for ${a.label}: ${a.evidenceLabel}`}
+                >
+                  Project record: {a.evidenceLabel}
+                  <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+                </Link>
               </div>
             ))}
           </dl>

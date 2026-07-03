@@ -6,11 +6,9 @@ import enikkomLogoWhite from "@/assets/images/logos/enikkom-logo-white-trimmed.p
 
 const hddtecLogo = brand.hddtecLogo;
 
-/** Plain (non-dropdown) links inserted into the nav ahead of Contact. */
+/** Plain links that should stay visible without adding another dropdown. */
 const extraLinks: NavLink[] = [
-  { label: "Careers", href: "/careers" },
-  { label: "Sustainability", href: "/sustainability" },
-  { label: "News & Insights", href: "/news-insights" },
+  { label: "Resources", href: "/resources" },
 ];
 
 /**
@@ -23,7 +21,7 @@ function BrandLockup({ compact, onClick }: { compact: boolean; onClick?: () => v
   // baseline, separated by a clean divider, [ Enikkom ] | [ HDDTEC ].
   // Logo art is tightly trimmed (no dead padding) so these heights map to the
   // actual mark — keep them generous enough that the wordmark stays legible.
-  const h = compact ? 38 : 48;
+  const h = compact ? 32 : 40;
   return (
     <Link
       to="/"
@@ -71,7 +69,7 @@ function NavDropdown({ menu, active }: { menu: NavMenu; active: boolean }) {
           if (e.key === "Escape") setOpen(false);
           if (e.key === "ArrowDown") { e.preventDefault(); setOpen(true); }
         }}
-        className={`relative inline-flex h-11 shrink-0 items-center gap-1 whitespace-nowrap rounded-md px-2 text-[14px] font-medium transition-colors duration-150 focus-ring ${
+        className={`relative inline-flex h-10 shrink-0 items-center gap-1 whitespace-nowrap rounded-md px-2 text-[13px] font-medium transition-colors duration-150 focus-ring ${
           active ? "text-[var(--enk-on-dark)]" : "text-[var(--enk-on-dark-muted)] hover:text-[var(--enk-on-dark)]"
         }`}
       >
@@ -163,6 +161,14 @@ function MobileMenu({ onNavigate }: { onNavigate: () => void }) {
           {link.label}
         </Link>
       ))}
+      <Link
+        to="/contact"
+        onClick={onNavigate}
+        className="mt-3 flex min-h-[52px] w-full items-center justify-center rounded-md px-4 py-3 text-[16px] font-semibold focus-ring"
+        style={{ backgroundColor: "var(--enk-accent-primary)", color: "var(--enk-navy)" }}
+      >
+        Contact
+      </Link>
     </nav>
   );
 }
@@ -212,15 +218,15 @@ export function HomeHeader() {
       }}
     >
       <div className="enk-container">
-        <div className="flex h-[68px] items-center justify-between gap-4 md:h-[84px] xl:justify-start">
+        <div className="flex h-[60px] items-center justify-between gap-4 md:h-[72px] xl:justify-start">
           <BrandLockup compact={false} />
 
-          <nav aria-label="Primary" className="hidden xl:block xl:ml-10">
+          <nav aria-label="Primary" className="hidden xl:block xl:ml-8">
             <ul className="flex items-center gap-1">
               <li>
                 <Link
                   to="/"
-                  className={`relative inline-flex h-11 shrink-0 items-center whitespace-nowrap rounded-md px-2 text-[14px] font-medium transition-colors duration-150 focus-ring ${
+                  className={`relative inline-flex h-10 shrink-0 items-center whitespace-nowrap rounded-md px-2 text-[13px] font-medium transition-colors duration-150 focus-ring ${
                     location.pathname === "/"
                       ? "text-[var(--enk-on-dark)]"
                       : "text-[var(--enk-on-dark-muted)] hover:text-[var(--enk-on-dark)]"
@@ -243,7 +249,7 @@ export function HomeHeader() {
                 <li key={link.label}>
                   <Link
                     to={link.href}
-                    className={`relative inline-flex h-11 shrink-0 items-center whitespace-nowrap rounded-md px-2 text-[14px] font-medium transition-colors duration-150 focus-ring ${
+                    className={`relative inline-flex h-10 shrink-0 items-center whitespace-nowrap rounded-md px-2 text-[13px] font-medium transition-colors duration-150 focus-ring ${
                       location.pathname === link.href
                         ? "text-[var(--enk-on-dark)]"
                         : "text-[var(--enk-on-dark-muted)] hover:text-[var(--enk-on-dark)]"
@@ -263,9 +269,16 @@ export function HomeHeader() {
             <Link
               to="/search"
               aria-label="Search the site"
-              className="inline-flex h-11 w-11 items-center justify-center rounded-md text-[var(--enk-on-dark)] transition-colors hover:bg-white/10 focus-ring"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-md text-[var(--enk-on-dark)] transition-colors hover:bg-white/10 focus-ring"
             >
               <Search className="h-5 w-5" aria-hidden="true" />
+            </Link>
+            <Link
+              to="/contact"
+              className="hidden h-10 shrink-0 items-center justify-center rounded-md px-4 text-[13px] font-semibold transition-colors focus-ring xl:inline-flex"
+              style={{ backgroundColor: "var(--enk-accent-primary)", color: "var(--enk-navy)" }}
+            >
+              Contact
             </Link>
             <button
               type="button"
@@ -273,7 +286,7 @@ export function HomeHeader() {
               aria-expanded={open}
               aria-controls="mobile-nav"
               aria-label={open ? "Close menu" : "Open menu"}
-              className="inline-flex h-11 w-11 items-center justify-center rounded-md text-[var(--enk-on-dark)] transition-colors hover:bg-white/10 focus-ring xl:hidden"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-md text-[var(--enk-on-dark)] transition-colors hover:bg-white/10 focus-ring xl:hidden"
             >
               {open ? <X className="h-6 w-6" aria-hidden="true" /> : <Menu className="h-6 w-6" aria-hidden="true" />}
             </button>
@@ -282,7 +295,7 @@ export function HomeHeader() {
       </div>
 
       {open && (
-        <div id="mobile-nav" className="max-h-[calc(100vh-68px)] overflow-y-auto xl:hidden" style={{ backgroundColor: "var(--enk-navy)" }}>
+        <div id="mobile-nav" className="max-h-[calc(100vh-60px)] overflow-y-auto xl:hidden" style={{ backgroundColor: "var(--enk-navy)" }}>
           <MobileMenu onNavigate={() => setOpen(false)} />
         </div>
       )}

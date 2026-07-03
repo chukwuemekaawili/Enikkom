@@ -257,10 +257,10 @@ export default function ProjectsGalleryPage() {
                 onClick={() => setActiveCategory(category)}
                 className={`px-5 py-2 rounded-[var(--enk-radius)] text-[13px] font-medium transition-colors ${
                   activeCategory === category
-                    ? "text-white"
+                    ? "text-[var(--enk-navy)]"
                     : "bg-muted text-muted-foreground hover:bg-muted/80"
                 }`}
-                style={activeCategory === category ? { backgroundColor: "var(--enk-blue)" } : undefined}
+                style={activeCategory === category ? { backgroundColor: "var(--enk-accent-primary)" } : undefined}
               >
                 {category}
               </button>

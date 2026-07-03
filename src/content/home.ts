@@ -43,22 +43,33 @@ export const navMenus: NavMenu[] = [
     label: "Capabilities",
     href: "/capabilities",
     items: [
+      { label: "Capabilities Overview", href: "/capabilities" },
       { label: "Horizontal Directional Drilling", href: "/capabilities/hdd" },
       { label: "Pipeline & Flowline Construction", href: "/capabilities/pipelines-flowlines" },
       { label: "Dredging & Piling", href: "/capabilities/dredging-piling" },
       { label: "Production Facilities", href: "/capabilities/facilities" },
       { label: "Pipeline Security & Monitoring", href: "/capabilities/pipeline-security" },
       { label: "Project Management & Support", href: "/capabilities/project-management" },
-      { label: "View all capabilities", href: "/capabilities" },
     ],
   },
   {
     label: "Projects",
     href: "/projects",
     items: [
-      { label: "Selected Projects", href: "/projects" },
+      { label: "Featured Projects", href: "/projects" },
+      { label: "Full Project Record", href: "/projects#record" },
+      { label: "Project Gallery", href: "/projects#gallery" },
+      { label: "Project Locations", href: "/projects#map" },
       { label: "Flagship Case Study", href: "/projects/atlas-cove-mosimi" },
-      { label: "View all projects", href: "/projects" },
+    ],
+  },
+  {
+    label: "Equipment",
+    href: "/equipment",
+    items: [
+      { label: "Fleet Overview", href: "/equipment" },
+      { label: "HDD & Trenchless Equipment", href: "/equipment/hdd" },
+      { label: "Equipment Specifications", href: "/resources" },
     ],
   },
   {
@@ -77,10 +88,12 @@ export const navMenus: NavMenu[] = [
     label: "About",
     href: "/about",
     items: [
-      { label: "Enikkom Construction, Pipeline Works", href: "/about" },
-      { label: "HDDTEC, Trenchless Operations", href: "/about" },
-      { label: "Local Content & Indigenous Capacity", href: "/about" },
+      { label: "Company Overview", href: "/about" },
       { label: "Leadership", href: "/management-team" },
+      { label: "Partners & Affiliates", href: "/partners" },
+      { label: "Careers", href: "/careers" },
+      { label: "Sustainability", href: "/sustainability" },
+      { label: "News & Insights", href: "/news-insights" },
     ],
   },
 ];
@@ -111,6 +124,7 @@ export interface Capability {
   proof: string;
   href: string;
   image: string;
+  imageAlt: string;
 }
 
 export const capabilities: Capability[] = [
@@ -120,6 +134,7 @@ export const capabilities: Capability[] = [
     proof: "Trenchless river, road and swamp crossings up to 48-inch diameter and 12 km continuous drives.",
     href: "/capabilities/hdd",
     image: siteImageSelections.home.capabilityCards.hdd,
+    imageAlt: "HDD drilling rig working on a remote crossing corridor.",
   },
   {
     key: "pipelines",
@@ -127,6 +142,7 @@ export const capabilities: Capability[] = [
     proof: "100+ km of transmission and distribution pipeline installed, welded, coated and tied-in.",
     href: "/capabilities/pipelines-flowlines",
     image: siteImageSelections.home.capabilityCards.pipelines,
+    imageAlt: "Large-diameter pipeline laid along an active construction corridor.",
   },
   {
     key: "dredging",
@@ -134,6 +150,7 @@ export const capabilities: Capability[] = [
     proof: "Channel dredging, shore approach and marine piling for difficult-terrain corridors.",
     href: "/capabilities/dredging-piling",
     image: siteImageSelections.home.capabilityCards.dredging,
+    imageAlt: "Marine dredging and piling equipment operating near a shore approach.",
   },
   {
     key: "facilities",
@@ -141,6 +158,7 @@ export const capabilities: Capability[] = [
     proof: "Onshore and offshore flowlines, wellheads and integrated production facilities.",
     href: "/capabilities/facilities",
     image: siteImageSelections.home.capabilityCards.facilities,
+    imageAlt: "Oil and gas production facilities and wellhead infrastructure.",
   },
   {
     key: "security",
@@ -148,6 +166,7 @@ export const capabilities: Capability[] = [
     proof: "Right-of-way surveillance and integrity monitoring across active pipeline corridors.",
     href: "/capabilities/pipeline-security",
     image: siteImageSelections.services.security,
+    imageAlt: "Pipeline right-of-way inspection and monitoring activity.",
   },
   {
     key: "pm",
@@ -155,6 +174,7 @@ export const capabilities: Capability[] = [
     proof: "Single-point EPCI delivery: engineering, procurement, fabrication, construction and installation.",
     href: "/capabilities/project-management",
     image: siteImageSelections.capabilities.projectManagement,
+    imageAlt: "Project management and field support team coordinating construction works.",
   },
 ];
 
@@ -162,6 +182,8 @@ export interface Achievement {
   value: string;
   label: string;
   context: string;
+  evidenceLabel: string;
+  evidenceHref: string;
 }
 
 /** Record achievements, sourced benchmarks. */
@@ -170,16 +192,22 @@ export const achievements: Achievement[] = [
     value: "3.1 km",
     label: "Africa's longest single HDD drill",
     context: '16" Arepo/Imagbon line, Atlas Cove-Mosimi pipeline (completed April 2016).',
+    evidenceLabel: "Atlas Cove-Mosimi record",
+    evidenceHref: "/projects/atlas-cove-mosimi",
   },
   {
     value: "12 km",
     label: "Nigeria's longest Continuous HDD",
     context: '10" OML34 continuous drive delivered for NPDC (2021).',
+    evidenceLabel: "OML34 CHDD record",
+    evidenceHref: "/projects/oml34-chdd",
   },
   {
     value: '48"',
     label: "Largest-diameter river crossing",
     context: "OB3 River Niger 48-inch Direct Pipe installation.",
+    evidenceLabel: "OB3 River Niger record",
+    evidenceHref: "/projects/ob3-river-niger",
   },
 ];
 
@@ -189,6 +217,7 @@ export interface Project {
   challenge: string;
   result: string;
   image: string;
+  imageAlt: string;
   href: string;
   feature?: boolean;
   method?: string;
@@ -203,6 +232,7 @@ export const projects: Project[] = [
     challenge: 'Installed a 10" line as a single continuous bore, Nigeria\'s longest CHDD.',
     result: '10" × 12 km',
     image: projImg("oml34-chdd") as string,
+    imageAlt: "OML34 Continuous HDD field operation for a 10-inch continuous bore.",
     href: "/projects/oml34-chdd",
     feature: true,
     method: "Continuous HDD",
@@ -213,6 +243,7 @@ export const projects: Project[] = [
     challenge: "Swamp / lagoon crossing for Dangote Fertilizer through soft, variable ground.",
     result: '36" × 2 km',
     image: projImg("dangote-lagoon") as string,
+    imageAlt: "Dangote Fertilizer lagoon crossing works through soft swamp terrain.",
     href: "/projects/dangote-lagoon",
     method: "HDD",
     terrain: "Swamp / lagoon",
@@ -223,6 +254,7 @@ export const projects: Project[] = [
     challenge: "Heavy-diameter crossing, the largest pipeline crossing in Nigeria.",
     result: '40" × 760 m',
     image: projImg("yenagoa-40-crossing") as string,
+    imageAlt: "Yenagoa heavy-diameter HDD crossing construction site.",
     href: "/projects/yenagoa-40-crossing",
     method: "HDD",
   },
@@ -232,6 +264,7 @@ export const projects: Project[] = [
     challenge: 'Bundled 12"+3" multi-line HDD crossing for Saipem / SPDC.',
     result: "2.78 km bundled",
     image: projImg("otumara-escravos") as string,
+    imageAlt: "Bundled HDD pipeline crossing works in swamp terrain.",
     href: "/projects/otumara-escravos",
     method: "HDD (bundled)",
     terrain: "Swamp",
@@ -243,6 +276,7 @@ export const flagship = {
   client: "NNPC / PPMC",
   image: (getProjectImage("atlas-cove-mosimi", "homeFeature") ||
     getProjectImage("atlas-cove-mosimi", "hero")) as string,
+  imageAlt: "Atlas Cove-Mosimi HDD crossing works for the 16-inch by 3.1-kilometre pipeline record.",
   challenge:
     "Install a 16-inch line across the Arepo/Imagbon corridor as a single continuous HDD bore, the longest single drill attempted in Africa.",
   method:
@@ -345,37 +379,44 @@ export const faqs: Faq[] = [
  */
 export interface RecentOp {
   image: string;
+  imageAlt: string;
   category: string;
   caption: string;
 }
 export const recentOps: RecentOp[] = [
   {
     image: selectedRecentImage("op-02.jpg"),
+    imageAlt: "Directional drilling rig positioned on a live trenchless crossing site.",
     category: "HDD",
     caption: "Directional drilling rig on station for a live trenchless crossing.",
   },
   {
     image: selectedRecentImage("op-01.jpg"),
+    imageAlt: "HDD spread mobilised with equipment and crew at a project front.",
     category: "HDD",
     caption: "HDD spread mobilised to a new project front.",
   },
   {
     image: selectedRecentImage("op-04.jpg"),
+    imageAlt: "Pipeline installation along a built-up road corridor.",
     category: "Pipelines",
     caption: "Pipe-laying along a built-up road corridor.",
   },
   {
     image: selectedRecentImage("op-05.jpg"),
+    imageAlt: "Crew stringing and aligning line pipe on an active corridor.",
     category: "Pipelines",
     caption: "Crew stringing and aligning line pipe on a live corridor.",
   },
   {
     image: selectedRecentImage("op-07.jpg"),
+    imageAlt: "Entry-side trenchless works under live infrastructure.",
     category: "Trenchless",
     caption: "Entry-side works supporting a crossing under live infrastructure.",
   },
   {
     image: selectedRecentImage("op-08.jpg"),
+    imageAlt: "Excavation and pipe installation in a constrained urban setting.",
     category: "Pipelines",
     caption: "Excavation and pipe installation in a constrained urban setting.",
   },

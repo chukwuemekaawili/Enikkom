@@ -1,13 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { RecentOps } from "@/components/home/RecentOps";
 import { Layout } from "@/components/layout";
 import { Hero, CTABand, CaseStudyCard } from "@/components/sections";
+import { InteractiveProjectMap } from "@/components/sections/InteractiveProjectMap";
 import { EditableText } from "@/components/content";
 import { getProjectImage } from "@/content/projectImageSelections";
 import { siteImageSelections } from "@/content/siteImageSelections";
 import { usePageContent, useCollection } from "@/hooks/useSiteSettings";
 import { EnhancedImage } from "@/components/ui/enhanced-image";
+import { Button } from "@/components/ui/button";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { motion } from "framer-motion";
+import { useLocation } from "react-router-dom";
+import { completedProjects, projectTypes } from "./CompletedProjectsPage";
 
 const projectTags = ["All", "HDD", "Pipeline", "Dredging", "CHDD", "Shore Approach"];
 
@@ -185,6 +190,8 @@ function resolveProjectListThumbnail(project: { slug?: string; href?: string; th
 
 export default function ProjectsPage() {
   const [activeFilter, setActiveFilter] = useState("All");
+  const [activeRecordFilter, setActiveRecordFilter] = useState("All");
+  const location = useLocation();
   const { content } = usePageContent('projects');
   const heroContent = content.hero || {};
   const recordsContent = content.records || {};
@@ -201,6 +208,18 @@ export default function ProjectsPage() {
   const filteredProjects = activeFilter === "All"
     ? projects
     : projects.filter((p) => p.tags.includes(activeFilter));
+
+  const filteredRecordProjects = activeRecordFilter === "All"
+    ? completedProjects
+    : completedProjects.filter((p) => p.type === activeRecordFilter);
+
+  useEffect(() => {
+    if (!location.hash) return;
+
+    window.requestAnimationFrame(() => {
+      document.getElementById(location.hash.slice(1))?.scrollIntoView({ block: "start" });
+    });
+  }, [location.hash]);
 
   return (
     <Layout>
@@ -261,6 +280,82 @@ export default function ProjectsPage() {
                 index={index}
               />
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Full Record Section */}
+      <section className="section-padding bg-muted/30 scroll-mt-24" id="record">
+        <div className="container-wide">
+          <motion.div
+            className="mx-auto mb-10 max-w-2xl text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <p className="enk-kicker justify-center mb-3">Full Record</p>
+            <h2 className="mb-3">Completed Project Record</h2>
+            <p className="text-[14px] md:text-[15px] text-muted-foreground">
+              A consolidated record of major HDD, pipeline, shore approach, dredging, and facilities work delivered across Nigeria.
+            </p>
+          </motion.div>
+
+          <div className="mb-8 flex flex-wrap justify-center gap-2">
+            {projectTypes.map((type) => (
+              <Button
+                key={type}
+                variant={activeRecordFilter === type ? "default" : "outline"}
+                size="sm"
+                onClick={() => setActiveRecordFilter(type)}
+                style={activeRecordFilter === type ? { backgroundColor: "var(--enk-accent-primary)", color: "var(--enk-navy)" } : undefined}
+              >
+                {type}
+              </Button>
+            ))}
+          </div>
+
+          <p className="mb-4 text-center text-[13px] text-muted-foreground">
+            Showing {filteredRecordProjects.length} {activeRecordFilter === "All" ? "recorded" : activeRecordFilter} projects
+          </p>
+
+          <div className="md:hidden mb-2 flex items-center justify-center gap-1 text-center text-xs text-muted-foreground">
+            <span>Scroll horizontally to see all columns</span>
+          </div>
+
+          <div className="overflow-x-auto rounded-lg border border-border bg-background">
+            <Table>
+              <TableHeader>
+                <TableRow className="bg-muted/50">
+                  <TableHead className="sticky left-0 w-16 bg-muted/50">Year</TableHead>
+                  <TableHead className="w-24">Client</TableHead>
+                  <TableHead className="min-w-[220px]">Project</TableHead>
+                  <TableHead className="min-w-[190px]">Scope</TableHead>
+                  <TableHead className="min-w-[130px]">Location</TableHead>
+                  <TableHead className="w-20">Size</TableHead>
+                  <TableHead className="w-20">Length</TableHead>
+                  <TableHead className="w-28">Type</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {filteredRecordProjects.map((project, i) => (
+                  <TableRow key={`${project.year}-${project.project}-${i}`} className="hover:bg-muted/30">
+                    <TableCell className="sticky left-0 bg-background font-medium">{project.year}</TableCell>
+                    <TableCell className="whitespace-nowrap font-medium text-primary">{project.client}</TableCell>
+                    <TableCell className="font-medium">{project.project}</TableCell>
+                    <TableCell className="text-sm text-muted-foreground">{project.scope}</TableCell>
+                    <TableCell className="whitespace-nowrap text-sm">{project.location}</TableCell>
+                    <TableCell className="text-sm">{project.size}</TableCell>
+                    <TableCell className="text-sm">{project.length}</TableCell>
+                    <TableCell>
+                      <span className="inline-block whitespace-nowrap rounded bg-muted px-2 py-1 text-xs font-medium">
+                        {project.type}
+                      </span>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
           </div>
         </div>
       </section>
@@ -326,7 +421,7 @@ export default function ProjectsPage() {
       </section>
 
       {/* Gallery Section */}
-      <section className="section-padding-sm bg-muted/30" id="gallery">
+      <section className="section-padding-sm bg-muted/30 scroll-mt-24" id="gallery">
         <div className="container-wide">
           <motion.div
             className="text-center"
@@ -384,6 +479,30 @@ export default function ProjectsPage() {
       </section>
 
       <RecentOps />
+
+      <section className="section-padding bg-background scroll-mt-24" id="map">
+        <div className="container-wide">
+          <motion.div
+            className="mx-auto mb-10 max-w-2xl text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <p className="enk-kicker justify-center mb-3">Locations</p>
+            <h2 className="mb-3">Project Footprint</h2>
+            <p className="text-[14px] md:text-[15px] text-muted-foreground">
+              Explore delivered projects across Nigeria's major oil and gas regions.
+            </p>
+          </motion.div>
+        </div>
+        <InteractiveProjectMap
+          showHeader={false}
+          showStats={true}
+          showFilters={true}
+          maxHeight="600px"
+        />
+      </section>
 
       <CTABand
         headline={content.cta?.headline || "Your Project Could Be Next"}

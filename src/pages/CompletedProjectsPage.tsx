@@ -9,7 +9,7 @@ import { EditableText } from "@/components/content";
 import { siteImageSelections } from "@/content/siteImageSelections";
 
 // Verified project data from approved Enikkom source documents
-const completedProjects = [
+export const completedProjects = [
   // HDD Projects
   { year: "2024", client: "NPDC", project: "16\" & 6\" Nun River Dual HDD Crossing", scope: "Dual HDD crossing under Nun River", location: "Niger Delta", type: "HDD", size: "16\" & 6\"", length: "Dual" },
   { year: "2021", client: "NPDC / ND Western", project: "OML34 Continuous HDD, 10\" × 12km", scope: "Nigeria's longest CHDD, record breaking", location: "Utorogun, Delta State", type: "HDD", size: "10\"", length: "12km" },
@@ -38,7 +38,7 @@ const completedProjects = [
   { year: "2009", client: "NIPCO", project: "NIPCO Ibafo Depot, Phase 1", scope: "Initial depot construction", location: "Ogun State", type: "Facilities", size: "N/A", length: "N/A" },
 ];
 
-const projectTypes = ["All", "HDD", "Pipeline", "Shore Approach", "Dredging", "Facilities"];
+export const projectTypes = ["All", "HDD", "Pipeline", "Shore Approach", "Dredging", "Facilities"];
 
 export default function CompletedProjectsPage() {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -163,7 +163,7 @@ export default function CompletedProjectsPage() {
                 variant={activeFilter === type ? "default" : "outline"}
                 size="sm"
                 onClick={() => setActiveFilter(type)}
-                style={activeFilter === type ? { backgroundColor: "var(--enk-blue)", color: "white" } : undefined}
+                style={activeFilter === type ? { backgroundColor: "var(--enk-accent-primary)", color: "var(--enk-navy)" } : undefined}
               >
                 {type}
               </Button>

@@ -2,18 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { flagship, projects, type Project } from "@/content/home";
 import { SectionHeading } from "./SectionHeading";
-
-/** Compact fact pill — method, terrain, or other short descriptor. */
-function FactPill({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="flex flex-col gap-0.5">
-      <span className="text-[10px] font-bold uppercase tracking-wider text-[var(--enk-on-dark-muted)]">
-        {label}
-      </span>
-      <span className="text-[13px] font-semibold text-[var(--enk-on-dark)]">{value}</span>
-    </div>
-  );
-}
+import { EnhancedImage } from "@/components/ui/enhanced-image";
 
 function ProjectRecord({ project }: { project: Project }) {
   return (
@@ -22,16 +11,18 @@ function ProjectRecord({ project }: { project: Project }) {
       className="enk-card enk-card--hover group flex flex-col overflow-hidden focus-ring"
     >
       <div className="relative aspect-[4/3] overflow-hidden enk-photo-wrap">
-        <img
+        <EnhancedImage
           src={project.image}
-          alt={project.name}
+          alt={project.imageAlt}
+          wrapperClassName="h-full w-full"
           loading="lazy"
-          decoding="async"
-          className="h-full w-full object-cover enk-photo--card transition-transform duration-300 ease-out group-hover:scale-105"
+          className="enk-photo--card"
+          hoverZoom
+          fallbackLabel={project.name}
         />
       </div>
 
-      <div className="flex flex-1 flex-col p-6" style={{ backgroundColor: "var(--enk-surface-card)" }}>
+      <div className="flex flex-1 flex-col p-5" style={{ backgroundColor: "var(--enk-surface-card)" }}>
         <span className="text-[11px] font-semibold text-[var(--enk-on-dark-muted)]">
           {project.location}
         </span>
@@ -48,22 +39,7 @@ function ProjectRecord({ project }: { project: Project }) {
           {project.result}
         </p>
 
-        {/* Technical metadata row — only renders fields that exist */}
-        {(project.method || project.terrain) && (
-          <div
-            className="mt-4 flex flex-wrap gap-x-6 gap-y-3 border-t pt-4"
-            style={{ borderColor: "var(--enk-line-dark)" }}
-          >
-            {project.method && <FactPill label="Method" value={project.method} />}
-            {project.terrain && <FactPill label="Terrain" value={project.terrain} />}
-          </div>
-        )}
-
-        <p className="mt-4 flex-1 text-[13px] leading-relaxed text-[var(--enk-on-dark-muted)]">
-          {project.challenge}
-        </p>
-
-        <span className="enk-readmore mt-5">
+        <span className="enk-readmore mt-4">
           View project record
           <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
         </span>
@@ -83,12 +59,14 @@ function FlagshipRecord() {
       to={flagship.href}
       className="enk-card enk-card--hover group relative flex min-h-[440px] flex-col justify-end overflow-hidden focus-ring lg:min-h-full"
     >
-      <img
+      <EnhancedImage
         src={flagship.image}
-        alt={flagship.name}
+        alt={flagship.imageAlt}
+        wrapperClassName="absolute inset-0 h-full w-full"
         loading="lazy"
-        decoding="async"
-        className="absolute inset-0 h-full w-full object-cover enk-photo--hero transition-transform duration-300 ease-out group-hover:scale-105"
+        className="enk-photo--hero"
+        hoverZoom
+        fallbackLabel={flagship.name}
       />
       {/* Navy scrim, dense at the base for text legibility over any photo. */}
       <div
@@ -151,6 +129,8 @@ function FlagshipRecord() {
  * with diameter, length, method, and terrain where available.
  */
 export function CaseStudies() {
+  const featuredProjects = projects.slice(0, 2);
+
   return (
     <section
       id="projects"
@@ -161,13 +141,13 @@ export function CaseStudies() {
         <SectionHeading
           kicker="Project records"
           title="Crossings delivered, measured outcomes"
-          intro="Selected HDD and pipeline projects executed for Nigeria's major operators and EPC partners. Specifications and outcomes are sourced from project records."
+          intro="Selected HDD and pipeline projects executed for Nigeria's major operators and EPC partners."
         />
 
         <div className="mt-12 grid gap-5 lg:grid-cols-2 lg:items-stretch">
           <FlagshipRecord />
           <div className="grid gap-5 sm:grid-cols-2">
-            {projects.map((p) => (
+            {featuredProjects.map((p) => (
               <ProjectRecord key={p.name} project={p} />
             ))}
           </div>
@@ -175,7 +155,7 @@ export function CaseStudies() {
 
         <div className="mt-10">
           <Link to="/projects" className="enk-btn enk-btn--outline">
-            View all project records
+            Open project records
             <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
           </Link>
         </div>

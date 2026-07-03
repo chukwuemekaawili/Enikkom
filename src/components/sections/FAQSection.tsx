@@ -25,8 +25,8 @@ const faqs = [
     answer: "QHSE is embedded into our operating model. We adhere to ISO-aligned systems, conduct rigorous pre-mobilisation checks, and enforce strict site safety protocols across every project site.",
   },
   {
-    question: "How can we request a project assessment?",
-    answer: "You can request an assessment by sharing your project scope via our contact form or directly reaching out to our engineering team on WhatsApp. We typically review the terrain, pipe specifications, and crossing length to provide an initial feasibility overview and discuss the next steps.",
+    question: "Where can company contact details be found?",
+    answer: "Company contact details are available on the contact page and official communication channels. The website is mainly a reference point for capabilities, project history, QHSE information, and company background.",
   },
 ];
 

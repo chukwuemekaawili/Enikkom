@@ -2,17 +2,20 @@ import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { recentOps, type RecentOp } from "@/content/home";
 import { SectionHeading } from "./SectionHeading";
+import { EnhancedImage } from "@/components/ui/enhanced-image";
 
 function OpCard({ op }: { op: RecentOp }) {
   return (
     <article className="enk-card enk-card--hover group overflow-hidden">
       <div className="relative aspect-[4/3] overflow-hidden enk-photo-wrap">
-        <img
+        <EnhancedImage
           src={op.image}
-          alt=""
+          alt={op.imageAlt}
+          wrapperClassName="h-full w-full"
           loading="lazy"
-          decoding="async"
-          className="h-full w-full object-cover enk-photo--card transition-transform duration-300 ease-out group-hover:scale-105"
+          className="enk-photo--card"
+          hoverZoom
+          fallbackLabel={op.category}
         />
       </div>
       <div className="flex flex-col p-5" style={{ backgroundColor: "var(--enk-surface-card)" }}>
@@ -31,17 +34,19 @@ function OpCard({ op }: { op: RecentOp }) {
  * reusing the same navy/gold card theme and cover-crop.
  */
 export function RecentOps() {
+  const visibleOps = recentOps.slice(0, 3);
+
   return (
     <section id="recent" className="enk-section">
       <div className="enk-container">
         <SectionHeading
-          kicker="On site now"
+          kicker="Latest field updates"
           title="Recent operations"
-          intro="A look at current works, directional drilling, pipeline construction and crossing operations underway on active project fronts in 2026."
+          intro="Current HDD, pipeline and crossing activity from active project fronts."
         />
 
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {recentOps.map((op) => (
+        <div className="mt-10 grid gap-5 md:grid-cols-3">
+          {visibleOps.map((op) => (
             <OpCard key={op.image} op={op} />
           ))}
         </div>

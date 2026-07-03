@@ -23,7 +23,7 @@ export function Fpic() {
               <div key={p.title} className="flex flex-col gap-4 p-8" style={{ backgroundColor: "var(--enk-navy-2)" }}>
                 <span
                   className="inline-flex h-11 w-11 items-center justify-center rounded-md"
-                  style={{ backgroundColor: "rgba(110, 168, 255, 0.16)", color: "var(--enk-gold)" }}
+                  style={{ backgroundColor: "var(--enk-accent-subtle)", color: "var(--enk-gold)" }}
                   aria-hidden="true"
                 >
                   <Icon className="h-6 w-6" />

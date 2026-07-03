@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { MotionConfig } from "framer-motion";
 import { PublicErrorBoundary } from "@/components/layout/PublicErrorBoundary";
@@ -17,19 +17,14 @@ const ProjectsPage = React.lazy(() => import("./pages/ProjectsPage"));
 const ProjectDetailPage = React.lazy(() => import("./pages/ProjectDetailPage"));
 const EquipmentPage = React.lazy(() => import("./pages/EquipmentPage"));
 const HDDEquipmentPage = React.lazy(() => import("./pages/HDDEquipmentPage"));
-const CompletedProjectsPage = React.lazy(() => import("./pages/CompletedProjectsPage"));
 const HSEQualityPage = React.lazy(() => import("./pages/HSEQualityPage"));
 const CareersPage = React.lazy(() => import("./pages/CareersPage"));
 const SustainabilityPage = React.lazy(() => import("./pages/SustainabilityPage"));
 const NewsInsightsPage = React.lazy(() => import("./pages/NewsInsightsPage"));
 const SearchPage = React.lazy(() => import("./pages/SearchPage"));
 const ContactPage = React.lazy(() => import("./pages/ContactPage"));
-const ServicesPage = React.lazy(() => import("./pages/ServicesPage"));
 const ManagementPage = React.lazy(() => import("./pages/ManagementPage"));
 const TestimonialsPage = React.lazy(() => import("./pages/TestimonialsPage"));
-const GalleryPage = React.lazy(() => import("./pages/GalleryPage"));
-const ProjectsGalleryPage = React.lazy(() => import("./pages/ProjectsGalleryPage"));
-const ProjectMapPage = React.lazy(() => import("./pages/ProjectMapPage"));
 const ResourcesPage = React.lazy(() => import("./pages/ResourcesPage"));
 const PartnersPage = React.lazy(() => import("./pages/PartnersPage"));
 const PrivacyPage = React.lazy(() => import("./pages/PrivacyPage"));
@@ -60,8 +55,8 @@ const App = () => (
                 {/* Public routes */}
                 <Route path="/" element={<PublicErrorBoundary><HomePage /></PublicErrorBoundary>} />
                 <Route path="/about" element={<PublicErrorBoundary><AboutPage /></PublicErrorBoundary>} />
-                <Route path="/services" element={<PublicErrorBoundary><ServicesPage /></PublicErrorBoundary>} />
-                <Route path="/our-services" element={<PublicErrorBoundary><ServicesPage /></PublicErrorBoundary>} />
+                <Route path="/services" element={<Navigate to="/capabilities" replace />} />
+                <Route path="/our-services" element={<Navigate to="/capabilities" replace />} />
                 <Route path="/capabilities" element={<PublicErrorBoundary><CapabilitiesPage /></PublicErrorBoundary>} />
                 <Route path="/capabilities/:slug" element={<PublicErrorBoundary><CapabilityDetailPage /></PublicErrorBoundary>} />
                 <Route path="/projects" element={<PublicErrorBoundary><ProjectsPage /></PublicErrorBoundary>} />
@@ -70,10 +65,10 @@ const App = () => (
                 <Route path="/equipment" element={<PublicErrorBoundary><EquipmentPage /></PublicErrorBoundary>} />
                 <Route path="/equipment/hdd" element={<PublicErrorBoundary><HDDEquipmentPage /></PublicErrorBoundary>} />
                 <Route path="/hdd-equipment" element={<PublicErrorBoundary><HDDEquipmentPage /></PublicErrorBoundary>} />
-                <Route path="/completed-projects" element={<PublicErrorBoundary><CompletedProjectsPage /></PublicErrorBoundary>} />
-                <Route path="/gallery" element={<PublicErrorBoundary><GalleryPage /></PublicErrorBoundary>} />
-                <Route path="/projects-gallery" element={<PublicErrorBoundary><ProjectsGalleryPage /></PublicErrorBoundary>} />
-                <Route path="/project-map" element={<PublicErrorBoundary><ProjectMapPage /></PublicErrorBoundary>} />
+                <Route path="/completed-projects" element={<Navigate to="/projects#record" replace />} />
+                <Route path="/gallery" element={<Navigate to="/projects#gallery" replace />} />
+                <Route path="/projects-gallery" element={<Navigate to="/projects#gallery" replace />} />
+                <Route path="/project-map" element={<Navigate to="/projects#map" replace />} />
                 <Route path="/hse-quality" element={<PublicErrorBoundary><HSEQualityPage /></PublicErrorBoundary>} />
                 <Route path="/testimonials" element={<PublicErrorBoundary><TestimonialsPage /></PublicErrorBoundary>} />
                 <Route path="/resources" element={<PublicErrorBoundary><ResourcesPage /></PublicErrorBoundary>} />

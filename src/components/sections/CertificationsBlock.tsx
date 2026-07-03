@@ -53,7 +53,7 @@ export function CertificationsBlock({
             <div key={cert.name} className="enk-card p-7 text-center">
               <div
                 className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-md"
-                style={{ backgroundColor: "rgba(37, 99, 235, 0.12)", color: "var(--enk-bronze)" }}
+                style={{ backgroundColor: "var(--enk-accent-subtle)", color: "var(--enk-bronze)" }}
                 aria-hidden="true"
               >
                 <Award className="h-7 w-7" />

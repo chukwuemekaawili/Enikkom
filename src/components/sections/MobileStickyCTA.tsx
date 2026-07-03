@@ -47,7 +47,7 @@ export function MobileStickyCTA({
               <Link
                 to={href}
                 className="flex flex-1 items-center justify-center gap-2 rounded-[var(--enk-radius)] px-5 py-3 text-[13px] font-bold uppercase tracking-[0.1em] transition-all active:scale-[0.98]"
-                style={{ backgroundColor: "var(--enk-gold)", color: "var(--enk-navy)" }}
+                style={{ backgroundColor: "var(--enk-accent-primary)", color: "var(--enk-navy)" }}
               >
                 {label}
                 <ArrowRight className="h-4 w-4" />
