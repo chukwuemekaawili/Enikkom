@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { FileText, Eye, Mail } from "lucide-react";
 import { qhse, certifications, kpis, contact } from "@/content/home";
 import { SectionHeading } from "./SectionHeading";
@@ -54,7 +55,7 @@ export function Qhse() {
                       rel="noopener noreferrer"
                       title={`${c.name} — view document`}
                       aria-label={`${c.code} ${c.name}, view document`}
-                      className="enk-chip transition-colors hover:border-[var(--enk-accent-primary-on-dark)] hover:text-[var(--enk-blue)] focus-ring"
+                      className="enk-chip transition-colors hover:border-[var(--enk-accent-primary-on-dark)] hover:text-[var(--enk-accent-primary-on-dark)] focus-ring"
                     >
                       {c.code}
                       <Eye className="h-3.5 w-3.5" aria-hidden="true" />
@@ -66,18 +67,23 @@ export function Qhse() {
               </div>
             </div>
 
-            {/* Request credentials CTA — for prequalification packs not available direct download */}
+            {/* Request credentials CTA — routes to the contact form (works on
+                machines without a mail client); direct email kept as fallback. */}
             <div className="mt-8">
-              <a
-                href={CREDENTIALS_MAILTO}
+              <Link
+                to="/contact"
                 className="enk-readmore"
-                aria-label="Request QHSE credentials by email"
+                aria-label="Request QHSE credentials via the contact page"
               >
                 <Mail className="h-4 w-4" aria-hidden="true" />
                 Request QHSE credentials
-              </a>
+              </Link>
               <p className="mt-1.5 text-[12px] text-[var(--enk-steel)]">
-                Full prequalification pack available on request.
+                Full prequalification pack available on request, or{" "}
+                <a href={CREDENTIALS_MAILTO} className="underline underline-offset-2 hover:text-[var(--enk-accent-primary-on-dark)] focus-ring">
+                  email us directly
+                </a>
+                .
               </p>
             </div>
           </div>
@@ -100,7 +106,7 @@ export function Qhse() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`${p.label} — open PDF`}
-                    className="flex items-center justify-between gap-4 py-4 transition-colors hover:text-[var(--enk-blue)] focus-ring"
+                    className="flex items-center justify-between gap-4 py-4 transition-colors hover:text-[var(--enk-accent-primary-on-dark)] focus-ring"
                   >
                     <span className="text-[15px] font-medium text-[var(--enk-ink)]">{p.label}</span>
                     <span className="flex shrink-0 items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider text-[var(--enk-steel)]">

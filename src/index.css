@@ -12,16 +12,14 @@
 
 @layer base {
   :root {
-    /* Brand Colors - Premium Corporate Blue + Industrial Amber */
-    --brand-primary: 217 84% 50%;
-    --brand-primary-hover: 217 84% 42%;
-    --brand-cyan: 195 80% 50%;
+    /* Brand Colors - muted industrial amber + disciplined neutrals */
+    --brand-primary: 43 87% 41%;
+    --brand-primary-hover: 43 87% 35%;
+    --brand-cyan: 43 87% 41%;
     --brand-red: 6 78% 52%;
-    /* Amber/bronze retired — repointed to the single blue accent so any legacy
-       markup using these tokens renders in-system instead of off-palette. */
-    --brand-amber: 217 84% 50%;
-    --brand-amber-hover: 217 84% 42%;
-    --brand-bronze: 217 78% 40%;
+    --brand-amber: 43 87% 41%;
+    --brand-amber-hover: 43 87% 35%;
+    --brand-bronze: 43 64% 51%;
 
     /* Neutrals - DARK (whole site is now dark; shadcn semantic tokens flipped
        so any component using text-foreground / bg-card / bg-muted / border
@@ -45,8 +43,8 @@
     --popover: 210 19% 16%;
     --popover-foreground: 0 0% 88%;
 
-    --primary: 217 84% 53%;      /* #2563EB steel blue */
-    --primary-foreground: 0 0% 100%;
+    --primary: 43 87% 41%;       /* #C4900E muted industrial amber */
+    --primary-foreground: 210 18% 14%;
 
     --secondary: 210 18% 20%;
     --secondary-foreground: 0 0% 88%;
@@ -54,7 +52,7 @@
     --muted: 210 18% 18%;
     --muted-foreground: 210 9% 75%;  /* #B8BEC4 */
 
-    --accent: 213 100% 71%;      /* #6EA8FF accent-on-dark */
+    --accent: 43 64% 51%;        /* #D4A832 readable amber accent-on-dark */
     --accent-foreground: 210 18% 14%;
 
     --destructive: 357 82% 53%;
@@ -62,19 +60,19 @@
 
     --border: 210 18% 22%;
     --input: 210 18% 24%;
-    --ring: 213 100% 71%;
+    --ring: 43 64% 51%;
 
     --radius: 0.75rem;
 
     /* Sidebar */
     --sidebar-background: 220 60% 10%;
     --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 221 83% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 221 83% 60%;
-    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-primary: 43 87% 41%;
+    --sidebar-primary-foreground: 210 18% 14%;
+    --sidebar-accent: 43 64% 51%;
+    --sidebar-accent-foreground: 210 18% 14%;
     --sidebar-border: 220 40% 18%;
-    --sidebar-ring: 221 83% 48%;
+    --sidebar-ring: 43 64% 51%;
 
     /* 2026 Premium Elevation System */
     --shadow-xs: 0 1px 2px rgba(12, 18, 24, 0.03);
@@ -82,7 +80,7 @@
     --shadow-md: 0 12px 30px rgba(12, 18, 24, 0.06);
     --shadow-lg: 0 24px 60px rgba(12, 18, 24, 0.08);
     --shadow-xl: 0 40px 100px rgba(12, 18, 24, 0.1);
-    --shadow-glow: 0 0 0 1px rgba(37, 99, 235, 0.18), 0 10px 30px rgba(37, 99, 235, 0.14);
+    --shadow-glow: 0 0 0 1px rgba(196, 144, 14, 0.16), 0 10px 30px rgba(196, 144, 14, 0.12);
 
     /* Premium Spacing Scale */
     --space-1: 0.25rem;   /* 4px */
@@ -566,7 +564,7 @@
   select:focus-visible,
   [role="button"]:focus-visible,
   [tabindex]:focus-visible {
-    outline: 2px solid var(--color-accent-on-dark, #6EA8FF);
+    outline: 2px solid var(--color-accent-on-dark, #D4A832);
     outline-offset: 2px;
     border-radius: 4px;
   }
@@ -604,7 +602,8 @@
 
 /* ============================================================
    ENIKKOM REDESIGN 2026  -  scoped design system (.enk)
-   OKLCH tokens · navy/steel/blue · gold(dark) / bronze(light)
+   Navy / graphite / muted industrial amber. The accent is warm and
+   high-contrast without the pure Shell-yellow feel.
    Tier-1 EPC / procurement-grade. Squared, industrial, AA.
    ============================================================ */
 
@@ -631,9 +630,9 @@
   --color-text:          #E0E0E0;  /* off-white text on all dark surfaces */
   --color-text-muted:    #B8BEC4;
   --color-text-on-light: #13171B;  /* text inside light logo tiles / forms */
-  --color-accent:         #2563EB; /* fills/buttons (white text on top) */
-  --color-accent-hover:   #1D4FD8;
-  --color-accent-on-dark: #6EA8FF; /* links/icons/small text ON navy (WCAG) */
+  --color-accent:         #C4900E; /* muted amber fills, dark text on top */
+  --color-accent-hover:   #A67A0C;
+  --color-accent-on-dark: #D4A832; /* readable amber text ON navy (WCAG) */
   --radius-card:    16px;
   --radius-control: 8px;
   --card-pad:       24px;
@@ -662,27 +661,23 @@
   --enk-on-dark-muted: var(--color-text-muted);
   --enk-on-light: var(--color-text-on-light); /* for light logo tiles */
 
-  /* Brand — Steel Blue single accent (KEPT, never yellow).
-     Fills use --enk-blue (#2563EB, white text on top). Small accent
-     text/icons on the dark navy use the brighter #6EA8FF for WCAG. */
-  --enk-blue: var(--color-accent);
-  --enk-blue-hover: var(--color-accent-hover);
+  /* Brand — restrained industrial palette. Single amber accent; the old
+     Steel Blue tokens (--enk-blue / --enk-blue-hover) are retired — use
+     --enk-accent-primary / --enk-accent-primary-hover instead. */
   --enk-accent-on-dark: var(--color-accent-on-dark);
-  --enk-accent: var(--color-accent-on-dark);  /* small accent text → #6EA8FF on dark */
-  --enk-gold: var(--enk-accent-primary-on-dark);  /* active nav indicators, section rules */
-  --enk-bronze: var(--enk-accent-on-dark);         /* kicker text → stays blue */
+  --enk-accent: var(--color-accent-on-dark);
+  --enk-gold: var(--enk-accent-primary-on-dark);  /* legacy alias: active nav indicators */
+  --enk-bronze: var(--enk-accent-primary-on-dark);
   --enk-safety: oklch(0.66 0.13 150);              /* QHSE positive, lifted for dark */
+  --enk-red: #D33A3F;                              /* restrained logo red accent */
+  --enk-red-subtle: rgba(211, 58, 63, 0.14);
 
-  /* Engineering yellow primary accent — contractor identity, not corporate blue.
-     CAT / Liebherr / Mammoet pattern: muted field yellow on dark.
-     Coherent with hi-vis PPE in site photography and warm logo element.
-     Fill buttons (#C4900E): dark navy text — ~9:1 WCAG AAA on #14191F.
-     Kicker rules / metric text on dark (#D4A832): ~7:1 on #14191F — WCAG AAA. */
+  /* Muted amber primary accent — the older, calmer CTA color. */
   --enk-accent-primary:        #C4900E;
   --enk-accent-primary-hover:  #A67A0C;
   --enk-accent-primary-on-dark:#D4A832;
-  --enk-accent-subtle:         rgba(196, 144, 14, 0.12);
-  --enk-accent-line:           rgba(196, 144, 14, 0.28);
+  --enk-accent-subtle:         rgba(196, 144, 14, 0.14);
+  --enk-accent-line:           rgba(212, 168, 50, 0.30);
   /* Backward-compat aliases — any missed reference stays on-palette */
   --enk-warm-accent:         var(--enk-accent-primary);
   --enk-warm-accent-hover:   var(--enk-accent-primary-hover);
@@ -705,7 +700,7 @@
   font-family: Arial, Roboto, Helvetica, system-ui, sans-serif;
 }
 
-.enk ::selection { background: var(--enk-blue); color: #fff; }
+.enk ::selection { background: var(--enk-accent-primary); color: var(--enk-navy); }
 
 /* Layout — Shell container 1300px, Shell-dense section rhythm (64-72px) */
 .enk-container { width: 100%; max-width: 1300px; margin-inline: auto; padding-inline: 1.25rem; }
@@ -724,7 +719,7 @@
 @media (min-width: 768px) { .enk-panel { margin-inline: 1.5rem; } }
 @media (min-width: 1024px) { .enk-panel { margin-inline: 2rem; } }
 
-/* Eyebrow — Shell style: humanist body font, NORMAL tracking, blue accent.
+/* Eyebrow — humanist body font, NORMAL tracking, yellow accent.
    (Was IBM Plex Mono + wide tracking — removed.) */
 .enk-kicker {
   display: inline-flex; align-items: center; gap: 0.6rem;
@@ -756,7 +751,7 @@
 .enk-btn--primary { background: var(--enk-accent-primary); color: var(--enk-navy); box-shadow: var(--enk-shadow-sm); }
 .enk-btn--primary:hover { background: var(--enk-accent-primary-hover); box-shadow: var(--enk-shadow-md); }
 .enk-btn--outline { background: transparent; color: var(--enk-ink); border-color: var(--enk-line-strong); }
-.enk-btn--outline:hover { border-color: var(--enk-blue); color: var(--enk-blue); }
+.enk-btn--outline:hover { border-color: var(--enk-accent-primary-on-dark); color: var(--enk-accent-primary-on-dark); }
 .enk-btn--on-dark { background: transparent; color: var(--enk-on-dark); border-color: oklch(1 0 0 / 0.28); }
 .enk-btn--on-dark:hover { background: oklch(1 0 0 / 0.08); border-color: oklch(1 0 0 / 0.5); }
 /* Legacy class name; renders with engineering yellow fill (navy text). */
@@ -765,10 +760,10 @@
 
 /* Text link */
 .enk-link {
-  display: inline-flex; align-items: center; gap: 0.4rem; font-weight: 600; color: var(--enk-blue);
+  display: inline-flex; align-items: center; gap: 0.4rem; font-weight: 600; color: var(--enk-accent-primary-on-dark);
   border-bottom: 1.5px solid transparent; transition: border-color 0.18s ease-out, gap 0.18s ease-out;
 }
-.enk-link:hover { border-bottom-color: var(--enk-blue); gap: 0.6rem; }
+.enk-link:hover { border-bottom-color: var(--enk-accent-primary-on-dark); gap: 0.6rem; }
 
 /* Card - Shell pattern: 16px radius, clips full-bleed image. Card surface
    (#222A32) is one step LIGHTER than the deep section band (#14191F), so it
@@ -789,10 +784,11 @@
   color: var(--enk-accent-on-dark); transition: color var(--transition);
 }
 .enk-readmore svg, .enk-readmore .enk-readmore__arrow { transition: transform var(--transition); }
-.group:hover .enk-readmore { color: var(--enk-blue-hover); }
+.group:hover .enk-readmore { color: var(--enk-accent-primary-on-dark); }
 .group:hover .enk-readmore svg, .group:hover .enk-readmore__arrow { transform: translateX(3px); }
 
-/* Quick-links block ("How can we help?") — stacked dark rows, blue text + icon */
+/* Legacy quick-link utility. Kept for older sections; the home solutions grid
+   lives in `SolutionsOverview.tsx`. */
 .enk-quicklink {
   display: flex; align-items: center; gap: 0.85rem;
   padding: 1rem 1.25rem; border-radius: var(--radius-control);

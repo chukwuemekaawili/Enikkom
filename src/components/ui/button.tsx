@@ -10,7 +10,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "border-primary bg-primary text-primary-foreground shadow-[0_1px_0_rgba(255,255,255,0.2)_inset,0_14px_30px_rgba(37,99,235,0.22)] hover:bg-primary/90 hover:shadow-[0_1px_0_rgba(255,255,255,0.2)_inset,0_18px_34px_rgba(37,99,235,0.30)] hover:-translate-y-0.5",
+          "border-primary bg-primary text-primary-foreground shadow-[var(--enk-shadow-sm)] hover:bg-primary/90 hover:shadow-[var(--enk-shadow-md)]",
         destructive:
           "border-destructive bg-destructive text-destructive-foreground shadow-[0_12px_24px_rgba(220,38,38,0.14)] hover:bg-destructive/92 hover:shadow-[0_16px_32px_rgba(220,38,38,0.2)]",
         outline:
@@ -19,8 +19,6 @@ const buttonVariants = cva(
           "border-charcoal bg-charcoal text-white shadow-[0_12px_30px_rgba(12,18,24,0.16)] hover:bg-charcoal-light hover:border-charcoal-light hover:-translate-y-0.5",
         ghost: "border-transparent text-foreground hover:bg-muted/70 hover:text-foreground",
         link: "border-transparent p-0 text-primary underline-offset-4 hover:underline",
-        premium:
-          "border-white/15 bg-white/8 text-white shadow-[0_14px_32px_rgba(12,18,24,0.24)] backdrop-blur-md hover:bg-white/14 hover:border-white/25",
       },
       size: {
         default: "h-11 rounded-[var(--enk-radius)] px-5 py-2",

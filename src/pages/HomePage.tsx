@@ -6,9 +6,8 @@ import { TrustSnapshot } from "@/components/home/TrustSnapshot";
 import { Capabilities } from "@/components/home/Capabilities";
 import { CaseStudies } from "@/components/home/CaseStudies";
 import { RecentOps } from "@/components/home/RecentOps";
-import { Process } from "@/components/home/Process";
 import { Qhse } from "@/components/home/Qhse";
-import { FinalCta } from "@/components/home/FinalCta";
+import { SolutionsOverview } from "@/components/home/SolutionsOverview";
 import { HomeFooter } from "@/components/home/HomeFooter";
 import { BackToTopButton } from "@/components/sections/BackToTopButton";
 
@@ -18,12 +17,13 @@ import { BackToTopButton } from "@/components/sections/BackToTopButton";
  * rest of the site is unaffected during the phased redesign.
  *
  * Each idea has one home, in a single deliberate narrative:
- *   Hero (value proposition) -> Record benchmarks (three superlatives) ->
+ *   Hero (value proposition) -> Solutions overview (outcome-framed router) ->
+ *   Record benchmarks (three superlatives) ->
  *   Trust snapshot (track-record stats + client logos) ->
- *   Capabilities (what we do) -> Process (how we deliver) ->
+ *   Capabilities (discipline-by-discipline) ->
  *   Case studies (flagship + project records) ->
  *   Recent operations (live works now) ->
- *   QHSE (safety & quality assurance) -> single Conversion (CTA).
+ *   QHSE (safety & quality assurance).
  */
 export default function HomePage() {
   return (
@@ -44,7 +44,7 @@ export default function HomePage() {
 
       <a
         href="#main"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-[var(--enk-blue)] focus:px-4 focus:py-2 focus:text-white"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-[var(--enk-accent-primary)] focus:px-4 focus:py-2 focus:text-[var(--enk-navy)]"
       >
         Skip to content
       </a>
@@ -53,14 +53,13 @@ export default function HomePage() {
 
       <main id="main">
         <HomeHero />
+        <SolutionsOverview />
         <FlagshipProof />
         <TrustSnapshot />
         <Capabilities />
-        <Process />
         <CaseStudies />
         <RecentOps />
         <Qhse />
-        <FinalCta />
       </main>
 
       <HomeFooter />

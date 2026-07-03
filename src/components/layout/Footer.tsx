@@ -116,7 +116,7 @@ export function Footer() {
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="premium">
+              <Button asChild size="lg" variant="secondary">
                 <Link to="/projects">View Track Record</Link>
               </Button>
             </div>

@@ -129,7 +129,7 @@ export function ImageSliderHero({
                 )}
 
                 {secondaryCTA && (
-                  <Button asChild size="lg" variant="premium">
+                  <Button asChild size="lg" variant="secondary">
                     <Link to={secondaryCTA.href}>{secondaryCTA.label}</Link>
                   </Button>
                 )}
