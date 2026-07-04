@@ -112,7 +112,7 @@ export function Footer() {
             <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
               <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm border border-primary/20">
                 <Link to="/contact">
-                  Request Assessment
+                  Contact Us
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>

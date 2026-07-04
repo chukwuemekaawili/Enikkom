@@ -419,7 +419,7 @@ export default function CapabilityDetailPage() {
       <CTABand
         headline={`Ready to discuss your ${capability.title.split(" (")[0]} requirements?`}
         subhead="Send your alignment, drawings or RFP and our technical team will assess feasibility, risk and approach, with no obligation."
-        primaryCTA={{ label: "Request a Crossing Assessment", href: "/contact" }}
+        primaryCTA={{ label: "Contact Us", href: "/contact" }}
       />
     </Layout>
   );

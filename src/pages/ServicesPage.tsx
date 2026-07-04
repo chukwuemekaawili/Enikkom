@@ -308,7 +308,7 @@ export default function ServicesPage() {
       <CTABand
         headline="Ready to discuss your next infrastructure project?"
         subhead="Send us your scope, drawings or RFP and our team will assess feasibility, approach and mobilisation timeline — with no obligation."
-        primaryCTA={{ label: "Request an Assessment", href: "/contact" }}
+        primaryCTA={{ label: "Contact Us", href: "/contact" }}
       />
     </Layout>
   );

@@ -82,7 +82,7 @@ export default function CapabilitiesPage() {
       <Hero
         title={heroContent.title || "Our Capabilities"}
         subtitle={heroContent.subtitle || "Engineering services for Nigeria's most demanding infrastructure projects, from trenchless crossings to marine civil works."}
-        primaryCTA={{ label: heroContent.primaryBtnText || "Request a Crossing Assessment", href: heroContent.primaryBtnLink || "/contact" }}
+        primaryCTA={{ label: heroContent.primaryBtnText || "Contact Us", href: heroContent.primaryBtnLink || "/contact" }}
         backgroundImage={heroContent.backgroundImage || capabilityImages.hero}
         size="default"
       />
