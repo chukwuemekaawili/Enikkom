@@ -122,7 +122,7 @@ const exactAssetMap: Record<string, string> = {
   ),
   "/src/assets/projects/generator-fg-wilson.png": findRequiredAsset(
     [currentProjectAssets],
-    "hdd-rig-operation.png",
+    "hdd-rig-operation.jpg",
     "project",
   ),
   "/src/assets/projects/partnership-hddthailand.jpg": findRequiredAsset(

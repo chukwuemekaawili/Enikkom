@@ -76,7 +76,7 @@ export function selectedRecentImage(name: string) {
 export function teamImage(name: string) {
   return getAsset(teamAssets, `../assets/images/team/${name}`, {
     label: "team",
-    fallbackKey: "../assets/images/team/03-team-photo-engr-edward-amene.png",
+    fallbackKey: "../assets/images/team/03-team-photo-engr-edward-amene.jpg",
   });
 }
 
@@ -96,9 +96,9 @@ export const siteImageSelections = {
       selectedGeneralImage("pl-15.jpg"),
     ],
     capabilityCards: {
-      hdd: currentProjectImage("cap_hdd_v2.png"),
+      hdd: currentProjectImage("cap_hdd_v2.jpg"),
       pipelines: selectedGeneralImage("pl-03.jpg"),
-      dredging: selectedGeneralImage("pl-dredging-piling.png"),
+      dredging: selectedGeneralImage("pl-dredging-piling.jpg"),
       facilities: currentProjectImage("home-facilities-wellhead.jpg"),
     },
     introMosaic: {
@@ -109,28 +109,28 @@ export const siteImageSelections = {
     },
   },
   about: {
-    hero: selectedGeneralImage("about-aerial-site-enhanced.png"),
-    introMain: selectedGeneralImage("about-site-equipment-enhanced.png"),
-    introSideField: selectedGeneralImage("about-field-team-enhanced.png"),
-    introSideRiver: selectedGeneralImage("about-pipe-yard-enhanced.png"),
-    missionBlock: selectedGeneralImage("about-safety-briefing-enhanced.png"),
+    hero: selectedGeneralImage("about-aerial-site-enhanced.jpg"),
+    introMain: selectedGeneralImage("about-site-equipment-enhanced.jpg"),
+    introSideField: selectedGeneralImage("about-field-team-enhanced.jpg"),
+    introSideRiver: selectedGeneralImage("about-pipe-yard-enhanced.jpg"),
+    missionBlock: selectedGeneralImage("about-safety-briefing-enhanced.jpg"),
   },
   services: {
     hero: selectedGeneralImage("pl-04.jpg"),
-    hdd: selectedRecentImage("im-040.png"),
-    pipelines: currentProjectImage("cap_pipeline.jpg"),
-    dredging: currentProjectImage("service-dredging-vessel.jpg"),
-    facilities: currentProjectImage("service-facilities-installation.png"),
+    hdd: currentProjectImage("hero-hdd.jpg"),
+    pipelines: selectedGeneralImage("pl-09.jpg"),
+    dredging: currentProjectImage("dredging-hero.jpg"),
+    facilities: currentProjectImage("service-facilities-installation.jpg"),
     projectManagement: selectedGeneralImage("rg-067.jpg"),
     security: currentProjectImage("service-subsurface-detector.jpg"),
   },
   capabilities: {
     hero: selectedGeneralImage("pl-08.jpg"),
-    hdd: currentProjectImage("cap_hdd.png"),
+    hdd: currentProjectImage("cap_hdd.jpg"),
     pipelines: selectedGeneralImage("pl-03.jpg"),
     dredging: currentProjectImage("cap_dredging.jpg"),
-    facilities: currentProjectImage("service-facilities-installation.png"),
-    projectManagement: selectedGeneralImage("pl-projectmgmt-review.png"),
+    facilities: currentProjectImage("service-facilities-installation.jpg"),
+    projectManagement: selectedGeneralImage("pl-projectmgmt-review.jpg"),
     security: selectedGeneralImage("rg-141.jpeg"),
   },
   careers: {
@@ -144,14 +144,14 @@ export const siteImageSelections = {
     hero: selectedGeneralImage("pl-11.jpg"),
   },
   contact: {
-    hero: selectedGeneralImage("about-field-team-enhanced.png"),
+    hero: selectedGeneralImage("about-field-team-enhanced.jpg"),
   },
   equipment: {
-    hero: selectedEquipmentImage("eq-021.jpg"),
-    support: currentProjectImage("hdd-rig-operation.png"),
+    hero: selectedEquipmentImage("eq-029.jpg"),
+    support: currentProjectImage("hdd-rig-operation.jpg"),
   },
   hddEquipment: {
-    hero: selectedEquipmentImage("eq-016.jpg"),
+    hero: currentProjectImage("hero-hdd-rig.jpg"),
     support: selectedEquipmentImage("eq-025.jpg"),
   },
   gallery: {
@@ -368,18 +368,18 @@ export const siteImageSelections = {
     hero: selectedGeneralImage("rg-105.jpg"),
   },
   management: {
-    hero: teamImage("02-hero-management-team-hero-background.png"),
+    hero: teamImage("02-hero-management-team-hero-background.jpg"),
     photos: {
-      edwardAmene: teamImage("03-team-photo-engr-edward-amene.png"),
-      saleemKhan: teamImage("04-team-photo-engr-saleem-ahmad-khan.png"),
-      francisAnatogu: teamImage("05-team-photo-mr-francis-anatogu.png"),
-      adekunleAdewole: teamImage("06-team-photo-adekunle-adewole-phd.png"),
+      edwardAmene: teamImage("03-team-photo-engr-edward-amene.jpg"),
+      saleemKhan: teamImage("04-team-photo-engr-saleem-ahmad-khan.jpg"),
+      francisAnatogu: teamImage("05-team-photo-mr-francis-anatogu.jpg"),
+      adekunleAdewole: teamImage("06-team-photo-adekunle-adewole-phd.jpg"),
       uzomaNwagboso: teamImage("13-team-photo-uzoma-nwagboso.jpeg"),
-      chibuikeNwachukwu: teamImage("09-team-photo-idigbor-emeka-fca.png"),
-      teddyAllen: teamImage("08-team-photo-teddy-allen.png"),
-      idigborEmeka: teamImage("12-idigbor-emeka.png"),
-      biodunAdefila: teamImage("10-team-photo-biodun-adefila.png"),
-      kenJames: teamImage("11-team-photo-ken-james.png"),
+      chibuikeNwachukwu: teamImage("09-team-photo-idigbor-emeka-fca.jpg"),
+      teddyAllen: teamImage("08-team-photo-teddy-allen.jpg"),
+      idigborEmeka: teamImage("12-idigbor-emeka.jpg"),
+      biodunAdefila: teamImage("10-team-photo-biodun-adefila.jpg"),
+      kenJames: teamImage("11-team-photo-ken-james.jpg"),
     },
   },
   partners: {

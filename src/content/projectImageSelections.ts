@@ -69,13 +69,13 @@ export const projectImageSelections: Record<string, ProjectImageSet> = {
   },
   "atlas-cove-mosimi": {
     hero: currentProjectImage("atlas-cove-mosimi.jpg"),
-    homeFeature: currentProjectImage("proj_atlas_v2.png"),
+    homeFeature: currentProjectImage("proj_atlas_v2.jpg"),
     homeRecord: selectedProjectImage("pp-043.jpg"),
     projectList: currentProjectImage("atlas-cove-mosimi-2.jpg"),
     projectGallery: selectedProjectImage("pp-045.jpg"),
     projectMap: selectedProjectImage("pp-048.jpg"),
     gallery: [
-      currentProjectImage("proj_atlas_v2.png"),
+      currentProjectImage("proj_atlas_v2.jpg"),
       selectedProjectImage("pp-043.jpg"),
       selectedProjectImage("pp-045.jpg"),
       selectedProjectImage("pp-048.jpg"),
