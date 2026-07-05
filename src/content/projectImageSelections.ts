@@ -116,7 +116,7 @@ export const projectImageSelections: Record<string, ProjectImageSet> = {
       selectedProjectImage("pp-034.jpg"),
       selectedProjectImage("pp-038.jpg"),
       currentProjectImage("drilling-ops-6.jpg"),
-      currentProjectImage("drilling-ops-7.jpg"),
+      currentProjectImage("drilling-ops-8.jpg"),
     ],
   },
   "ob3-river-niger": {
@@ -137,7 +137,8 @@ export const projectImageSelections: Record<string, ProjectImageSet> = {
   "ekiadolor-deep-valley": {
     hero: currentProjectImage("drilling-site-2.jpg"),
     homeRecord: currentProjectImage("drilling-ops-5.jpg"),
-    projectList: currentProjectImage("drilling-ops-7.jpg"),
+    // Own hero shot; drilling-ops-7 was shared with river-niger-historic's card
+    projectList: currentProjectImage("drilling-site-2.jpg"),
     projectGallery: currentProjectImage("drilling-ops-4.jpg"),
     projectMap: currentProjectImage("drilling-ops-6.jpg"),
     interactiveMap: currentProjectImage("drilling-ops-5.jpg"),
@@ -175,7 +176,8 @@ export const projectImageSelections: Record<string, ProjectImageSet> = {
   },
   "river-niger-historic": {
     hero: currentProjectImage("hdd-rig-night.jpg"),
-    projectList: currentProjectImage("drilling-ops-7.jpg"),
+    // Own hero shot; drilling-ops-7 was shared with ekiadolor's card
+    projectList: currentProjectImage("hdd-rig-night.jpg"),
     projectGallery: currentProjectImage("drilling-ops-6.jpg"),
     projectMap: currentProjectImage("drilling-ops-5.jpg"),
     interactiveMap: currentProjectImage("drilling-ops-4.jpg"),

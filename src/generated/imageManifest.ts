@@ -80,759 +80,763 @@ import asset_77 from "../assets/images/projects/drilling-ops-7.jpg";
 import asset_78 from "../assets/images/_responsive/projects/drilling-ops-7--w480.webp";
 import asset_79 from "../assets/images/_responsive/projects/drilling-ops-7--w960.webp";
 import asset_80 from "../assets/images/_responsive/projects/drilling-ops-7--w1400.webp";
-import asset_81 from "../assets/images/projects/drilling-site-2.jpg";
-import asset_82 from "../assets/images/_responsive/projects/drilling-site-2--w480.webp";
-import asset_83 from "../assets/images/_responsive/projects/drilling-site-2--w960.webp";
-import asset_84 from "../assets/images/_responsive/projects/drilling-site-2--w1400.webp";
-import asset_85 from "../assets/images/projects/drilling-site.png";
-import asset_86 from "../assets/images/_responsive/projects/drilling-site--w480.webp";
-import asset_87 from "../assets/images/_responsive/projects/drilling-site--w768.webp";
-import asset_88 from "../assets/images/projects/equipment-fleet.jpg";
-import asset_89 from "../assets/images/_responsive/projects/equipment-fleet--w480.webp";
-import asset_90 from "../assets/images/_responsive/projects/equipment-fleet--w960.webp";
-import asset_91 from "../assets/images/_responsive/projects/equipment-fleet--w1200.webp";
-import asset_92 from "../assets/images/projects/generator-fg-wilson.png";
-import asset_93 from "../assets/images/_responsive/projects/generator-fg-wilson--w480.webp";
-import asset_94 from "../assets/images/_responsive/projects/generator-fg-wilson--w960.webp";
-import asset_95 from "../assets/images/_responsive/projects/generator-fg-wilson--w1152.webp";
-import asset_96 from "../assets/images/projects/hdd-drill-string.jpg";
-import asset_97 from "../assets/images/_responsive/projects/hdd-drill-string--w480.webp";
-import asset_98 from "../assets/images/_responsive/projects/hdd-drill-string--w960.webp";
-import asset_99 from "../assets/images/_responsive/projects/hdd-drill-string--w1240.webp";
-import asset_100 from "../assets/images/projects/hdd-equipment-fleet-2.jpg";
-import asset_101 from "../assets/images/_responsive/projects/hdd-equipment-fleet-2--w480.webp";
-import asset_102 from "../assets/images/_responsive/projects/hdd-equipment-fleet-2--w582.webp";
-import asset_103 from "../assets/images/projects/hdd-equipment-fleet-3.jpg";
-import asset_104 from "../assets/images/_responsive/projects/hdd-equipment-fleet-3--w480.webp";
-import asset_105 from "../assets/images/_responsive/projects/hdd-equipment-fleet-3--w502.webp";
-import asset_106 from "../assets/images/projects/hdd-equipment-fleet-4.jpg";
-import asset_107 from "../assets/images/_responsive/projects/hdd-equipment-fleet-4--w480.webp";
-import asset_108 from "../assets/images/_responsive/projects/hdd-equipment-fleet-4--w513.webp";
-import asset_109 from "../assets/images/projects/hdd-equipment-fleet.jpg";
-import asset_110 from "../assets/images/_responsive/projects/hdd-equipment-fleet--w480.webp";
-import asset_111 from "../assets/images/_responsive/projects/hdd-equipment-fleet--w584.webp";
-import asset_112 from "../assets/images/projects/hdd-night-panorama-cropped.jpg";
-import asset_113 from "../assets/images/_responsive/projects/hdd-night-panorama-cropped--w480.webp";
-import asset_114 from "../assets/images/_responsive/projects/hdd-night-panorama-cropped--w960.webp";
-import asset_115 from "../assets/images/_responsive/projects/hdd-night-panorama-cropped--w1600.webp";
-import asset_116 from "../assets/images/projects/hdd-night-panorama.jpg";
-import asset_117 from "../assets/images/_responsive/projects/hdd-night-panorama--w480.webp";
-import asset_118 from "../assets/images/_responsive/projects/hdd-night-panorama--w960.webp";
-import asset_119 from "../assets/images/_responsive/projects/hdd-night-panorama--w1131.webp";
-import asset_120 from "../assets/images/projects/hdd-operations-2.jpg";
-import asset_121 from "../assets/images/_responsive/projects/hdd-operations-2--w480.webp";
-import asset_122 from "../assets/images/_responsive/projects/hdd-operations-2--w960.webp";
-import asset_123 from "../assets/images/_responsive/projects/hdd-operations-2--w1080.webp";
-import asset_124 from "../assets/images/projects/hdd-rig-night.jpg";
-import asset_125 from "../assets/images/_responsive/projects/hdd-rig-night--w480.webp";
-import asset_126 from "../assets/images/_responsive/projects/hdd-rig-night--w960.webp";
-import asset_127 from "../assets/images/_responsive/projects/hdd-rig-night--w1400.webp";
-import asset_128 from "../assets/images/projects/hdd-rig-operation.jpg";
-import asset_129 from "../assets/images/_responsive/projects/hdd-rig-operation--w480.webp";
-import asset_130 from "../assets/images/_responsive/projects/hdd-rig-operation--w960.webp";
-import asset_131 from "../assets/images/_responsive/projects/hdd-rig-operation--w1022.webp";
-import asset_132 from "../assets/images/projects/hdd-team-1.jpg";
-import asset_133 from "../assets/images/_responsive/projects/hdd-team-1--w480.webp";
-import asset_134 from "../assets/images/_responsive/projects/hdd-team-1--w960.webp";
-import asset_135 from "../assets/images/_responsive/projects/hdd-team-1--w1400.webp";
-import asset_136 from "../assets/images/projects/hero-hdd-rig.jpg";
-import asset_137 from "../assets/images/_responsive/projects/hero-hdd-rig--w480.webp";
-import asset_138 from "../assets/images/_responsive/projects/hero-hdd-rig--w960.webp";
-import asset_139 from "../assets/images/_responsive/projects/hero-hdd-rig--w1600.webp";
-import asset_140 from "../assets/images/projects/hero-hdd.jpg";
-import asset_141 from "../assets/images/_responsive/projects/hero-hdd--w480.webp";
-import asset_142 from "../assets/images/_responsive/projects/hero-hdd--w960.webp";
-import asset_143 from "../assets/images/_responsive/projects/hero-hdd--w1600.webp";
-import asset_144 from "../assets/images/projects/hero_river_crossing.jpg";
-import asset_145 from "../assets/images/_responsive/projects/hero_river_crossing--w480.webp";
-import asset_146 from "../assets/images/_responsive/projects/hero_river_crossing--w960.webp";
-import asset_147 from "../assets/images/_responsive/projects/hero_river_crossing--w1280.webp";
-import asset_148 from "../assets/images/projects/home-facilities-wellhead.jpg";
-import asset_149 from "../assets/images/_responsive/projects/home-facilities-wellhead--w480.webp";
-import asset_150 from "../assets/images/_responsive/projects/home-facilities-wellhead--w960.webp";
-import asset_151 from "../assets/images/_responsive/projects/home-facilities-wellhead--w1536.webp";
-import asset_152 from "../assets/images/projects/hse-safety.jpg";
-import asset_153 from "../assets/images/_responsive/projects/hse-safety--w480.webp";
-import asset_154 from "../assets/images/_responsive/projects/hse-safety--w960.webp";
-import asset_155 from "../assets/images/_responsive/projects/hse-safety--w1024.webp";
-import asset_156 from "../assets/images/projects/jetty-construction.jpg";
-import asset_157 from "../assets/images/_responsive/projects/jetty-construction--w480.webp";
-import asset_158 from "../assets/images/_responsive/projects/jetty-construction--w960.webp";
-import asset_159 from "../assets/images/_responsive/projects/jetty-construction--w1200.webp";
-import asset_160 from "../assets/images/projects/lekki-gas-pipeline.jpg";
-import asset_161 from "../assets/images/_responsive/projects/lekki-gas-pipeline--w480.webp";
-import asset_162 from "../assets/images/_responsive/projects/lekki-gas-pipeline--w960.webp";
-import asset_163 from "../assets/images/_responsive/projects/lekki-gas-pipeline--w1600.webp";
-import asset_164 from "../assets/images/projects/multi-crane-operations.jpg";
-import asset_165 from "../assets/images/_responsive/projects/multi-crane-operations--w372.webp";
-import asset_166 from "../assets/images/projects/nipco-ibafo-2.jpg";
-import asset_167 from "../assets/images/_responsive/projects/nipco-ibafo-2--w480.webp";
-import asset_168 from "../assets/images/_responsive/projects/nipco-ibafo-2--w960.webp";
-import asset_169 from "../assets/images/_responsive/projects/nipco-ibafo-2--w1400.webp";
-import asset_170 from "../assets/images/projects/nipco-ibafo-3.jpg";
-import asset_171 from "../assets/images/_responsive/projects/nipco-ibafo-3--w480.webp";
-import asset_172 from "../assets/images/_responsive/projects/nipco-ibafo-3--w960.webp";
-import asset_173 from "../assets/images/_responsive/projects/nipco-ibafo-3--w1400.webp";
-import asset_174 from "../assets/images/projects/nipco-ibafo.jpg";
-import asset_175 from "../assets/images/_responsive/projects/nipco-ibafo--w480.webp";
-import asset_176 from "../assets/images/_responsive/projects/nipco-ibafo--w960.webp";
-import asset_177 from "../assets/images/_responsive/projects/nipco-ibafo--w1400.webp";
-import asset_178 from "../assets/images/projects/nipco-pipeline.jpg";
-import asset_179 from "../assets/images/_responsive/projects/nipco-pipeline--w480.webp";
-import asset_180 from "../assets/images/_responsive/projects/nipco-pipeline--w960.webp";
-import asset_181 from "../assets/images/_responsive/projects/nipco-pipeline--w1449.webp";
-import asset_182 from "../assets/images/projects/otumara-escravos-2.jpg";
-import asset_183 from "../assets/images/_responsive/projects/otumara-escravos-2--w480.webp";
-import asset_184 from "../assets/images/_responsive/projects/otumara-escravos-2--w960.webp";
-import asset_185 from "../assets/images/_responsive/projects/otumara-escravos-2--w1600.webp";
-import asset_186 from "../assets/images/projects/otumara-escravos.jpg";
-import asset_187 from "../assets/images/_responsive/projects/otumara-escravos--w480.webp";
-import asset_188 from "../assets/images/_responsive/projects/otumara-escravos--w960.webp";
-import asset_189 from "../assets/images/_responsive/projects/otumara-escravos--w1600.webp";
-import asset_190 from "../assets/images/projects/partnership-hddthailand-2.jpg";
-import asset_191 from "../assets/images/_responsive/projects/partnership-hddthailand-2--w276.webp";
-import asset_192 from "../assets/images/projects/partnership-hddthailand.jpg";
-import asset_193 from "../assets/images/_responsive/projects/partnership-hddthailand--w309.webp";
-import asset_194 from "../assets/images/projects/pipe-handling.jpg";
-import asset_195 from "../assets/images/_responsive/projects/pipe-handling--w480.webp";
-import asset_196 from "../assets/images/_responsive/projects/pipe-handling--w960.webp";
-import asset_197 from "../assets/images/_responsive/projects/pipe-handling--w1080.webp";
-import asset_198 from "../assets/images/projects/pipe-laying-crane.jpg";
-import asset_199 from "../assets/images/_responsive/projects/pipe-laying-crane--w480.webp";
-import asset_200 from "../assets/images/_responsive/projects/pipe-laying-crane--w960.webp";
-import asset_201 from "../assets/images/_responsive/projects/pipe-laying-crane--w1552.webp";
-import asset_202 from "../assets/images/projects/pipe-welding.png";
-import asset_203 from "../assets/images/_responsive/projects/pipe-welding--w480.webp";
-import asset_204 from "../assets/images/_responsive/projects/pipe-welding--w768.webp";
-import asset_205 from "../assets/images/projects/pipeline-construction.jpg";
-import asset_206 from "../assets/images/_responsive/projects/pipeline-construction--w480.webp";
-import asset_207 from "../assets/images/_responsive/projects/pipeline-construction--w960.webp";
-import asset_208 from "../assets/images/_responsive/projects/pipeline-construction--w1600.webp";
-import asset_209 from "../assets/images/projects/pipeline-crew.jpg";
-import asset_210 from "../assets/images/_responsive/projects/pipeline-crew--w480.webp";
-import asset_211 from "../assets/images/_responsive/projects/pipeline-crew--w960.webp";
-import asset_212 from "../assets/images/_responsive/projects/pipeline-crew--w1080.webp";
-import asset_213 from "../assets/images/projects/pipeline-laying.png";
-import asset_214 from "../assets/images/_responsive/projects/pipeline-laying--w480.webp";
-import asset_215 from "../assets/images/_responsive/projects/pipeline-laying--w768.webp";
-import asset_216 from "../assets/images/projects/proj_atlas.jpg";
-import asset_217 from "../assets/images/_responsive/projects/proj_atlas--w480.webp";
-import asset_218 from "../assets/images/_responsive/projects/proj_atlas--w960.webp";
-import asset_219 from "../assets/images/projects/proj_atlas_v2.jpg";
-import asset_220 from "../assets/images/_responsive/projects/proj_atlas_v2--w480.webp";
-import asset_221 from "../assets/images/_responsive/projects/proj_atlas_v2--w960.webp";
-import asset_222 from "../assets/images/_responsive/projects/proj_atlas_v2--w1600.webp";
-import asset_223 from "../assets/images/projects/proj_lekki.jpg";
-import asset_224 from "../assets/images/_responsive/projects/proj_lekki--w480.webp";
-import asset_225 from "../assets/images/_responsive/projects/proj_lekki--w960.webp";
-import asset_226 from "../assets/images/_responsive/projects/proj_lekki--w1024.webp";
-import asset_227 from "../assets/images/projects/proj_oml34.jpg";
-import asset_228 from "../assets/images/_responsive/projects/proj_oml34--w480.webp";
-import asset_229 from "../assets/images/_responsive/projects/proj_oml34--w960.webp";
-import asset_230 from "../assets/images/_responsive/projects/proj_oml34--w1280.webp";
-import asset_231 from "../assets/images/projects/rig-setup.png";
-import asset_232 from "../assets/images/_responsive/projects/rig-setup--w480.webp";
-import asset_233 from "../assets/images/_responsive/projects/rig-setup--w768.webp";
-import asset_234 from "../assets/images/projects/safety-signage.jpg";
-import asset_235 from "../assets/images/_responsive/projects/safety-signage--w480.webp";
-import asset_236 from "../assets/images/_responsive/projects/safety-signage--w960.webp";
-import asset_237 from "../assets/images/_responsive/projects/safety-signage--w980.webp";
-import asset_238 from "../assets/images/projects/scope-operations-2.jpg";
-import asset_239 from "../assets/images/_responsive/projects/scope-operations-2--w480.webp";
-import asset_240 from "../assets/images/_responsive/projects/scope-operations-2--w960.webp";
-import asset_241 from "../assets/images/_responsive/projects/scope-operations-2--w1400.webp";
-import asset_242 from "../assets/images/projects/scope-operations-3.jpg";
-import asset_243 from "../assets/images/_responsive/projects/scope-operations-3--w480.webp";
-import asset_244 from "../assets/images/_responsive/projects/scope-operations-3--w960.webp";
-import asset_245 from "../assets/images/_responsive/projects/scope-operations-3--w1446.webp";
-import asset_246 from "../assets/images/projects/scope-operations.jpg";
-import asset_247 from "../assets/images/_responsive/projects/scope-operations--w480.webp";
-import asset_248 from "../assets/images/_responsive/projects/scope-operations--w960.webp";
-import asset_249 from "../assets/images/_responsive/projects/scope-operations--w1600.webp";
-import asset_250 from "../assets/images/projects/service-dredging-vessel.jpg";
-import asset_251 from "../assets/images/_responsive/projects/service-dredging-vessel--w480.webp";
-import asset_252 from "../assets/images/_responsive/projects/service-dredging-vessel--w768.webp";
-import asset_253 from "../assets/images/projects/service-facilities-installation.jpg";
-import asset_254 from "../assets/images/_responsive/projects/service-facilities-installation--w480.webp";
-import asset_255 from "../assets/images/_responsive/projects/service-facilities-installation--w960.webp";
-import asset_256 from "../assets/images/_responsive/projects/service-facilities-installation--w1200.webp";
-import asset_257 from "../assets/images/projects/service-operations-hero.jpg";
-import asset_258 from "../assets/images/_responsive/projects/service-operations-hero--w480.webp";
-import asset_259 from "../assets/images/_responsive/projects/service-operations-hero--w960.webp";
-import asset_260 from "../assets/images/projects/service-subsurface-detector.jpg";
-import asset_261 from "../assets/images/_responsive/projects/service-subsurface-detector--w480.webp";
-import asset_262 from "../assets/images/_responsive/projects/service-subsurface-detector--w960.webp";
-import asset_263 from "../assets/images/_responsive/projects/service-subsurface-detector--w1400.webp";
-import asset_264 from "../assets/images/projects/shore-approach.jpg";
-import asset_265 from "../assets/images/_responsive/projects/shore-approach--w480.webp";
-import asset_266 from "../assets/images/_responsive/projects/shore-approach--w960.webp";
-import asset_267 from "../assets/images/_responsive/projects/shore-approach--w1024.webp";
-import asset_268 from "../assets/images/projects/swamp-pipeline.png";
-import asset_269 from "../assets/images/_responsive/projects/swamp-pipeline--w480.webp";
-import asset_270 from "../assets/images/_responsive/projects/swamp-pipeline--w768.webp";
-import asset_271 from "../assets/images/projects/team-safety.jpg";
-import asset_272 from "../assets/images/_responsive/projects/team-safety--w480.webp";
-import asset_273 from "../assets/images/_responsive/projects/team-safety--w960.webp";
-import asset_274 from "../assets/images/_responsive/projects/team-safety--w1080.webp";
-import asset_275 from "../assets/images/projects/tripping-safety.jpg";
-import asset_276 from "../assets/images/_responsive/projects/tripping-safety--w480.webp";
-import asset_277 from "../assets/images/_responsive/projects/tripping-safety--w810.webp";
-import asset_278 from "../assets/images/projects/welding-crew.jpg";
-import asset_279 from "../assets/images/_responsive/projects/welding-crew--w480.webp";
-import asset_280 from "../assets/images/_responsive/projects/welding-crew--w960.webp";
-import asset_281 from "../assets/images/_responsive/projects/welding-crew--w1240.webp";
-import asset_282 from "../assets/images/projects/workers-ppe.jpg";
-import asset_283 from "../assets/images/_responsive/projects/workers-ppe--w480.webp";
-import asset_284 from "../assets/images/_responsive/projects/workers-ppe--w810.webp";
-import asset_285 from "../assets/images/selected/equipment/eq-006.jpg";
-import asset_286 from "../assets/images/_responsive/selected/equipment/eq-006--w480.webp";
-import asset_287 from "../assets/images/_responsive/selected/equipment/eq-006--w589.webp";
-import asset_288 from "../assets/images/selected/equipment/eq-007.jpg";
-import asset_289 from "../assets/images/_responsive/selected/equipment/eq-007--w480.webp";
-import asset_290 from "../assets/images/_responsive/selected/equipment/eq-007--w589.webp";
-import asset_291 from "../assets/images/selected/equipment/eq-010.jpg";
-import asset_292 from "../assets/images/_responsive/selected/equipment/eq-010--w480.webp";
-import asset_293 from "../assets/images/_responsive/selected/equipment/eq-010--w588.webp";
-import asset_294 from "../assets/images/selected/equipment/eq-021.jpg";
-import asset_295 from "../assets/images/_responsive/selected/equipment/eq-021--w480.webp";
-import asset_296 from "../assets/images/_responsive/selected/equipment/eq-021--w645.webp";
-import asset_297 from "../assets/images/selected/equipment/eq-022.jpg";
-import asset_298 from "../assets/images/_responsive/selected/equipment/eq-022--w480.webp";
-import asset_299 from "../assets/images/_responsive/selected/equipment/eq-022--w645.webp";
-import asset_300 from "../assets/images/selected/equipment/eq-023.jpg";
-import asset_301 from "../assets/images/_responsive/selected/equipment/eq-023--w480.webp";
-import asset_302 from "../assets/images/_responsive/selected/equipment/eq-023--w610.webp";
-import asset_303 from "../assets/images/selected/equipment/eq-024.jpg";
-import asset_304 from "../assets/images/_responsive/selected/equipment/eq-024--w480.webp";
-import asset_305 from "../assets/images/_responsive/selected/equipment/eq-024--w610.webp";
-import asset_306 from "../assets/images/selected/equipment/eq-025.jpg";
-import asset_307 from "../assets/images/_responsive/selected/equipment/eq-025--w480.webp";
-import asset_308 from "../assets/images/_responsive/selected/equipment/eq-025--w716.webp";
-import asset_309 from "../assets/images/selected/equipment/eq-026.jpg";
-import asset_310 from "../assets/images/_responsive/selected/equipment/eq-026--w480.webp";
-import asset_311 from "../assets/images/_responsive/selected/equipment/eq-026--w960.webp";
-import asset_312 from "../assets/images/_responsive/selected/equipment/eq-026--w1600.webp";
-import asset_313 from "../assets/images/selected/equipment/eq-027.jpg";
-import asset_314 from "../assets/images/_responsive/selected/equipment/eq-027--w480.webp";
-import asset_315 from "../assets/images/_responsive/selected/equipment/eq-027--w960.webp";
-import asset_316 from "../assets/images/_responsive/selected/equipment/eq-027--w1600.webp";
-import asset_317 from "../assets/images/selected/equipment/eq-028.jpg";
-import asset_318 from "../assets/images/_responsive/selected/equipment/eq-028--w480.webp";
-import asset_319 from "../assets/images/_responsive/selected/equipment/eq-028--w960.webp";
-import asset_320 from "../assets/images/_responsive/selected/equipment/eq-028--w1600.webp";
-import asset_321 from "../assets/images/selected/equipment/eq-029.jpg";
-import asset_322 from "../assets/images/_responsive/selected/equipment/eq-029--w480.webp";
-import asset_323 from "../assets/images/_responsive/selected/equipment/eq-029--w960.webp";
-import asset_324 from "../assets/images/_responsive/selected/equipment/eq-029--w1600.webp";
-import asset_325 from "../assets/images/selected/equipment/eq-030.jpg";
-import asset_326 from "../assets/images/_responsive/selected/equipment/eq-030--w480.webp";
-import asset_327 from "../assets/images/_responsive/selected/equipment/eq-030--w960.webp";
-import asset_328 from "../assets/images/_responsive/selected/equipment/eq-030--w1600.webp";
-import asset_329 from "../assets/images/selected/general/about-aerial-site-enhanced.jpg";
-import asset_330 from "../assets/images/_responsive/selected/general/about-aerial-site-enhanced--w480.webp";
-import asset_331 from "../assets/images/_responsive/selected/general/about-aerial-site-enhanced--w960.webp";
-import asset_332 from "../assets/images/_responsive/selected/general/about-aerial-site-enhanced--w1600.webp";
-import asset_333 from "../assets/images/selected/general/about-field-team-enhanced.jpg";
-import asset_334 from "../assets/images/_responsive/selected/general/about-field-team-enhanced--w480.webp";
-import asset_335 from "../assets/images/_responsive/selected/general/about-field-team-enhanced--w960.webp";
-import asset_336 from "../assets/images/_responsive/selected/general/about-field-team-enhanced--w1086.webp";
-import asset_337 from "../assets/images/selected/general/about-pipe-yard-enhanced.jpg";
-import asset_338 from "../assets/images/_responsive/selected/general/about-pipe-yard-enhanced--w480.webp";
-import asset_339 from "../assets/images/_responsive/selected/general/about-pipe-yard-enhanced--w960.webp";
-import asset_340 from "../assets/images/_responsive/selected/general/about-pipe-yard-enhanced--w1448.webp";
-import asset_341 from "../assets/images/selected/general/about-safety-briefing-enhanced.jpg";
-import asset_342 from "../assets/images/_responsive/selected/general/about-safety-briefing-enhanced--w480.webp";
-import asset_343 from "../assets/images/_responsive/selected/general/about-safety-briefing-enhanced--w960.webp";
-import asset_344 from "../assets/images/_responsive/selected/general/about-safety-briefing-enhanced--w1449.webp";
-import asset_345 from "../assets/images/selected/general/about-site-equipment-enhanced.jpg";
-import asset_346 from "../assets/images/_responsive/selected/general/about-site-equipment-enhanced--w480.webp";
-import asset_347 from "../assets/images/_responsive/selected/general/about-site-equipment-enhanced--w960.webp";
-import asset_348 from "../assets/images/_responsive/selected/general/about-site-equipment-enhanced--w1600.webp";
-import asset_349 from "../assets/images/selected/general/pl-01.jpg";
-import asset_350 from "../assets/images/_responsive/selected/general/pl-01--w480.webp";
-import asset_351 from "../assets/images/_responsive/selected/general/pl-01--w960.webp";
-import asset_352 from "../assets/images/_responsive/selected/general/pl-01--w1600.webp";
-import asset_353 from "../assets/images/selected/general/pl-02.jpg";
-import asset_354 from "../assets/images/_responsive/selected/general/pl-02--w480.webp";
-import asset_355 from "../assets/images/_responsive/selected/general/pl-02--w960.webp";
-import asset_356 from "../assets/images/_responsive/selected/general/pl-02--w1600.webp";
-import asset_357 from "../assets/images/selected/general/pl-03.jpg";
-import asset_358 from "../assets/images/_responsive/selected/general/pl-03--w480.webp";
-import asset_359 from "../assets/images/_responsive/selected/general/pl-03--w960.webp";
-import asset_360 from "../assets/images/_responsive/selected/general/pl-03--w1600.webp";
-import asset_361 from "../assets/images/selected/general/pl-04.jpg";
-import asset_362 from "../assets/images/_responsive/selected/general/pl-04--w480.webp";
-import asset_363 from "../assets/images/_responsive/selected/general/pl-04--w960.webp";
-import asset_364 from "../assets/images/_responsive/selected/general/pl-04--w1600.webp";
-import asset_365 from "../assets/images/selected/general/pl-05.jpg";
-import asset_366 from "../assets/images/_responsive/selected/general/pl-05--w480.webp";
-import asset_367 from "../assets/images/_responsive/selected/general/pl-05--w960.webp";
-import asset_368 from "../assets/images/_responsive/selected/general/pl-05--w1600.webp";
-import asset_369 from "../assets/images/selected/general/pl-06.jpg";
-import asset_370 from "../assets/images/_responsive/selected/general/pl-06--w480.webp";
-import asset_371 from "../assets/images/_responsive/selected/general/pl-06--w960.webp";
-import asset_372 from "../assets/images/_responsive/selected/general/pl-06--w1600.webp";
-import asset_373 from "../assets/images/selected/general/pl-07.jpg";
-import asset_374 from "../assets/images/_responsive/selected/general/pl-07--w480.webp";
-import asset_375 from "../assets/images/_responsive/selected/general/pl-07--w960.webp";
-import asset_376 from "../assets/images/_responsive/selected/general/pl-07--w1600.webp";
-import asset_377 from "../assets/images/selected/general/pl-08.jpg";
-import asset_378 from "../assets/images/_responsive/selected/general/pl-08--w480.webp";
-import asset_379 from "../assets/images/_responsive/selected/general/pl-08--w960.webp";
-import asset_380 from "../assets/images/_responsive/selected/general/pl-08--w1600.webp";
-import asset_381 from "../assets/images/selected/general/pl-09.jpg";
-import asset_382 from "../assets/images/_responsive/selected/general/pl-09--w480.webp";
-import asset_383 from "../assets/images/_responsive/selected/general/pl-09--w960.webp";
-import asset_384 from "../assets/images/_responsive/selected/general/pl-09--w1600.webp";
-import asset_385 from "../assets/images/selected/general/pl-10.jpg";
-import asset_386 from "../assets/images/_responsive/selected/general/pl-10--w480.webp";
-import asset_387 from "../assets/images/_responsive/selected/general/pl-10--w960.webp";
-import asset_388 from "../assets/images/_responsive/selected/general/pl-10--w1600.webp";
-import asset_389 from "../assets/images/selected/general/pl-11.jpg";
-import asset_390 from "../assets/images/_responsive/selected/general/pl-11--w480.webp";
-import asset_391 from "../assets/images/_responsive/selected/general/pl-11--w960.webp";
-import asset_392 from "../assets/images/_responsive/selected/general/pl-11--w1600.webp";
-import asset_393 from "../assets/images/selected/general/pl-12.jpg";
-import asset_394 from "../assets/images/_responsive/selected/general/pl-12--w480.webp";
-import asset_395 from "../assets/images/_responsive/selected/general/pl-12--w960.webp";
-import asset_396 from "../assets/images/_responsive/selected/general/pl-12--w1600.webp";
-import asset_397 from "../assets/images/selected/general/pl-13.jpg";
-import asset_398 from "../assets/images/_responsive/selected/general/pl-13--w480.webp";
-import asset_399 from "../assets/images/_responsive/selected/general/pl-13--w960.webp";
-import asset_400 from "../assets/images/_responsive/selected/general/pl-13--w1600.webp";
-import asset_401 from "../assets/images/selected/general/pl-14.jpg";
-import asset_402 from "../assets/images/_responsive/selected/general/pl-14--w480.webp";
-import asset_403 from "../assets/images/_responsive/selected/general/pl-14--w960.webp";
-import asset_404 from "../assets/images/_responsive/selected/general/pl-14--w1600.webp";
-import asset_405 from "../assets/images/selected/general/pl-15.jpg";
-import asset_406 from "../assets/images/_responsive/selected/general/pl-15--w480.webp";
-import asset_407 from "../assets/images/_responsive/selected/general/pl-15--w960.webp";
-import asset_408 from "../assets/images/_responsive/selected/general/pl-15--w1600.webp";
-import asset_409 from "../assets/images/selected/general/pl-16.jpg";
-import asset_410 from "../assets/images/_responsive/selected/general/pl-16--w480.webp";
-import asset_411 from "../assets/images/_responsive/selected/general/pl-16--w960.webp";
-import asset_412 from "../assets/images/_responsive/selected/general/pl-16--w1600.webp";
-import asset_413 from "../assets/images/selected/general/pl-17.jpg";
-import asset_414 from "../assets/images/_responsive/selected/general/pl-17--w480.webp";
-import asset_415 from "../assets/images/_responsive/selected/general/pl-17--w960.webp";
-import asset_416 from "../assets/images/_responsive/selected/general/pl-17--w1600.webp";
-import asset_417 from "../assets/images/selected/general/pl-18.jpg";
-import asset_418 from "../assets/images/_responsive/selected/general/pl-18--w480.webp";
-import asset_419 from "../assets/images/_responsive/selected/general/pl-18--w960.webp";
-import asset_420 from "../assets/images/_responsive/selected/general/pl-18--w1600.webp";
-import asset_421 from "../assets/images/selected/general/pl-19.jpg";
-import asset_422 from "../assets/images/_responsive/selected/general/pl-19--w480.webp";
-import asset_423 from "../assets/images/_responsive/selected/general/pl-19--w960.webp";
-import asset_424 from "../assets/images/_responsive/selected/general/pl-19--w1600.webp";
-import asset_425 from "../assets/images/selected/general/pl-20.jpg";
-import asset_426 from "../assets/images/_responsive/selected/general/pl-20--w480.webp";
-import asset_427 from "../assets/images/_responsive/selected/general/pl-20--w960.webp";
-import asset_428 from "../assets/images/_responsive/selected/general/pl-20--w1600.webp";
-import asset_429 from "../assets/images/selected/general/pl-21.jpg";
-import asset_430 from "../assets/images/_responsive/selected/general/pl-21--w480.webp";
-import asset_431 from "../assets/images/_responsive/selected/general/pl-21--w960.webp";
-import asset_432 from "../assets/images/_responsive/selected/general/pl-21--w1600.webp";
-import asset_433 from "../assets/images/selected/general/pl-22.jpg";
-import asset_434 from "../assets/images/_responsive/selected/general/pl-22--w480.webp";
-import asset_435 from "../assets/images/_responsive/selected/general/pl-22--w960.webp";
-import asset_436 from "../assets/images/_responsive/selected/general/pl-22--w1600.webp";
-import asset_437 from "../assets/images/selected/general/pl-dredging-piling.jpg";
-import asset_438 from "../assets/images/_responsive/selected/general/pl-dredging-piling--w480.webp";
-import asset_439 from "../assets/images/_responsive/selected/general/pl-dredging-piling--w960.webp";
-import asset_440 from "../assets/images/_responsive/selected/general/pl-dredging-piling--w1448.webp";
-import asset_441 from "../assets/images/selected/general/pl-projectmgmt-review.jpg";
-import asset_442 from "../assets/images/_responsive/selected/general/pl-projectmgmt-review--w480.webp";
-import asset_443 from "../assets/images/_responsive/selected/general/pl-projectmgmt-review--w960.webp";
-import asset_444 from "../assets/images/_responsive/selected/general/pl-projectmgmt-review--w1536.webp";
-import asset_445 from "../assets/images/selected/general/rg-025.jpg";
-import asset_446 from "../assets/images/_responsive/selected/general/rg-025--w480.webp";
-import asset_447 from "../assets/images/_responsive/selected/general/rg-025--w960.webp";
-import asset_448 from "../assets/images/_responsive/selected/general/rg-025--w1280.webp";
-import asset_449 from "../assets/images/selected/general/rg-027.jpg";
-import asset_450 from "../assets/images/_responsive/selected/general/rg-027--w480.webp";
-import asset_451 from "../assets/images/_responsive/selected/general/rg-027--w960.webp";
-import asset_452 from "../assets/images/_responsive/selected/general/rg-027--w1400.webp";
-import asset_453 from "../assets/images/selected/general/rg-031.jpg";
-import asset_454 from "../assets/images/_responsive/selected/general/rg-031--w480.webp";
-import asset_455 from "../assets/images/_responsive/selected/general/rg-031--w960.webp";
-import asset_456 from "../assets/images/_responsive/selected/general/rg-031--w1080.webp";
-import asset_457 from "../assets/images/selected/general/rg-033.jpg";
-import asset_458 from "../assets/images/_responsive/selected/general/rg-033--w480.webp";
-import asset_459 from "../assets/images/_responsive/selected/general/rg-033--w960.webp";
-import asset_460 from "../assets/images/_responsive/selected/general/rg-033--w1080.webp";
-import asset_461 from "../assets/images/selected/general/rg-035.jpg";
-import asset_462 from "../assets/images/_responsive/selected/general/rg-035--w480.webp";
-import asset_463 from "../assets/images/_responsive/selected/general/rg-035--w960.webp";
-import asset_464 from "../assets/images/_responsive/selected/general/rg-035--w1080.webp";
-import asset_465 from "../assets/images/selected/general/rg-037.jpg";
-import asset_466 from "../assets/images/_responsive/selected/general/rg-037--w480.webp";
-import asset_467 from "../assets/images/_responsive/selected/general/rg-037--w810.webp";
-import asset_468 from "../assets/images/selected/general/rg-038.jpg";
-import asset_469 from "../assets/images/_responsive/selected/general/rg-038--w480.webp";
-import asset_470 from "../assets/images/_responsive/selected/general/rg-038--w960.webp";
-import asset_471 from "../assets/images/_responsive/selected/general/rg-038--w1400.webp";
-import asset_472 from "../assets/images/selected/general/rg-039.jpg";
-import asset_473 from "../assets/images/_responsive/selected/general/rg-039--w480.webp";
-import asset_474 from "../assets/images/_responsive/selected/general/rg-039--w960.webp";
-import asset_475 from "../assets/images/_responsive/selected/general/rg-039--w1080.webp";
-import asset_476 from "../assets/images/selected/general/rg-045.jpg";
-import asset_477 from "../assets/images/_responsive/selected/general/rg-045--w480.webp";
-import asset_478 from "../assets/images/_responsive/selected/general/rg-045--w960.webp";
-import asset_479 from "../assets/images/_responsive/selected/general/rg-045--w1080.webp";
-import asset_480 from "../assets/images/selected/general/rg-046.jpg";
-import asset_481 from "../assets/images/_responsive/selected/general/rg-046--w480.webp";
-import asset_482 from "../assets/images/_responsive/selected/general/rg-046--w960.webp";
-import asset_483 from "../assets/images/selected/general/rg-049.jpg";
-import asset_484 from "../assets/images/_responsive/selected/general/rg-049--w480.webp";
-import asset_485 from "../assets/images/_responsive/selected/general/rg-049--w960.webp";
-import asset_486 from "../assets/images/_responsive/selected/general/rg-049--w1040.webp";
-import asset_487 from "../assets/images/selected/general/rg-052.jpg";
-import asset_488 from "../assets/images/_responsive/selected/general/rg-052--w480.webp";
-import asset_489 from "../assets/images/_responsive/selected/general/rg-052--w960.webp";
-import asset_490 from "../assets/images/_responsive/selected/general/rg-052--w1280.webp";
-import asset_491 from "../assets/images/selected/general/rg-055.jpg";
-import asset_492 from "../assets/images/_responsive/selected/general/rg-055--w480.webp";
-import asset_493 from "../assets/images/_responsive/selected/general/rg-055--w960.webp";
-import asset_494 from "../assets/images/_responsive/selected/general/rg-055--w1080.webp";
-import asset_495 from "../assets/images/selected/general/rg-063.jpg";
-import asset_496 from "../assets/images/_responsive/selected/general/rg-063--w480.webp";
-import asset_497 from "../assets/images/_responsive/selected/general/rg-063--w960.webp";
-import asset_498 from "../assets/images/_responsive/selected/general/rg-063--w1280.webp";
-import asset_499 from "../assets/images/selected/general/rg-066.jpg";
-import asset_500 from "../assets/images/_responsive/selected/general/rg-066--w480.webp";
-import asset_501 from "../assets/images/_responsive/selected/general/rg-066--w960.webp";
-import asset_502 from "../assets/images/_responsive/selected/general/rg-066--w1080.webp";
-import asset_503 from "../assets/images/selected/general/rg-067.jpg";
-import asset_504 from "../assets/images/_responsive/selected/general/rg-067--w480.webp";
-import asset_505 from "../assets/images/_responsive/selected/general/rg-067--w960.webp";
-import asset_506 from "../assets/images/_responsive/selected/general/rg-067--w1086.webp";
-import asset_507 from "../assets/images/selected/general/rg-071.jpg";
-import asset_508 from "../assets/images/_responsive/selected/general/rg-071--w480.webp";
-import asset_509 from "../assets/images/_responsive/selected/general/rg-071--w810.webp";
-import asset_510 from "../assets/images/selected/general/rg-072.jpg";
-import asset_511 from "../assets/images/_responsive/selected/general/rg-072--w480.webp";
-import asset_512 from "../assets/images/_responsive/selected/general/rg-072--w960.webp";
-import asset_513 from "../assets/images/_responsive/selected/general/rg-072--w1280.webp";
-import asset_514 from "../assets/images/selected/general/rg-074.jpg";
-import asset_515 from "../assets/images/_responsive/selected/general/rg-074--w480.webp";
-import asset_516 from "../assets/images/_responsive/selected/general/rg-074--w960.webp";
-import asset_517 from "../assets/images/_responsive/selected/general/rg-074--w1080.webp";
-import asset_518 from "../assets/images/selected/general/rg-087.jpg";
-import asset_519 from "../assets/images/_responsive/selected/general/rg-087--w480.webp";
-import asset_520 from "../assets/images/_responsive/selected/general/rg-087--w812.webp";
-import asset_521 from "../assets/images/selected/general/rg-093.jpg";
-import asset_522 from "../assets/images/_responsive/selected/general/rg-093--w480.webp";
-import asset_523 from "../assets/images/_responsive/selected/general/rg-093--w960.webp";
-import asset_524 from "../assets/images/_responsive/selected/general/rg-093--w1280.webp";
-import asset_525 from "../assets/images/selected/general/rg-094.jpg";
-import asset_526 from "../assets/images/_responsive/selected/general/rg-094--w480.webp";
-import asset_527 from "../assets/images/_responsive/selected/general/rg-094--w960.webp";
-import asset_528 from "../assets/images/_responsive/selected/general/rg-094--w1600.webp";
-import asset_529 from "../assets/images/selected/general/rg-098.jpg";
-import asset_530 from "../assets/images/_responsive/selected/general/rg-098--w480.webp";
-import asset_531 from "../assets/images/_responsive/selected/general/rg-098--w960.webp";
-import asset_532 from "../assets/images/_responsive/selected/general/rg-098--w1080.webp";
-import asset_533 from "../assets/images/selected/general/rg-105.jpg";
-import asset_534 from "../assets/images/_responsive/selected/general/rg-105--w480.webp";
-import asset_535 from "../assets/images/_responsive/selected/general/rg-105--w960.webp";
-import asset_536 from "../assets/images/_responsive/selected/general/rg-105--w1280.webp";
-import asset_537 from "../assets/images/selected/general/rg-121.jpeg";
-import asset_538 from "../assets/images/_responsive/selected/general/rg-121--w480.webp";
-import asset_539 from "../assets/images/_responsive/selected/general/rg-121--w960.webp";
-import asset_540 from "../assets/images/_responsive/selected/general/rg-121--w1600.webp";
-import asset_541 from "../assets/images/selected/general/rg-122.jpeg";
-import asset_542 from "../assets/images/_responsive/selected/general/rg-122--w480.webp";
-import asset_543 from "../assets/images/_responsive/selected/general/rg-122--w960.webp";
-import asset_544 from "../assets/images/_responsive/selected/general/rg-122--w1280.webp";
-import asset_545 from "../assets/images/selected/general/rg-125.jpeg";
-import asset_546 from "../assets/images/_responsive/selected/general/rg-125--w480.webp";
-import asset_547 from "../assets/images/_responsive/selected/general/rg-125--w960.webp";
-import asset_548 from "../assets/images/_responsive/selected/general/rg-125--w1536.webp";
-import asset_549 from "../assets/images/selected/general/rg-126.jpeg";
-import asset_550 from "../assets/images/_responsive/selected/general/rg-126--w480.webp";
-import asset_551 from "../assets/images/_responsive/selected/general/rg-126--w960.webp";
-import asset_552 from "../assets/images/_responsive/selected/general/rg-126--w1280.webp";
-import asset_553 from "../assets/images/selected/general/rg-128.jpeg";
-import asset_554 from "../assets/images/_responsive/selected/general/rg-128--w480.webp";
-import asset_555 from "../assets/images/_responsive/selected/general/rg-128--w960.webp";
-import asset_556 from "../assets/images/_responsive/selected/general/rg-128--w1280.webp";
-import asset_557 from "../assets/images/selected/general/rg-129.jpeg";
-import asset_558 from "../assets/images/_responsive/selected/general/rg-129--w480.webp";
-import asset_559 from "../assets/images/_responsive/selected/general/rg-129--w960.webp";
-import asset_560 from "../assets/images/_responsive/selected/general/rg-129--w1280.webp";
-import asset_561 from "../assets/images/selected/general/rg-131.jpeg";
-import asset_562 from "../assets/images/_responsive/selected/general/rg-131--w480.webp";
-import asset_563 from "../assets/images/_responsive/selected/general/rg-131--w960.webp";
-import asset_564 from "../assets/images/_responsive/selected/general/rg-131--w1400.webp";
-import asset_565 from "../assets/images/selected/general/rg-135.jpeg";
-import asset_566 from "../assets/images/_responsive/selected/general/rg-135--w480.webp";
-import asset_567 from "../assets/images/_responsive/selected/general/rg-135--w960.webp";
-import asset_568 from "../assets/images/selected/general/rg-141.jpeg";
-import asset_569 from "../assets/images/_responsive/selected/general/rg-141--w480.webp";
-import asset_570 from "../assets/images/_responsive/selected/general/rg-141--w960.webp";
-import asset_571 from "../assets/images/_responsive/selected/general/rg-141--w1586.webp";
-import asset_572 from "../assets/images/selected/general/rg-143.jpeg";
-import asset_573 from "../assets/images/_responsive/selected/general/rg-143--w480.webp";
-import asset_574 from "../assets/images/_responsive/selected/general/rg-143--w863.webp";
-import asset_575 from "../assets/images/selected/projects/pa-043.jpg";
-import asset_576 from "../assets/images/_responsive/selected/projects/pa-043--w480.webp";
-import asset_577 from "../assets/images/_responsive/selected/projects/pa-043--w960.webp";
-import asset_578 from "../assets/images/_responsive/selected/projects/pa-043--w1448.webp";
-import asset_579 from "../assets/images/selected/projects/pa-046.jpg";
-import asset_580 from "../assets/images/_responsive/selected/projects/pa-046--w480.webp";
-import asset_581 from "../assets/images/_responsive/selected/projects/pa-046--w960.webp";
-import asset_582 from "../assets/images/_responsive/selected/projects/pa-046--w1600.webp";
-import asset_583 from "../assets/images/selected/projects/pa-054.jpg";
-import asset_584 from "../assets/images/_responsive/selected/projects/pa-054--w480.webp";
-import asset_585 from "../assets/images/_responsive/selected/projects/pa-054--w960.webp";
-import asset_586 from "../assets/images/_responsive/selected/projects/pa-054--w1448.webp";
-import asset_587 from "../assets/images/selected/projects/pa-055.jpg";
-import asset_588 from "../assets/images/_responsive/selected/projects/pa-055--w480.webp";
-import asset_589 from "../assets/images/_responsive/selected/projects/pa-055--w960.webp";
-import asset_590 from "../assets/images/_responsive/selected/projects/pa-055--w1448.webp";
-import asset_591 from "../assets/images/selected/projects/pa-063.jpg";
-import asset_592 from "../assets/images/_responsive/selected/projects/pa-063--w480.webp";
-import asset_593 from "../assets/images/_responsive/selected/projects/pa-063--w960.webp";
-import asset_594 from "../assets/images/_responsive/selected/projects/pa-063--w1448.webp";
-import asset_595 from "../assets/images/selected/projects/pa-067.jpg";
-import asset_596 from "../assets/images/_responsive/selected/projects/pa-067--w480.webp";
-import asset_597 from "../assets/images/_responsive/selected/projects/pa-067--w960.webp";
-import asset_598 from "../assets/images/_responsive/selected/projects/pa-067--w1448.webp";
-import asset_599 from "../assets/images/selected/projects/pa-074.jpg";
-import asset_600 from "../assets/images/_responsive/selected/projects/pa-074--w480.webp";
-import asset_601 from "../assets/images/_responsive/selected/projects/pa-074--w960.webp";
-import asset_602 from "../assets/images/_responsive/selected/projects/pa-074--w1448.webp";
-import asset_603 from "../assets/images/selected/projects/pa-080.jpg";
-import asset_604 from "../assets/images/_responsive/selected/projects/pa-080--w480.webp";
-import asset_605 from "../assets/images/_responsive/selected/projects/pa-080--w960.webp";
-import asset_606 from "../assets/images/_responsive/selected/projects/pa-080--w1448.webp";
-import asset_607 from "../assets/images/selected/projects/pa-103.jpg";
-import asset_608 from "../assets/images/_responsive/selected/projects/pa-103--w480.webp";
-import asset_609 from "../assets/images/_responsive/selected/projects/pa-103--w960.webp";
-import asset_610 from "../assets/images/_responsive/selected/projects/pa-103--w1448.webp";
-import asset_611 from "../assets/images/selected/projects/pa-105.jpg";
-import asset_612 from "../assets/images/_responsive/selected/projects/pa-105--w480.webp";
-import asset_613 from "../assets/images/_responsive/selected/projects/pa-105--w960.webp";
-import asset_614 from "../assets/images/_responsive/selected/projects/pa-105--w1444.webp";
-import asset_615 from "../assets/images/selected/projects/pa-110.jpg";
-import asset_616 from "../assets/images/_responsive/selected/projects/pa-110--w480.webp";
-import asset_617 from "../assets/images/_responsive/selected/projects/pa-110--w960.webp";
-import asset_618 from "../assets/images/_responsive/selected/projects/pa-110--w1448.webp";
-import asset_619 from "../assets/images/selected/projects/pa-121.jpg";
-import asset_620 from "../assets/images/_responsive/selected/projects/pa-121--w480.webp";
-import asset_621 from "../assets/images/_responsive/selected/projects/pa-121--w960.webp";
-import asset_622 from "../assets/images/_responsive/selected/projects/pa-121--w1448.webp";
-import asset_623 from "../assets/images/selected/projects/pa-126.jpg";
-import asset_624 from "../assets/images/_responsive/selected/projects/pa-126--w480.webp";
-import asset_625 from "../assets/images/_responsive/selected/projects/pa-126--w960.webp";
-import asset_626 from "../assets/images/_responsive/selected/projects/pa-126--w1399.webp";
-import asset_627 from "../assets/images/selected/projects/pa-129.jpg";
-import asset_628 from "../assets/images/_responsive/selected/projects/pa-129--w480.webp";
-import asset_629 from "../assets/images/_responsive/selected/projects/pa-129--w960.webp";
-import asset_630 from "../assets/images/_responsive/selected/projects/pa-129--w1448.webp";
-import asset_631 from "../assets/images/selected/projects/pa-131.jpg";
-import asset_632 from "../assets/images/_responsive/selected/projects/pa-131--w480.webp";
-import asset_633 from "../assets/images/_responsive/selected/projects/pa-131--w543.webp";
-import asset_634 from "../assets/images/selected/projects/pa-133.jpg";
-import asset_635 from "../assets/images/_responsive/selected/projects/pa-133--w480.webp";
-import asset_636 from "../assets/images/_responsive/selected/projects/pa-133--w564.webp";
-import asset_637 from "../assets/images/selected/projects/pp-009.jpg";
-import asset_638 from "../assets/images/_responsive/selected/projects/pp-009--w480.webp";
-import asset_639 from "../assets/images/_responsive/selected/projects/pp-009--w730.webp";
-import asset_640 from "../assets/images/selected/projects/pp-010.jpg";
-import asset_641 from "../assets/images/_responsive/selected/projects/pp-010--w480.webp";
-import asset_642 from "../assets/images/_responsive/selected/projects/pp-010--w714.webp";
-import asset_643 from "../assets/images/selected/projects/pp-011.jpg";
-import asset_644 from "../assets/images/_responsive/selected/projects/pp-011--w480.webp";
-import asset_645 from "../assets/images/_responsive/selected/projects/pp-011--w694.webp";
-import asset_646 from "../assets/images/selected/projects/pp-017.jpg";
-import asset_647 from "../assets/images/_responsive/selected/projects/pp-017--w480.webp";
-import asset_648 from "../assets/images/_responsive/selected/projects/pp-017--w960.webp";
-import asset_649 from "../assets/images/_responsive/selected/projects/pp-017--w1496.webp";
-import asset_650 from "../assets/images/selected/projects/pp-021.jpg";
-import asset_651 from "../assets/images/_responsive/selected/projects/pp-021--w480.webp";
-import asset_652 from "../assets/images/_responsive/selected/projects/pp-021--w960.webp";
-import asset_653 from "../assets/images/_responsive/selected/projects/pp-021--w1448.webp";
-import asset_654 from "../assets/images/selected/projects/pp-024.jpg";
-import asset_655 from "../assets/images/_responsive/selected/projects/pp-024--w480.webp";
-import asset_656 from "../assets/images/_responsive/selected/projects/pp-024--w960.webp";
-import asset_657 from "../assets/images/_responsive/selected/projects/pp-024--w1448.webp";
-import asset_658 from "../assets/images/selected/projects/pp-034.jpg";
-import asset_659 from "../assets/images/_responsive/selected/projects/pp-034--w480.webp";
-import asset_660 from "../assets/images/_responsive/selected/projects/pp-034--w960.webp";
-import asset_661 from "../assets/images/_responsive/selected/projects/pp-034--w1448.webp";
-import asset_662 from "../assets/images/selected/projects/pp-038.jpg";
-import asset_663 from "../assets/images/_responsive/selected/projects/pp-038--w480.webp";
-import asset_664 from "../assets/images/_responsive/selected/projects/pp-038--w960.webp";
-import asset_665 from "../assets/images/_responsive/selected/projects/pp-038--w1448.webp";
-import asset_666 from "../assets/images/selected/projects/pp-040.jpg";
-import asset_667 from "../assets/images/_responsive/selected/projects/pp-040--w480.webp";
-import asset_668 from "../assets/images/_responsive/selected/projects/pp-040--w960.webp";
-import asset_669 from "../assets/images/_responsive/selected/projects/pp-040--w1448.webp";
-import asset_670 from "../assets/images/selected/projects/pp-043.jpg";
-import asset_671 from "../assets/images/_responsive/selected/projects/pp-043--w480.webp";
-import asset_672 from "../assets/images/_responsive/selected/projects/pp-043--w960.webp";
-import asset_673 from "../assets/images/_responsive/selected/projects/pp-043--w1586.webp";
-import asset_674 from "../assets/images/selected/projects/pp-045.jpg";
-import asset_675 from "../assets/images/_responsive/selected/projects/pp-045--w480.webp";
-import asset_676 from "../assets/images/_responsive/selected/projects/pp-045--w960.webp";
-import asset_677 from "../assets/images/_responsive/selected/projects/pp-045--w1448.webp";
-import asset_678 from "../assets/images/selected/projects/pp-048.jpg";
-import asset_679 from "../assets/images/_responsive/selected/projects/pp-048--w480.webp";
-import asset_680 from "../assets/images/_responsive/selected/projects/pp-048--w960.webp";
-import asset_681 from "../assets/images/_responsive/selected/projects/pp-048--w1448.webp";
-import asset_682 from "../assets/images/selected/projects/pp-051.jpg";
-import asset_683 from "../assets/images/_responsive/selected/projects/pp-051--w480.webp";
-import asset_684 from "../assets/images/_responsive/selected/projects/pp-051--w710.webp";
-import asset_685 from "../assets/images/selected/projects/pp-053.jpg";
-import asset_686 from "../assets/images/_responsive/selected/projects/pp-053--w480.webp";
-import asset_687 from "../assets/images/_responsive/selected/projects/pp-053--w656.webp";
-import asset_688 from "../assets/images/selected/projects/pp-055.jpg";
-import asset_689 from "../assets/images/_responsive/selected/projects/pp-055--w480.webp";
-import asset_690 from "../assets/images/_responsive/selected/projects/pp-055--w731.webp";
-import asset_691 from "../assets/images/selected/projects/pp-056.jpg";
-import asset_692 from "../assets/images/_responsive/selected/projects/pp-056--w480.webp";
-import asset_693 from "../assets/images/_responsive/selected/projects/pp-056--w960.webp";
-import asset_694 from "../assets/images/_responsive/selected/projects/pp-056--w1514.webp";
-import asset_695 from "../assets/images/selected/projects/pp-057.jpg";
-import asset_696 from "../assets/images/_responsive/selected/projects/pp-057--w480.webp";
-import asset_697 from "../assets/images/_responsive/selected/projects/pp-057--w960.webp";
-import asset_698 from "../assets/images/_responsive/selected/projects/pp-057--w1448.webp";
-import asset_699 from "../assets/images/selected/projects/pp-059.jpg";
-import asset_700 from "../assets/images/_responsive/selected/projects/pp-059--w480.webp";
-import asset_701 from "../assets/images/_responsive/selected/projects/pp-059--w960.webp";
-import asset_702 from "../assets/images/_responsive/selected/projects/pp-059--w1448.webp";
-import asset_703 from "../assets/images/selected/projects/pp-060.jpg";
-import asset_704 from "../assets/images/_responsive/selected/projects/pp-060--w480.webp";
-import asset_705 from "../assets/images/_responsive/selected/projects/pp-060--w960.webp";
-import asset_706 from "../assets/images/_responsive/selected/projects/pp-060--w1448.webp";
-import asset_707 from "../assets/images/selected/projects/pp-061.jpg";
-import asset_708 from "../assets/images/_responsive/selected/projects/pp-061--w480.webp";
-import asset_709 from "../assets/images/_responsive/selected/projects/pp-061--w960.webp";
-import asset_710 from "../assets/images/_responsive/selected/projects/pp-061--w1086.webp";
-import asset_711 from "../assets/images/selected/projects/pp-062.jpg";
-import asset_712 from "../assets/images/_responsive/selected/projects/pp-062--w480.webp";
-import asset_713 from "../assets/images/_responsive/selected/projects/pp-062--w960.webp";
-import asset_714 from "../assets/images/_responsive/selected/projects/pp-062--w1448.webp";
-import asset_715 from "../assets/images/selected/projects/pp-063.jpg";
-import asset_716 from "../assets/images/_responsive/selected/projects/pp-063--w480.webp";
-import asset_717 from "../assets/images/_responsive/selected/projects/pp-063--w656.webp";
-import asset_718 from "../assets/images/selected/projects/pp-065.jpg";
-import asset_719 from "../assets/images/_responsive/selected/projects/pp-065--w480.webp";
-import asset_720 from "../assets/images/_responsive/selected/projects/pp-065--w657.webp";
-import asset_721 from "../assets/images/selected/projects/pp-069.jpg";
-import asset_722 from "../assets/images/_responsive/selected/projects/pp-069--w480.webp";
-import asset_723 from "../assets/images/_responsive/selected/projects/pp-069--w730.webp";
-import asset_724 from "../assets/images/selected/projects/pp-071.jpg";
-import asset_725 from "../assets/images/_responsive/selected/projects/pp-071--w480.webp";
-import asset_726 from "../assets/images/_responsive/selected/projects/pp-071--w960.webp";
-import asset_727 from "../assets/images/_responsive/selected/projects/pp-071--w1448.webp";
-import asset_728 from "../assets/images/selected/projects/pp-072.jpg";
-import asset_729 from "../assets/images/_responsive/selected/projects/pp-072--w480.webp";
-import asset_730 from "../assets/images/_responsive/selected/projects/pp-072--w960.webp";
-import asset_731 from "../assets/images/_responsive/selected/projects/pp-072--w1592.webp";
-import asset_732 from "../assets/images/selected/projects/pp-075.jpg";
-import asset_733 from "../assets/images/_responsive/selected/projects/pp-075--w480.webp";
-import asset_734 from "../assets/images/_responsive/selected/projects/pp-075--w960.webp";
-import asset_735 from "../assets/images/_responsive/selected/projects/pp-075--w1448.webp";
-import asset_736 from "../assets/images/selected/recent/im-030.jpeg";
-import asset_737 from "../assets/images/_responsive/selected/recent/im-030--w480.webp";
-import asset_738 from "../assets/images/_responsive/selected/recent/im-030--w960.webp";
-import asset_739 from "../assets/images/selected/recent/im-033.jpeg";
-import asset_740 from "../assets/images/_responsive/selected/recent/im-033--w480.webp";
-import asset_741 from "../assets/images/_responsive/selected/recent/im-033--w960.webp";
-import asset_742 from "../assets/images/selected/recent/im-036.jpeg";
-import asset_743 from "../assets/images/_responsive/selected/recent/im-036--w480.webp";
-import asset_744 from "../assets/images/_responsive/selected/recent/im-036--w960.webp";
-import asset_745 from "../assets/images/_responsive/selected/recent/im-036--w1280.webp";
-import asset_746 from "../assets/images/selected/recent/im-047.jpeg";
-import asset_747 from "../assets/images/_responsive/selected/recent/im-047--w480.webp";
-import asset_748 from "../assets/images/_responsive/selected/recent/im-047--w762.webp";
-import asset_749 from "../assets/images/selected/recent/op-01.jpg";
-import asset_750 from "../assets/images/_responsive/selected/recent/op-01--w480.webp";
-import asset_751 from "../assets/images/_responsive/selected/recent/op-01--w810.webp";
-import asset_752 from "../assets/images/selected/recent/op-02.jpg";
-import asset_753 from "../assets/images/_responsive/selected/recent/op-02--w480.webp";
-import asset_754 from "../assets/images/_responsive/selected/recent/op-02--w960.webp";
-import asset_755 from "../assets/images/_responsive/selected/recent/op-02--w1080.webp";
-import asset_756 from "../assets/images/selected/recent/op-03.jpg";
-import asset_757 from "../assets/images/_responsive/selected/recent/op-03--w480.webp";
-import asset_758 from "../assets/images/_responsive/selected/recent/op-03--w810.webp";
-import asset_759 from "../assets/images/selected/recent/op-04.jpg";
-import asset_760 from "../assets/images/_responsive/selected/recent/op-04--w480.webp";
-import asset_761 from "../assets/images/_responsive/selected/recent/op-04--w810.webp";
-import asset_762 from "../assets/images/selected/recent/op-05.jpg";
-import asset_763 from "../assets/images/_responsive/selected/recent/op-05--w480.webp";
-import asset_764 from "../assets/images/_responsive/selected/recent/op-05--w810.webp";
-import asset_765 from "../assets/images/selected/recent/op-06.jpg";
-import asset_766 from "../assets/images/_responsive/selected/recent/op-06--w480.webp";
-import asset_767 from "../assets/images/_responsive/selected/recent/op-06--w810.webp";
-import asset_768 from "../assets/images/selected/recent/op-07.jpg";
-import asset_769 from "../assets/images/_responsive/selected/recent/op-07--w480.webp";
-import asset_770 from "../assets/images/_responsive/selected/recent/op-07--w810.webp";
-import asset_771 from "../assets/images/selected/recent/op-08.jpg";
-import asset_772 from "../assets/images/_responsive/selected/recent/op-08--w480.webp";
-import asset_773 from "../assets/images/_responsive/selected/recent/op-08--w810.webp";
-import asset_774 from "../assets/images/team/00-site-logo-enikkom-construction-limited.png";
-import asset_775 from "../assets/images/_responsive/team/00-site-logo-enikkom-construction-limited--w480.webp";
-import asset_776 from "../assets/images/_responsive/team/00-site-logo-enikkom-construction-limited--w960.webp";
-import asset_777 from "../assets/images/_responsive/team/00-site-logo-enikkom-construction-limited--w1536.webp";
-import asset_778 from "../assets/images/team/01-partner-logo-hddtec-limited.png";
-import asset_779 from "../assets/images/_responsive/team/01-partner-logo-hddtec-limited--w480.webp";
-import asset_780 from "../assets/images/_responsive/team/01-partner-logo-hddtec-limited--w960.webp";
-import asset_781 from "../assets/images/_responsive/team/01-partner-logo-hddtec-limited--w1254.webp";
-import asset_782 from "../assets/images/team/02-hero-management-team-hero-background.jpg";
-import asset_783 from "../assets/images/_responsive/team/02-hero-management-team-hero-background--w480.webp";
-import asset_784 from "../assets/images/_responsive/team/02-hero-management-team-hero-background--w960.webp";
-import asset_785 from "../assets/images/_responsive/team/02-hero-management-team-hero-background--w1087.webp";
-import asset_786 from "../assets/images/team/03-team-photo-engr-edward-amene.jpg";
-import asset_787 from "../assets/images/_responsive/team/03-team-photo-engr-edward-amene--w480.webp";
-import asset_788 from "../assets/images/_responsive/team/03-team-photo-engr-edward-amene--w960.webp";
-import asset_789 from "../assets/images/_responsive/team/03-team-photo-engr-edward-amene--w1254.webp";
-import asset_790 from "../assets/images/team/04-team-photo-engr-saleem-ahmad-khan.jpg";
-import asset_791 from "../assets/images/_responsive/team/04-team-photo-engr-saleem-ahmad-khan--w480.webp";
-import asset_792 from "../assets/images/_responsive/team/04-team-photo-engr-saleem-ahmad-khan--w960.webp";
-import asset_793 from "../assets/images/_responsive/team/04-team-photo-engr-saleem-ahmad-khan--w1254.webp";
-import asset_794 from "../assets/images/team/05-team-photo-mr-francis-anatogu.jpg";
-import asset_795 from "../assets/images/_responsive/team/05-team-photo-mr-francis-anatogu--w480.webp";
-import asset_796 from "../assets/images/_responsive/team/05-team-photo-mr-francis-anatogu--w960.webp";
-import asset_797 from "../assets/images/_responsive/team/05-team-photo-mr-francis-anatogu--w1254.webp";
-import asset_798 from "../assets/images/team/06-team-photo-adekunle-adewole-phd.jpg";
-import asset_799 from "../assets/images/_responsive/team/06-team-photo-adekunle-adewole-phd--w480.webp";
-import asset_800 from "../assets/images/_responsive/team/06-team-photo-adekunle-adewole-phd--w960.webp";
-import asset_801 from "../assets/images/_responsive/team/06-team-photo-adekunle-adewole-phd--w1254.webp";
-import asset_802 from "../assets/images/team/07-team-photo-mr-chibuike-nwachukwu.png";
-import asset_803 from "../assets/images/_responsive/team/07-team-photo-mr-chibuike-nwachukwu--w480.webp";
-import asset_804 from "../assets/images/_responsive/team/07-team-photo-mr-chibuike-nwachukwu--w960.webp";
-import asset_805 from "../assets/images/_responsive/team/07-team-photo-mr-chibuike-nwachukwu--w1254.webp";
-import asset_806 from "../assets/images/team/08-team-photo-teddy-allen.jpg";
-import asset_807 from "../assets/images/_responsive/team/08-team-photo-teddy-allen--w480.webp";
-import asset_808 from "../assets/images/_responsive/team/08-team-photo-teddy-allen--w960.webp";
-import asset_809 from "../assets/images/_responsive/team/08-team-photo-teddy-allen--w1254.webp";
-import asset_810 from "../assets/images/team/09-team-photo-idigbor-emeka-fca.jpg";
-import asset_811 from "../assets/images/_responsive/team/09-team-photo-idigbor-emeka-fca--w480.webp";
-import asset_812 from "../assets/images/_responsive/team/09-team-photo-idigbor-emeka-fca--w960.webp";
-import asset_813 from "../assets/images/_responsive/team/09-team-photo-idigbor-emeka-fca--w1254.webp";
-import asset_814 from "../assets/images/team/10-team-photo-biodun-adefila.jpg";
-import asset_815 from "../assets/images/_responsive/team/10-team-photo-biodun-adefila--w480.webp";
-import asset_816 from "../assets/images/_responsive/team/10-team-photo-biodun-adefila--w960.webp";
-import asset_817 from "../assets/images/_responsive/team/10-team-photo-biodun-adefila--w1085.webp";
-import asset_818 from "../assets/images/team/11-team-photo-ken-james.jpg";
-import asset_819 from "../assets/images/_responsive/team/11-team-photo-ken-james--w480.webp";
-import asset_820 from "../assets/images/_responsive/team/11-team-photo-ken-james--w960.webp";
-import asset_821 from "../assets/images/_responsive/team/11-team-photo-ken-james--w1254.webp";
-import asset_822 from "../assets/images/team/12-idigbor-emeka.jpg";
-import asset_823 from "../assets/images/_responsive/team/12-idigbor-emeka--w480.webp";
-import asset_824 from "../assets/images/_responsive/team/12-idigbor-emeka--w960.webp";
-import asset_825 from "../assets/images/_responsive/team/12-idigbor-emeka--w1254.webp";
-import asset_826 from "../assets/images/team/13-team-photo-uzoma-nwagboso.jpeg";
-import asset_827 from "../assets/images/_responsive/team/13-team-photo-uzoma-nwagboso-jpeg--w480.webp";
-import asset_828 from "../assets/images/_responsive/team/13-team-photo-uzoma-nwagboso-jpeg--w960.webp";
-import asset_829 from "../assets/images/_responsive/team/13-team-photo-uzoma-nwagboso-jpeg--w1536.webp";
-import asset_830 from "../assets/images/team/13-team-photo-uzoma-nwagboso.png";
-import asset_831 from "../assets/images/_responsive/team/13-team-photo-uzoma-nwagboso-png--w480.webp";
-import asset_832 from "../assets/images/_responsive/team/13-team-photo-uzoma-nwagboso-png--w960.webp";
-import asset_833 from "../assets/images/_responsive/team/13-team-photo-uzoma-nwagboso-png--w1296.webp";
+import asset_81 from "../assets/images/projects/drilling-ops-8.jpg";
+import asset_82 from "../assets/images/_responsive/projects/drilling-ops-8--w480.webp";
+import asset_83 from "../assets/images/_responsive/projects/drilling-ops-8--w960.webp";
+import asset_84 from "../assets/images/_responsive/projects/drilling-ops-8--w1448.webp";
+import asset_85 from "../assets/images/projects/drilling-site-2.jpg";
+import asset_86 from "../assets/images/_responsive/projects/drilling-site-2--w480.webp";
+import asset_87 from "../assets/images/_responsive/projects/drilling-site-2--w960.webp";
+import asset_88 from "../assets/images/_responsive/projects/drilling-site-2--w1400.webp";
+import asset_89 from "../assets/images/projects/drilling-site.png";
+import asset_90 from "../assets/images/_responsive/projects/drilling-site--w480.webp";
+import asset_91 from "../assets/images/_responsive/projects/drilling-site--w768.webp";
+import asset_92 from "../assets/images/projects/equipment-fleet.jpg";
+import asset_93 from "../assets/images/_responsive/projects/equipment-fleet--w480.webp";
+import asset_94 from "../assets/images/_responsive/projects/equipment-fleet--w960.webp";
+import asset_95 from "../assets/images/_responsive/projects/equipment-fleet--w1200.webp";
+import asset_96 from "../assets/images/projects/generator-fg-wilson.png";
+import asset_97 from "../assets/images/_responsive/projects/generator-fg-wilson--w480.webp";
+import asset_98 from "../assets/images/_responsive/projects/generator-fg-wilson--w960.webp";
+import asset_99 from "../assets/images/_responsive/projects/generator-fg-wilson--w1152.webp";
+import asset_100 from "../assets/images/projects/hdd-drill-string.jpg";
+import asset_101 from "../assets/images/_responsive/projects/hdd-drill-string--w480.webp";
+import asset_102 from "../assets/images/_responsive/projects/hdd-drill-string--w960.webp";
+import asset_103 from "../assets/images/_responsive/projects/hdd-drill-string--w1240.webp";
+import asset_104 from "../assets/images/projects/hdd-equipment-fleet-2.jpg";
+import asset_105 from "../assets/images/_responsive/projects/hdd-equipment-fleet-2--w480.webp";
+import asset_106 from "../assets/images/_responsive/projects/hdd-equipment-fleet-2--w582.webp";
+import asset_107 from "../assets/images/projects/hdd-equipment-fleet-3.jpg";
+import asset_108 from "../assets/images/_responsive/projects/hdd-equipment-fleet-3--w480.webp";
+import asset_109 from "../assets/images/_responsive/projects/hdd-equipment-fleet-3--w502.webp";
+import asset_110 from "../assets/images/projects/hdd-equipment-fleet-4.jpg";
+import asset_111 from "../assets/images/_responsive/projects/hdd-equipment-fleet-4--w480.webp";
+import asset_112 from "../assets/images/_responsive/projects/hdd-equipment-fleet-4--w513.webp";
+import asset_113 from "../assets/images/projects/hdd-equipment-fleet.jpg";
+import asset_114 from "../assets/images/_responsive/projects/hdd-equipment-fleet--w480.webp";
+import asset_115 from "../assets/images/_responsive/projects/hdd-equipment-fleet--w584.webp";
+import asset_116 from "../assets/images/projects/hdd-night-panorama-cropped.jpg";
+import asset_117 from "../assets/images/_responsive/projects/hdd-night-panorama-cropped--w480.webp";
+import asset_118 from "../assets/images/_responsive/projects/hdd-night-panorama-cropped--w960.webp";
+import asset_119 from "../assets/images/_responsive/projects/hdd-night-panorama-cropped--w1600.webp";
+import asset_120 from "../assets/images/projects/hdd-night-panorama.jpg";
+import asset_121 from "../assets/images/_responsive/projects/hdd-night-panorama--w480.webp";
+import asset_122 from "../assets/images/_responsive/projects/hdd-night-panorama--w960.webp";
+import asset_123 from "../assets/images/_responsive/projects/hdd-night-panorama--w1131.webp";
+import asset_124 from "../assets/images/projects/hdd-operations-2.jpg";
+import asset_125 from "../assets/images/_responsive/projects/hdd-operations-2--w480.webp";
+import asset_126 from "../assets/images/_responsive/projects/hdd-operations-2--w960.webp";
+import asset_127 from "../assets/images/_responsive/projects/hdd-operations-2--w1080.webp";
+import asset_128 from "../assets/images/projects/hdd-rig-night.jpg";
+import asset_129 from "../assets/images/_responsive/projects/hdd-rig-night--w480.webp";
+import asset_130 from "../assets/images/_responsive/projects/hdd-rig-night--w960.webp";
+import asset_131 from "../assets/images/_responsive/projects/hdd-rig-night--w1400.webp";
+import asset_132 from "../assets/images/projects/hdd-rig-operation.jpg";
+import asset_133 from "../assets/images/_responsive/projects/hdd-rig-operation--w480.webp";
+import asset_134 from "../assets/images/_responsive/projects/hdd-rig-operation--w960.webp";
+import asset_135 from "../assets/images/_responsive/projects/hdd-rig-operation--w1022.webp";
+import asset_136 from "../assets/images/projects/hdd-team-1.jpg";
+import asset_137 from "../assets/images/_responsive/projects/hdd-team-1--w480.webp";
+import asset_138 from "../assets/images/_responsive/projects/hdd-team-1--w960.webp";
+import asset_139 from "../assets/images/_responsive/projects/hdd-team-1--w1400.webp";
+import asset_140 from "../assets/images/projects/hero-hdd-rig.jpg";
+import asset_141 from "../assets/images/_responsive/projects/hero-hdd-rig--w480.webp";
+import asset_142 from "../assets/images/_responsive/projects/hero-hdd-rig--w960.webp";
+import asset_143 from "../assets/images/_responsive/projects/hero-hdd-rig--w1600.webp";
+import asset_144 from "../assets/images/projects/hero-hdd.jpg";
+import asset_145 from "../assets/images/_responsive/projects/hero-hdd--w480.webp";
+import asset_146 from "../assets/images/_responsive/projects/hero-hdd--w960.webp";
+import asset_147 from "../assets/images/_responsive/projects/hero-hdd--w1600.webp";
+import asset_148 from "../assets/images/projects/hero_river_crossing.jpg";
+import asset_149 from "../assets/images/_responsive/projects/hero_river_crossing--w480.webp";
+import asset_150 from "../assets/images/_responsive/projects/hero_river_crossing--w960.webp";
+import asset_151 from "../assets/images/_responsive/projects/hero_river_crossing--w1280.webp";
+import asset_152 from "../assets/images/projects/home-facilities-wellhead.jpg";
+import asset_153 from "../assets/images/_responsive/projects/home-facilities-wellhead--w480.webp";
+import asset_154 from "../assets/images/_responsive/projects/home-facilities-wellhead--w960.webp";
+import asset_155 from "../assets/images/_responsive/projects/home-facilities-wellhead--w1536.webp";
+import asset_156 from "../assets/images/projects/hse-safety.jpg";
+import asset_157 from "../assets/images/_responsive/projects/hse-safety--w480.webp";
+import asset_158 from "../assets/images/_responsive/projects/hse-safety--w960.webp";
+import asset_159 from "../assets/images/_responsive/projects/hse-safety--w1024.webp";
+import asset_160 from "../assets/images/projects/jetty-construction.jpg";
+import asset_161 from "../assets/images/_responsive/projects/jetty-construction--w480.webp";
+import asset_162 from "../assets/images/_responsive/projects/jetty-construction--w960.webp";
+import asset_163 from "../assets/images/_responsive/projects/jetty-construction--w1200.webp";
+import asset_164 from "../assets/images/projects/lekki-gas-pipeline.jpg";
+import asset_165 from "../assets/images/_responsive/projects/lekki-gas-pipeline--w480.webp";
+import asset_166 from "../assets/images/_responsive/projects/lekki-gas-pipeline--w960.webp";
+import asset_167 from "../assets/images/_responsive/projects/lekki-gas-pipeline--w1600.webp";
+import asset_168 from "../assets/images/projects/multi-crane-operations.jpg";
+import asset_169 from "../assets/images/_responsive/projects/multi-crane-operations--w372.webp";
+import asset_170 from "../assets/images/projects/nipco-ibafo-2.jpg";
+import asset_171 from "../assets/images/_responsive/projects/nipco-ibafo-2--w480.webp";
+import asset_172 from "../assets/images/_responsive/projects/nipco-ibafo-2--w960.webp";
+import asset_173 from "../assets/images/_responsive/projects/nipco-ibafo-2--w1400.webp";
+import asset_174 from "../assets/images/projects/nipco-ibafo-3.jpg";
+import asset_175 from "../assets/images/_responsive/projects/nipco-ibafo-3--w480.webp";
+import asset_176 from "../assets/images/_responsive/projects/nipco-ibafo-3--w960.webp";
+import asset_177 from "../assets/images/_responsive/projects/nipco-ibafo-3--w1400.webp";
+import asset_178 from "../assets/images/projects/nipco-ibafo.jpg";
+import asset_179 from "../assets/images/_responsive/projects/nipco-ibafo--w480.webp";
+import asset_180 from "../assets/images/_responsive/projects/nipco-ibafo--w960.webp";
+import asset_181 from "../assets/images/_responsive/projects/nipco-ibafo--w1400.webp";
+import asset_182 from "../assets/images/projects/nipco-pipeline.jpg";
+import asset_183 from "../assets/images/_responsive/projects/nipco-pipeline--w480.webp";
+import asset_184 from "../assets/images/_responsive/projects/nipco-pipeline--w960.webp";
+import asset_185 from "../assets/images/_responsive/projects/nipco-pipeline--w1449.webp";
+import asset_186 from "../assets/images/projects/otumara-escravos-2.jpg";
+import asset_187 from "../assets/images/_responsive/projects/otumara-escravos-2--w480.webp";
+import asset_188 from "../assets/images/_responsive/projects/otumara-escravos-2--w960.webp";
+import asset_189 from "../assets/images/_responsive/projects/otumara-escravos-2--w1600.webp";
+import asset_190 from "../assets/images/projects/otumara-escravos.jpg";
+import asset_191 from "../assets/images/_responsive/projects/otumara-escravos--w480.webp";
+import asset_192 from "../assets/images/_responsive/projects/otumara-escravos--w960.webp";
+import asset_193 from "../assets/images/_responsive/projects/otumara-escravos--w1600.webp";
+import asset_194 from "../assets/images/projects/partnership-hddthailand-2.jpg";
+import asset_195 from "../assets/images/_responsive/projects/partnership-hddthailand-2--w276.webp";
+import asset_196 from "../assets/images/projects/partnership-hddthailand.jpg";
+import asset_197 from "../assets/images/_responsive/projects/partnership-hddthailand--w309.webp";
+import asset_198 from "../assets/images/projects/pipe-handling.jpg";
+import asset_199 from "../assets/images/_responsive/projects/pipe-handling--w480.webp";
+import asset_200 from "../assets/images/_responsive/projects/pipe-handling--w960.webp";
+import asset_201 from "../assets/images/_responsive/projects/pipe-handling--w1080.webp";
+import asset_202 from "../assets/images/projects/pipe-laying-crane.jpg";
+import asset_203 from "../assets/images/_responsive/projects/pipe-laying-crane--w480.webp";
+import asset_204 from "../assets/images/_responsive/projects/pipe-laying-crane--w960.webp";
+import asset_205 from "../assets/images/_responsive/projects/pipe-laying-crane--w1552.webp";
+import asset_206 from "../assets/images/projects/pipe-welding.png";
+import asset_207 from "../assets/images/_responsive/projects/pipe-welding--w480.webp";
+import asset_208 from "../assets/images/_responsive/projects/pipe-welding--w768.webp";
+import asset_209 from "../assets/images/projects/pipeline-construction.jpg";
+import asset_210 from "../assets/images/_responsive/projects/pipeline-construction--w480.webp";
+import asset_211 from "../assets/images/_responsive/projects/pipeline-construction--w960.webp";
+import asset_212 from "../assets/images/_responsive/projects/pipeline-construction--w1600.webp";
+import asset_213 from "../assets/images/projects/pipeline-crew.jpg";
+import asset_214 from "../assets/images/_responsive/projects/pipeline-crew--w480.webp";
+import asset_215 from "../assets/images/_responsive/projects/pipeline-crew--w960.webp";
+import asset_216 from "../assets/images/_responsive/projects/pipeline-crew--w1080.webp";
+import asset_217 from "../assets/images/projects/pipeline-laying.png";
+import asset_218 from "../assets/images/_responsive/projects/pipeline-laying--w480.webp";
+import asset_219 from "../assets/images/_responsive/projects/pipeline-laying--w768.webp";
+import asset_220 from "../assets/images/projects/proj_atlas.jpg";
+import asset_221 from "../assets/images/_responsive/projects/proj_atlas--w480.webp";
+import asset_222 from "../assets/images/_responsive/projects/proj_atlas--w960.webp";
+import asset_223 from "../assets/images/projects/proj_atlas_v2.jpg";
+import asset_224 from "../assets/images/_responsive/projects/proj_atlas_v2--w480.webp";
+import asset_225 from "../assets/images/_responsive/projects/proj_atlas_v2--w960.webp";
+import asset_226 from "../assets/images/_responsive/projects/proj_atlas_v2--w1600.webp";
+import asset_227 from "../assets/images/projects/proj_lekki.jpg";
+import asset_228 from "../assets/images/_responsive/projects/proj_lekki--w480.webp";
+import asset_229 from "../assets/images/_responsive/projects/proj_lekki--w960.webp";
+import asset_230 from "../assets/images/_responsive/projects/proj_lekki--w1024.webp";
+import asset_231 from "../assets/images/projects/proj_oml34.jpg";
+import asset_232 from "../assets/images/_responsive/projects/proj_oml34--w480.webp";
+import asset_233 from "../assets/images/_responsive/projects/proj_oml34--w960.webp";
+import asset_234 from "../assets/images/_responsive/projects/proj_oml34--w1280.webp";
+import asset_235 from "../assets/images/projects/rig-setup.png";
+import asset_236 from "../assets/images/_responsive/projects/rig-setup--w480.webp";
+import asset_237 from "../assets/images/_responsive/projects/rig-setup--w768.webp";
+import asset_238 from "../assets/images/projects/safety-signage.jpg";
+import asset_239 from "../assets/images/_responsive/projects/safety-signage--w480.webp";
+import asset_240 from "../assets/images/_responsive/projects/safety-signage--w960.webp";
+import asset_241 from "../assets/images/_responsive/projects/safety-signage--w980.webp";
+import asset_242 from "../assets/images/projects/scope-operations-2.jpg";
+import asset_243 from "../assets/images/_responsive/projects/scope-operations-2--w480.webp";
+import asset_244 from "../assets/images/_responsive/projects/scope-operations-2--w960.webp";
+import asset_245 from "../assets/images/_responsive/projects/scope-operations-2--w1400.webp";
+import asset_246 from "../assets/images/projects/scope-operations-3.jpg";
+import asset_247 from "../assets/images/_responsive/projects/scope-operations-3--w480.webp";
+import asset_248 from "../assets/images/_responsive/projects/scope-operations-3--w960.webp";
+import asset_249 from "../assets/images/_responsive/projects/scope-operations-3--w1446.webp";
+import asset_250 from "../assets/images/projects/scope-operations.jpg";
+import asset_251 from "../assets/images/_responsive/projects/scope-operations--w480.webp";
+import asset_252 from "../assets/images/_responsive/projects/scope-operations--w960.webp";
+import asset_253 from "../assets/images/_responsive/projects/scope-operations--w1600.webp";
+import asset_254 from "../assets/images/projects/service-dredging-vessel.jpg";
+import asset_255 from "../assets/images/_responsive/projects/service-dredging-vessel--w480.webp";
+import asset_256 from "../assets/images/_responsive/projects/service-dredging-vessel--w768.webp";
+import asset_257 from "../assets/images/projects/service-facilities-installation.jpg";
+import asset_258 from "../assets/images/_responsive/projects/service-facilities-installation--w480.webp";
+import asset_259 from "../assets/images/_responsive/projects/service-facilities-installation--w960.webp";
+import asset_260 from "../assets/images/_responsive/projects/service-facilities-installation--w1200.webp";
+import asset_261 from "../assets/images/projects/service-operations-hero.jpg";
+import asset_262 from "../assets/images/_responsive/projects/service-operations-hero--w480.webp";
+import asset_263 from "../assets/images/_responsive/projects/service-operations-hero--w960.webp";
+import asset_264 from "../assets/images/projects/service-subsurface-detector.jpg";
+import asset_265 from "../assets/images/_responsive/projects/service-subsurface-detector--w480.webp";
+import asset_266 from "../assets/images/_responsive/projects/service-subsurface-detector--w960.webp";
+import asset_267 from "../assets/images/_responsive/projects/service-subsurface-detector--w1400.webp";
+import asset_268 from "../assets/images/projects/shore-approach.jpg";
+import asset_269 from "../assets/images/_responsive/projects/shore-approach--w480.webp";
+import asset_270 from "../assets/images/_responsive/projects/shore-approach--w960.webp";
+import asset_271 from "../assets/images/_responsive/projects/shore-approach--w1024.webp";
+import asset_272 from "../assets/images/projects/swamp-pipeline.png";
+import asset_273 from "../assets/images/_responsive/projects/swamp-pipeline--w480.webp";
+import asset_274 from "../assets/images/_responsive/projects/swamp-pipeline--w768.webp";
+import asset_275 from "../assets/images/projects/team-safety.jpg";
+import asset_276 from "../assets/images/_responsive/projects/team-safety--w480.webp";
+import asset_277 from "../assets/images/_responsive/projects/team-safety--w960.webp";
+import asset_278 from "../assets/images/_responsive/projects/team-safety--w1080.webp";
+import asset_279 from "../assets/images/projects/tripping-safety.jpg";
+import asset_280 from "../assets/images/_responsive/projects/tripping-safety--w480.webp";
+import asset_281 from "../assets/images/_responsive/projects/tripping-safety--w810.webp";
+import asset_282 from "../assets/images/projects/welding-crew.jpg";
+import asset_283 from "../assets/images/_responsive/projects/welding-crew--w480.webp";
+import asset_284 from "../assets/images/_responsive/projects/welding-crew--w960.webp";
+import asset_285 from "../assets/images/_responsive/projects/welding-crew--w1240.webp";
+import asset_286 from "../assets/images/projects/workers-ppe.jpg";
+import asset_287 from "../assets/images/_responsive/projects/workers-ppe--w480.webp";
+import asset_288 from "../assets/images/_responsive/projects/workers-ppe--w810.webp";
+import asset_289 from "../assets/images/selected/equipment/eq-006.jpg";
+import asset_290 from "../assets/images/_responsive/selected/equipment/eq-006--w480.webp";
+import asset_291 from "../assets/images/_responsive/selected/equipment/eq-006--w589.webp";
+import asset_292 from "../assets/images/selected/equipment/eq-007.jpg";
+import asset_293 from "../assets/images/_responsive/selected/equipment/eq-007--w480.webp";
+import asset_294 from "../assets/images/_responsive/selected/equipment/eq-007--w589.webp";
+import asset_295 from "../assets/images/selected/equipment/eq-010.jpg";
+import asset_296 from "../assets/images/_responsive/selected/equipment/eq-010--w480.webp";
+import asset_297 from "../assets/images/_responsive/selected/equipment/eq-010--w588.webp";
+import asset_298 from "../assets/images/selected/equipment/eq-021.jpg";
+import asset_299 from "../assets/images/_responsive/selected/equipment/eq-021--w480.webp";
+import asset_300 from "../assets/images/_responsive/selected/equipment/eq-021--w645.webp";
+import asset_301 from "../assets/images/selected/equipment/eq-022.jpg";
+import asset_302 from "../assets/images/_responsive/selected/equipment/eq-022--w480.webp";
+import asset_303 from "../assets/images/_responsive/selected/equipment/eq-022--w645.webp";
+import asset_304 from "../assets/images/selected/equipment/eq-023.jpg";
+import asset_305 from "../assets/images/_responsive/selected/equipment/eq-023--w480.webp";
+import asset_306 from "../assets/images/_responsive/selected/equipment/eq-023--w610.webp";
+import asset_307 from "../assets/images/selected/equipment/eq-024.jpg";
+import asset_308 from "../assets/images/_responsive/selected/equipment/eq-024--w480.webp";
+import asset_309 from "../assets/images/_responsive/selected/equipment/eq-024--w610.webp";
+import asset_310 from "../assets/images/selected/equipment/eq-025.jpg";
+import asset_311 from "../assets/images/_responsive/selected/equipment/eq-025--w480.webp";
+import asset_312 from "../assets/images/_responsive/selected/equipment/eq-025--w716.webp";
+import asset_313 from "../assets/images/selected/equipment/eq-026.jpg";
+import asset_314 from "../assets/images/_responsive/selected/equipment/eq-026--w480.webp";
+import asset_315 from "../assets/images/_responsive/selected/equipment/eq-026--w960.webp";
+import asset_316 from "../assets/images/_responsive/selected/equipment/eq-026--w1600.webp";
+import asset_317 from "../assets/images/selected/equipment/eq-027.jpg";
+import asset_318 from "../assets/images/_responsive/selected/equipment/eq-027--w480.webp";
+import asset_319 from "../assets/images/_responsive/selected/equipment/eq-027--w960.webp";
+import asset_320 from "../assets/images/_responsive/selected/equipment/eq-027--w1600.webp";
+import asset_321 from "../assets/images/selected/equipment/eq-028.jpg";
+import asset_322 from "../assets/images/_responsive/selected/equipment/eq-028--w480.webp";
+import asset_323 from "../assets/images/_responsive/selected/equipment/eq-028--w960.webp";
+import asset_324 from "../assets/images/_responsive/selected/equipment/eq-028--w1600.webp";
+import asset_325 from "../assets/images/selected/equipment/eq-029.jpg";
+import asset_326 from "../assets/images/_responsive/selected/equipment/eq-029--w480.webp";
+import asset_327 from "../assets/images/_responsive/selected/equipment/eq-029--w960.webp";
+import asset_328 from "../assets/images/_responsive/selected/equipment/eq-029--w1600.webp";
+import asset_329 from "../assets/images/selected/equipment/eq-030.jpg";
+import asset_330 from "../assets/images/_responsive/selected/equipment/eq-030--w480.webp";
+import asset_331 from "../assets/images/_responsive/selected/equipment/eq-030--w960.webp";
+import asset_332 from "../assets/images/_responsive/selected/equipment/eq-030--w1600.webp";
+import asset_333 from "../assets/images/selected/general/about-aerial-site-enhanced.jpg";
+import asset_334 from "../assets/images/_responsive/selected/general/about-aerial-site-enhanced--w480.webp";
+import asset_335 from "../assets/images/_responsive/selected/general/about-aerial-site-enhanced--w960.webp";
+import asset_336 from "../assets/images/_responsive/selected/general/about-aerial-site-enhanced--w1600.webp";
+import asset_337 from "../assets/images/selected/general/about-field-team-enhanced.jpg";
+import asset_338 from "../assets/images/_responsive/selected/general/about-field-team-enhanced--w480.webp";
+import asset_339 from "../assets/images/_responsive/selected/general/about-field-team-enhanced--w960.webp";
+import asset_340 from "../assets/images/_responsive/selected/general/about-field-team-enhanced--w1086.webp";
+import asset_341 from "../assets/images/selected/general/about-pipe-yard-enhanced.jpg";
+import asset_342 from "../assets/images/_responsive/selected/general/about-pipe-yard-enhanced--w480.webp";
+import asset_343 from "../assets/images/_responsive/selected/general/about-pipe-yard-enhanced--w960.webp";
+import asset_344 from "../assets/images/_responsive/selected/general/about-pipe-yard-enhanced--w1448.webp";
+import asset_345 from "../assets/images/selected/general/about-safety-briefing-enhanced.jpg";
+import asset_346 from "../assets/images/_responsive/selected/general/about-safety-briefing-enhanced--w480.webp";
+import asset_347 from "../assets/images/_responsive/selected/general/about-safety-briefing-enhanced--w960.webp";
+import asset_348 from "../assets/images/_responsive/selected/general/about-safety-briefing-enhanced--w1449.webp";
+import asset_349 from "../assets/images/selected/general/about-site-equipment-enhanced.jpg";
+import asset_350 from "../assets/images/_responsive/selected/general/about-site-equipment-enhanced--w480.webp";
+import asset_351 from "../assets/images/_responsive/selected/general/about-site-equipment-enhanced--w960.webp";
+import asset_352 from "../assets/images/_responsive/selected/general/about-site-equipment-enhanced--w1600.webp";
+import asset_353 from "../assets/images/selected/general/pl-01.jpg";
+import asset_354 from "../assets/images/_responsive/selected/general/pl-01--w480.webp";
+import asset_355 from "../assets/images/_responsive/selected/general/pl-01--w960.webp";
+import asset_356 from "../assets/images/_responsive/selected/general/pl-01--w1600.webp";
+import asset_357 from "../assets/images/selected/general/pl-02.jpg";
+import asset_358 from "../assets/images/_responsive/selected/general/pl-02--w480.webp";
+import asset_359 from "../assets/images/_responsive/selected/general/pl-02--w960.webp";
+import asset_360 from "../assets/images/_responsive/selected/general/pl-02--w1600.webp";
+import asset_361 from "../assets/images/selected/general/pl-03.jpg";
+import asset_362 from "../assets/images/_responsive/selected/general/pl-03--w480.webp";
+import asset_363 from "../assets/images/_responsive/selected/general/pl-03--w960.webp";
+import asset_364 from "../assets/images/_responsive/selected/general/pl-03--w1600.webp";
+import asset_365 from "../assets/images/selected/general/pl-04.jpg";
+import asset_366 from "../assets/images/_responsive/selected/general/pl-04--w480.webp";
+import asset_367 from "../assets/images/_responsive/selected/general/pl-04--w960.webp";
+import asset_368 from "../assets/images/_responsive/selected/general/pl-04--w1600.webp";
+import asset_369 from "../assets/images/selected/general/pl-05.jpg";
+import asset_370 from "../assets/images/_responsive/selected/general/pl-05--w480.webp";
+import asset_371 from "../assets/images/_responsive/selected/general/pl-05--w960.webp";
+import asset_372 from "../assets/images/_responsive/selected/general/pl-05--w1600.webp";
+import asset_373 from "../assets/images/selected/general/pl-06.jpg";
+import asset_374 from "../assets/images/_responsive/selected/general/pl-06--w480.webp";
+import asset_375 from "../assets/images/_responsive/selected/general/pl-06--w960.webp";
+import asset_376 from "../assets/images/_responsive/selected/general/pl-06--w1600.webp";
+import asset_377 from "../assets/images/selected/general/pl-07.jpg";
+import asset_378 from "../assets/images/_responsive/selected/general/pl-07--w480.webp";
+import asset_379 from "../assets/images/_responsive/selected/general/pl-07--w960.webp";
+import asset_380 from "../assets/images/_responsive/selected/general/pl-07--w1600.webp";
+import asset_381 from "../assets/images/selected/general/pl-08.jpg";
+import asset_382 from "../assets/images/_responsive/selected/general/pl-08--w480.webp";
+import asset_383 from "../assets/images/_responsive/selected/general/pl-08--w960.webp";
+import asset_384 from "../assets/images/_responsive/selected/general/pl-08--w1600.webp";
+import asset_385 from "../assets/images/selected/general/pl-09.jpg";
+import asset_386 from "../assets/images/_responsive/selected/general/pl-09--w480.webp";
+import asset_387 from "../assets/images/_responsive/selected/general/pl-09--w960.webp";
+import asset_388 from "../assets/images/_responsive/selected/general/pl-09--w1600.webp";
+import asset_389 from "../assets/images/selected/general/pl-10.jpg";
+import asset_390 from "../assets/images/_responsive/selected/general/pl-10--w480.webp";
+import asset_391 from "../assets/images/_responsive/selected/general/pl-10--w960.webp";
+import asset_392 from "../assets/images/_responsive/selected/general/pl-10--w1600.webp";
+import asset_393 from "../assets/images/selected/general/pl-11.jpg";
+import asset_394 from "../assets/images/_responsive/selected/general/pl-11--w480.webp";
+import asset_395 from "../assets/images/_responsive/selected/general/pl-11--w960.webp";
+import asset_396 from "../assets/images/_responsive/selected/general/pl-11--w1600.webp";
+import asset_397 from "../assets/images/selected/general/pl-12.jpg";
+import asset_398 from "../assets/images/_responsive/selected/general/pl-12--w480.webp";
+import asset_399 from "../assets/images/_responsive/selected/general/pl-12--w960.webp";
+import asset_400 from "../assets/images/_responsive/selected/general/pl-12--w1600.webp";
+import asset_401 from "../assets/images/selected/general/pl-13.jpg";
+import asset_402 from "../assets/images/_responsive/selected/general/pl-13--w480.webp";
+import asset_403 from "../assets/images/_responsive/selected/general/pl-13--w960.webp";
+import asset_404 from "../assets/images/_responsive/selected/general/pl-13--w1600.webp";
+import asset_405 from "../assets/images/selected/general/pl-14.jpg";
+import asset_406 from "../assets/images/_responsive/selected/general/pl-14--w480.webp";
+import asset_407 from "../assets/images/_responsive/selected/general/pl-14--w960.webp";
+import asset_408 from "../assets/images/_responsive/selected/general/pl-14--w1600.webp";
+import asset_409 from "../assets/images/selected/general/pl-15.jpg";
+import asset_410 from "../assets/images/_responsive/selected/general/pl-15--w480.webp";
+import asset_411 from "../assets/images/_responsive/selected/general/pl-15--w960.webp";
+import asset_412 from "../assets/images/_responsive/selected/general/pl-15--w1600.webp";
+import asset_413 from "../assets/images/selected/general/pl-16.jpg";
+import asset_414 from "../assets/images/_responsive/selected/general/pl-16--w480.webp";
+import asset_415 from "../assets/images/_responsive/selected/general/pl-16--w960.webp";
+import asset_416 from "../assets/images/_responsive/selected/general/pl-16--w1600.webp";
+import asset_417 from "../assets/images/selected/general/pl-17.jpg";
+import asset_418 from "../assets/images/_responsive/selected/general/pl-17--w480.webp";
+import asset_419 from "../assets/images/_responsive/selected/general/pl-17--w960.webp";
+import asset_420 from "../assets/images/_responsive/selected/general/pl-17--w1600.webp";
+import asset_421 from "../assets/images/selected/general/pl-18.jpg";
+import asset_422 from "../assets/images/_responsive/selected/general/pl-18--w480.webp";
+import asset_423 from "../assets/images/_responsive/selected/general/pl-18--w960.webp";
+import asset_424 from "../assets/images/_responsive/selected/general/pl-18--w1600.webp";
+import asset_425 from "../assets/images/selected/general/pl-19.jpg";
+import asset_426 from "../assets/images/_responsive/selected/general/pl-19--w480.webp";
+import asset_427 from "../assets/images/_responsive/selected/general/pl-19--w960.webp";
+import asset_428 from "../assets/images/_responsive/selected/general/pl-19--w1600.webp";
+import asset_429 from "../assets/images/selected/general/pl-20.jpg";
+import asset_430 from "../assets/images/_responsive/selected/general/pl-20--w480.webp";
+import asset_431 from "../assets/images/_responsive/selected/general/pl-20--w960.webp";
+import asset_432 from "../assets/images/_responsive/selected/general/pl-20--w1600.webp";
+import asset_433 from "../assets/images/selected/general/pl-21.jpg";
+import asset_434 from "../assets/images/_responsive/selected/general/pl-21--w480.webp";
+import asset_435 from "../assets/images/_responsive/selected/general/pl-21--w960.webp";
+import asset_436 from "../assets/images/_responsive/selected/general/pl-21--w1600.webp";
+import asset_437 from "../assets/images/selected/general/pl-22.jpg";
+import asset_438 from "../assets/images/_responsive/selected/general/pl-22--w480.webp";
+import asset_439 from "../assets/images/_responsive/selected/general/pl-22--w960.webp";
+import asset_440 from "../assets/images/_responsive/selected/general/pl-22--w1600.webp";
+import asset_441 from "../assets/images/selected/general/pl-dredging-piling.jpg";
+import asset_442 from "../assets/images/_responsive/selected/general/pl-dredging-piling--w480.webp";
+import asset_443 from "../assets/images/_responsive/selected/general/pl-dredging-piling--w960.webp";
+import asset_444 from "../assets/images/_responsive/selected/general/pl-dredging-piling--w1448.webp";
+import asset_445 from "../assets/images/selected/general/pl-projectmgmt-review.jpg";
+import asset_446 from "../assets/images/_responsive/selected/general/pl-projectmgmt-review--w480.webp";
+import asset_447 from "../assets/images/_responsive/selected/general/pl-projectmgmt-review--w960.webp";
+import asset_448 from "../assets/images/_responsive/selected/general/pl-projectmgmt-review--w1536.webp";
+import asset_449 from "../assets/images/selected/general/rg-025.jpg";
+import asset_450 from "../assets/images/_responsive/selected/general/rg-025--w480.webp";
+import asset_451 from "../assets/images/_responsive/selected/general/rg-025--w960.webp";
+import asset_452 from "../assets/images/_responsive/selected/general/rg-025--w1280.webp";
+import asset_453 from "../assets/images/selected/general/rg-027.jpg";
+import asset_454 from "../assets/images/_responsive/selected/general/rg-027--w480.webp";
+import asset_455 from "../assets/images/_responsive/selected/general/rg-027--w960.webp";
+import asset_456 from "../assets/images/_responsive/selected/general/rg-027--w1400.webp";
+import asset_457 from "../assets/images/selected/general/rg-031.jpg";
+import asset_458 from "../assets/images/_responsive/selected/general/rg-031--w480.webp";
+import asset_459 from "../assets/images/_responsive/selected/general/rg-031--w960.webp";
+import asset_460 from "../assets/images/_responsive/selected/general/rg-031--w1080.webp";
+import asset_461 from "../assets/images/selected/general/rg-033.jpg";
+import asset_462 from "../assets/images/_responsive/selected/general/rg-033--w480.webp";
+import asset_463 from "../assets/images/_responsive/selected/general/rg-033--w960.webp";
+import asset_464 from "../assets/images/_responsive/selected/general/rg-033--w1080.webp";
+import asset_465 from "../assets/images/selected/general/rg-035.jpg";
+import asset_466 from "../assets/images/_responsive/selected/general/rg-035--w480.webp";
+import asset_467 from "../assets/images/_responsive/selected/general/rg-035--w960.webp";
+import asset_468 from "../assets/images/_responsive/selected/general/rg-035--w1080.webp";
+import asset_469 from "../assets/images/selected/general/rg-037.jpg";
+import asset_470 from "../assets/images/_responsive/selected/general/rg-037--w480.webp";
+import asset_471 from "../assets/images/_responsive/selected/general/rg-037--w810.webp";
+import asset_472 from "../assets/images/selected/general/rg-038.jpg";
+import asset_473 from "../assets/images/_responsive/selected/general/rg-038--w480.webp";
+import asset_474 from "../assets/images/_responsive/selected/general/rg-038--w960.webp";
+import asset_475 from "../assets/images/_responsive/selected/general/rg-038--w1400.webp";
+import asset_476 from "../assets/images/selected/general/rg-039.jpg";
+import asset_477 from "../assets/images/_responsive/selected/general/rg-039--w480.webp";
+import asset_478 from "../assets/images/_responsive/selected/general/rg-039--w960.webp";
+import asset_479 from "../assets/images/_responsive/selected/general/rg-039--w1080.webp";
+import asset_480 from "../assets/images/selected/general/rg-045.jpg";
+import asset_481 from "../assets/images/_responsive/selected/general/rg-045--w480.webp";
+import asset_482 from "../assets/images/_responsive/selected/general/rg-045--w960.webp";
+import asset_483 from "../assets/images/_responsive/selected/general/rg-045--w1080.webp";
+import asset_484 from "../assets/images/selected/general/rg-046.jpg";
+import asset_485 from "../assets/images/_responsive/selected/general/rg-046--w480.webp";
+import asset_486 from "../assets/images/_responsive/selected/general/rg-046--w960.webp";
+import asset_487 from "../assets/images/selected/general/rg-049.jpg";
+import asset_488 from "../assets/images/_responsive/selected/general/rg-049--w480.webp";
+import asset_489 from "../assets/images/_responsive/selected/general/rg-049--w960.webp";
+import asset_490 from "../assets/images/_responsive/selected/general/rg-049--w1040.webp";
+import asset_491 from "../assets/images/selected/general/rg-052.jpg";
+import asset_492 from "../assets/images/_responsive/selected/general/rg-052--w480.webp";
+import asset_493 from "../assets/images/_responsive/selected/general/rg-052--w960.webp";
+import asset_494 from "../assets/images/_responsive/selected/general/rg-052--w1280.webp";
+import asset_495 from "../assets/images/selected/general/rg-055.jpg";
+import asset_496 from "../assets/images/_responsive/selected/general/rg-055--w480.webp";
+import asset_497 from "../assets/images/_responsive/selected/general/rg-055--w960.webp";
+import asset_498 from "../assets/images/_responsive/selected/general/rg-055--w1080.webp";
+import asset_499 from "../assets/images/selected/general/rg-063.jpg";
+import asset_500 from "../assets/images/_responsive/selected/general/rg-063--w480.webp";
+import asset_501 from "../assets/images/_responsive/selected/general/rg-063--w960.webp";
+import asset_502 from "../assets/images/_responsive/selected/general/rg-063--w1280.webp";
+import asset_503 from "../assets/images/selected/general/rg-066.jpg";
+import asset_504 from "../assets/images/_responsive/selected/general/rg-066--w480.webp";
+import asset_505 from "../assets/images/_responsive/selected/general/rg-066--w960.webp";
+import asset_506 from "../assets/images/_responsive/selected/general/rg-066--w1080.webp";
+import asset_507 from "../assets/images/selected/general/rg-067.jpg";
+import asset_508 from "../assets/images/_responsive/selected/general/rg-067--w480.webp";
+import asset_509 from "../assets/images/_responsive/selected/general/rg-067--w960.webp";
+import asset_510 from "../assets/images/_responsive/selected/general/rg-067--w1086.webp";
+import asset_511 from "../assets/images/selected/general/rg-071.jpg";
+import asset_512 from "../assets/images/_responsive/selected/general/rg-071--w480.webp";
+import asset_513 from "../assets/images/_responsive/selected/general/rg-071--w810.webp";
+import asset_514 from "../assets/images/selected/general/rg-072.jpg";
+import asset_515 from "../assets/images/_responsive/selected/general/rg-072--w480.webp";
+import asset_516 from "../assets/images/_responsive/selected/general/rg-072--w960.webp";
+import asset_517 from "../assets/images/_responsive/selected/general/rg-072--w1280.webp";
+import asset_518 from "../assets/images/selected/general/rg-074.jpg";
+import asset_519 from "../assets/images/_responsive/selected/general/rg-074--w480.webp";
+import asset_520 from "../assets/images/_responsive/selected/general/rg-074--w960.webp";
+import asset_521 from "../assets/images/_responsive/selected/general/rg-074--w1080.webp";
+import asset_522 from "../assets/images/selected/general/rg-087.jpg";
+import asset_523 from "../assets/images/_responsive/selected/general/rg-087--w480.webp";
+import asset_524 from "../assets/images/_responsive/selected/general/rg-087--w812.webp";
+import asset_525 from "../assets/images/selected/general/rg-093.jpg";
+import asset_526 from "../assets/images/_responsive/selected/general/rg-093--w480.webp";
+import asset_527 from "../assets/images/_responsive/selected/general/rg-093--w960.webp";
+import asset_528 from "../assets/images/_responsive/selected/general/rg-093--w1280.webp";
+import asset_529 from "../assets/images/selected/general/rg-094.jpg";
+import asset_530 from "../assets/images/_responsive/selected/general/rg-094--w480.webp";
+import asset_531 from "../assets/images/_responsive/selected/general/rg-094--w960.webp";
+import asset_532 from "../assets/images/_responsive/selected/general/rg-094--w1600.webp";
+import asset_533 from "../assets/images/selected/general/rg-098.jpg";
+import asset_534 from "../assets/images/_responsive/selected/general/rg-098--w480.webp";
+import asset_535 from "../assets/images/_responsive/selected/general/rg-098--w960.webp";
+import asset_536 from "../assets/images/_responsive/selected/general/rg-098--w1080.webp";
+import asset_537 from "../assets/images/selected/general/rg-105.jpg";
+import asset_538 from "../assets/images/_responsive/selected/general/rg-105--w480.webp";
+import asset_539 from "../assets/images/_responsive/selected/general/rg-105--w960.webp";
+import asset_540 from "../assets/images/_responsive/selected/general/rg-105--w1280.webp";
+import asset_541 from "../assets/images/selected/general/rg-121.jpeg";
+import asset_542 from "../assets/images/_responsive/selected/general/rg-121--w480.webp";
+import asset_543 from "../assets/images/_responsive/selected/general/rg-121--w960.webp";
+import asset_544 from "../assets/images/_responsive/selected/general/rg-121--w1600.webp";
+import asset_545 from "../assets/images/selected/general/rg-122.jpeg";
+import asset_546 from "../assets/images/_responsive/selected/general/rg-122--w480.webp";
+import asset_547 from "../assets/images/_responsive/selected/general/rg-122--w960.webp";
+import asset_548 from "../assets/images/_responsive/selected/general/rg-122--w1280.webp";
+import asset_549 from "../assets/images/selected/general/rg-125.jpeg";
+import asset_550 from "../assets/images/_responsive/selected/general/rg-125--w480.webp";
+import asset_551 from "../assets/images/_responsive/selected/general/rg-125--w960.webp";
+import asset_552 from "../assets/images/_responsive/selected/general/rg-125--w1536.webp";
+import asset_553 from "../assets/images/selected/general/rg-126.jpeg";
+import asset_554 from "../assets/images/_responsive/selected/general/rg-126--w480.webp";
+import asset_555 from "../assets/images/_responsive/selected/general/rg-126--w960.webp";
+import asset_556 from "../assets/images/_responsive/selected/general/rg-126--w1280.webp";
+import asset_557 from "../assets/images/selected/general/rg-128.jpeg";
+import asset_558 from "../assets/images/_responsive/selected/general/rg-128--w480.webp";
+import asset_559 from "../assets/images/_responsive/selected/general/rg-128--w960.webp";
+import asset_560 from "../assets/images/_responsive/selected/general/rg-128--w1280.webp";
+import asset_561 from "../assets/images/selected/general/rg-129.jpeg";
+import asset_562 from "../assets/images/_responsive/selected/general/rg-129--w480.webp";
+import asset_563 from "../assets/images/_responsive/selected/general/rg-129--w960.webp";
+import asset_564 from "../assets/images/_responsive/selected/general/rg-129--w1280.webp";
+import asset_565 from "../assets/images/selected/general/rg-131.jpeg";
+import asset_566 from "../assets/images/_responsive/selected/general/rg-131--w480.webp";
+import asset_567 from "../assets/images/_responsive/selected/general/rg-131--w960.webp";
+import asset_568 from "../assets/images/_responsive/selected/general/rg-131--w1400.webp";
+import asset_569 from "../assets/images/selected/general/rg-135.jpeg";
+import asset_570 from "../assets/images/_responsive/selected/general/rg-135--w480.webp";
+import asset_571 from "../assets/images/_responsive/selected/general/rg-135--w960.webp";
+import asset_572 from "../assets/images/selected/general/rg-141.jpeg";
+import asset_573 from "../assets/images/_responsive/selected/general/rg-141--w480.webp";
+import asset_574 from "../assets/images/_responsive/selected/general/rg-141--w960.webp";
+import asset_575 from "../assets/images/_responsive/selected/general/rg-141--w1586.webp";
+import asset_576 from "../assets/images/selected/general/rg-143.jpeg";
+import asset_577 from "../assets/images/_responsive/selected/general/rg-143--w480.webp";
+import asset_578 from "../assets/images/_responsive/selected/general/rg-143--w863.webp";
+import asset_579 from "../assets/images/selected/projects/pa-043.jpg";
+import asset_580 from "../assets/images/_responsive/selected/projects/pa-043--w480.webp";
+import asset_581 from "../assets/images/_responsive/selected/projects/pa-043--w960.webp";
+import asset_582 from "../assets/images/_responsive/selected/projects/pa-043--w1448.webp";
+import asset_583 from "../assets/images/selected/projects/pa-046.jpg";
+import asset_584 from "../assets/images/_responsive/selected/projects/pa-046--w480.webp";
+import asset_585 from "../assets/images/_responsive/selected/projects/pa-046--w960.webp";
+import asset_586 from "../assets/images/_responsive/selected/projects/pa-046--w1600.webp";
+import asset_587 from "../assets/images/selected/projects/pa-054.jpg";
+import asset_588 from "../assets/images/_responsive/selected/projects/pa-054--w480.webp";
+import asset_589 from "../assets/images/_responsive/selected/projects/pa-054--w960.webp";
+import asset_590 from "../assets/images/_responsive/selected/projects/pa-054--w1448.webp";
+import asset_591 from "../assets/images/selected/projects/pa-055.jpg";
+import asset_592 from "../assets/images/_responsive/selected/projects/pa-055--w480.webp";
+import asset_593 from "../assets/images/_responsive/selected/projects/pa-055--w960.webp";
+import asset_594 from "../assets/images/_responsive/selected/projects/pa-055--w1448.webp";
+import asset_595 from "../assets/images/selected/projects/pa-063.jpg";
+import asset_596 from "../assets/images/_responsive/selected/projects/pa-063--w480.webp";
+import asset_597 from "../assets/images/_responsive/selected/projects/pa-063--w960.webp";
+import asset_598 from "../assets/images/_responsive/selected/projects/pa-063--w1448.webp";
+import asset_599 from "../assets/images/selected/projects/pa-067.jpg";
+import asset_600 from "../assets/images/_responsive/selected/projects/pa-067--w480.webp";
+import asset_601 from "../assets/images/_responsive/selected/projects/pa-067--w960.webp";
+import asset_602 from "../assets/images/_responsive/selected/projects/pa-067--w1448.webp";
+import asset_603 from "../assets/images/selected/projects/pa-074.jpg";
+import asset_604 from "../assets/images/_responsive/selected/projects/pa-074--w480.webp";
+import asset_605 from "../assets/images/_responsive/selected/projects/pa-074--w960.webp";
+import asset_606 from "../assets/images/_responsive/selected/projects/pa-074--w1448.webp";
+import asset_607 from "../assets/images/selected/projects/pa-080.jpg";
+import asset_608 from "../assets/images/_responsive/selected/projects/pa-080--w480.webp";
+import asset_609 from "../assets/images/_responsive/selected/projects/pa-080--w960.webp";
+import asset_610 from "../assets/images/_responsive/selected/projects/pa-080--w1448.webp";
+import asset_611 from "../assets/images/selected/projects/pa-103.jpg";
+import asset_612 from "../assets/images/_responsive/selected/projects/pa-103--w480.webp";
+import asset_613 from "../assets/images/_responsive/selected/projects/pa-103--w960.webp";
+import asset_614 from "../assets/images/_responsive/selected/projects/pa-103--w1448.webp";
+import asset_615 from "../assets/images/selected/projects/pa-105.jpg";
+import asset_616 from "../assets/images/_responsive/selected/projects/pa-105--w480.webp";
+import asset_617 from "../assets/images/_responsive/selected/projects/pa-105--w960.webp";
+import asset_618 from "../assets/images/_responsive/selected/projects/pa-105--w1444.webp";
+import asset_619 from "../assets/images/selected/projects/pa-110.jpg";
+import asset_620 from "../assets/images/_responsive/selected/projects/pa-110--w480.webp";
+import asset_621 from "../assets/images/_responsive/selected/projects/pa-110--w960.webp";
+import asset_622 from "../assets/images/_responsive/selected/projects/pa-110--w1448.webp";
+import asset_623 from "../assets/images/selected/projects/pa-121.jpg";
+import asset_624 from "../assets/images/_responsive/selected/projects/pa-121--w480.webp";
+import asset_625 from "../assets/images/_responsive/selected/projects/pa-121--w960.webp";
+import asset_626 from "../assets/images/_responsive/selected/projects/pa-121--w1448.webp";
+import asset_627 from "../assets/images/selected/projects/pa-126.jpg";
+import asset_628 from "../assets/images/_responsive/selected/projects/pa-126--w480.webp";
+import asset_629 from "../assets/images/_responsive/selected/projects/pa-126--w960.webp";
+import asset_630 from "../assets/images/_responsive/selected/projects/pa-126--w1399.webp";
+import asset_631 from "../assets/images/selected/projects/pa-129.jpg";
+import asset_632 from "../assets/images/_responsive/selected/projects/pa-129--w480.webp";
+import asset_633 from "../assets/images/_responsive/selected/projects/pa-129--w960.webp";
+import asset_634 from "../assets/images/_responsive/selected/projects/pa-129--w1448.webp";
+import asset_635 from "../assets/images/selected/projects/pa-131.jpg";
+import asset_636 from "../assets/images/_responsive/selected/projects/pa-131--w480.webp";
+import asset_637 from "../assets/images/_responsive/selected/projects/pa-131--w543.webp";
+import asset_638 from "../assets/images/selected/projects/pa-133.jpg";
+import asset_639 from "../assets/images/_responsive/selected/projects/pa-133--w480.webp";
+import asset_640 from "../assets/images/_responsive/selected/projects/pa-133--w564.webp";
+import asset_641 from "../assets/images/selected/projects/pp-009.jpg";
+import asset_642 from "../assets/images/_responsive/selected/projects/pp-009--w480.webp";
+import asset_643 from "../assets/images/_responsive/selected/projects/pp-009--w730.webp";
+import asset_644 from "../assets/images/selected/projects/pp-010.jpg";
+import asset_645 from "../assets/images/_responsive/selected/projects/pp-010--w480.webp";
+import asset_646 from "../assets/images/_responsive/selected/projects/pp-010--w714.webp";
+import asset_647 from "../assets/images/selected/projects/pp-011.jpg";
+import asset_648 from "../assets/images/_responsive/selected/projects/pp-011--w480.webp";
+import asset_649 from "../assets/images/_responsive/selected/projects/pp-011--w694.webp";
+import asset_650 from "../assets/images/selected/projects/pp-017.jpg";
+import asset_651 from "../assets/images/_responsive/selected/projects/pp-017--w480.webp";
+import asset_652 from "../assets/images/_responsive/selected/projects/pp-017--w960.webp";
+import asset_653 from "../assets/images/_responsive/selected/projects/pp-017--w1496.webp";
+import asset_654 from "../assets/images/selected/projects/pp-021.jpg";
+import asset_655 from "../assets/images/_responsive/selected/projects/pp-021--w480.webp";
+import asset_656 from "../assets/images/_responsive/selected/projects/pp-021--w960.webp";
+import asset_657 from "../assets/images/_responsive/selected/projects/pp-021--w1448.webp";
+import asset_658 from "../assets/images/selected/projects/pp-024.jpg";
+import asset_659 from "../assets/images/_responsive/selected/projects/pp-024--w480.webp";
+import asset_660 from "../assets/images/_responsive/selected/projects/pp-024--w960.webp";
+import asset_661 from "../assets/images/_responsive/selected/projects/pp-024--w1448.webp";
+import asset_662 from "../assets/images/selected/projects/pp-034.jpg";
+import asset_663 from "../assets/images/_responsive/selected/projects/pp-034--w480.webp";
+import asset_664 from "../assets/images/_responsive/selected/projects/pp-034--w960.webp";
+import asset_665 from "../assets/images/_responsive/selected/projects/pp-034--w1448.webp";
+import asset_666 from "../assets/images/selected/projects/pp-038.jpg";
+import asset_667 from "../assets/images/_responsive/selected/projects/pp-038--w480.webp";
+import asset_668 from "../assets/images/_responsive/selected/projects/pp-038--w960.webp";
+import asset_669 from "../assets/images/_responsive/selected/projects/pp-038--w1448.webp";
+import asset_670 from "../assets/images/selected/projects/pp-040.jpg";
+import asset_671 from "../assets/images/_responsive/selected/projects/pp-040--w480.webp";
+import asset_672 from "../assets/images/_responsive/selected/projects/pp-040--w960.webp";
+import asset_673 from "../assets/images/_responsive/selected/projects/pp-040--w1448.webp";
+import asset_674 from "../assets/images/selected/projects/pp-043.jpg";
+import asset_675 from "../assets/images/_responsive/selected/projects/pp-043--w480.webp";
+import asset_676 from "../assets/images/_responsive/selected/projects/pp-043--w960.webp";
+import asset_677 from "../assets/images/_responsive/selected/projects/pp-043--w1586.webp";
+import asset_678 from "../assets/images/selected/projects/pp-045.jpg";
+import asset_679 from "../assets/images/_responsive/selected/projects/pp-045--w480.webp";
+import asset_680 from "../assets/images/_responsive/selected/projects/pp-045--w960.webp";
+import asset_681 from "../assets/images/_responsive/selected/projects/pp-045--w1448.webp";
+import asset_682 from "../assets/images/selected/projects/pp-048.jpg";
+import asset_683 from "../assets/images/_responsive/selected/projects/pp-048--w480.webp";
+import asset_684 from "../assets/images/_responsive/selected/projects/pp-048--w960.webp";
+import asset_685 from "../assets/images/_responsive/selected/projects/pp-048--w1448.webp";
+import asset_686 from "../assets/images/selected/projects/pp-051.jpg";
+import asset_687 from "../assets/images/_responsive/selected/projects/pp-051--w480.webp";
+import asset_688 from "../assets/images/_responsive/selected/projects/pp-051--w710.webp";
+import asset_689 from "../assets/images/selected/projects/pp-053.jpg";
+import asset_690 from "../assets/images/_responsive/selected/projects/pp-053--w480.webp";
+import asset_691 from "../assets/images/_responsive/selected/projects/pp-053--w656.webp";
+import asset_692 from "../assets/images/selected/projects/pp-055.jpg";
+import asset_693 from "../assets/images/_responsive/selected/projects/pp-055--w480.webp";
+import asset_694 from "../assets/images/_responsive/selected/projects/pp-055--w731.webp";
+import asset_695 from "../assets/images/selected/projects/pp-056.jpg";
+import asset_696 from "../assets/images/_responsive/selected/projects/pp-056--w480.webp";
+import asset_697 from "../assets/images/_responsive/selected/projects/pp-056--w960.webp";
+import asset_698 from "../assets/images/_responsive/selected/projects/pp-056--w1514.webp";
+import asset_699 from "../assets/images/selected/projects/pp-057.jpg";
+import asset_700 from "../assets/images/_responsive/selected/projects/pp-057--w480.webp";
+import asset_701 from "../assets/images/_responsive/selected/projects/pp-057--w960.webp";
+import asset_702 from "../assets/images/_responsive/selected/projects/pp-057--w1448.webp";
+import asset_703 from "../assets/images/selected/projects/pp-059.jpg";
+import asset_704 from "../assets/images/_responsive/selected/projects/pp-059--w480.webp";
+import asset_705 from "../assets/images/_responsive/selected/projects/pp-059--w960.webp";
+import asset_706 from "../assets/images/_responsive/selected/projects/pp-059--w1448.webp";
+import asset_707 from "../assets/images/selected/projects/pp-060.jpg";
+import asset_708 from "../assets/images/_responsive/selected/projects/pp-060--w480.webp";
+import asset_709 from "../assets/images/_responsive/selected/projects/pp-060--w960.webp";
+import asset_710 from "../assets/images/_responsive/selected/projects/pp-060--w1448.webp";
+import asset_711 from "../assets/images/selected/projects/pp-061.jpg";
+import asset_712 from "../assets/images/_responsive/selected/projects/pp-061--w480.webp";
+import asset_713 from "../assets/images/_responsive/selected/projects/pp-061--w960.webp";
+import asset_714 from "../assets/images/_responsive/selected/projects/pp-061--w1086.webp";
+import asset_715 from "../assets/images/selected/projects/pp-062.jpg";
+import asset_716 from "../assets/images/_responsive/selected/projects/pp-062--w480.webp";
+import asset_717 from "../assets/images/_responsive/selected/projects/pp-062--w960.webp";
+import asset_718 from "../assets/images/_responsive/selected/projects/pp-062--w1448.webp";
+import asset_719 from "../assets/images/selected/projects/pp-063.jpg";
+import asset_720 from "../assets/images/_responsive/selected/projects/pp-063--w480.webp";
+import asset_721 from "../assets/images/_responsive/selected/projects/pp-063--w656.webp";
+import asset_722 from "../assets/images/selected/projects/pp-065.jpg";
+import asset_723 from "../assets/images/_responsive/selected/projects/pp-065--w480.webp";
+import asset_724 from "../assets/images/_responsive/selected/projects/pp-065--w657.webp";
+import asset_725 from "../assets/images/selected/projects/pp-069.jpg";
+import asset_726 from "../assets/images/_responsive/selected/projects/pp-069--w480.webp";
+import asset_727 from "../assets/images/_responsive/selected/projects/pp-069--w730.webp";
+import asset_728 from "../assets/images/selected/projects/pp-071.jpg";
+import asset_729 from "../assets/images/_responsive/selected/projects/pp-071--w480.webp";
+import asset_730 from "../assets/images/_responsive/selected/projects/pp-071--w960.webp";
+import asset_731 from "../assets/images/_responsive/selected/projects/pp-071--w1448.webp";
+import asset_732 from "../assets/images/selected/projects/pp-072.jpg";
+import asset_733 from "../assets/images/_responsive/selected/projects/pp-072--w480.webp";
+import asset_734 from "../assets/images/_responsive/selected/projects/pp-072--w960.webp";
+import asset_735 from "../assets/images/_responsive/selected/projects/pp-072--w1592.webp";
+import asset_736 from "../assets/images/selected/projects/pp-075.jpg";
+import asset_737 from "../assets/images/_responsive/selected/projects/pp-075--w480.webp";
+import asset_738 from "../assets/images/_responsive/selected/projects/pp-075--w960.webp";
+import asset_739 from "../assets/images/_responsive/selected/projects/pp-075--w1448.webp";
+import asset_740 from "../assets/images/selected/recent/im-030.jpeg";
+import asset_741 from "../assets/images/_responsive/selected/recent/im-030--w480.webp";
+import asset_742 from "../assets/images/_responsive/selected/recent/im-030--w960.webp";
+import asset_743 from "../assets/images/selected/recent/im-033.jpeg";
+import asset_744 from "../assets/images/_responsive/selected/recent/im-033--w480.webp";
+import asset_745 from "../assets/images/_responsive/selected/recent/im-033--w960.webp";
+import asset_746 from "../assets/images/selected/recent/im-036.jpeg";
+import asset_747 from "../assets/images/_responsive/selected/recent/im-036--w480.webp";
+import asset_748 from "../assets/images/_responsive/selected/recent/im-036--w960.webp";
+import asset_749 from "../assets/images/_responsive/selected/recent/im-036--w1280.webp";
+import asset_750 from "../assets/images/selected/recent/im-047.jpeg";
+import asset_751 from "../assets/images/_responsive/selected/recent/im-047--w480.webp";
+import asset_752 from "../assets/images/_responsive/selected/recent/im-047--w762.webp";
+import asset_753 from "../assets/images/selected/recent/op-01.jpg";
+import asset_754 from "../assets/images/_responsive/selected/recent/op-01--w480.webp";
+import asset_755 from "../assets/images/_responsive/selected/recent/op-01--w810.webp";
+import asset_756 from "../assets/images/selected/recent/op-02.jpg";
+import asset_757 from "../assets/images/_responsive/selected/recent/op-02--w480.webp";
+import asset_758 from "../assets/images/_responsive/selected/recent/op-02--w960.webp";
+import asset_759 from "../assets/images/_responsive/selected/recent/op-02--w1080.webp";
+import asset_760 from "../assets/images/selected/recent/op-03.jpg";
+import asset_761 from "../assets/images/_responsive/selected/recent/op-03--w480.webp";
+import asset_762 from "../assets/images/_responsive/selected/recent/op-03--w810.webp";
+import asset_763 from "../assets/images/selected/recent/op-04.jpg";
+import asset_764 from "../assets/images/_responsive/selected/recent/op-04--w480.webp";
+import asset_765 from "../assets/images/_responsive/selected/recent/op-04--w810.webp";
+import asset_766 from "../assets/images/selected/recent/op-05.jpg";
+import asset_767 from "../assets/images/_responsive/selected/recent/op-05--w480.webp";
+import asset_768 from "../assets/images/_responsive/selected/recent/op-05--w810.webp";
+import asset_769 from "../assets/images/selected/recent/op-06.jpg";
+import asset_770 from "../assets/images/_responsive/selected/recent/op-06--w480.webp";
+import asset_771 from "../assets/images/_responsive/selected/recent/op-06--w810.webp";
+import asset_772 from "../assets/images/selected/recent/op-07.jpg";
+import asset_773 from "../assets/images/_responsive/selected/recent/op-07--w480.webp";
+import asset_774 from "../assets/images/_responsive/selected/recent/op-07--w810.webp";
+import asset_775 from "../assets/images/selected/recent/op-08.jpg";
+import asset_776 from "../assets/images/_responsive/selected/recent/op-08--w480.webp";
+import asset_777 from "../assets/images/_responsive/selected/recent/op-08--w810.webp";
+import asset_778 from "../assets/images/team/00-site-logo-enikkom-construction-limited.png";
+import asset_779 from "../assets/images/_responsive/team/00-site-logo-enikkom-construction-limited--w480.webp";
+import asset_780 from "../assets/images/_responsive/team/00-site-logo-enikkom-construction-limited--w960.webp";
+import asset_781 from "../assets/images/_responsive/team/00-site-logo-enikkom-construction-limited--w1536.webp";
+import asset_782 from "../assets/images/team/01-partner-logo-hddtec-limited.png";
+import asset_783 from "../assets/images/_responsive/team/01-partner-logo-hddtec-limited--w480.webp";
+import asset_784 from "../assets/images/_responsive/team/01-partner-logo-hddtec-limited--w960.webp";
+import asset_785 from "../assets/images/_responsive/team/01-partner-logo-hddtec-limited--w1254.webp";
+import asset_786 from "../assets/images/team/02-hero-management-team-hero-background.jpg";
+import asset_787 from "../assets/images/_responsive/team/02-hero-management-team-hero-background--w480.webp";
+import asset_788 from "../assets/images/_responsive/team/02-hero-management-team-hero-background--w960.webp";
+import asset_789 from "../assets/images/_responsive/team/02-hero-management-team-hero-background--w1087.webp";
+import asset_790 from "../assets/images/team/03-team-photo-engr-edward-amene.jpg";
+import asset_791 from "../assets/images/_responsive/team/03-team-photo-engr-edward-amene--w480.webp";
+import asset_792 from "../assets/images/_responsive/team/03-team-photo-engr-edward-amene--w960.webp";
+import asset_793 from "../assets/images/_responsive/team/03-team-photo-engr-edward-amene--w1254.webp";
+import asset_794 from "../assets/images/team/04-team-photo-engr-saleem-ahmad-khan.jpg";
+import asset_795 from "../assets/images/_responsive/team/04-team-photo-engr-saleem-ahmad-khan--w480.webp";
+import asset_796 from "../assets/images/_responsive/team/04-team-photo-engr-saleem-ahmad-khan--w960.webp";
+import asset_797 from "../assets/images/_responsive/team/04-team-photo-engr-saleem-ahmad-khan--w1254.webp";
+import asset_798 from "../assets/images/team/05-team-photo-mr-francis-anatogu.jpg";
+import asset_799 from "../assets/images/_responsive/team/05-team-photo-mr-francis-anatogu--w480.webp";
+import asset_800 from "../assets/images/_responsive/team/05-team-photo-mr-francis-anatogu--w960.webp";
+import asset_801 from "../assets/images/_responsive/team/05-team-photo-mr-francis-anatogu--w1254.webp";
+import asset_802 from "../assets/images/team/06-team-photo-adekunle-adewole-phd.jpg";
+import asset_803 from "../assets/images/_responsive/team/06-team-photo-adekunle-adewole-phd--w480.webp";
+import asset_804 from "../assets/images/_responsive/team/06-team-photo-adekunle-adewole-phd--w960.webp";
+import asset_805 from "../assets/images/_responsive/team/06-team-photo-adekunle-adewole-phd--w1254.webp";
+import asset_806 from "../assets/images/team/07-team-photo-mr-chibuike-nwachukwu.png";
+import asset_807 from "../assets/images/_responsive/team/07-team-photo-mr-chibuike-nwachukwu--w480.webp";
+import asset_808 from "../assets/images/_responsive/team/07-team-photo-mr-chibuike-nwachukwu--w960.webp";
+import asset_809 from "../assets/images/_responsive/team/07-team-photo-mr-chibuike-nwachukwu--w1254.webp";
+import asset_810 from "../assets/images/team/08-team-photo-teddy-allen.jpg";
+import asset_811 from "../assets/images/_responsive/team/08-team-photo-teddy-allen--w480.webp";
+import asset_812 from "../assets/images/_responsive/team/08-team-photo-teddy-allen--w960.webp";
+import asset_813 from "../assets/images/_responsive/team/08-team-photo-teddy-allen--w1254.webp";
+import asset_814 from "../assets/images/team/09-team-photo-idigbor-emeka-fca.jpg";
+import asset_815 from "../assets/images/_responsive/team/09-team-photo-idigbor-emeka-fca--w480.webp";
+import asset_816 from "../assets/images/_responsive/team/09-team-photo-idigbor-emeka-fca--w960.webp";
+import asset_817 from "../assets/images/_responsive/team/09-team-photo-idigbor-emeka-fca--w1254.webp";
+import asset_818 from "../assets/images/team/10-team-photo-biodun-adefila.jpg";
+import asset_819 from "../assets/images/_responsive/team/10-team-photo-biodun-adefila--w480.webp";
+import asset_820 from "../assets/images/_responsive/team/10-team-photo-biodun-adefila--w960.webp";
+import asset_821 from "../assets/images/_responsive/team/10-team-photo-biodun-adefila--w1085.webp";
+import asset_822 from "../assets/images/team/11-team-photo-ken-james.jpg";
+import asset_823 from "../assets/images/_responsive/team/11-team-photo-ken-james--w480.webp";
+import asset_824 from "../assets/images/_responsive/team/11-team-photo-ken-james--w960.webp";
+import asset_825 from "../assets/images/_responsive/team/11-team-photo-ken-james--w1254.webp";
+import asset_826 from "../assets/images/team/12-idigbor-emeka.jpg";
+import asset_827 from "../assets/images/_responsive/team/12-idigbor-emeka--w480.webp";
+import asset_828 from "../assets/images/_responsive/team/12-idigbor-emeka--w960.webp";
+import asset_829 from "../assets/images/_responsive/team/12-idigbor-emeka--w1254.webp";
+import asset_830 from "../assets/images/team/13-team-photo-uzoma-nwagboso.jpeg";
+import asset_831 from "../assets/images/_responsive/team/13-team-photo-uzoma-nwagboso-jpeg--w480.webp";
+import asset_832 from "../assets/images/_responsive/team/13-team-photo-uzoma-nwagboso-jpeg--w960.webp";
+import asset_833 from "../assets/images/_responsive/team/13-team-photo-uzoma-nwagboso-jpeg--w1536.webp";
+import asset_834 from "../assets/images/team/13-team-photo-uzoma-nwagboso.png";
+import asset_835 from "../assets/images/_responsive/team/13-team-photo-uzoma-nwagboso-png--w480.webp";
+import asset_836 from "../assets/images/_responsive/team/13-team-photo-uzoma-nwagboso-png--w960.webp";
+import asset_837 from "../assets/images/_responsive/team/13-team-photo-uzoma-nwagboso-png--w1296.webp";
 
 export interface GeneratedResponsiveVariant {
   src: string;
@@ -1061,162 +1065,162 @@ export const generatedImageManifest: Record<string, GeneratedImageRecord> = {
       { src: asset_80, width: 1400, type: "image/webp" },
     ],
   },
-  "projects/drilling-site-2.jpg": {
+  "projects/drilling-ops-8.jpg": {
     src: asset_81,
-    width: 1400,
-    height: 788,
+    width: 1448,
+    height: 1086,
     variants: [
       { src: asset_82, width: 480, type: "image/webp" },
       { src: asset_83, width: 960, type: "image/webp" },
-      { src: asset_84, width: 1400, type: "image/webp" },
+      { src: asset_84, width: 1448, type: "image/webp" },
+    ],
+  },
+  "projects/drilling-site-2.jpg": {
+    src: asset_85,
+    width: 1400,
+    height: 788,
+    variants: [
+      { src: asset_86, width: 480, type: "image/webp" },
+      { src: asset_87, width: 960, type: "image/webp" },
+      { src: asset_88, width: 1400, type: "image/webp" },
     ],
   },
   "projects/drilling-site.png": {
-    src: asset_85,
+    src: asset_89,
     width: 768,
     height: 577,
     variants: [
-      { src: asset_86, width: 480, type: "image/webp" },
-      { src: asset_87, width: 768, type: "image/webp" },
+      { src: asset_90, width: 480, type: "image/webp" },
+      { src: asset_91, width: 768, type: "image/webp" },
     ],
   },
   "projects/equipment-fleet.jpg": {
-    src: asset_88,
+    src: asset_92,
     width: 1200,
     height: 800,
     variants: [
-      { src: asset_89, width: 480, type: "image/webp" },
-      { src: asset_90, width: 960, type: "image/webp" },
-      { src: asset_91, width: 1200, type: "image/webp" },
+      { src: asset_93, width: 480, type: "image/webp" },
+      { src: asset_94, width: 960, type: "image/webp" },
+      { src: asset_95, width: 1200, type: "image/webp" },
     ],
   },
   "projects/generator-fg-wilson.png": {
-    src: asset_92,
+    src: asset_96,
     width: 1152,
     height: 452,
     variants: [
-      { src: asset_93, width: 480, type: "image/webp" },
-      { src: asset_94, width: 960, type: "image/webp" },
-      { src: asset_95, width: 1152, type: "image/webp" },
+      { src: asset_97, width: 480, type: "image/webp" },
+      { src: asset_98, width: 960, type: "image/webp" },
+      { src: asset_99, width: 1152, type: "image/webp" },
     ],
   },
   "projects/hdd-drill-string.jpg": {
-    src: asset_96,
+    src: asset_100,
     width: 1240,
     height: 696,
     variants: [
-      { src: asset_97, width: 480, type: "image/webp" },
-      { src: asset_98, width: 960, type: "image/webp" },
-      { src: asset_99, width: 1240, type: "image/webp" },
+      { src: asset_101, width: 480, type: "image/webp" },
+      { src: asset_102, width: 960, type: "image/webp" },
+      { src: asset_103, width: 1240, type: "image/webp" },
     ],
   },
   "projects/hdd-equipment-fleet-2.jpg": {
-    src: asset_100,
+    src: asset_104,
     width: 582,
     height: 609,
     variants: [
-      { src: asset_101, width: 480, type: "image/webp" },
-      { src: asset_102, width: 582, type: "image/webp" },
+      { src: asset_105, width: 480, type: "image/webp" },
+      { src: asset_106, width: 582, type: "image/webp" },
     ],
   },
   "projects/hdd-equipment-fleet-3.jpg": {
-    src: asset_103,
+    src: asset_107,
     width: 502,
     height: 642,
     variants: [
-      { src: asset_104, width: 480, type: "image/webp" },
-      { src: asset_105, width: 502, type: "image/webp" },
+      { src: asset_108, width: 480, type: "image/webp" },
+      { src: asset_109, width: 502, type: "image/webp" },
     ],
   },
   "projects/hdd-equipment-fleet-4.jpg": {
-    src: asset_106,
+    src: asset_110,
     width: 513,
     height: 610,
     variants: [
-      { src: asset_107, width: 480, type: "image/webp" },
-      { src: asset_108, width: 513, type: "image/webp" },
+      { src: asset_111, width: 480, type: "image/webp" },
+      { src: asset_112, width: 513, type: "image/webp" },
     ],
   },
   "projects/hdd-equipment-fleet.jpg": {
-    src: asset_109,
+    src: asset_113,
     width: 584,
     height: 642,
     variants: [
-      { src: asset_110, width: 480, type: "image/webp" },
-      { src: asset_111, width: 584, type: "image/webp" },
+      { src: asset_114, width: 480, type: "image/webp" },
+      { src: asset_115, width: 584, type: "image/webp" },
     ],
   },
   "projects/hdd-night-panorama-cropped.jpg": {
-    src: asset_112,
+    src: asset_116,
     width: 1684,
     height: 934,
     variants: [
-      { src: asset_113, width: 480, type: "image/webp" },
-      { src: asset_114, width: 960, type: "image/webp" },
-      { src: asset_115, width: 1600, type: "image/webp" },
+      { src: asset_117, width: 480, type: "image/webp" },
+      { src: asset_118, width: 960, type: "image/webp" },
+      { src: asset_119, width: 1600, type: "image/webp" },
     ],
   },
   "projects/hdd-night-panorama.jpg": {
-    src: asset_116,
+    src: asset_120,
     width: 1131,
     height: 1600,
     variants: [
-      { src: asset_117, width: 480, type: "image/webp" },
-      { src: asset_118, width: 960, type: "image/webp" },
-      { src: asset_119, width: 1131, type: "image/webp" },
+      { src: asset_121, width: 480, type: "image/webp" },
+      { src: asset_122, width: 960, type: "image/webp" },
+      { src: asset_123, width: 1131, type: "image/webp" },
     ],
   },
   "projects/hdd-operations-2.jpg": {
-    src: asset_120,
+    src: asset_124,
     width: 1080,
     height: 720,
     variants: [
-      { src: asset_121, width: 480, type: "image/webp" },
-      { src: asset_122, width: 960, type: "image/webp" },
-      { src: asset_123, width: 1080, type: "image/webp" },
+      { src: asset_125, width: 480, type: "image/webp" },
+      { src: asset_126, width: 960, type: "image/webp" },
+      { src: asset_127, width: 1080, type: "image/webp" },
     ],
   },
   "projects/hdd-rig-night.jpg": {
-    src: asset_124,
+    src: asset_128,
     width: 1400,
     height: 1050,
     variants: [
-      { src: asset_125, width: 480, type: "image/webp" },
-      { src: asset_126, width: 960, type: "image/webp" },
-      { src: asset_127, width: 1400, type: "image/webp" },
+      { src: asset_129, width: 480, type: "image/webp" },
+      { src: asset_130, width: 960, type: "image/webp" },
+      { src: asset_131, width: 1400, type: "image/webp" },
     ],
   },
   "projects/hdd-rig-operation.jpg": {
-    src: asset_128,
+    src: asset_132,
     width: 1022,
     height: 766,
     variants: [
-      { src: asset_129, width: 480, type: "image/webp" },
-      { src: asset_130, width: 960, type: "image/webp" },
-      { src: asset_131, width: 1022, type: "image/webp" },
+      { src: asset_133, width: 480, type: "image/webp" },
+      { src: asset_134, width: 960, type: "image/webp" },
+      { src: asset_135, width: 1022, type: "image/webp" },
     ],
   },
   "projects/hdd-team-1.jpg": {
-    src: asset_132,
+    src: asset_136,
     width: 1400,
     height: 1046,
     variants: [
-      { src: asset_133, width: 480, type: "image/webp" },
-      { src: asset_134, width: 960, type: "image/webp" },
-      { src: asset_135, width: 1400, type: "image/webp" },
+      { src: asset_137, width: 480, type: "image/webp" },
+      { src: asset_138, width: 960, type: "image/webp" },
+      { src: asset_139, width: 1400, type: "image/webp" },
     ],
   },
   "projects/hero-hdd-rig.jpg": {
-    src: asset_136,
-    width: 1920,
-    height: 1080,
-    variants: [
-      { src: asset_137, width: 480, type: "image/webp" },
-      { src: asset_138, width: 960, type: "image/webp" },
-      { src: asset_139, width: 1600, type: "image/webp" },
-    ],
-  },
-  "projects/hero-hdd.jpg": {
     src: asset_140,
     width: 1920,
     height: 1080,
@@ -1226,115 +1230,115 @@ export const generatedImageManifest: Record<string, GeneratedImageRecord> = {
       { src: asset_143, width: 1600, type: "image/webp" },
     ],
   },
-  "projects/hero_river_crossing.jpg": {
+  "projects/hero-hdd.jpg": {
     src: asset_144,
-    width: 1280,
-    height: 720,
+    width: 1920,
+    height: 1080,
     variants: [
       { src: asset_145, width: 480, type: "image/webp" },
       { src: asset_146, width: 960, type: "image/webp" },
-      { src: asset_147, width: 1280, type: "image/webp" },
+      { src: asset_147, width: 1600, type: "image/webp" },
     ],
   },
-  "projects/home-facilities-wellhead.jpg": {
+  "projects/hero_river_crossing.jpg": {
     src: asset_148,
-    width: 1536,
-    height: 1024,
+    width: 1280,
+    height: 720,
     variants: [
       { src: asset_149, width: 480, type: "image/webp" },
       { src: asset_150, width: 960, type: "image/webp" },
-      { src: asset_151, width: 1536, type: "image/webp" },
+      { src: asset_151, width: 1280, type: "image/webp" },
     ],
   },
-  "projects/hse-safety.jpg": {
+  "projects/home-facilities-wellhead.jpg": {
     src: asset_152,
-    width: 1024,
-    height: 768,
+    width: 1536,
+    height: 1024,
     variants: [
       { src: asset_153, width: 480, type: "image/webp" },
       { src: asset_154, width: 960, type: "image/webp" },
-      { src: asset_155, width: 1024, type: "image/webp" },
+      { src: asset_155, width: 1536, type: "image/webp" },
     ],
   },
-  "projects/jetty-construction.jpg": {
+  "projects/hse-safety.jpg": {
     src: asset_156,
-    width: 1200,
-    height: 800,
+    width: 1024,
+    height: 768,
     variants: [
       { src: asset_157, width: 480, type: "image/webp" },
       { src: asset_158, width: 960, type: "image/webp" },
-      { src: asset_159, width: 1200, type: "image/webp" },
+      { src: asset_159, width: 1024, type: "image/webp" },
     ],
   },
-  "projects/lekki-gas-pipeline.jpg": {
+  "projects/jetty-construction.jpg": {
     src: asset_160,
-    width: 1811,
-    height: 868,
+    width: 1200,
+    height: 800,
     variants: [
       { src: asset_161, width: 480, type: "image/webp" },
       { src: asset_162, width: 960, type: "image/webp" },
-      { src: asset_163, width: 1600, type: "image/webp" },
+      { src: asset_163, width: 1200, type: "image/webp" },
+    ],
+  },
+  "projects/lekki-gas-pipeline.jpg": {
+    src: asset_164,
+    width: 1811,
+    height: 868,
+    variants: [
+      { src: asset_165, width: 480, type: "image/webp" },
+      { src: asset_166, width: 960, type: "image/webp" },
+      { src: asset_167, width: 1600, type: "image/webp" },
     ],
   },
   "projects/multi-crane-operations.jpg": {
-    src: asset_164,
+    src: asset_168,
     width: 372,
     height: 251,
     variants: [
-      { src: asset_165, width: 372, type: "image/webp" },
+      { src: asset_169, width: 372, type: "image/webp" },
     ],
   },
   "projects/nipco-ibafo-2.jpg": {
-    src: asset_166,
-    width: 1400,
-    height: 786,
-    variants: [
-      { src: asset_167, width: 480, type: "image/webp" },
-      { src: asset_168, width: 960, type: "image/webp" },
-      { src: asset_169, width: 1400, type: "image/webp" },
-    ],
-  },
-  "projects/nipco-ibafo-3.jpg": {
     src: asset_170,
     width: 1400,
-    height: 788,
+    height: 786,
     variants: [
       { src: asset_171, width: 480, type: "image/webp" },
       { src: asset_172, width: 960, type: "image/webp" },
       { src: asset_173, width: 1400, type: "image/webp" },
     ],
   },
-  "projects/nipco-ibafo.jpg": {
+  "projects/nipco-ibafo-3.jpg": {
     src: asset_174,
     width: 1400,
-    height: 786,
+    height: 788,
     variants: [
       { src: asset_175, width: 480, type: "image/webp" },
       { src: asset_176, width: 960, type: "image/webp" },
       { src: asset_177, width: 1400, type: "image/webp" },
     ],
   },
-  "projects/nipco-pipeline.jpg": {
+  "projects/nipco-ibafo.jpg": {
     src: asset_178,
-    width: 1449,
-    height: 1086,
+    width: 1400,
+    height: 786,
     variants: [
       { src: asset_179, width: 480, type: "image/webp" },
       { src: asset_180, width: 960, type: "image/webp" },
-      { src: asset_181, width: 1449, type: "image/webp" },
+      { src: asset_181, width: 1400, type: "image/webp" },
     ],
   },
-  "projects/otumara-escravos-2.jpg": {
+  "projects/nipco-pipeline.jpg": {
     src: asset_182,
-    width: 1672,
-    height: 941,
+    width: 1449,
+    height: 1086,
     variants: [
       { src: asset_183, width: 480, type: "image/webp" },
       { src: asset_184, width: 960, type: "image/webp" },
-      { src: asset_185, width: 1600, type: "image/webp" },
+      { src: asset_185, width: 1449, type: "image/webp" },
     ],
   },
-  "projects/otumara-escravos.jpg": {
+  "projects/otumara-escravos-2.jpg": {
     src: asset_186,
     width: 1672,
     height: 941,
@@ -1344,346 +1348,346 @@ export const generatedImageManifest: Record<string, GeneratedImageRecord> = {
       { src: asset_189, width: 1600, type: "image/webp" },
     ],
   },
-  "projects/partnership-hddthailand-2.jpg": {
+  "projects/otumara-escravos.jpg": {
     src: asset_190,
-    width: 276,
-    height: 90,
-    variants: [
-      { src: asset_191, width: 276, type: "image/webp" },
-    ],
-  },
-  "projects/partnership-hddthailand.jpg": {
-    src: asset_192,
-    width: 309,
-    height: 73,
-    variants: [
-      { src: asset_193, width: 309, type: "image/webp" },
-    ],
-  },
-  "projects/pipe-handling.jpg": {
-    src: asset_194,
-    width: 1080,
-    height: 810,
-    variants: [
-      { src: asset_195, width: 480, type: "image/webp" },
-      { src: asset_196, width: 960, type: "image/webp" },
-      { src: asset_197, width: 1080, type: "image/webp" },
-    ],
-  },
-  "projects/pipe-laying-crane.jpg": {
-    src: asset_198,
-    width: 1552,
-    height: 1013,
-    variants: [
-      { src: asset_199, width: 480, type: "image/webp" },
-      { src: asset_200, width: 960, type: "image/webp" },
-      { src: asset_201, width: 1552, type: "image/webp" },
-    ],
-  },
-  "projects/pipe-welding.png": {
-    src: asset_202,
-    width: 768,
-    height: 576,
-    variants: [
-      { src: asset_203, width: 480, type: "image/webp" },
-      { src: asset_204, width: 768, type: "image/webp" },
-    ],
-  },
-  "projects/pipeline-construction.jpg": {
-    src: asset_205,
-    width: 1920,
-    height: 1080,
-    variants: [
-      { src: asset_206, width: 480, type: "image/webp" },
-      { src: asset_207, width: 960, type: "image/webp" },
-      { src: asset_208, width: 1600, type: "image/webp" },
-    ],
-  },
-  "projects/pipeline-crew.jpg": {
-    src: asset_209,
-    width: 1080,
-    height: 607,
-    variants: [
-      { src: asset_210, width: 480, type: "image/webp" },
-      { src: asset_211, width: 960, type: "image/webp" },
-      { src: asset_212, width: 1080, type: "image/webp" },
-    ],
-  },
-  "projects/pipeline-laying.png": {
-    src: asset_213,
-    width: 768,
-    height: 576,
-    variants: [
-      { src: asset_214, width: 480, type: "image/webp" },
-      { src: asset_215, width: 768, type: "image/webp" },
-    ],
-  },
-  "projects/proj_atlas.jpg": {
-    src: asset_216,
-    width: 960,
-    height: 540,
-    variants: [
-      { src: asset_217, width: 480, type: "image/webp" },
-      { src: asset_218, width: 960, type: "image/webp" },
-    ],
-  },
-  "projects/proj_atlas_v2.jpg": {
-    src: asset_219,
     width: 1672,
     height: 941,
     variants: [
-      { src: asset_220, width: 480, type: "image/webp" },
-      { src: asset_221, width: 960, type: "image/webp" },
-      { src: asset_222, width: 1600, type: "image/webp" },
+      { src: asset_191, width: 480, type: "image/webp" },
+      { src: asset_192, width: 960, type: "image/webp" },
+      { src: asset_193, width: 1600, type: "image/webp" },
     ],
   },
-  "projects/proj_lekki.jpg": {
-    src: asset_223,
-    width: 1024,
-    height: 768,
+  "projects/partnership-hddthailand-2.jpg": {
+    src: asset_194,
+    width: 276,
+    height: 90,
     variants: [
-      { src: asset_224, width: 480, type: "image/webp" },
-      { src: asset_225, width: 960, type: "image/webp" },
-      { src: asset_226, width: 1024, type: "image/webp" },
+      { src: asset_195, width: 276, type: "image/webp" },
     ],
   },
-  "projects/proj_oml34.jpg": {
-    src: asset_227,
-    width: 1280,
-    height: 719,
+  "projects/partnership-hddthailand.jpg": {
+    src: asset_196,
+    width: 309,
+    height: 73,
     variants: [
-      { src: asset_228, width: 480, type: "image/webp" },
-      { src: asset_229, width: 960, type: "image/webp" },
-      { src: asset_230, width: 1280, type: "image/webp" },
+      { src: asset_197, width: 309, type: "image/webp" },
     ],
   },
-  "projects/rig-setup.png": {
-    src: asset_231,
+  "projects/pipe-handling.jpg": {
+    src: asset_198,
+    width: 1080,
+    height: 810,
+    variants: [
+      { src: asset_199, width: 480, type: "image/webp" },
+      { src: asset_200, width: 960, type: "image/webp" },
+      { src: asset_201, width: 1080, type: "image/webp" },
+    ],
+  },
+  "projects/pipe-laying-crane.jpg": {
+    src: asset_202,
+    width: 1552,
+    height: 1013,
+    variants: [
+      { src: asset_203, width: 480, type: "image/webp" },
+      { src: asset_204, width: 960, type: "image/webp" },
+      { src: asset_205, width: 1552, type: "image/webp" },
+    ],
+  },
+  "projects/pipe-welding.png": {
+    src: asset_206,
     width: 768,
-    height: 626,
+    height: 576,
     variants: [
-      { src: asset_232, width: 480, type: "image/webp" },
-      { src: asset_233, width: 768, type: "image/webp" },
+      { src: asset_207, width: 480, type: "image/webp" },
+      { src: asset_208, width: 768, type: "image/webp" },
     ],
   },
-  "projects/safety-signage.jpg": {
-    src: asset_234,
-    width: 980,
-    height: 616,
+  "projects/pipeline-construction.jpg": {
+    src: asset_209,
+    width: 1920,
+    height: 1080,
     variants: [
-      { src: asset_235, width: 480, type: "image/webp" },
-      { src: asset_236, width: 960, type: "image/webp" },
-      { src: asset_237, width: 980, type: "image/webp" },
+      { src: asset_210, width: 480, type: "image/webp" },
+      { src: asset_211, width: 960, type: "image/webp" },
+      { src: asset_212, width: 1600, type: "image/webp" },
     ],
   },
-  "projects/scope-operations-2.jpg": {
-    src: asset_238,
-    width: 1400,
-    height: 1056,
+  "projects/pipeline-crew.jpg": {
+    src: asset_213,
+    width: 1080,
+    height: 607,
     variants: [
-      { src: asset_239, width: 480, type: "image/webp" },
-      { src: asset_240, width: 960, type: "image/webp" },
-      { src: asset_241, width: 1400, type: "image/webp" },
+      { src: asset_214, width: 480, type: "image/webp" },
+      { src: asset_215, width: 960, type: "image/webp" },
+      { src: asset_216, width: 1080, type: "image/webp" },
     ],
   },
-  "projects/scope-operations-3.jpg": {
-    src: asset_242,
-    width: 1446,
-    height: 1087,
-    variants: [
-      { src: asset_243, width: 480, type: "image/webp" },
-      { src: asset_244, width: 960, type: "image/webp" },
-      { src: asset_245, width: 1446, type: "image/webp" },
-    ],
-  },
-  "projects/scope-operations.jpg": {
-    src: asset_246,
-    width: 1673,
-    height: 940,
-    variants: [
-      { src: asset_247, width: 480, type: "image/webp" },
-      { src: asset_248, width: 960, type: "image/webp" },
-      { src: asset_249, width: 1600, type: "image/webp" },
-    ],
-  },
-  "projects/service-dredging-vessel.jpg": {
-    src: asset_250,
+  "projects/pipeline-laying.png": {
+    src: asset_217,
     width: 768,
-    height: 428,
+    height: 576,
     variants: [
-      { src: asset_251, width: 480, type: "image/webp" },
-      { src: asset_252, width: 768, type: "image/webp" },
+      { src: asset_218, width: 480, type: "image/webp" },
+      { src: asset_219, width: 768, type: "image/webp" },
     ],
   },
-  "projects/service-facilities-installation.jpg": {
-    src: asset_253,
-    width: 1200,
-    height: 966,
-    variants: [
-      { src: asset_254, width: 480, type: "image/webp" },
-      { src: asset_255, width: 960, type: "image/webp" },
-      { src: asset_256, width: 1200, type: "image/webp" },
-    ],
-  },
-  "projects/service-operations-hero.jpg": {
-    src: asset_257,
+  "projects/proj_atlas.jpg": {
+    src: asset_220,
     width: 960,
     height: 540,
     variants: [
-      { src: asset_258, width: 480, type: "image/webp" },
-      { src: asset_259, width: 960, type: "image/webp" },
+      { src: asset_221, width: 480, type: "image/webp" },
+      { src: asset_222, width: 960, type: "image/webp" },
     ],
   },
-  "projects/service-subsurface-detector.jpg": {
-    src: asset_260,
-    width: 1400,
-    height: 934,
+  "projects/proj_atlas_v2.jpg": {
+    src: asset_223,
+    width: 1672,
+    height: 941,
     variants: [
-      { src: asset_261, width: 480, type: "image/webp" },
-      { src: asset_262, width: 960, type: "image/webp" },
-      { src: asset_263, width: 1400, type: "image/webp" },
+      { src: asset_224, width: 480, type: "image/webp" },
+      { src: asset_225, width: 960, type: "image/webp" },
+      { src: asset_226, width: 1600, type: "image/webp" },
     ],
   },
-  "projects/shore-approach.jpg": {
-    src: asset_264,
+  "projects/proj_lekki.jpg": {
+    src: asset_227,
     width: 1024,
     height: 768,
     variants: [
+      { src: asset_228, width: 480, type: "image/webp" },
+      { src: asset_229, width: 960, type: "image/webp" },
+      { src: asset_230, width: 1024, type: "image/webp" },
+    ],
+  },
+  "projects/proj_oml34.jpg": {
+    src: asset_231,
+    width: 1280,
+    height: 719,
+    variants: [
+      { src: asset_232, width: 480, type: "image/webp" },
+      { src: asset_233, width: 960, type: "image/webp" },
+      { src: asset_234, width: 1280, type: "image/webp" },
+    ],
+  },
+  "projects/rig-setup.png": {
+    src: asset_235,
+    width: 768,
+    height: 626,
+    variants: [
+      { src: asset_236, width: 480, type: "image/webp" },
+      { src: asset_237, width: 768, type: "image/webp" },
+    ],
+  },
+  "projects/safety-signage.jpg": {
+    src: asset_238,
+    width: 980,
+    height: 616,
+    variants: [
+      { src: asset_239, width: 480, type: "image/webp" },
+      { src: asset_240, width: 960, type: "image/webp" },
+      { src: asset_241, width: 980, type: "image/webp" },
+    ],
+  },
+  "projects/scope-operations-2.jpg": {
+    src: asset_242,
+    width: 1400,
+    height: 1056,
+    variants: [
+      { src: asset_243, width: 480, type: "image/webp" },
+      { src: asset_244, width: 960, type: "image/webp" },
+      { src: asset_245, width: 1400, type: "image/webp" },
+    ],
+  },
+  "projects/scope-operations-3.jpg": {
+    src: asset_246,
+    width: 1446,
+    height: 1087,
+    variants: [
+      { src: asset_247, width: 480, type: "image/webp" },
+      { src: asset_248, width: 960, type: "image/webp" },
+      { src: asset_249, width: 1446, type: "image/webp" },
+    ],
+  },
+  "projects/scope-operations.jpg": {
+    src: asset_250,
+    width: 1673,
+    height: 940,
+    variants: [
+      { src: asset_251, width: 480, type: "image/webp" },
+      { src: asset_252, width: 960, type: "image/webp" },
+      { src: asset_253, width: 1600, type: "image/webp" },
+    ],
+  },
+  "projects/service-dredging-vessel.jpg": {
+    src: asset_254,
+    width: 768,
+    height: 428,
+    variants: [
+      { src: asset_255, width: 480, type: "image/webp" },
+      { src: asset_256, width: 768, type: "image/webp" },
+    ],
+  },
+  "projects/service-facilities-installation.jpg": {
+    src: asset_257,
+    width: 1200,
+    height: 966,
+    variants: [
+      { src: asset_258, width: 480, type: "image/webp" },
+      { src: asset_259, width: 960, type: "image/webp" },
+      { src: asset_260, width: 1200, type: "image/webp" },
+    ],
+  },
+  "projects/service-operations-hero.jpg": {
+    src: asset_261,
+    width: 960,
+    height: 540,
+    variants: [
+      { src: asset_262, width: 480, type: "image/webp" },
+      { src: asset_263, width: 960, type: "image/webp" },
+    ],
+  },
+  "projects/service-subsurface-detector.jpg": {
+    src: asset_264,
+    width: 1400,
+    height: 934,
+    variants: [
       { src: asset_265, width: 480, type: "image/webp" },
       { src: asset_266, width: 960, type: "image/webp" },
-      { src: asset_267, width: 1024, type: "image/webp" },
+      { src: asset_267, width: 1400, type: "image/webp" },
+    ],
+  },
+  "projects/shore-approach.jpg": {
+    src: asset_268,
+    width: 1024,
+    height: 768,
+    variants: [
+      { src: asset_269, width: 480, type: "image/webp" },
+      { src: asset_270, width: 960, type: "image/webp" },
+      { src: asset_271, width: 1024, type: "image/webp" },
     ],
   },
   "projects/swamp-pipeline.png": {
-    src: asset_268,
+    src: asset_272,
     width: 768,
     height: 631,
     variants: [
-      { src: asset_269, width: 480, type: "image/webp" },
-      { src: asset_270, width: 768, type: "image/webp" },
+      { src: asset_273, width: 480, type: "image/webp" },
+      { src: asset_274, width: 768, type: "image/webp" },
     ],
   },
   "projects/team-safety.jpg": {
-    src: asset_271,
+    src: asset_275,
     width: 1080,
     height: 798,
     variants: [
-      { src: asset_272, width: 480, type: "image/webp" },
-      { src: asset_273, width: 960, type: "image/webp" },
-      { src: asset_274, width: 1080, type: "image/webp" },
+      { src: asset_276, width: 480, type: "image/webp" },
+      { src: asset_277, width: 960, type: "image/webp" },
+      { src: asset_278, width: 1080, type: "image/webp" },
     ],
   },
   "projects/tripping-safety.jpg": {
-    src: asset_275,
+    src: asset_279,
     width: 810,
     height: 1080,
     variants: [
-      { src: asset_276, width: 480, type: "image/webp" },
-      { src: asset_277, width: 810, type: "image/webp" },
+      { src: asset_280, width: 480, type: "image/webp" },
+      { src: asset_281, width: 810, type: "image/webp" },
     ],
   },
   "projects/welding-crew.jpg": {
-    src: asset_278,
+    src: asset_282,
     width: 1240,
     height: 696,
     variants: [
-      { src: asset_279, width: 480, type: "image/webp" },
-      { src: asset_280, width: 960, type: "image/webp" },
-      { src: asset_281, width: 1240, type: "image/webp" },
+      { src: asset_283, width: 480, type: "image/webp" },
+      { src: asset_284, width: 960, type: "image/webp" },
+      { src: asset_285, width: 1240, type: "image/webp" },
     ],
   },
   "projects/workers-ppe.jpg": {
-    src: asset_282,
+    src: asset_286,
     width: 810,
     height: 1080,
     variants: [
-      { src: asset_283, width: 480, type: "image/webp" },
-      { src: asset_284, width: 810, type: "image/webp" },
+      { src: asset_287, width: 480, type: "image/webp" },
+      { src: asset_288, width: 810, type: "image/webp" },
     ],
   },
   "selected/equipment/eq-006.jpg": {
-    src: asset_285,
+    src: asset_289,
     width: 589,
     height: 405,
     variants: [
-      { src: asset_286, width: 480, type: "image/webp" },
-      { src: asset_287, width: 589, type: "image/webp" },
+      { src: asset_290, width: 480, type: "image/webp" },
+      { src: asset_291, width: 589, type: "image/webp" },
     ],
   },
   "selected/equipment/eq-007.jpg": {
-    src: asset_288,
+    src: asset_292,
     width: 589,
     height: 405,
     variants: [
-      { src: asset_289, width: 480, type: "image/webp" },
-      { src: asset_290, width: 589, type: "image/webp" },
+      { src: asset_293, width: 480, type: "image/webp" },
+      { src: asset_294, width: 589, type: "image/webp" },
     ],
   },
   "selected/equipment/eq-010.jpg": {
-    src: asset_291,
+    src: asset_295,
     width: 588,
     height: 405,
     variants: [
-      { src: asset_292, width: 480, type: "image/webp" },
-      { src: asset_293, width: 588, type: "image/webp" },
+      { src: asset_296, width: 480, type: "image/webp" },
+      { src: asset_297, width: 588, type: "image/webp" },
     ],
   },
   "selected/equipment/eq-021.jpg": {
-    src: asset_294,
+    src: asset_298,
     width: 645,
     height: 483,
     variants: [
-      { src: asset_295, width: 480, type: "image/webp" },
-      { src: asset_296, width: 645, type: "image/webp" },
+      { src: asset_299, width: 480, type: "image/webp" },
+      { src: asset_300, width: 645, type: "image/webp" },
     ],
   },
   "selected/equipment/eq-022.jpg": {
-    src: asset_297,
+    src: asset_301,
     width: 645,
     height: 483,
     variants: [
-      { src: asset_298, width: 480, type: "image/webp" },
-      { src: asset_299, width: 645, type: "image/webp" },
+      { src: asset_302, width: 480, type: "image/webp" },
+      { src: asset_303, width: 645, type: "image/webp" },
     ],
   },
   "selected/equipment/eq-023.jpg": {
-    src: asset_300,
+    src: asset_304,
     width: 610,
     height: 406,
     variants: [
-      { src: asset_301, width: 480, type: "image/webp" },
-      { src: asset_302, width: 610, type: "image/webp" },
+      { src: asset_305, width: 480, type: "image/webp" },
+      { src: asset_306, width: 610, type: "image/webp" },
     ],
   },
   "selected/equipment/eq-024.jpg": {
-    src: asset_303,
+    src: asset_307,
     width: 610,
     height: 429,
     variants: [
-      { src: asset_304, width: 480, type: "image/webp" },
-      { src: asset_305, width: 610, type: "image/webp" },
+      { src: asset_308, width: 480, type: "image/webp" },
+      { src: asset_309, width: 610, type: "image/webp" },
     ],
   },
   "selected/equipment/eq-025.jpg": {
-    src: asset_306,
+    src: asset_310,
     width: 716,
     height: 544,
     variants: [
-      { src: asset_307, width: 480, type: "image/webp" },
-      { src: asset_308, width: 716, type: "image/webp" },
+      { src: asset_311, width: 480, type: "image/webp" },
+      { src: asset_312, width: 716, type: "image/webp" },
     ],
   },
   "selected/equipment/eq-026.jpg": {
-    src: asset_309,
-    width: 2400,
-    height: 1600,
-    variants: [
-      { src: asset_310, width: 480, type: "image/webp" },
-      { src: asset_311, width: 960, type: "image/webp" },
-      { src: asset_312, width: 1600, type: "image/webp" },
-    ],
-  },
-  "selected/equipment/eq-027.jpg": {
     src: asset_313,
     width: 2400,
     height: 1600,
@@ -1693,7 +1697,7 @@ export const generatedImageManifest: Record<string, GeneratedImageRecord> = {
       { src: asset_316, width: 1600, type: "image/webp" },
     ],
   },
-  "selected/equipment/eq-028.jpg": {
+  "selected/equipment/eq-027.jpg": {
     src: asset_317,
     width: 2400,
     height: 1600,
@@ -1703,7 +1707,7 @@ export const generatedImageManifest: Record<string, GeneratedImageRecord> = {
       { src: asset_320, width: 1600, type: "image/webp" },
     ],
   },
-  "selected/equipment/eq-029.jpg": {
+  "selected/equipment/eq-028.jpg": {
     src: asset_321,
     width: 2400,
     height: 1600,
@@ -1713,7 +1717,7 @@ export const generatedImageManifest: Record<string, GeneratedImageRecord> = {
       { src: asset_324, width: 1600, type: "image/webp" },
     ],
   },
-  "selected/equipment/eq-030.jpg": {
+  "selected/equipment/eq-029.jpg": {
     src: asset_325,
     width: 2400,
     height: 1600,
@@ -1723,67 +1727,67 @@ export const generatedImageManifest: Record<string, GeneratedImageRecord> = {
       { src: asset_328, width: 1600, type: "image/webp" },
     ],
   },
-  "selected/general/about-aerial-site-enhanced.jpg": {
+  "selected/equipment/eq-030.jpg": {
     src: asset_329,
-    width: 1672,
-    height: 941,
+    width: 2400,
+    height: 1600,
     variants: [
       { src: asset_330, width: 480, type: "image/webp" },
       { src: asset_331, width: 960, type: "image/webp" },
       { src: asset_332, width: 1600, type: "image/webp" },
     ],
   },
-  "selected/general/about-field-team-enhanced.jpg": {
+  "selected/general/about-aerial-site-enhanced.jpg": {
     src: asset_333,
-    width: 1086,
-    height: 1448,
+    width: 1672,
+    height: 941,
     variants: [
       { src: asset_334, width: 480, type: "image/webp" },
       { src: asset_335, width: 960, type: "image/webp" },
-      { src: asset_336, width: 1086, type: "image/webp" },
+      { src: asset_336, width: 1600, type: "image/webp" },
     ],
   },
-  "selected/general/about-pipe-yard-enhanced.jpg": {
+  "selected/general/about-field-team-enhanced.jpg": {
     src: asset_337,
-    width: 1448,
-    height: 1086,
+    width: 1086,
+    height: 1448,
     variants: [
       { src: asset_338, width: 480, type: "image/webp" },
       { src: asset_339, width: 960, type: "image/webp" },
-      { src: asset_340, width: 1448, type: "image/webp" },
+      { src: asset_340, width: 1086, type: "image/webp" },
     ],
   },
-  "selected/general/about-safety-briefing-enhanced.jpg": {
+  "selected/general/about-pipe-yard-enhanced.jpg": {
     src: asset_341,
-    width: 1449,
+    width: 1448,
     height: 1086,
     variants: [
       { src: asset_342, width: 480, type: "image/webp" },
       { src: asset_343, width: 960, type: "image/webp" },
-      { src: asset_344, width: 1449, type: "image/webp" },
+      { src: asset_344, width: 1448, type: "image/webp" },
     ],
   },
-  "selected/general/about-site-equipment-enhanced.jpg": {
+  "selected/general/about-safety-briefing-enhanced.jpg": {
     src: asset_345,
-    width: 1673,
-    height: 940,
+    width: 1449,
+    height: 1086,
     variants: [
       { src: asset_346, width: 480, type: "image/webp" },
       { src: asset_347, width: 960, type: "image/webp" },
-      { src: asset_348, width: 1600, type: "image/webp" },
+      { src: asset_348, width: 1449, type: "image/webp" },
     ],
   },
-  "selected/general/pl-01.jpg": {
+  "selected/general/about-site-equipment-enhanced.jpg": {
     src: asset_349,
-    width: 2400,
-    height: 1600,
+    width: 1673,
+    height: 940,
     variants: [
       { src: asset_350, width: 480, type: "image/webp" },
       { src: asset_351, width: 960, type: "image/webp" },
       { src: asset_352, width: 1600, type: "image/webp" },
     ],
   },
-  "selected/general/pl-02.jpg": {
+  "selected/general/pl-01.jpg": {
     src: asset_353,
     width: 2400,
     height: 1600,
@@ -1793,7 +1797,7 @@ export const generatedImageManifest: Record<string, GeneratedImageRecord> = {
       { src: asset_356, width: 1600, type: "image/webp" },
     ],
   },
-  "selected/general/pl-03.jpg": {
+  "selected/general/pl-02.jpg": {
     src: asset_357,
     width: 2400,
     height: 1600,
@@ -1803,7 +1807,7 @@ export const generatedImageManifest: Record<string, GeneratedImageRecord> = {
       { src: asset_360, width: 1600, type: "image/webp" },
     ],
   },
-  "selected/general/pl-04.jpg": {
+  "selected/general/pl-03.jpg": {
     src: asset_361,
     width: 2400,
     height: 1600,
@@ -1813,47 +1817,47 @@ export const generatedImageManifest: Record<string, GeneratedImageRecord> = {
       { src: asset_364, width: 1600, type: "image/webp" },
     ],
   },
-  "selected/general/pl-05.jpg": {
+  "selected/general/pl-04.jpg": {
     src: asset_365,
     width: 2400,
-    height: 3600,
+    height: 1600,
     variants: [
       { src: asset_366, width: 480, type: "image/webp" },
       { src: asset_367, width: 960, type: "image/webp" },
       { src: asset_368, width: 1600, type: "image/webp" },
     ],
   },
-  "selected/general/pl-06.jpg": {
+  "selected/general/pl-05.jpg": {
     src: asset_369,
     width: 2400,
-    height: 3345,
+    height: 3600,
     variants: [
       { src: asset_370, width: 480, type: "image/webp" },
       { src: asset_371, width: 960, type: "image/webp" },
       { src: asset_372, width: 1600, type: "image/webp" },
     ],
   },
-  "selected/general/pl-07.jpg": {
+  "selected/general/pl-06.jpg": {
     src: asset_373,
     width: 2400,
-    height: 3463,
+    height: 3345,
     variants: [
       { src: asset_374, width: 480, type: "image/webp" },
       { src: asset_375, width: 960, type: "image/webp" },
       { src: asset_376, width: 1600, type: "image/webp" },
     ],
   },
-  "selected/general/pl-08.jpg": {
+  "selected/general/pl-07.jpg": {
     src: asset_377,
     width: 2400,
-    height: 1600,
+    height: 3463,
     variants: [
       { src: asset_378, width: 480, type: "image/webp" },
       { src: asset_379, width: 960, type: "image/webp" },
       { src: asset_380, width: 1600, type: "image/webp" },
     ],
   },
-  "selected/general/pl-09.jpg": {
+  "selected/general/pl-08.jpg": {
     src: asset_381,
     width: 2400,
     height: 1600,
@@ -1863,7 +1867,7 @@ export const generatedImageManifest: Record<string, GeneratedImageRecord> = {
       { src: asset_384, width: 1600, type: "image/webp" },
     ],
   },
-  "selected/general/pl-10.jpg": {
+  "selected/general/pl-09.jpg": {
     src: asset_385,
     width: 2400,
     height: 1600,
@@ -1873,7 +1877,7 @@ export const generatedImageManifest: Record<string, GeneratedImageRecord> = {
       { src: asset_388, width: 1600, type: "image/webp" },
     ],
   },
-  "selected/general/pl-11.jpg": {
+  "selected/general/pl-10.jpg": {
     src: asset_389,
     width: 2400,
     height: 1600,
@@ -1883,17 +1887,17 @@ export const generatedImageManifest: Record<string, GeneratedImageRecord> = {
       { src: asset_392, width: 1600, type: "image/webp" },
     ],
   },
-  "selected/general/pl-12.jpg": {
+  "selected/general/pl-11.jpg": {
     src: asset_393,
     width: 2400,
-    height: 1722,
+    height: 1600,
     variants: [
       { src: asset_394, width: 480, type: "image/webp" },
       { src: asset_395, width: 960, type: "image/webp" },
       { src: asset_396, width: 1600, type: "image/webp" },
     ],
   },
-  "selected/general/pl-13.jpg": {
+  "selected/general/pl-12.jpg": {
     src: asset_397,
     width: 2400,
     height: 1722,
@@ -1903,17 +1907,17 @@ export const generatedImageManifest: Record<string, GeneratedImageRecord> = {
       { src: asset_400, width: 1600, type: "image/webp" },
     ],
   },
-  "selected/general/pl-14.jpg": {
+  "selected/general/pl-13.jpg": {
     src: asset_401,
     width: 2400,
-    height: 1600,
+    height: 1722,
     variants: [
       { src: asset_402, width: 480, type: "image/webp" },
       { src: asset_403, width: 960, type: "image/webp" },
       { src: asset_404, width: 1600, type: "image/webp" },
     ],
   },
-  "selected/general/pl-15.jpg": {
+  "selected/general/pl-14.jpg": {
     src: asset_405,
     width: 2400,
     height: 1600,
@@ -1923,7 +1927,7 @@ export const generatedImageManifest: Record<string, GeneratedImageRecord> = {
       { src: asset_408, width: 1600, type: "image/webp" },
     ],
   },
-  "selected/general/pl-16.jpg": {
+  "selected/general/pl-15.jpg": {
     src: asset_409,
     width: 2400,
     height: 1600,
@@ -1933,27 +1937,27 @@ export const generatedImageManifest: Record<string, GeneratedImageRecord> = {
       { src: asset_412, width: 1600, type: "image/webp" },
     ],
   },
-  "selected/general/pl-17.jpg": {
+  "selected/general/pl-16.jpg": {
     src: asset_413,
     width: 2400,
-    height: 1722,
+    height: 1600,
     variants: [
       { src: asset_414, width: 480, type: "image/webp" },
       { src: asset_415, width: 960, type: "image/webp" },
       { src: asset_416, width: 1600, type: "image/webp" },
     ],
   },
-  "selected/general/pl-18.jpg": {
+  "selected/general/pl-17.jpg": {
     src: asset_417,
     width: 2400,
-    height: 1600,
+    height: 1722,
     variants: [
       { src: asset_418, width: 480, type: "image/webp" },
       { src: asset_419, width: 960, type: "image/webp" },
       { src: asset_420, width: 1600, type: "image/webp" },
     ],
   },
-  "selected/general/pl-19.jpg": {
+  "selected/general/pl-18.jpg": {
     src: asset_421,
     width: 2400,
     height: 1600,
@@ -1963,421 +1967,421 @@ export const generatedImageManifest: Record<string, GeneratedImageRecord> = {
       { src: asset_424, width: 1600, type: "image/webp" },
     ],
   },
-  "selected/general/pl-20.jpg": {
+  "selected/general/pl-19.jpg": {
     src: asset_425,
     width: 2400,
-    height: 1920,
+    height: 1600,
     variants: [
       { src: asset_426, width: 480, type: "image/webp" },
       { src: asset_427, width: 960, type: "image/webp" },
       { src: asset_428, width: 1600, type: "image/webp" },
     ],
   },
-  "selected/general/pl-21.jpg": {
+  "selected/general/pl-20.jpg": {
     src: asset_429,
     width: 2400,
-    height: 3039,
+    height: 1920,
     variants: [
       { src: asset_430, width: 480, type: "image/webp" },
       { src: asset_431, width: 960, type: "image/webp" },
       { src: asset_432, width: 1600, type: "image/webp" },
     ],
   },
-  "selected/general/pl-22.jpg": {
+  "selected/general/pl-21.jpg": {
     src: asset_433,
     width: 2400,
-    height: 1722,
+    height: 3039,
     variants: [
       { src: asset_434, width: 480, type: "image/webp" },
       { src: asset_435, width: 960, type: "image/webp" },
       { src: asset_436, width: 1600, type: "image/webp" },
     ],
   },
-  "selected/general/pl-dredging-piling.jpg": {
+  "selected/general/pl-22.jpg": {
     src: asset_437,
-    width: 1448,
-    height: 1086,
+    width: 2400,
+    height: 1722,
     variants: [
       { src: asset_438, width: 480, type: "image/webp" },
       { src: asset_439, width: 960, type: "image/webp" },
-      { src: asset_440, width: 1448, type: "image/webp" },
+      { src: asset_440, width: 1600, type: "image/webp" },
     ],
   },
-  "selected/general/pl-projectmgmt-review.jpg": {
+  "selected/general/pl-dredging-piling.jpg": {
     src: asset_441,
-    width: 1536,
-    height: 1024,
+    width: 1448,
+    height: 1086,
     variants: [
       { src: asset_442, width: 480, type: "image/webp" },
       { src: asset_443, width: 960, type: "image/webp" },
-      { src: asset_444, width: 1536, type: "image/webp" },
+      { src: asset_444, width: 1448, type: "image/webp" },
     ],
   },
-  "selected/general/rg-025.jpg": {
+  "selected/general/pl-projectmgmt-review.jpg": {
     src: asset_445,
-    width: 1280,
-    height: 719,
+    width: 1536,
+    height: 1024,
     variants: [
       { src: asset_446, width: 480, type: "image/webp" },
       { src: asset_447, width: 960, type: "image/webp" },
-      { src: asset_448, width: 1280, type: "image/webp" },
+      { src: asset_448, width: 1536, type: "image/webp" },
     ],
   },
-  "selected/general/rg-027.jpg": {
+  "selected/general/rg-025.jpg": {
     src: asset_449,
-    width: 1400,
-    height: 1034,
+    width: 1280,
+    height: 719,
     variants: [
       { src: asset_450, width: 480, type: "image/webp" },
       { src: asset_451, width: 960, type: "image/webp" },
-      { src: asset_452, width: 1400, type: "image/webp" },
+      { src: asset_452, width: 1280, type: "image/webp" },
     ],
   },
-  "selected/general/rg-031.jpg": {
+  "selected/general/rg-027.jpg": {
     src: asset_453,
-    width: 1080,
-    height: 810,
+    width: 1400,
+    height: 1034,
     variants: [
       { src: asset_454, width: 480, type: "image/webp" },
       { src: asset_455, width: 960, type: "image/webp" },
-      { src: asset_456, width: 1080, type: "image/webp" },
+      { src: asset_456, width: 1400, type: "image/webp" },
     ],
   },
-  "selected/general/rg-033.jpg": {
+  "selected/general/rg-031.jpg": {
     src: asset_457,
     width: 1080,
-    height: 608,
+    height: 810,
     variants: [
       { src: asset_458, width: 480, type: "image/webp" },
       { src: asset_459, width: 960, type: "image/webp" },
       { src: asset_460, width: 1080, type: "image/webp" },
     ],
   },
-  "selected/general/rg-035.jpg": {
+  "selected/general/rg-033.jpg": {
     src: asset_461,
     width: 1080,
-    height: 607,
+    height: 608,
     variants: [
       { src: asset_462, width: 480, type: "image/webp" },
       { src: asset_463, width: 960, type: "image/webp" },
       { src: asset_464, width: 1080, type: "image/webp" },
     ],
   },
-  "selected/general/rg-037.jpg": {
+  "selected/general/rg-035.jpg": {
     src: asset_465,
+    width: 1080,
+    height: 607,
+    variants: [
+      { src: asset_466, width: 480, type: "image/webp" },
+      { src: asset_467, width: 960, type: "image/webp" },
+      { src: asset_468, width: 1080, type: "image/webp" },
+    ],
+  },
+  "selected/general/rg-037.jpg": {
+    src: asset_469,
     width: 810,
     height: 1080,
     variants: [
-      { src: asset_466, width: 480, type: "image/webp" },
-      { src: asset_467, width: 810, type: "image/webp" },
+      { src: asset_470, width: 480, type: "image/webp" },
+      { src: asset_471, width: 810, type: "image/webp" },
     ],
   },
   "selected/general/rg-038.jpg": {
-    src: asset_468,
+    src: asset_472,
     width: 1400,
     height: 788,
     variants: [
-      { src: asset_469, width: 480, type: "image/webp" },
-      { src: asset_470, width: 960, type: "image/webp" },
-      { src: asset_471, width: 1400, type: "image/webp" },
+      { src: asset_473, width: 480, type: "image/webp" },
+      { src: asset_474, width: 960, type: "image/webp" },
+      { src: asset_475, width: 1400, type: "image/webp" },
     ],
   },
   "selected/general/rg-039.jpg": {
-    src: asset_472,
-    width: 1080,
-    height: 608,
-    variants: [
-      { src: asset_473, width: 480, type: "image/webp" },
-      { src: asset_474, width: 960, type: "image/webp" },
-      { src: asset_475, width: 1080, type: "image/webp" },
-    ],
-  },
-  "selected/general/rg-045.jpg": {
     src: asset_476,
     width: 1080,
-    height: 810,
+    height: 608,
     variants: [
       { src: asset_477, width: 480, type: "image/webp" },
       { src: asset_478, width: 960, type: "image/webp" },
       { src: asset_479, width: 1080, type: "image/webp" },
     ],
   },
-  "selected/general/rg-046.jpg": {
+  "selected/general/rg-045.jpg": {
     src: asset_480,
-    width: 960,
-    height: 540,
-    variants: [
-      { src: asset_481, width: 480, type: "image/webp" },
-      { src: asset_482, width: 960, type: "image/webp" },
-    ],
-  },
-  "selected/general/rg-049.jpg": {
-    src: asset_483,
-    width: 1040,
-    height: 780,
-    variants: [
-      { src: asset_484, width: 480, type: "image/webp" },
-      { src: asset_485, width: 960, type: "image/webp" },
-      { src: asset_486, width: 1040, type: "image/webp" },
-    ],
-  },
-  "selected/general/rg-052.jpg": {
-    src: asset_487,
-    width: 1280,
-    height: 719,
-    variants: [
-      { src: asset_488, width: 480, type: "image/webp" },
-      { src: asset_489, width: 960, type: "image/webp" },
-      { src: asset_490, width: 1280, type: "image/webp" },
-    ],
-  },
-  "selected/general/rg-055.jpg": {
-    src: asset_491,
-    width: 1080,
-    height: 608,
-    variants: [
-      { src: asset_492, width: 480, type: "image/webp" },
-      { src: asset_493, width: 960, type: "image/webp" },
-      { src: asset_494, width: 1080, type: "image/webp" },
-    ],
-  },
-  "selected/general/rg-063.jpg": {
-    src: asset_495,
-    width: 1280,
-    height: 719,
-    variants: [
-      { src: asset_496, width: 480, type: "image/webp" },
-      { src: asset_497, width: 960, type: "image/webp" },
-      { src: asset_498, width: 1280, type: "image/webp" },
-    ],
-  },
-  "selected/general/rg-066.jpg": {
-    src: asset_499,
-    width: 1080,
-    height: 720,
-    variants: [
-      { src: asset_500, width: 480, type: "image/webp" },
-      { src: asset_501, width: 960, type: "image/webp" },
-      { src: asset_502, width: 1080, type: "image/webp" },
-    ],
-  },
-  "selected/general/rg-067.jpg": {
-    src: asset_503,
-    width: 1086,
-    height: 1448,
-    variants: [
-      { src: asset_504, width: 480, type: "image/webp" },
-      { src: asset_505, width: 960, type: "image/webp" },
-      { src: asset_506, width: 1086, type: "image/webp" },
-    ],
-  },
-  "selected/general/rg-071.jpg": {
-    src: asset_507,
-    width: 810,
-    height: 1080,
-    variants: [
-      { src: asset_508, width: 480, type: "image/webp" },
-      { src: asset_509, width: 810, type: "image/webp" },
-    ],
-  },
-  "selected/general/rg-072.jpg": {
-    src: asset_510,
-    width: 1280,
-    height: 719,
-    variants: [
-      { src: asset_511, width: 480, type: "image/webp" },
-      { src: asset_512, width: 960, type: "image/webp" },
-      { src: asset_513, width: 1280, type: "image/webp" },
-    ],
-  },
-  "selected/general/rg-074.jpg": {
-    src: asset_514,
     width: 1080,
     height: 810,
     variants: [
-      { src: asset_515, width: 480, type: "image/webp" },
-      { src: asset_516, width: 960, type: "image/webp" },
-      { src: asset_517, width: 1080, type: "image/webp" },
+      { src: asset_481, width: 480, type: "image/webp" },
+      { src: asset_482, width: 960, type: "image/webp" },
+      { src: asset_483, width: 1080, type: "image/webp" },
     ],
   },
-  "selected/general/rg-087.jpg": {
-    src: asset_518,
-    width: 812,
-    height: 1080,
+  "selected/general/rg-046.jpg": {
+    src: asset_484,
+    width: 960,
+    height: 540,
     variants: [
-      { src: asset_519, width: 480, type: "image/webp" },
-      { src: asset_520, width: 812, type: "image/webp" },
+      { src: asset_485, width: 480, type: "image/webp" },
+      { src: asset_486, width: 960, type: "image/webp" },
     ],
   },
-  "selected/general/rg-093.jpg": {
-    src: asset_521,
+  "selected/general/rg-049.jpg": {
+    src: asset_487,
+    width: 1040,
+    height: 780,
+    variants: [
+      { src: asset_488, width: 480, type: "image/webp" },
+      { src: asset_489, width: 960, type: "image/webp" },
+      { src: asset_490, width: 1040, type: "image/webp" },
+    ],
+  },
+  "selected/general/rg-052.jpg": {
+    src: asset_491,
     width: 1280,
     height: 719,
     variants: [
-      { src: asset_522, width: 480, type: "image/webp" },
-      { src: asset_523, width: 960, type: "image/webp" },
-      { src: asset_524, width: 1280, type: "image/webp" },
+      { src: asset_492, width: 480, type: "image/webp" },
+      { src: asset_493, width: 960, type: "image/webp" },
+      { src: asset_494, width: 1280, type: "image/webp" },
     ],
   },
-  "selected/general/rg-094.jpg": {
-    src: asset_525,
-    width: 1675,
-    height: 939,
-    variants: [
-      { src: asset_526, width: 480, type: "image/webp" },
-      { src: asset_527, width: 960, type: "image/webp" },
-      { src: asset_528, width: 1600, type: "image/webp" },
-    ],
-  },
-  "selected/general/rg-098.jpg": {
-    src: asset_529,
+  "selected/general/rg-055.jpg": {
+    src: asset_495,
     width: 1080,
     height: 608,
     variants: [
-      { src: asset_530, width: 480, type: "image/webp" },
-      { src: asset_531, width: 960, type: "image/webp" },
-      { src: asset_532, width: 1080, type: "image/webp" },
+      { src: asset_496, width: 480, type: "image/webp" },
+      { src: asset_497, width: 960, type: "image/webp" },
+      { src: asset_498, width: 1080, type: "image/webp" },
     ],
   },
-  "selected/general/rg-105.jpg": {
-    src: asset_533,
+  "selected/general/rg-063.jpg": {
+    src: asset_499,
     width: 1280,
     height: 719,
     variants: [
-      { src: asset_534, width: 480, type: "image/webp" },
-      { src: asset_535, width: 960, type: "image/webp" },
-      { src: asset_536, width: 1280, type: "image/webp" },
+      { src: asset_500, width: 480, type: "image/webp" },
+      { src: asset_501, width: 960, type: "image/webp" },
+      { src: asset_502, width: 1280, type: "image/webp" },
     ],
   },
-  "selected/general/rg-121.jpeg": {
+  "selected/general/rg-066.jpg": {
+    src: asset_503,
+    width: 1080,
+    height: 720,
+    variants: [
+      { src: asset_504, width: 480, type: "image/webp" },
+      { src: asset_505, width: 960, type: "image/webp" },
+      { src: asset_506, width: 1080, type: "image/webp" },
+    ],
+  },
+  "selected/general/rg-067.jpg": {
+    src: asset_507,
+    width: 1086,
+    height: 1448,
+    variants: [
+      { src: asset_508, width: 480, type: "image/webp" },
+      { src: asset_509, width: 960, type: "image/webp" },
+      { src: asset_510, width: 1086, type: "image/webp" },
+    ],
+  },
+  "selected/general/rg-071.jpg": {
+    src: asset_511,
+    width: 810,
+    height: 1080,
+    variants: [
+      { src: asset_512, width: 480, type: "image/webp" },
+      { src: asset_513, width: 810, type: "image/webp" },
+    ],
+  },
+  "selected/general/rg-072.jpg": {
+    src: asset_514,
+    width: 1280,
+    height: 719,
+    variants: [
+      { src: asset_515, width: 480, type: "image/webp" },
+      { src: asset_516, width: 960, type: "image/webp" },
+      { src: asset_517, width: 1280, type: "image/webp" },
+    ],
+  },
+  "selected/general/rg-074.jpg": {
+    src: asset_518,
+    width: 1080,
+    height: 810,
+    variants: [
+      { src: asset_519, width: 480, type: "image/webp" },
+      { src: asset_520, width: 960, type: "image/webp" },
+      { src: asset_521, width: 1080, type: "image/webp" },
+    ],
+  },
+  "selected/general/rg-087.jpg": {
+    src: asset_522,
+    width: 812,
+    height: 1080,
+    variants: [
+      { src: asset_523, width: 480, type: "image/webp" },
+      { src: asset_524, width: 812, type: "image/webp" },
+    ],
+  },
+  "selected/general/rg-093.jpg": {
+    src: asset_525,
+    width: 1280,
+    height: 719,
+    variants: [
+      { src: asset_526, width: 480, type: "image/webp" },
+      { src: asset_527, width: 960, type: "image/webp" },
+      { src: asset_528, width: 1280, type: "image/webp" },
+    ],
+  },
+  "selected/general/rg-094.jpg": {
+    src: asset_529,
+    width: 1675,
+    height: 939,
+    variants: [
+      { src: asset_530, width: 480, type: "image/webp" },
+      { src: asset_531, width: 960, type: "image/webp" },
+      { src: asset_532, width: 1600, type: "image/webp" },
+    ],
+  },
+  "selected/general/rg-098.jpg": {
+    src: asset_533,
+    width: 1080,
+    height: 608,
+    variants: [
+      { src: asset_534, width: 480, type: "image/webp" },
+      { src: asset_535, width: 960, type: "image/webp" },
+      { src: asset_536, width: 1080, type: "image/webp" },
+    ],
+  },
+  "selected/general/rg-105.jpg": {
     src: asset_537,
-    width: 1666,
-    height: 944,
+    width: 1280,
+    height: 719,
     variants: [
       { src: asset_538, width: 480, type: "image/webp" },
       { src: asset_539, width: 960, type: "image/webp" },
-      { src: asset_540, width: 1600, type: "image/webp" },
+      { src: asset_540, width: 1280, type: "image/webp" },
     ],
   },
-  "selected/general/rg-122.jpeg": {
+  "selected/general/rg-121.jpeg": {
     src: asset_541,
-    width: 1280,
-    height: 725,
+    width: 1666,
+    height: 944,
     variants: [
       { src: asset_542, width: 480, type: "image/webp" },
       { src: asset_543, width: 960, type: "image/webp" },
-      { src: asset_544, width: 1280, type: "image/webp" },
+      { src: asset_544, width: 1600, type: "image/webp" },
     ],
   },
-  "selected/general/rg-125.jpeg": {
+  "selected/general/rg-122.jpeg": {
     src: asset_545,
-    width: 1536,
-    height: 1024,
+    width: 1280,
+    height: 725,
     variants: [
       { src: asset_546, width: 480, type: "image/webp" },
       { src: asset_547, width: 960, type: "image/webp" },
-      { src: asset_548, width: 1536, type: "image/webp" },
+      { src: asset_548, width: 1280, type: "image/webp" },
     ],
   },
-  "selected/general/rg-126.jpeg": {
+  "selected/general/rg-125.jpeg": {
     src: asset_549,
-    width: 1280,
-    height: 853,
+    width: 1536,
+    height: 1024,
     variants: [
       { src: asset_550, width: 480, type: "image/webp" },
       { src: asset_551, width: 960, type: "image/webp" },
-      { src: asset_552, width: 1280, type: "image/webp" },
+      { src: asset_552, width: 1536, type: "image/webp" },
     ],
   },
-  "selected/general/rg-128.jpeg": {
+  "selected/general/rg-126.jpeg": {
     src: asset_553,
     width: 1280,
-    height: 725,
+    height: 853,
     variants: [
       { src: asset_554, width: 480, type: "image/webp" },
       { src: asset_555, width: 960, type: "image/webp" },
       { src: asset_556, width: 1280, type: "image/webp" },
     ],
   },
-  "selected/general/rg-129.jpeg": {
+  "selected/general/rg-128.jpeg": {
     src: asset_557,
     width: 1280,
-    height: 960,
+    height: 725,
     variants: [
       { src: asset_558, width: 480, type: "image/webp" },
       { src: asset_559, width: 960, type: "image/webp" },
       { src: asset_560, width: 1280, type: "image/webp" },
     ],
   },
-  "selected/general/rg-131.jpeg": {
+  "selected/general/rg-129.jpeg": {
     src: asset_561,
-    width: 1400,
-    height: 1867,
+    width: 1280,
+    height: 960,
     variants: [
       { src: asset_562, width: 480, type: "image/webp" },
       { src: asset_563, width: 960, type: "image/webp" },
-      { src: asset_564, width: 1400, type: "image/webp" },
+      { src: asset_564, width: 1280, type: "image/webp" },
     ],
   },
-  "selected/general/rg-135.jpeg": {
+  "selected/general/rg-131.jpeg": {
     src: asset_565,
-    width: 960,
-    height: 1280,
+    width: 1400,
+    height: 1867,
     variants: [
       { src: asset_566, width: 480, type: "image/webp" },
       { src: asset_567, width: 960, type: "image/webp" },
+      { src: asset_568, width: 1400, type: "image/webp" },
+    ],
+  },
+  "selected/general/rg-135.jpeg": {
+    src: asset_569,
+    width: 960,
+    height: 1280,
+    variants: [
+      { src: asset_570, width: 480, type: "image/webp" },
+      { src: asset_571, width: 960, type: "image/webp" },
     ],
   },
   "selected/general/rg-141.jpeg": {
-    src: asset_568,
+    src: asset_572,
     width: 1586,
     height: 992,
     variants: [
-      { src: asset_569, width: 480, type: "image/webp" },
-      { src: asset_570, width: 960, type: "image/webp" },
-      { src: asset_571, width: 1586, type: "image/webp" },
+      { src: asset_573, width: 480, type: "image/webp" },
+      { src: asset_574, width: 960, type: "image/webp" },
+      { src: asset_575, width: 1586, type: "image/webp" },
     ],
   },
   "selected/general/rg-143.jpeg": {
-    src: asset_572,
+    src: asset_576,
     width: 863,
     height: 1823,
     variants: [
-      { src: asset_573, width: 480, type: "image/webp" },
-      { src: asset_574, width: 863, type: "image/webp" },
+      { src: asset_577, width: 480, type: "image/webp" },
+      { src: asset_578, width: 863, type: "image/webp" },
     ],
   },
   "selected/projects/pa-043.jpg": {
-    src: asset_575,
+    src: asset_579,
     width: 1448,
     height: 1086,
-    variants: [
-      { src: asset_576, width: 480, type: "image/webp" },
-      { src: asset_577, width: 960, type: "image/webp" },
-      { src: asset_578, width: 1448, type: "image/webp" },
-    ],
-  },
-  "selected/projects/pa-046.jpg": {
-    src: asset_579,
-    width: 1920,
-    height: 1549,
     variants: [
       { src: asset_580, width: 480, type: "image/webp" },
       { src: asset_581, width: 960, type: "image/webp" },
-      { src: asset_582, width: 1600, type: "image/webp" },
+      { src: asset_582, width: 1448, type: "image/webp" },
     ],
   },
-  "selected/projects/pa-054.jpg": {
+  "selected/projects/pa-046.jpg": {
     src: asset_583,
-    width: 1448,
-    height: 1086,
+    width: 1920,
+    height: 1549,
     variants: [
       { src: asset_584, width: 480, type: "image/webp" },
       { src: asset_585, width: 960, type: "image/webp" },
-      { src: asset_586, width: 1448, type: "image/webp" },
+      { src: asset_586, width: 1600, type: "image/webp" },
     ],
   },
-  "selected/projects/pa-055.jpg": {
+  "selected/projects/pa-054.jpg": {
     src: asset_587,
     width: 1448,
     height: 1086,
@@ -2387,7 +2391,7 @@ export const generatedImageManifest: Record<string, GeneratedImageRecord> = {
       { src: asset_590, width: 1448, type: "image/webp" },
     ],
   },
-  "selected/projects/pa-063.jpg": {
+  "selected/projects/pa-055.jpg": {
     src: asset_591,
     width: 1448,
     height: 1086,
@@ -2397,7 +2401,7 @@ export const generatedImageManifest: Record<string, GeneratedImageRecord> = {
       { src: asset_594, width: 1448, type: "image/webp" },
     ],
   },
-  "selected/projects/pa-067.jpg": {
+  "selected/projects/pa-063.jpg": {
     src: asset_595,
     width: 1448,
     height: 1086,
@@ -2407,7 +2411,7 @@ export const generatedImageManifest: Record<string, GeneratedImageRecord> = {
       { src: asset_598, width: 1448, type: "image/webp" },
     ],
   },
-  "selected/projects/pa-074.jpg": {
+  "selected/projects/pa-067.jpg": {
     src: asset_599,
     width: 1448,
     height: 1086,
@@ -2417,7 +2421,7 @@ export const generatedImageManifest: Record<string, GeneratedImageRecord> = {
       { src: asset_602, width: 1448, type: "image/webp" },
     ],
   },
-  "selected/projects/pa-080.jpg": {
+  "selected/projects/pa-074.jpg": {
     src: asset_603,
     width: 1448,
     height: 1086,
@@ -2427,7 +2431,7 @@ export const generatedImageManifest: Record<string, GeneratedImageRecord> = {
       { src: asset_606, width: 1448, type: "image/webp" },
     ],
   },
-  "selected/projects/pa-103.jpg": {
+  "selected/projects/pa-080.jpg": {
     src: asset_607,
     width: 1448,
     height: 1086,
@@ -2437,27 +2441,27 @@ export const generatedImageManifest: Record<string, GeneratedImageRecord> = {
       { src: asset_610, width: 1448, type: "image/webp" },
     ],
   },
-  "selected/projects/pa-105.jpg": {
+  "selected/projects/pa-103.jpg": {
     src: asset_611,
-    width: 1444,
-    height: 1089,
-    variants: [
-      { src: asset_612, width: 480, type: "image/webp" },
-      { src: asset_613, width: 960, type: "image/webp" },
-      { src: asset_614, width: 1444, type: "image/webp" },
-    ],
-  },
-  "selected/projects/pa-110.jpg": {
-    src: asset_615,
     width: 1448,
     height: 1086,
     variants: [
-      { src: asset_616, width: 480, type: "image/webp" },
-      { src: asset_617, width: 960, type: "image/webp" },
-      { src: asset_618, width: 1448, type: "image/webp" },
+      { src: asset_612, width: 480, type: "image/webp" },
+      { src: asset_613, width: 960, type: "image/webp" },
+      { src: asset_614, width: 1448, type: "image/webp" },
     ],
   },
-  "selected/projects/pa-121.jpg": {
+  "selected/projects/pa-105.jpg": {
+    src: asset_615,
+    width: 1444,
+    height: 1089,
+    variants: [
+      { src: asset_616, width: 480, type: "image/webp" },
+      { src: asset_617, width: 960, type: "image/webp" },
+      { src: asset_618, width: 1444, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pa-110.jpg": {
     src: asset_619,
     width: 1448,
     height: 1086,
@@ -2467,92 +2471,92 @@ export const generatedImageManifest: Record<string, GeneratedImageRecord> = {
       { src: asset_622, width: 1448, type: "image/webp" },
     ],
   },
-  "selected/projects/pa-126.jpg": {
+  "selected/projects/pa-121.jpg": {
     src: asset_623,
-    width: 1399,
-    height: 1124,
+    width: 1448,
+    height: 1086,
     variants: [
       { src: asset_624, width: 480, type: "image/webp" },
       { src: asset_625, width: 960, type: "image/webp" },
-      { src: asset_626, width: 1399, type: "image/webp" },
+      { src: asset_626, width: 1448, type: "image/webp" },
     ],
   },
-  "selected/projects/pa-129.jpg": {
+  "selected/projects/pa-126.jpg": {
     src: asset_627,
-    width: 1448,
-    height: 1086,
+    width: 1399,
+    height: 1124,
     variants: [
       { src: asset_628, width: 480, type: "image/webp" },
       { src: asset_629, width: 960, type: "image/webp" },
-      { src: asset_630, width: 1448, type: "image/webp" },
+      { src: asset_630, width: 1399, type: "image/webp" },
     ],
   },
-  "selected/projects/pa-131.jpg": {
+  "selected/projects/pa-129.jpg": {
     src: asset_631,
-    width: 543,
-    height: 443,
-    variants: [
-      { src: asset_632, width: 480, type: "image/webp" },
-      { src: asset_633, width: 543, type: "image/webp" },
-    ],
-  },
-  "selected/projects/pa-133.jpg": {
-    src: asset_634,
-    width: 564,
-    height: 449,
-    variants: [
-      { src: asset_635, width: 480, type: "image/webp" },
-      { src: asset_636, width: 564, type: "image/webp" },
-    ],
-  },
-  "selected/projects/pp-009.jpg": {
-    src: asset_637,
-    width: 730,
-    height: 452,
-    variants: [
-      { src: asset_638, width: 480, type: "image/webp" },
-      { src: asset_639, width: 730, type: "image/webp" },
-    ],
-  },
-  "selected/projects/pp-010.jpg": {
-    src: asset_640,
-    width: 714,
-    height: 488,
-    variants: [
-      { src: asset_641, width: 480, type: "image/webp" },
-      { src: asset_642, width: 714, type: "image/webp" },
-    ],
-  },
-  "selected/projects/pp-011.jpg": {
-    src: asset_643,
-    width: 694,
-    height: 475,
-    variants: [
-      { src: asset_644, width: 480, type: "image/webp" },
-      { src: asset_645, width: 694, type: "image/webp" },
-    ],
-  },
-  "selected/projects/pp-017.jpg": {
-    src: asset_646,
-    width: 1496,
-    height: 1051,
-    variants: [
-      { src: asset_647, width: 480, type: "image/webp" },
-      { src: asset_648, width: 960, type: "image/webp" },
-      { src: asset_649, width: 1496, type: "image/webp" },
-    ],
-  },
-  "selected/projects/pp-021.jpg": {
-    src: asset_650,
     width: 1448,
     height: 1086,
     variants: [
-      { src: asset_651, width: 480, type: "image/webp" },
-      { src: asset_652, width: 960, type: "image/webp" },
-      { src: asset_653, width: 1448, type: "image/webp" },
+      { src: asset_632, width: 480, type: "image/webp" },
+      { src: asset_633, width: 960, type: "image/webp" },
+      { src: asset_634, width: 1448, type: "image/webp" },
     ],
   },
-  "selected/projects/pp-024.jpg": {
+  "selected/projects/pa-131.jpg": {
+    src: asset_635,
+    width: 543,
+    height: 443,
+    variants: [
+      { src: asset_636, width: 480, type: "image/webp" },
+      { src: asset_637, width: 543, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pa-133.jpg": {
+    src: asset_638,
+    width: 564,
+    height: 449,
+    variants: [
+      { src: asset_639, width: 480, type: "image/webp" },
+      { src: asset_640, width: 564, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pp-009.jpg": {
+    src: asset_641,
+    width: 730,
+    height: 452,
+    variants: [
+      { src: asset_642, width: 480, type: "image/webp" },
+      { src: asset_643, width: 730, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pp-010.jpg": {
+    src: asset_644,
+    width: 714,
+    height: 488,
+    variants: [
+      { src: asset_645, width: 480, type: "image/webp" },
+      { src: asset_646, width: 714, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pp-011.jpg": {
+    src: asset_647,
+    width: 694,
+    height: 475,
+    variants: [
+      { src: asset_648, width: 480, type: "image/webp" },
+      { src: asset_649, width: 694, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pp-017.jpg": {
+    src: asset_650,
+    width: 1496,
+    height: 1051,
+    variants: [
+      { src: asset_651, width: 480, type: "image/webp" },
+      { src: asset_652, width: 960, type: "image/webp" },
+      { src: asset_653, width: 1496, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pp-021.jpg": {
     src: asset_654,
     width: 1448,
     height: 1086,
@@ -2562,7 +2566,7 @@ export const generatedImageManifest: Record<string, GeneratedImageRecord> = {
       { src: asset_657, width: 1448, type: "image/webp" },
     ],
   },
-  "selected/projects/pp-034.jpg": {
+  "selected/projects/pp-024.jpg": {
     src: asset_658,
     width: 1448,
     height: 1086,
@@ -2572,7 +2576,7 @@ export const generatedImageManifest: Record<string, GeneratedImageRecord> = {
       { src: asset_661, width: 1448, type: "image/webp" },
     ],
   },
-  "selected/projects/pp-038.jpg": {
+  "selected/projects/pp-034.jpg": {
     src: asset_662,
     width: 1448,
     height: 1086,
@@ -2582,7 +2586,7 @@ export const generatedImageManifest: Record<string, GeneratedImageRecord> = {
       { src: asset_665, width: 1448, type: "image/webp" },
     ],
   },
-  "selected/projects/pp-040.jpg": {
+  "selected/projects/pp-038.jpg": {
     src: asset_666,
     width: 1448,
     height: 1086,
@@ -2592,27 +2596,27 @@ export const generatedImageManifest: Record<string, GeneratedImageRecord> = {
       { src: asset_669, width: 1448, type: "image/webp" },
     ],
   },
-  "selected/projects/pp-043.jpg": {
+  "selected/projects/pp-040.jpg": {
     src: asset_670,
-    width: 1586,
-    height: 992,
-    variants: [
-      { src: asset_671, width: 480, type: "image/webp" },
-      { src: asset_672, width: 960, type: "image/webp" },
-      { src: asset_673, width: 1586, type: "image/webp" },
-    ],
-  },
-  "selected/projects/pp-045.jpg": {
-    src: asset_674,
     width: 1448,
     height: 1086,
     variants: [
-      { src: asset_675, width: 480, type: "image/webp" },
-      { src: asset_676, width: 960, type: "image/webp" },
-      { src: asset_677, width: 1448, type: "image/webp" },
+      { src: asset_671, width: 480, type: "image/webp" },
+      { src: asset_672, width: 960, type: "image/webp" },
+      { src: asset_673, width: 1448, type: "image/webp" },
     ],
   },
-  "selected/projects/pp-048.jpg": {
+  "selected/projects/pp-043.jpg": {
+    src: asset_674,
+    width: 1586,
+    height: 992,
+    variants: [
+      { src: asset_675, width: 480, type: "image/webp" },
+      { src: asset_676, width: 960, type: "image/webp" },
+      { src: asset_677, width: 1586, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pp-045.jpg": {
     src: asset_678,
     width: 1448,
     height: 1086,
@@ -2622,54 +2626,54 @@ export const generatedImageManifest: Record<string, GeneratedImageRecord> = {
       { src: asset_681, width: 1448, type: "image/webp" },
     ],
   },
-  "selected/projects/pp-051.jpg": {
+  "selected/projects/pp-048.jpg": {
     src: asset_682,
-    width: 710,
-    height: 463,
-    variants: [
-      { src: asset_683, width: 480, type: "image/webp" },
-      { src: asset_684, width: 710, type: "image/webp" },
-    ],
-  },
-  "selected/projects/pp-053.jpg": {
-    src: asset_685,
-    width: 656,
-    height: 475,
-    variants: [
-      { src: asset_686, width: 480, type: "image/webp" },
-      { src: asset_687, width: 656, type: "image/webp" },
-    ],
-  },
-  "selected/projects/pp-055.jpg": {
-    src: asset_688,
-    width: 731,
-    height: 486,
-    variants: [
-      { src: asset_689, width: 480, type: "image/webp" },
-      { src: asset_690, width: 731, type: "image/webp" },
-    ],
-  },
-  "selected/projects/pp-056.jpg": {
-    src: asset_691,
-    width: 1514,
-    height: 1039,
-    variants: [
-      { src: asset_692, width: 480, type: "image/webp" },
-      { src: asset_693, width: 960, type: "image/webp" },
-      { src: asset_694, width: 1514, type: "image/webp" },
-    ],
-  },
-  "selected/projects/pp-057.jpg": {
-    src: asset_695,
     width: 1448,
     height: 1086,
     variants: [
-      { src: asset_696, width: 480, type: "image/webp" },
-      { src: asset_697, width: 960, type: "image/webp" },
-      { src: asset_698, width: 1448, type: "image/webp" },
+      { src: asset_683, width: 480, type: "image/webp" },
+      { src: asset_684, width: 960, type: "image/webp" },
+      { src: asset_685, width: 1448, type: "image/webp" },
     ],
   },
-  "selected/projects/pp-059.jpg": {
+  "selected/projects/pp-051.jpg": {
+    src: asset_686,
+    width: 710,
+    height: 463,
+    variants: [
+      { src: asset_687, width: 480, type: "image/webp" },
+      { src: asset_688, width: 710, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pp-053.jpg": {
+    src: asset_689,
+    width: 656,
+    height: 475,
+    variants: [
+      { src: asset_690, width: 480, type: "image/webp" },
+      { src: asset_691, width: 656, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pp-055.jpg": {
+    src: asset_692,
+    width: 731,
+    height: 486,
+    variants: [
+      { src: asset_693, width: 480, type: "image/webp" },
+      { src: asset_694, width: 731, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pp-056.jpg": {
+    src: asset_695,
+    width: 1514,
+    height: 1039,
+    variants: [
+      { src: asset_696, width: 480, type: "image/webp" },
+      { src: asset_697, width: 960, type: "image/webp" },
+      { src: asset_698, width: 1514, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pp-057.jpg": {
     src: asset_699,
     width: 1448,
     height: 1086,
@@ -2679,7 +2683,7 @@ export const generatedImageManifest: Record<string, GeneratedImageRecord> = {
       { src: asset_702, width: 1448, type: "image/webp" },
     ],
   },
-  "selected/projects/pp-060.jpg": {
+  "selected/projects/pp-059.jpg": {
     src: asset_703,
     width: 1448,
     height: 1086,
@@ -2689,234 +2693,234 @@ export const generatedImageManifest: Record<string, GeneratedImageRecord> = {
       { src: asset_706, width: 1448, type: "image/webp" },
     ],
   },
-  "selected/projects/pp-061.jpg": {
+  "selected/projects/pp-060.jpg": {
     src: asset_707,
-    width: 1086,
-    height: 1448,
+    width: 1448,
+    height: 1086,
     variants: [
       { src: asset_708, width: 480, type: "image/webp" },
       { src: asset_709, width: 960, type: "image/webp" },
-      { src: asset_710, width: 1086, type: "image/webp" },
+      { src: asset_710, width: 1448, type: "image/webp" },
     ],
   },
-  "selected/projects/pp-062.jpg": {
+  "selected/projects/pp-061.jpg": {
     src: asset_711,
-    width: 1448,
-    height: 1086,
+    width: 1086,
+    height: 1448,
     variants: [
       { src: asset_712, width: 480, type: "image/webp" },
       { src: asset_713, width: 960, type: "image/webp" },
-      { src: asset_714, width: 1448, type: "image/webp" },
+      { src: asset_714, width: 1086, type: "image/webp" },
+    ],
+  },
+  "selected/projects/pp-062.jpg": {
+    src: asset_715,
+    width: 1448,
+    height: 1086,
+    variants: [
+      { src: asset_716, width: 480, type: "image/webp" },
+      { src: asset_717, width: 960, type: "image/webp" },
+      { src: asset_718, width: 1448, type: "image/webp" },
     ],
   },
   "selected/projects/pp-063.jpg": {
-    src: asset_715,
+    src: asset_719,
     width: 656,
     height: 460,
     variants: [
-      { src: asset_716, width: 480, type: "image/webp" },
-      { src: asset_717, width: 656, type: "image/webp" },
+      { src: asset_720, width: 480, type: "image/webp" },
+      { src: asset_721, width: 656, type: "image/webp" },
     ],
   },
   "selected/projects/pp-065.jpg": {
-    src: asset_718,
+    src: asset_722,
     width: 657,
     height: 487,
     variants: [
-      { src: asset_719, width: 480, type: "image/webp" },
-      { src: asset_720, width: 657, type: "image/webp" },
+      { src: asset_723, width: 480, type: "image/webp" },
+      { src: asset_724, width: 657, type: "image/webp" },
     ],
   },
   "selected/projects/pp-069.jpg": {
-    src: asset_721,
+    src: asset_725,
     width: 730,
     height: 487,
     variants: [
-      { src: asset_722, width: 480, type: "image/webp" },
-      { src: asset_723, width: 730, type: "image/webp" },
+      { src: asset_726, width: 480, type: "image/webp" },
+      { src: asset_727, width: 730, type: "image/webp" },
     ],
   },
   "selected/projects/pp-071.jpg": {
-    src: asset_724,
+    src: asset_728,
     width: 1448,
     height: 1086,
-    variants: [
-      { src: asset_725, width: 480, type: "image/webp" },
-      { src: asset_726, width: 960, type: "image/webp" },
-      { src: asset_727, width: 1448, type: "image/webp" },
-    ],
-  },
-  "selected/projects/pp-072.jpg": {
-    src: asset_728,
-    width: 1592,
-    height: 988,
     variants: [
       { src: asset_729, width: 480, type: "image/webp" },
       { src: asset_730, width: 960, type: "image/webp" },
-      { src: asset_731, width: 1592, type: "image/webp" },
+      { src: asset_731, width: 1448, type: "image/webp" },
     ],
   },
-  "selected/projects/pp-075.jpg": {
+  "selected/projects/pp-072.jpg": {
     src: asset_732,
-    width: 1448,
-    height: 1086,
+    width: 1592,
+    height: 988,
     variants: [
       { src: asset_733, width: 480, type: "image/webp" },
       { src: asset_734, width: 960, type: "image/webp" },
-      { src: asset_735, width: 1448, type: "image/webp" },
+      { src: asset_735, width: 1592, type: "image/webp" },
     ],
   },
-  "selected/recent/im-030.jpeg": {
+  "selected/projects/pp-075.jpg": {
     src: asset_736,
-    width: 960,
-    height: 1280,
+    width: 1448,
+    height: 1086,
     variants: [
       { src: asset_737, width: 480, type: "image/webp" },
       { src: asset_738, width: 960, type: "image/webp" },
+      { src: asset_739, width: 1448, type: "image/webp" },
     ],
   },
-  "selected/recent/im-033.jpeg": {
-    src: asset_739,
+  "selected/recent/im-030.jpeg": {
+    src: asset_740,
     width: 960,
     height: 1280,
     variants: [
-      { src: asset_740, width: 480, type: "image/webp" },
-      { src: asset_741, width: 960, type: "image/webp" },
+      { src: asset_741, width: 480, type: "image/webp" },
+      { src: asset_742, width: 960, type: "image/webp" },
+    ],
+  },
+  "selected/recent/im-033.jpeg": {
+    src: asset_743,
+    width: 960,
+    height: 1280,
+    variants: [
+      { src: asset_744, width: 480, type: "image/webp" },
+      { src: asset_745, width: 960, type: "image/webp" },
     ],
   },
   "selected/recent/im-036.jpeg": {
-    src: asset_742,
+    src: asset_746,
     width: 1280,
     height: 960,
     variants: [
-      { src: asset_743, width: 480, type: "image/webp" },
-      { src: asset_744, width: 960, type: "image/webp" },
-      { src: asset_745, width: 1280, type: "image/webp" },
+      { src: asset_747, width: 480, type: "image/webp" },
+      { src: asset_748, width: 960, type: "image/webp" },
+      { src: asset_749, width: 1280, type: "image/webp" },
     ],
   },
   "selected/recent/im-047.jpeg": {
-    src: asset_746,
+    src: asset_750,
     width: 762,
     height: 1096,
     variants: [
-      { src: asset_747, width: 480, type: "image/webp" },
-      { src: asset_748, width: 762, type: "image/webp" },
+      { src: asset_751, width: 480, type: "image/webp" },
+      { src: asset_752, width: 762, type: "image/webp" },
     ],
   },
   "selected/recent/op-01.jpg": {
-    src: asset_749,
+    src: asset_753,
     width: 810,
     height: 1080,
     variants: [
-      { src: asset_750, width: 480, type: "image/webp" },
-      { src: asset_751, width: 810, type: "image/webp" },
+      { src: asset_754, width: 480, type: "image/webp" },
+      { src: asset_755, width: 810, type: "image/webp" },
     ],
   },
   "selected/recent/op-02.jpg": {
-    src: asset_752,
+    src: asset_756,
     width: 1080,
     height: 810,
     variants: [
-      { src: asset_753, width: 480, type: "image/webp" },
-      { src: asset_754, width: 960, type: "image/webp" },
-      { src: asset_755, width: 1080, type: "image/webp" },
+      { src: asset_757, width: 480, type: "image/webp" },
+      { src: asset_758, width: 960, type: "image/webp" },
+      { src: asset_759, width: 1080, type: "image/webp" },
     ],
   },
   "selected/recent/op-03.jpg": {
-    src: asset_756,
+    src: asset_760,
     width: 810,
     height: 1080,
     variants: [
-      { src: asset_757, width: 480, type: "image/webp" },
-      { src: asset_758, width: 810, type: "image/webp" },
+      { src: asset_761, width: 480, type: "image/webp" },
+      { src: asset_762, width: 810, type: "image/webp" },
     ],
   },
   "selected/recent/op-04.jpg": {
-    src: asset_759,
+    src: asset_763,
     width: 810,
     height: 1080,
     variants: [
-      { src: asset_760, width: 480, type: "image/webp" },
-      { src: asset_761, width: 810, type: "image/webp" },
+      { src: asset_764, width: 480, type: "image/webp" },
+      { src: asset_765, width: 810, type: "image/webp" },
     ],
   },
   "selected/recent/op-05.jpg": {
-    src: asset_762,
+    src: asset_766,
     width: 810,
     height: 1080,
     variants: [
-      { src: asset_763, width: 480, type: "image/webp" },
-      { src: asset_764, width: 810, type: "image/webp" },
+      { src: asset_767, width: 480, type: "image/webp" },
+      { src: asset_768, width: 810, type: "image/webp" },
     ],
   },
   "selected/recent/op-06.jpg": {
-    src: asset_765,
+    src: asset_769,
     width: 810,
     height: 1080,
     variants: [
-      { src: asset_766, width: 480, type: "image/webp" },
-      { src: asset_767, width: 810, type: "image/webp" },
+      { src: asset_770, width: 480, type: "image/webp" },
+      { src: asset_771, width: 810, type: "image/webp" },
     ],
   },
   "selected/recent/op-07.jpg": {
-    src: asset_768,
+    src: asset_772,
     width: 810,
     height: 1080,
     variants: [
-      { src: asset_769, width: 480, type: "image/webp" },
-      { src: asset_770, width: 810, type: "image/webp" },
+      { src: asset_773, width: 480, type: "image/webp" },
+      { src: asset_774, width: 810, type: "image/webp" },
     ],
   },
   "selected/recent/op-08.jpg": {
-    src: asset_771,
+    src: asset_775,
     width: 810,
     height: 1080,
     variants: [
-      { src: asset_772, width: 480, type: "image/webp" },
-      { src: asset_773, width: 810, type: "image/webp" },
+      { src: asset_776, width: 480, type: "image/webp" },
+      { src: asset_777, width: 810, type: "image/webp" },
     ],
   },
   "team/00-site-logo-enikkom-construction-limited.png": {
-    src: asset_774,
+    src: asset_778,
     width: 1536,
     height: 1024,
     variants: [
-      { src: asset_775, width: 480, type: "image/webp" },
-      { src: asset_776, width: 960, type: "image/webp" },
-      { src: asset_777, width: 1536, type: "image/webp" },
+      { src: asset_779, width: 480, type: "image/webp" },
+      { src: asset_780, width: 960, type: "image/webp" },
+      { src: asset_781, width: 1536, type: "image/webp" },
     ],
   },
   "team/01-partner-logo-hddtec-limited.png": {
-    src: asset_778,
+    src: asset_782,
     width: 1254,
     height: 1254,
-    variants: [
-      { src: asset_779, width: 480, type: "image/webp" },
-      { src: asset_780, width: 960, type: "image/webp" },
-      { src: asset_781, width: 1254, type: "image/webp" },
-    ],
-  },
-  "team/02-hero-management-team-hero-background.jpg": {
-    src: asset_782,
-    width: 1087,
-    height: 1447,
     variants: [
       { src: asset_783, width: 480, type: "image/webp" },
       { src: asset_784, width: 960, type: "image/webp" },
-      { src: asset_785, width: 1087, type: "image/webp" },
+      { src: asset_785, width: 1254, type: "image/webp" },
     ],
   },
-  "team/03-team-photo-engr-edward-amene.jpg": {
+  "team/02-hero-management-team-hero-background.jpg": {
     src: asset_786,
-    width: 1254,
-    height: 1254,
+    width: 1087,
+    height: 1447,
     variants: [
       { src: asset_787, width: 480, type: "image/webp" },
       { src: asset_788, width: 960, type: "image/webp" },
-      { src: asset_789, width: 1254, type: "image/webp" },
+      { src: asset_789, width: 1087, type: "image/webp" },
     ],
   },
-  "team/04-team-photo-engr-saleem-ahmad-khan.jpg": {
+  "team/03-team-photo-engr-edward-amene.jpg": {
     src: asset_790,
     width: 1254,
     height: 1254,
@@ -2926,7 +2930,7 @@ export const generatedImageManifest: Record<string, GeneratedImageRecord> = {
       { src: asset_793, width: 1254, type: "image/webp" },
     ],
   },
-  "team/05-team-photo-mr-francis-anatogu.jpg": {
+  "team/04-team-photo-engr-saleem-ahmad-khan.jpg": {
     src: asset_794,
     width: 1254,
     height: 1254,
@@ -2936,7 +2940,7 @@ export const generatedImageManifest: Record<string, GeneratedImageRecord> = {
       { src: asset_797, width: 1254, type: "image/webp" },
     ],
   },
-  "team/06-team-photo-adekunle-adewole-phd.jpg": {
+  "team/05-team-photo-mr-francis-anatogu.jpg": {
     src: asset_798,
     width: 1254,
     height: 1254,
@@ -2946,7 +2950,7 @@ export const generatedImageManifest: Record<string, GeneratedImageRecord> = {
       { src: asset_801, width: 1254, type: "image/webp" },
     ],
   },
-  "team/07-team-photo-mr-chibuike-nwachukwu.png": {
+  "team/06-team-photo-adekunle-adewole-phd.jpg": {
     src: asset_802,
     width: 1254,
     height: 1254,
@@ -2956,7 +2960,7 @@ export const generatedImageManifest: Record<string, GeneratedImageRecord> = {
       { src: asset_805, width: 1254, type: "image/webp" },
     ],
   },
-  "team/08-team-photo-teddy-allen.jpg": {
+  "team/07-team-photo-mr-chibuike-nwachukwu.png": {
     src: asset_806,
     width: 1254,
     height: 1254,
@@ -2966,7 +2970,7 @@ export const generatedImageManifest: Record<string, GeneratedImageRecord> = {
       { src: asset_809, width: 1254, type: "image/webp" },
     ],
   },
-  "team/09-team-photo-idigbor-emeka-fca.jpg": {
+  "team/08-team-photo-teddy-allen.jpg": {
     src: asset_810,
     width: 1254,
     height: 1254,
@@ -2976,27 +2980,27 @@ export const generatedImageManifest: Record<string, GeneratedImageRecord> = {
       { src: asset_813, width: 1254, type: "image/webp" },
     ],
   },
-  "team/10-team-photo-biodun-adefila.jpg": {
+  "team/09-team-photo-idigbor-emeka-fca.jpg": {
     src: asset_814,
-    width: 1085,
-    height: 1450,
-    variants: [
-      { src: asset_815, width: 480, type: "image/webp" },
-      { src: asset_816, width: 960, type: "image/webp" },
-      { src: asset_817, width: 1085, type: "image/webp" },
-    ],
-  },
-  "team/11-team-photo-ken-james.jpg": {
-    src: asset_818,
     width: 1254,
     height: 1254,
     variants: [
-      { src: asset_819, width: 480, type: "image/webp" },
-      { src: asset_820, width: 960, type: "image/webp" },
-      { src: asset_821, width: 1254, type: "image/webp" },
+      { src: asset_815, width: 480, type: "image/webp" },
+      { src: asset_816, width: 960, type: "image/webp" },
+      { src: asset_817, width: 1254, type: "image/webp" },
     ],
   },
-  "team/12-idigbor-emeka.jpg": {
+  "team/10-team-photo-biodun-adefila.jpg": {
+    src: asset_818,
+    width: 1085,
+    height: 1450,
+    variants: [
+      { src: asset_819, width: 480, type: "image/webp" },
+      { src: asset_820, width: 960, type: "image/webp" },
+      { src: asset_821, width: 1085, type: "image/webp" },
+    ],
+  },
+  "team/11-team-photo-ken-james.jpg": {
     src: asset_822,
     width: 1254,
     height: 1254,
@@ -3006,24 +3010,34 @@ export const generatedImageManifest: Record<string, GeneratedImageRecord> = {
       { src: asset_825, width: 1254, type: "image/webp" },
     ],
   },
-  "team/13-team-photo-uzoma-nwagboso.jpeg": {
+  "team/12-idigbor-emeka.jpg": {
     src: asset_826,
-    width: 1536,
-    height: 1023,
+    width: 1254,
+    height: 1254,
     variants: [
       { src: asset_827, width: 480, type: "image/webp" },
       { src: asset_828, width: 960, type: "image/webp" },
-      { src: asset_829, width: 1536, type: "image/webp" },
+      { src: asset_829, width: 1254, type: "image/webp" },
     ],
   },
-  "team/13-team-photo-uzoma-nwagboso.png": {
+  "team/13-team-photo-uzoma-nwagboso.jpeg": {
     src: asset_830,
-    width: 1296,
-    height: 4096,
+    width: 1536,
+    height: 1023,
     variants: [
       { src: asset_831, width: 480, type: "image/webp" },
       { src: asset_832, width: 960, type: "image/webp" },
-      { src: asset_833, width: 1296, type: "image/webp" },
+      { src: asset_833, width: 1536, type: "image/webp" },
+    ],
+  },
+  "team/13-team-photo-uzoma-nwagboso.png": {
+    src: asset_834,
+    width: 1296,
+    height: 4096,
+    variants: [
+      { src: asset_835, width: 480, type: "image/webp" },
+      { src: asset_836, width: 960, type: "image/webp" },
+      { src: asset_837, width: 1296, type: "image/webp" },
     ],
   },
 };
