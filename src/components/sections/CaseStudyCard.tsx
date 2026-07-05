@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { MapPin, ArrowRight } from "lucide-react";
 import { currentProjectImage } from "@/content/siteImageSelections";
+import { EnhancedImage } from "@/components/ui/enhanced-image";
 
 interface CaseStudyCardProps {
   title: string;
@@ -34,12 +35,14 @@ export function CaseStudyCard({
       className="enk-card enk-card--hover group flex h-full flex-col overflow-hidden focus-ring"
     >
       <div className="enk-photo-wrap relative aspect-[16/10] overflow-hidden">
-        <img
+        <EnhancedImage
           src={resolvedThumbnail}
           alt={title}
+          wrapperClassName="h-full w-full"
           loading="lazy"
-          decoding="async"
-          className="enk-photo enk-photo--card h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-[1.04]"
+          className="enk-photo--card"
+          hoverZoom
+          fallbackLabel={title}
         />
         <div
           className="absolute inset-0"

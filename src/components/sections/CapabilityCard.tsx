@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, type LucideIcon } from "lucide-react";
+import { EnhancedImage } from "@/components/ui/enhanced-image";
 
 interface CapabilityCardProps {
   title: string;
@@ -28,12 +29,14 @@ export function CapabilityCard({
     >
       {image && (
         <div className="relative aspect-[16/10] overflow-hidden">
-          <img
+          <EnhancedImage
             src={image}
             alt={title}
+            wrapperClassName="h-full w-full"
             loading="lazy"
-            decoding="async"
-            className="h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-[1.04]"
+            className="enk-photo--card"
+            hoverZoom
+            fallbackLabel={title}
           />
           <div
             className="absolute inset-0"

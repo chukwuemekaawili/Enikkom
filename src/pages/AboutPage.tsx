@@ -43,7 +43,7 @@ const milestones: Milestone[] = [
   { year: "2016", title: "Africa's Longest Single Drill", description: "Completed the 16\" × 3.1km Arepo/Imagbon line on the Atlas Cove-Mosimi Pipeline in April 2016, Africa's longest single HDD drill at the time.", icon: Award },
   { year: "2020", title: "Regional Leadership", description: "HDDThailand-Enikkom Ltd formed; became West Africa's largest HDD fleet operator with 10+ maxi rigs up to 500T.", icon: Trophy },
   { year: "2021", title: "Nigeria's Longest CHDD", description: "Commenced 10\" x 12km OML34 continuous HDD project for NPDC - longest functional CHDD in Nigeria.", icon: Rocket },
-  { year: "2025", title: "34 Years Experience", description: "34 years of experience - Over 100km HDD installed, 500+ workforce, and a zero-LTI record across major project delivery.", icon: Award },
+  { year: "2025", title: "30+ Years Experience", description: "Over 30 years of experience - Over 100km HDD installed, 500+ workforce, and a zero-LTI record across major project delivery.", icon: Award },
 ];
 
 // PRICE Core Values from Enikkom documents

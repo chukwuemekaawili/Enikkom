@@ -110,7 +110,7 @@ export default function TestimonialsPage() {
               }
               intro={
                 <EditableText
-                  value={introContent.description || "Over 34 years of delivering excellence has earned us the trust of major IOCs, EPCs, and government agencies across Nigeria and West Africa."}
+                  value={introContent.description || "Over 30 years of delivering excellence has earned us the trust of major IOCs, EPCs, and government agencies across Nigeria and West Africa."}
                   pageSlug="testimonials"
                   sectionKey="intro"
                   field="description"

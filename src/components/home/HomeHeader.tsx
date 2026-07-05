@@ -295,7 +295,7 @@ export function HomeHeader() {
       </div>
 
       {open && (
-        <div id="mobile-nav" className="max-h-[calc(100vh-60px)] overflow-y-auto xl:hidden" style={{ backgroundColor: "var(--enk-navy)" }}>
+        <div id="mobile-nav" className="max-h-[calc(100vh-60px)] md:max-h-[calc(100vh-72px)] overflow-y-auto xl:hidden" style={{ backgroundColor: "var(--enk-navy)" }}>
           <MobileMenu onNavigate={() => setOpen(false)} />
         </div>
       )}

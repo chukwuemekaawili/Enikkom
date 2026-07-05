@@ -1,73 +1,18 @@
-import { useState, useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowUpRight, Play, X } from "lucide-react";
+import { ArrowUpRight, Play } from "lucide-react";
+import { Dialog, DialogContent, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { siteImageSelections } from "@/content/siteImageSelections";
 
 const heroImage = siteImageSelections.home.heroSlides[0];
 
 export function HomeHero() {
-  const [videoOpen, setVideoOpen] = useState(false);
   const bgVideoRef = useRef<HTMLVideoElement>(null);
-  const modalVideoRef = useRef<HTMLVideoElement>(null);
-  const dialogRef = useRef<HTMLDivElement>(null);
-  const closeBtnRef = useRef<HTMLButtonElement>(null);
-  const triggerRef = useRef<HTMLButtonElement>(null);
 
   // Autoplay background video
   useEffect(() => {
     bgVideoRef.current?.play().catch(() => {});
   }, []);
-
-  // When modal opens, play modal video from start; when closes, pause bg video flicker
-  useEffect(() => {
-    if (videoOpen) {
-      modalVideoRef.current?.play().catch(() => {});
-    } else {
-      if (modalVideoRef.current) {
-        modalVideoRef.current.pause();
-        modalVideoRef.current.currentTime = 0;
-      }
-    }
-  }, [videoOpen]);
-
-  // Close on Escape
-  useEffect(() => {
-    const handler = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setVideoOpen(false);
-    };
-    document.addEventListener("keydown", handler);
-    return () => document.removeEventListener("keydown", handler);
-  }, []);
-
-  // Dialog a11y: lock page scroll, move focus in on open, return it on close.
-  useEffect(() => {
-    if (!videoOpen) return;
-    const prevOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    closeBtnRef.current?.focus();
-    return () => {
-      document.body.style.overflow = prevOverflow;
-      triggerRef.current?.focus();
-    };
-  }, [videoOpen]);
-
-  // Keep Tab cycling inside the dialog while it is open.
-  const trapFocus = (e: React.KeyboardEvent) => {
-    if (e.key !== "Tab") return;
-    const focusables = dialogRef.current?.querySelectorAll<HTMLElement>(
-      'button, video[controls], [href], [tabindex]:not([tabindex="-1"])',
-    );
-    if (!focusables?.length) return;
-    const first = focusables[0];
-    const last = focusables[focusables.length - 1];
-    if (e.shiftKey && document.activeElement === first) {
-      e.preventDefault();
-      last.focus();
-    } else if (!e.shiftKey && document.activeElement === last) {
-      e.preventDefault();
-      first.focus();
-    }
-  };
 
   return (
     <>
@@ -118,75 +63,38 @@ export function HomeHero() {
             </p>
 
             <div className="flex flex-wrap gap-4 items-center">
-              <Link
-                to="/projects"
-                className="inline-flex items-center gap-2.5 font-semibold transition-colors duration-150"
-                style={{ background: "var(--enk-accent-primary)", color: "var(--enk-navy)", padding: "0.85rem 2rem", fontSize: "1rem", borderRadius: "var(--radius-control)" }}
-              >
+              <Link to="/projects" className="enk-btn enk-btn--gold">
                 View Project Records
                 <ArrowUpRight className="h-5 w-5" aria-hidden="true" />
               </Link>
 
-              <button
-                ref={triggerRef}
-                onClick={() => setVideoOpen(true)}
-                className="inline-flex items-center gap-2.5 font-semibold text-white/80 hover:text-white border border-white/30 hover:border-white/60 hover:bg-white/8 transition-colors duration-150"
-                style={{ padding: "0.85rem 2rem", fontSize: "1rem", borderRadius: "var(--radius-control)" }}
-                aria-label="Watch Enikkom capabilities video"
-              >
-                Watch Video
-                <Play className="h-5 w-5 fill-current" aria-hidden="true" />
-              </button>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <button className="enk-btn enk-btn--on-dark" aria-label="Watch Enikkom capabilities video">
+                    Watch Video
+                    <Play className="h-5 w-5 fill-current" aria-hidden="true" />
+                  </button>
+                </DialogTrigger>
+                <DialogContent className="z-[200] max-w-4xl border-0 bg-transparent p-0 shadow-none">
+                  <DialogTitle className="sr-only">Capabilities video</DialogTitle>
+                  <div className="relative" style={{ paddingBottom: "56.25%" }}>
+                    <video
+                      className="absolute inset-0 h-full w-full rounded-sm object-cover"
+                      controls
+                      autoPlay
+                      playsInline
+                      poster={heroImage}
+                    >
+                      <source src="/videos/capabilities.mp4" type="video/mp4" />
+                    </video>
+                  </div>
+                </DialogContent>
+              </Dialog>
             </div>
           </div>
         </div>
       </section>
       </div>
-
-      {/* Video Modal / Lightbox */}
-      {videoOpen && (
-        <div
-          ref={dialogRef}
-          className="fixed inset-0 z-[200] flex items-center justify-center"
-          style={{ backgroundColor: "rgba(0,0,0,0.88)" }}
-          onClick={() => setVideoOpen(false)}
-          onKeyDown={trapFocus}
-          role="dialog"
-          aria-modal="true"
-          aria-label="Capabilities video"
-        >
-          <div
-            className="relative w-full max-w-4xl mx-4"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Close button */}
-            <button
-              ref={closeBtnRef}
-              onClick={() => setVideoOpen(false)}
-              className="absolute -top-10 right-0 flex items-center gap-1.5 text-white/70 hover:text-white text-[13px] font-medium transition-colors focus-ring"
-              aria-label="Close video"
-            >
-              <X className="h-4 w-4" />
-              Close
-            </button>
-
-            <div className="relative" style={{ paddingBottom: "56.25%" }}>
-              <video
-                ref={modalVideoRef}
-                className="absolute inset-0 h-full w-full rounded-sm object-cover"
-                controls
-                playsInline
-                poster={heroImage}
-              >
-                {/* AV1/WebM first (~3x smaller, visually identical) for browsers
-                    that decode it; original full-quality MP4 as the fallback. */}
-                <source src="/videos/capabilities.webm" type='video/webm; codecs="av01.0.08M.10, opus"' />
-                <source src="/videos/capabilities.mp4" type="video/mp4" />
-              </video>
-            </div>
-          </div>
-        </div>
-      )}
     </>
   );
 }

@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
-import { completedProjects, projectTypes } from "./CompletedProjectsPage";
+import { completedProjects, projectTypes } from "@/content/completedProjects";
 
 const projectTags = ["All", "HDD", "Pipeline", "Dredging", "CHDD", "Shore Approach"];
 
@@ -219,7 +219,9 @@ export default function ProjectsPage() {
     window.requestAnimationFrame(() => {
       document.getElementById(location.hash.slice(1))?.scrollIntoView({ block: "start" });
     });
-  }, [location.hash]);
+    // location.key changes on every navigation, so re-clicking a link for the
+    // hash already in the URL still scrolls back to the section.
+  }, [location.key, location.hash]);
 
   return (
     <Layout>
@@ -326,8 +328,8 @@ export default function ProjectsPage() {
           <div className="overflow-x-auto rounded-lg border border-border bg-background">
             <Table>
               <TableHeader>
-                <TableRow className="bg-muted/50">
-                  <TableHead className="sticky left-0 w-16 bg-muted/50">Year</TableHead>
+                <TableRow className="bg-muted">
+                  <TableHead className="sticky left-0 w-16 bg-muted">Year</TableHead>
                   <TableHead className="w-24">Client</TableHead>
                   <TableHead className="min-w-[220px]">Project</TableHead>
                   <TableHead className="min-w-[190px]">Scope</TableHead>
