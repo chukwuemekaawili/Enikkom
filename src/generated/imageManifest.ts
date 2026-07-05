@@ -509,7 +509,7 @@ import asset_506 from "../assets/images/_responsive/selected/general/rg-066--w10
 import asset_507 from "../assets/images/selected/general/rg-067.jpg";
 import asset_508 from "../assets/images/_responsive/selected/general/rg-067--w480.webp";
 import asset_509 from "../assets/images/_responsive/selected/general/rg-067--w960.webp";
-import asset_510 from "../assets/images/_responsive/selected/general/rg-067--w1086.webp";
+import asset_510 from "../assets/images/_responsive/selected/general/rg-067--w1448.webp";
 import asset_511 from "../assets/images/selected/general/rg-071.jpg";
 import asset_512 from "../assets/images/_responsive/selected/general/rg-071--w480.webp";
 import asset_513 from "../assets/images/_responsive/selected/general/rg-071--w810.webp";
@@ -2177,12 +2177,12 @@ export const generatedImageManifest: Record<string, GeneratedImageRecord> = {
   },
   "selected/general/rg-067.jpg": {
     src: asset_507,
-    width: 1086,
-    height: 1448,
+    width: 1448,
+    height: 1086,
     variants: [
       { src: asset_508, width: 480, type: "image/webp" },
       { src: asset_509, width: 960, type: "image/webp" },
-      { src: asset_510, width: 1086, type: "image/webp" },
+      { src: asset_510, width: 1448, type: "image/webp" },
     ],
   },
   "selected/general/rg-071.jpg": {
