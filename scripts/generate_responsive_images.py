@@ -1,11 +1,32 @@
 from __future__ import annotations
 
+import time
 from collections import Counter
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Iterable, Sequence
+from typing import Callable, Iterable, Sequence, TypeVar
 
 from PIL import Image
+
+T = TypeVar("T")
+
+
+def retry_io(operation: Callable[[], T], attempts: int = 8) -> T:
+    """Retry a file operation that can hit transient Windows locks.
+
+    Editors, TS servers and antivirus scanners briefly hold files in this
+    repo open without share-delete, which makes a single write or rename
+    fail with WinError 5/22 even though the file is free moments later.
+    """
+    last_error: OSError | None = None
+    for attempt in range(attempts):
+        try:
+            return operation()
+        except OSError as error:
+            last_error = error
+            time.sleep(0.3 * (attempt + 1))
+    assert last_error is not None
+    raise last_error
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -90,11 +111,13 @@ def save_variant(source: Image.Image, output_path: Path, target_width: int) -> N
         resized = source.resize((target_width, target_height), Image.Resampling.LANCZOS)
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    resized.save(
-        output_path,
-        format="WEBP",
-        quality=82,
-        method=6,
+    retry_io(
+        lambda: resized.save(
+            output_path,
+            format="WEBP",
+            quality=82,
+            method=6,
+        )
     )
 
 
@@ -180,7 +203,7 @@ def generate_manifest(records: dict[str, ImageRecord]) -> None:
 
     temp_manifest_path = manifest_path.with_name(f".{manifest_path.name}.tmp")
     temp_manifest_path.write_text("\n".join(lines), encoding="utf-8")
-    temp_manifest_path.replace(manifest_path)
+    retry_io(lambda: temp_manifest_path.replace(manifest_path))
 
 
 def main() -> None:

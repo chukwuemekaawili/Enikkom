@@ -729,109 +729,110 @@ import asset_726 from "../assets/images/_responsive/selected/projects/pp-071--w9
 import asset_727 from "../assets/images/_responsive/selected/projects/pp-071--w1448.webp";
 import asset_728 from "../assets/images/selected/projects/pp-072.jpg";
 import asset_729 from "../assets/images/_responsive/selected/projects/pp-072--w480.webp";
-import asset_730 from "../assets/images/_responsive/selected/projects/pp-072--w727.webp";
-import asset_731 from "../assets/images/selected/projects/pp-075.jpg";
-import asset_732 from "../assets/images/_responsive/selected/projects/pp-075--w480.webp";
-import asset_733 from "../assets/images/_responsive/selected/projects/pp-075--w960.webp";
-import asset_734 from "../assets/images/_responsive/selected/projects/pp-075--w1448.webp";
-import asset_735 from "../assets/images/selected/recent/im-030.jpeg";
-import asset_736 from "../assets/images/_responsive/selected/recent/im-030--w480.webp";
-import asset_737 from "../assets/images/_responsive/selected/recent/im-030--w960.webp";
-import asset_738 from "../assets/images/selected/recent/im-033.jpeg";
-import asset_739 from "../assets/images/_responsive/selected/recent/im-033--w480.webp";
-import asset_740 from "../assets/images/_responsive/selected/recent/im-033--w960.webp";
-import asset_741 from "../assets/images/selected/recent/im-036.jpeg";
-import asset_742 from "../assets/images/_responsive/selected/recent/im-036--w480.webp";
-import asset_743 from "../assets/images/_responsive/selected/recent/im-036--w960.webp";
-import asset_744 from "../assets/images/_responsive/selected/recent/im-036--w1280.webp";
-import asset_745 from "../assets/images/selected/recent/im-047.jpeg";
-import asset_746 from "../assets/images/_responsive/selected/recent/im-047--w480.webp";
-import asset_747 from "../assets/images/_responsive/selected/recent/im-047--w762.webp";
-import asset_748 from "../assets/images/selected/recent/op-01.jpg";
-import asset_749 from "../assets/images/_responsive/selected/recent/op-01--w480.webp";
-import asset_750 from "../assets/images/_responsive/selected/recent/op-01--w810.webp";
-import asset_751 from "../assets/images/selected/recent/op-02.jpg";
-import asset_752 from "../assets/images/_responsive/selected/recent/op-02--w480.webp";
-import asset_753 from "../assets/images/_responsive/selected/recent/op-02--w960.webp";
-import asset_754 from "../assets/images/_responsive/selected/recent/op-02--w1080.webp";
-import asset_755 from "../assets/images/selected/recent/op-03.jpg";
-import asset_756 from "../assets/images/_responsive/selected/recent/op-03--w480.webp";
-import asset_757 from "../assets/images/_responsive/selected/recent/op-03--w810.webp";
-import asset_758 from "../assets/images/selected/recent/op-04.jpg";
-import asset_759 from "../assets/images/_responsive/selected/recent/op-04--w480.webp";
-import asset_760 from "../assets/images/_responsive/selected/recent/op-04--w810.webp";
-import asset_761 from "../assets/images/selected/recent/op-05.jpg";
-import asset_762 from "../assets/images/_responsive/selected/recent/op-05--w480.webp";
-import asset_763 from "../assets/images/_responsive/selected/recent/op-05--w810.webp";
-import asset_764 from "../assets/images/selected/recent/op-06.jpg";
-import asset_765 from "../assets/images/_responsive/selected/recent/op-06--w480.webp";
-import asset_766 from "../assets/images/_responsive/selected/recent/op-06--w810.webp";
-import asset_767 from "../assets/images/selected/recent/op-07.jpg";
-import asset_768 from "../assets/images/_responsive/selected/recent/op-07--w480.webp";
-import asset_769 from "../assets/images/_responsive/selected/recent/op-07--w810.webp";
-import asset_770 from "../assets/images/selected/recent/op-08.jpg";
-import asset_771 from "../assets/images/_responsive/selected/recent/op-08--w480.webp";
-import asset_772 from "../assets/images/_responsive/selected/recent/op-08--w810.webp";
-import asset_773 from "../assets/images/team/00-site-logo-enikkom-construction-limited.png";
-import asset_774 from "../assets/images/_responsive/team/00-site-logo-enikkom-construction-limited--w480.webp";
-import asset_775 from "../assets/images/_responsive/team/00-site-logo-enikkom-construction-limited--w960.webp";
-import asset_776 from "../assets/images/_responsive/team/00-site-logo-enikkom-construction-limited--w1536.webp";
-import asset_777 from "../assets/images/team/01-partner-logo-hddtec-limited.png";
-import asset_778 from "../assets/images/_responsive/team/01-partner-logo-hddtec-limited--w480.webp";
-import asset_779 from "../assets/images/_responsive/team/01-partner-logo-hddtec-limited--w960.webp";
-import asset_780 from "../assets/images/_responsive/team/01-partner-logo-hddtec-limited--w1254.webp";
-import asset_781 from "../assets/images/team/02-hero-management-team-hero-background.jpg";
-import asset_782 from "../assets/images/_responsive/team/02-hero-management-team-hero-background--w480.webp";
-import asset_783 from "../assets/images/_responsive/team/02-hero-management-team-hero-background--w960.webp";
-import asset_784 from "../assets/images/_responsive/team/02-hero-management-team-hero-background--w1087.webp";
-import asset_785 from "../assets/images/team/03-team-photo-engr-edward-amene.jpg";
-import asset_786 from "../assets/images/_responsive/team/03-team-photo-engr-edward-amene--w480.webp";
-import asset_787 from "../assets/images/_responsive/team/03-team-photo-engr-edward-amene--w960.webp";
-import asset_788 from "../assets/images/_responsive/team/03-team-photo-engr-edward-amene--w1254.webp";
-import asset_789 from "../assets/images/team/04-team-photo-engr-saleem-ahmad-khan.jpg";
-import asset_790 from "../assets/images/_responsive/team/04-team-photo-engr-saleem-ahmad-khan--w480.webp";
-import asset_791 from "../assets/images/_responsive/team/04-team-photo-engr-saleem-ahmad-khan--w960.webp";
-import asset_792 from "../assets/images/_responsive/team/04-team-photo-engr-saleem-ahmad-khan--w1254.webp";
-import asset_793 from "../assets/images/team/05-team-photo-mr-francis-anatogu.jpg";
-import asset_794 from "../assets/images/_responsive/team/05-team-photo-mr-francis-anatogu--w480.webp";
-import asset_795 from "../assets/images/_responsive/team/05-team-photo-mr-francis-anatogu--w960.webp";
-import asset_796 from "../assets/images/_responsive/team/05-team-photo-mr-francis-anatogu--w1254.webp";
-import asset_797 from "../assets/images/team/06-team-photo-adekunle-adewole-phd.jpg";
-import asset_798 from "../assets/images/_responsive/team/06-team-photo-adekunle-adewole-phd--w480.webp";
-import asset_799 from "../assets/images/_responsive/team/06-team-photo-adekunle-adewole-phd--w960.webp";
-import asset_800 from "../assets/images/_responsive/team/06-team-photo-adekunle-adewole-phd--w1254.webp";
-import asset_801 from "../assets/images/team/07-team-photo-mr-chibuike-nwachukwu.png";
-import asset_802 from "../assets/images/_responsive/team/07-team-photo-mr-chibuike-nwachukwu--w480.webp";
-import asset_803 from "../assets/images/_responsive/team/07-team-photo-mr-chibuike-nwachukwu--w960.webp";
-import asset_804 from "../assets/images/_responsive/team/07-team-photo-mr-chibuike-nwachukwu--w1254.webp";
-import asset_805 from "../assets/images/team/08-team-photo-teddy-allen.jpg";
-import asset_806 from "../assets/images/_responsive/team/08-team-photo-teddy-allen--w480.webp";
-import asset_807 from "../assets/images/_responsive/team/08-team-photo-teddy-allen--w960.webp";
-import asset_808 from "../assets/images/_responsive/team/08-team-photo-teddy-allen--w1254.webp";
-import asset_809 from "../assets/images/team/09-team-photo-idigbor-emeka-fca.jpg";
-import asset_810 from "../assets/images/_responsive/team/09-team-photo-idigbor-emeka-fca--w480.webp";
-import asset_811 from "../assets/images/_responsive/team/09-team-photo-idigbor-emeka-fca--w960.webp";
-import asset_812 from "../assets/images/_responsive/team/09-team-photo-idigbor-emeka-fca--w1254.webp";
-import asset_813 from "../assets/images/team/10-team-photo-biodun-adefila.jpg";
-import asset_814 from "../assets/images/_responsive/team/10-team-photo-biodun-adefila--w480.webp";
-import asset_815 from "../assets/images/_responsive/team/10-team-photo-biodun-adefila--w960.webp";
-import asset_816 from "../assets/images/_responsive/team/10-team-photo-biodun-adefila--w1085.webp";
-import asset_817 from "../assets/images/team/11-team-photo-ken-james.jpg";
-import asset_818 from "../assets/images/_responsive/team/11-team-photo-ken-james--w480.webp";
-import asset_819 from "../assets/images/_responsive/team/11-team-photo-ken-james--w960.webp";
-import asset_820 from "../assets/images/_responsive/team/11-team-photo-ken-james--w1254.webp";
-import asset_821 from "../assets/images/team/12-idigbor-emeka.jpg";
-import asset_822 from "../assets/images/_responsive/team/12-idigbor-emeka--w480.webp";
-import asset_823 from "../assets/images/_responsive/team/12-idigbor-emeka--w960.webp";
-import asset_824 from "../assets/images/_responsive/team/12-idigbor-emeka--w1254.webp";
-import asset_825 from "../assets/images/team/13-team-photo-uzoma-nwagboso.jpeg";
-import asset_826 from "../assets/images/_responsive/team/13-team-photo-uzoma-nwagboso-jpeg--w480.webp";
-import asset_827 from "../assets/images/_responsive/team/13-team-photo-uzoma-nwagboso-jpeg--w960.webp";
-import asset_828 from "../assets/images/_responsive/team/13-team-photo-uzoma-nwagboso-jpeg--w1536.webp";
-import asset_829 from "../assets/images/team/13-team-photo-uzoma-nwagboso.png";
-import asset_830 from "../assets/images/_responsive/team/13-team-photo-uzoma-nwagboso-png--w480.webp";
-import asset_831 from "../assets/images/_responsive/team/13-team-photo-uzoma-nwagboso-png--w960.webp";
-import asset_832 from "../assets/images/_responsive/team/13-team-photo-uzoma-nwagboso-png--w1296.webp";
+import asset_730 from "../assets/images/_responsive/selected/projects/pp-072--w960.webp";
+import asset_731 from "../assets/images/_responsive/selected/projects/pp-072--w1592.webp";
+import asset_732 from "../assets/images/selected/projects/pp-075.jpg";
+import asset_733 from "../assets/images/_responsive/selected/projects/pp-075--w480.webp";
+import asset_734 from "../assets/images/_responsive/selected/projects/pp-075--w960.webp";
+import asset_735 from "../assets/images/_responsive/selected/projects/pp-075--w1448.webp";
+import asset_736 from "../assets/images/selected/recent/im-030.jpeg";
+import asset_737 from "../assets/images/_responsive/selected/recent/im-030--w480.webp";
+import asset_738 from "../assets/images/_responsive/selected/recent/im-030--w960.webp";
+import asset_739 from "../assets/images/selected/recent/im-033.jpeg";
+import asset_740 from "../assets/images/_responsive/selected/recent/im-033--w480.webp";
+import asset_741 from "../assets/images/_responsive/selected/recent/im-033--w960.webp";
+import asset_742 from "../assets/images/selected/recent/im-036.jpeg";
+import asset_743 from "../assets/images/_responsive/selected/recent/im-036--w480.webp";
+import asset_744 from "../assets/images/_responsive/selected/recent/im-036--w960.webp";
+import asset_745 from "../assets/images/_responsive/selected/recent/im-036--w1280.webp";
+import asset_746 from "../assets/images/selected/recent/im-047.jpeg";
+import asset_747 from "../assets/images/_responsive/selected/recent/im-047--w480.webp";
+import asset_748 from "../assets/images/_responsive/selected/recent/im-047--w762.webp";
+import asset_749 from "../assets/images/selected/recent/op-01.jpg";
+import asset_750 from "../assets/images/_responsive/selected/recent/op-01--w480.webp";
+import asset_751 from "../assets/images/_responsive/selected/recent/op-01--w810.webp";
+import asset_752 from "../assets/images/selected/recent/op-02.jpg";
+import asset_753 from "../assets/images/_responsive/selected/recent/op-02--w480.webp";
+import asset_754 from "../assets/images/_responsive/selected/recent/op-02--w960.webp";
+import asset_755 from "../assets/images/_responsive/selected/recent/op-02--w1080.webp";
+import asset_756 from "../assets/images/selected/recent/op-03.jpg";
+import asset_757 from "../assets/images/_responsive/selected/recent/op-03--w480.webp";
+import asset_758 from "../assets/images/_responsive/selected/recent/op-03--w810.webp";
+import asset_759 from "../assets/images/selected/recent/op-04.jpg";
+import asset_760 from "../assets/images/_responsive/selected/recent/op-04--w480.webp";
+import asset_761 from "../assets/images/_responsive/selected/recent/op-04--w810.webp";
+import asset_762 from "../assets/images/selected/recent/op-05.jpg";
+import asset_763 from "../assets/images/_responsive/selected/recent/op-05--w480.webp";
+import asset_764 from "../assets/images/_responsive/selected/recent/op-05--w810.webp";
+import asset_765 from "../assets/images/selected/recent/op-06.jpg";
+import asset_766 from "../assets/images/_responsive/selected/recent/op-06--w480.webp";
+import asset_767 from "../assets/images/_responsive/selected/recent/op-06--w810.webp";
+import asset_768 from "../assets/images/selected/recent/op-07.jpg";
+import asset_769 from "../assets/images/_responsive/selected/recent/op-07--w480.webp";
+import asset_770 from "../assets/images/_responsive/selected/recent/op-07--w810.webp";
+import asset_771 from "../assets/images/selected/recent/op-08.jpg";
+import asset_772 from "../assets/images/_responsive/selected/recent/op-08--w480.webp";
+import asset_773 from "../assets/images/_responsive/selected/recent/op-08--w810.webp";
+import asset_774 from "../assets/images/team/00-site-logo-enikkom-construction-limited.png";
+import asset_775 from "../assets/images/_responsive/team/00-site-logo-enikkom-construction-limited--w480.webp";
+import asset_776 from "../assets/images/_responsive/team/00-site-logo-enikkom-construction-limited--w960.webp";
+import asset_777 from "../assets/images/_responsive/team/00-site-logo-enikkom-construction-limited--w1536.webp";
+import asset_778 from "../assets/images/team/01-partner-logo-hddtec-limited.png";
+import asset_779 from "../assets/images/_responsive/team/01-partner-logo-hddtec-limited--w480.webp";
+import asset_780 from "../assets/images/_responsive/team/01-partner-logo-hddtec-limited--w960.webp";
+import asset_781 from "../assets/images/_responsive/team/01-partner-logo-hddtec-limited--w1254.webp";
+import asset_782 from "../assets/images/team/02-hero-management-team-hero-background.jpg";
+import asset_783 from "../assets/images/_responsive/team/02-hero-management-team-hero-background--w480.webp";
+import asset_784 from "../assets/images/_responsive/team/02-hero-management-team-hero-background--w960.webp";
+import asset_785 from "../assets/images/_responsive/team/02-hero-management-team-hero-background--w1087.webp";
+import asset_786 from "../assets/images/team/03-team-photo-engr-edward-amene.jpg";
+import asset_787 from "../assets/images/_responsive/team/03-team-photo-engr-edward-amene--w480.webp";
+import asset_788 from "../assets/images/_responsive/team/03-team-photo-engr-edward-amene--w960.webp";
+import asset_789 from "../assets/images/_responsive/team/03-team-photo-engr-edward-amene--w1254.webp";
+import asset_790 from "../assets/images/team/04-team-photo-engr-saleem-ahmad-khan.jpg";
+import asset_791 from "../assets/images/_responsive/team/04-team-photo-engr-saleem-ahmad-khan--w480.webp";
+import asset_792 from "../assets/images/_responsive/team/04-team-photo-engr-saleem-ahmad-khan--w960.webp";
+import asset_793 from "../assets/images/_responsive/team/04-team-photo-engr-saleem-ahmad-khan--w1254.webp";
+import asset_794 from "../assets/images/team/05-team-photo-mr-francis-anatogu.jpg";
+import asset_795 from "../assets/images/_responsive/team/05-team-photo-mr-francis-anatogu--w480.webp";
+import asset_796 from "../assets/images/_responsive/team/05-team-photo-mr-francis-anatogu--w960.webp";
+import asset_797 from "../assets/images/_responsive/team/05-team-photo-mr-francis-anatogu--w1254.webp";
+import asset_798 from "../assets/images/team/06-team-photo-adekunle-adewole-phd.jpg";
+import asset_799 from "../assets/images/_responsive/team/06-team-photo-adekunle-adewole-phd--w480.webp";
+import asset_800 from "../assets/images/_responsive/team/06-team-photo-adekunle-adewole-phd--w960.webp";
+import asset_801 from "../assets/images/_responsive/team/06-team-photo-adekunle-adewole-phd--w1254.webp";
+import asset_802 from "../assets/images/team/07-team-photo-mr-chibuike-nwachukwu.png";
+import asset_803 from "../assets/images/_responsive/team/07-team-photo-mr-chibuike-nwachukwu--w480.webp";
+import asset_804 from "../assets/images/_responsive/team/07-team-photo-mr-chibuike-nwachukwu--w960.webp";
+import asset_805 from "../assets/images/_responsive/team/07-team-photo-mr-chibuike-nwachukwu--w1254.webp";
+import asset_806 from "../assets/images/team/08-team-photo-teddy-allen.jpg";
+import asset_807 from "../assets/images/_responsive/team/08-team-photo-teddy-allen--w480.webp";
+import asset_808 from "../assets/images/_responsive/team/08-team-photo-teddy-allen--w960.webp";
+import asset_809 from "../assets/images/_responsive/team/08-team-photo-teddy-allen--w1254.webp";
+import asset_810 from "../assets/images/team/09-team-photo-idigbor-emeka-fca.jpg";
+import asset_811 from "../assets/images/_responsive/team/09-team-photo-idigbor-emeka-fca--w480.webp";
+import asset_812 from "../assets/images/_responsive/team/09-team-photo-idigbor-emeka-fca--w960.webp";
+import asset_813 from "../assets/images/_responsive/team/09-team-photo-idigbor-emeka-fca--w1254.webp";
+import asset_814 from "../assets/images/team/10-team-photo-biodun-adefila.jpg";
+import asset_815 from "../assets/images/_responsive/team/10-team-photo-biodun-adefila--w480.webp";
+import asset_816 from "../assets/images/_responsive/team/10-team-photo-biodun-adefila--w960.webp";
+import asset_817 from "../assets/images/_responsive/team/10-team-photo-biodun-adefila--w1085.webp";
+import asset_818 from "../assets/images/team/11-team-photo-ken-james.jpg";
+import asset_819 from "../assets/images/_responsive/team/11-team-photo-ken-james--w480.webp";
+import asset_820 from "../assets/images/_responsive/team/11-team-photo-ken-james--w960.webp";
+import asset_821 from "../assets/images/_responsive/team/11-team-photo-ken-james--w1254.webp";
+import asset_822 from "../assets/images/team/12-idigbor-emeka.jpg";
+import asset_823 from "../assets/images/_responsive/team/12-idigbor-emeka--w480.webp";
+import asset_824 from "../assets/images/_responsive/team/12-idigbor-emeka--w960.webp";
+import asset_825 from "../assets/images/_responsive/team/12-idigbor-emeka--w1254.webp";
+import asset_826 from "../assets/images/team/13-team-photo-uzoma-nwagboso.jpeg";
+import asset_827 from "../assets/images/_responsive/team/13-team-photo-uzoma-nwagboso-jpeg--w480.webp";
+import asset_828 from "../assets/images/_responsive/team/13-team-photo-uzoma-nwagboso-jpeg--w960.webp";
+import asset_829 from "../assets/images/_responsive/team/13-team-photo-uzoma-nwagboso-jpeg--w1536.webp";
+import asset_830 from "../assets/images/team/13-team-photo-uzoma-nwagboso.png";
+import asset_831 from "../assets/images/_responsive/team/13-team-photo-uzoma-nwagboso-png--w480.webp";
+import asset_832 from "../assets/images/_responsive/team/13-team-photo-uzoma-nwagboso-png--w960.webp";
+import asset_833 from "../assets/images/_responsive/team/13-team-photo-uzoma-nwagboso-png--w1296.webp";
 
 export interface GeneratedResponsiveVariant {
   src: string;
@@ -2747,281 +2748,282 @@ export const generatedImageManifest: Record<string, GeneratedImageRecord> = {
   },
   "selected/projects/pp-072.jpg": {
     src: asset_728,
-    width: 727,
-    height: 452,
+    width: 1592,
+    height: 988,
     variants: [
       { src: asset_729, width: 480, type: "image/webp" },
-      { src: asset_730, width: 727, type: "image/webp" },
+      { src: asset_730, width: 960, type: "image/webp" },
+      { src: asset_731, width: 1592, type: "image/webp" },
     ],
   },
   "selected/projects/pp-075.jpg": {
-    src: asset_731,
+    src: asset_732,
     width: 1448,
     height: 1086,
     variants: [
-      { src: asset_732, width: 480, type: "image/webp" },
-      { src: asset_733, width: 960, type: "image/webp" },
-      { src: asset_734, width: 1448, type: "image/webp" },
+      { src: asset_733, width: 480, type: "image/webp" },
+      { src: asset_734, width: 960, type: "image/webp" },
+      { src: asset_735, width: 1448, type: "image/webp" },
     ],
   },
   "selected/recent/im-030.jpeg": {
-    src: asset_735,
+    src: asset_736,
     width: 960,
     height: 1280,
     variants: [
-      { src: asset_736, width: 480, type: "image/webp" },
-      { src: asset_737, width: 960, type: "image/webp" },
+      { src: asset_737, width: 480, type: "image/webp" },
+      { src: asset_738, width: 960, type: "image/webp" },
     ],
   },
   "selected/recent/im-033.jpeg": {
-    src: asset_738,
+    src: asset_739,
     width: 960,
     height: 1280,
     variants: [
-      { src: asset_739, width: 480, type: "image/webp" },
-      { src: asset_740, width: 960, type: "image/webp" },
+      { src: asset_740, width: 480, type: "image/webp" },
+      { src: asset_741, width: 960, type: "image/webp" },
     ],
   },
   "selected/recent/im-036.jpeg": {
-    src: asset_741,
+    src: asset_742,
     width: 1280,
     height: 960,
     variants: [
-      { src: asset_742, width: 480, type: "image/webp" },
-      { src: asset_743, width: 960, type: "image/webp" },
-      { src: asset_744, width: 1280, type: "image/webp" },
+      { src: asset_743, width: 480, type: "image/webp" },
+      { src: asset_744, width: 960, type: "image/webp" },
+      { src: asset_745, width: 1280, type: "image/webp" },
     ],
   },
   "selected/recent/im-047.jpeg": {
-    src: asset_745,
+    src: asset_746,
     width: 762,
     height: 1096,
     variants: [
-      { src: asset_746, width: 480, type: "image/webp" },
-      { src: asset_747, width: 762, type: "image/webp" },
+      { src: asset_747, width: 480, type: "image/webp" },
+      { src: asset_748, width: 762, type: "image/webp" },
     ],
   },
   "selected/recent/op-01.jpg": {
-    src: asset_748,
+    src: asset_749,
     width: 810,
     height: 1080,
     variants: [
-      { src: asset_749, width: 480, type: "image/webp" },
-      { src: asset_750, width: 810, type: "image/webp" },
+      { src: asset_750, width: 480, type: "image/webp" },
+      { src: asset_751, width: 810, type: "image/webp" },
     ],
   },
   "selected/recent/op-02.jpg": {
-    src: asset_751,
+    src: asset_752,
     width: 1080,
     height: 810,
     variants: [
-      { src: asset_752, width: 480, type: "image/webp" },
-      { src: asset_753, width: 960, type: "image/webp" },
-      { src: asset_754, width: 1080, type: "image/webp" },
+      { src: asset_753, width: 480, type: "image/webp" },
+      { src: asset_754, width: 960, type: "image/webp" },
+      { src: asset_755, width: 1080, type: "image/webp" },
     ],
   },
   "selected/recent/op-03.jpg": {
-    src: asset_755,
+    src: asset_756,
     width: 810,
     height: 1080,
     variants: [
-      { src: asset_756, width: 480, type: "image/webp" },
-      { src: asset_757, width: 810, type: "image/webp" },
+      { src: asset_757, width: 480, type: "image/webp" },
+      { src: asset_758, width: 810, type: "image/webp" },
     ],
   },
   "selected/recent/op-04.jpg": {
-    src: asset_758,
+    src: asset_759,
     width: 810,
     height: 1080,
     variants: [
-      { src: asset_759, width: 480, type: "image/webp" },
-      { src: asset_760, width: 810, type: "image/webp" },
+      { src: asset_760, width: 480, type: "image/webp" },
+      { src: asset_761, width: 810, type: "image/webp" },
     ],
   },
   "selected/recent/op-05.jpg": {
-    src: asset_761,
+    src: asset_762,
     width: 810,
     height: 1080,
     variants: [
-      { src: asset_762, width: 480, type: "image/webp" },
-      { src: asset_763, width: 810, type: "image/webp" },
+      { src: asset_763, width: 480, type: "image/webp" },
+      { src: asset_764, width: 810, type: "image/webp" },
     ],
   },
   "selected/recent/op-06.jpg": {
-    src: asset_764,
+    src: asset_765,
     width: 810,
     height: 1080,
     variants: [
-      { src: asset_765, width: 480, type: "image/webp" },
-      { src: asset_766, width: 810, type: "image/webp" },
+      { src: asset_766, width: 480, type: "image/webp" },
+      { src: asset_767, width: 810, type: "image/webp" },
     ],
   },
   "selected/recent/op-07.jpg": {
-    src: asset_767,
+    src: asset_768,
     width: 810,
     height: 1080,
     variants: [
-      { src: asset_768, width: 480, type: "image/webp" },
-      { src: asset_769, width: 810, type: "image/webp" },
+      { src: asset_769, width: 480, type: "image/webp" },
+      { src: asset_770, width: 810, type: "image/webp" },
     ],
   },
   "selected/recent/op-08.jpg": {
-    src: asset_770,
+    src: asset_771,
     width: 810,
     height: 1080,
     variants: [
-      { src: asset_771, width: 480, type: "image/webp" },
-      { src: asset_772, width: 810, type: "image/webp" },
+      { src: asset_772, width: 480, type: "image/webp" },
+      { src: asset_773, width: 810, type: "image/webp" },
     ],
   },
   "team/00-site-logo-enikkom-construction-limited.png": {
-    src: asset_773,
+    src: asset_774,
     width: 1536,
     height: 1024,
     variants: [
-      { src: asset_774, width: 480, type: "image/webp" },
-      { src: asset_775, width: 960, type: "image/webp" },
-      { src: asset_776, width: 1536, type: "image/webp" },
+      { src: asset_775, width: 480, type: "image/webp" },
+      { src: asset_776, width: 960, type: "image/webp" },
+      { src: asset_777, width: 1536, type: "image/webp" },
     ],
   },
   "team/01-partner-logo-hddtec-limited.png": {
-    src: asset_777,
+    src: asset_778,
     width: 1254,
     height: 1254,
     variants: [
-      { src: asset_778, width: 480, type: "image/webp" },
-      { src: asset_779, width: 960, type: "image/webp" },
-      { src: asset_780, width: 1254, type: "image/webp" },
+      { src: asset_779, width: 480, type: "image/webp" },
+      { src: asset_780, width: 960, type: "image/webp" },
+      { src: asset_781, width: 1254, type: "image/webp" },
     ],
   },
   "team/02-hero-management-team-hero-background.jpg": {
-    src: asset_781,
+    src: asset_782,
     width: 1087,
     height: 1447,
     variants: [
-      { src: asset_782, width: 480, type: "image/webp" },
-      { src: asset_783, width: 960, type: "image/webp" },
-      { src: asset_784, width: 1087, type: "image/webp" },
+      { src: asset_783, width: 480, type: "image/webp" },
+      { src: asset_784, width: 960, type: "image/webp" },
+      { src: asset_785, width: 1087, type: "image/webp" },
     ],
   },
   "team/03-team-photo-engr-edward-amene.jpg": {
-    src: asset_785,
+    src: asset_786,
     width: 1254,
     height: 1254,
     variants: [
-      { src: asset_786, width: 480, type: "image/webp" },
-      { src: asset_787, width: 960, type: "image/webp" },
-      { src: asset_788, width: 1254, type: "image/webp" },
+      { src: asset_787, width: 480, type: "image/webp" },
+      { src: asset_788, width: 960, type: "image/webp" },
+      { src: asset_789, width: 1254, type: "image/webp" },
     ],
   },
   "team/04-team-photo-engr-saleem-ahmad-khan.jpg": {
-    src: asset_789,
+    src: asset_790,
     width: 1254,
     height: 1254,
     variants: [
-      { src: asset_790, width: 480, type: "image/webp" },
-      { src: asset_791, width: 960, type: "image/webp" },
-      { src: asset_792, width: 1254, type: "image/webp" },
+      { src: asset_791, width: 480, type: "image/webp" },
+      { src: asset_792, width: 960, type: "image/webp" },
+      { src: asset_793, width: 1254, type: "image/webp" },
     ],
   },
   "team/05-team-photo-mr-francis-anatogu.jpg": {
-    src: asset_793,
+    src: asset_794,
     width: 1254,
     height: 1254,
     variants: [
-      { src: asset_794, width: 480, type: "image/webp" },
-      { src: asset_795, width: 960, type: "image/webp" },
-      { src: asset_796, width: 1254, type: "image/webp" },
+      { src: asset_795, width: 480, type: "image/webp" },
+      { src: asset_796, width: 960, type: "image/webp" },
+      { src: asset_797, width: 1254, type: "image/webp" },
     ],
   },
   "team/06-team-photo-adekunle-adewole-phd.jpg": {
-    src: asset_797,
+    src: asset_798,
     width: 1254,
     height: 1254,
     variants: [
-      { src: asset_798, width: 480, type: "image/webp" },
-      { src: asset_799, width: 960, type: "image/webp" },
-      { src: asset_800, width: 1254, type: "image/webp" },
+      { src: asset_799, width: 480, type: "image/webp" },
+      { src: asset_800, width: 960, type: "image/webp" },
+      { src: asset_801, width: 1254, type: "image/webp" },
     ],
   },
   "team/07-team-photo-mr-chibuike-nwachukwu.png": {
-    src: asset_801,
+    src: asset_802,
     width: 1254,
     height: 1254,
     variants: [
-      { src: asset_802, width: 480, type: "image/webp" },
-      { src: asset_803, width: 960, type: "image/webp" },
-      { src: asset_804, width: 1254, type: "image/webp" },
+      { src: asset_803, width: 480, type: "image/webp" },
+      { src: asset_804, width: 960, type: "image/webp" },
+      { src: asset_805, width: 1254, type: "image/webp" },
     ],
   },
   "team/08-team-photo-teddy-allen.jpg": {
-    src: asset_805,
+    src: asset_806,
     width: 1254,
     height: 1254,
     variants: [
-      { src: asset_806, width: 480, type: "image/webp" },
-      { src: asset_807, width: 960, type: "image/webp" },
-      { src: asset_808, width: 1254, type: "image/webp" },
+      { src: asset_807, width: 480, type: "image/webp" },
+      { src: asset_808, width: 960, type: "image/webp" },
+      { src: asset_809, width: 1254, type: "image/webp" },
     ],
   },
   "team/09-team-photo-idigbor-emeka-fca.jpg": {
-    src: asset_809,
+    src: asset_810,
     width: 1254,
     height: 1254,
     variants: [
-      { src: asset_810, width: 480, type: "image/webp" },
-      { src: asset_811, width: 960, type: "image/webp" },
-      { src: asset_812, width: 1254, type: "image/webp" },
+      { src: asset_811, width: 480, type: "image/webp" },
+      { src: asset_812, width: 960, type: "image/webp" },
+      { src: asset_813, width: 1254, type: "image/webp" },
     ],
   },
   "team/10-team-photo-biodun-adefila.jpg": {
-    src: asset_813,
+    src: asset_814,
     width: 1085,
     height: 1450,
     variants: [
-      { src: asset_814, width: 480, type: "image/webp" },
-      { src: asset_815, width: 960, type: "image/webp" },
-      { src: asset_816, width: 1085, type: "image/webp" },
+      { src: asset_815, width: 480, type: "image/webp" },
+      { src: asset_816, width: 960, type: "image/webp" },
+      { src: asset_817, width: 1085, type: "image/webp" },
     ],
   },
   "team/11-team-photo-ken-james.jpg": {
-    src: asset_817,
+    src: asset_818,
     width: 1254,
     height: 1254,
     variants: [
-      { src: asset_818, width: 480, type: "image/webp" },
-      { src: asset_819, width: 960, type: "image/webp" },
-      { src: asset_820, width: 1254, type: "image/webp" },
+      { src: asset_819, width: 480, type: "image/webp" },
+      { src: asset_820, width: 960, type: "image/webp" },
+      { src: asset_821, width: 1254, type: "image/webp" },
     ],
   },
   "team/12-idigbor-emeka.jpg": {
-    src: asset_821,
+    src: asset_822,
     width: 1254,
     height: 1254,
     variants: [
-      { src: asset_822, width: 480, type: "image/webp" },
-      { src: asset_823, width: 960, type: "image/webp" },
-      { src: asset_824, width: 1254, type: "image/webp" },
+      { src: asset_823, width: 480, type: "image/webp" },
+      { src: asset_824, width: 960, type: "image/webp" },
+      { src: asset_825, width: 1254, type: "image/webp" },
     ],
   },
   "team/13-team-photo-uzoma-nwagboso.jpeg": {
-    src: asset_825,
+    src: asset_826,
     width: 1536,
     height: 1023,
     variants: [
-      { src: asset_826, width: 480, type: "image/webp" },
-      { src: asset_827, width: 960, type: "image/webp" },
-      { src: asset_828, width: 1536, type: "image/webp" },
+      { src: asset_827, width: 480, type: "image/webp" },
+      { src: asset_828, width: 960, type: "image/webp" },
+      { src: asset_829, width: 1536, type: "image/webp" },
     ],
   },
   "team/13-team-photo-uzoma-nwagboso.png": {
-    src: asset_829,
+    src: asset_830,
     width: 1296,
     height: 4096,
     variants: [
-      { src: asset_830, width: 480, type: "image/webp" },
-      { src: asset_831, width: 960, type: "image/webp" },
-      { src: asset_832, width: 1296, type: "image/webp" },
+      { src: asset_831, width: 480, type: "image/webp" },
+      { src: asset_832, width: 960, type: "image/webp" },
+      { src: asset_833, width: 1296, type: "image/webp" },
     ],
   },
 };
