@@ -13,6 +13,11 @@ const selectedEquipmentAssets = import.meta.glob("../assets/images/selected/equi
   import: "default",
 }) as Record<string, string>;
 
+const selectedProjectAssets = import.meta.glob("../assets/images/selected/projects/*.{jpg,jpeg,png}", {
+  eager: true,
+  import: "default",
+}) as Record<string, string>;
+
 const selectedRecentAssets = import.meta.glob("../assets/images/selected/recent/*.{jpg,jpeg,png,jpeg}", {
   eager: true,
   import: "default",
@@ -63,6 +68,13 @@ export function selectedEquipmentImage(name: string) {
   return getAsset(selectedEquipmentAssets, `../assets/images/selected/equipment/${name}`, {
     label: "selected equipment",
     fallbackKey: "../assets/images/selected/equipment/eq-021.jpg",
+  });
+}
+
+export function selectedProjectImage(name: string) {
+  return getAsset(selectedProjectAssets, `../assets/images/selected/projects/${name}`, {
+    label: "selected project",
+    fallbackKey: "../assets/images/selected/projects/pp-063.jpg",
   });
 }
 
@@ -206,7 +218,7 @@ export const siteImageSelections = {
         description: "Prepared and coated line pipe staged for mobilisation and tie-in works.",
       },
       {
-        image: currentProjectImage("jetty-construction.jpg"),
+        image: selectedProjectImage("pp-063.jpg"),
         title: "Jetty Construction Front",
         category: "Shore Approach",
         description: "Marine and shoreline works supporting offshore-to-onshore connection activities.",
