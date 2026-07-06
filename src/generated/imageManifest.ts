@@ -822,10 +822,10 @@ import asset_819 from "../assets/images/team/08-team-photo-teddy-allen.jpg";
 import asset_820 from "../assets/images/_responsive/team/08-team-photo-teddy-allen--w480.webp";
 import asset_821 from "../assets/images/_responsive/team/08-team-photo-teddy-allen--w960.webp";
 import asset_822 from "../assets/images/_responsive/team/08-team-photo-teddy-allen--w1254.webp";
-import asset_823 from "../assets/images/team/09-team-photo-idigbor-emeka-fca.jpg";
-import asset_824 from "../assets/images/_responsive/team/09-team-photo-idigbor-emeka-fca--w480.webp";
-import asset_825 from "../assets/images/_responsive/team/09-team-photo-idigbor-emeka-fca--w960.webp";
-import asset_826 from "../assets/images/_responsive/team/09-team-photo-idigbor-emeka-fca--w1254.webp";
+import asset_823 from "../assets/images/team/09-team-photo-mr-chibuike-nwachukwu.jpg";
+import asset_824 from "../assets/images/_responsive/team/09-team-photo-mr-chibuike-nwachukwu--w480.webp";
+import asset_825 from "../assets/images/_responsive/team/09-team-photo-mr-chibuike-nwachukwu--w960.webp";
+import asset_826 from "../assets/images/_responsive/team/09-team-photo-mr-chibuike-nwachukwu--w1254.webp";
 import asset_827 from "../assets/images/team/10-team-photo-biodun-adefila.jpg";
 import asset_828 from "../assets/images/_responsive/team/10-team-photo-biodun-adefila--w480.webp";
 import asset_829 from "../assets/images/_responsive/team/10-team-photo-biodun-adefila--w960.webp";
@@ -2982,7 +2982,7 @@ export const generatedImageManifest: Record<string, GeneratedImageRecord> = {
       { src: asset_822, width: 1254, type: "image/webp" },
     ],
   },
-  "team/09-team-photo-idigbor-emeka-fca.jpg": {
+  "team/09-team-photo-mr-chibuike-nwachukwu.jpg": {
     src: asset_823,
     width: 1254,
     height: 1254,

@@ -387,7 +387,7 @@ export const siteImageSelections = {
       francisAnatogu: teamImage("05-team-photo-mr-francis-anatogu.jpg"),
       adekunleAdewole: teamImage("06-team-photo-adekunle-adewole-phd.jpg"),
       uzomaNwagboso: teamImage("13-team-photo-uzoma-nwagboso.jpeg"),
-      chibuikeNwachukwu: teamImage("09-team-photo-idigbor-emeka-fca.jpg"),
+      chibuikeNwachukwu: teamImage("09-team-photo-mr-chibuike-nwachukwu.jpg"),
       teddyAllen: teamImage("08-team-photo-teddy-allen.jpg"),
       idigborEmeka: teamImage("12-idigbor-emeka.jpg"),
       biodunAdefila: teamImage("10-team-photo-biodun-adefila.jpg"),

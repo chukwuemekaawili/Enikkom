@@ -16,28 +16,11 @@ import { completedProjects, projectTypes } from "@/content/completedProjects";
 
 const projectTags = ["All", "HDD", "Pipeline", "Dredging", "CHDD", "Shore Approach"];
 
-const galleryImages = [
-  {
-    src: getProjectImage("oml34-chdd", "interactiveMap") || getProjectImage("oml34-chdd", "projectGallery"),
-    alt: "Aerial view of the OML34 continuous HDD project site in Delta State",
-    label: "OML34 Continuous HDD",
-  },
-  {
-    src: getProjectImage("nun-river-crossing", "projectGallery") || getProjectImage("nun-river-crossing", "projectList"),
-    alt: "River crossing drilling spread on a large Enikkom waterway crossing project",
-    label: "River Crossing Works",
-  },
-  {
-    src: getProjectImage("ob3-river-niger", "interactiveMap") || getProjectImage("ob3-river-niger", "projectGallery"),
-    alt: "Direct Pipe installation spread deployed on a major trenchless crossing",
-    label: "Direct Pipe Installation",
-  },
-  {
-    src: getProjectImage("escravos-shore-approach", "projectMap") || getProjectImage("escravos-shore-approach", "projectGallery"),
-    alt: "Heavy marine and shore construction spread supporting pipeline installation works",
-    label: "Marine Construction Spread",
-  },
-];
+const galleryImages = siteImageSelections.gallery.items.map((item) => ({
+  src: item.image,
+  alt: item.description,
+  label: item.title,
+}));
 
 // Real projects from Enikkom documents - each with unique thumbnail
 const defaultProjects = [
