@@ -1,70 +1,45 @@
-import { LucideIcon, Shield, Clock, Award, Users } from "lucide-react";
+import { experienceYears } from "@/content/home";
+import { RecordMetric } from "@/components/records";
 
 interface KPIStat {
   value: string;
   label: string;
-  icon?: LucideIcon;
   suffix?: string;
+  /** Optional provenance line, e.g. "Register 1995–2025" */
+  note?: string;
 }
 
 interface KPIStatsBandProps {
   stats?: KPIStat[];
+  /** Legacy prop, accepted for compatibility. */
   variant?: "light" | "dark";
 }
 
 const defaultStats: KPIStat[] = [
-  { value: "100", label: "KM HDD Installed", icon: Shield, suffix: "+" },
-  { value: "500", label: "Workforce", icon: Users, suffix: "+" },
-  { value: "34", label: "Years Experience", icon: Clock },
-  { value: "0", label: "LTI Record", icon: Award },
+  { value: "100", suffix: "+", label: "KM HDD Installed" },
+  { value: "500", suffix: "+", label: "Workforce" },
+  { value: experienceYears, label: "Years Experience" },
+  { value: "0", label: "LTI Record" },
 ];
 
-/** KPI stat band, in the `.enk` design language. */
-export function KPIStatsBand({ stats = defaultStats, variant = "dark" }: KPIStatsBandProps) {
-  const dark = variant === "dark";
-
+/** Recorded figures presented as ledger entries — no icons, no count-ups. */
+export function KPIStatsBand({ stats = defaultStats }: KPIStatsBandProps) {
   return (
     <section
-      className="enk-section"
-      style={{ backgroundColor: dark ? "var(--enk-navy)" : "var(--enk-bg-muted)" }}
+      className="enk-section--tight"
+      style={{ backgroundColor: "var(--enk-bg-muted)", borderBottom: "1px solid var(--enk-rule)" }}
     >
       <div className="enk-container">
-        <dl className="grid grid-cols-2 gap-8 lg:grid-cols-4">
-          {stats.map((stat) => {
-            const Icon = stat.icon;
-            return (
-              <div key={stat.label} className="text-center">
-                {Icon && (
-                  <div
-                    className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-md"
-                    style={{
-                      backgroundColor: dark ? "oklch(1 0 0 / 0.08)" : "var(--enk-accent-subtle)",
-                      color: dark ? "var(--enk-on-dark)" : "var(--enk-bronze)",
-                    }}
-                    aria-hidden="true"
-                  >
-                    <Icon className="h-6 w-6" />
-                  </div>
-                )}
-                <dd
-                  className={`enk-display text-[clamp(2rem,5vw,3rem)] leading-none ${
-                    dark ? "text-[var(--enk-on-dark)]" : "text-[var(--enk-ink)]"
-                  }`}
-                >
-                  {stat.value}
-                  {stat.suffix}
-                </dd>
-                <dt
-                  className={`mt-2 text-[12px] font-semibold uppercase tracking-[0.1em] ${
-                    dark ? "text-[var(--enk-on-dark-muted)]" : "text-[var(--enk-steel)]"
-                  }`}
-                >
-                  {stat.label}
-                </dt>
-              </div>
-            );
-          })}
-        </dl>
+        <div className="grid grid-cols-2 gap-x-6 gap-y-8 lg:grid-cols-4">
+          {stats.map((stat) => (
+            <RecordMetric
+              key={stat.label}
+              label={stat.label}
+              value={`${stat.value}${stat.suffix ?? ""}`}
+              note={stat.note}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

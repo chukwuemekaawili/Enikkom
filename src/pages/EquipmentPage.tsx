@@ -1,11 +1,11 @@
 import { Layout } from "@/components/layout";
+import SEO from "@/components/ui/SEO";
 import { Hero, CTABand } from "@/components/sections";
 import { EditableText } from "@/components/content";
 import { SectionHeading } from "@/components/home/SectionHeading";
 import { usePageContent } from "@/hooks/useSiteSettings";
-import { motion } from "framer-motion";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { EnhancedImage } from "@/components/ui/enhanced-image";
+import { FieldFigure, RecordMetric } from "@/components/records";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import {
@@ -15,8 +15,25 @@ import {
   microTunnelingSpecs,
   marineFleetSpecs,
   supportFleetSpecs,
+  hddSupportSystems,
 } from "@/content/equipmentSpecs";
 import { siteImageSelections } from "@/content/siteImageSelections";
+
+/** Squared, ruled register frame shared by every fleet table on this page. */
+function RegisterFrame({ children }: { children: React.ReactNode }) {
+  return (
+    <div
+      className="overflow-x-auto rounded-[var(--enk-radius-record)] border"
+      style={{ borderColor: "var(--enk-rule-strong)", backgroundColor: "var(--enk-record-surface)" }}
+    >
+      {children}
+    </div>
+  );
+}
+
+const headCls = "enk-overline !text-[10.5px] whitespace-nowrap";
+const cellCls = "text-[13px]";
+const monoCls = "enk-mono text-[12.5px] whitespace-nowrap";
 
 export default function EquipmentPage() {
   const { content } = usePageContent('equipment');
@@ -27,131 +44,98 @@ export default function EquipmentPage() {
 
   return (
     <Layout>
+      <SEO
+        title="Equipment – Fleet Specs & Capacity – Enikkom"
+        description="Document-backed technical capacity: West Africa's largest HDD fleet, thrust boring, microtunneling, marine, and support equipment with model-level ratings."
+        canonical="/equipment"
+      />
       <Hero
         title={heroContent.title || "Technical Capacity & Equipment Fleet"}
-        subtitle={heroContent.subtitle || "Document-backed technical capacity for Enikkom's HDD, trench boring, microtunneling, marine, and support fleets. Model-specific engineering ratings now replace the old generic equipment copy."}
-        badge={heroContent.badge || "Nigeria's Largest HDD Fleet"}
-        primaryCTA={{ label: heroContent.primaryBtnText || "View HDD Equipment Details", href: heroContent.primaryBtnLink || "/equipment/hdd" }}
+        subtitle={heroContent.subtitle || "Document-backed technical capacity across Enikkom's HDD, thrust boring, microtunneling, marine, and support fleets, with model-specific engineering ratings for every major asset class."}
+        badge={heroContent.badge || "Equipment Register"}
+        primaryCTA={{ label: heroContent.primaryBtnText || "View HDD Fleet", href: heroContent.primaryBtnLink || "#hdd" }}
         backgroundImage={heroContent.backgroundImage || equipmentImages.hero}
         size="default"
-        pageSlug="equipment"
-        sectionKey="hero"
-        imageField="backgroundImage"
       />
 
-      {/* Fleet Overview Stats */}
-      <section className="py-12">
-        <div className="container-wide">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[
-              { value: "500T", label: "Top HDD Pullback Class" },
-              { value: "4,893 kN", label: "DD-1100 Max Thrust" },
-              { value: "1.2M lb", label: "Largest Thrust Boring Rating" },
-              { value: "2 CSDs", label: "Owned Cutter Suction Dredgers" },
-            ].map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: index * 0.1 }}
-                className="text-center p-5 rounded-xl bg-white/5 border border-white/10"
-              >
-                <div className="text-2xl md:text-3xl font-bold text-primary mb-1">{stat.value}</div>
-                <div className="text-xs md:text-sm text-white/60">{stat.label}</div>
-              </motion.div>
-            ))}
+      {/* Fleet capacity figures */}
+      <section className="enk-section--tight" style={{ borderBottom: "1px solid var(--enk-rule)" }}>
+        <div className="enk-container">
+          <div className="grid grid-cols-2 gap-x-6 gap-y-8 md:grid-cols-4">
+            <RecordMetric label="Top HDD Pullback Class" value="500" unit="T" />
+            <RecordMetric label="DD-1100 Max Thrust" value="4,893" unit="kN" />
+            <RecordMetric label="Largest Thrust Boring Rating" value="1.2M" unit="lb" />
+            <RecordMetric label="Owned Cutter Suction Dredgers" value="2" unit="CSDs" />
           </div>
         </div>
       </section>
 
       {/* HDD Rig Fleet */}
-      <section className="section-padding">
-        <div className="container-wide">
-          <motion.div 
-            className="flex items-center justify-between mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <div>
-              <p className="enk-kicker mb-2">Core Fleet</p>
-              <h2 className="mb-2">
-                <EditableText
-                  value={hddContent.title || "HDD Rig Fleet"}
-                  pageSlug="equipment"
-                  sectionKey="hdd_fleet"
-                  field="title"
-                />
-              </h2>
-              <p className="text-[14px] md:text-[15px] text-muted-foreground max-w-2xl">
-                <EditableText
-                  value={hddContent.description || "Model-by-model HDD ratings sourced from the technical capacity sheets. DD-1100 and DD-1100 RS are shown as separate 500-ton rigs, and the table now uses rated thrust, kN conversions, torque, power, and fluid-flow figures instead of generic diameter claims."}
-                  pageSlug="equipment"
-                  sectionKey="hdd_fleet"
-                  field="description"
-                />
-              </p>
-            </div>
-            <Link 
-              to="/equipment/hdd" 
-              className="hidden md:flex items-center gap-2 text-primary hover:underline text-sm font-medium"
-            >
-              View Full Specifications <ArrowRight className="h-4 w-4" />
-            </Link>
-          </motion.div>
+      <section id="hdd" className="enk-section scroll-mt-24" style={{ borderBottom: "1px solid var(--enk-rule)" }}>
+        <div className="enk-container">
+          <SectionHeading
+            kicker="Core Fleet"
+            title={
+              <EditableText
+                value={hddContent.title || "HDD Rig Fleet"}
+                pageSlug="equipment"
+                sectionKey="hdd_fleet"
+                field="title"
+              />
+            }
+            intro={
+              <EditableText
+                value={hddContent.description || "Model-by-model HDD ratings from our technical capacity schedule. The DD-1100 and DD-1100 RS are listed as separate 500-ton rigs, with rated thrust (and kN conversions), rotary torque, power, and fluid-flow figures for each unit."}
+                pageSlug="equipment"
+                sectionKey="hdd_fleet"
+                field="description"
+              />
+            }
+          />
 
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }} 
-            whileInView={{ opacity: 1, y: 0 }} 
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: 0.1 }}
-          >
-            <div className="overflow-x-auto rounded-xl border border-border">
+          <div className="mt-8">
+            <RegisterFrame>
               <Table>
                 <TableHeader>
-                  <TableRow className="bg-muted/50">
-                    <TableHead className="font-semibold">Model</TableHead>
-                    <TableHead className="font-semibold">Inventory Label</TableHead>
-                    <TableHead className="font-semibold">Pullback Class</TableHead>
-                    <TableHead className="font-semibold">Rated Thrust / kN</TableHead>
-                    <TableHead className="font-semibold">Rotary Torque</TableHead>
-                    <TableHead className="font-semibold">Power / Flow</TableHead>
-                    <TableHead className="font-semibold">Qty</TableHead>
-                    <TableHead className="font-semibold">Year</TableHead>
+                  <TableRow style={{ backgroundColor: "var(--enk-record-inset)" }}>
+                    <TableHead className={headCls}>Model</TableHead>
+                    <TableHead className={headCls}>Inventory Label</TableHead>
+                    <TableHead className={headCls}>Pullback Class</TableHead>
+                    <TableHead className={headCls}>Rated Thrust / kN</TableHead>
+                    <TableHead className={headCls}>Rotary Torque</TableHead>
+                    <TableHead className={headCls}>Power / Flow</TableHead>
+                    <TableHead className={headCls}>Qty</TableHead>
+                    <TableHead className={headCls}>Year</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
                   {hddRigSpecs.map((item, i) => (
-                    <TableRow key={i} className="hover:bg-muted/30 transition-colors">
-                      <TableCell className="font-medium text-[13px]">
+                    <TableRow key={i} className="hover:bg-white/[0.04] transition-colors">
+                      <TableCell className={`${cellCls} font-medium`}>
                         {item.model}
                         {(item.model === "American Augers DD-1100" || item.model === "American Augers DD-1100 RS") && (
-                          <span className="enk-chip ml-2 text-[9px]">
-                            500T
-                          </span>
+                          <span className="enk-chip ml-2">500T</span>
                         )}
                       </TableCell>
-                      <TableCell className="text-[13px] text-muted-foreground whitespace-nowrap">{item.inventoryLabel}</TableCell>
-                      <TableCell className="text-[13px] text-primary font-semibold whitespace-nowrap">{item.pullbackClass}</TableCell>
-                      <TableCell className="text-[13px] text-muted-foreground min-w-[190px]">{item.thrustRating}</TableCell>
-                      <TableCell className="text-[13px] text-muted-foreground min-w-[170px]">{item.rotaryTorque}</TableCell>
-                      <TableCell className="text-[13px] text-muted-foreground min-w-[210px]">
+                      <TableCell className={`${monoCls} text-[var(--enk-blueprint)]`}>{item.inventoryLabel}</TableCell>
+                      <TableCell className={`${monoCls} font-semibold text-[var(--enk-accent-on-dark)]`}>{item.pullbackClass}</TableCell>
+                      <TableCell className={`${cellCls} min-w-[190px] text-[var(--enk-steel)]`}>{item.thrustRating}</TableCell>
+                      <TableCell className={`${cellCls} min-w-[170px] text-[var(--enk-steel)]`}>{item.rotaryTorque}</TableCell>
+                      <TableCell className={`${cellCls} min-w-[210px] text-[var(--enk-steel)]`}>
                         <div>{item.power}</div>
-                        <div className="text-[11px] mt-1">{item.fluidFlow}</div>
+                        <div className="mt-1 text-[11px]">{item.fluidFlow}</div>
                       </TableCell>
-                      <TableCell className="text-[13px]">{item.quantity}</TableCell>
-                      <TableCell className="text-[13px]">{item.year}</TableCell>
+                      <TableCell className={monoCls}>{item.quantity}</TableCell>
+                      <TableCell className={monoCls}>{item.year}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
               </Table>
-            </div>
-            <p className="text-[12px] text-muted-foreground mt-3">
+            </RegisterFrame>
+            <p className="enk-mono mt-3 text-[11px] leading-[1.6] text-[var(--enk-blueprint)]">
               {equipmentSourceNote}
             </p>
-            <div className="grid md:grid-cols-2 gap-3 mt-4">
+            <div className="mt-4 grid gap-3 md:grid-cols-2">
               {hddRigSpecs.filter((item) =>
                 [
                   "American Augers DD-580",
@@ -160,220 +144,205 @@ export default function EquipmentPage() {
                   "American Augers DD-625",
                 ].includes(item.model)
               ).map((item) => (
-                <div key={item.model} className="rounded-xl border border-border bg-muted/20 p-4">
-                  <p className="text-[12px] font-semibold text-foreground mb-1">{item.model}</p>
-                  <p className="text-[12px] text-muted-foreground leading-relaxed">{item.note}</p>
+                <div key={item.model} className="enk-doc-card p-4">
+                  <p className="enk-overline !text-[10px]">Unit Note</p>
+                  <p className="mt-2 text-[12.5px] font-semibold text-[var(--enk-ink)]">{item.model}</p>
+                  <p className="mt-1 text-[12.5px] leading-6 text-[var(--enk-steel)]">{item.note}</p>
                 </div>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Thrust Boring Machines */}
-      <section className="section-padding bg-muted/30">
-        <div className="container-wide">
-          <motion.div 
-            className="mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <p className="enk-kicker mb-2">Trenchless Technology</p>
-            <h2 className="mb-2">
+      {/* HDD Support Systems & Downhole Equipment */}
+      <section className="enk-section" style={{ borderBottom: "1px solid var(--enk-rule)" }}>
+        <div className="enk-container">
+          <SectionHeading kicker="Support Systems" title={<>HDD Support Systems &amp; Downhole Equipment</>} />
+          <div className="mt-8">
+            <RegisterFrame>
+              <Table>
+                <TableHeader>
+                  <TableRow style={{ backgroundColor: "var(--enk-record-inset)" }}>
+                    <TableHead className={headCls}>System</TableHead>
+                    <TableHead className={headCls}>Documented Detail</TableHead>
+                    <TableHead className={headCls}>Qty</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {hddSupportSystems.map((item, i) => (
+                    <TableRow key={i} className="hover:bg-white/[0.04] transition-colors">
+                      <TableCell className={`${cellCls} font-medium`}>{item.system}</TableCell>
+                      <TableCell className={`${cellCls} text-[var(--enk-steel)]`}>{item.detail}</TableCell>
+                      <TableCell className={monoCls}>{item.quantity}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </RegisterFrame>
+          </div>
+        </div>
+      </section>
+
+      {/* Thrust Boring & Micro Tunnelling */}
+      <section className="enk-section" style={{ backgroundColor: "var(--enk-bg-muted)", borderBottom: "1px solid var(--enk-rule)" }}>
+        <div className="enk-container">
+          <SectionHeading
+            kicker="Trenchless Technology"
+            title={
               <EditableText
                 value={thrustContent.title || "Thrust Boring & Micro Tunnelling"}
                 pageSlug="equipment"
                 sectionKey="thrust_boring"
                 field="title"
               />
-            </h2>
-            <p className="text-[14px] md:text-[15px] text-muted-foreground max-w-2xl">
+            }
+            intro={
               <EditableText
                 value={thrustContent.description || "Rated push-capacity schedules for the American Augers thrust boring fleet and the dedicated microtunneling / pipe pusher spreads in the equipment register."}
                 pageSlug="equipment"
                 sectionKey="thrust_boring"
                 field="description"
               />
-            </p>
-          </motion.div>
+            }
+          />
 
-          <div className="grid md:grid-cols-2 gap-6">
-            {/* Thrust Boring */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }} 
-              whileInView={{ opacity: 1, y: 0 }} 
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.1 }}
-            >
-              <h3 className="text-lg font-semibold mb-4">Thrust Boring Machines</h3>
-              <div className="overflow-x-auto rounded-xl border border-border bg-card">
+          <div className="mt-8 grid gap-6 md:grid-cols-2">
+            <div>
+              <p className="enk-overline mb-3">Thrust Boring Machines</p>
+              <RegisterFrame>
                 <Table>
                   <TableHeader>
-                    <TableRow className="bg-muted/50">
-                      <TableHead className="font-semibold">Equipment</TableHead>
-                      <TableHead className="font-semibold">Make</TableHead>
-                      <TableHead className="font-semibold">Rated Capacity</TableHead>
-                      <TableHead className="font-semibold">Year</TableHead>
-                      <TableHead className="font-semibold">Qty</TableHead>
+                    <TableRow style={{ backgroundColor: "var(--enk-record-inset)" }}>
+                      <TableHead className={headCls}>Equipment</TableHead>
+                      <TableHead className={headCls}>Make</TableHead>
+                      <TableHead className={headCls}>Rated Capacity</TableHead>
+                      <TableHead className={headCls}>Year</TableHead>
+                      <TableHead className={headCls}>Qty</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
                     {thrustBoringSpecs.map((item, i) => (
-                      <TableRow key={i} className="hover:bg-muted/30 transition-colors">
-                        <TableCell className="font-medium text-[13px]">{item.equipment}</TableCell>
-                        <TableCell className="text-[13px]">{item.make}</TableCell>
-                        <TableCell className="text-[13px] text-muted-foreground">{item.rating}</TableCell>
-                        <TableCell className="text-[13px]">{item.year}</TableCell>
-                        <TableCell className="text-[13px]">{item.quantity}</TableCell>
+                      <TableRow key={i} className="hover:bg-white/[0.04] transition-colors">
+                        <TableCell className={`${cellCls} font-medium`}>{item.equipment}</TableCell>
+                        <TableCell className={cellCls}>{item.make}</TableCell>
+                        <TableCell className={`${cellCls} text-[var(--enk-steel)]`}>{item.rating}</TableCell>
+                        <TableCell className={monoCls}>{item.year}</TableCell>
+                        <TableCell className={monoCls}>{item.quantity}</TableCell>
                       </TableRow>
                     ))}
                   </TableBody>
                 </Table>
-              </div>
-            </motion.div>
+              </RegisterFrame>
+            </div>
 
-            {/* Micro Tunnelling */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }} 
-              whileInView={{ opacity: 1, y: 0 }} 
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.2 }}
-            >
-              <h3 className="text-lg font-semibold mb-4">Micro Tunnelling Equipment</h3>
-              <div className="overflow-x-auto rounded-xl border border-border bg-card">
+            <div>
+              <p className="enk-overline mb-3">Micro Tunnelling Equipment</p>
+              <RegisterFrame>
                 <Table>
                   <TableHeader>
-                    <TableRow className="bg-muted/50">
-                      <TableHead className="font-semibold">Equipment</TableHead>
-                      <TableHead className="font-semibold">Make</TableHead>
-                      <TableHead className="font-semibold">Rated Capacity</TableHead>
-                      <TableHead className="font-semibold">Year</TableHead>
-                      <TableHead className="font-semibold">Qty</TableHead>
+                    <TableRow style={{ backgroundColor: "var(--enk-record-inset)" }}>
+                      <TableHead className={headCls}>Equipment</TableHead>
+                      <TableHead className={headCls}>Make</TableHead>
+                      <TableHead className={headCls}>Rated Capacity</TableHead>
+                      <TableHead className={headCls}>Year</TableHead>
+                      <TableHead className={headCls}>Qty</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
                     {microTunnelingSpecs.map((item, i) => (
-                      <TableRow key={i} className="hover:bg-muted/30 transition-colors">
-                        <TableCell className="font-medium text-[13px]">{item.equipment}</TableCell>
-                        <TableCell className="text-[13px]">{item.make}</TableCell>
-                        <TableCell className="text-[13px] text-muted-foreground">{item.rating}</TableCell>
-                        <TableCell className="text-[13px]">{item.year}</TableCell>
-                        <TableCell className="text-[13px]">{item.quantity}</TableCell>
+                      <TableRow key={i} className="hover:bg-white/[0.04] transition-colors">
+                        <TableCell className={`${cellCls} font-medium`}>{item.equipment}</TableCell>
+                        <TableCell className={cellCls}>{item.make}</TableCell>
+                        <TableCell className={`${cellCls} text-[var(--enk-steel)]`}>{item.rating}</TableCell>
+                        <TableCell className={monoCls}>{item.year}</TableCell>
+                        <TableCell className={monoCls}>{item.quantity}</TableCell>
                       </TableRow>
                     ))}
                   </TableBody>
                 </Table>
-              </div>
-            </motion.div>
+              </RegisterFrame>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Marine & Support Equipment */}
-      <section className="section-padding">
-        <div className="container-wide">
-          <motion.div
-            className="mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <SectionHeading
-              kicker="Marine & Support"
-              title={<>Marine & Support Equipment</>}
-              intro="Detailed marine, civil, and logistics fleet groupings from the owned-equipment schedule, including dredgers, excavators, sidebooms, cranes, transport, generators, and field vehicles."
-            />
-          </motion.div>
+      <section className="enk-section" style={{ borderBottom: "1px solid var(--enk-rule)" }}>
+        <div className="enk-container">
+          <SectionHeading
+            kicker="Marine & Support"
+            title={<>Marine &amp; Support Equipment</>}
+            intro="Detailed marine, civil, and logistics fleet groupings from the owned-equipment schedule, including dredgers, excavators, sidebooms, cranes, transport, generators, and field vehicles."
+          />
 
-          <div className="grid md:grid-cols-2 gap-6">
-            {/* Marine */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }} 
-              whileInView={{ opacity: 1, y: 0 }} 
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.1 }}
-            >
-              <h3 className="text-lg font-semibold mb-4">Marine Equipment</h3>
-              <div className="overflow-x-auto rounded-xl border border-border bg-card">
+          <div className="mt-8 grid gap-6 md:grid-cols-2">
+            <div>
+              <p className="enk-overline mb-3">Marine Equipment</p>
+              <RegisterFrame>
                 <Table>
                   <TableHeader>
-                    <TableRow className="bg-muted/50">
-                      <TableHead className="font-semibold">Asset Category</TableHead>
-                      <TableHead className="font-semibold">Documented Detail</TableHead>
-                      <TableHead className="font-semibold">Qty</TableHead>
+                    <TableRow style={{ backgroundColor: "var(--enk-record-inset)" }}>
+                      <TableHead className={headCls}>Asset Category</TableHead>
+                      <TableHead className={headCls}>Documented Detail</TableHead>
+                      <TableHead className={headCls}>Qty</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
                     {marineFleetSpecs.map((item, i) => (
-                      <TableRow key={i} className="hover:bg-muted/30 transition-colors">
-                        <TableCell className="font-medium text-[13px]">{item.category}</TableCell>
-                        <TableCell className="text-[13px] text-muted-foreground">{item.detail}</TableCell>
-                        <TableCell className="text-[13px]">{item.quantity}</TableCell>
+                      <TableRow key={i} className="hover:bg-white/[0.04] transition-colors">
+                        <TableCell className={`${cellCls} font-medium`}>{item.category}</TableCell>
+                        <TableCell className={`${cellCls} text-[var(--enk-steel)]`}>{item.detail}</TableCell>
+                        <TableCell className={monoCls}>{item.quantity}</TableCell>
                       </TableRow>
                     ))}
                   </TableBody>
                 </Table>
-              </div>
-            </motion.div>
+              </RegisterFrame>
+            </div>
 
-            {/* Support */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }} 
-              whileInView={{ opacity: 1, y: 0 }} 
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.2 }}
-            >
-              <h3 className="text-lg font-semibold mb-4">Support Equipment</h3>
-              <div className="mb-4 overflow-hidden rounded-xl border border-border bg-card">
-                <EnhancedImage
+            <div>
+              <p className="enk-overline mb-3">Support Equipment</p>
+              <FieldFigure
                 src={equipmentImages.support}
-                  alt="Heavy transport and support fleet assets mobilized for field operations"
-                  wrapperClassName="aspect-[16/10]"
-                  className="h-full w-full"
-                  tone="natural"
-                  fallbackLabel="Support fleet reference"
-                />
-                <div className="border-t border-border px-4 py-3">
-                  <p className="text-[13px] font-semibold text-foreground">Heavy Transport & Support Fleet Reference</p>
-                  <p className="mt-1 text-[12px] text-muted-foreground">
-                    Documentary fleet image used in place of the old logo-style placeholder so the support section reflects the actual transport, power, and field-logistics capability listed in the equipment schedule.
-                  </p>
-                </div>
-              </div>
-              <div className="overflow-x-auto rounded-xl border border-border bg-card">
+                alt="Heavy transport and support fleet assets mobilized for field operations"
+                figNo="FIG 01"
+                caption="Heavy transport and support fleet mobilized to keep project sites supplied and running"
+                ratio="16/10"
+                className="mb-4"
+              />
+              <RegisterFrame>
                 <Table>
                   <TableHeader>
-                    <TableRow className="bg-muted/50">
-                      <TableHead className="font-semibold">Fleet Category</TableHead>
-                      <TableHead className="font-semibold">Documented Detail</TableHead>
-                      <TableHead className="font-semibold">Qty</TableHead>
+                    <TableRow style={{ backgroundColor: "var(--enk-record-inset)" }}>
+                      <TableHead className={headCls}>Fleet Category</TableHead>
+                      <TableHead className={headCls}>Documented Detail</TableHead>
+                      <TableHead className={headCls}>Qty</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
                     {supportFleetSpecs.map((item, i) => (
-                      <TableRow key={i} className="hover:bg-muted/30 transition-colors">
-                        <TableCell className="font-medium text-[13px]">{item.category}</TableCell>
-                        <TableCell className="text-[13px] text-muted-foreground">{item.detail}</TableCell>
-                        <TableCell className="text-[13px]">{item.quantity}</TableCell>
+                      <TableRow key={i} className="hover:bg-white/[0.04] transition-colors">
+                        <TableCell className={`${cellCls} font-medium`}>{item.category}</TableCell>
+                        <TableCell className={`${cellCls} text-[var(--enk-steel)]`}>{item.detail}</TableCell>
+                        <TableCell className={monoCls}>{item.quantity}</TableCell>
                       </TableRow>
                     ))}
                   </TableBody>
                 </Table>
-              </div>
-            </motion.div>
+              </RegisterFrame>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Partnership Note */}
-      <section className="py-12 bg-muted/40 border-y border-border">
-        <div className="container-wide">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+      <section className="enk-section--tight" style={{ backgroundColor: "var(--enk-bg-muted)", borderBottom: "1px solid var(--enk-rule)" }}>
+        <div className="enk-container">
+          <div className="enk-doc-card flex flex-col items-start justify-between gap-6 p-6 md:flex-row md:items-center md:p-7">
             <div>
-              <h3 className="text-lg font-semibold mb-2">
+              <p className="enk-overline">Technical Partnership</p>
+              <h3 className="mt-2 text-[17px] font-semibold text-[var(--enk-ink)]">
                 <EditableText
                   value={content.partnership?.title || "Technical Partnership with HDDThailand Co. Ltd"}
                   pageSlug="equipment"
@@ -381,7 +350,7 @@ export default function EquipmentPage() {
                   field="title"
                 />
               </h3>
-              <p className="text-[14px] text-muted-foreground max-w-2xl">
+              <p className="mt-2 max-w-2xl text-[13.5px] leading-6 text-[var(--enk-steel)]">
                 <EditableText
                   value={content.partnership?.description || "HDDThailand Co. Ltd is an international trenchless specialist with over 15 years of experience. HDDThailand provides engineering services, project management services, and quality assurance procedures consistent with ISO-9001 certification for all directional drilling projects. This collaboration brings proven trenchless technology to the oil and gas industry."}
                   pageSlug="equipment"
@@ -390,21 +359,19 @@ export default function EquipmentPage() {
                 />
               </p>
             </div>
-            <Link to="/contact" className="shrink-0">
-              <button className="btn-primary">
-                Download Equipment Sheet
-                <ArrowRight className="h-4 w-4 ml-2" />
-              </button>
+            <Link to="/contact" className="enk-btn enk-btn--gold shrink-0">
+              Request Equipment Schedule
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </div>
         </div>
       </section>
 
-      <CTABand 
+      <CTABand
         headline={content.cta?.headline || "Need Equipment for Your Project?"}
         subhead={content.cta?.subhead || "Access West Africa's largest HDD fleet. Get availability and specifications within 24 hours."}
-        primaryCTA={{ label: "Check Equipment Availability", href: "/contact" }} 
-        secondaryCTA={{ label: "View HDD Fleet Details", href: "/equipment/hdd" }}
+        primaryCTA={{ label: "Check Equipment Availability", href: "/contact" }}
+        secondaryCTA={{ label: "View HDD Capability Statement", href: "/capabilities/hdd" }}
       />
     </Layout>
   );

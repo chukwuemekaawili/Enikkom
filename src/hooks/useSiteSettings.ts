@@ -87,17 +87,21 @@ export function useSiteSettings(): SiteSettings {
 // Legacy adapters retained so existing pages compile. With no backend there is
 // no dynamic content, so every page renders its own hard-coded defaults.
 export function usePageContent(_pageSlug: string) {
-  return { content: {} as Record<string, unknown>, isLoading: false };
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  return { content: {} as Record<string, any>, isLoading: false };
 }
 
 export function useTeamMembers(_category?: string) {
-  return { members: [] as unknown[], isLoading: false };
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  return { members: [] as any[], isLoading: false };
 }
 
 export function useGalleryItems() {
-  return { items: [] as unknown[], isLoading: false };
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  return { items: [] as any[], isLoading: false };
 }
 
 export function useCollection(_key: string) {
-  return { data: [] as unknown[], isLoading: false };
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  return { data: [] as any[], isLoading: false };
 }

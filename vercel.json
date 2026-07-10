@@ -1,3 +1,25 @@
 {
+  "redirects": [
+    { "source": "/about-us", "destination": "/about", "permanent": true },
+    { "source": "/company-introduction", "destination": "/about", "permanent": true },
+    { "source": "/services", "destination": "/capabilities", "permanent": true },
+    { "source": "/our-services", "destination": "/capabilities", "permanent": true },
+    { "source": "/portfolio", "destination": "/projects", "permanent": true },
+    { "source": "/gallery", "destination": "/projects#gallery", "permanent": true },
+    { "source": "/completed-projects", "destination": "/projects#record", "permanent": true },
+    { "source": "/faqs", "destination": "/#faq", "permanent": true },
+    { "source": "/enquires", "destination": "/contact", "permanent": true },
+    { "source": "/contact-us", "destination": "/contact", "permanent": true },
+    { "source": "/equipment/hdd", "destination": "/equipment", "permanent": true },
+    { "source": "/hdd-equipment", "destination": "/equipment", "permanent": true },
+    { "source": "/capabilities/logistics", "destination": "/equipment", "permanent": true },
+    { "source": "/sustainability", "destination": "/hse-quality", "permanent": true },
+    { "source": "/news-insights", "destination": "/resources", "permanent": true },
+    { "source": "/testimonials", "destination": "/projects", "permanent": true },
+    { "source": "/management-team", "destination": "/about/leadership", "permanent": true },
+    { "source": "/blog", "destination": "/", "permanent": true },
+    { "source": "/blog/:path*", "destination": "/", "permanent": true },
+    { "source": "/news/:path*", "destination": "/", "permanent": true }
+  ],
   "rewrites": [{ "source": "/(.*)", "destination": "/" }]
 }

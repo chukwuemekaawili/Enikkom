@@ -1,4 +1,5 @@
 import { Layout } from "@/components/layout";
+import SEO from "@/components/ui/SEO";
 import { usePageContent } from "@/hooks/useSiteSettings";
 import { EditableText } from "@/components/content";
 
@@ -8,9 +9,15 @@ export default function PrivacyPage() {
 
   return (
     <Layout>
+      <SEO
+        title="Privacy Policy – Enikkom"
+        description="How Enikkom Construction collects, uses, and protects your personal information."
+        canonical="/privacy"
+      />
       <div className="section-padding">
         <div className="container-wide max-w-4xl">
-          <h1 className="mb-8">
+          <p className="enk-kicker mb-4">Legal Document</p>
+          <h1 className="mb-3">
             <EditableText
               value={pageContent.title || "Privacy Policy"}
               pageSlug="privacy"
@@ -18,9 +25,9 @@ export default function PrivacyPage() {
               field="title"
             />
           </h1>
-          
+
           <div className="prose prose-lg max-w-none">
-            <p className="text-muted-foreground text-lg mb-8">
+            <p className="enk-mono mb-8 border-b pb-6 text-[12px] uppercase tracking-[0.08em] text-[var(--enk-blueprint)]" style={{ borderColor: "var(--enk-rule)" }}>
               <EditableText
                 value={pageContent.last_updated || "Last updated: January 2025"}
                 pageSlug="privacy"

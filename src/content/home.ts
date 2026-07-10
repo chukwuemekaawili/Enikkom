@@ -40,6 +40,17 @@ export interface NavMenu {
 
 export const navMenus: NavMenu[] = [
   {
+    label: "Company",
+    href: "/about",
+    items: [
+      { label: "Company Overview", href: "/about" },
+      { label: "Leadership", href: "/about/leadership" },
+      { label: "Partners & Affiliates", href: "/partners" },
+      { label: "Careers", href: "/careers" },
+      { label: "Sustainability", href: "/hse-quality#sustainability" },
+    ],
+  },
+  {
     label: "Capabilities",
     href: "/capabilities",
     items: [
@@ -53,7 +64,7 @@ export const navMenus: NavMenu[] = [
     ],
   },
   {
-    label: "Projects",
+    label: "Project Records",
     href: "/projects",
     items: [
       { label: "Featured Projects", href: "/projects" },
@@ -68,7 +79,7 @@ export const navMenus: NavMenu[] = [
     href: "/equipment",
     items: [
       { label: "Fleet Overview", href: "/equipment" },
-      { label: "HDD & Trenchless Equipment", href: "/equipment/hdd" },
+      { label: "HDD & Trenchless Equipment", href: "/equipment#hdd" },
       { label: "Equipment Specifications", href: "/resources" },
     ],
   },
@@ -76,27 +87,21 @@ export const navMenus: NavMenu[] = [
     label: "QHSE",
     href: "/hse-quality",
     items: [
-      { label: "Quality", href: "/hse-quality" },
-      { label: "Safety", href: "/hse-quality" },
-      { label: "Security", href: "/hse-quality" },
-      { label: "Community Management", href: "/hse-quality" },
-      { label: "Certifications", href: "/hse-quality" },
-      { label: "Download policies", href: "/resources" },
-    ],
-  },
-  {
-    label: "About",
-    href: "/about",
-    items: [
-      { label: "Company Overview", href: "/about" },
-      { label: "Leadership", href: "/management-team" },
-      { label: "Partners & Affiliates", href: "/partners" },
-      { label: "Careers", href: "/careers" },
-      { label: "Sustainability", href: "/sustainability" },
-      { label: "News & Insights", href: "/news-insights" },
+      { label: "QHSE Overview", href: "/hse-quality" },
+      { label: "Sustainability & Community", href: "/hse-quality#sustainability" },
+      { label: "Certifications & Policies", href: "/resources" },
     ],
   },
 ];
+
+/**
+ * Prefilled request for the QHSE/prequalification credentials pack.
+ * Shared by the header and footer so the wording never drifts.
+ */
+export const qhseCredentialsMailto =
+  `mailto:${contact.email}` +
+  `?subject=QHSE%20Credentials%20Request` +
+  `&body=Organisation%3A%0AProject%20context%3A%0ADocuments%20required%3A`;
 
 /** Dual-brand: one group, two delivery arms. */
 export const brand = {
@@ -104,191 +109,229 @@ export const brand = {
   microcopy: "Enikkom Construction: Pipeline Works  |  HDDTEC: Trenchless Operations",
 } as const;
 
-export interface Kpi {
-  value: string;
+/**
+ * Single source of truth for the "years of experience" figure. Derived from the
+ * 1995 founding (see AboutPage timeline) and expressed conservatively as "30+".
+ * Import this everywhere the figure is shown so it never drifts between pages.
+ */
+export const experienceYears = "30+";
+
+/** Hero cover-sheet metadata strip — factual scope-of-works line. */
+export const heroMeta = ["EST. 1995", "HDD", "PIPELINE", "DREDGING", "MARINE CIVILS", "NIGERIA"] as const;
+
+export interface ProofMetric {
   label: string;
+  value: string;
+  unit?: string;
+  /** Provenance line — names the source project or record where one exists. */
+  note: string;
+  /** Project-record route when the figure is tied to a named archive entry. */
+  href?: string;
 }
 
-/** Above-fold trust strip, sourced from the company history + QHSE records. */
-export const kpis: Kpi[] = [
-  { value: "30+", label: "Years of industry experience" },
-  { value: "100+", label: "Kilometres of HDD installed" },
-  { value: "500+", label: "Skilled workforce" },
-  { value: "5M+", label: "Safe man-hours" },
-  { value: "Zero", label: "Lost-time-injury record" },
+/**
+ * Homepage proof ledger — the record benchmarks and track-record figures,
+ * rendered as RecordMetric evidence entries (no animated counters). Values
+ * mirror the company history, QHSE records, and the /projects register.
+ */
+export const proofMetrics: ProofMetric[] = [
+  {
+    label: "Years of field delivery",
+    value: experienceYears,
+    note: "Established Lagos, 1995 — operating nationwide",
+  },
+  {
+    label: "Longest single HDD drill",
+    value: "3.1",
+    unit: "km",
+    note: 'Atlas Cove–Mosimi, 16" — Africa record (2016)',
+    href: "/projects/atlas-cove-mosimi",
+  },
+  {
+    label: "Longest continuous HDD",
+    value: "12",
+    unit: "km",
+    note: '10" OML34 drive for NPDC — Nigeria record (2021)',
+    href: "/projects/oml34-chdd",
+  },
+  {
+    label: "Largest-diameter crossing",
+    value: "48",
+    unit: "in",
+    note: "OB3 River Niger Direct Pipe installation",
+    href: "/projects/ob3-river-niger",
+  },
+  {
+    label: "HDD / pipeline installed",
+    value: "100+",
+    unit: "km",
+    note: "Transmission & distribution lines, welded, coated, tied-in",
+  },
+  {
+    label: "Workforce capacity",
+    value: "500+",
+    note: "Skilled personnel across active project fronts",
+  },
 ];
 
 export interface Capability {
   key: string;
+  /** Field-discipline reference code shown as a mono index, e.g. "D-01" */
+  code: string;
   name: string;
+  /** What Enikkom executes under this discipline */
   proof: string;
+  /** Where it applies — terrain / corridor / delivery context */
+  scope: string;
   href: string;
   image: string;
   imageAlt: string;
 }
 
+/** Field disciplines — the capability-statement set, in delivery order. */
 export const capabilities: Capability[] = [
   {
     key: "hdd",
-    name: "Horizontal Directional Drilling",
-    proof: "Trenchless river, road and swamp crossings up to 48-inch diameter and 12 km continuous drives.",
+    code: "D-01",
+    name: "HDD & Trenchless Crossings",
+    proof: "Horizontal directional drilling for river, road, rail and swamp crossings up to 48-inch diameter and 12 km continuous drives.",
+    scope: "Rivers, wetlands, live infrastructure and environmentally sensitive corridors.",
     href: "/capabilities/hdd",
     image: siteImageSelections.home.capabilityCards.hdd,
     imageAlt: "HDD drilling rig working on a remote crossing corridor.",
   },
   {
     key: "pipelines",
+    code: "D-02",
     name: "Pipeline & Flowline Construction",
-    proof: "100+ km of transmission and distribution pipeline installed, welded, coated and tied-in.",
+    proof: "Transmission and distribution pipeline installed, welded, coated and tied-in — 100+ km delivered on record.",
+    scope: "Onshore, swamp and shore-approach corridors for oil, gas and water.",
     href: "/capabilities/pipelines-flowlines",
     image: siteImageSelections.home.capabilityCards.pipelines,
     imageAlt: "Large-diameter pipeline laid along an active construction corridor.",
   },
   {
     key: "dredging",
-    name: "Dredging & Piling",
-    proof: "Channel dredging, shore approach and marine piling for difficult-terrain corridors.",
+    code: "D-03",
+    name: "Dredging & Marine Support",
+    proof: "Channel dredging, shore approach and marine piling to open and maintain access for difficult-terrain crossings.",
+    scope: "Lagoons, river channels and coastal shore approaches.",
     href: "/capabilities/dredging-piling",
     image: siteImageSelections.home.capabilityCards.dredging,
     imageAlt: "Marine dredging and piling equipment operating near a shore approach.",
   },
   {
     key: "facilities",
-    name: "Production Facilities",
-    proof: "Onshore and offshore flowlines, wellheads and integrated production facilities.",
+    code: "D-04",
+    name: "Production Facilities & Piling",
+    proof: "Onshore and offshore flowlines, wellheads, piling and integrated production facilities.",
+    scope: "Wellhead platforms, CPF/flow-station sites and civil foundations.",
     href: "/capabilities/facilities",
     image: siteImageSelections.home.capabilityCards.facilities,
     imageAlt: "Oil and gas production facilities and wellhead infrastructure.",
   },
   {
     key: "security",
+    code: "D-05",
     name: "Pipeline Security & Monitoring",
-    proof: "Right-of-way surveillance and integrity monitoring across active pipeline corridors.",
+    proof: "Right-of-way surveillance and integrity monitoring to keep corridors open and protected.",
+    scope: "Active transmission and distribution pipeline right-of-way.",
     href: "/capabilities/pipeline-security",
     image: siteImageSelections.services.security,
     imageAlt: "Pipeline right-of-way inspection and monitoring activity.",
   },
   {
     key: "pm",
-    name: "Project Management & Support",
-    proof: "Single-point EPCI delivery: engineering, procurement, fabrication, construction and installation.",
+    code: "D-06",
+    name: "Project Management & Controls",
+    proof: "Single-point EPCI delivery: engineering, procurement, fabrication, construction and installation under one contract.",
+    scope: "Feasibility and FEED through construction, testing and hand-over.",
     href: "/capabilities/project-management",
     image: siteImageSelections.capabilities.projectManagement,
     imageAlt: "Project management and field support team coordinating construction works.",
   },
 ];
 
-export interface Achievement {
-  value: string;
-  label: string;
-  context: string;
-  evidenceLabel: string;
-  evidenceHref: string;
-}
-
-/** Record achievements, sourced benchmarks. */
-export const achievements: Achievement[] = [
-  {
-    value: "3.1 km",
-    label: "Africa's longest single HDD drill",
-    context: '16" Arepo/Imagbon line, Atlas Cove-Mosimi pipeline (completed April 2016).',
-    evidenceLabel: "Atlas Cove-Mosimi record",
-    evidenceHref: "/projects/atlas-cove-mosimi",
-  },
-  {
-    value: "12 km",
-    label: "Nigeria's longest Continuous HDD",
-    context: '10" OML34 continuous drive delivered for NPDC (2021).',
-    evidenceLabel: "OML34 CHDD record",
-    evidenceHref: "/projects/oml34-chdd",
-  },
-  {
-    value: '48"',
-    label: "Largest-diameter river crossing",
-    context: "OB3 River Niger 48-inch Direct Pipe installation.",
-    evidenceLabel: "OB3 River Niger record",
-    evidenceHref: "/projects/ob3-river-niger",
-  },
-];
-
-export interface Project {
-  name: string;
-  location: string;
-  challenge: string;
-  result: string;
-  image: string;
-  imageAlt: string;
+export interface ProofRecord {
+  title: string;
   href: string;
-  feature?: boolean;
-  method?: string;
-  terrain?: string;
+  location: string;
+  /** Key dimensions, e.g. `16" × 3.1 km` — becomes the DIMENSIONS ledger row */
+  metric: string;
+  /** Technical descriptor; benchmark words auto-earn an amber RECORD stamp */
+  metricLabel: string;
+  year: string;
+  tags: string[];
+  thumbnail: string;
 }
 
-/** Featured projects, names, locations and specs sourced from ProjectsPage. */
-export const projects: Project[] = [
+/**
+ * Selected records surfaced from the /projects archive. Titles, dimensions,
+ * locations and years mirror the verified register entries on ProjectsPage;
+ * nothing here is invented. Rendered with ProjectRecordCard.
+ */
+export const proofRecords: ProofRecord[] = [
   {
-    name: "OML34 Continuous HDD",
-    location: "Utorogun, Delta State",
-    challenge: 'Installed a 10" line as a single continuous bore, Nigeria\'s longest CHDD.',
-    result: '10" × 12 km',
-    image: projImg("oml34-chdd") as string,
-    imageAlt: "Aerial view of the OML34 continuous HDD spread — blue drilling rig and equipment on a prepared pad amid green Delta terrain.",
+    title: 'Atlas Cove–Mosimi, 16" × 3.1 km',
+    href: "/projects/atlas-cove-mosimi",
+    location: "Arepo / Imagbon, Ogun State",
+    metric: '16" × 3.1 km',
+    metricLabel: "Africa's Longest Single HDD Drill",
+    year: "2016",
+    tags: ["HDD"],
+    thumbnail: projImg("atlas-cove-mosimi") as string,
+  },
+  {
+    title: 'OML34 Continuous HDD, 10" × 12 km',
     href: "/projects/oml34-chdd",
-    feature: true,
-    method: "Continuous HDD",
+    location: "Utorogun, Delta State",
+    metric: '10" × 12 km',
+    metricLabel: "Nigeria's Longest Continuous HDD",
+    year: "2021",
+    tags: ["HDD", "CHDD"],
+    thumbnail: projImg("oml34-chdd") as string,
   },
   {
-    name: "Dangote Fertilizer Lagoon Crossing",
-    location: "Ejirin, Lagos Lagoon",
-    challenge: "Swamp / lagoon crossing for Dangote Fertilizer through soft, variable ground.",
-    result: '36" × 2 km',
-    image: projImg("dangote-lagoon") as string,
-    imageAlt: "Crawler sideboom lowering a coated pipeline along a berm through swamp water on the Dangote Fertilizer lagoon crossing.",
-    href: "/projects/dangote-lagoon",
-    method: "HDD",
-    terrain: "Swamp / lagoon",
+    title: 'OB3 River Niger 48" Direct Pipe',
+    href: "/projects/ob3-river-niger",
+    location: "River Niger, Nigeria",
+    metric: '48" × 1.8 km',
+    metricLabel: "Largest-Diameter River Crossing",
+    year: "2020",
+    tags: ["HDD", "Direct Pipe"],
+    thumbnail: projImg("ob3-river-niger") as string,
   },
   {
-    name: "Yenagoa 40\" HDD Crossing",
-    location: "Bayelsa State",
-    challenge: "Heavy-diameter crossing, the largest pipeline crossing in Nigeria.",
-    result: '40" × 760 m',
-    image: projImg("yenagoa-40-crossing") as string,
-    imageAlt: "Yenagoa heavy-diameter HDD crossing construction site.",
+    title: '16" & 6" Nun River HDD Crossing',
+    href: "/projects/nun-river-dual-hdd",
+    location: "Niger Delta, Nigeria",
+    metric: '16" & 6"',
+    metricLabel: "Dual HDD Crossing, Nun River",
+    year: "2024",
+    tags: ["HDD"],
+    thumbnail: projImg("nun-river-dual-hdd") as string,
+  },
+  {
+    title: 'Yenagoa 40" HDD Crossing',
     href: "/projects/yenagoa-40-crossing",
-    method: "HDD",
+    location: "Bayelsa State, Nigeria",
+    metric: '40" × 760 m',
+    metricLabel: "Largest Pipeline Crossing in Nigeria",
+    year: "2010",
+    tags: ["HDD"],
+    thumbnail: projImg("yenagoa-40-crossing") as string,
   },
   {
-    name: "Otumara-Escravos Bundled HDD",
-    location: "Delta State",
-    challenge: 'Bundled 12"+3" multi-line HDD crossing for Saipem / SPDC.',
-    result: "2.78 km bundled",
-    image: projImg("otumara-escravos") as string,
-    imageAlt: "Bundled HDD pipeline crossing works in swamp terrain.",
-    href: "/projects/otumara-escravos",
-    method: "HDD (bundled)",
-    terrain: "Swamp",
+    title: 'Dangote Fertilizer Lagoon Crossing',
+    href: "/projects/dangote-lagoon",
+    location: "Ejirin, Lagos Lagoon",
+    metric: '36" × 2 km',
+    metricLabel: "Swamp / Lagoon HDD Crossing",
+    year: "2016",
+    tags: ["HDD", "Pipeline"],
+    thumbnail: projImg("dangote-lagoon") as string,
   },
 ];
-
-export const flagship = {
-  name: "Atlas Cove-Mosimi, 16\" × 3.1 km HDD",
-  client: "NNPC / PPMC",
-  image: (getProjectImage("atlas-cove-mosimi", "homeFeature") ||
-    getProjectImage("atlas-cove-mosimi", "hero")) as string,
-  imageAlt: "Atlas Cove-Mosimi HDD crossing works for the 16-inch by 3.1-kilometre pipeline record.",
-  challenge:
-    "Install a 16-inch line across the Arepo/Imagbon corridor as a single continuous HDD bore, the longest single drill attempted in Africa.",
-  method:
-    "Executed in April 2016 as one continuous drive, setting the African record for single-drill length while maintaining a zero lost-time-injury record.",
-  metrics: [
-    { value: '16"', label: "Pipe diameter" },
-    { value: "3.1 km", label: "Single drill length" },
-    { value: "2016", label: "Completed" },
-    { value: "Zero LTI", label: "Safety outcome" },
-  ],
-  href: "/projects/atlas-cove-mosimi",
-} as const;
 
 export interface Certification {
   code: string;

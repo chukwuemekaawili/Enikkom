@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { Layout } from "@/components/layout";
+import SEO from "@/components/ui/SEO";
 import { Hero, CTABand } from "@/components/sections";
 import { motion, AnimatePresence } from "framer-motion";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
@@ -121,7 +122,17 @@ const defaultBoardOfDirectors: TeamMember[] = [
 ];
 
 // Helper to convert DB team member to display format
-const convertDBMember = (dbMember: any): TeamMember => ({
+interface DBTeamMember {
+  name: string;
+  title: string;
+  bio?: string;
+  qualifications?: string;
+  photo_url?: string;
+  highlights?: string;
+  category?: string;
+}
+
+const convertDBMember = (dbMember: DBTeamMember): TeamMember => ({
   name: dbMember.name,
   role: dbMember.title,
   bio: dbMember.bio || '',
@@ -140,71 +151,59 @@ const TeamMemberCard = ({
   index: number;
   onSelect: (index: number) => void;
 }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.4, delay: (index % 3) * 0.05 }}
+  <button
+    type="button"
     onClick={() => onSelect(index)}
-    className="enk-card enk-card--hover overflow-hidden group cursor-pointer flex flex-col"
+    className="enk-doc-card enk-doc-card--interactive group flex h-full cursor-pointer flex-col overflow-hidden text-left focus-ring"
   >
-    {/* Photo */}
-    <div className="aspect-[4/3] relative overflow-hidden">
+    {/* Typed header row */}
+    <div className="flex min-h-[34px] items-center justify-between gap-3 border-b border-[var(--enk-rule)] px-4 py-1">
+      <p className="enk-overline !text-[10px]">Personnel Record</p>
+      <span className="enk-mono text-[11px] font-medium text-[var(--enk-blueprint)]">
+        {String(index + 1).padStart(2, "0")}
+      </span>
+    </div>
+
+    {/* Photo plate */}
+    <div className="relative aspect-[4/3] overflow-hidden border-b border-[var(--enk-rule)]">
       {member.photo ? (
         <EnhancedImage
           src={member.photo}
           alt={`${member.name}, ${member.role}, Enikkom Construction Limited`}
           wrapperClassName="h-full w-full"
           className="h-full w-full object-top"
-          hoverZoom
-          tone="natural"
+          tone="documentary"
           fallbackLabel={member.name}
         />
       ) : (
-        <div className="w-full h-full bg-muted flex items-center justify-center">
-          <span className="text-4xl text-muted-foreground">{member.name.charAt(0)}</span>
+        <div className="flex h-full w-full items-center justify-center" style={{ backgroundColor: "var(--enk-record-inset)" }}>
+          <span className="enk-mono text-4xl text-[var(--enk-blueprint)]">{member.name.charAt(0)}</span>
         </div>
       )}
-      {/* Gradient scrim */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        aria-hidden="true"
-        style={{ background: "linear-gradient(0deg, oklch(0.13 0.03 255 / 0.55), transparent 55%)" }}
-      />
-      {/* Hover highlight overlay */}
-      <div
-        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-4 md:p-5"
-        style={{ background: "linear-gradient(0deg, oklch(0.13 0.03 255 / 0.92), oklch(0.13 0.03 255 / 0.5) 60%, transparent)" }}
-      >
-        <p className="text-white text-center text-sm font-medium leading-snug drop-shadow-lg">
-          "{member.highlight || 'Industry leader at Enikkom'}"
-        </p>
-      </div>
     </div>
 
-    <div className="flex flex-1 flex-col p-4 md:p-5" style={{ backgroundColor: "var(--enk-surface-card)" }}>
-      <h3 className="font-semibold text-[15px] md:text-[16px] mb-1 text-[var(--enk-on-dark)]">{member.name}</h3>
-      <p className="font-bold text-[12px] md:text-[13px] mb-2 md:mb-3" style={{ color: "var(--enk-gold)" }}>{member.role}</p>
-      <p className="text-[12px] md:text-[13px] text-[var(--enk-on-dark-muted)] mb-3 md:mb-4 leading-relaxed line-clamp-3 md:line-clamp-4 flex-1">{member.bio}</p>
+    <div className="flex flex-1 flex-col px-4 pb-4 pt-3">
+      <h3 className="text-[15px] font-semibold text-[var(--enk-ink)] md:text-[16px]">{member.name}</h3>
+      <p className="enk-mono mt-1 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--enk-accent-on-dark)]">
+        {member.role}
+      </p>
+      <p className="mt-2.5 flex-1 text-[12.5px] leading-6 text-[var(--enk-steel)] line-clamp-3 md:line-clamp-4">{member.bio}</p>
 
       {member.expertise.length > 0 && (
-        <div className="flex flex-wrap gap-1 md:gap-1.5 mb-3">
+        <div className="mb-3 mt-3 flex flex-wrap gap-1.5">
           {member.expertise.slice(0, 3).map((skill) => (
-            <span
-              key={skill}
-              className="enk-chip enk-chip--on-dark text-[9px] md:text-[10px]"
-            >
+            <span key={skill} className="enk-chip">
               {skill}
             </span>
           ))}
         </div>
       )}
 
-      <span className="inline-flex items-center gap-1.5 text-[11px] md:text-[12px] font-semibold mt-auto" style={{ color: "var(--enk-gold)" }}>
+      <span className="enk-mono mt-auto flex items-center gap-1.5 border-t border-[var(--enk-rule)] pt-3 text-[11px] font-semibold uppercase tracking-[0.1em] text-[var(--enk-accent-on-dark)] transition-colors group-hover:text-[var(--enk-accent-primary-on-dark)]">
         View full bio →
       </span>
     </div>
-  </motion.div>
+  </button>
 );
 
 const TeamMemberModal = ({ 
@@ -288,16 +287,16 @@ const TeamMemberModal = ({
                   <DialogTitle className="text-xl md:text-2xl font-semibold mb-1">
                     {member.name}
                   </DialogTitle>
-                  <p className="font-medium text-sm md:text-base" style={{ color: "oklch(0.79 0.15 84)" }}>
+                  <p className="font-mono text-[12px] md:text-[13px] font-semibold uppercase tracking-[0.08em] text-primary">
                     {member.role}
                   </p>
                 </DialogHeader>
-                
-                {/* Highlight quote */}
+
+                {/* Highlight */}
                 {member.highlight && (
-                  <div className="p-3 md:p-4 rounded-r-lg mb-5" style={{ backgroundColor: "oklch(0.13 0.03 255 / 0.06)", borderLeft: "4px solid oklch(0.13 0.03 255)" }}>
-                    <p className="text-sm md:text-base font-medium text-foreground italic">
-                      "{member.highlight}"
+                  <div className="mb-5 rounded-sm border border-border bg-muted/40 p-3 md:p-4">
+                    <p className="text-sm md:text-[15px] font-medium text-foreground">
+                      {member.highlight}
                     </p>
                   </div>
                 )}
@@ -306,7 +305,7 @@ const TeamMemberModal = ({
                 <div className="mb-5">
                   <h4 className="text-sm font-semibold text-foreground mb-2">Biography</h4>
                   <p className="text-sm md:text-[15px] text-muted-foreground leading-relaxed">
-                    {member.bio || 'Biography coming soon.'}
+                    {member.bio}
                   </p>
                 </div>
                 
@@ -318,7 +317,7 @@ const TeamMemberModal = ({
                       {member.expertise.map((skill) => (
                         <span
                           key={skill}
-                          className="px-2.5 py-1 bg-muted text-foreground/80 text-[11px] md:text-[12px] font-medium rounded-md border border-border"
+                          className="rounded-[2px] border border-border bg-muted/40 px-2 py-0.5 font-mono text-[10.5px] uppercase tracking-[0.06em] text-foreground/80"
                         >
                           {skill}
                         </span>
@@ -408,28 +407,24 @@ export default function ManagementPage() {
   
   return (
     <Layout>
+      <SEO
+        title="Leadership & Management Team – Enikkom"
+        description="Meet Enikkom's leadership and board — decades of pipeline, HDD, finance, and energy expertise led by founder Engr. Edward Amene."
+        canonical="/about/leadership"
+      />
       <Hero
         title={heroContent.title || "Management Team"}
         subtitle={heroContent.subtitle || "Experienced leaders driving excellence in engineering and construction across Nigeria and West Africa."}
+        badge="Personnel Register"
         backgroundImage={heroContent.backgroundImage || managementImages.hero}
         size="default"
-        pageSlug="management"
-        sectionKey="hero"
-        imageField="backgroundImage"
       />
 
-      <section className="section-padding">
-        <div className="container-wide">
-          <motion.div
-            className="mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
+      <section className="enk-section" style={{ borderBottom: "1px solid var(--enk-rule)" }}>
+        <div className="enk-container">
+          <div className="mb-10">
             <SectionHeading
               kicker="Leadership Team"
-              align="center"
               title={
                 <EditableText
                   value={leadershipContent.title || "Our Leadership"}
@@ -448,9 +443,9 @@ export default function ManagementPage() {
                 />
               }
             />
-          </motion.div>
+          </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {leadership.map((member, index) => (
               <TeamMemberCard 
                 key={member.name} 
@@ -464,18 +459,11 @@ export default function ManagementPage() {
       </section>
 
       {/* Board of Directors Section */}
-      <section className="section-padding bg-muted/30">
-        <div className="container-wide">
-          <motion.div
-            className="mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
+      <section className="enk-section" style={{ backgroundColor: "var(--enk-bg-muted)", borderBottom: "1px solid var(--enk-rule)" }}>
+        <div className="enk-container">
+          <div className="mb-10">
             <SectionHeading
               kicker="Governance"
-              align="center"
               title={
                 <EditableText
                   value={boardContent.title || "Board of Directors"}
@@ -494,9 +482,9 @@ export default function ManagementPage() {
                 />
               }
             />
-          </motion.div>
+          </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 max-w-4xl mx-auto">
+          <div className="mx-auto grid max-w-4xl grid-cols-1 gap-4 sm:grid-cols-2">
             {boardOfDirectors.map((member, index) => (
               <TeamMemberCard 
                 key={member.name} 
@@ -518,9 +506,10 @@ export default function ManagementPage() {
         totalCount={allTeamMembers.length}
       />
 
-      <CTABand 
-        headline="Ready to Discuss Your Project?"
-        primaryCTA={{ label: "Contact Us", href: "/contact" }}
+      <CTABand
+        headline="Put a project in front of this team"
+        primaryCTA={{ label: "Discuss Project Scope", href: "/contact" }}
+        secondaryCTA={{ label: "View Project Records", href: "/projects" }}
       />
     </Layout>
   );

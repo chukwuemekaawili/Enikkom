@@ -3,8 +3,7 @@ import { Hero } from "@/components/sections";
 import { RFQForm } from "@/components/forms/RFQForm";
 import { EditableText } from "@/components/content";
 import { usePageContent } from "@/hooks/useSiteSettings";
-import { MapPin, Phone, Mail, Clock, Building2, CheckCircle } from "lucide-react";
-import { motion } from "framer-motion";
+import { RecordSpecTable } from "@/components/records";
 import { siteImageSelections } from "@/content/siteImageSelections";
 import { contact } from "@/content/home";
 import SEO from "@/components/ui/SEO";
@@ -54,150 +53,129 @@ export default function ContactPage() {
 
   return (
     <Layout>
-      <SEO title="Contact Us" description="Get in touch to discuss your infrastructure project requirements with Enikkom." />
-      <Hero 
-        title={heroContent.title || "Contact Enikkom"} 
-        subtitle={heroContent.subtitle || "Get in touch to discuss your infrastructure project requirements."} 
-        backgroundImage={heroContent.backgroundImage || contactImages.hero} 
+      <SEO
+        title="Contact Enikkom – Request a Quote"
+        description="Get in touch to discuss your HDD, pipeline, dredging, or marine civil project. Request a quote or send drawings to Enikkom's technical team."
+        canonical="/contact"
+      />
+      <Hero
+        title={heroContent.title || "Contact Enikkom"}
+        subtitle={heroContent.subtitle || "Get in touch to discuss your infrastructure project requirements."}
+        badge="RFQ / Tender Desk"
+        backgroundImage={heroContent.backgroundImage || contactImages.hero}
         size="small"
-        pageSlug="contact"
-        sectionKey="hero"
-        imageField="backgroundImage"
       />
 
       {/* Main Contact Form & Details Section */}
-      <section className="section-padding bg-background">
-        <div className="container-wide">
-          <div className="grid lg:grid-cols-3 gap-10 lg:gap-12">
-            {/* Contact Info */}
-            <motion.div 
-              className="space-y-6"
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
+      <section className="enk-section" style={{ borderBottom: "1px solid var(--enk-rule)" }}>
+        <div className="enk-container">
+          <div className="grid gap-10 lg:grid-cols-3 lg:gap-12">
+            {/* Contact ledger */}
+            <div className="space-y-8">
               <div>
-                <p className="enk-kicker mb-2">Connect With Us</p>
-                <h3 className="text-[20px] font-semibold mb-5">
-                  <EditableText
-                    value={contactDetails.detailsTitle || "Contact Details"}
-                    pageSlug="contact"
-                    sectionKey="contact_details"
-                    field="detailsTitle"
-                  />
-                </h3>
-                <div className="space-y-3">
-                  <a
-                    href={contactDetails.phone ? `tel:${contactDetails.phone}` : contact.phoneHref}
-                    className="flex items-center gap-3 p-3 rounded-xl bg-muted/30 hover:bg-muted/50 transition-colors group"
-                  >
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                      <Phone className="h-5 w-5 text-primary" />
-                    </div>
-                    <span className="text-[15px] group-hover:text-primary transition-colors">
+                <p className="enk-kicker mb-4">Direct Contact</p>
+                <RecordSpecTable
+                  rows={[
+                    {
+                      label: "Phone",
+                      value: (
+                        <a
+                          href={contactDetails.phone ? `tel:${contactDetails.phone}` : contact.phoneHref}
+                          className="transition-colors hover:text-[var(--enk-accent-on-dark)] focus-ring rounded-sm"
+                        >
+                          <EditableText
+                            value={contactDetails.phone || contact.phone}
+                            pageSlug="contact"
+                            sectionKey="contact_details"
+                            field="phone"
+                          />
+                        </a>
+                      ),
+                    },
+                    {
+                      label: "Email",
+                      value: (
+                        <a
+                          href={`mailto:${contactDetails.email || contact.email}`}
+                          className="transition-colors hover:text-[var(--enk-accent-on-dark)] focus-ring rounded-sm"
+                        >
+                          <EditableText
+                            value={contactDetails.email || contact.email}
+                            pageSlug="contact"
+                            sectionKey="contact_details"
+                            field="email"
+                          />
+                        </a>
+                      ),
+                    },
+                    {
+                      label: "Website",
+                      value: (
+                        <EditableText
+                          value={contactDetails.website || "www.enikkom.com"}
+                          pageSlug="contact"
+                          sectionKey="contact_details"
+                          field="website"
+                        />
+                      ),
+                    },
+                  ]}
+                />
+              </div>
+
+              <RecordSpecTable
+                caption="Response & Hours"
+                rows={[
+                  {
+                    label: "Response",
+                    value: (
                       <EditableText
-                        value={contactDetails.phone || contact.phone}
+                        value={contactDetails.responseTime || "Within 24-48 business hours"}
                         pageSlug="contact"
                         sectionKey="contact_details"
-                        field="phone"
+                        field="responseTime"
                       />
-                    </span>
-                  </a>
-                  <a 
-                    href={`mailto:${contactDetails.email || contact.email}`}
-                    className="flex items-center gap-3 p-3 rounded-xl bg-muted/30 hover:bg-muted/50 transition-colors group"
-                  >
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                      <Mail className="h-5 w-5 text-primary" />
-                    </div>
-                    <span className="text-[15px] group-hover:text-primary transition-colors">
+                    ),
+                  },
+                  {
+                    label: "Mon–Fri",
+                    value: (
                       <EditableText
-                        value={contactDetails.email || contact.email}
+                        value={contactDetails.weekdayHours || "8:00 AM - 6:00 PM"}
                         pageSlug="contact"
                         sectionKey="contact_details"
-                        field="email"
+                        field="weekdayHours"
                       />
-                    </span>
-                  </a>
-                </div>
-              </div>
-
-              <div className="enk-card p-5">
-                <div className="flex items-center gap-3 mb-2">
-                  <Clock className="h-5 w-5 text-primary" />
-                  <span className="font-semibold text-[15px]">Response Time</span>
-                </div>
-                <p className="text-[14px] text-muted-foreground leading-relaxed">
-                  <EditableText
-                    value={contactDetails.responseTime || "We respond to all inquiries within 24-48 business hours."}
-                    pageSlug="contact"
-                    sectionKey="contact_details"
-                    field="responseTime"
-                  />
-                </p>
-              </div>
-
-              <div className="p-5 bg-muted/40 rounded-xl">
-                <div className="flex items-center gap-3 mb-3">
-                  <Building2 className="h-5 w-5 text-primary" />
-                  <span className="font-semibold text-[15px]">Business Hours</span>
-                </div>
-                <div className="space-y-1 text-[14px] text-muted-foreground">
-                  <p className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-primary" />
-                    <EditableText
-                      value={contactDetails.weekdayHours || "Monday - Friday: 8:00 AM - 6:00 PM"}
-                      pageSlug="contact"
-                      sectionKey="contact_details"
-                      field="weekdayHours"
-                    />
-                  </p>
-                  <p className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-primary" />
-                    <EditableText
-                      value={contactDetails.saturdayHours || "Saturday: 9:00 AM - 2:00 PM"}
-                      pageSlug="contact"
-                      sectionKey="contact_details"
-                      field="saturdayHours"
-                    />
-                  </p>
-                </div>
-              </div>
-
-              {/* Website */}
-              <div className="p-4 bg-muted/30 rounded-xl">
-                <p className="text-[13px] text-muted-foreground">
-                  <span className="font-semibold text-foreground">Website:</span>{' '}
-                  <EditableText
-                    value={contactDetails.website || "www.enikkom.com"}
-                    pageSlug="contact"
-                    sectionKey="contact_details"
-                    field="website"
-                  />
-                </p>
-              </div>
-            </motion.div>
+                    ),
+                  },
+                  {
+                    label: "Saturday",
+                    value: (
+                      <EditableText
+                        value={contactDetails.saturdayHours || "9:00 AM - 2:00 PM"}
+                        pageSlug="contact"
+                        sectionKey="contact_details"
+                        field="saturdayHours"
+                      />
+                    ),
+                  },
+                ]}
+              />
+            </div>
 
             {/* RFQ Form */}
-            <motion.div 
-              className="lg:col-span-2"
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
-              <div className="enk-card p-6 md:p-8 h-full">
-                <p className="enk-kicker mb-2">Get Started</p>
-                <h2 className="enk-display text-[clamp(1.4rem,2.4vw,1.75rem)] text-[var(--enk-ink)] mb-2">
+            <div className="lg:col-span-2">
+              <div className="enk-doc-card h-full p-6 md:p-8">
+                <p className="enk-kicker mb-3">Request for Quotation</p>
+                <h2 className="enk-display text-[clamp(1.3rem,2.2vw,1.6rem)] text-[var(--enk-ink)]">
                   <EditableText
-                    value={content.form?.title || "Contact Us"}
+                    value={content.form?.title || "Send RFQ / Tender Enquiry"}
                     pageSlug="contact"
                     sectionKey="form"
                     field="title"
                   />
                 </h2>
-                <p className="text-muted-foreground text-[15px] mb-6">
+                <p className="mb-6 mt-2 text-[14px] leading-6 text-[var(--enk-steel)]">
                   <EditableText
                     value={content.form?.description || "Fill out the form below and our engineering team will get back to you with a detailed proposal."}
                     pageSlug="contact"
@@ -207,23 +185,17 @@ export default function ContactPage() {
                 </p>
                 <RFQForm />
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Locations Section */}
-      <section className="section-padding bg-muted/30 border-t border-border">
-        <div className="container-wide">
-          <motion.div
-            className="text-center mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <p className="enk-kicker mb-3">Our Presence</p>
-            <h2 className="enk-display text-[clamp(1.6rem,3vw,2.2rem)] text-[var(--enk-ink)]">
+      {/* Locations */}
+      <section className="enk-section" style={{ backgroundColor: "var(--enk-bg-muted)" }}>
+        <div className="enk-container">
+          <div className="max-w-2xl">
+            <p className="enk-kicker mb-4">Registered Locations</p>
+            <h2 className="enk-display text-[clamp(1.5rem,2.8vw,2.05rem)] text-[var(--enk-ink)]">
               <EditableText
                 value={contactDetails.locationsTitle || "Office Locations"}
                 pageSlug="contact"
@@ -231,28 +203,20 @@ export default function ContactPage() {
                 field="locationsTitle"
               />
             </h2>
-            <p className="text-muted-foreground mt-3 max-w-2xl mx-auto">
+            <p className="mt-3 text-[14px] leading-relaxed text-[var(--enk-steel)] md:text-[15px]">
               We operate from our head office in Abuja, corporate office in Lagos, and multiple operational bases in the Niger Delta.
             </p>
-          </motion.div>
+          </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {offices.map((office: any, i: number) => (
-              <motion.div 
-                key={office.name}
-                className="enk-card flex flex-col p-6"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.1 }}
-              >
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5">
-                  <MapPin className="h-6 w-6 text-primary" />
-                </div>
-                <h3 className="font-semibold text-[17px] mb-1">{office.name}</h3>
-                <span className="enk-chip mb-3">{office.type}</span>
-                <p className="text-[14px] text-muted-foreground leading-relaxed flex-1">{office.address}</p>
-              </motion.div>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {offices.map((office: { name: string; address: string; type: string }) => (
+              <div key={office.name} className="enk-doc-card flex flex-col p-5">
+                <p className="enk-overline">{office.type}</p>
+                <h3 className="mt-2.5 text-[15px] font-semibold text-[var(--enk-ink)]">{office.name}</h3>
+                <p className="enk-mono mt-2 flex-1 text-[12px] leading-6 text-[var(--enk-blueprint)]">
+                  {office.address}
+                </p>
+              </div>
             ))}
           </div>
         </div>

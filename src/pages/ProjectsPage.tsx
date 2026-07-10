@@ -1,18 +1,24 @@
 import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { RecentOps } from "@/components/home/RecentOps";
 import { Layout } from "@/components/layout";
-import { Hero, CTABand, CaseStudyCard } from "@/components/sections";
+import SEO from "@/components/ui/SEO";
+import { CTABand } from "@/components/sections";
 import { InteractiveProjectMap } from "@/components/sections/InteractiveProjectMap";
 import { EditableText } from "@/components/content";
+import {
+  RecordEyebrow,
+  RecordMetric,
+  RecordMetaRow,
+  RecordStatusStamp,
+  FieldFigure,
+  ProjectRecordCard,
+} from "@/components/records";
 import { getProjectImage } from "@/content/projectImageSelections";
 import { siteImageSelections } from "@/content/siteImageSelections";
 import { usePageContent, useCollection } from "@/hooks/useSiteSettings";
-import { EnhancedImage } from "@/components/ui/enhanced-image";
-import { Button } from "@/components/ui/button";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { motion } from "framer-motion";
-import { useLocation } from "react-router-dom";
 import { completedProjects, projectTypes } from "@/content/completedProjects";
+import { testimonials } from "@/content/testimonials";
 
 const projectTags = ["All", "HDD", "Pipeline", "Dredging", "CHDD", "Shore Approach"];
 
@@ -150,26 +156,121 @@ const defaultProjects = [
     metric: "Dual",
     metricLabel: "HDD crossing under Nun River",
     tags: ["HDD"],
-    href: "/projects/nun-river-crossing",
-    thumbnail: getProjectImage("nun-river-crossing", "projectList"),
+    href: "/projects/nun-river-dual-hdd",
+    thumbnail: getProjectImage("nun-river-dual-hdd", "projectList"),
     year: "2024",
   },
   {
+    // No published detail file for this record — rendered as a non-link
+    // summary card (see ProjectRecordCard's neutral state). Do NOT add an
+    // href until a verified /projects/<slug> detail record exists.
     title: "Escravos Shore Approach Installation",
     location: "Delta State, Nigeria",
     metric: "1.8km",
     metricLabel: "Shore Crossing",
     tags: ["Shore Approach", "Pipeline"],
-    href: "/projects/escravos-shore-approach",
     thumbnail: getProjectImage("escravos-shore-approach", "projectList"),
     year: "2021",
   },
 ];
 
+interface ProjectListEntry {
+  title: string;
+  /** Detail-page route. Omitted for register entries with no published detail file. */
+  href?: string;
+  location?: string;
+  metric?: string;
+  metricLabel?: string;
+  client?: string;
+  year?: string;
+  thumbnail?: string;
+  tags?: string[];
+  slug?: string;
+}
+
 function resolveProjectListThumbnail(project: { slug?: string; href?: string; thumbnail?: string }) {
   const slugOrHref = project.slug || project.href || "";
   return getProjectImage(slugOrHref, "projectList") || project.thumbnail;
 }
+
+/* ── Register facts, computed from the verified data file (never typed in) ── */
+const registerYears = completedProjects
+  .map((p) => Number(p.year))
+  .filter((y) => !Number.isNaN(y));
+const registerPeriod = `${Math.min(...registerYears)}–${Math.max(...registerYears)}`;
+const registerTypeCounts = completedProjects.reduce<Record<string, number>>((acc, p) => {
+  acc[p.type] = (acc[p.type] ?? 0) + 1;
+  return acc;
+}, {});
+
+/** Benchmarks held — same four records the page has always claimed,
+    with provenance drawn from the register entries. */
+const benchmarks = [
+  { label: "Longest single HDD drill", value: "3.1", unit: "km", note: "Atlas Cove–Mosimi, 16\" — Africa record (2016)" },
+  { label: "Longest continuous HDD", value: "12", unit: "km", note: "OML34, 10\" — Nigeria record (2021)" },
+  { label: "Largest pipeline crossing", value: "40", unit: "in", note: "Yenagoa HDD, Bayelsa State — Nigeria record (2010)" },
+  { label: "Deepest HDD crossing", value: "80", unit: "m", note: "Ekiadolor valley, 36\" — Africa record (2016)" },
+];
+
+/** Archive filter bar: overline field label + squared mono controls.
+    Active option reads as an amber stamp; functionality unchanged. */
+function RegisterFilter({
+  label,
+  options,
+  active,
+  onChange,
+  counts,
+}: {
+  label: string;
+  options: string[];
+  active: string;
+  onChange: (value: string) => void;
+  counts?: Record<string, number>;
+}) {
+  return (
+    <div className="flex flex-wrap items-center gap-x-5 gap-y-2 border-y border-[var(--enk-rule)] py-3">
+      <span className="enk-overline shrink-0">{label}</span>
+      <div className="flex flex-wrap gap-1.5" role="group" aria-label={label}>
+        {options.map((option) => {
+          const isActive = active === option;
+          const count = option === "All" ? undefined : counts?.[option];
+          return (
+            <button
+              key={option}
+              type="button"
+              aria-pressed={isActive}
+              onClick={() => onChange(option)}
+              className="enk-mono rounded-[2px] border px-2.5 py-1.5 text-[11px] font-medium uppercase tracking-[0.08em] transition-colors focus-ring"
+              style={
+                isActive
+                  ? {
+                      borderColor: "var(--enk-rule-accent)",
+                      color: "var(--enk-accent-primary-on-dark)",
+                      backgroundColor: "var(--enk-status-record-bg)",
+                    }
+                  : { borderColor: "var(--enk-rule)", color: "var(--enk-meta)" }
+              }
+            >
+              {option}
+              {typeof count === "number" && <span className="ml-1 opacity-70">{count}</span>}
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+/** Mono register count line, e.g. "SHOWING 11 OF 19 ENTRIES". */
+function RegisterCount({ shown, total, noun }: { shown: number; total: number; noun: string }) {
+  return (
+    <p className="enk-mono mt-3 text-[11px] uppercase tracking-[0.1em] text-[var(--enk-blueprint)]" aria-live="polite">
+      Showing {shown} of {total} {noun}
+    </p>
+  );
+}
+
+const registerCell = "px-3.5 py-3 align-top text-[13px] leading-snug";
 
 export default function ProjectsPage() {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -179,18 +280,19 @@ export default function ProjectsPage() {
   const heroContent = content.hero || {};
   const recordsContent = content.records || {};
 
-
   const { data: dbProjects } = useCollection('projects_list');
 
   // Use DB projects if available, otherwise fallback to hardcoded defaults
-  const projects = (dbProjects.length > 0 ? dbProjects : defaultProjects).map((project: any) => ({
-    ...project,
-    thumbnail: resolveProjectListThumbnail(project),
-  }));
+  const projects = (dbProjects.length > 0 ? (dbProjects as ProjectListEntry[]) : defaultProjects).map(
+    (project) => ({
+      ...project,
+      thumbnail: resolveProjectListThumbnail(project),
+    }),
+  );
 
   const filteredProjects = activeFilter === "All"
     ? projects
-    : projects.filter((p) => p.tags.includes(activeFilter));
+    : projects.filter((p) => (p.tags ?? []).includes(activeFilter));
 
   const filteredRecordProjects = activeRecordFilter === "All"
     ? completedProjects
@@ -208,278 +310,319 @@ export default function ProjectsPage() {
 
   return (
     <Layout>
-      <Hero
-        title={heroContent.title || "Our Projects"}
-        subtitle={heroContent.subtitle || "Over 100km of HDD installations including Africa's longest single drill (3.1km) and Nigeria's longest Continuous HDD (12km). Trusted by Shell, Dangote, NNPC, Saipem, and more."}
-        badge={heroContent.badge || "100+ KM HDD Installed"}
-        primaryCTA={{ label: heroContent.primaryBtnText || "Start Your Project", href: heroContent.primaryBtnLink || "/contact" }}
-        backgroundImage={heroContent.backgroundImage || siteImageSelections.completedProjects.hero}
-        size="default"
-        pageSlug="projects"
-        sectionKey="hero"
-        imageField="backgroundImage"
+      <SEO
+        title="Project Records – HDD, Pipeline & Marine Works Archive – Enikkom"
+        description="Documented archive of Enikkom's completed crossings, pipeline works, dredging, piling and marine civil projects across Nigeria — including Africa's longest single HDD drill and Nigeria's longest continuous HDD."
+        canonical="/projects"
       />
 
-      <section className="section-padding bg-background">
-        <div className="container-wide">
-          {/* Filter Bar */}
-          <motion.div
-            className="flex flex-wrap gap-3 mb-8 justify-center"
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4 }}
-          >
-            {projectTags.map((tag) => (
-              <button
-                key={tag}
-                onClick={() => setActiveFilter(tag)}
-                className={`enk-btn ${
-                  activeFilter === tag ? "enk-btn--primary" : "enk-btn--outline"
-                }`}
-              >
-                {tag}
-              </button>
-            ))}
-          </motion.div>
-
-          {/* Project Stats */}
-          <motion.div
-            className="text-center mb-8"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.3, delay: 0.1 }}
-          >
-            <p className="text-[13px] md:text-[14px] text-muted-foreground">
-              Showing {filteredProjects.length} projects • 100+ KM HDD installed to date • 3.1km longest single drill
+      {/* Archive header — document cover sheet, not a marketing hero */}
+      <section
+        aria-label="Project records archive"
+        style={{ backgroundColor: "var(--enk-navy)", borderBottom: "1px solid var(--enk-rule)" }}
+      >
+        <div className="enk-container grid items-center gap-10 py-14 md:py-18 lg:grid-cols-[minmax(0,1fr)_minmax(0,440px)]">
+          <div>
+            <RecordEyebrow refNo={`${completedProjects.length} ENTRIES`}>Project Records</RecordEyebrow>
+            <h1 className="enk-display mt-5 max-w-xl text-[clamp(1.9rem,4.2vw,2.9rem)] text-[var(--enk-on-dark)]">
+              {heroContent.title || "Completed works on record"}
+            </h1>
+            <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-[var(--enk-on-dark-muted)] md:text-[16px]">
+              {heroContent.subtitle ||
+                "Completed crossings, pipeline works, dredging, piling and marine civil projects — a documented archive of Enikkom's field delivery across Nigerian oil & gas and infrastructure corridors."}
             </p>
-          </motion.div>
 
-          {/* Projects Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {filteredProjects.map((project, index) => (
-              <CaseStudyCard
-                key={project.title}
-                {...project}
-                index={index}
-              />
-            ))}
+            <RecordMetaRow
+              className="mt-8"
+              items={[
+                { label: "Recorded Projects", value: String(completedProjects.length) },
+                { label: "Period", value: registerPeriod },
+                { label: "Disciplines", value: "HDD · Pipeline · Marine · Facilities" },
+                { label: "Coverage", value: "Nigeria" },
+              ]}
+            />
+
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <Link to="/contact" className="enk-btn enk-btn--gold">
+                Discuss Project Scope
+              </Link>
+              <a
+                href="#record"
+                className="enk-mono inline-flex min-h-[44px] items-center gap-2 px-2 text-[11.5px] font-semibold uppercase tracking-[0.1em] text-[var(--enk-accent-on-dark)] transition-colors hover:text-[var(--enk-accent-primary-on-dark)] focus-ring rounded-sm"
+              >
+                Full project register ↓
+              </a>
+            </div>
           </div>
+
+          <FieldFigure
+            className="hidden lg:block"
+            src={heroContent.backgroundImage || siteImageSelections.completedProjects.hero}
+            alt="Enikkom field operations on a completed pipeline project"
+            figNo="Plate 01"
+            caption="Field documentation from Enikkom's completed works archive"
+            ratio="4/3"
+            priority
+            sizes="440px"
+          />
         </div>
       </section>
 
-      {/* Full Record Section */}
-      <section className="section-padding bg-muted/30 scroll-mt-24" id="record">
-        <div className="container-wide">
-          <motion.div
-            className="mx-auto mb-10 max-w-2xl text-center"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <p className="enk-kicker justify-center mb-3">Full Record</p>
-            <h2 className="mb-3">Completed Project Record</h2>
-            <p className="text-[14px] md:text-[15px] text-muted-foreground">
-              A consolidated record of major HDD, pipeline, shore approach, dredging, and facilities work delivered across Nigeria.
-            </p>
-          </motion.div>
-
-          <div className="mb-8 flex flex-wrap justify-center gap-2">
-            {projectTypes.map((type) => (
-              <Button
-                key={type}
-                variant={activeRecordFilter === type ? "default" : "outline"}
-                size="sm"
-                onClick={() => setActiveRecordFilter(type)}
-                style={activeRecordFilter === type ? { backgroundColor: "var(--enk-accent-primary)", color: "var(--enk-navy)" } : undefined}
-              >
-                {type}
-              </Button>
-            ))}
-          </div>
-
-          <p className="mb-4 text-center text-[13px] text-muted-foreground">
-            Showing {filteredRecordProjects.length} {activeRecordFilter === "All" ? "recorded" : activeRecordFilter} projects
-          </p>
-
-          <div className="md:hidden mb-2 flex items-center justify-center gap-1 text-center text-xs text-muted-foreground">
-            <span>Scroll horizontally to see all columns</span>
-          </div>
-
-          <div className="overflow-x-auto rounded-lg border border-border bg-background">
-            <Table>
-              <TableHeader>
-                <TableRow className="bg-muted">
-                  <TableHead className="sticky left-0 w-16 bg-muted">Year</TableHead>
-                  <TableHead className="w-24">Client</TableHead>
-                  <TableHead className="min-w-[220px]">Project</TableHead>
-                  <TableHead className="min-w-[190px]">Scope</TableHead>
-                  <TableHead className="min-w-[130px]">Location</TableHead>
-                  <TableHead className="w-20">Size</TableHead>
-                  <TableHead className="w-20">Length</TableHead>
-                  <TableHead className="w-28">Type</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {filteredRecordProjects.map((project, i) => (
-                  <TableRow key={`${project.year}-${project.project}-${i}`} className="hover:bg-muted/30">
-                    <TableCell className="sticky left-0 bg-background font-medium">{project.year}</TableCell>
-                    <TableCell className="whitespace-nowrap font-medium text-primary">{project.client}</TableCell>
-                    <TableCell className="font-medium">{project.project}</TableCell>
-                    <TableCell className="text-sm text-muted-foreground">{project.scope}</TableCell>
-                    <TableCell className="whitespace-nowrap text-sm">{project.location}</TableCell>
-                    <TableCell className="text-sm">{project.size}</TableCell>
-                    <TableCell className="text-sm">{project.length}</TableCell>
-                    <TableCell>
-                      <span className="inline-block whitespace-nowrap rounded bg-muted px-2 py-1 text-xs font-medium">
-                        {project.type}
-                      </span>
-                    </TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </div>
-        </div>
-      </section>
-
-      {/* Records Section */}
-      <section className="section-padding">
-        <div className="container-wide">
-          <motion.div
-            className="text-center mb-10"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <p className="enk-kicker enk-kicker--on-dark justify-center mb-3">
+      {/* Record benchmarks — ledger metrics, no animated counters */}
+      <section className="enk-section" style={{ backgroundColor: "var(--enk-bg-muted)" }}>
+        <div className="enk-container">
+          <div className="mb-9 max-w-2xl">
+            <RecordEyebrow>
               <EditableText
-                value={recordsContent.subtitle || "Our Records"}
+                value={recordsContent.subtitle || "Record Benchmarks"}
                 pageSlug="projects"
                 sectionKey="records"
                 field="subtitle"
               />
-            </p>
-            <h2 className="text-white mb-3">
+            </RecordEyebrow>
+            <h2 className="enk-display mt-4 text-[clamp(1.5rem,2.8vw,2rem)] text-[var(--enk-ink)]">
               <EditableText
-                value={recordsContent.title || "Industry-Leading Achievements"}
+                value={recordsContent.title || "Benchmarks held on file"}
                 pageSlug="projects"
                 sectionKey="records"
                 field="title"
               />
             </h2>
-            <p className="text-white/60 text-[14px] md:text-[15px] max-w-lg mx-auto">
+            <p className="mt-3 text-[14px] leading-relaxed text-[var(--enk-steel)] md:text-[15px]">
               <EditableText
-                value={recordsContent.description || "Setting benchmarks in HDD and pipeline construction across Africa."}
+                value={recordsContent.description || "Each figure is tied to a named, completed project in the register below."}
                 pageSlug="projects"
                 sectionKey="records"
                 field="description"
               />
             </p>
-          </motion.div>
+          </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[
-              { value: "3.1km", label: "Longest Single Drill", detail: "Africa Record" },
-              { value: "12km", label: "Longest CHDD", detail: "Nigeria Record" },
-              { value: "40\"", label: "Largest Pipe Crossing", detail: "Nigeria Record" },
-              { value: "80m", label: "Deepest HDD Crossing", detail: "Africa Record" },
-            ].map((record, i) => (
-              <motion.div
-                key={record.label}
-                className="rounded-xl border border-white/10 bg-white/5 hover:border-white/20 p-6 md:p-8 text-center transition-colors duration-200"
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: i * 0.1 }}
-              >
-                <div className="enk-display text-[clamp(2rem,4vw,2.6rem)] text-[var(--enk-on-dark)] mb-2">{record.value}</div>
-                <div className="text-[14px] font-bold uppercase tracking-wide mb-1" style={{ color: "var(--enk-gold)" }}>{record.label}</div>
-                <div className="text-white/60 text-[12px]">{record.detail}</div>
-              </motion.div>
+          <div className="grid grid-cols-2 gap-x-8 gap-y-10 lg:grid-cols-4">
+            {benchmarks.map((b) => (
+              <RecordMetric key={b.label} label={b.label} value={b.value} unit={b.unit} note={b.note} />
             ))}
           </div>
         </div>
       </section>
 
-      {/* Gallery Section */}
-      <section className="section-padding-sm bg-muted/30 scroll-mt-24" id="gallery">
-        <div className="container-wide">
-          <motion.div
-            className="text-center"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+      {/* Featured records — documented case files with full write-ups */}
+      <section className="enk-section">
+        <div className="enk-container">
+          <div className="mb-8 max-w-2xl">
+            <RecordEyebrow>Selected Records</RecordEyebrow>
+            <h2 className="enk-display mt-4 text-[clamp(1.5rem,2.8vw,2rem)] text-[var(--enk-ink)]">
+              Documented project files
+            </h2>
+            <p className="mt-3 text-[14px] leading-relaxed text-[var(--enk-steel)] md:text-[15px]">
+              Records with full documentation — scope, method, dimensions and delivery notes — drawn from the archive.
+            </p>
+          </div>
+
+          <RegisterFilter
+            label="Filter by discipline"
+            options={projectTags}
+            active={activeFilter}
+            onChange={setActiveFilter}
+          />
+          <RegisterCount shown={filteredProjects.length} total={projects.length} noun="records" />
+
+          <div className="mt-6 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {filteredProjects.map((project) => (
+              <ProjectRecordCard
+                key={project.title}
+                title={project.title}
+                href={project.href}
+                location={project.location}
+                metric={project.metric}
+                metricLabel={project.metricLabel}
+                client={project.client}
+                year={project.year}
+                thumbnail={project.thumbnail}
+                tags={project.tags}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Full register — the consolidated completed-works ledger */}
+      <section className="enk-section scroll-mt-24" id="record" style={{ backgroundColor: "var(--enk-bg-muted)" }}>
+        <div className="enk-container">
+          <div className="mb-8 max-w-2xl">
+            <RecordEyebrow refNo={registerPeriod}>Full Register</RecordEyebrow>
+            <h2 className="enk-display mt-4 text-[clamp(1.5rem,2.8vw,2rem)] text-[var(--enk-ink)]">
+              Completed project register
+            </h2>
+            <p className="mt-3 text-[14px] leading-relaxed text-[var(--enk-steel)] md:text-[15px]">
+              A consolidated record of major HDD, pipeline, shore approach, dredging, and facilities work delivered across Nigeria.
+            </p>
+          </div>
+
+          <RegisterFilter
+            label="Filter by discipline"
+            options={projectTypes}
+            active={activeRecordFilter}
+            onChange={setActiveRecordFilter}
+            counts={registerTypeCounts}
+          />
+          <RegisterCount shown={filteredRecordProjects.length} total={completedProjects.length} noun="entries" />
+
+          <p className="enk-mono mt-4 text-[10.5px] uppercase tracking-[0.1em] text-[var(--enk-blueprint)] md:hidden">
+            Scroll horizontally for all columns →
+          </p>
+
+          <div
+            className="mt-3 overflow-x-auto border"
+            style={{
+              borderColor: "var(--enk-rule)",
+              borderRadius: "var(--enk-radius-record)",
+              backgroundColor: "var(--enk-record-surface)",
+            }}
           >
-            <p className="enk-kicker justify-center mb-3">Gallery</p>
-            <h2 className="mb-3">
+            <table className="w-full min-w-[920px] border-collapse text-left">
+              <thead>
+                <tr style={{ backgroundColor: "var(--enk-record-inset)" }}>
+                  {["Year", "Client", "Project", "Scope", "Location", "Size", "Length", "Type"].map((head, i) => (
+                    <th
+                      key={head}
+                      scope="col"
+                      className={`enk-overline whitespace-nowrap px-3.5 py-3 !text-[10.5px] font-semibold ${
+                        i === 0 ? "sticky left-0 z-10" : ""
+                      }`}
+                      style={{
+                        borderBottom: "1px solid var(--enk-rule-strong)",
+                        ...(i === 0 ? { backgroundColor: "var(--enk-record-inset)" } : {}),
+                      }}
+                    >
+                      {head}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {filteredRecordProjects.map((project, i) => (
+                  <tr
+                    key={`${project.year}-${project.project}-${i}`}
+                    className="border-b border-[var(--enk-rule)] transition-colors last:border-b-0 hover:bg-[var(--enk-ledger-row-hover)]"
+                  >
+                    <td
+                      className={`${registerCell} enk-mono sticky left-0 z-10 font-medium text-[var(--enk-ink)]`}
+                      style={{ backgroundColor: "var(--enk-record-surface)" }}
+                    >
+                      {project.year}
+                    </td>
+                    <td className={`${registerCell} whitespace-nowrap font-semibold text-[var(--enk-ink)]`}>{project.client}</td>
+                    <td className={`${registerCell} min-w-[220px] font-medium text-[var(--enk-ink)]`}>{project.project}</td>
+                    <td className={`${registerCell} min-w-[190px] text-[var(--enk-steel)]`}>{project.scope}</td>
+                    <td className={`${registerCell} whitespace-nowrap text-[var(--enk-steel)]`}>{project.location}</td>
+                    <td className={`${registerCell} enk-mono whitespace-nowrap text-[12.5px] text-[var(--enk-ink)]`}>
+                      {project.size === "N/A" ? "—" : project.size}
+                    </td>
+                    <td className={`${registerCell} enk-mono whitespace-nowrap text-[12.5px] text-[var(--enk-ink)]`}>
+                      {project.length === "N/A" ? "—" : project.length}
+                    </td>
+                    <td className={registerCell}>
+                      <RecordStatusStamp tone="neutral">{project.type}</RecordStatusStamp>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* Field photography — documentation plates */}
+      <section className="enk-section scroll-mt-24" id="gallery">
+        <div className="enk-container">
+          <div className="mb-8 max-w-2xl">
+            <RecordEyebrow>Field Documentation</RecordEyebrow>
+            <h2 className="enk-display mt-4 text-[clamp(1.5rem,2.8vw,2rem)] text-[var(--enk-ink)]">
               <EditableText
-                value={content.gallery?.title || "Project Gallery"}
+                value={content.gallery?.title || "Photographic record"}
                 pageSlug="projects"
                 sectionKey="gallery"
                 field="title"
               />
             </h2>
-            <p className="text-[14px] md:text-[15px] text-muted-foreground max-w-lg mx-auto mb-8">
+            <p className="mt-3 text-[14px] leading-relaxed text-[var(--enk-steel)] md:text-[15px]">
               <EditableText
-                value={content.gallery?.description || "View our portfolio of completed works across Nigeria."}
+                value={content.gallery?.description || "Site photography from completed works across Nigeria."}
                 pageSlug="projects"
                 sectionKey="gallery"
                 field="description"
               />
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {galleryImages.map((img, i) => (
-                <motion.div
-                  key={img.label}
-                  className="group relative aspect-[3/2] rounded-xl overflow-hidden hover-lift"
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: i * 0.05 }}
-                >
-                  <EnhancedImage
-                    src={img.src}
-                    alt={img.alt}
-                    wrapperClassName="h-full w-full"
-                    className="w-full h-full"
-                    sizes="(min-width: 1024px) 22vw, (min-width: 768px) 25vw, 50vw"
-                    tone="vivid"
-                    hoverZoom
-                  />
-                  <div className="absolute inset-x-0 bottom-0 px-3 py-3" style={{ background: "linear-gradient(0deg, oklch(0.13 0.03 255 / 0.9), oklch(0.13 0.03 255 / 0.35), transparent)" }}>
-                    <p className="text-[12px] md:text-[13px] font-semibold text-white">
-                      {img.label}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+            {galleryImages.map((img, i) => (
+              <FieldFigure
+                key={img.label}
+                src={img.src}
+                alt={img.alt}
+                figNo={`Fig ${String(i + 1).padStart(2, "0")}`}
+                caption={img.label}
+                ratio="3/2"
+                sizes="(min-width: 1024px) 22vw, 50vw"
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Client correspondence (merged from former /testimonials) */}
+      <section className="enk-section scroll-mt-24" id="testimonials" style={{ backgroundColor: "var(--enk-bg-muted)" }}>
+        <div className="enk-container">
+          <div className="mb-8 max-w-2xl">
+            <RecordEyebrow>Client Correspondence</RecordEyebrow>
+            <h2 className="enk-display mt-4 text-[clamp(1.5rem,2.8vw,2rem)] text-[var(--enk-ink)]">
+              On record from clients
+            </h2>
+            <p className="mt-3 text-[14px] leading-relaxed text-[var(--enk-steel)] md:text-[15px]">
+              Verified feedback from the operators and EPC contractors we deliver for, reproduced from client correspondence.
+            </p>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-2">
+            {testimonials.map((t) => (
+              <figure
+                key={t.client}
+                className="flex flex-col border p-5"
+                style={{
+                  borderColor: "var(--enk-rule)",
+                  borderRadius: "var(--enk-radius-record)",
+                  backgroundColor: "var(--enk-record-surface)",
+                }}
+              >
+                <blockquote className="text-[14px] leading-relaxed text-[var(--enk-steel)]">
+                  "{t.quote}"
+                </blockquote>
+                <figcaption className="mt-4 border-t border-[var(--enk-rule)] pt-3.5">
+                  <p className="enk-mono text-[11.5px] font-semibold uppercase tracking-[0.08em] text-[var(--enk-accent-on-dark)]">{t.client}</p>
+                  <p className="enk-mono mt-1 text-[11px] text-[var(--enk-blueprint)]">{t.project}</p>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
         </div>
       </section>
 
       <RecentOps />
 
-      <section className="section-padding bg-background scroll-mt-24" id="map">
-        <div className="container-wide">
-          <motion.div
-            className="mx-auto mb-10 max-w-2xl text-center"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <p className="enk-kicker justify-center mb-3">Locations</p>
-            <h2 className="mb-3">Project Footprint</h2>
-            <p className="text-[14px] md:text-[15px] text-muted-foreground">
-              Explore delivered projects across Nigeria's major oil and gas regions.
+      {/* Geographic register */}
+      <section className="enk-section scroll-mt-24" id="map">
+        <div className="enk-container">
+          <div className="mb-8 max-w-2xl">
+            <RecordEyebrow>Locations</RecordEyebrow>
+            <h2 className="enk-display mt-4 text-[clamp(1.5rem,2.8vw,2rem)] text-[var(--enk-ink)]">
+              Project footprint
+            </h2>
+            <p className="mt-3 text-[14px] leading-relaxed text-[var(--enk-steel)] md:text-[15px]">
+              Delivered projects across Nigeria's major oil and gas regions.
             </p>
-          </motion.div>
+          </div>
         </div>
         <InteractiveProjectMap
           showHeader={false}
@@ -490,9 +633,10 @@ export default function ProjectsPage() {
       </section>
 
       <CTABand
-        headline={content.cta?.headline || "Your Project Could Be Next"}
-        subhead={content.cta?.subhead || "Join Shell, Dangote, and NNPC. Get a detailed proposal for your infrastructure project."}
-        secondaryCTA={{ label: "Explore Our Capabilities", href: "/capabilities" }}
+        headline={content.cta?.headline || "Discuss your crossing or pipeline scope"}
+        subhead={content.cta?.subhead || "Send project details for a technical response — scope, method statement input, and budget pricing from the engineering team."}
+        primaryCTA={{ label: "Send RFQ / Tender", href: "/contact" }}
+        secondaryCTA={{ label: "View Capabilities", href: "/capabilities" }}
       />
     </Layout>
   );

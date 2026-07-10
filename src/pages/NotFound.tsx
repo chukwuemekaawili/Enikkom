@@ -1,8 +1,17 @@
 import { useLocation, Link } from "react-router-dom";
 import { useEffect } from "react";
 import { Layout } from "@/components/layout";
-import { Button } from "@/components/ui/button";
-import { Home, ArrowLeft, Phone, Briefcase } from "lucide-react";
+import SEO from "@/components/ui/SEO";
+import { ArrowRight } from "lucide-react";
+import { RecordStatusStamp } from "@/components/records";
+
+const quickLinks = [
+  { label: "Capabilities", href: "/capabilities" },
+  { label: "Project Records", href: "/projects" },
+  { label: "Company", href: "/about" },
+  { label: "QHSE", href: "/hse-quality" },
+  { label: "Contact", href: "/contact" },
+];
 
 const NotFound = () => {
   const location = useLocation();
@@ -13,55 +22,49 @@ const NotFound = () => {
 
   return (
     <Layout>
-      <section className="section-padding min-h-[60vh] flex items-center justify-center">
-        <div className="container-wide text-center">
-          {/* 404 Visual */}
-          <div className="mb-8">
-            <span className="text-[120px] md:text-[180px] font-bold text-primary/10 leading-none font-heading">
+      <SEO title="Page Not Found – Enikkom" noindex />
+      <section className="enk-section flex min-h-[60vh] items-center justify-center">
+        <div className="enk-container">
+          <div className="enk-doc-card mx-auto max-w-xl p-8 text-center md:p-10">
+            <div className="flex items-center justify-center gap-3">
+              <p className="enk-overline">File Reference</p>
+              <span className="enk-mono text-[13px] font-semibold text-[var(--enk-blueprint)]">
+                ERR-404
+              </span>
+            </div>
+
+            <p className="enk-mono mt-6 text-[72px] font-semibold leading-none text-[var(--enk-rule-heavy)] md:text-[96px]">
               404
-            </span>
-          </div>
-          
-          <h1 className="text-[28px] md:text-[36px] mb-4">Page Not Found</h1>
-          <p className="text-muted-foreground text-[16px] md:text-[17px] max-w-md mx-auto mb-8">
-            Sorry, we couldn't find the page you're looking for. It may have been moved or doesn't exist.
-          </p>
-          
-          {/* Navigation Options */}
-          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-12">
-            <Button asChild size="lg" className="h-12 px-6">
-              <Link to="/">
-                <Home className="mr-2 h-4 w-4" />
-                Go to Homepage
+            </p>
+
+            <div className="mt-5 flex justify-center">
+              <RecordStatusStamp tone="alert">Record Not Found</RecordStatusStamp>
+            </div>
+
+            <p className="mx-auto mt-5 max-w-md text-[14px] leading-6 text-[var(--enk-steel)]">
+              The requested page is not in the file. It may have been moved, renamed, or never
+              existed.
+            </p>
+
+            <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+              <Link to="/" className="enk-btn enk-btn--gold">
+                Return to Front Page
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="h-12 px-6">
-              <Link to="/contact">
-                <Phone className="mr-2 h-4 w-4" />
-                Contact Us
+              <Link to="/projects" className="enk-btn enk-btn--outline">
+                View Project Records
               </Link>
-            </Button>
-          </div>
-          
-          {/* Quick Links */}
-          <div className="border-t pt-8">
-            <p className="text-sm text-muted-foreground mb-4">Popular pages:</p>
-            <div className="flex flex-wrap gap-2 justify-center">
-              <Button asChild variant="ghost" size="sm">
-                <Link to="/capabilities">Capabilities</Link>
-              </Button>
-              <Button asChild variant="ghost" size="sm">
-                <Link to="/projects">Projects</Link>
-              </Button>
-              <Button asChild variant="ghost" size="sm">
-                <Link to="/about">About Us</Link>
-              </Button>
-              <Button asChild variant="ghost" size="sm">
-                <Link to="/hse-quality">QHSE &amp; Quality</Link>
-              </Button>
-              <Button asChild variant="ghost" size="sm">
-                <Link to="/contact">Contact</Link>
-              </Button>
+            </div>
+
+            <div className="mt-8 border-t pt-6" style={{ borderColor: "var(--enk-rule)" }}>
+              <p className="enk-overline mb-3">Registry Index</p>
+              <div className="flex flex-wrap justify-center gap-2">
+                {quickLinks.map((link) => (
+                  <Link key={link.href} to={link.href} className="enk-chip focus-ring transition-colors hover:border-[var(--enk-accent-on-dark)] hover:text-[var(--enk-ink)]">
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </div>

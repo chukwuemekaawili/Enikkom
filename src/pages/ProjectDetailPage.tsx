@@ -1,15 +1,22 @@
 import { useParams, Link } from "react-router-dom";
 import { Layout } from "@/components/layout";
-import { Hero, CTABand, CaseStudyCard } from "@/components/sections";
+import SEO from "@/components/ui/SEO";
+import { testimonials } from "@/content/testimonials";
+import { CTABand } from "@/components/sections";
 import { motion, AnimatePresence } from "framer-motion";
-import { MapPin, Calendar, Shield, CheckCircle, ArrowLeft, Quote, Users, Gauge, Trophy, Play, X, ZoomIn } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { ArrowLeft, Play, X } from "lucide-react";
+import { useState, type ReactNode } from "react";
 import { getProjectGalleryImages, getProjectImage } from "@/content/projectImageSelections";
-import { usePageContent } from "@/hooks/useSiteSettings";
-import { EditableText, EditableImage } from "@/components/content";
 import { EnhancedImage } from "@/components/ui/enhanced-image";
-import { SectionHeading } from "@/components/home/SectionHeading";
+import {
+  RecordEyebrow,
+  RecordMetaRow,
+  RecordSpecTable,
+  RecordStatusStamp,
+  FieldFigure,
+  ProjectRecordCard,
+  type SpecRow,
+} from "@/components/records";
 
 // Import all authentic project images from PDFs
 import hddNightPanorama from "@/assets/images/projects/hdd-night-panorama-cropped.jpg";
@@ -74,16 +81,6 @@ interface ProjectData {
   recordBadge?: string;
   gallery: GalleryImage[];
 }
-
-// Slug to page_slug mapping for CMS
-const slugToPageSlug: Record<string, string> = {
-  'oml34-chdd': 'proj-oml34',
-  'otumara-escravos': 'proj-otumara',
-  'atlas-cove-mosimi': 'proj-atlas',
-  'dangote-lagoon': 'proj-lekki',
-  'yenagoa-40-crossing': 'proj-yenagoa',
-  'nipco-gas-distribution': 'proj-nipco',
-};
 
 // Verified project data from Enikkom documents with dedicated galleries
 const baseProjectData: Record<string, ProjectData> = {
@@ -535,6 +532,78 @@ const baseProjectData: Record<string, ProjectData> = {
       { src: teamSafety, alt: "Training", caption: "Local crew training" },
     ]
   },
+  "nun-river-dual-hdd": {
+    title: "Nun River Dual HDD Crossing, 16\" & 6\"",
+    client: "NPDC",
+    location: "Niger Delta, Nigeria",
+    year: "2024",
+    capabilities: ["HDD", "Pipeline"],
+    overview: "A dual Horizontal Directional Drilling crossing installing 16-inch and 6-inch pipelines beneath the Nun River for NPDC, one of Enikkom's most recent trenchless crossings in the Niger Delta.",
+    challenge: "The Nun River crossing required installing two lines of different diameters beneath an active river in soft, variable riverine ground, without disturbing the waterway or surrounding communities. Conventional open-cut installation was not viable across the river corridor.",
+    solution: "Enikkom executed the crossing as two separate HDD drives, sequencing the 16-inch and 6-inch installations to maintain trajectory control and separation. Owned maxi-rig capacity, in-house mud recycling and real-time trajectory monitoring delivered both lines under the river to the required depth of cover.",
+    results: [
+      { label: "Pipe Diameters", value: "16\" & 6\"" },
+      { label: "Method", value: "Dual HDD" },
+      { label: "Crossing", value: "Nun River" },
+      { label: "Client", value: "NPDC" },
+      { label: "Year", value: "2024" },
+    ],
+    hseNotes: "Delivered under Enikkom's ISO 45001-certified HSE system with daily JSAs, toolbox talks and environmental monitoring to protect the sensitive riverine setting.",
+    heroImage: hddNightPanorama,
+    scope: [
+      "Geotechnical investigation and crossing design",
+      "16\" HDD pilot bore, reaming and pullback",
+      "6\" HDD pilot bore, reaming and pullback",
+      "Mud recycling and environmental management",
+      "Real-time trajectory monitoring",
+      "Hydrostatic testing and commissioning",
+    ],
+    recordBadge: "2024 Dual HDD Crossing",
+    gallery: [
+      { src: hddNightPanorama, alt: "Nun River HDD site operations", caption: "HDD spread on station for the Nun River crossing" },
+      { src: hddRigNight, alt: "Maxi HDD rig", caption: "Maxi HDD rig in operation" },
+      { src: hddDrillString, alt: "Drill string assembly", caption: "Drill string assembly and preparation" },
+      { src: drillingOps4, alt: "Directional drilling operations", caption: "Directional drilling operations" },
+      { src: teamSafety, alt: "Safety briefing", caption: "Daily safety briefing with crew" },
+      { src: workersPpe, alt: "Crew in PPE", caption: "Crew in full PPE on site" },
+    ]
+  },
+  "gbaran-phase-3b": {
+    title: "Gbaran Phase 3b, UZU CPF Upgrade",
+    client: "SPDC",
+    location: "Bayelsa State, Nigeria",
+    year: "2025",
+    capabilities: ["Pipeline", "Facilities", "EPC"],
+    overview: "EPC pipeline construction supporting the UZU Central Processing Facility upgrade under Gbaran Phase 3b for Shell Petroleum Development Company, one of Enikkom's most recent EPC awards.",
+    challenge: "The Gbaran Phase 3b scope required installing 16-inch pipeline sections totalling 8 km and 10 km to tie into the UZU CPF upgrade, across Bayelsa's swamp and riverine terrain and to Shell's EPC standards.",
+    solution: "Enikkom delivered the work as an integrated EPC package, self-performing pipeline fabrication, welding, coating, installation, testing and tie-in to the facility. Owned pipeline and marine spreads, in-house project controls and QA/QC kept the multi-front scope on schedule to the client's specification.",
+    results: [
+      { label: "Pipe Diameter", value: "16 inches" },
+      { label: "Pipeline Lengths", value: "8 km & 10 km" },
+      { label: "Scope", value: "EPC construction" },
+      { label: "Client", value: "SPDC" },
+      { label: "Year", value: "2025" },
+    ],
+    hseNotes: "Executed under Enikkom's ISO 9001/14001/45001-certified management systems with integrated QA/QC, inspection and test plans, and environmental controls for the Bayelsa terrain.",
+    heroImage: pipeLaying,
+    scope: [
+      "EPC engineering and procurement support",
+      "16\" pipeline fabrication, welding and coating",
+      "Pipeline installation across swamp terrain (8 km & 10 km)",
+      "Non-destructive testing and hydrotesting",
+      "Tie-in to the UZU CPF upgrade",
+      "Pre-commissioning and commissioning support",
+    ],
+    recordBadge: "2025 EPC Award",
+    gallery: [
+      { src: pipeLaying, alt: "Pipeline installation", caption: "Pipeline lowering and installation" },
+      { src: weldingCrew, alt: "Welding crew", caption: "Field welding operations" },
+      { src: pipelineCrew, alt: "Pipeline crew", caption: "Pipeline construction crew on site" },
+      { src: craneOperations, alt: "Crane operations", caption: "Crane and sideboom operations" },
+      { src: catExcavator, alt: "Excavation", caption: "Excavation and right-of-way works" },
+      { src: workersPpe, alt: "Crew in PPE", caption: "Crew in full PPE on site" },
+    ]
+  },
 };
 
 function buildCuratedGallery(slug: string, project: ProjectData) {
@@ -615,443 +684,415 @@ const relatedProjects = [
   },
 ];
 
+/** Record-style narrative block: amber-ruled eyebrow, heading, and body. */
+function RecordSection({
+  eyebrow,
+  refNo,
+  title,
+  children,
+  className,
+}: {
+  eyebrow: string;
+  refNo?: string;
+  title: string;
+  children: ReactNode;
+  className?: string;
+}) {
+  return (
+    <section className={className}>
+      <RecordEyebrow refNo={refNo}>{eyebrow}</RecordEyebrow>
+      <h2 className="enk-display mt-3 text-[clamp(1.3rem,2.3vw,1.65rem)] text-[var(--enk-ink)]">
+        {title}
+      </h2>
+      <div className="mt-4">{children}</div>
+    </section>
+  );
+}
+
+/** Field-record body prose — plain, documented, not marketing copy. */
+function RecordProse({ children }: { children: ReactNode }) {
+  return (
+    <p className="max-w-2xl text-[15px] leading-relaxed text-[var(--enk-steel)] md:text-[16px]">
+      {children}
+    </p>
+  );
+}
+
 export default function ProjectDetailPage() {
   const { slug } = useParams<{ slug: string }>();
   const project = slug ? projectData[slug] : null;
+  const projectTestimonial = testimonials.find((t) => t.projectSlug === slug);
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
-  
-  // Get CMS content for this project
-  const pageSlug = slug ? slugToPageSlug[slug] || '' : '';
-  const { content, isLoading } = usePageContent(pageSlug);
 
-  // Filter out current project from related projects
-  const filteredRelatedProjects = relatedProjects.filter(p => !p.href.includes(slug || "")).slice(0, 3);
+  // Filter out current project from related records
+  const filteredRelatedProjects = relatedProjects.filter((p) => !p.href.includes(slug || "")).slice(0, 3);
 
   if (!project) {
     return (
       <Layout>
-        <div className="section-padding container-wide text-center py-24">
-          <h1 className="enk-display text-[clamp(1.8rem,4vw,2.6rem)] mb-4">Project Not Found</h1>
-          <p className="text-muted-foreground mb-6">The requested project page does not exist or is coming soon.</p>
-          <Button asChild>
-            <Link to="/projects">
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to Projects
+        <section className="enk-section">
+          <div className="enk-container max-w-xl text-center">
+            <RecordEyebrow align="center">Record Not Found</RecordEyebrow>
+            <h1 className="enk-display mt-4 text-[clamp(1.8rem,4vw,2.6rem)] text-[var(--enk-ink)]">
+              No record on file
+            </h1>
+            <p className="mt-4 text-[15px] leading-relaxed text-[var(--enk-steel)]">
+              The requested project record does not exist in the register.
+            </p>
+            <Link to="/projects" className="enk-btn enk-btn--outline mt-8 inline-flex">
+              <ArrowLeft className="h-4 w-4" aria-hidden="true" />
+              Back to project register
             </Link>
-          </Button>
-        </div>
+          </div>
+        </section>
       </Layout>
     );
   }
 
-  // Merge CMS content with defaults
-  const heroContent = content.hero || {};
-  const overviewContent = content.overview || {};
-  const challengeContent = content.challenge || {};
-  const solutionContent = content.solution || {};
-  const resultsContent = content.results || {};
-  const scopeContent = content.scope || {};
-  
-  // Build merged data
-  const displayTitle = heroContent.title || project.title;
-  const displayClient = heroContent.client || project.client;
-  const displayLocation = heroContent.location || project.location;
-  const displayYear = heroContent.year || project.year;
-  const displayRecordBadge = heroContent.recordBadge || project.recordBadge;
-  const displayHeroImage = heroContent.backgroundImage || project.heroImage;
-  const displayOverview = overviewContent.overview || project.overview;
-  const displayChallenge = challengeContent.challenge || project.challenge;
-  const displaySolution = solutionContent.solution || project.solution;
-  const displayResults = resultsContent.results?.length > 0 ? resultsContent.results : project.results;
-  const displayScope = scopeContent.scope?.length > 0 ? scopeContent.scope : project.scope;
+  const {
+    title,
+    client,
+    location,
+    year,
+    capabilities,
+    overview,
+    challenge,
+    solution,
+    results,
+    hseNotes,
+    clientQuote,
+    heroImage,
+    scope,
+    youtubeId,
+    recordBadge,
+    gallery,
+  } = project;
+
+  const discipline = capabilities.join(" · ");
+  // Key figures pulled straight from the verified results ledger — never invented.
+  const heroFigures = results.slice(0, 3);
+  const ltiEntry = results.find(
+    (r) => /lti/i.test(r.label) && /zero/i.test(r.value),
+  );
+  const isRecordHolder = Boolean(recordBadge && /longest|largest|deepest|first|record/i.test(recordBadge));
+
+  // Title-block metadata — only fields that exist.
+  const metaItems = [
+    { label: "Client", value: client },
+    { label: "Location", value: location },
+    { label: "Year", value: year },
+    { label: "Discipline", value: discipline },
+    { label: "Status", value: "On record" },
+  ].filter((item) => Boolean(item.value));
+
+  // Technical specification ledger, built from the verified results data.
+  const specRows: SpecRow[] = results.map((r) => ({ label: r.label, value: r.value }));
 
   return (
     <Layout>
-      <Hero
-        title={displayTitle}
-        subtitle={`${displayClient} • ${displayLocation}`}
-        badge={displayRecordBadge}
-        backgroundImage={displayHeroImage}
-        size="default"
-        pageSlug={pageSlug}
-        sectionKey="hero"
-        imageField="backgroundImage"
+      <SEO
+        title={`${title}, ${location} – Enikkom`}
+        description={overview || challenge}
+        canonical={`/projects/${slug}`}
       />
 
-      <section className="section-padding">
-        <div className="container-wide">
-          {/* Back Link */}
-          <Link to="/projects" className="enk-link inline-flex items-center text-sm mb-8">
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            Back to all projects
-          </Link>
-
-          {/* Record Badge if exists */}
-          {displayRecordBadge && (
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="mb-8"
+      {/* ── Project dossier header — document cover sheet, not a marketing hero ── */}
+      <section
+        aria-label="Project record header"
+        style={{ backgroundColor: "var(--enk-navy)", borderBottom: "1px solid var(--enk-rule)" }}
+      >
+        <div className="enk-container grid items-start gap-10 py-12 md:py-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,480px)]">
+          <div>
+            <Link
+              to="/projects"
+              className="enk-mono inline-flex min-h-[40px] items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.1em] text-[var(--enk-accent-on-dark)] transition-colors hover:text-[var(--enk-accent-primary-on-dark)] focus-ring rounded-sm"
             >
-              <span className="enk-chip gap-2 px-4 py-2 text-[13px]">
-                <Trophy className="h-3.5 w-3.5" aria-hidden="true" />
-                {displayRecordBadge}
-              </span>
-            </motion.div>
-          )}
+              <ArrowLeft className="h-3.5 w-3.5" aria-hidden="true" />
+              Project Register
+            </Link>
 
-          {/* Project Meta */}
-          <div className="flex flex-wrap gap-6 mb-12 pb-8 border-b">
-            <div className="flex items-center gap-2 text-muted-foreground">
-              <MapPin className="h-4 w-4" />
-              <span>{displayLocation}</span>
+            <div className="mt-5">
+              <RecordEyebrow refNo={year}>Project Record</RecordEyebrow>
             </div>
-            <div className="flex items-center gap-2 text-muted-foreground">
-              <Calendar className="h-4 w-4" />
-              <span>{displayYear}</span>
-            </div>
-            <div className="flex items-center gap-2 text-muted-foreground">
-              <Users className="h-4 w-4" />
-              <span>{displayClient}</span>
-            </div>
-            <div className="flex gap-2">
-              {project.capabilities.map((cap) => (
-                <span key={cap} className="enk-chip">
-                  {cap}
-                </span>
-              ))}
-            </div>
+            <h1 className="enk-display mt-4 max-w-2xl text-[clamp(1.8rem,3.8vw,2.7rem)] text-[var(--enk-on-dark)]">
+              {title}
+            </h1>
+            <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-[var(--enk-on-dark-muted)] md:text-[16px]">
+              {overview}
+            </p>
+
+            {(recordBadge || ltiEntry) && (
+              <div className="mt-6 flex flex-wrap items-center gap-2.5">
+                {recordBadge && (
+                  <RecordStatusStamp tone={isRecordHolder ? "record" : "neutral"}>
+                    {recordBadge}
+                  </RecordStatusStamp>
+                )}
+                {ltiEntry && <RecordStatusStamp tone="complete">Zero LTI</RecordStatusStamp>}
+              </div>
+            )}
+
+            <RecordMetaRow className="mt-8" items={metaItems} />
+
+            {heroFigures.length > 0 && (
+              <dl className="mt-8 grid max-w-xl grid-cols-2 gap-x-8 gap-y-5 sm:grid-cols-3">
+                {heroFigures.map((figure) => (
+                  <div key={figure.label} className="border-t border-[var(--enk-rule)] pt-3">
+                    <dt className="enk-overline">{figure.label}</dt>
+                    <dd className="enk-mono mt-1.5 text-[clamp(1.05rem,1.6vw,1.3rem)] font-semibold leading-none text-[var(--enk-on-dark)]">
+                      {figure.value}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            )}
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-12">
-            <div className="lg:col-span-2 space-y-10">
-              {/* YouTube Video Embed */}
-              {project.youtubeId && (
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                >
-                  <h2 className="enk-display text-[clamp(1.3rem,2.2vw,1.6rem)] mb-4 flex items-center gap-2">
-                    <Play className="h-5 w-5" style={{ color: "var(--enk-accent-on-dark)" }} aria-hidden="true" />
-                    Project Video
-                  </h2>
-                  <div className="aspect-video rounded-xl overflow-hidden shadow-lg">
-                    <iframe
-                      width="100%"
-                      height="100%"
-                      src={`https://www.youtube.com/embed/${project.youtubeId}?rel=0`}
-                      title={displayTitle}
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="w-full h-full"
-                    />
-                  </div>
-                </motion.div>
-              )}
-
-              {/* Overview */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-              >
-                <SectionHeading
-                  kicker="Project Overview"
-                  title={
-                    <EditableText
-                      value={overviewContent.section_title || "Project Overview"}
-                      pageSlug={pageSlug}
-                      sectionKey="overview"
-                      field="section_title"
-                    />
-                  }
-                  intro={
-                    <EditableText
-                      value={displayOverview}
-                      pageSlug={pageSlug}
-                      sectionKey="overview"
-                      field="overview"
-                      multiline
-                    />
-                  }
-                />
-              </motion.div>
-
-              {/* Scope of Work */}
-              {displayScope && displayScope.length > 0 && (
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                >
-                  <SectionHeading
-                    kicker="Scope"
-                    title={
-                      <EditableText
-                        value={scopeContent.section_title || "Scope of Work"}
-                        pageSlug={pageSlug}
-                        sectionKey="scope"
-                        field="section_title"
-                      />
-                    }
-                  />
-                  <ul className="space-y-2 mt-6">
-                    {displayScope.map((item: string, index: number) => (
-                      <li key={index} className="flex items-start gap-3">
-                        <CheckCircle className="h-5 w-5 flex-shrink-0 mt-0.5" style={{ color: "var(--enk-accent-on-dark)" }} />
-                        <span className="text-muted-foreground">
-                          <EditableText
-                            value={item}
-                            pageSlug={pageSlug}
-                            sectionKey="scope"
-                            field={`item_${index}`}
-                          />
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
-              )}
-
-              {/* Challenge */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-              >
-                <SectionHeading
-                  kicker="The Challenge"
-                  title={
-                    <EditableText
-                      value={challengeContent.section_title || "The Challenge"}
-                      pageSlug={pageSlug}
-                      sectionKey="challenge"
-                      field="section_title"
-                    />
-                  }
-                  intro={
-                    <EditableText
-                      value={displayChallenge}
-                      pageSlug={pageSlug}
-                      sectionKey="challenge"
-                      field="challenge"
-                      multiline
-                    />
-                  }
-                />
-              </motion.div>
-
-              {/* Solution */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-              >
-                <SectionHeading
-                  kicker="Our Solution"
-                  title={
-                    <EditableText
-                      value={solutionContent.section_title || "Our Solution"}
-                      pageSlug={pageSlug}
-                      sectionKey="solution"
-                      field="section_title"
-                    />
-                  }
-                  intro={
-                    <EditableText
-                      value={displaySolution}
-                      pageSlug={pageSlug}
-                      sectionKey="solution"
-                      field="solution"
-                      multiline
-                    />
-                  }
-                />
-              </motion.div>
-
-              {/* HSE Notes */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="enk-card p-6"
-                style={{ borderColor: "var(--enk-safety)", backgroundColor: "oklch(0.56 0.12 150 / 0.06)" }}
-              >
-                <div className="flex items-center gap-2 mb-4">
-                  <Shield className="h-5 w-5" style={{ color: "var(--enk-safety)" }} aria-hidden="true" />
-                  <h2 className="enk-display text-[clamp(1.3rem,2.2vw,1.6rem)]">
-                    <EditableText
-                      value={content.hse?.section_title || "HSE & Quality Performance"}
-                      pageSlug={pageSlug}
-                      sectionKey="hse"
-                      field="section_title"
-                    />
-                  </h2>
-                </div>
-                <p className="text-muted-foreground leading-relaxed">
-                  <EditableText
-                    value={content.hse?.notes || project.hseNotes}
-                    pageSlug={pageSlug}
-                    sectionKey="hse"
-                    field="notes"
-                    multiline
-                  />
-                </p>
-              </motion.div>
-
-              {/* Client Quote */}
-              {project.clientQuote && (
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  className="enk-card p-8 border-l-4"
-                  style={{ borderLeftColor: "var(--enk-accent-on-dark)" }}
-                >
-                  <Quote className="h-8 w-8 mb-4" style={{ color: "var(--enk-accent-on-dark)", opacity: 0.3 }} />
-                  <blockquote className="text-lg italic text-foreground mb-4">
-                    "<EditableText
-                      value={content.quote?.text || project.clientQuote.text}
-                      pageSlug={pageSlug}
-                      sectionKey="quote"
-                      field="text"
-                      multiline
-                    />"
-                  </blockquote>
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center">
-                      <Users className="h-5 w-5" style={{ color: "var(--enk-accent-on-dark)" }} />
-                    </div>
-                    <div>
-                      <p className="font-semibold">
-                        <EditableText
-                          value={content.quote?.author || project.clientQuote.author}
-                          pageSlug={pageSlug}
-                          sectionKey="quote"
-                          field="author"
-                        />
-                      </p>
-                      <p className="text-sm text-muted-foreground">
-                        <EditableText
-                          value={content.quote?.role || project.clientQuote.role}
-                          pageSlug={pageSlug}
-                          sectionKey="quote"
-                          field="role"
-                        />
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              )}
-            </div>
-
-            {/* Sidebar - Results */}
-            <div className="space-y-6">
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="enk-card p-6 sticky top-24"
-              >
-                <h3 className="text-lg font-semibold mb-6 flex items-center gap-2">
-                  <Gauge className="h-5 w-5" style={{ color: "var(--enk-accent-on-dark)" }} />
-                  <EditableText
-                    value={resultsContent.section_title || "Project Results"}
-                    pageSlug={pageSlug}
-                    sectionKey="results"
-                    field="section_title"
-                  />
-                </h3>
-                <div className="space-y-4">
-                  {displayResults.map((result: { label: string; value: string }, index: number) => (
-                    <div key={index} className="flex justify-between items-center py-3 border-b last:border-0">
-                      <span className="text-sm text-muted-foreground">
-                        <EditableText
-                          value={result.label}
-                          pageSlug={pageSlug}
-                          sectionKey="results"
-                          field={`result_${index}_label`}
-                        />
-                      </span>
-                      <span className="font-semibold" style={{ color: "var(--enk-accent-on-dark)" }}>
-                        <EditableText
-                          value={result.value}
-                          pageSlug={pageSlug}
-                          sectionKey="results"
-                          field={`result_${index}_value`}
-                        />
-                      </span>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="mt-8 space-y-3">
-                  <Button asChild className="w-full">
-                    <Link to="/contact">Contact Us</Link>
-                  </Button>
-                  <Button asChild variant="outline" className="w-full">
-                    <Link to="/contact">Discuss Your Project</Link>
-                  </Button>
-                </div>
-              </motion.div>
-            </div>
-          </div>
+          <FieldFigure
+            className="lg:sticky lg:top-24"
+            src={heroImage}
+            alt={`Field documentation — ${title}`}
+            figNo="Plate 01"
+            caption="Site documentation from the project record"
+            date={year}
+            ratio="4/3"
+            priority
+            sizes="(min-width: 1024px) 480px, 100vw"
+          />
         </div>
       </section>
 
-      {/* Project Gallery Section */}
-      {project.gallery && project.gallery.length > 0 && (
-        <section className="section-padding bg-muted/30">
-          <div className="container-wide">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-10"
-            >
-              <SectionHeading
-                kicker="Project Gallery"
-                title={<>Project Documentation</>}
-                intro="Authentic photographs documenting our work on this project."
-                onDark
-                align="center"
-              />
-            </motion.div>
-
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              {project.gallery.map((image, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: index * 0.03 }}
-                  className="group cursor-pointer aspect-[4/3] rounded-xl overflow-hidden relative"
-                  onClick={() => setSelectedImage(image)}
+      {/* ── Record body — narrative + specification ledger ── */}
+      <section className="enk-section">
+        <div className="enk-container grid gap-12 lg:grid-cols-3">
+          <div className="space-y-12 lg:col-span-2">
+            {/* Field video record */}
+            {youtubeId && (
+              <RecordSection eyebrow="Site Footage" title="Field video record">
+                <div
+                  className="aspect-video overflow-hidden border"
+                  style={{ borderColor: "var(--enk-rule)", borderRadius: "var(--enk-radius-record)" }}
                 >
-                  <EnhancedImage
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src={`https://www.youtube.com/embed/${youtubeId}?rel=0`}
+                    title={title}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="h-full w-full"
+                  />
+                </div>
+                <p className="enk-mono mt-3 flex items-center gap-2 text-[11px] uppercase tracking-[0.1em] text-[var(--enk-blueprint)]">
+                  <Play className="h-3.5 w-3.5" aria-hidden="true" />
+                  Recorded site footage
+                </p>
+              </RecordSection>
+            )}
+
+            {/* Record summary */}
+            <RecordSection eyebrow="Record Summary" title="Project summary">
+              <RecordProse>{overview}</RecordProse>
+            </RecordSection>
+
+            {/* Scope of works */}
+            {scope.length > 0 && (
+              <RecordSection eyebrow="Scope" title="Scope of works">
+                <ul
+                  className="max-w-2xl border-t"
+                  style={{ borderColor: "var(--enk-rule)" }}
+                >
+                  {scope.map((item, index) => (
+                    <li
+                      key={index}
+                      className="flex items-baseline gap-3 border-b py-2.5"
+                      style={{ borderColor: "var(--enk-rule)" }}
+                    >
+                      <span className="enk-mono shrink-0 text-[11px] font-semibold text-[var(--enk-accent-on-dark)]">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <span className="text-[14px] leading-snug text-[var(--enk-steel)] md:text-[15px]">
+                        {item}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </RecordSection>
+            )}
+
+            {/* Site conditions */}
+            <RecordSection eyebrow="Site Conditions" title="Site & field conditions">
+              <RecordProse>{challenge}</RecordProse>
+            </RecordSection>
+
+            {/* Method of execution */}
+            <RecordSection eyebrow="Execution" title="Method of execution">
+              <RecordProse>{solution}</RecordProse>
+            </RecordSection>
+
+            {/* QHSE / delivery proof */}
+            <RecordSection eyebrow="QHSE" refNo="ENK-QHSE" title="QHSE & delivery record">
+              <div
+                className="max-w-2xl border p-5"
+                style={{
+                  borderColor: "var(--enk-rule)",
+                  borderRadius: "var(--enk-radius-record)",
+                  backgroundColor: "var(--enk-record-surface)",
+                }}
+              >
+                {ltiEntry && (
+                  <div className="mb-4 flex flex-wrap items-center gap-2.5">
+                    <RecordStatusStamp tone="qhse">Zero LTI</RecordStatusStamp>
+                  </div>
+                )}
+                <p className="text-[14px] leading-relaxed text-[var(--enk-steel)] md:text-[15px]">
+                  {hseNotes}
+                </p>
+                <p className="enk-mono mt-4 border-t border-[var(--enk-rule)] pt-3.5 text-[11px] uppercase tracking-[0.1em] text-[var(--enk-blueprint)]">
+                  QHSE documentation available for procurement review
+                </p>
+              </div>
+            </RecordSection>
+
+            {/* Client correspondence */}
+            {clientQuote && (
+              <RecordSection eyebrow="Client Correspondence" title="On record from the client">
+                <figure
+                  className="max-w-2xl border p-5"
+                  style={{
+                    borderColor: "var(--enk-rule)",
+                    borderRadius: "var(--enk-radius-record)",
+                    backgroundColor: "var(--enk-record-surface)",
+                  }}
+                >
+                  <blockquote className="text-[15px] leading-relaxed text-[var(--enk-steel)] md:text-[16px]">
+                    "{clientQuote.text}"
+                  </blockquote>
+                  <figcaption className="mt-4 border-t border-[var(--enk-rule)] pt-3.5">
+                    <p className="enk-mono text-[11.5px] font-semibold uppercase tracking-[0.08em] text-[var(--enk-accent-on-dark)]">
+                      {clientQuote.author}
+                    </p>
+                    <p className="enk-mono mt-1 text-[11px] text-[var(--enk-blueprint)]">
+                      {clientQuote.role}
+                    </p>
+                  </figcaption>
+                </figure>
+              </RecordSection>
+            )}
+          </div>
+
+          {/* Specification ledger sidebar */}
+          <aside className="lg:col-span-1">
+            <div
+              className="border p-5 lg:sticky lg:top-24"
+              style={{
+                borderColor: "var(--enk-rule)",
+                borderRadius: "var(--enk-radius-record)",
+                backgroundColor: "var(--enk-record-surface)",
+              }}
+            >
+              <div className="flex items-center justify-between gap-3">
+                <RecordEyebrow>Specification</RecordEyebrow>
+                {recordBadge && isRecordHolder && (
+                  <RecordStatusStamp tone="record">Record</RecordStatusStamp>
+                )}
+              </div>
+
+              <RecordSpecTable className="mt-4" rows={specRows} dense />
+
+              <dl className="mt-4 border-t border-[var(--enk-rule)] pt-4 text-[12px]">
+                <div className="flex items-baseline justify-between gap-4 py-1">
+                  <dt className="enk-overline shrink-0">Client</dt>
+                  <dd className="enk-mono text-right text-[var(--enk-on-dark)]">{client}</dd>
+                </div>
+                <div className="flex items-baseline justify-between gap-4 py-1">
+                  <dt className="enk-overline shrink-0">Discipline</dt>
+                  <dd className="enk-mono text-right text-[var(--enk-on-dark)]">{discipline}</dd>
+                </div>
+              </dl>
+
+              <div className="mt-6 flex flex-col gap-3">
+                <Link to="/contact" className="enk-btn enk-btn--gold w-full justify-center">
+                  Request Project Credentials
+                </Link>
+                <Link to="/contact" className="enk-btn enk-btn--outline w-full justify-center">
+                  Send RFQ / Tender
+                </Link>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      {/* ── Independent client correspondence (merged from former /testimonials) ── */}
+      {projectTestimonial && (
+        <section className="enk-section" style={{ backgroundColor: "var(--enk-bg-muted)" }}>
+          <div className="enk-container">
+            <div className="mb-8 max-w-2xl">
+              <RecordEyebrow>Client Correspondence</RecordEyebrow>
+              <h2 className="enk-display mt-3 text-[clamp(1.3rem,2.3vw,1.65rem)] text-[var(--enk-ink)]">
+                Filed client feedback
+              </h2>
+            </div>
+            <figure
+              className="max-w-3xl border p-6 md:p-7"
+              style={{
+                borderColor: "var(--enk-rule)",
+                borderRadius: "var(--enk-radius-record)",
+                backgroundColor: "var(--enk-record-surface)",
+              }}
+            >
+              <blockquote className="text-[15px] leading-relaxed text-[var(--enk-steel)] md:text-[17px]">
+                "{projectTestimonial.quote}"
+              </blockquote>
+              <figcaption className="mt-5 border-t border-[var(--enk-rule)] pt-4">
+                <p className="enk-mono text-[11.5px] font-semibold uppercase tracking-[0.08em] text-[var(--enk-accent-on-dark)]">
+                  {projectTestimonial.client}
+                </p>
+                {projectTestimonial.project && (
+                  <p className="enk-mono mt-1 text-[11px] text-[var(--enk-blueprint)]">
+                    {projectTestimonial.project}
+                  </p>
+                )}
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+      )}
+
+      {/* ── Field documentation — photographic record ── */}
+      {gallery.length > 0 && (
+        <section className="enk-section" style={{ backgroundColor: "var(--enk-bg-muted)" }}>
+          <div className="enk-container">
+            <div className="mb-8 max-w-2xl">
+              <RecordEyebrow refNo={`${gallery.length} PLATES`}>Field Documentation</RecordEyebrow>
+              <h2 className="enk-display mt-3 text-[clamp(1.3rem,2.3vw,1.65rem)] text-[var(--enk-ink)]">
+                Photographic record
+              </h2>
+              <p className="mt-3 text-[14px] leading-relaxed text-[var(--enk-steel)] md:text-[15px]">
+                Site photography documenting execution of this crossing.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4 lg:grid-cols-3">
+              {gallery.map((image, index) => (
+                <button
+                  key={index}
+                  type="button"
+                  onClick={() => setSelectedImage(image)}
+                  className="block w-full text-left focus-ring rounded-[var(--enk-radius-record)]"
+                  aria-label={`Enlarge plate ${index + 1}: ${image.alt}`}
+                >
+                  <FieldFigure
                     src={image.src}
                     alt={image.alt}
-                    wrapperClassName="h-full w-full"
-                    className="h-full w-full"
-                    hoverZoom
-                    tone="natural"
-                    fallbackLabel={image.alt}
+                    figNo={`Fig ${String(index + 1).padStart(2, "0")}`}
+                    caption={image.caption || image.alt}
+                    ratio="3/2"
+                    sizes="(min-width: 1024px) 30vw, 50vw"
                   />
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ background: "linear-gradient(0deg, oklch(0.13 0.03 255 / 0.6), transparent)" }} />
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                      <ZoomIn className="h-5 w-5 text-white" />
-                    </div>
-                  </div>
-                  {image.caption && (
-                    <div className="absolute bottom-0 left-0 right-0 p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                      <p className="text-white text-xs font-medium">{image.caption}</p>
-                    </div>
-                  )}
-                </motion.div>
+                </button>
               ))}
             </div>
           </div>
@@ -1062,63 +1103,74 @@ export default function ProjectDetailPage() {
       <AnimatePresence>
         {selectedImage && (
           <motion.div
-            className="fixed inset-0 z-50 bg-charcoal/95 backdrop-blur-sm flex items-center justify-center p-4 md:p-8"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8"
+            style={{ backgroundColor: "oklch(0.13 0.02 255 / 0.95)" }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelectedImage(null)}
           >
-            <motion.button
-              className="absolute top-4 right-4 md:top-6 md:right-6 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors z-10"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
+            <button
+              type="button"
+              className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center border transition-colors md:right-6 md:top-6"
+              style={{ borderColor: "oklch(1 0 0 / 0.28)", borderRadius: "2px" }}
               onClick={() => setSelectedImage(null)}
+              aria-label="Close"
             >
-              <X className="h-6 w-6 text-white" />
-            </motion.button>
+              <X className="h-5 w-5 text-white" />
+            </button>
 
-            <motion.div
-              className="max-w-5xl w-full"
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              transition={{ duration: 0.3 }}
+            <motion.figure
+              className="w-full max-w-5xl"
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 8 }}
+              transition={{ duration: 0.2 }}
               onClick={(e) => e.stopPropagation()}
             >
               <EnhancedImage
                 src={selectedImage.src}
                 alt={selectedImage.alt}
-                wrapperClassName="w-full max-h-[70vh] rounded-xl"
+                wrapperClassName="w-full max-h-[70vh]"
                 className="w-full max-h-[70vh]"
                 fit="contain"
-                tone="natural"
+                tone="documentary"
                 fallbackLabel={selectedImage.alt}
               />
-              <div className="mt-5 text-center">
-                <h3 className="text-white text-xl font-bold">{selectedImage.alt}</h3>
+              <figcaption className="mt-4 border-t border-[oklch(1_0_0_/_0.15)] pt-3 text-center">
+                <p className="enk-mono text-[12px] uppercase tracking-[0.08em] text-white">
+                  {selectedImage.alt}
+                </p>
                 {selectedImage.caption && (
-                  <p className="text-white/60 text-[15px] mt-2">{selectedImage.caption}</p>
+                  <p className="mt-1.5 text-[13px] text-white/60">{selectedImage.caption}</p>
                 )}
-              </div>
-            </motion.div>
+              </figcaption>
+            </motion.figure>
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* Related Projects */}
+      {/* ── Related records ── */}
       {filteredRelatedProjects.length > 0 && (
-        <section className="section-padding">
-          <div className="container-wide">
-            <SectionHeading
-              kicker="See Also"
-              title={<>Related Projects</>}
-              onDark
-            />
-            <div className="grid md:grid-cols-3 gap-6 mt-8">
-              {filteredRelatedProjects.map((project) => (
-                <CaseStudyCard
-                  key={project.href}
-                  {...project}
+        <section className="enk-section">
+          <div className="enk-container">
+            <div className="mb-8 max-w-2xl">
+              <RecordEyebrow>Related Records</RecordEyebrow>
+              <h2 className="enk-display mt-3 text-[clamp(1.3rem,2.3vw,1.65rem)] text-[var(--enk-ink)]">
+                Other records in this discipline
+              </h2>
+            </div>
+            <div className="grid gap-5 md:grid-cols-3">
+              {filteredRelatedProjects.map((related) => (
+                <ProjectRecordCard
+                  key={related.href}
+                  title={related.title}
+                  href={related.href}
+                  location={related.location}
+                  metric={related.metric}
+                  metricLabel={related.metricLabel}
+                  thumbnail={related.thumbnail}
+                  tags={related.tags}
                 />
               ))}
             </div>
@@ -1127,8 +1179,10 @@ export default function ProjectDetailPage() {
       )}
 
       <CTABand
-        headline="Ready to Start Your Project?"
-        primaryCTA={{ label: "Contact Us", href: "/contact" }}
+        headline="Discuss a similar scope"
+        subhead="Send crossing or pipeline details for a technical response — scope review, method statement input, and budget pricing from the engineering team."
+        primaryCTA={{ label: "Request Project Credentials", href: "/contact" }}
+        secondaryCTA={{ label: "View Full Project Register", href: "/projects" }}
       />
     </Layout>
   );

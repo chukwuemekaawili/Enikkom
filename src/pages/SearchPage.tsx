@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { Layout } from "@/components/layout";
+import SEO from "@/components/ui/SEO";
 import { CapabilityCard } from "@/components/sections";
 import { Search as SearchIcon, ArrowRight, ChevronRight } from "lucide-react";
 import { searchIndex, type SearchEntry } from "@/content/searchIndex";
@@ -24,7 +25,7 @@ const popularSearches = [
   { label: "Capabilities", href: "/capabilities" },
   { label: "Projects", href: "/projects" },
   { label: "Careers", href: "/careers" },
-  { label: "News & Insights", href: "/news-insights" },
+  { label: "Equipment", href: "/equipment" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -62,6 +63,7 @@ export default function SearchPage() {
 
   return (
     <Layout>
+      <SEO title="Search – Enikkom" canonical="/search" noindex />
       <section className="relative isolate overflow-hidden" style={{ backgroundColor: "var(--enk-navy)" }}>
         <div className="enk-container relative py-16 md:py-24">
           <nav aria-label="Breadcrumb" className="mb-8 flex items-center gap-2 text-[13px] text-[var(--enk-on-dark-muted)]">
@@ -114,6 +116,7 @@ export default function SearchPage() {
                     href={item.href}
                     image={item.image}
                     ctaLabel={item.ctaLabel}
+                    docType="Site Index"
                   />
                 ))}
               </div>
@@ -157,7 +160,7 @@ export default function SearchPage() {
                   ))}
                 </ul>
               ) : (
-                <div className="rounded-xl border border-dashed border-border p-8 text-center">
+                <div className="rounded-[var(--enk-radius-record)] border border-dashed p-8 text-center" style={{ borderColor: "var(--enk-rule-strong)" }}>
                   <p className="font-semibold mb-1">No results for "{trimmed}"</p>
                   <p className="text-[14px] text-muted-foreground mb-4">Try a different term, or jump to one of these:</p>
                   <div className="flex flex-wrap justify-center gap-2">

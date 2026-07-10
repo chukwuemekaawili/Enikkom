@@ -4,7 +4,7 @@ import { getAssetUrl } from "@/lib/assetMap";
 import { getResponsiveImageInfo } from "@/lib/responsiveImages";
 import { cn } from "@/lib/utils";
 
-type ImageTone = "natural" | "vivid" | "soft" | "logo" | "cinematic";
+type ImageTone = "natural" | "vivid" | "soft" | "logo" | "cinematic" | "documentary";
 type ImageFit = "cover" | "contain";
 
 interface EnhancedImageProps extends Omit<ImgHTMLAttributes<HTMLImageElement>, "className"> {
@@ -24,6 +24,9 @@ const toneClasses: Record<ImageTone, string> = {
   soft: "contrast-[1.01] saturate-[0.98] brightness-[1.02]",
   logo: "",
   cinematic: "brightness-[1.06] contrast-[1.08] saturate-[1.06] sepia-[0.02]",
+  // Field-records grade — mirrors .enk-photo--card (index.css): mild
+  // desaturation + contrast so photography reads as field documentation.
+  documentary: "contrast-[1.06] saturate-[0.90] brightness-[0.94]",
 };
 
 export function EnhancedImage({

@@ -1,5 +1,7 @@
 import { Layout } from "@/components/layout";
+import SEO from "@/components/ui/SEO";
 import { Hero, CTABand, CapabilityCard, CertificationsBlock } from "@/components/sections";
+import { RecordStatusStamp } from "@/components/records";
 import { usePageContent, useCollection } from "@/hooks/useSiteSettings";
 import { Drill, PipetteIcon, Anchor, Factory, Shield, Briefcase } from "lucide-react";
 import { siteImageSelections } from "@/content/siteImageSelections";
@@ -79,23 +81,29 @@ export default function CapabilitiesPage() {
 
   return (
     <Layout>
+      <SEO
+        title="Capabilities – HDD, Pipelines, Dredging & Marine – Enikkom"
+        description="Engineering capabilities across horizontal directional drilling, pipeline and flowline construction, dredging and piling, production facilities, and pipeline security."
+        canonical="/capabilities"
+      />
       <Hero
         title={heroContent.title || "Our Capabilities"}
         subtitle={heroContent.subtitle || "Engineering services for Nigeria's most demanding infrastructure projects, from trenchless crossings to marine civil works."}
-        primaryCTA={{ label: heroContent.primaryBtnText || "Contact Us", href: heroContent.primaryBtnLink || "/contact" }}
+        badge="Capability Statements"
+        primaryCTA={{ label: heroContent.primaryBtnText || "Discuss Project Scope", href: heroContent.primaryBtnLink || "/contact" }}
         backgroundImage={heroContent.backgroundImage || capabilityImages.hero}
         size="default"
       />
 
       {/* Capabilities Grid */}
-      <section className="enk-section">
+      <section className="enk-section" style={{ borderBottom: "1px solid var(--enk-rule)" }}>
         <div className="enk-container">
-          <div className="mx-auto mb-12 max-w-2xl text-center">
-            <p className="enk-kicker justify-center">{introContent.subtitle || "What We Do"}</p>
-            <h2 className="enk-display mt-4 text-[clamp(1.6rem,3vw,2.2rem)] text-[var(--enk-ink)]">
+          <div className="mb-10 max-w-2xl">
+            <p className="enk-kicker">{introContent.subtitle || "What We Do"}</p>
+            <h2 className="enk-display mt-4 text-[clamp(1.5rem,2.8vw,2.05rem)] text-[var(--enk-ink)]">
               {introContent.title || "Full-Service Engineering Solutions"}
             </h2>
-            <p className="mt-4 text-[15px] leading-relaxed text-[var(--enk-steel)]">
+            <p className="mt-3 text-[14px] leading-relaxed text-[var(--enk-steel)] md:text-[15px]">
               {introContent.description || "Full capabilities for oil & gas infrastructure, marine construction, and specialised engineering projects."}
             </p>
           </div>
@@ -109,23 +117,23 @@ export default function CapabilitiesPage() {
       </section>
 
       {/* Standards */}
-      <section className="enk-section" style={{ backgroundColor: "var(--enk-bg-muted)" }}>
+      <section className="enk-section" style={{ backgroundColor: "var(--enk-bg-muted)", borderBottom: "1px solid var(--enk-rule)" }}>
         <div className="enk-container">
-          <div className="mx-auto mb-12 max-w-2xl text-center">
-            <p className="enk-kicker justify-center">Standards</p>
-            <h2 className="enk-display mt-4 text-[clamp(1.6rem,3vw,2.2rem)] text-[var(--enk-ink)]">
+          <div className="mb-8 max-w-2xl">
+            <p className="enk-kicker">Standards</p>
+            <h2 className="enk-display mt-4 text-[clamp(1.5rem,2.8vw,2.05rem)] text-[var(--enk-ink)]">
               {content.standards?.title || "Standards & Compliance"}
             </h2>
-            <p className="mt-4 text-[15px] leading-relaxed text-[var(--enk-steel)]">
+            <p className="mt-3 text-[14px] leading-relaxed text-[var(--enk-steel)] md:text-[15px]">
               {content.standards?.description || "All our operations comply with international industry standards and best practices."}
             </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+          <div className="flex flex-wrap gap-2.5">
             {standards.map((standard) => (
-              <div key={standard} className="enk-card flex items-center justify-center p-5 text-center">
-                <span className="text-[14px] font-medium text-[var(--enk-ink)]">{standard}</span>
-              </div>
+              <RecordStatusStamp key={standard} tone="neutral">
+                {standard}
+              </RecordStatusStamp>
             ))}
           </div>
         </div>
@@ -138,7 +146,8 @@ export default function CapabilitiesPage() {
       <CTABand
         headline={content.cta?.headline || "Ready to Discuss Your Requirements?"}
         subhead={content.cta?.subhead || "Our engineering team can scope your project and provide a detailed proposal within 48 hours."}
-        secondaryCTA={{ label: "View Projects", href: "/projects" }}
+        primaryCTA={{ label: "Send RFQ / Tender", href: "/contact" }}
+        secondaryCTA={{ label: "View Project Records", href: "/projects" }}
       />
     </Layout>
   );

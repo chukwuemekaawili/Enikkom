@@ -1,27 +1,24 @@
 import { Helmet } from "react-helmet-async";
 import { HomeHeader } from "@/components/home/HomeHeader";
 import { HomeHero } from "@/components/home/HomeHero";
-import { FlagshipProof } from "@/components/home/FlagshipProof";
-import { TrustSnapshot } from "@/components/home/TrustSnapshot";
+import { ProofLedger } from "@/components/home/ProofLedger";
+import { SelectedRecords } from "@/components/home/SelectedRecords";
 import { Capabilities } from "@/components/home/Capabilities";
-import { CaseStudies } from "@/components/home/CaseStudies";
+import { Credentials } from "@/components/home/Credentials";
 import { RecentOps } from "@/components/home/RecentOps";
 import { Qhse } from "@/components/home/Qhse";
+import { ProcurementCta } from "@/components/home/ProcurementCta";
 import { HomeFooter } from "@/components/home/HomeFooter";
 import { BackToTopButton } from "@/components/sections/BackToTopButton";
 
 /**
- * Redesigned homepage, a procurement conversion system.
- * Self-contained (own header/footer/sections) and scoped under `.enk` so the
- * rest of the site is unaffected during the phased redesign.
- *
- * Each idea has one home, in a single deliberate narrative:
- *   Hero (value proposition) -> Record benchmarks (three superlatives) ->
- *   Trust snapshot (track-record stats + client logos) ->
- *   Capabilities (the single what-we-do router, photo-led) ->
- *   Case studies (flagship + project records) ->
- *   Recent operations (live works now) ->
- *   QHSE (safety & quality assurance).
+ * Homepage — the front cover of the Industrial Field Records pack.
+ * A single procurement-first narrative that leads with proof:
+ *   Hero (cover sheet) -> Proof ledger (record metrics) ->
+ *   Selected records (archive proof, moved high) -> Field disciplines ->
+ *   Procurement & delivery history (stakeholders) -> Field operations log ->
+ *   QHSE (document-led) -> Procurement handoff.
+ * Self-contained (own header/footer) and scoped under `.enk`.
  */
 export default function HomePage() {
   return (
@@ -51,12 +48,13 @@ export default function HomePage() {
 
       <main id="main">
         <HomeHero />
-        <FlagshipProof />
-        <TrustSnapshot />
+        <ProofLedger />
+        <SelectedRecords />
         <Capabilities />
-        <CaseStudies />
+        <Credentials />
         <RecentOps />
         <Qhse />
+        <ProcurementCta />
       </main>
 
       <HomeFooter />

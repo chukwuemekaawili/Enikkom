@@ -6,7 +6,7 @@
  * codebase (home.ts, companyProfile.ts, ManagementPage.tsx, PartnersPage.tsx)
  * rather than invented for this list.
  */
-import { capabilities, projects, flagship, certifications, achievements, faqs } from "./home";
+import { capabilities, proofRecords, proofMetrics, certifications } from "./home";
 import { corporateStatements } from "./companyProfile";
 
 export interface SearchEntry {
@@ -23,22 +23,12 @@ const capabilityEntries: SearchEntry[] = capabilities.map((c) => ({
   category: "Capabilities",
 }));
 
-const projectEntries: SearchEntry[] = [
-  {
-    title: flagship.name,
-    href: flagship.href,
-    description: flagship.challenge,
-    category: "Projects",
-  },
-  ...projects
-    .filter((p) => p.href !== flagship.href)
-    .map((p) => ({
-      title: p.name,
-      href: p.href,
-      description: `${p.location} — ${p.challenge}`,
-      category: "Projects",
-    })),
-];
+const projectEntries: SearchEntry[] = proofRecords.map((p) => ({
+  title: p.title,
+  href: p.href,
+  description: `${p.location} — ${p.metricLabel}`,
+  category: "Projects",
+}));
 
 const certificationEntries: SearchEntry[] = certifications.map((c) => ({
   title: c.code,
@@ -47,24 +37,11 @@ const certificationEntries: SearchEntry[] = certifications.map((c) => ({
   category: "Certifications",
 }));
 
-const achievementEntries: SearchEntry[] = achievements.map((a) => {
-  const hrefByLabel: Record<string, string> = {
-    "Africa's longest single HDD drill": flagship.href,
-    "Nigeria's longest Continuous HDD": "/projects/oml34-chdd",
-  };
-  return {
-    title: a.label,
-    href: hrefByLabel[a.label] || "/projects",
-    description: a.context,
-    category: "Achievements",
-  };
-});
-
-const faqEntries: SearchEntry[] = faqs.map((f) => ({
-  title: f.q,
-  href: "/#faq",
-  description: f.a,
-  category: "FAQ",
+const achievementEntries: SearchEntry[] = proofMetrics.map((m) => ({
+  title: m.label,
+  href: m.href || "/projects",
+  description: `${m.value}${m.unit ? ` ${m.unit}` : ""} — ${m.note}`,
+  category: "Achievements",
 }));
 
 const statementEntries: SearchEntry[] = corporateStatements
@@ -90,7 +67,7 @@ const leadershipEntries: SearchEntry[] = [
   { name: "Ken James", role: "Non-Executive Director", highlight: "40+ years shaping West Africa's energy infrastructure" },
 ].map((m) => ({
   title: m.name,
-  href: "/management-team",
+  href: "/about/leadership",
   description: `${m.role} — ${m.highlight}`,
   category: "Leadership",
 }));
@@ -151,7 +128,7 @@ export const searchIndex: SearchEntry[] = [
   ...certificationEntries,
   {
     title: "Sustainability",
-    href: "/sustainability",
+    href: "/hse-quality#sustainability",
     description: "Environmental management, workforce safety and host-community engagement built into every project.",
     category: "Company",
   },
@@ -164,7 +141,7 @@ export const searchIndex: SearchEntry[] = [
   ...statementEntries,
   {
     title: "Leadership",
-    href: "/management-team",
+    href: "/about/leadership",
     description: "Enikkom and HDDTEC's management team.",
     category: "Company",
   },
@@ -177,8 +154,8 @@ export const searchIndex: SearchEntry[] = [
   },
   {
     title: "News & Insights",
-    href: "/news-insights",
-    description: "Updates on Enikkom and HDDTEC's projects, technology, and industry engagement.",
+    href: "/resources#videos",
+    description: "Project videos and industry engagement from Enikkom and HDDTEC, including the OML34 documentary and NIPITECS 2019 presentation.",
     category: "Company",
   },
   {
@@ -200,5 +177,4 @@ export const searchIndex: SearchEntry[] = [
     description: "Submit an RFP or drawing, or reach the Enikkom team directly.",
     category: "Contact",
   },
-  ...faqEntries,
 ];

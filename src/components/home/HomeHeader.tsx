@@ -1,7 +1,7 @@
 import { Fragment, useEffect, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Menu, X, ChevronDown, Search } from "lucide-react";
-import { navMenus, brand, type NavMenu, type NavLink } from "@/content/home";
+import { Menu, X, ChevronDown, Search, FileText } from "lucide-react";
+import { navMenus, brand, contact, type NavMenu, type NavLink } from "@/content/home";
 import enikkomLogoWhite from "@/assets/images/logos/enikkom-logo-white-trimmed.png";
 
 const hddtecLogo = brand.hddtecLogo;
@@ -28,7 +28,7 @@ function BrandLockup({ compact, onClick }: { compact: boolean; onClick?: () => v
       onClick={onClick}
       title={brand.microcopy}
       aria-label={`Enikkom Construction and HDDTEC, home. ${brand.microcopy}`}
-      className="flex shrink-0 items-center gap-3.5 rounded-md focus-ring sm:gap-4"
+      className="flex shrink-0 items-center gap-3.5 rounded-sm focus-ring sm:gap-4"
     >
       <img src={enikkomLogoWhite} alt="Enikkom Construction Limited" style={{ height: h }} className="w-auto object-contain" />
       <span aria-hidden="true" style={{ height: h - 2 }} className="w-px bg-white/25" />
@@ -37,15 +37,33 @@ function BrandLockup({ compact, onClick }: { compact: boolean; onClick?: () => v
   );
 }
 
-function ItemLink({ item, onClick, className }: { item: NavLink; onClick?: () => void; className: string }) {
+function ItemLink({ item, onClick, className, children }: { item: NavLink; onClick?: () => void; className: string; children?: React.ReactNode }) {
   return item.external ? (
-    <a href={item.href} onClick={onClick} className={className}>{item.label}</a>
+    <a href={item.href} onClick={onClick} className={className}>{children ?? item.label}</a>
   ) : (
-    <Link to={item.href} onClick={onClick} className={className}>{item.label}</Link>
+    <Link to={item.href} onClick={onClick} className={className}>{children ?? item.label}</Link>
   );
 }
 
-/** Desktop dropdown: opens on hover AND click/keyboard; Esc closes; closes on blur-out. */
+/** Top-level nav label: compact uppercase metadata style, flat amber rule when active. */
+const navItemClass = (active: boolean) =>
+  `relative inline-flex h-10 shrink-0 items-center gap-1 whitespace-nowrap px-2.5 text-[12px] font-semibold uppercase tracking-[0.05em] transition-colors duration-150 focus-ring ${
+    active ? "text-[var(--enk-on-dark)]" : "text-[var(--enk-on-dark-muted)] hover:text-[var(--enk-on-dark)]"
+  }`;
+
+/** Flat squared active indicator — a rule, not a pill. */
+function ActiveRule() {
+  return (
+    <span
+      aria-hidden="true"
+      className="absolute inset-x-2.5 bottom-0 h-[2px]"
+      style={{ backgroundColor: "var(--enk-accent-primary-on-dark)" }}
+    />
+  );
+}
+
+/** Desktop dropdown: opens on hover AND click/keyboard; Esc closes; closes on blur-out.
+    Panel styled as a document index sheet: squared, ruled, amber title rule, indexed rows. */
 function NavDropdown({ menu, active }: { menu: NavMenu; active: boolean }) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLLIElement>(null);
@@ -69,19 +87,15 @@ function NavDropdown({ menu, active }: { menu: NavMenu; active: boolean }) {
           if (e.key === "Escape") setOpen(false);
           if (e.key === "ArrowDown") { e.preventDefault(); setOpen(true); }
         }}
-        className={`relative inline-flex h-10 shrink-0 items-center gap-1 whitespace-nowrap rounded-md px-2 text-[13px] font-medium transition-colors duration-150 focus-ring ${
-          active ? "text-[var(--enk-on-dark)]" : "text-[var(--enk-on-dark-muted)] hover:text-[var(--enk-on-dark)]"
-        }`}
+        className={navItemClass(active)}
       >
         {menu.label}
-        <ChevronDown className={`h-4 w-4 transition-transform duration-150 ease-out ${open ? "rotate-180" : ""}`} aria-hidden="true" />
-        {active && (
-          <span aria-hidden="true" className="absolute inset-x-3 -bottom-0.5 h-[2px] rounded-full" style={{ backgroundColor: "var(--enk-gold)" }} />
-        )}
+        <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-150 ease-out ${open ? "rotate-180" : ""}`} aria-hidden="true" />
+        {active && <ActiveRule />}
       </button>
 
       <div
-        className="absolute left-0 top-full pt-2"
+        className="absolute left-0 top-full pt-1.5"
         style={{
           opacity: open ? 1 : 0,
           visibility: open ? "visible" : "hidden",
@@ -90,15 +104,25 @@ function NavDropdown({ menu, active }: { menu: NavMenu; active: boolean }) {
         }}
       >
         <ul
-          className="min-w-[270px] overflow-hidden rounded-md border py-1.5 shadow-[var(--enk-shadow-md)]"
-          style={{ backgroundColor: "var(--enk-navy-2)", borderColor: "var(--enk-line-dark)" }}
+          className="min-w-[280px] overflow-hidden border py-1"
+          style={{
+            backgroundColor: "var(--enk-record-surface-raised)",
+            borderColor: "var(--enk-rule-strong)",
+            borderTop: "2px solid var(--enk-rule-accent)",
+            borderRadius: "var(--enk-radius-record)",
+          }}
         >
-          {menu.items.map((item) => (
+          {menu.items.map((item, i) => (
             <li key={item.label}>
               <ItemLink
                 item={item}
-                className="flex min-h-[44px] items-center px-4 py-2.5 text-[14px] text-[var(--enk-on-dark-muted)] transition-colors duration-150 hover:bg-white/5 hover:text-[var(--enk-on-dark)] focus-ring"
-              />
+                className="flex min-h-[42px] items-center gap-3 px-4 py-2 text-[13.5px] text-[var(--enk-on-dark-muted)] transition-colors duration-150 hover:bg-white/5 hover:text-[var(--enk-on-dark)] focus-ring"
+              >
+                <span aria-hidden="true" className="enk-mono w-5 shrink-0 text-[10px] font-medium text-[var(--enk-blueprint)]">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                {item.label}
+              </ItemLink>
             </li>
           ))}
         </ul>
@@ -107,7 +131,7 @@ function NavDropdown({ menu, active }: { menu: NavMenu; active: boolean }) {
   );
 }
 
-/** Mobile drawer with each parent as an accordion section. */
+/** Mobile drawer with each parent as an accordion section plus a records-style action block. */
 function MobileMenu({ onNavigate }: { onNavigate: () => void }) {
   const [openIdx, setOpenIdx] = useState<number | null>(0);
   return (
@@ -115,7 +139,7 @@ function MobileMenu({ onNavigate }: { onNavigate: () => void }) {
       <Link
         to="/"
         onClick={onNavigate}
-        className="flex min-h-[52px] w-full items-center border-b border-[var(--enk-line-dark)] px-1 py-3 text-[16px] font-semibold text-[var(--enk-on-dark)] focus-ring"
+        className="flex min-h-[52px] w-full items-center border-b border-[var(--enk-line-dark)] px-1 py-3 text-[15px] font-semibold text-[var(--enk-on-dark)] focus-ring"
       >
         Home
       </Link>
@@ -129,20 +153,25 @@ function MobileMenu({ onNavigate }: { onNavigate: () => void }) {
               aria-expanded={expanded}
               aria-controls={`m-sec-${i}`}
               onClick={() => setOpenIdx(expanded ? null : i)}
-              className="flex min-h-[52px] w-full items-center justify-between px-1 py-3 text-[16px] font-semibold text-[var(--enk-on-dark)] focus-ring"
+              className="flex min-h-[52px] w-full items-center justify-between px-1 py-3 text-[15px] font-semibold text-[var(--enk-on-dark)] focus-ring"
             >
               {menu.label}
               <ChevronDown className={`h-5 w-5 transition-transform duration-150 ease-out ${expanded ? "rotate-180" : ""}`} aria-hidden="true" />
             </button>
             {expanded && (
               <ul id={`m-sec-${i}`} className="pb-2">
-                {menu.items.map((item) => (
+                {menu.items.map((item, j) => (
                   <li key={item.label}>
                     <ItemLink
                       item={item}
                       onClick={onNavigate}
-                      className="flex min-h-[44px] items-center rounded-md px-3 py-2.5 text-[15px] text-[var(--enk-on-dark-muted)] transition-colors hover:bg-white/5 hover:text-[var(--enk-on-dark)] focus-ring"
-                    />
+                      className="flex min-h-[44px] items-center gap-3 rounded-sm px-3 py-2.5 text-[14.5px] text-[var(--enk-on-dark-muted)] transition-colors hover:bg-white/5 hover:text-[var(--enk-on-dark)] focus-ring"
+                    >
+                      <span aria-hidden="true" className="enk-mono w-5 shrink-0 text-[10px] font-medium text-[var(--enk-blueprint)]">
+                        {String(j + 1).padStart(2, "0")}
+                      </span>
+                      {item.label}
+                    </ItemLink>
                   </li>
                 ))}
               </ul>
@@ -151,24 +180,53 @@ function MobileMenu({ onNavigate }: { onNavigate: () => void }) {
           </Fragment>
         );
       })}
-      {extraLinks.map((link) => (
+      {[...extraLinks, { label: "Contact", href: "/contact" }].map((link) => (
         <Link
           key={link.label}
           to={link.href}
           onClick={onNavigate}
-          className="flex min-h-[52px] w-full items-center border-b border-[var(--enk-line-dark)] px-1 py-3 text-[16px] font-semibold text-[var(--enk-on-dark)] focus-ring"
+          className="flex min-h-[52px] w-full items-center border-b border-[var(--enk-line-dark)] px-1 py-3 text-[15px] font-semibold text-[var(--enk-on-dark)] focus-ring"
         >
           {link.label}
         </Link>
       ))}
-      <Link
-        to="/contact"
-        onClick={onNavigate}
-        className="mt-3 flex min-h-[52px] w-full items-center justify-center rounded-md px-4 py-3 text-[16px] font-semibold focus-ring"
-        style={{ backgroundColor: "var(--enk-accent-primary)", color: "var(--enk-navy)" }}
-      >
-        Contact
-      </Link>
+
+      {/* Priority actions — procurement fast paths, not marketing CTAs */}
+      <div className="mt-4 flex flex-col gap-2.5">
+        <Link
+          to="/contact"
+          onClick={onNavigate}
+          className="flex min-h-[48px] w-full items-center justify-center px-4 py-3 text-[14px] font-bold focus-ring"
+          style={{ backgroundColor: "var(--enk-accent-primary)", color: "var(--enk-navy)", borderRadius: "var(--enk-radius-record)" }}
+        >
+          Send RFQ / Tender
+        </Link>
+        <Link
+          to="/projects"
+          onClick={onNavigate}
+          className="flex min-h-[48px] w-full items-center justify-center border px-4 py-3 text-[14px] font-semibold text-[var(--enk-on-dark)] focus-ring"
+          style={{ borderColor: "var(--enk-rule-strong)", borderRadius: "var(--enk-radius-record)" }}
+        >
+          View Project Records
+        </Link>
+        <div className="grid grid-cols-1 gap-2.5">
+          <a
+            href={contact.capabilityStatement}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="enk-mono flex min-h-[44px] items-center justify-center border px-2 py-2 text-center text-[10.5px] font-semibold uppercase tracking-[0.08em] text-[var(--enk-on-dark-muted)] focus-ring"
+            style={{ borderColor: "var(--enk-rule)", borderRadius: "var(--enk-radius-record)" }}
+          >
+            Capability Statement
+          </a>
+        </div>
+      </div>
+
+      {/* Direct lines — mono, ledger style */}
+      <div className="enk-mono mt-5 border-t border-[var(--enk-line-dark)] pt-4 pb-2 text-[11.5px] leading-relaxed text-[var(--enk-on-dark-muted)]">
+        <a href={contact.phoneHref} className="block py-1 focus-ring rounded-sm">{contact.phone}</a>
+        <a href={`mailto:${contact.email}`} className="block py-1 focus-ring rounded-sm">{contact.email}</a>
+      </div>
     </nav>
   );
 }
@@ -205,100 +263,117 @@ export function HomeHeader() {
   }, [navigate]);
 
   return (
-    <header
-      className="sticky top-0 z-50 transition-[box-shadow] duration-200"
-      style={{
-        // Solid navy header bar (Shell-style clean, separated header — never a
-        // foggy translucent band or a white bar). Fully opaque in every state so
-        // it reads as a crisp, distinct bar above the content; a hairline divider
-        // + a shadow on scroll give it depth and separation from the hero below.
-        background: "var(--enk-navy)",
-        borderBottom: "1px solid var(--enk-line-dark)",
-        boxShadow: scrolled ? "var(--enk-shadow-md)" : "none",
-      }}
-    >
-      <div className="enk-container">
-        <div className="flex h-[60px] items-center justify-between gap-4 md:h-[72px] xl:justify-start">
-          <BrandLockup compact={false} />
-
-          <nav aria-label="Primary" className="hidden xl:block xl:ml-8">
-            <ul className="flex items-center gap-1">
-              <li>
-                <Link
-                  to="/"
-                  className={`relative inline-flex h-10 shrink-0 items-center whitespace-nowrap rounded-md px-2 text-[13px] font-medium transition-colors duration-150 focus-ring ${
-                    location.pathname === "/"
-                      ? "text-[var(--enk-on-dark)]"
-                      : "text-[var(--enk-on-dark-muted)] hover:text-[var(--enk-on-dark)]"
-                  }`}
-                >
-                  Home
-                  {location.pathname === "/" && (
-                    <span aria-hidden="true" className="absolute inset-x-3 -bottom-0.5 h-[2px] rounded-full" style={{ backgroundColor: "var(--enk-gold)" }} />
-                  )}
-                </Link>
-              </li>
-              {navMenus.map((menu) => (
-                <NavDropdown
-                  key={menu.label}
-                  menu={menu}
-                  active={location.pathname === menu.href || location.pathname.startsWith(`${menu.href}/`)}
-                />
-              ))}
-              {extraLinks.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    to={link.href}
-                    className={`relative inline-flex h-10 shrink-0 items-center whitespace-nowrap rounded-md px-2 text-[13px] font-medium transition-colors duration-150 focus-ring ${
-                      location.pathname === link.href
-                        ? "text-[var(--enk-on-dark)]"
-                        : "text-[var(--enk-on-dark-muted)] hover:text-[var(--enk-on-dark)]"
-                    }`}
-                  >
-                    {link.label}
-                    {location.pathname === link.href && (
-                      <span aria-hidden="true" className="absolute inset-x-3 -bottom-0.5 h-[2px] rounded-full" style={{ backgroundColor: "var(--enk-accent-on-dark)" }} />
-                    )}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          <div className="flex items-center gap-2 lg:ml-auto">
-            <Link
-              to="/search"
-              aria-label="Search the site"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-md text-[var(--enk-on-dark)] transition-colors hover:bg-white/10 focus-ring"
+    <>
+      {/* Registry strip — scrolls away; the nav bar below stays sticky.
+          Typed contractor metadata: scope of works on the left, direct
+          lines + credential download on the right. All real data. */}
+      <div
+        className="hidden lg:block"
+        style={{ backgroundColor: "var(--enk-record-inset)", borderBottom: "1px solid var(--enk-line-dark)" }}
+      >
+        <div className="enk-container flex h-8 items-center justify-between gap-4">
+          <p className="enk-mono truncate text-[10.5px] font-medium uppercase tracking-[0.14em] text-[var(--enk-blueprint)]">
+            HDD · Pipelines · Dredging · Marine Civils — Nigeria
+          </p>
+          <div className="enk-mono flex shrink-0 items-center gap-5 text-[10.5px] font-medium tracking-[0.06em]">
+            <a href={contact.phoneHref} className="text-[var(--enk-on-dark-muted)] transition-colors hover:text-[var(--enk-on-dark)] focus-ring rounded-sm">
+              {contact.phone}
+            </a>
+            <a href={`mailto:${contact.email}`} className="text-[var(--enk-on-dark-muted)] transition-colors hover:text-[var(--enk-on-dark)] focus-ring rounded-sm uppercase">
+              {contact.email}
+            </a>
+            <a
+              href={contact.capabilityStatement}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 uppercase text-[var(--enk-accent-on-dark)] transition-colors hover:text-[var(--enk-accent-primary-on-dark)] focus-ring rounded-sm"
             >
-              <Search className="h-5 w-5" aria-hidden="true" />
-            </Link>
-            <Link
-              to="/contact"
-              className="hidden h-10 shrink-0 items-center justify-center rounded-md px-4 text-[13px] font-semibold transition-colors focus-ring xl:inline-flex"
-              style={{ backgroundColor: "var(--enk-accent-primary)", color: "var(--enk-navy)" }}
-            >
-              Contact
-            </Link>
-            <button
-              type="button"
-              onClick={() => setOpen((v) => !v)}
-              aria-expanded={open}
-              aria-controls="mobile-nav"
-              aria-label={open ? "Close menu" : "Open menu"}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-md text-[var(--enk-on-dark)] transition-colors hover:bg-white/10 focus-ring xl:hidden"
-            >
-              {open ? <X className="h-6 w-6" aria-hidden="true" /> : <Menu className="h-6 w-6" aria-hidden="true" />}
-            </button>
+              <FileText className="h-3 w-3" aria-hidden="true" />
+              Capability Statement (PDF)
+            </a>
           </div>
         </div>
       </div>
 
-      {open && (
-        <div id="mobile-nav" className="max-h-[calc(100vh-60px)] md:max-h-[calc(100vh-72px)] overflow-y-auto xl:hidden" style={{ backgroundColor: "var(--enk-navy)" }}>
-          <MobileMenu onNavigate={() => setOpen(false)} />
+      <header
+        className="sticky top-0 z-50"
+        style={{
+          // Solid navy header bar — never a translucent band. A hairline rule
+          // separates it from content; on scroll the rule strengthens instead
+          // of casting a floating shadow.
+          background: "var(--enk-navy)",
+          borderBottom: `1px solid ${scrolled ? "var(--enk-rule-strong)" : "var(--enk-line-dark)"}`,
+        }}
+      >
+        <div className="enk-container">
+          <div className="flex h-[60px] items-center justify-between gap-4 md:h-[68px] xl:justify-start">
+            <BrandLockup compact={false} />
+
+            <nav aria-label="Primary" className="hidden xl:block xl:ml-8">
+              <ul className="flex items-center gap-0.5">
+                {navMenus.map((menu) => (
+                  <NavDropdown
+                    key={menu.label}
+                    menu={menu}
+                    active={location.pathname === menu.href || location.pathname.startsWith(`${menu.href}/`)}
+                  />
+                ))}
+                {extraLinks.map((link) => (
+                  <li key={link.label}>
+                    <Link to={link.href} className={navItemClass(location.pathname === link.href)}>
+                      {link.label}
+                      {location.pathname === link.href && <ActiveRule />}
+                    </Link>
+                  </li>
+                ))}
+                <li>
+                  <Link to="/contact" className={navItemClass(location.pathname === "/contact")}>
+                    Contact
+                    {location.pathname === "/contact" && <ActiveRule />}
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+
+            <div className="flex items-center gap-2 lg:ml-auto">
+              <Link
+                to="/search"
+                aria-label="Search the site"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-sm text-[var(--enk-on-dark)] transition-colors hover:bg-white/10 focus-ring"
+              >
+                <Search className="h-5 w-5" aria-hidden="true" />
+              </Link>
+              <Link
+                to="/contact"
+                className="hidden h-9 items-center px-4 text-[12px] font-bold uppercase tracking-[0.04em] transition-colors md:inline-flex focus-ring"
+                style={{
+                  backgroundColor: "var(--enk-accent-primary)",
+                  color: "var(--enk-navy)",
+                  borderRadius: "var(--enk-radius-record)",
+                }}
+              >
+                Send RFQ
+              </Link>
+              <button
+                type="button"
+                onClick={() => setOpen((v) => !v)}
+                aria-expanded={open}
+                aria-controls="mobile-nav"
+                aria-label={open ? "Close menu" : "Open menu"}
+                className="inline-flex h-10 w-10 items-center justify-center rounded-sm text-[var(--enk-on-dark)] transition-colors hover:bg-white/10 focus-ring xl:hidden"
+              >
+                {open ? <X className="h-6 w-6" aria-hidden="true" /> : <Menu className="h-6 w-6" aria-hidden="true" />}
+              </button>
+            </div>
+          </div>
         </div>
-      )}
-    </header>
+
+        {open && (
+          <div id="mobile-nav" className="max-h-[calc(100vh-60px)] md:max-h-[calc(100vh-68px)] overflow-y-auto xl:hidden" style={{ backgroundColor: "var(--enk-navy)" }}>
+            <MobileMenu onNavigate={() => setOpen(false)} />
+          </div>
+        )}
+      </header>
+    </>
   );
 }

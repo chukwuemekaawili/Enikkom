@@ -5,7 +5,15 @@ import { EnhancedImage } from "@/components/ui/enhanced-image";
 // render their provided content. The editing-capable variants were removed
 // along with the Supabase admin; these passthroughs keep page markup intact.
 
-export const EditableText = ({ value, children }: { value?: string; children?: React.ReactNode }) => {
+export const EditableText = ({ value, children }: {
+    value?: string;
+    children?: React.ReactNode;
+    // Legacy CMS props, accepted for compatibility but ignored (no backend).
+    pageSlug?: string;
+    sectionKey?: string;
+    field?: string;
+    multiline?: boolean;
+}) => {
     return <>{value || children || ''}</>;
 };
 
@@ -23,6 +31,10 @@ export const EditableImage = ({
     containerClassName?: string;
     sizes?: string;
     priority?: boolean;
+    // Legacy CMS props, accepted for compatibility but ignored (no backend).
+    pageSlug?: string;
+    sectionKey?: string;
+    field?: string;
 }) => {
     if (!src) return null;
     return (
@@ -43,7 +55,7 @@ export const EditableVideo = ({ src, className }: { src?: string; className?: st
     return <video src={src} className={className} controls />;
 };
 
-export const EditableRepeater = ({ items, renderItem }: { items?: any[]; renderItem: (item: any, index: number) => React.ReactNode }) => {
+export const EditableRepeater = ({ items, renderItem }: { items?: unknown[]; renderItem: (item: unknown, index: number) => React.ReactNode }) => {
     if (!items || !Array.isArray(items)) return null;
     return <>{items.map((item, index) => renderItem(item, index))}</>;
 };

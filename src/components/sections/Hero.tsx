@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
 import { getAssetUrl } from "@/lib/assetMap";
+import { RecordEyebrow } from "@/components/records";
 
 interface HeroProps {
   title: string;
@@ -27,8 +28,9 @@ interface HeroProps {
 }
 
 /**
- * Page hero, in the `.enk` design language, matches the homepage chrome so the
- * sticky header melts into the dark hero. Same prop API as before (drop-in).
+ * Page hero as an archive cover sheet: full-bleed field photo under a scrim,
+ * typed record eyebrow, engineered headline, procurement CTAs, and a heavy
+ * title-block rule at the base. Same prop API as before (drop-in).
  */
 export function Hero({
   title,
@@ -42,9 +44,9 @@ export function Hero({
   align = "left",
 }: HeroProps) {
   const pad = {
-    small: "py-16 md:py-20",
-    default: "py-20 md:py-28",
-    large: "py-24 md:py-36",
+    small: "py-14 md:py-18",
+    default: "py-16 md:py-24",
+    large: "py-20 md:py-28",
   };
 
   const resolvedImage = backgroundImage ? getAssetUrl(backgroundImage) : undefined;
@@ -53,7 +55,10 @@ export function Hero({
   return (
     <section
       className="relative isolate overflow-hidden"
-      style={{ backgroundColor: "var(--enk-navy)" }}
+      style={{
+        backgroundColor: "var(--enk-navy)",
+        borderBottom: "2px solid var(--enk-rule-accent)",
+      }}
       aria-label={badge || "Introduction"}
     >
       {resolvedImage && (
@@ -62,24 +67,24 @@ export function Hero({
           alt=""
           aria-hidden="true"
           decoding="async"
-          className="absolute inset-0 h-full w-full object-cover object-center"
+          className="enk-photo--hero absolute inset-0 h-full w-full object-cover object-center"
         />
       )}
       <div className="enk-scrim" aria-hidden="true" />
 
       <div className="enk-container relative">
         <div className={`${pad[size]} ${centered ? "mx-auto max-w-3xl text-center" : "max-w-2xl"}`}>
-          <p className={`enk-kicker enk-kicker--on-dark mb-6 ${centered ? "justify-center" : ""}`}>
-            {badge || "Engineering delivery"}
-          </p>
+          <RecordEyebrow align={centered ? "center" : "start"} className="mb-5">
+            {badge || "Field Operations Record"}
+          </RecordEyebrow>
 
-          <h1 className="enk-display text-[var(--enk-on-dark)] text-[clamp(2rem,5vw,3.5rem)]">
+          <h1 className="enk-display text-[var(--enk-on-dark)] text-[clamp(1.9rem,4.5vw,3.1rem)]">
             {title}
           </h1>
 
           {subtitle && (
             <p
-              className={`mt-6 text-[17px] leading-relaxed text-[var(--enk-on-dark-muted)] md:text-[18px] ${
+              className={`mt-5 text-[15px] leading-relaxed text-[var(--enk-on-dark-muted)] md:text-[16px] ${
                 centered ? "mx-auto max-w-2xl" : "max-w-xl"
               }`}
             >
@@ -89,7 +94,7 @@ export function Hero({
 
           {(primaryCTA || secondaryCTA) && (
             <div
-              className={`mt-9 flex flex-col gap-3 sm:flex-row sm:items-center ${
+              className={`mt-8 flex flex-col gap-3 sm:flex-row sm:items-center ${
                 centered ? "sm:justify-center" : ""
               }`}
             >
@@ -107,7 +112,7 @@ export function Hero({
             </div>
           )}
 
-          {trustStrip && <div className="mt-12">{trustStrip}</div>}
+          {trustStrip && <div className="mt-10">{trustStrip}</div>}
         </div>
       </div>
     </section>

@@ -1,8 +1,9 @@
 import { useParams } from "react-router-dom";
 import { Layout } from "@/components/layout";
+import SEO from "@/components/ui/SEO";
 import { Hero, CTABand, CaseStudyCard, CertificationsBlock } from "@/components/sections";
-import { motion } from "framer-motion";
-import { CheckCircle, Drill, PipetteIcon, Anchor, Factory, Truck, ShieldCheck, Briefcase } from "lucide-react";
+import { RecordStatusStamp } from "@/components/records";
+import { Drill, PipetteIcon, Anchor, Factory, ShieldCheck, Briefcase } from "lucide-react";
 import { getProjectImage } from "@/content/projectImageSelections";
 import { siteImageSelections } from "@/content/siteImageSelections";
 import { usePageContent } from "@/hooks/useSiteSettings";
@@ -17,12 +18,12 @@ const slugToPageSlug: Record<string, string> = {
   'facilities': 'cap-facilities',
   'project-management': 'cap-project-management',
   'pipeline-security': 'cap-security',
-  'logistics': 'cap-logistics',
 };
 
 interface CapabilityData {
   title: string;
   description: string;
+  overview: string[];
   icon: React.ElementType;
   heroImage: string;
   processSteps: { title: string; description: string }[];
@@ -35,6 +36,10 @@ const capabilityData: Record<string, CapabilityData> = {
   hdd: {
     title: "Horizontal Directional Drilling (HDD)",
     description: "Trenchless technology for river, road, railway, and environmental crossings, with minimal surface disruption and high efficiency.",
+    overview: [
+      "Enikkom pioneered Horizontal Directional Drilling in Nigeria, completing the country's first HDD crossing of the River Niger in 2003. Since then we have installed more than 100 km of HDD crossings, including Africa's longest single drill, the 16\" × 3.1 km Atlas Cove–Mosimi line completed in 2016.",
+      "Our maxi-rig fleet, with pullback capacity up to 500 tons, crosses rivers, swamps, roads, railways and environmentally sensitive corridors with minimal surface disruption. Delivered diameters reach 48\", and our continuous-HDD record includes the 10\" × 12 km OML34 drive for NPDC, the longest functional CHDD in Nigeria.",
+    ],
     icon: Drill,
     heroImage: siteImageSelections.capabilities.hdd,
     processSteps: [
@@ -68,11 +73,24 @@ const capabilityData: Record<string, CapabilityData> = {
         tags: ["HDD"],
         href: "/projects/atlas-cove-mosimi",
       },
+      {
+        title: "Nun River Dual HDD, 16\" & 6\"",
+        location: "Niger Delta",
+        metric: "2024",
+        metricLabel: "Recent dual HDD crossing",
+        tags: ["HDD"],
+        href: "/projects/nun-river-dual-hdd",
+        thumbnail: getProjectImage("nun-river-dual-hdd", "related"),
+      },
     ],
   },
   "pipelines-flowlines": {
     title: "Pipelines & Flowlines Construction",
     description: "Complete pipeline construction services from fabrication to installation and testing for oil, gas, and water transmission systems.",
+    overview: [
+      "We deliver complete onshore and offshore pipeline and flowline construction — procurement, fabrication, welding, coating, installation, testing and commissioning — across land, swamp and shore-approach terrain. Our delivered record includes gas transmission and distribution networks such as the 24\" × 21.5 km Calabar line and the multi-diameter NIPCO distribution network.",
+      "Work is executed to API and ASME codes with 100% radiographic weld inspection. As an EPCI contractor we integrate pipeline scopes with our own HDD, dredging and facilities capability, reducing interface risk on complex corridors.",
+    ],
     icon: PipetteIcon,
     heroImage: siteImageSelections.capabilities.pipelines,
     processSteps: [
@@ -111,6 +129,10 @@ const capabilityData: Record<string, CapabilityData> = {
   "dredging-piling": {
     title: "Dredging & Piling",
     description: "Marine dredging for channel deepening, reclamation, and maintenance. Foundation piling for offshore platforms, bridges, and terminal structures.",
+    overview: [
+      "Our marine division delivers channel and capital dredging, land reclamation, slot sweeping and maintenance, alongside foundation, shore-protection and cofferdam piling for river and swamp crossings. Owned cutter-suction dredgers and heavy piling spreads have supported major crossings including the OB3 River Niger works and the OML34 programme.",
+      "On OB3 and OML34, in-house dredging and cofferdam installation enabled trenchless and pipeline construction in difficult riverine ground. Self-performing this marine scope removes reliance on third-party dredging contractors on our own projects and keeps schedule risk under our control.",
+    ],
     icon: Anchor,
     heroImage: siteImageSelections.capabilities.dredging,
     processSteps: [
@@ -126,11 +148,34 @@ const capabilityData: Record<string, CapabilityData> = {
       { name: "Pile Driver", specs: "Heavy duty impact hammers" },
       { name: "Survey Equipment", specs: "Multi-beam echosounder, RTK GPS" },
     ],
-    relatedProjects: [],
+    relatedProjects: [
+      {
+        title: "OB3 River Niger Crossing",
+        location: "River Niger",
+        metric: "48\"",
+        metricLabel: "Sheet piling & cofferdam",
+        tags: ["Piling", "Dredging"],
+        href: "/projects/ob3-river-niger",
+        thumbnail: getProjectImage("ob3-river-niger", "related"),
+      },
+      {
+        title: "OML34 Dredging & Cofferdam",
+        location: "Delta State",
+        metric: "12 km",
+        metricLabel: "CHDD corridor works",
+        tags: ["Dredging", "Cofferdam"],
+        href: "/projects/oml34-chdd",
+        thumbnail: getProjectImage("oml34-chdd", "related"),
+      },
+    ],
   },
   "facilities": {
     title: "Production Facilities Construction",
     description: "Integrated production systems covering flow station construction, wellhead upgrades, manifold inspection, plant turnaround maintenance, and pigging operations.",
+    overview: [
+      "Enikkom constructs and maintains production facilities — flow stations, wellhead installations, manifolds and associated structures — and delivers plant turnaround maintenance, well upgrades, valve servicing and pigging operations. Recent facilities scopes include the NIPCO Ibafo depot phases and the Gbaran Phase 3b UZU CPF upgrade for SPDC.",
+      "Facilities work is executed to API and ASME codes, with integrated pre-commissioning and commissioning support so systems are handed over ready to operate.",
+    ],
     icon: Factory,
     heroImage: siteImageSelections.capabilities.facilities,
     processSteps: [
@@ -146,11 +191,33 @@ const capabilityData: Record<string, CapabilityData> = {
       { name: "Welding Systems", specs: "Certified welding equipment" },
       { name: "Testing Equipment", specs: "Hydro test and NDT gear" },
     ],
-    relatedProjects: [],
+    relatedProjects: [
+      {
+        title: "NIPCO Ibafo Depot",
+        location: "Ogun State",
+        metric: "3 phases",
+        metricLabel: "Depot & tank-farm works",
+        tags: ["Facilities"],
+        href: "/projects#record",
+      },
+      {
+        title: "Gbaran Phase 3b UZU CPF Upgrade",
+        location: "Bayelsa State",
+        metric: "16\"",
+        metricLabel: "Facility upgrade for SPDC",
+        tags: ["Facilities", "EPC"],
+        href: "/projects/gbaran-phase-3b",
+        thumbnail: getProjectImage("gbaran-phase-3b", "related"),
+      },
+    ],
   },
   "project-management": {
     title: "Project Management & Support",
     description: "Integrated planning, execution support, field coordination, and project controls for complex HDD, pipeline, dredging, and facilities packages from mobilisation through close-out.",
+    overview: [
+      "Every Enikkom scope is delivered under integrated project controls — planning, procurement tracking, field coordination, QA/QC and HSE assurance — from mobilisation through close-out. As a single-point EPCI partner we have managed record-setting HDD, pipeline and marine programmes for operators including Shell, NNPC, NPDC, Saipem and Dangote.",
+      "Our controls emphasise early feasibility, risk management and disciplined documentation, coordinating multiple work fronts under the realities of Nigerian terrain and schedule pressure. Early engagement lets us de-risk crossing design, access and schedule before commitments are locked in.",
+    ],
     icon: Briefcase,
     heroImage: siteImageSelections.capabilities.projectManagement,
     processSteps: [
@@ -166,11 +233,43 @@ const capabilityData: Record<string, CapabilityData> = {
       { name: "Field Coordination", specs: "Site reporting workflows, permit tracking, and subcontractor interface management" },
       { name: "Project Controls", specs: "Cost monitoring, risk registers, change management, and close-out documentation" },
     ],
-    relatedProjects: [],
+    relatedProjects: [
+      {
+        title: "Atlas Cove-Mosimi, 16\" × 3.1km",
+        location: "Ogun State",
+        metric: "3.1 km",
+        metricLabel: "Africa's longest single drill",
+        tags: ["EPCI", "HDD"],
+        href: "/projects/atlas-cove-mosimi",
+        thumbnail: getProjectImage("atlas-cove-mosimi", "related"),
+      },
+      {
+        title: "OML34 Continuous HDD",
+        location: "Delta State",
+        metric: "12 km",
+        metricLabel: "Nigeria's longest CHDD",
+        tags: ["EPCI", "HDD"],
+        href: "/projects/oml34-chdd",
+        thumbnail: getProjectImage("oml34-chdd", "related"),
+      },
+      {
+        title: "Otumara-Escravos Bundled HDD",
+        location: "Delta State",
+        metric: "2.78 km",
+        metricLabel: "Bundled crossing",
+        tags: ["EPCI", "HDD"],
+        href: "/projects/otumara-escravos",
+        thumbnail: getProjectImage("otumara-escravos", "related"),
+      },
+    ],
   },
   "pipeline-security": {
     title: "Pipeline Security & Monitoring",
     description: "Real-time pipeline surveillance, leak detection, and vandalism prevention in partnership with Ocean Marine Solutions.",
+    overview: [
+      "Through our PIEJV joint venture with Ocean Marine Solutions, Enikkom provides real-time pipeline surveillance, leak detection and anti-vandalism monitoring across active corridors in the Niger Delta. The service combines control-room operations, field sensors and rapid response to protect critical energy infrastructure and keep pipelines operational.",
+      "It complements our construction capability with life-of-asset integrity support, extending the value we deliver from installation into ongoing operation and protection.",
+    ],
     icon: ShieldCheck,
     heroImage: siteImageSelections.capabilities.security,
     processSteps: [
@@ -185,26 +284,6 @@ const capabilityData: Record<string, CapabilityData> = {
       { name: "Surveillance", specs: "CCTV, drones, and patrol vessels" },
       { name: "Sensors", specs: "Leak detection and intrusion systems" },
       { name: "Communications", specs: "VSAT and radio networks" },
-    ],
-    relatedProjects: [],
-  },
-  "logistics": {
-    title: "Logistics Support",
-    description: "Land and swamp logistics with low bed trailers, flatbed barges, crew boats, and supply vessels for project mobilization.",
-    icon: Truck,
-    heroImage: siteImageSelections.equipment.hero,
-    processSteps: [
-      { title: "Planning", description: "Route survey and transport planning" },
-      { title: "Permits", description: "Regulatory approvals and escorts" },
-      { title: "Mobilization", description: "Equipment and material transport" },
-      { title: "Site Support", description: "Ongoing logistics and resupply" },
-      { title: "Demobilization", description: "Equipment recovery and return" },
-    ],
-    standards: ["IMDG Code", "ADR Regulations", "Local Transport Laws", "Client HSE"],
-    equipment: [
-      { name: "Trailers", specs: "Low bed and flatbed trailers" },
-      { name: "Barges", specs: "Deck cargo and flat top barges" },
-      { name: "Vessels", specs: "Crew boats and supply vessels" },
     ],
     relatedProjects: [],
   },
@@ -229,8 +308,6 @@ export default function CapabilityDetailPage() {
     );
   }
 
-  const Icon = capability.icon;
-  
   // Merge CMS content with defaults
   const heroContent = content.hero || {};
   const descriptionContent = content.description || {};
@@ -247,20 +324,39 @@ export default function CapabilityDetailPage() {
 
   return (
     <Layout>
+      <SEO
+        title={`${capability.title} – Enikkom Nigeria`}
+        description={capability.description}
+        canonical={`/capabilities/${slug}`}
+      />
       <Hero
         title={title}
         subtitle={subtitle}
-        badge="Capability"
-        primaryCTA={{ label: "Contact Us", href: "/contact" }}
+        badge="Capability Statement"
+        primaryCTA={{ label: "Discuss Project Scope", href: "/contact" }}
         backgroundImage={heroImage}
         size="default"
-        pageSlug={pageSlug}
-        sectionKey="hero"
-        imageField="backgroundImage"
       />
 
-      {/* Process & Method */}
+      {/* Overview */}
       <section className="enk-section">
+        <div className="enk-container">
+          <div className="mx-auto max-w-3xl">
+            <p className="enk-kicker enk-kicker--on-dark mb-4">Overview</p>
+            {capability.overview.map((para, i) => (
+              <p
+                key={i}
+                className={`text-[15px] leading-8 text-[var(--enk-on-dark-muted)] md:text-[16px] ${i > 0 ? "mt-5" : ""}`}
+              >
+                {para}
+              </p>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Process & Method */}
+      <section className="enk-section" style={{ borderTop: "1px solid var(--enk-line-dark)" }}>
         <div className="enk-container">
           <SectionHeading
             kicker="Method"
@@ -275,21 +371,17 @@ export default function CapabilityDetailPage() {
             onDark
           />
 
-          <ol className="mt-12 grid gap-px overflow-hidden rounded-[var(--radius-card)] border border-[var(--enk-line-dark)] bg-[var(--enk-line-dark)] md:grid-cols-5">
+          <ol className="mt-10 grid gap-px overflow-hidden rounded-[var(--enk-radius-record)] border border-[var(--enk-rule-strong)] bg-[var(--enk-rule)] md:grid-cols-5">
             {processSteps.map((step: { title: string; description: string }, index: number) => (
-              <motion.li
+              <li
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="flex flex-col gap-3 p-6"
-                style={{ backgroundColor: "var(--enk-surface-card)" }}
+                className="flex flex-col gap-2.5 p-5"
+                style={{ backgroundColor: "var(--enk-record-surface)" }}
               >
-                <span className="text-[14px] font-bold tabular-nums text-[var(--enk-accent-on-dark)]">
-                  {String(index + 1).padStart(2, "0")}
+                <span className="enk-mono text-[11px] font-semibold uppercase tracking-[0.1em] text-[var(--enk-accent-on-dark)]">
+                  Step {String(index + 1).padStart(2, "0")}
                 </span>
-                <h4 className="text-[16px] font-bold text-[var(--enk-on-dark)]">
+                <h4 className="text-[15px] font-semibold text-[var(--enk-ink)]">
                   <EditableText
                     value={step.title}
                     pageSlug={pageSlug}
@@ -297,7 +389,7 @@ export default function CapabilityDetailPage() {
                     field={`step_${index}_title`}
                   />
                 </h4>
-                <p className="text-[14px] leading-relaxed text-[var(--enk-on-dark-muted)]">
+                <p className="text-[13px] leading-6 text-[var(--enk-steel)]">
                   <EditableText
                     value={step.description}
                     pageSlug={pageSlug}
@@ -305,7 +397,7 @@ export default function CapabilityDetailPage() {
                     field={`step_${index}_description`}
                   />
                 </p>
-              </motion.li>
+              </li>
             ))}
           </ol>
         </div>
@@ -327,19 +419,16 @@ export default function CapabilityDetailPage() {
             onDark
           />
 
-          <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="mt-8 flex flex-wrap gap-2.5">
             {standards.map((standard: string, index: number) => (
-              <div key={index} className="flex items-center gap-3 enk-card enk-card--hover p-4">
-                <CheckCircle className="h-5 w-5 flex-shrink-0" style={{ color: "var(--enk-accent-on-dark)" }} />
-                <span className="text-sm font-medium text-[var(--enk-on-dark)]">
-                  <EditableText
-                    value={standard}
-                    pageSlug={pageSlug}
-                    sectionKey="standards"
-                    field={`standard_${index}`}
-                  />
-                </span>
-              </div>
+              <RecordStatusStamp key={index} tone="neutral">
+                <EditableText
+                  value={standard}
+                  pageSlug={pageSlug}
+                  sectionKey="standards"
+                  field={`standard_${index}`}
+                />
+              </RecordStatusStamp>
             ))}
           </div>
         </div>
@@ -361,18 +450,16 @@ export default function CapabilityDetailPage() {
             onDark
           />
 
-          <div className="mt-12 grid md:grid-cols-3 gap-6">
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
             {equipment.map((item: { name: string; specs: string }, index: number) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="enk-card enk-card--hover p-6"
-              >
-                <Icon className="h-8 w-8 mb-3" style={{ color: "var(--enk-accent-on-dark)" }} />
-                <h4 className="font-semibold mb-1 text-[var(--enk-on-dark)]">
+              <div key={index} className="enk-doc-card p-5">
+                <div className="flex items-center justify-between gap-3">
+                  <p className="enk-overline">Equipment</p>
+                  <span className="enk-mono text-[11px] font-medium text-[var(--enk-blueprint)]">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                </div>
+                <h4 className="mt-3 text-[15px] font-semibold text-[var(--enk-ink)]">
                   <EditableText
                     value={item.name}
                     pageSlug={pageSlug}
@@ -380,7 +467,7 @@ export default function CapabilityDetailPage() {
                     field={`equipment_${index}_name`}
                   />
                 </h4>
-                <p className="text-sm text-[var(--enk-on-dark-muted)]">
+                <p className="enk-mono mt-1.5 text-[12px] leading-6 text-[var(--enk-blueprint)]">
                   <EditableText
                     value={item.specs}
                     pageSlug={pageSlug}
@@ -388,7 +475,7 @@ export default function CapabilityDetailPage() {
                     field={`equipment_${index}_specs`}
                   />
                 </p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -419,7 +506,8 @@ export default function CapabilityDetailPage() {
       <CTABand
         headline={`Ready to discuss your ${capability.title.split(" (")[0]} requirements?`}
         subhead="Send your alignment, drawings or RFP and our technical team will assess feasibility, risk and approach, with no obligation."
-        primaryCTA={{ label: "Contact Us", href: "/contact" }}
+        primaryCTA={{ label: "Send RFQ / Tender", href: "/contact" }}
+        secondaryCTA={{ label: "View Project Records", href: "/projects" }}
       />
     </Layout>
   );

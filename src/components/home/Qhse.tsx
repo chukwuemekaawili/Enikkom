@@ -1,51 +1,47 @@
 import { Link } from "react-router-dom";
-import { FileText, Eye, Mail } from "lucide-react";
-import { qhse, certifications, kpis, contact } from "@/content/home";
-import { SectionHeading } from "./SectionHeading";
-
-/** Safety record figures live here only (the single safety & quality section). */
-const safetyStats = kpis.slice(3);
-
-const CREDENTIALS_MAILTO =
-  `mailto:${contact.email}` +
-  `?subject=QHSE%20Credentials%20Request` +
-  `&body=Organisation%3A%0AProject%20context%3A%0ADocuments%20required%3A`;
+import { FileText } from "lucide-react";
+import { qhse, certifications, contact } from "@/content/home";
+import { RecordEyebrow, RecordMetric, RecordStatusStamp, DocumentCard } from "@/components/records";
 
 /**
- * QHSE / compliance — procurement-ready and auditable.
- * Leads with the safety record, then certified management systems, then
- * real downloadable policy documents. A credentials request CTA covers
- * any documents not available for direct download.
+ * QHSE & compliance — procurement-ready and document-led. Safety record as
+ * ledger metrics, certified systems as official stamps (clickable where a
+ * document is on file), and real policy PDFs as filed DocumentCards. Two
+ * procurement CTAs. Nothing here is invented — figures and files are sourced.
  */
 export function Qhse() {
   return (
-    <section id="qhse" className="enk-section enk-panel">
+    <section
+      id="qhse"
+      aria-labelledby="qhse-heading"
+      className="enk-section"
+      style={{ backgroundColor: "var(--enk-bg-muted)", borderBottom: "1px solid var(--enk-rule)" }}
+    >
       <div className="enk-container">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.05fr] lg:gap-16">
+          {/* Narrative + proof */}
           <div>
-            <SectionHeading
-              kicker="QHSE & compliance"
-              title="Safety and quality you can audit, not just claim"
-              intro="Every project runs on a documented quality and HSE management system, certified to three ISO standards. Safety records, policies, and certification documents are available for prequalification review."
-            />
+            <RecordEyebrow refNo="REF 03">QHSE &amp; Compliance</RecordEyebrow>
+            <h2 id="qhse-heading" className="enk-display mt-4 text-[clamp(1.5rem,2.8vw,2rem)] text-[var(--enk-ink)]">
+              Safety and quality you can audit, not just claim
+            </h2>
+            <p className="mt-3 text-[14px] leading-relaxed text-[var(--enk-steel)] md:text-[15px]">
+              Every project runs on a documented quality and HSE management system, certified to
+              three ISO standards. Records, policies and certificates are available for
+              prequalification review.
+            </p>
 
-            {/* Safety record — stated once, here only */}
-            <dl className="mt-8 grid grid-cols-2 gap-6">
-              {safetyStats.map((s) => (
-                <div key={s.label} className="border-l-2 pl-4" style={{ borderColor: "var(--enk-accent-on-dark)" }}>
-                  <dd className="enk-display text-[clamp(1.5rem,4vw,2.2rem)] text-[var(--enk-ink)]">{s.value}</dd>
-                  <dt className="mt-1.5 text-[12.5px] leading-snug text-[var(--enk-steel)]">{s.label}</dt>
-                </div>
+            {/* Safety record — ledger metrics, stated once, here only */}
+            <div className="mt-8 grid grid-cols-3 gap-x-6 gap-y-6">
+              {qhse.metrics.map((m) => (
+                <RecordMetric key={m.label} label={m.label} value={m.value} />
               ))}
-            </dl>
+            </div>
 
-            {/* ISO / regulatory certifications held.
-                Chips with a document on file are clickable to view. */}
+            {/* Certified management systems — official stamps, clickable when on file */}
             <div className="mt-8">
-              <p className="mb-3 text-[11px] font-bold uppercase tracking-wider text-[var(--enk-steel)]">
-                Certified management systems
-              </p>
-              <div className="flex flex-wrap gap-2.5">
+              <p className="enk-overline">Certified Management Systems</p>
+              <div className="mt-3 flex flex-wrap gap-2.5">
                 {certifications.map((c) =>
                   c.file ? (
                     <a
@@ -55,68 +51,55 @@ export function Qhse() {
                       rel="noopener noreferrer"
                       title={`${c.name} — view document`}
                       aria-label={`${c.code} ${c.name}, view document`}
-                      className="enk-chip transition-colors hover:border-[var(--enk-accent-primary-on-dark)] hover:text-[var(--enk-accent-primary-on-dark)] focus-ring"
+                      className="focus-ring rounded-[2px] transition-opacity hover:opacity-80"
                     >
-                      {c.code}
-                      <Eye className="h-3.5 w-3.5" aria-hidden="true" />
+                      <RecordStatusStamp tone="qhse">{c.code}</RecordStatusStamp>
                     </a>
                   ) : (
-                    <span key={c.code} className="enk-chip" title={c.name}>{c.code}</span>
+                    <RecordStatusStamp key={c.code} tone="neutral">
+                      {c.code}
+                    </RecordStatusStamp>
                   ),
                 )}
               </div>
             </div>
 
-            {/* Request credentials CTA — routes to the contact form (works on
-                machines without a mail client); direct email kept as fallback. */}
-            <div className="mt-8">
-              <Link
-                to="/contact"
-                className="enk-readmore"
-                aria-label="Request QHSE credentials via the contact page"
+            {/* Procurement CTAs */}
+            <div className="mt-9 flex flex-wrap items-center gap-3">
+              <a
+                href={contact.capabilityStatement}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="enk-btn enk-btn--gold"
               >
-                <Mail className="h-4 w-4" aria-hidden="true" />
-                Request QHSE credentials
-              </Link>
-              <p className="mt-1.5 text-[12px] text-[var(--enk-steel)]">
-                Full prequalification pack available on request, or{" "}
-                <a href={CREDENTIALS_MAILTO} className="underline underline-offset-2 hover:text-[var(--enk-accent-primary-on-dark)] focus-ring">
-                  email us directly
-                </a>
-                .
-              </p>
+                <FileText className="h-4 w-4" aria-hidden="true" />
+                Request Capability Statement
+              </a>
             </div>
+            <p className="mt-3 text-[12.5px] text-[var(--enk-steel)]">
+              Full prequalification pack available on request, or{" "}
+              <Link to="/contact" className="underline underline-offset-2 hover:text-[var(--enk-accent-primary-on-dark)] focus-ring">
+                contact the project team
+              </Link>
+              .
+            </p>
           </div>
 
-          {/* Policy downloads — real files only */}
-          <div className="enk-card p-6 md:p-8">
-            <h3 className="flex items-center gap-2.5 text-[16px] font-bold text-[var(--enk-ink)]">
-              <FileText className="h-6 w-6 text-[var(--enk-bronze)]" fill="currentColor" aria-hidden="true" />
-              Policies &amp; compliance statements
-            </h3>
-            <p className="mt-3 text-[13px] leading-relaxed text-[var(--enk-steel)]">
-              QHSE documentation issued under the certified management system.
-              Documents open as PDF.
-            </p>
-            <ul className="mt-5 divide-y divide-[var(--enk-line)]">
+          {/* Filed documents — real PDFs only */}
+          <div>
+            <p className="enk-overline">Filed QHSE Documents</p>
+            <div className="mt-3 grid grid-cols-1 gap-4 sm:grid-cols-2">
               {qhse.policies.map((p) => (
-                <li key={p.label}>
-                  <a
-                    href={p.file}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`${p.label} — open PDF`}
-                    className="flex items-center justify-between gap-4 py-4 transition-colors hover:text-[var(--enk-accent-primary-on-dark)] focus-ring"
-                  >
-                    <span className="text-[15px] font-medium text-[var(--enk-ink)]">{p.label}</span>
-                    <span className="flex shrink-0 items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider text-[var(--enk-steel)]">
-                      PDF
-                      <Eye className="h-4 w-4" aria-hidden="true" />
-                    </span>
-                  </a>
-                </li>
+                <DocumentCard
+                  key={p.label}
+                  docType="Policy"
+                  title={p.label}
+                  href={p.file}
+                  actionLabel="Open PDF"
+                  stamp={{ label: "On File", tone: "neutral" }}
+                />
               ))}
-            </ul>
+            </div>
           </div>
         </div>
       </div>

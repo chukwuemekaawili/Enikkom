@@ -1,510 +1,311 @@
 import { Layout } from "@/components/layout";
+import SEO from "@/components/ui/SEO";
+import { Link } from "react-router-dom";
 import { Hero, CTABand } from "@/components/sections";
-import { motion } from "framer-motion";
-import {
-  FileText,
-  Download,
-  ExternalLink,
-  Book,
-  Youtube,
-  Award,
-  Landmark,
-  Lock,
-  HeartHandshake,
-  HardHat,
-  FileX2,
-} from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ArrowRight, ArrowUpRight, Youtube } from "lucide-react";
 import { EditableText } from "@/components/content";
 import { usePageContent } from "@/hooks/useSiteSettings";
-import { EnhancedImage } from "@/components/ui/enhanced-image";
-import { siteImageSelections } from "@/content/siteImageSelections";
+import { DocumentCard, FieldFigure } from "@/components/records";
 import { SectionHeading } from "@/components/home/SectionHeading";
+import { siteImageSelections } from "@/content/siteImageSelections";
 
-const resources = {
-  brochures: [
-    { 
-      title: "ECL Project Brochure - Part 1", 
-      description: "Project portfolio covering our HDD crossings, pipeline construction, and major infrastructure works across Nigeria.",
-      type: "PDF", 
-      size: "8.2 MB", 
-      url: "/downloads/ECL_Project_Brochure_Part1.pdf",
-      featured: true
-    },
-    { 
-      title: "ECL Project Brochure - Part 2", 
-      description: "Continued portfolio featuring additional projects including marine works, dredging, and equipment fleet details.", 
-      type: "PDF", 
-      size: "7.5 MB", 
-      url: "/downloads/ECL_Project_Brochure_Part2.pdf",
-      featured: true
-    },
-    { 
-      title: "Enikkom Company Profile", 
-      description: "Complete company overview including capabilities, management team, certifications, and service offerings.", 
-      type: "PDF", 
-      size: "5.8 MB", 
-      url: "/downloads/Enikkom_Company_Profile.pdf",
-      featured: true
-    },
-  ],
-  technical: [
-    { title: "HDD Equipment Specifications", description: "Model-level HDD, thrust boring, microtunneling, marine, and support-fleet tables sourced from the technical capacity schedule.", type: "Link", size: "", url: "/equipment/hdd" },
-    { title: "General Equipment Fleet", description: "Full equipment fleet including thrust boring, micro tunnelling, marine, and support equipment.", type: "Link", size: "", url: "/equipment" },
-    {
-      title: "Quality Policy Statement",
-      description: "Current quality policy statement extracted from the approved QA/QC manual.",
-      type: "PDF",
-      size: "",
-      url: "/downloads/compliance/quality-policy-statement.pdf",
-    },
-  ],
-  videos: [
-    { 
-      title: "OML34 Continuous HDD - 10\" x 12km Project Review", 
-      description: "Documentary of Nigeria's longest functional Continuous HDD - 12km of 10-inch pipeline installation for NPDC.", 
-      thumbnail: "https://img.youtube.com/vi/uv_ozmjIo-E/maxresdefault.jpg", 
-      youtubeId: "uv_ozmjIo-E", 
-      duration: "8:45",
-      featured: true
-    },
-    { 
-      title: "NIPITECS 2019: New Technology to Displace Pipeline Vandals", 
-      description: "Enikkom's presentation at the Nigerian International Petroleum Technology Conference (NIPITECS) 2019 in Abuja, presenting HDD technology as a solution to pipeline vandalism and theft.",
-      thumbnail: "https://img.youtube.com/vi/PrMQDDb6ELA/hqdefault.jpg",
-      youtubeId: "PrMQDDb6ELA",
-      duration: "5:23",
-      featured: true
-    },
-  ],
-};
+const brochures = [
+  {
+    title: "ECL Project Brochure - Part 1",
+    description: "Project portfolio covering our HDD crossings, pipeline construction, and major infrastructure works across Nigeria.",
+    type: "PDF",
+    size: "8.2 MB",
+    url: "/downloads/ECL_Project_Brochure_Part1.pdf",
+  },
+  {
+    title: "ECL Project Brochure - Part 2",
+    description: "Continued portfolio featuring additional projects including marine works, dredging, and equipment fleet details.",
+    type: "PDF",
+    size: "7.5 MB",
+    url: "/downloads/ECL_Project_Brochure_Part2.pdf",
+  },
+  {
+    title: "Enikkom Company Profile",
+    description: "Official corporate profile covering the company's capabilities, equipment fleet, track record, and service offerings.",
+    type: "PDF",
+    size: "3.8 MB",
+    url: "/downloads/Enikkom_Company_Profile.pdf",
+  },
+] as const;
 
-const complianceResources = {
-  permits: [
-    {
-      title: "DPR / NUPRC Permit Bundle 2026",
-      authority: "Nigerian Upstream Petroleum Regulatory Commission",
-      description:
-        "Current permit bundle covering dredging, drilling and production, offshore pipeline laying, and special transportation services.",
-      href: "/downloads/compliance/dpr-nuprc-permits-2026-merged.pdf",
-      available: true,
-    },
-    {
-      title: "PENCOM Compliance Certificate",
-      authority: "National Pension Commission",
-      description:
-        "This certificate was requested in scope, but no standalone PENCOM file was present anywhere in the supplied ECLweb document set.",
-      available: false,
-    },
-    {
-      title: "NSITF Compliance Certificate",
-      authority: "Nigeria Social Insurance Trust Fund",
-      description:
-        "This certificate was requested in scope, but no standalone NSITF file was present anywhere in the supplied ECLweb document set.",
-      available: false,
-    },
-  ],
-  policies: [
-    {
-      icon: HeartHandshake,
-      title: "Community Management Policy",
-      description: "Current community relations policy statement for stakeholder and host-community engagement.",
-      href: "/downloads/compliance/community-management-policy.pdf",
-    },
-    {
-      icon: Award,
-      title: "Quality Policy",
-      description: "Current quality policy statement extracted from the approved QA/QC manual.",
-      href: "/downloads/compliance/quality-policy-statement.pdf",
-    },
-    {
-      icon: Lock,
-      title: "Security Policy",
-      description: "Current security policy statement covering personnel, property, and operational protection.",
-      href: "/downloads/compliance/security-policy.pdf",
-    },
-    {
-      icon: HardHat,
-      title: "Safety Policy",
-      description: "Current occupational health and safety policy statement from the approved HSE pack.",
-      href: "/downloads/compliance/safety-policy.pdf",
-    },
-  ],
-} as const;
+const registerCrossRefs = [
+  { title: "HDD Equipment Specifications", description: "Model-level HDD, thrust boring, microtunneling, marine, and support-fleet tables from the technical capacity schedule.", href: "/equipment#hdd" },
+  { title: "General Equipment Fleet", description: "Full equipment fleet including thrust boring, micro tunnelling, marine, and support equipment.", href: "/equipment" },
+  { title: "Full Project Register", description: "The complete register of completed crossings, pipelines and marine works.", href: "/projects#record" },
+] as const;
+
+const compliancePermits = [
+  {
+    title: "DPR / NUPRC Permit Bundle 2026",
+    authority: "NUPRC",
+    description:
+      "Current permit bundle covering dredging, drilling and production, offshore pipeline laying, and special transportation services.",
+    href: "/downloads/compliance/dpr-nuprc-permits-2026-merged.pdf",
+  },
+] as const;
+
+const compliancePolicies = [
+  {
+    title: "Community Management Policy",
+    description: "Current community relations policy statement for stakeholder and host-community engagement.",
+    href: "/downloads/compliance/community-management-policy.pdf",
+  },
+  {
+    title: "Quality Policy",
+    description: "Current quality policy statement extracted from the approved QA/QC manual.",
+    href: "/downloads/compliance/quality-policy-statement.pdf",
+  },
+  {
+    title: "Security Policy",
+    description: "Current security policy statement covering personnel, property, and operational protection.",
+    href: "/downloads/compliance/security-policy.pdf",
+  },
+  {
+    title: "Safety Policy",
+    description: "Current occupational health and safety policy statement from the approved HSE pack.",
+    href: "/downloads/compliance/safety-policy.pdf",
+  },
+] as const;
 
 const industryLinks = [
-  { title: "Nigerian Content Development", description: "NCDMB guidelines and requirements for Nigerian content compliance", url: "https://ncdmb.gov.ng", icon: ExternalLink },
-  { title: "NUPRC Guidelines", description: "Nigerian Upstream Petroleum Regulatory Commission standards", url: "https://nuprc.gov.ng", icon: ExternalLink },
-  { title: "NIPEX Portal", description: "Nigerian Petroleum Exchange contractor registration portal", url: "https://nipex.gov.ng", icon: ExternalLink },
-];
+  { title: "Nigerian Content Development", description: "NCDMB guidelines and requirements for Nigerian content compliance", url: "https://ncdmb.gov.ng" },
+  { title: "NUPRC Guidelines", description: "Nigerian Upstream Petroleum Regulatory Commission standards", url: "https://nuprc.gov.ng" },
+  { title: "NIPEX Portal", description: "Nigerian Petroleum Exchange contractor registration portal", url: "https://nipex.gov.ng" },
+] as const;
 
 export default function ResourcesPage() {
   const { content } = usePageContent('resources');
   const resourceImages = siteImageSelections.resources;
-  
+
   const heroContent = content.hero || {};
   const brochuresContent = content.brochures || {};
   const videoContent = content.video || {};
 
   return (
     <Layout>
+      <SEO
+        title="Resources – Brochures, Videos & Compliance – Enikkom"
+        description="Download Enikkom's company profile, project brochures, policy statements, and regulatory permits, plus project documentary videos."
+        canonical="/resources"
+      />
       <Hero
         title={heroContent.title || "Resources & Downloads"}
         subtitle={heroContent.subtitle || "Download our project brochures, company profile, technical documents, and watch our operations in action."}
+        badge="Document Library"
         backgroundImage={heroContent.backgroundImage || resourceImages.hero}
         size="default"
-        pageSlug="resources"
-        sectionKey="hero"
-        imageField="backgroundImage"
       />
 
-      {/* Featured Downloads */}
-      <section className="section-padding bg-background">
-        <div className="container-wide">
-          <motion.div
-            className="mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <SectionHeading
-              kicker={<EditableText
-                value={brochuresContent.eyebrow || "Downloads"}
-                pageSlug="resources"
-                sectionKey="brochures"
-                field="eyebrow"
-              />}
-              title={<EditableText
-                value={brochuresContent.title || "Company & Project Brochures"}
-                pageSlug="resources"
-                sectionKey="brochures"
-                field="title"
-              />}
-              intro={<EditableText
-                value={brochuresContent.description || "Download our official brochures with detailed information on capabilities, projects, and equipment."}
-                pageSlug="resources"
-                sectionKey="brochures"
-                field="description"
-              />}
-            />
-          </motion.div>
+      {/* Brochures & profile */}
+      <section className="enk-section" style={{ borderBottom: "1px solid var(--enk-rule)" }}>
+        <div className="enk-container">
+          <SectionHeading
+            kicker={<EditableText
+              value={brochuresContent.eyebrow || "Downloads"}
+              pageSlug="resources"
+              sectionKey="brochures"
+              field="eyebrow"
+            />}
+            title={<EditableText
+              value={brochuresContent.title || "Company & Project Brochures"}
+              pageSlug="resources"
+              sectionKey="brochures"
+              field="title"
+            />}
+            intro={<EditableText
+              value={brochuresContent.description || "Download our official brochures with detailed information on capabilities, projects, and equipment."}
+              pageSlug="resources"
+              sectionKey="brochures"
+              field="description"
+            />}
+          />
 
-          <div className="grid md:grid-cols-3 gap-6 mb-16">
-            {resources.brochures.map((item, index) => (
-              <motion.div
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {brochures.map((item) => (
+              <DocumentCard
                 key={item.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="enk-card enk-card--hover p-6 flex flex-col"
-              >
-                <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-                  <FileText className="h-7 w-7 text-primary" />
-                </div>
-                <h4 className="font-semibold text-[17px] mb-2">{item.title}</h4>
-                <p className="text-[13px] text-muted-foreground mb-4 leading-relaxed flex-1">{item.description}</p>
-                <div className="flex items-center justify-between pt-4 border-t">
-                  <span className="text-[12px] text-muted-foreground font-medium">{item.type} • {item.size}</span>
-                  <Button variant="default" size="sm" className="h-9 gap-2" asChild>
-                    <a href={item.url} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="h-4 w-4" />
-                      View
-                    </a>
-                  </Button>
-                </div>
-              </motion.div>
+                docType="Brochure"
+                title={item.title}
+                description={item.description}
+                meta={[
+                  { label: "Format", value: item.type },
+                  { label: "Size", value: item.size },
+                ]}
+                href={item.url}
+                actionLabel="Open document"
+              />
             ))}
           </div>
 
-          {/* Technical Documents */}
-          <motion.div
-            className="mb-10"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
+          {/* Register cross-references */}
+          <div className="mt-12 max-w-3xl">
             <SectionHeading
-              kicker="Technical"
-              title={<>Technical Documents &amp; Specifications</>}
-              intro="Access our equipment specifications, HSE policies, and quality management documentation."
+              kicker="Cross-Reference"
+              title={<>Technical Registers on This Site</>}
+              intro="Equipment schedules and the project register are maintained as live pages rather than static files."
             />
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-            {resources.technical.map((item, index) => (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="enk-card enk-card--hover p-5"
-              >
-                <Book className="h-7 w-7 text-primary mb-3" />
-                <h4 className="font-semibold text-[15px] mb-2">{item.title}</h4>
-                <p className="text-[12px] text-muted-foreground mb-4 leading-relaxed">{item.description}</p>
-                <div className="flex items-center justify-between">
-                  <span className="text-[11px] text-muted-foreground">
-                    {item.type}{item.size && ` • ${item.size}`}
-                  </span>
-                  <Button variant="ghost" size="sm" className="h-8 gap-1 text-primary" asChild>
-                    <a href={item.url} target={item.url.startsWith('/') ? '_self' : '_blank'}>
-                      {item.url.startsWith('/') ? 'View' : <Download className="h-3.5 w-3.5" />}
-                    </a>
-                  </Button>
-                </div>
-              </motion.div>
-            ))}
+            <ul className="mt-6 border-t-2" style={{ borderColor: "var(--enk-rule-heavy)" }}>
+              {registerCrossRefs.map((item, i) => (
+                <li
+                  key={item.href}
+                  className="border-b"
+                  style={{
+                    borderColor: "var(--enk-rule)",
+                    backgroundColor: i % 2 === 1 ? "var(--enk-ledger-row-alt)" : undefined,
+                  }}
+                >
+                  <Link
+                    to={item.href}
+                    className="group flex items-baseline justify-between gap-6 px-1 py-3 focus-ring rounded-sm sm:px-3"
+                  >
+                    <span>
+                      <span className="block text-[14px] font-semibold text-[var(--enk-ink)] group-hover:text-[var(--enk-accent-on-dark)]">
+                        {item.title}
+                      </span>
+                      <span className="mt-0.5 block text-[12.5px] leading-5 text-[var(--enk-steel)]">
+                        {item.description}
+                      </span>
+                    </span>
+                    <ArrowRight className="h-4 w-4 shrink-0 self-center text-[var(--enk-accent-on-dark)] transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
 
-      {/* Featured Video - OML34 */}
-      <section className="section-padding">
-        <div className="container-wide">
-          <motion.div
-            className="mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <SectionHeading
-              onDark
-              align="center"
-              kicker={<EditableText
-                value={videoContent.eyebrow || "Featured Project"}
-                pageSlug="resources"
-                sectionKey="video"
-                field="eyebrow"
-              />}
-              title={<EditableText
-                value={videoContent.title || "OML34 Continuous HDD Project Video"}
-                pageSlug="resources"
-                sectionKey="video"
-                field="title"
-              />}
-              intro={<EditableText
-                value={videoContent.description || "Watch the documentary of Nigeria's longest functional Continuous HDD - 12km of 10\" pipeline installation."}
-                pageSlug="resources"
-                sectionKey="video"
-                field="description"
-              />}
-            />
-          </motion.div>
+      {/* Featured Video */}
+      <section id="videos" className="enk-section scroll-mt-24" style={{ backgroundColor: "var(--enk-bg-muted)", borderBottom: "1px solid var(--enk-rule)" }}>
+        <div className="enk-container">
+          <SectionHeading
+            onDark
+            kicker={<EditableText
+              value={videoContent.eyebrow || "Field Documentation"}
+              pageSlug="resources"
+              sectionKey="video"
+              field="eyebrow"
+            />}
+            title={<EditableText
+              value={videoContent.title || "OML34 Continuous HDD Project Video"}
+              pageSlug="resources"
+              sectionKey="video"
+              field="title"
+            />}
+            intro={<EditableText
+              value={videoContent.description || "Watch the documentary of Nigeria's longest functional Continuous HDD - 12km of 10\" pipeline installation."}
+              pageSlug="resources"
+              sectionKey="video"
+              field="description"
+            />}
+          />
 
-          {/* Featured Video - Large */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="max-w-4xl mx-auto mb-10"
-          >
-            <div className="aspect-video rounded-xl overflow-hidden shadow-2xl">
+          <div className="mx-auto mt-8 max-w-4xl">
+            <FieldFigure
+              figNo="VID 01"
+              caption='OML34 Continuous HDD — 10" × 12km project review'
+              location="Utorogun, Delta State"
+              ratio="16/9"
+            >
               <iframe
                 width="100%"
                 height="100%"
                 src="https://www.youtube.com/embed/uv_ozmjIo-E?rel=0"
                 title="OML34 Continuous HDD Project Review"
-                frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
-                className="w-full h-full"
+                className="h-full w-full"
+                style={{ border: 0 }}
               />
-            </div>
-          </motion.div>
-          
-          <motion.div 
-            className="text-center"
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: 0.3 }}
-          >
-            <Button variant="outline" className="border-white/20 text-white hover:bg-white/10 gap-2" asChild>
-              <a href="https://www.youtube.com/@enikkomconstruction" target="_blank" rel="noopener noreferrer">
-                <Youtube className="h-4 w-4" />
-                View All Videos on YouTube
+            </FieldFigure>
+
+            <div className="mt-5">
+              <a
+                href="https://www.youtube.com/@enikkomconstruction"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="enk-mono inline-flex items-center gap-2 text-[11.5px] font-semibold uppercase tracking-[0.1em] text-[var(--enk-accent-on-dark)] transition-colors hover:text-[var(--enk-accent-primary-on-dark)] focus-ring rounded-sm"
+              >
+                <Youtube className="h-4 w-4" aria-hidden="true" />
+                View all videos on YouTube
+                <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
               </a>
-            </Button>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Compliance Library */}
-      <section className="section-padding bg-muted/30">
-        <div className="container-wide">
-          <motion.div
-            className="mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <SectionHeading
-              align="center"
-              kicker="Compliance"
-              title={<>Certifications, Permits &amp; Policies</>}
-              intro="Download the current compliance files sourced directly from the supplied corporate document pack."
-            />
-          </motion.div>
-
-          <div className="grid gap-12">
-
-            <div>
-              <motion.div
-                className="mb-6"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.45 }}
-              >
-                <SectionHeading
-                  kicker="Registration"
-                  title={<>Permits and Licenses</>}
-                  intro="This sub-category lists the requested permit documents clearly, while staying honest about the files that were not present in the supplied source pack."
-                />
-              </motion.div>
-
-              <div className="grid md:grid-cols-3 gap-5">
-                {complianceResources.permits.map((permit, index) => (
-                  <motion.div
-                    key={permit.title}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.35, delay: index * 0.08 }}
-                    className="enk-card enk-card--hover p-6 flex flex-col gap-4"
-                  >
-                    <div className="flex items-start gap-3">
-                      <div className={`w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 ${permit.available ? "bg-primary/10" : "bg-muted"}`}>
-                        {permit.available ? (
-                          <Landmark className="h-5 w-5 text-primary" />
-                        ) : (
-                          <FileX2 className="h-5 w-5 text-muted-foreground" />
-                        )}
-                      </div>
-                      <div>
-                        <h4 className="text-[15px] font-semibold mb-1">{permit.title}</h4>
-                        <p className="text-[12px] text-primary font-medium">{permit.authority}</p>
-                      </div>
-                    </div>
-
-                    <p className="text-[13px] leading-relaxed text-muted-foreground flex-1">
-                      {permit.description}
-                    </p>
-
-                    {permit.available ? (
-                      <Button variant="outline" className="h-10 w-fit gap-2" asChild>
-                        <a href={permit.href} target="_blank" rel="noreferrer">
-                          Open Document
-                          <ExternalLink className="h-4 w-4" />
-                        </a>
-                      </Button>
-                    ) : (
-                      <span className="enk-chip w-fit">Source Not Supplied</span>
-                    )}
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <motion.div
-                className="mb-6"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.45 }}
-              >
-                <SectionHeading
-                  kicker="Policies"
-                  title={<>Approved Policy Documents</>}
-                  intro="Only the four policies requested for this update are displayed here. All other policy text has been removed from this section."
-                />
-              </motion.div>
-
-              <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-5">
-                {complianceResources.policies.map((policy, index) => {
-                  const Icon = policy.icon;
-                  return (
-                    <motion.div
-                      key={policy.title}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.35, delay: index * 0.08 }}
-                      className="enk-card enk-card--hover p-5 flex flex-col gap-4"
-                    >
-                      <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center">
-                        <Icon className="h-5 w-5 text-primary" />
-                      </div>
-                      <div>
-                        <h4 className="text-[15px] font-semibold mb-2">{policy.title}</h4>
-                        <p className="text-[12px] leading-relaxed text-muted-foreground">{policy.description}</p>
-                      </div>
-                      <Button variant="outline" className="h-10 w-fit gap-2 mt-auto" asChild>
-                        <a href={policy.href} target="_blank" rel="noreferrer">
-                          View Policy
-                          <ExternalLink className="h-4 w-4" />
-                        </a>
-                      </Button>
-                    </motion.div>
-                  );
-                })}
-              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Industry Links */}
-      <section className="section-padding bg-background">
-        <div className="container-wide">
-          <motion.div
-            className="mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <SectionHeading
-              align="center"
-              kicker="Industry"
-              title={<>Industry Resources</>}
-              intro="Useful links to Nigerian oil & gas regulatory bodies."
-            />
-          </motion.div>
+      {/* Compliance Library */}
+      <section className="enk-section" style={{ borderBottom: "1px solid var(--enk-rule)" }}>
+        <div className="enk-container">
+          <SectionHeading
+            kicker="Compliance"
+            title={<>Certifications, Permits &amp; Policies</>}
+            intro="Download the current compliance files sourced directly from the supplied corporate document pack."
+          />
 
-          <div className="grid md:grid-cols-3 gap-5 max-w-4xl mx-auto">
-            {industryLinks.map((link, index) => (
-              <motion.a
-                key={link.title}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="enk-card enk-card--hover p-6 group"
-              >
-                <ExternalLink className="h-6 w-6 text-primary mb-4 group-hover:translate-x-1 transition-transform" />
-                <h4 className="font-semibold text-[16px] mb-2">{link.title}</h4>
-                <p className="text-[13px] text-muted-foreground">{link.description}</p>
-              </motion.a>
+          <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {compliancePermits.map((permit) => (
+              <DocumentCard
+                key={permit.title}
+                docType="Permit"
+                title={permit.title}
+                description={permit.description}
+                meta={[{ label: "Authority", value: permit.authority }]}
+                href={permit.href}
+                actionLabel="Open document"
+                stamp={{ label: "Current", tone: "qhse" }}
+              />
+            ))}
+            {compliancePolicies.map((policy) => (
+              <DocumentCard
+                key={policy.title}
+                docType="Policy"
+                title={policy.title}
+                description={policy.description}
+                href={policy.href}
+                actionLabel="View policy"
+                stamp={{ label: "On File", tone: "neutral" }}
+              />
             ))}
           </div>
         </div>
       </section>
 
-      <CTABand 
-        headline="Need More Information?"
-        primaryCTA={{ label: "Contact Us", href: "/contact" }}
+      {/* Industry Links */}
+      <section className="enk-section" style={{ backgroundColor: "var(--enk-bg-muted)", borderBottom: "1px solid var(--enk-rule)" }}>
+        <div className="enk-container">
+          <SectionHeading
+            kicker="Industry"
+            title={<>Industry Resources</>}
+            intro="Useful links to Nigerian oil & gas regulatory bodies."
+          />
+
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {industryLinks.map((link) => (
+              <DocumentCard
+                key={link.title}
+                docType="External Registry"
+                title={link.title}
+                description={link.description}
+                href={link.url}
+                actionLabel="Visit registry"
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <CTABand
+        headline="Need a document that isn't listed?"
+        subhead="Prequalification packs, equipment schedules and certificates are compiled on request for tender review."
+        primaryCTA={{ label: "Request Document Pack", href: "/contact" }}
+        secondaryCTA={{ label: "View Project Records", href: "/projects" }}
       />
     </Layout>
   );

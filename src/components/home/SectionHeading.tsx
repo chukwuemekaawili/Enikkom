@@ -8,7 +8,10 @@ interface Props {
   align?: "left" | "center";
 }
 
-/** Consistent section header. One-color title; accent only in the kicker rule. */
+/**
+ * Consistent section header in the Field Records language: mono record
+ * eyebrow (via .enk-kicker), engineered title, restrained intro.
+ */
 export function SectionHeading({ kicker, title, intro, onDark = false, align = "left" }: Props) {
   return (
     <div className={align === "center" ? "mx-auto max-w-2xl text-center" : "max-w-2xl"}>
@@ -16,14 +19,14 @@ export function SectionHeading({ kicker, title, intro, onDark = false, align = "
         {kicker}
       </p>
       <h2
-        className="enk-display text-[clamp(1.75rem,3.6vw,2.75rem)]"
+        className="enk-display text-[clamp(1.5rem,2.8vw,2.05rem)]"
         style={{ color: onDark ? "var(--enk-on-dark)" : "var(--enk-ink)" }}
       >
         {title}
       </h2>
       {intro && (
         <p
-          className="mt-4 text-[16px] leading-relaxed md:text-[17px]"
+          className="mt-3 text-[14px] leading-relaxed md:text-[15px]"
           style={{ color: onDark ? "var(--enk-on-dark-muted)" : "var(--enk-steel)" }}
         >
           {intro}

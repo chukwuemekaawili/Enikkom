@@ -1,33 +1,47 @@
 import { Layout } from "@/components/layout";
+import SEO from "@/components/ui/SEO";
 import { Hero, CTABand } from "@/components/sections";
 import { EditableText } from "@/components/content";
 import { SectionHeading } from "@/components/home/SectionHeading";
 import { usePageContent } from "@/hooks/useSiteSettings";
-import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { EnhancedImage } from "@/components/ui/enhanced-image";
 import {
-  Shield,
-  FileCheck,
-  HardHat,
-  ClipboardCheck,
-  CheckCircle,
-  AlertTriangle,
-  Target,
-  Award,
-  Landmark,
-  Lock,
-  HeartHandshake,
-  ExternalLink,
-  FileX2,
-} from "lucide-react";
+  DocumentCard,
+  FieldFigure,
+  RecordMetric,
+  RecordStatusStamp,
+} from "@/components/records";
 import { siteImageSelections } from "@/content/siteImageSelections";
+import { fpic } from "@/content/home";
+
+// Sustainability pillars merged from the former /sustainability page.
+const sustainabilityPillars = [
+  {
+    title: "Environmental Management",
+    description:
+      "Operations across the Niger Delta's swamp, riverine and offshore terrain run under an environmental management system certified to ISO 14001:2015, with monitoring built into each crossing and pipeline scope.",
+  },
+  {
+    title: "Safety & Workforce Wellbeing",
+    description:
+      "A documented HSE system, certified to ISO 45001:2018, has delivered a zero lost-time-injury record across 5M+ safe man-hours on site.",
+  },
+  {
+    title: "Community & Local Content",
+    description:
+      "Host-community engagement, run under our Community Management Policy, keeps corridors open and access protected for the life of a project.",
+  },
+  {
+    title: "Indigenous Capacity Development",
+    description:
+      "Indigenous technical capacity aligned with NOGICD and NCDMB local-content requirements, built through our partnership with HDDTEC.",
+  },
+];
 
 const hseSteps = [
-  { icon: FileCheck, title: "Level 1: Policy Manual", description: "Policy and Authority Statement Manual establishing company-wide HSE principles" },
-  { icon: HardHat, title: "Level 2: HSE Procedures", description: "Quality Assurance and Safety (HSE) Procedures for all operations" },
-  { icon: ClipboardCheck, title: "Level 3: Work Instructions", description: "Specific Work Instructions for each task and operation type" },
-  { icon: Shield, title: "Level 4: Quality Records", description: "Quality and Safety Records for traceability and continuous improvement" },
+  { title: "Policy Manual", level: "Level 1", description: "Policy and Authority Statement Manual establishing company-wide HSE principles" },
+  { title: "HSE Procedures", level: "Level 2", description: "Quality Assurance and Safety (HSE) Procedures for all operations" },
+  { title: "Work Instructions", level: "Level 3", description: "Specific Work Instructions for each task and operation type" },
+  { title: "Quality Records", level: "Level 4", description: "Quality and Safety Records for traceability and continuous improvement" },
 ];
 
 const defaultHseCommitments = [
@@ -42,12 +56,11 @@ const defaultHseCommitments = [
 ];
 
 const hseStats = [
-  { value: "0", label: "Lost Time Incidents", icon: AlertTriangle },
-  { value: "5M+", label: "Safe Man-Hours", icon: Target },
-  { value: "100%", label: "PTW Compliance", icon: CheckCircle },
-  { value: "ISO", label: "Certified Systems", icon: Award },
+  { value: "0", label: "Lost Time Incidents" },
+  { value: "5M+", label: "Safe Man-Hours" },
+  { value: "100%", label: "PTW Compliance" },
+  { value: "ISO", label: "Certified Systems" },
 ];
-
 
 const permitsAndLicenses = [
   {
@@ -56,51 +69,30 @@ const permitsAndLicenses = [
     description:
       "Current specialized category permits covering dredging, drilling and production services, offshore pipeline laying, and special transportation services.",
     href: "/downloads/compliance/dpr-nuprc-permits-2026-merged.pdf",
-    cta: "View Permit Bundle",
-    available: true,
-  },
-  {
-    title: "PENCOM Compliance Certificate",
-    authority: "National Pension Commission",
-    description:
-      "Requested in scope, but no standalone PENCOM file was present in the supplied ECLweb document set.",
-    available: false,
-  },
-  {
-    title: "NSITF Compliance Certificate",
-    authority: "Nigeria Social Insurance Trust Fund",
-    description:
-      "Requested in scope, but no standalone NSITF file was present in the supplied ECLweb document set.",
-    available: false,
+    cta: "View permit bundle",
   },
 ] as const;
 
 const policyDocuments = [
   {
-    icon: HeartHandshake,
     title: "Community Management Policy",
     description:
-      "Document sourced from the current Community Relation Policy statement used for project stakeholder engagement.",
+      "Our current Community Relations Policy statement, governing project stakeholder and host-community engagement.",
     href: "/downloads/compliance/community-management-policy.pdf",
   },
   {
-    icon: Award,
     title: "Quality Policy",
     description:
       "Quality Policy Statement extracted from the current Quality Assurance and Quality Control policy manual.",
     href: "/downloads/compliance/quality-policy-statement.pdf",
-    highlight:
-      "Committed to providing products and services that satisfy client needs and specified quality requirements.",
   },
   {
-    icon: Lock,
     title: "Security Policy",
     description:
       "Security Policy extracted from the current HSE policy documents for personnel, property, and operational risk protection.",
     href: "/downloads/compliance/security-policy.pdf",
   },
   {
-    icon: Shield,
     title: "Safety Policy",
     description:
       "Occupational Health and Safety Policy extracted from the current HSE policy documents.",
@@ -119,289 +111,217 @@ export default function HSEQualityPage() {
 
   return (
     <Layout>
+      <SEO
+        title="HSE & Quality – ISO 9001/14001/45001 – Enikkom"
+        description="Enikkom's QHSE system: ISO 9001, 14001 and 45001 certified, a zero lost-time-injury record, 5M+ safe man-hours, and a four-level quality process."
+        canonical="/hse-quality"
+      />
       <Hero
         title={heroContent.title || "HSE & Quality Excellence"}
         subtitle={heroContent.subtitle || "Safety First. Quality Always. A firm commitment to zero incidents and high standards guides everything we do."}
-        primaryCTA={{ label: heroContent.primaryBtnText || "Request HSE Documentation", href: heroContent.primaryBtnLink || "/contact" }}
+        badge="QHSE Credentials"
+        primaryCTA={{ label: heroContent.primaryBtnText || "Contact Us", href: heroContent.primaryBtnLink || "/contact" }}
         backgroundImage={heroContent.backgroundImage || hseImages.hero}
         size="default"
-        pageSlug="hse"
-        sectionKey="hero"
-        imageField="backgroundImage"
       />
 
-      {/* HSE Stats */}
-      <section className="py-14">
-        <div className="container-wide">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
-            {hseStats.map((stat, i) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="text-center p-6 bg-white/5 rounded-xl border border-white/10"
-              >
-                <stat.icon className="h-8 w-8 text-primary mx-auto mb-3" />
-                <div className="stat-value stat-value-white">{stat.value}</div>
-                <div className="stat-label text-white/50">{stat.label}</div>
-              </motion.div>
+      {/* Safety record — ledger figures */}
+      <section className="enk-section--tight" style={{ borderBottom: "1px solid var(--enk-rule)" }}>
+        <div className="enk-container">
+          <div className="grid grid-cols-2 gap-x-6 gap-y-8 md:grid-cols-4">
+            {hseStats.map((stat) => (
+              <RecordMetric key={stat.label} label={stat.label} value={stat.value} />
             ))}
           </div>
         </div>
       </section>
 
-      {/* HSE Process */}
-      <section className="section-padding bg-background">
-        <div className="container-wide">
-          <motion.div
-            className="mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <SectionHeading
-              kicker={qmsContent.subtitle || "Quality System"}
-              title={<EditableText value={qmsContent.title || "4-Level Quality Management System"} pageSlug="hse" sectionKey="qms" field="title" />}
-              intro={<EditableText value={qmsContent.description || "Our ISO-certified QMS follows a structured four-level model ensuring consistent quality across all operations."} pageSlug="hse" sectionKey="qms" field="description" />}
-              onDark
-              align="center"
-            />
-          </motion.div>
+      {/* Quality management system */}
+      <section className="enk-section" style={{ borderBottom: "1px solid var(--enk-rule)" }}>
+        <div className="enk-container">
+          <SectionHeading
+            kicker={qmsContent.subtitle || "Quality System"}
+            title={<EditableText value={qmsContent.title || "4-Level Quality Management System"} pageSlug="hse" sectionKey="qms" field="title" />}
+            intro={<EditableText value={qmsContent.description || "Our ISO-certified QMS follows a structured four-level model ensuring consistent quality across all operations."} pageSlug="hse" sectionKey="qms" field="description" />}
+            onDark
+          />
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+          <ol className="mt-10 grid gap-px overflow-hidden rounded-[var(--enk-radius-record)] border border-[var(--enk-rule-strong)] bg-[var(--enk-rule)] md:grid-cols-4">
             {hseSteps.map((step, i) => (
-              <motion.div 
-                key={step.title} 
-                initial={{ opacity: 0, y: 24 }} 
-                whileInView={{ opacity: 1, y: 0 }} 
-                viewport={{ once: true }} 
-                transition={{ duration: 0.4, delay: i * 0.1 }} 
-                className="relative text-center enk-card enk-card--hover p-6 pt-7"
+              <li
+                key={step.title}
+                className="flex flex-col gap-2.5 p-5"
+                style={{ backgroundColor: "var(--enk-record-surface)" }}
               >
-                <span className="block text-[14px] font-bold mb-3" style={{ color: "var(--enk-bronze)" }}>
-                  {String(i + 1).padStart(2, "0")}
+                <span className="enk-mono text-[11px] font-semibold uppercase tracking-[0.1em] text-[var(--enk-accent-on-dark)]">
+                  {step.level}
                 </span>
-                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <step.icon className="h-7 w-7 text-primary" />
-                </div>
-                <h4 className="font-semibold mb-2">{step.title}</h4>
-                <p className="text-[14px] text-muted-foreground leading-relaxed">{step.description}</p>
-              </motion.div>
+                <h4 className="text-[15px] font-semibold text-[var(--enk-ink)]">{step.title}</h4>
+                <p className="text-[13px] leading-6 text-[var(--enk-steel)]">{step.description}</p>
+              </li>
             ))}
-          </div>
+          </ol>
         </div>
       </section>
 
       {/* Commitments */}
-      <section className="section-padding bg-muted/30">
-        <div className="container-wide">
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
+      <section className="enk-section" style={{ backgroundColor: "var(--enk-bg-muted)", borderBottom: "1px solid var(--enk-rule)" }}>
+        <div className="enk-container">
+          <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
+            <div>
               <SectionHeading
                 kicker={commitmentContent.subtitle || "Commitment"}
                 title={<EditableText value={commitmentContent.title || "Our HSE Commitment"} pageSlug="hse" sectionKey="commitment" field="title" />}
                 intro={<EditableText value={commitmentContent.description || "At Enikkom, HSE is more than a policy. It is a core value embedded in every aspect of our operations. We are committed to protecting our people, communities, and the environment."} pageSlug="hse" sectionKey="commitment" field="description" multiline />}
                 onDark
               />
-              <div className="mb-8" />
 
-              <div className="space-y-3">
+              <ul className="mt-8 border-t-2" style={{ borderColor: "var(--enk-rule-heavy)" }}>
                 {hseCommitments.map((commitment: string, i: number) => (
-                  <motion.div
+                  <li
                     key={i}
-                    initial={{ opacity: 0, x: -16 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.3, delay: i * 0.08 }}
-                    className="enk-card flex items-center gap-3 p-3"
+                    className="flex items-baseline gap-3 border-b px-1 py-2.5"
+                    style={{
+                      borderColor: "var(--enk-rule)",
+                      backgroundColor: i % 2 === 1 ? "var(--enk-ledger-row-alt)" : undefined,
+                    }}
                   >
-                    <CheckCircle className="h-5 w-5 flex-shrink-0" style={{ color: "var(--enk-safety)" }} />
-                    <span className="text-[14px] font-medium">{commitment}</span>
-                  </motion.div>
+                    <span
+                      className="mt-[1px] inline-block h-[7px] w-[7px] shrink-0"
+                      style={{ backgroundColor: "var(--enk-status-complete)" }}
+                      aria-hidden="true"
+                    />
+                    <span className="text-[13.5px] leading-6 text-[var(--enk-ink)]">{commitment}</span>
+                  </li>
                 ))}
-              </div>
-            </motion.div>
-            
-            <motion.div 
-              className="relative"
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
-              <div className="image-premium">
-                <EnhancedImage 
+              </ul>
+            </div>
+
+            <div>
+              <FieldFigure
                 src={hseImages.briefing}
-                  alt="Enikkom field personnel working in full PPE" 
-                  wrapperClassName="w-full h-[350px] md:h-[420px]"
-                  className="w-full h-full"
-                  tone="natural"
-                  fallbackLabel="Field HSE compliance"
-                />
+                alt="Enikkom field personnel working in full PPE"
+                figNo="FIG 01"
+                caption={
+                  <EditableText
+                    value={commitmentContent.badgeSubtitle || "Maintained across all major projects"}
+                    pageSlug="hse"
+                    sectionKey="commitment"
+                    field="badgeSubtitle"
+                  />
+                }
+                ratio="4/3"
+              />
+              <div className="mt-4 flex flex-wrap items-center gap-2.5">
+                <RecordStatusStamp tone="qhse">
+                  <EditableText
+                    value={commitmentContent.badgeTitle || "Zero LTI Record"}
+                    pageSlug="hse"
+                    sectionKey="commitment"
+                    field="badgeTitle"
+                  />
+                </RecordStatusStamp>
+                <RecordStatusStamp tone="qhse">5M+ Safe Man-Hours</RecordStatusStamp>
               </div>
-              <motion.div 
-                className="absolute bottom-4 left-4 right-4 text-white p-4 rounded-xl"
-                style={{ backgroundColor: "var(--enk-safety)" }}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.3 }}
-              >
-                <div className="flex items-center gap-3">
-                  <Shield className="h-8 w-8 flex-shrink-0" />
-                  <div>
-                    <div className="font-bold text-lg">
-                      <EditableText
-                        value={commitmentContent.badgeTitle || "Zero LTI Record"}
-                        pageSlug="hse"
-                        sectionKey="commitment"
-                        field="badgeTitle"
-                      />
-                    </div>
-                    <div className="text-[13px] text-white/80">
-                      <EditableText
-                        value={commitmentContent.badgeSubtitle || "Maintained across all major projects"}
-                        pageSlug="hse"
-                        sectionKey="commitment"
-                        field="badgeSubtitle"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Permits & Licenses */}
-      <section className="section-padding bg-background">
-        <div className="container-wide">
-          <motion.div
-            className="mb-10"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <SectionHeading
-              kicker="Regulatory Compliance"
-              title={<>Permits and Licenses</>}
-              intro="Compliance documents currently verified from the supplied corporate document pack."
-              onDark
-              align="center"
-            />
-          </motion.div>
+      <section className="enk-section" style={{ borderBottom: "1px solid var(--enk-rule)" }}>
+        <div className="enk-container">
+          <SectionHeading
+            kicker="Regulatory Compliance"
+            title={<>Permits and Licenses</>}
+            intro="Compliance documents currently verified from the supplied corporate document pack."
+            onDark
+          />
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
-            {permitsAndLicenses.map((permit, i) => {
-              const Icon = permit.available ? Landmark : FileX2;
-              return (
-                <motion.div
-                  key={permit.title}
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.07 }}
-                  className="enk-card enk-card--hover flex flex-col gap-4 p-6"
-                >
-                  <div className="flex items-start gap-3">
-                    <div className={`w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 ${permit.available ? "bg-primary/10" : "bg-muted"}`}>
-                      <Icon className={`h-5 w-5 ${permit.available ? "text-primary" : "text-muted-foreground"}`} />
-                    </div>
-                    <div>
-                      <h4 className="text-[15px] font-semibold mb-1">{permit.title}</h4>
-                      <p className="text-[12px] text-primary font-medium">{permit.authority}</p>
-                    </div>
-                  </div>
-
-                  <p className="text-[13px] text-muted-foreground leading-relaxed flex-1">
-                    {permit.description}
-                  </p>
-
-                  {permit.available ? (
-                    <Button asChild variant="outline" className="h-10 w-fit gap-2">
-                      <a href={permit.href} target="_blank" rel="noreferrer">
-                        {permit.cta}
-                        <ExternalLink className="h-4 w-4" />
-                      </a>
-                    </Button>
-                  ) : (
-                    <span className="enk-chip w-fit">Source Not Supplied</span>
-                  )}
-                </motion.div>
-              );
-            })}
+          <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {permitsAndLicenses.map((permit) => (
+              <DocumentCard
+                key={permit.title}
+                docType="Permit"
+                title={permit.title}
+                description={permit.description}
+                meta={[{ label: "Authority", value: "NUPRC" }]}
+                href={permit.href}
+                actionLabel={permit.cta}
+                stamp={{ label: "Current", tone: "qhse" }}
+              />
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Corporate Policies, exactly 4 approved policies */}
-      <section className="section-padding bg-muted/30">
-        <div className="container-wide">
-          <motion.div
-            className="mb-10"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <SectionHeading
-              kicker="Corporate Governance"
-              title={<>Our Policies</>}
-              intro="Only the four approved policies below are displayed, with direct access to the current source documents."
-              onDark
-              align="center"
-            />
-          </motion.div>
+      {/* Corporate Policies — exactly 4 approved policies */}
+      <section className="enk-section" style={{ backgroundColor: "var(--enk-bg-muted)", borderBottom: "1px solid var(--enk-rule)" }}>
+        <div className="enk-container">
+          <SectionHeading
+            kicker="Corporate Governance"
+            title={<>Our Policies</>}
+            intro="Only the four approved policies below are displayed, with direct access to the current source documents."
+            onDark
+          />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-4xl mx-auto">
-            {policyDocuments.map((policy, i) => {
-              const Icon = policy.icon;
-              return (
-                <motion.div
-                  key={policy.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.08 }}
-                  className="enk-card enk-card--hover flex flex-col gap-4 p-6"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Icon className="h-5 w-5 text-primary" />
-                    </div>
-                    <h4 className="text-[15px] font-semibold">{policy.title}</h4>
-                  </div>
-                  {policy.highlight && (
-                    <p className="text-[13px] font-medium leading-relaxed text-foreground">
-                      {policy.highlight}
-                    </p>
-                  )}
-                  <p className="text-[13px] text-muted-foreground leading-relaxed flex-1">
-                    {policy.description}
-                  </p>
-                  <Button asChild variant="outline" className="h-10 w-fit gap-2">
-                    <a href={policy.href} target="_blank" rel="noreferrer">
-                      View Policy
-                      <ExternalLink className="h-4 w-4" />
-                    </a>
-                  </Button>
-                </motion.div>
-              );
-            })}
+          <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {policyDocuments.map((policy) => (
+              <DocumentCard
+                key={policy.title}
+                docType="Policy"
+                title={policy.title}
+                description={policy.description}
+                href={policy.href}
+                actionLabel="View policy"
+                stamp={{ label: "On File", tone: "neutral" }}
+              />
+            ))}
           </div>
         </div>
       </section>
 
+      {/* Sustainability, Community & Local Content */}
+      <section id="sustainability" className="enk-section scroll-mt-24">
+        <div className="enk-container">
+          <SectionHeading
+            kicker="Sustainability & Community"
+            title={<>Responsible Operations on Sensitive Terrain</>}
+            intro="Sustainability at Enikkom is built on auditable systems, not statements: certified management systems, a documented safety record, and host-community policy."
+          />
+
+          <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {sustainabilityPillars.map((p, index) => (
+              <div key={p.title} className="enk-doc-card p-5">
+                <div className="flex items-center justify-between gap-3">
+                  <p className="enk-overline">Pillar</p>
+                  <span className="enk-mono text-[11px] font-medium text-[var(--enk-blueprint)]">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                </div>
+                <h4 className="mt-3 text-[15px] font-semibold text-[var(--enk-ink)]">{p.title}</h4>
+                <p className="mt-2 text-[13px] leading-6 text-[var(--enk-steel)]">{p.description}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mx-auto mt-8 grid max-w-5xl gap-4 md:grid-cols-3">
+            {fpic.points.map((point) => (
+              <div key={point.title} className="enk-doc-card p-5">
+                <h4 className="text-[15px] font-semibold text-[var(--enk-ink)]">{point.title}</h4>
+                <p className="mt-2 text-[13px] leading-6 text-[var(--enk-steel)]">{point.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <CTABand
+        headline="Request the QHSE prequalification pack"
+        subhead="Certificates, policies, and safety statistics compiled for tender and vendor-registration review."
+        primaryCTA={{ label: "Contact Us", href: "/contact" }}
+        secondaryCTA={{ label: "View Project Records", href: "/projects" }}
+      />
     </Layout>
   );
 }
