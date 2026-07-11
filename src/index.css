@@ -62,7 +62,7 @@
     --input: 210 18% 24%;
     --ring: 43 64% 51%;
 
-    --radius: 0.375rem;
+    --radius: 0.75rem;
 
     /* Sidebar */
     --sidebar-background: 220 60% 10%;
@@ -134,16 +134,16 @@
     letter-spacing: normal;
   }
 
-  /* H1 - Hero / page headlines */
+  /* H1 - Hero / page headlines — Shell's modest editorial scale */
   h1 {
-    font-size: clamp(28px, 5vw, 48px);
-    line-height: 1.15;
+    font-size: clamp(26px, 3.5vw, 40px);
+    line-height: 1.25;
   }
 
   /* H2 - Section Titles */
   h2 {
-    font-size: clamp(24px, 3.5vw, 32px);
-    line-height: 1.2;
+    font-size: clamp(22px, 2.8vw, 28px);
+    line-height: 1.3;
   }
 
   /* H3 - Subsection Titles */
@@ -458,8 +458,8 @@
   --color-accent:         #C4900E; /* muted amber fills, dark text on top */
   --color-accent-hover:   #A67A0C;
   --color-accent-on-dark: #D4A832; /* readable amber text ON navy (WCAG) */
-  --radius-card:    3px;   /* record sheets — squared, document geometry */
-  --radius-control: 4px;   /* buttons/inputs — solid, official, precise */
+  --radius-card:    14px;  /* rounded tiles — Shell card geometry */
+  --radius-control: 8px;   /* buttons/inputs — softly rounded */
   --card-pad:       24px;
   --transition:     200ms ease;
   --container-max:  1300px;
@@ -521,12 +521,10 @@
   --enk-radius: var(--radius-control);
 
   /* ----------------------------------------------------------------
-     INDUSTRIAL FIELD RECORDS — contractor-document vocabulary.
-     Additive layer on the dark Shell base: record sheets, ledger rows,
-     drawing-title-block rules, mono spec text, credential stamps.
-     Documents are SQUARED (2-3px), bordered with thin rules, and never
-     glow, blur, or float on shadows. Everything below is new; nothing
-     above changes, so existing pages render exactly as before.
+     RECORD SURFACES — softened 2026-07-11 to the Shell tile language:
+     rounded (12-14px), borderless, sentence-case body-font labels.
+     Mono is reserved for numeric table cells only. Token names kept
+     so all consumer components restyle centrally.
      ---------------------------------------------------------------- */
 
   /* Record surfaces — a document sheet sits between page and card so a
@@ -555,9 +553,9 @@
   /* Type roles */
   --enk-font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 
-  /* Record geometry — documents are squared, unlike 16px marketing cards */
-  --enk-radius-record: 3px;
-  --enk-radius-stamp:  2px;
+  /* Record geometry — rounded to match the Shell tile language */
+  --enk-radius-record: 12px;
+  --enk-radius-stamp:  6px;
 
   /* Status stamp inks — official record states */
   --enk-status-complete: #58B383;                    /* completed / zero LTI */
@@ -583,29 +581,26 @@
 @media (min-width: 768px) { .enk-section { padding-block: 4.5rem; } }
 .enk-section--tight { padding-block: 2.5rem; }
 
-/* Eyebrow — now the record-eyebrow idiom (mono typed field label with a
-   short amber rule), so legacy pages using .enk-kicker read as documents
-   without per-file churn. .enk-kicker--on-dark kept as a no-op alias. */
+/* Eyebrow — quiet bold body-font label, Shell-style: sentence case, no
+   mono, no tracking, no rule. .enk-kicker--on-dark kept as a no-op alias. */
 .enk-kicker {
   display: inline-flex; align-items: center; gap: 0.65rem;
-  font-family: var(--enk-font-mono);
-  font-size: 11.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+  font-family: var(--font-body);
+  font-size: 13px; font-weight: 700; letter-spacing: normal; text-transform: none;
   color: var(--enk-accent-on-dark);
 }
 .enk-kicker--on-dark { color: var(--enk-accent-on-dark); }
-.enk-kicker::before { content: ""; width: 1.5rem; height: 1px; background: var(--enk-rule-accent); }
 
-/* Squared technical tag — reads like a spec annotation (mono, typed,
-   hairline frame). No pills, no emoji. */
+/* Tag — soft borderless tinted chip, body font, sentence case. */
 .enk-chip {
   display: inline-flex; align-items: center; gap: 0.4rem;
-  padding: 0.25rem 0.55rem; border-radius: var(--enk-radius-stamp);
-  font-family: var(--enk-font-mono);
-  font-size: 10.5px; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase;
+  padding: 0.25rem 0.65rem; border-radius: var(--enk-radius-stamp);
+  font-family: var(--font-body);
+  font-size: 12px; font-weight: 600; letter-spacing: normal; text-transform: none;
   line-height: 1.6;
-  border: 1px solid var(--enk-rule-strong); color: var(--enk-meta); background: rgba(255, 255, 255, 0.04);
+  color: var(--enk-ink); background: rgba(255, 255, 255, 0.07);
 }
-.enk-chip--on-dark { border-color: var(--enk-rule-strong); color: var(--enk-ink); background: rgba(10, 14, 18, 0.55); }
+.enk-chip--on-dark { color: var(--enk-ink); background: rgba(255, 255, 255, 0.07); }
 
 /* Buttons - enterprise: opacity/border/background/elevation only, <=180ms ease-out, >=44px */
 .enk-btn {
@@ -632,19 +627,17 @@
 }
 .enk-link:hover { border-bottom-color: var(--enk-accent-primary-on-dark); gap: 0.6rem; }
 
-/* Card — now a filed record sheet: squared (3px), document-surface body,
-   thin rule border. Hover sharpens the frame and raises the sheet tone —
-   no lift, no glow, no shadow. Recolours every legacy page centrally. */
+/* Card — Shell tile: rounded, borderless, lifts off the page purely by
+   being a lighter surface. Hover raises the tone — no border, no glow. */
 .enk-card {
   background: var(--enk-record-surface);
-  border: 1px solid var(--enk-rule);
+  border: none;
   border-radius: var(--radius-card);
   box-shadow: none; overflow: hidden;
-  transition: background-color 0.18s ease-out, border-color 0.18s ease-out;
+  transition: background-color 0.18s ease-out;
 }
 .enk-card--hover:hover {
   background: var(--enk-record-surface-raised);
-  border-color: var(--enk-rule-strong);
 }
 /* Legacy alias */
 .enk-card--dark { background: var(--enk-record-surface); }
@@ -659,10 +652,10 @@
 .group:hover .enk-readmore { color: var(--enk-accent-primary-on-dark); }
 .group:hover .enk-readmore svg, .group:hover .enk-readmore__arrow { transform: translateX(3px); }
 
-/* Stat number - tabular mono */
+/* Stat number — heading font, Shell-style (mono reserved for table cells) */
 .enk-stat {
-  font-family: 'IBM Plex Mono', monospace; font-weight: 600; line-height: 1;
-  font-feature-settings: 'tnum'; letter-spacing: -0.02em;
+  font-family: var(--font-heading); font-weight: 700; line-height: 1;
+  font-feature-settings: 'tnum'; letter-spacing: normal;
 }
 
 /* Hero left scrim - guarantees subtext contrast (AA) over bright imagery.
@@ -733,76 +726,60 @@
   font-feature-settings: 'tnum';
 }
 
-/* Overline — typed field label, as on a drawing title block.
-   Small caps-style mono; only place wide tracking is permitted. */
+/* Overline — quiet bold body-font label (sentence case, no mono). */
 .enk-overline {
-  font-family: var(--enk-font-mono);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: normal;
+  text-transform: none;
   color: var(--enk-meta);
 }
 
-/* Record eyebrow — section label as a document field: short amber
-   rule, mono uppercase label, optional dim reference number. */
+/* Record eyebrow — quiet bold body-font section label, Shell-style. */
 .enk-record-eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 0.65rem;
-  font-family: var(--enk-font-mono);
-  font-size: 11.5px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: normal;
+  text-transform: none;
   color: var(--enk-accent-on-dark);
-}
-.enk-record-eyebrow::before {
-  content: "";
-  width: 1.5rem;
-  height: 1px;
-  background: var(--enk-rule-accent);
 }
 .enk-record-eyebrow__ref {
   color: var(--enk-blueprint);
   font-weight: 500;
 }
 
-/* Status stamp — compact official record state (COMPLETED, ZERO LTI,
-   PROJECT RECORD). Bordered, squared, mono; tone via modifier. */
+/* Status tag — soft tinted rounded label (Completed, Zero LTI).
+   Borderless, body font, sentence case; tone via modifier. */
 .enk-stamp {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  padding: 0.2rem 0.55rem;
-  border: 1px solid currentColor;
+  padding: 0.25rem 0.65rem;
+  border: none;
   border-radius: var(--enk-radius-stamp);
-  font-family: var(--enk-font-mono);
-  font-size: 10.5px;
+  font-family: var(--font-body);
+  font-size: 12px;
   font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  letter-spacing: normal;
+  text-transform: none;
   line-height: 1.5;
   white-space: nowrap;
-}
-.enk-stamp::before {
-  content: "";
-  width: 5px;
-  height: 5px;
-  background: currentColor;
-  flex-shrink: 0;
 }
 .enk-stamp--complete { color: var(--enk-status-complete); background: var(--enk-status-complete-bg); }
 .enk-stamp--record   { color: var(--enk-status-record);   background: var(--enk-status-record-bg); }
 .enk-stamp--neutral  { color: var(--enk-status-neutral);  background: var(--enk-status-neutral-bg); }
 .enk-stamp--alert    { color: var(--enk-status-alert);    background: var(--enk-status-alert-bg); }
 
-/* Spec table — technical key/value ledger. Title-block top rule,
-   hairline row dividers, alternating registers, mono values. */
+/* Spec table — key/value table: hairline row dividers, quiet body-font
+   labels, tabular numerals in the value cells. */
 .enk-spec {
   width: 100%;
   border-collapse: collapse;
-  border-top: 2px solid var(--enk-rule-heavy);
 }
 .enk-spec tr {
   border-bottom: 1px solid var(--enk-rule);
@@ -812,11 +789,11 @@
 }
 .enk-spec th {
   padding: 0.6rem 1rem 0.6rem 0.85rem;
-  font-family: var(--enk-font-mono);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: normal;
+  text-transform: none;
   text-align: left;
   vertical-align: top;
   color: var(--enk-meta);
@@ -832,16 +809,14 @@
 }
 .enk-spec--dense th, .enk-spec--dense td { padding-block: 0.4rem; }
 
-/* Meta strip — client / location / year / status as a drawing
-   title block: boxed grid of cells with hairline dividers. The 1px
-   grid gap over a rule-coloured background draws the cell lines, so
-   the block stays correct however the cells wrap. */
+/* Meta strip — client / location / year as a plain spaced grid on a
+   soft rounded surface (title-block cell lines removed). */
 .enk-meta-strip {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-  gap: 1px;
-  background: var(--enk-rule);
-  border: 1px solid var(--enk-rule-strong);
+  gap: 0.25rem 1.5rem;
+  background: var(--enk-record-surface);
+  border: none;
   border-radius: var(--enk-radius-record);
   overflow: hidden;
 }
@@ -851,14 +826,7 @@
   gap: 0.3rem;
   padding: 0.7rem 1rem;
   margin: 0;
-  background: var(--enk-record-surface);
-}
-/* Fills the remainder of an uneven last row so the exposed grid
-   background reads as one blank title-block cell, not a seam. */
-.enk-meta-strip::after {
-  content: "";
-  grid-column: auto / -1;
-  background: var(--enk-record-surface);
+  background: transparent;
 }
 .enk-meta-strip__value {
   font-size: 14px;
@@ -867,30 +835,25 @@
   margin: 0;
 }
 
-/* Document card — certificate / policy / download record.
-   Squared sheet with amber title rule; hover sharpens the border
-   only (no lift, no glow). */
+/* Document card — certificate / policy / download tile.
+   Borderless rounded surface; hover raises the tone only. */
 .enk-doc-card {
   display: flex;
   flex-direction: column;
   background: var(--enk-record-surface);
-  border: 1px solid var(--enk-rule);
-  border-top: 2px solid var(--enk-rule-accent);
+  border: none;
   border-radius: var(--enk-radius-record);
-  transition: border-color 0.18s ease-out, background-color 0.18s ease-out;
+  transition: background-color 0.18s ease-out;
 }
 a.enk-doc-card:hover,
 .enk-doc-card--interactive:hover {
-  border-color: var(--enk-rule-strong);
-  border-top-color: var(--enk-accent-primary-on-dark);
   background: var(--enk-record-surface-raised);
 }
 
-/* Field figure — photo framed as a plate: hairline frame, caption
-   strip separated by a rule, mono plate number and location/date. */
+/* Field figure — rounded photo tile with a quiet caption strip. */
 .enk-figure {
   margin: 0;
-  border: 1px solid var(--enk-rule);
+  border: none;
   border-radius: var(--enk-radius-record);
   overflow: hidden;
   background: var(--enk-record-surface);
@@ -906,7 +869,6 @@ a.enk-doc-card:hover,
   gap: 1rem;
   flex-wrap: wrap;
   padding: 0.65rem 0.85rem;
-  border-top: 1px solid var(--enk-rule);
 }
 .enk-figure__text {
   font-size: 12.5px;
@@ -914,20 +876,20 @@ a.enk-doc-card:hover,
   color: var(--enk-meta);
 }
 .enk-figure__no {
-  font-family: var(--enk-font-mono);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: normal;
+  text-transform: none;
   color: var(--enk-accent-on-dark);
   margin-right: 0.6rem;
 }
 .enk-figure__loc {
-  font-family: var(--enk-font-mono);
+  font-family: var(--font-body);
   font-feature-settings: 'tnum';
-  font-size: 11px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: normal;
+  text-transform: none;
   color: var(--enk-blueprint);
   white-space: nowrap;
 }

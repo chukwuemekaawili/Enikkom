@@ -43,9 +43,9 @@ export const navMenus: NavMenu[] = [
     label: "Company",
     href: "/about",
     items: [
-      { label: "Company Overview", href: "/about" },
+      { label: "Company overview", href: "/about" },
       { label: "Leadership", href: "/about/leadership" },
-      { label: "Partners & Affiliates", href: "/partners" },
+      { label: "Partners & affiliates", href: "/partners" },
       { label: "Careers", href: "/careers" },
       { label: "Sustainability", href: "/hse-quality#sustainability" },
     ],
@@ -54,42 +54,42 @@ export const navMenus: NavMenu[] = [
     label: "Capabilities",
     href: "/capabilities",
     items: [
-      { label: "Capabilities Overview", href: "/capabilities" },
-      { label: "Horizontal Directional Drilling", href: "/capabilities/hdd" },
-      { label: "Pipeline & Flowline Construction", href: "/capabilities/pipelines-flowlines" },
-      { label: "Dredging & Piling", href: "/capabilities/dredging-piling" },
-      { label: "Production Facilities", href: "/capabilities/facilities" },
-      { label: "Pipeline Security & Monitoring", href: "/capabilities/pipeline-security" },
-      { label: "Project Management & Support", href: "/capabilities/project-management" },
+      { label: "Capabilities overview", href: "/capabilities" },
+      { label: "Horizontal directional drilling", href: "/capabilities/hdd" },
+      { label: "Pipeline & flowline construction", href: "/capabilities/pipelines-flowlines" },
+      { label: "Dredging & piling", href: "/capabilities/dredging-piling" },
+      { label: "Production facilities", href: "/capabilities/facilities" },
+      { label: "Pipeline security & monitoring", href: "/capabilities/pipeline-security" },
+      { label: "Project management & support", href: "/capabilities/project-management" },
     ],
   },
   {
-    label: "Project Records",
+    label: "Projects",
     href: "/projects",
     items: [
-      { label: "Featured Projects", href: "/projects" },
-      { label: "Full Project Record", href: "/projects#record" },
-      { label: "Project Gallery", href: "/projects#gallery" },
-      { label: "Project Locations", href: "/projects#map" },
-      { label: "Flagship Case Study", href: "/projects/atlas-cove-mosimi" },
+      { label: "Featured projects", href: "/projects" },
+      { label: "All projects", href: "/projects#record" },
+      { label: "Project gallery", href: "/projects#gallery" },
+      { label: "Project locations", href: "/projects#map" },
+      { label: "Flagship case study", href: "/projects/atlas-cove-mosimi" },
     ],
   },
   {
     label: "Equipment",
     href: "/equipment",
     items: [
-      { label: "Fleet Overview", href: "/equipment" },
-      { label: "HDD & Trenchless Equipment", href: "/equipment#hdd" },
-      { label: "Equipment Specifications", href: "/resources" },
+      { label: "Fleet overview", href: "/equipment" },
+      { label: "HDD & trenchless equipment", href: "/equipment#hdd" },
+      { label: "Equipment specifications", href: "/resources" },
     ],
   },
   {
     label: "QHSE",
     href: "/hse-quality",
     items: [
-      { label: "QHSE Overview", href: "/hse-quality" },
-      { label: "Sustainability & Community", href: "/hse-quality#sustainability" },
-      { label: "Certifications & Policies", href: "/resources" },
+      { label: "QHSE overview", href: "/hse-quality" },
+      { label: "Sustainability & community", href: "/hse-quality#sustainability" },
+      { label: "Certifications & policies", href: "/resources" },
     ],
   },
 ];
@@ -116,8 +116,48 @@ export const brand = {
  */
 export const experienceYears = "30+";
 
-/** Hero cover-sheet metadata strip — factual scope-of-works line. */
-export const heroMeta = ["EST. 1995", "HDD", "PIPELINE", "DREDGING", "MARINE CIVILS", "NIGERIA"] as const;
+/**
+ * One-line track-record figures for the homepage — rendered as a slim plain
+ * text row (Shell-style), not stat cards. Values mirror proofMetrics/qhse.
+ */
+export const homeStats = [
+  { value: experienceYears, label: "years in the field" },
+  { value: "3.1 km", label: "Africa-record HDD drive" },
+  { value: "100+ km", label: "of pipeline installed" },
+  { value: "500+", label: "skilled personnel" },
+] as const;
+
+export interface FeaturedProject {
+  title: string;
+  summary: string;
+  href: string;
+  thumbnail: string;
+}
+
+/**
+ * The three homepage feature cards. Headlines carry the fact (Shell-style);
+ * all figures mirror the verified register entries in proofRecords below.
+ */
+export const featuredProjects: FeaturedProject[] = [
+  {
+    title: "Atlas Cove–Mosimi: Africa's longest single HDD drill",
+    summary: "A 16-inch line drilled 3.1 km in one drive across the Arepo–Imagbon corridor, Ogun State.",
+    href: "/projects/atlas-cove-mosimi",
+    thumbnail: projImg("atlas-cove-mosimi") as string,
+  },
+  {
+    title: "OML34: Nigeria's longest continuous HDD",
+    summary: "A 10-inch flowline drilled 12 km continuously at Utorogun, Delta State, for NPDC.",
+    href: "/projects/oml34-chdd",
+    thumbnail: projImg("oml34-chdd") as string,
+  },
+  {
+    title: "OB3 River Niger: a 48-inch Direct Pipe crossing",
+    summary: "Nigeria's largest-diameter river crossing, installed 1.8 km under the River Niger.",
+    href: "/projects/ob3-river-niger",
+    thumbnail: projImg("ob3-river-niger") as string,
+  },
+];
 
 export interface ProofMetric {
   label: string;

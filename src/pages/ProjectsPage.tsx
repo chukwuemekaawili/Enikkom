@@ -240,7 +240,7 @@ function RegisterFilter({
               type="button"
               aria-pressed={isActive}
               onClick={() => onChange(option)}
-              className="enk-mono rounded-[2px] border px-2.5 py-1.5 text-[11px] font-medium uppercase tracking-[0.08em] transition-colors focus-ring"
+              className="rounded-[8px] border px-3 py-1.5 text-[13px] font-semibold transition-colors focus-ring"
               style={
                 isActive
                   ? {
@@ -261,10 +261,10 @@ function RegisterFilter({
   );
 }
 
-/** Mono register count line, e.g. "SHOWING 11 OF 19 ENTRIES". */
+/** Register count line, e.g. "Showing 11 of 19 entries". */
 function RegisterCount({ shown, total, noun }: { shown: number; total: number; noun: string }) {
   return (
-    <p className="enk-mono mt-3 text-[11px] uppercase tracking-[0.1em] text-[var(--enk-blueprint)]" aria-live="polite">
+    <p className="mt-3 text-[13px] text-[var(--enk-blueprint)]" aria-live="polite">
       Showing {shown} of {total} {noun}
     </p>
   );
@@ -348,7 +348,7 @@ export default function ProjectsPage() {
               </Link>
               <a
                 href="#record"
-                className="enk-mono inline-flex min-h-[44px] items-center gap-2 px-2 text-[11.5px] font-semibold uppercase tracking-[0.1em] text-[var(--enk-accent-on-dark)] transition-colors hover:text-[var(--enk-accent-primary-on-dark)] focus-ring rounded-sm"
+                className="inline-flex min-h-[44px] items-center gap-2 px-2 text-[14px] font-bold text-[var(--enk-accent-on-dark)] transition-colors hover:text-[var(--enk-accent-primary-on-dark)] focus-ring rounded-md"
               >
                 Full project register ↓
               </a>
@@ -468,7 +468,7 @@ export default function ProjectsPage() {
           />
           <RegisterCount shown={filteredRecordProjects.length} total={completedProjects.length} noun="entries" />
 
-          <p className="enk-mono mt-4 text-[10.5px] uppercase tracking-[0.1em] text-[var(--enk-blueprint)] md:hidden">
+          <p className="mt-4 text-[12.5px] text-[var(--enk-blueprint)] md:hidden">
             Scroll horizontally for all columns →
           </p>
 
@@ -600,8 +600,8 @@ export default function ProjectsPage() {
                   "{t.quote}"
                 </blockquote>
                 <figcaption className="mt-4 border-t border-[var(--enk-rule)] pt-3.5">
-                  <p className="enk-mono text-[11.5px] font-semibold uppercase tracking-[0.08em] text-[var(--enk-accent-on-dark)]">{t.client}</p>
-                  <p className="enk-mono mt-1 text-[11px] text-[var(--enk-blueprint)]">{t.project}</p>
+                  <p className="text-[13.5px] font-bold text-[var(--enk-accent-on-dark)]">{t.client}</p>
+                  <p className="mt-1 text-[12.5px] text-[var(--enk-blueprint)]">{t.project}</p>
                 </figcaption>
               </figure>
             ))}
@@ -635,7 +635,6 @@ export default function ProjectsPage() {
       <CTABand
         headline={content.cta?.headline || "Discuss your crossing or pipeline scope"}
         subhead={content.cta?.subhead || "Send project details for a technical response — scope, method statement input, and budget pricing from the engineering team."}
-        primaryCTA={{ label: "Send RFQ / Tender", href: "/contact" }}
         secondaryCTA={{ label: "View Capabilities", href: "/capabilities" }}
       />
     </Layout>

@@ -153,7 +153,7 @@ export default function HSEQualityPage() {
                 className="flex flex-col gap-2.5 p-5"
                 style={{ backgroundColor: "var(--enk-record-surface)" }}
               >
-                <span className="enk-mono text-[11px] font-semibold uppercase tracking-[0.1em] text-[var(--enk-accent-on-dark)]">
+                <span className="text-[13px] font-bold text-[var(--enk-accent-on-dark)]">
                   {step.level}
                 </span>
                 <h4 className="text-[15px] font-semibold text-[var(--enk-ink)]">{step.title}</h4>

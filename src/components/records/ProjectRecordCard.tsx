@@ -29,7 +29,7 @@ function LedgerRow({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex items-baseline justify-between gap-4 border-t border-[var(--enk-rule)] py-2">
       <dt className="enk-overline shrink-0 !text-[10.5px]">{label}</dt>
-      <dd className="enk-mono text-right text-[12px] leading-snug text-[var(--enk-ink)]">{value}</dd>
+      <dd className="text-right text-[12.5px] leading-snug text-[var(--enk-ink)]">{value}</dd>
     </div>
   );
 }
@@ -99,13 +99,13 @@ export function ProjectRecordCard({
         </dl>
 
         {hasDetail ? (
-          <span className="enk-mono mt-auto flex items-center gap-1.5 border-t border-[var(--enk-rule)] pt-3.5 text-[11px] font-semibold uppercase tracking-[0.1em] text-[var(--enk-accent-on-dark)] transition-colors group-hover:text-[var(--enk-accent-primary-on-dark)]">
-            View record
+          <span className="mt-auto flex items-center justify-end gap-1.5 pt-3.5 text-[14px] font-bold text-[var(--enk-accent-on-dark)] transition-colors group-hover:text-[var(--enk-accent-primary-on-dark)]">
+            Read more
             <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
           </span>
         ) : (
           // No published detail file — neutral, non-interactive status line.
-          <span className="enk-mono mt-auto border-t border-[var(--enk-rule)] pt-3.5 text-[11px] font-medium uppercase tracking-[0.1em] text-[var(--enk-blueprint)]">
+          <span className="mt-auto pt-3.5 text-[12.5px] text-[var(--enk-blueprint)]">
             Detail file not published
           </span>
         )}

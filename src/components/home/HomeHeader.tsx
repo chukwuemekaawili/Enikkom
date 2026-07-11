@@ -1,6 +1,6 @@
 import { Fragment, useEffect, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Menu, X, ChevronDown, Search, FileText } from "lucide-react";
+import { Menu, X, ChevronDown, Search } from "lucide-react";
 import { navMenus, brand, contact, type NavMenu, type NavLink } from "@/content/home";
 import enikkomLogoWhite from "@/assets/images/logos/enikkom-logo-white-trimmed.png";
 
@@ -45,9 +45,9 @@ function ItemLink({ item, onClick, className, children }: { item: NavLink; onCli
   );
 }
 
-/** Top-level nav label: compact uppercase metadata style, flat amber rule when active. */
+/** Top-level nav label: sentence case, Shell-style, flat amber rule when active. */
 const navItemClass = (active: boolean) =>
-  `relative inline-flex h-10 shrink-0 items-center gap-1 whitespace-nowrap px-2.5 text-[12px] font-semibold uppercase tracking-[0.05em] transition-colors duration-150 focus-ring ${
+  `relative inline-flex h-10 shrink-0 items-center gap-1 whitespace-nowrap px-2.5 text-[14px] font-semibold transition-colors duration-150 focus-ring ${
     active ? "text-[var(--enk-on-dark)]" : "text-[var(--enk-on-dark-muted)] hover:text-[var(--enk-on-dark)]"
   }`;
 
@@ -56,14 +56,14 @@ function ActiveRule() {
   return (
     <span
       aria-hidden="true"
-      className="absolute inset-x-2.5 bottom-0 h-[2px]"
+      className="absolute inset-x-2 bottom-0 h-[2px]"
       style={{ backgroundColor: "var(--enk-accent-primary-on-dark)" }}
     />
   );
 }
 
 /** Desktop dropdown: opens on hover AND click/keyboard; Esc closes; closes on blur-out.
-    Panel styled as a document index sheet: squared, ruled, amber title rule, indexed rows. */
+    Panel is a simple rounded sheet — plain sentence-case rows. */
 function NavDropdown({ menu, active }: { menu: NavMenu; active: boolean }) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLLIElement>(null);
@@ -104,23 +104,19 @@ function NavDropdown({ menu, active }: { menu: NavMenu; active: boolean }) {
         }}
       >
         <ul
-          className="min-w-[280px] overflow-hidden border py-1"
+          className="min-w-[280px] overflow-hidden py-1.5"
           style={{
             backgroundColor: "var(--enk-record-surface-raised)",
-            borderColor: "var(--enk-rule-strong)",
-            borderTop: "2px solid var(--enk-rule-accent)",
+            border: "1px solid var(--enk-rule)",
             borderRadius: "var(--enk-radius-record)",
           }}
         >
-          {menu.items.map((item, i) => (
+          {menu.items.map((item) => (
             <li key={item.label}>
               <ItemLink
                 item={item}
-                className="flex min-h-[42px] items-center gap-3 px-4 py-2 text-[13.5px] text-[var(--enk-on-dark-muted)] transition-colors duration-150 hover:bg-white/5 hover:text-[var(--enk-on-dark)] focus-ring"
+                className="flex min-h-[42px] items-center px-4 py-2 text-[13.5px] text-[var(--enk-on-dark-muted)] transition-colors duration-150 hover:bg-white/5 hover:text-[var(--enk-on-dark)] focus-ring"
               >
-                <span aria-hidden="true" className="enk-mono w-5 shrink-0 text-[10px] font-medium text-[var(--enk-blueprint)]">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
                 {item.label}
               </ItemLink>
             </li>
@@ -160,16 +156,13 @@ function MobileMenu({ onNavigate }: { onNavigate: () => void }) {
             </button>
             {expanded && (
               <ul id={`m-sec-${i}`} className="pb-2">
-                {menu.items.map((item, j) => (
+                {menu.items.map((item) => (
                   <li key={item.label}>
                     <ItemLink
                       item={item}
                       onClick={onNavigate}
-                      className="flex min-h-[44px] items-center gap-3 rounded-sm px-3 py-2.5 text-[14.5px] text-[var(--enk-on-dark-muted)] transition-colors hover:bg-white/5 hover:text-[var(--enk-on-dark)] focus-ring"
+                      className="flex min-h-[44px] items-center rounded-md px-3 py-2.5 text-[14.5px] text-[var(--enk-on-dark-muted)] transition-colors hover:bg-white/5 hover:text-[var(--enk-on-dark)] focus-ring"
                     >
-                      <span aria-hidden="true" className="enk-mono w-5 shrink-0 text-[10px] font-medium text-[var(--enk-blueprint)]">
-                        {String(j + 1).padStart(2, "0")}
-                      </span>
                       {item.label}
                     </ItemLink>
                   </li>
@@ -194,36 +187,28 @@ function MobileMenu({ onNavigate }: { onNavigate: () => void }) {
       {/* Priority actions — procurement fast paths, not marketing CTAs */}
       <div className="mt-4 flex flex-col gap-2.5">
         <Link
-          to="/contact"
-          onClick={onNavigate}
-          className="flex min-h-[48px] w-full items-center justify-center px-4 py-3 text-[14px] font-bold focus-ring"
-          style={{ backgroundColor: "var(--enk-accent-primary)", color: "var(--enk-navy)", borderRadius: "var(--enk-radius-record)" }}
-        >
-          Send RFQ / Tender
-        </Link>
-        <Link
           to="/projects"
           onClick={onNavigate}
           className="flex min-h-[48px] w-full items-center justify-center border px-4 py-3 text-[14px] font-semibold text-[var(--enk-on-dark)] focus-ring"
           style={{ borderColor: "var(--enk-rule-strong)", borderRadius: "var(--enk-radius-record)" }}
         >
-          View Project Records
+          View projects
         </Link>
         <div className="grid grid-cols-1 gap-2.5">
           <a
             href={contact.capabilityStatement}
             target="_blank"
             rel="noopener noreferrer"
-            className="enk-mono flex min-h-[44px] items-center justify-center border px-2 py-2 text-center text-[10.5px] font-semibold uppercase tracking-[0.08em] text-[var(--enk-on-dark-muted)] focus-ring"
+            className="flex min-h-[44px] items-center justify-center border px-2 py-2 text-center text-[13px] font-semibold text-[var(--enk-on-dark-muted)] focus-ring"
             style={{ borderColor: "var(--enk-rule)", borderRadius: "var(--enk-radius-record)" }}
           >
-            Capability Statement
+            Capability statement
           </a>
         </div>
       </div>
 
-      {/* Direct lines — mono, ledger style */}
-      <div className="enk-mono mt-5 border-t border-[var(--enk-line-dark)] pt-4 pb-2 text-[11.5px] leading-relaxed text-[var(--enk-on-dark-muted)]">
+      {/* Direct lines */}
+      <div className="mt-5 border-t border-[var(--enk-line-dark)] pt-4 pb-2 text-[13px] leading-relaxed text-[var(--enk-on-dark-muted)]">
         <a href={contact.phoneHref} className="block py-1 focus-ring rounded-sm">{contact.phone}</a>
         <a href={`mailto:${contact.email}`} className="block py-1 focus-ring rounded-sm">{contact.email}</a>
       </div>
@@ -264,37 +249,6 @@ export function HomeHeader() {
 
   return (
     <>
-      {/* Registry strip — scrolls away; the nav bar below stays sticky.
-          Typed contractor metadata: scope of works on the left, direct
-          lines + credential download on the right. All real data. */}
-      <div
-        className="hidden lg:block"
-        style={{ backgroundColor: "var(--enk-record-inset)", borderBottom: "1px solid var(--enk-line-dark)" }}
-      >
-        <div className="enk-container flex h-8 items-center justify-between gap-4">
-          <p className="enk-mono truncate text-[10.5px] font-medium uppercase tracking-[0.14em] text-[var(--enk-blueprint)]">
-            HDD · Pipelines · Dredging · Marine Civils — Nigeria
-          </p>
-          <div className="enk-mono flex shrink-0 items-center gap-5 text-[10.5px] font-medium tracking-[0.06em]">
-            <a href={contact.phoneHref} className="text-[var(--enk-on-dark-muted)] transition-colors hover:text-[var(--enk-on-dark)] focus-ring rounded-sm">
-              {contact.phone}
-            </a>
-            <a href={`mailto:${contact.email}`} className="text-[var(--enk-on-dark-muted)] transition-colors hover:text-[var(--enk-on-dark)] focus-ring rounded-sm uppercase">
-              {contact.email}
-            </a>
-            <a
-              href={contact.capabilityStatement}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 uppercase text-[var(--enk-accent-on-dark)] transition-colors hover:text-[var(--enk-accent-primary-on-dark)] focus-ring rounded-sm"
-            >
-              <FileText className="h-3 w-3" aria-hidden="true" />
-              Capability Statement (PDF)
-            </a>
-          </div>
-        </div>
-      </div>
-
       <header
         className="sticky top-0 z-50"
         style={{
@@ -306,11 +260,11 @@ export function HomeHeader() {
         }}
       >
         <div className="enk-container">
-          <div className="flex h-[60px] items-center justify-between gap-4 md:h-[68px] xl:justify-start">
+          <div className="flex h-[60px] items-center justify-between gap-4 md:h-[68px] min-[1120px]:justify-start">
             <BrandLockup compact={false} />
 
-            <nav aria-label="Primary" className="hidden xl:block xl:ml-8">
-              <ul className="flex items-center gap-0.5">
+            <nav aria-label="Primary" className="hidden min-[1120px]:block min-[1120px]:ml-6">
+              <ul className="flex items-center gap-0">
                 {navMenus.map((menu) => (
                   <NavDropdown
                     key={menu.label}
@@ -343,24 +297,13 @@ export function HomeHeader() {
               >
                 <Search className="h-5 w-5" aria-hidden="true" />
               </Link>
-              <Link
-                to="/contact"
-                className="hidden h-9 items-center px-4 text-[12px] font-bold uppercase tracking-[0.04em] transition-colors md:inline-flex focus-ring"
-                style={{
-                  backgroundColor: "var(--enk-accent-primary)",
-                  color: "var(--enk-navy)",
-                  borderRadius: "var(--enk-radius-record)",
-                }}
-              >
-                Send RFQ
-              </Link>
               <button
                 type="button"
                 onClick={() => setOpen((v) => !v)}
                 aria-expanded={open}
                 aria-controls="mobile-nav"
                 aria-label={open ? "Close menu" : "Open menu"}
-                className="inline-flex h-10 w-10 items-center justify-center rounded-sm text-[var(--enk-on-dark)] transition-colors hover:bg-white/10 focus-ring xl:hidden"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-sm text-[var(--enk-on-dark)] transition-colors hover:bg-white/10 focus-ring min-[1120px]:hidden"
               >
                 {open ? <X className="h-6 w-6" aria-hidden="true" /> : <Menu className="h-6 w-6" aria-hidden="true" />}
               </button>
@@ -369,7 +312,7 @@ export function HomeHeader() {
         </div>
 
         {open && (
-          <div id="mobile-nav" className="max-h-[calc(100vh-60px)] md:max-h-[calc(100vh-68px)] overflow-y-auto xl:hidden" style={{ backgroundColor: "var(--enk-navy)" }}>
+          <div id="mobile-nav" className="max-h-[calc(100vh-60px)] md:max-h-[calc(100vh-68px)] overflow-y-auto min-[1120px]:hidden" style={{ backgroundColor: "var(--enk-navy)" }}>
             <MobileMenu onNavigate={() => setOpen(false)} />
           </div>
         )}

@@ -198,7 +198,7 @@ export const projectImageSelections: Record<string, ProjectImageSet> = {
       selectedProjectImage("pp-011.jpg"),
     ],
   },
-  "nun-river-crossing": {
+  "nun-river-dual-hdd": {
     projectList: selectedProjectImage("pa-131.jpg"),
     projectGallery: selectedProjectImage("pa-133.jpg"),
     gallery: [

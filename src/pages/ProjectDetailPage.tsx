@@ -805,7 +805,7 @@ export default function ProjectDetailPage() {
           <div>
             <Link
               to="/projects"
-              className="enk-mono inline-flex min-h-[40px] items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.1em] text-[var(--enk-accent-on-dark)] transition-colors hover:text-[var(--enk-accent-primary-on-dark)] focus-ring rounded-sm"
+              className="inline-flex min-h-[40px] items-center gap-2 text-[14px] font-bold text-[var(--enk-accent-on-dark)] transition-colors hover:text-[var(--enk-accent-primary-on-dark)] focus-ring rounded-md"
             >
               <ArrowLeft className="h-3.5 w-3.5" aria-hidden="true" />
               Project Register
@@ -884,7 +884,7 @@ export default function ProjectDetailPage() {
                     className="h-full w-full"
                   />
                 </div>
-                <p className="enk-mono mt-3 flex items-center gap-2 text-[11px] uppercase tracking-[0.1em] text-[var(--enk-blueprint)]">
+                <p className="mt-3 flex items-center gap-2 text-[12.5px] text-[var(--enk-blueprint)]">
                   <Play className="h-3.5 w-3.5" aria-hidden="true" />
                   Recorded site footage
                 </p>
@@ -949,7 +949,7 @@ export default function ProjectDetailPage() {
                 <p className="text-[14px] leading-relaxed text-[var(--enk-steel)] md:text-[15px]">
                   {hseNotes}
                 </p>
-                <p className="enk-mono mt-4 border-t border-[var(--enk-rule)] pt-3.5 text-[11px] uppercase tracking-[0.1em] text-[var(--enk-blueprint)]">
+                <p className="mt-4 border-t border-[var(--enk-rule)] pt-3.5 text-[12.5px] text-[var(--enk-blueprint)]">
                   QHSE documentation available for procurement review
                 </p>
               </div>
@@ -970,10 +970,10 @@ export default function ProjectDetailPage() {
                     "{clientQuote.text}"
                   </blockquote>
                   <figcaption className="mt-4 border-t border-[var(--enk-rule)] pt-3.5">
-                    <p className="enk-mono text-[11.5px] font-semibold uppercase tracking-[0.08em] text-[var(--enk-accent-on-dark)]">
+                    <p className="text-[13.5px] font-bold text-[var(--enk-accent-on-dark)]">
                       {clientQuote.author}
                     </p>
-                    <p className="enk-mono mt-1 text-[11px] text-[var(--enk-blueprint)]">
+                    <p className="mt-1 text-[12.5px] text-[var(--enk-blueprint)]">
                       {clientQuote.role}
                     </p>
                   </figcaption>
@@ -1016,9 +1016,6 @@ export default function ProjectDetailPage() {
                 <Link to="/contact" className="enk-btn enk-btn--gold w-full justify-center">
                   Request Project Credentials
                 </Link>
-                <Link to="/contact" className="enk-btn enk-btn--outline w-full justify-center">
-                  Send RFQ / Tender
-                </Link>
               </div>
             </div>
           </aside>
@@ -1047,11 +1044,11 @@ export default function ProjectDetailPage() {
                 "{projectTestimonial.quote}"
               </blockquote>
               <figcaption className="mt-5 border-t border-[var(--enk-rule)] pt-4">
-                <p className="enk-mono text-[11.5px] font-semibold uppercase tracking-[0.08em] text-[var(--enk-accent-on-dark)]">
+                <p className="text-[13.5px] font-bold text-[var(--enk-accent-on-dark)]">
                   {projectTestimonial.client}
                 </p>
                 {projectTestimonial.project && (
-                  <p className="enk-mono mt-1 text-[11px] text-[var(--enk-blueprint)]">
+                  <p className="mt-1 text-[12.5px] text-[var(--enk-blueprint)]">
                     {projectTestimonial.project}
                   </p>
                 )}
@@ -1138,7 +1135,7 @@ export default function ProjectDetailPage() {
                 fallbackLabel={selectedImage.alt}
               />
               <figcaption className="mt-4 border-t border-[oklch(1_0_0_/_0.15)] pt-3 text-center">
-                <p className="enk-mono text-[12px] uppercase tracking-[0.08em] text-white">
+                <p className="text-[13px] font-semibold text-white">
                   {selectedImage.alt}
                 </p>
                 {selectedImage.caption && (

@@ -233,7 +233,7 @@ export default function PartnersPage() {
                       href={partner.website}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="enk-mono mt-5 inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.1em] text-[var(--enk-accent-on-dark)] transition-colors hover:text-[var(--enk-accent-primary-on-dark)] focus-ring rounded-sm"
+                      className="mt-5 inline-flex items-center gap-1.5 text-[14px] font-bold text-[var(--enk-accent-on-dark)] transition-colors hover:text-[var(--enk-accent-primary-on-dark)] focus-ring rounded-md"
                     >
                       Visit website
                       <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />

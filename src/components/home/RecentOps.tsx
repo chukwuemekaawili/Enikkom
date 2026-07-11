@@ -28,7 +28,7 @@ export function RecentOps() {
 
           <Link
             to="/projects#gallery"
-            className="enk-mono inline-flex shrink-0 items-center gap-2 text-[11.5px] font-semibold uppercase tracking-[0.1em] text-[var(--enk-accent-on-dark)] transition-colors hover:text-[var(--enk-accent-primary-on-dark)] focus-ring rounded-sm"
+            className="inline-flex shrink-0 items-center gap-2 text-[14px] font-bold text-[var(--enk-accent-on-dark)] transition-colors hover:text-[var(--enk-accent-primary-on-dark)] focus-ring rounded-md"
           >
             View field documentation
             <ArrowUpRight className="h-4 w-4" aria-hidden="true" />

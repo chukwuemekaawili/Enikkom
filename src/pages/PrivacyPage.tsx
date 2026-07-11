@@ -27,7 +27,7 @@ export default function PrivacyPage() {
           </h1>
 
           <div className="prose prose-lg max-w-none">
-            <p className="enk-mono mb-8 border-b pb-6 text-[12px] uppercase tracking-[0.08em] text-[var(--enk-blueprint)]" style={{ borderColor: "var(--enk-rule)" }}>
+            <p className="mb-8 border-b pb-6 text-[13px] text-[var(--enk-blueprint)]" style={{ borderColor: "var(--enk-rule)" }}>
               <EditableText
                 value={pageContent.last_updated || "Last updated: January 2025"}
                 pageSlug="privacy"

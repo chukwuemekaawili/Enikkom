@@ -229,7 +229,7 @@ export default function ResourcesPage() {
                 href="https://www.youtube.com/@enikkomconstruction"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="enk-mono inline-flex items-center gap-2 text-[11.5px] font-semibold uppercase tracking-[0.1em] text-[var(--enk-accent-on-dark)] transition-colors hover:text-[var(--enk-accent-primary-on-dark)] focus-ring rounded-sm"
+                className="inline-flex items-center gap-2 text-[14px] font-bold text-[var(--enk-accent-on-dark)] transition-colors hover:text-[var(--enk-accent-primary-on-dark)] focus-ring rounded-md"
               >
                 <Youtube className="h-4 w-4" aria-hidden="true" />
                 View all videos on YouTube

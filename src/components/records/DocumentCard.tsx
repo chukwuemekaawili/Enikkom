@@ -61,14 +61,14 @@ export function DocumentCard({
           {meta.map((item) => (
             <div key={item.label} className="flex items-baseline justify-between gap-4 text-[12px]">
               <dt className="enk-overline shrink-0">{item.label}</dt>
-              <dd className="enk-mono text-right text-[12px] text-[var(--enk-ink)]">{item.value}</dd>
+              <dd className="text-right text-[12.5px] text-[var(--enk-ink)]">{item.value}</dd>
             </div>
           ))}
         </dl>
       )}
 
       {href && (
-        <p className="enk-mono mt-auto flex items-center gap-1.5 pt-5 text-[11.5px] font-semibold uppercase tracking-[0.1em] text-[var(--enk-accent-on-dark)]">
+        <p className="mt-auto flex items-center gap-1.5 pt-5 text-[14px] font-bold text-[var(--enk-accent-on-dark)]">
           {actionLabel ?? "View document"}
           <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
         </p>

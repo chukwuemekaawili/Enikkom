@@ -1,24 +1,20 @@
 import { Helmet } from "react-helmet-async";
 import { HomeHeader } from "@/components/home/HomeHeader";
 import { HomeHero } from "@/components/home/HomeHero";
-import { ProofLedger } from "@/components/home/ProofLedger";
-import { SelectedRecords } from "@/components/home/SelectedRecords";
+import { FeaturedRecords } from "@/components/home/FeaturedRecords";
 import { Capabilities } from "@/components/home/Capabilities";
+import { QuickActions } from "@/components/home/QuickActions";
+import { MoreAtEnikkom } from "@/components/home/MoreAtEnikkom";
 import { Credentials } from "@/components/home/Credentials";
-import { RecentOps } from "@/components/home/RecentOps";
-import { Qhse } from "@/components/home/Qhse";
-import { ProcurementCta } from "@/components/home/ProcurementCta";
 import { HomeFooter } from "@/components/home/HomeFooter";
 import { BackToTopButton } from "@/components/sections/BackToTopButton";
 
 /**
- * Homepage — the front cover of the Industrial Field Records pack.
- * A single procurement-first narrative that leads with proof:
- *   Hero (cover sheet) -> Proof ledger (record metrics) ->
- *   Selected records (archive proof, moved high) -> Field disciplines ->
- *   Procurement & delivery history (stakeholders) -> Field operations log ->
- *   QHSE (document-led) -> Procurement handoff.
- * Self-contained (own header/footer) and scoped under `.enk`.
+ * Homepage — Shell-style router page, five light sections:
+ *   Hero (rounded video tile) -> Featured projects (3 cards + stat line) ->
+ *   What we do (capability tiles) -> How can we help? (amber quick-link band) ->
+ *   You may also be interested in (3 link cards) -> client logo strip.
+ * Detail lives one click deeper. Self-contained, scoped under `.enk`.
  */
 export default function HomePage() {
   return (
@@ -48,13 +44,11 @@ export default function HomePage() {
 
       <main id="main">
         <HomeHero />
-        <ProofLedger />
-        <SelectedRecords />
+        <FeaturedRecords />
         <Capabilities />
+        <QuickActions />
+        <MoreAtEnikkom />
         <Credentials />
-        <RecentOps />
-        <Qhse />
-        <ProcurementCta />
       </main>
 
       <HomeFooter />

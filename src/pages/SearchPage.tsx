@@ -146,7 +146,7 @@ export default function SearchPage() {
                     <li key={`${entry.category}-${entry.title}`}>
                       <Link to={entry.href} className="group block focus-ring rounded-md">
                         <p className="flex items-center gap-2 text-[12px] text-muted-foreground">
-                          <span className="font-mono text-[10px] uppercase tracking-[0.08em] text-primary">{entry.category}</span>
+                          <span className="text-[12px] font-semibold text-primary">{entry.category}</span>
                           <span aria-hidden="true">&middot;</span>
                           <span>{breadcrumb(entry.href)}</span>
                         </p>

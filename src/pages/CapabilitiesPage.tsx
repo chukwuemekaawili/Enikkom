@@ -146,7 +146,6 @@ export default function CapabilitiesPage() {
       <CTABand
         headline={content.cta?.headline || "Ready to Discuss Your Requirements?"}
         subhead={content.cta?.subhead || "Our engineering team can scope your project and provide a detailed proposal within 48 hours."}
-        primaryCTA={{ label: "Send RFQ / Tender", href: "/contact" }}
         secondaryCTA={{ label: "View Project Records", href: "/projects" }}
       />
     </Layout>

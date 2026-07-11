@@ -184,7 +184,7 @@ const TeamMemberCard = ({
 
     <div className="flex flex-1 flex-col px-4 pb-4 pt-3">
       <h3 className="text-[15px] font-semibold text-[var(--enk-ink)] md:text-[16px]">{member.name}</h3>
-      <p className="enk-mono mt-1 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--enk-accent-on-dark)]">
+      <p className="mt-1 text-[13px] font-semibold text-[var(--enk-accent-on-dark)]">
         {member.role}
       </p>
       <p className="mt-2.5 flex-1 text-[12.5px] leading-6 text-[var(--enk-steel)] line-clamp-3 md:line-clamp-4">{member.bio}</p>
@@ -199,7 +199,7 @@ const TeamMemberCard = ({
         </div>
       )}
 
-      <span className="enk-mono mt-auto flex items-center gap-1.5 border-t border-[var(--enk-rule)] pt-3 text-[11px] font-semibold uppercase tracking-[0.1em] text-[var(--enk-accent-on-dark)] transition-colors group-hover:text-[var(--enk-accent-primary-on-dark)]">
+      <span className="mt-auto flex items-center justify-end gap-1.5 pt-3 text-[14px] font-bold text-[var(--enk-accent-on-dark)] transition-colors group-hover:text-[var(--enk-accent-primary-on-dark)]">
         View full bio →
       </span>
     </div>
@@ -287,7 +287,7 @@ const TeamMemberModal = ({
                   <DialogTitle className="text-xl md:text-2xl font-semibold mb-1">
                     {member.name}
                   </DialogTitle>
-                  <p className="font-mono text-[12px] md:text-[13px] font-semibold uppercase tracking-[0.08em] text-primary">
+                  <p className="text-[13px] md:text-[14px] font-semibold text-primary">
                     {member.role}
                   </p>
                 </DialogHeader>
@@ -317,7 +317,7 @@ const TeamMemberModal = ({
                       {member.expertise.map((skill) => (
                         <span
                           key={skill}
-                          className="rounded-[2px] border border-border bg-muted/40 px-2 py-0.5 font-mono text-[10.5px] uppercase tracking-[0.06em] text-foreground/80"
+                          className="rounded-[6px] bg-muted/40 px-2.5 py-0.5 text-[12px] font-medium text-foreground/80"
                         >
                           {skill}
                         </span>

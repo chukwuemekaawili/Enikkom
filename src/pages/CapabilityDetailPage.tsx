@@ -378,8 +378,8 @@ export default function CapabilityDetailPage() {
                 className="flex flex-col gap-2.5 p-5"
                 style={{ backgroundColor: "var(--enk-record-surface)" }}
               >
-                <span className="enk-mono text-[11px] font-semibold uppercase tracking-[0.1em] text-[var(--enk-accent-on-dark)]">
-                  Step {String(index + 1).padStart(2, "0")}
+                <span className="text-[13px] font-bold text-[var(--enk-accent-on-dark)]">
+                  Step {index + 1}
                 </span>
                 <h4 className="text-[15px] font-semibold text-[var(--enk-ink)]">
                   <EditableText
@@ -506,7 +506,6 @@ export default function CapabilityDetailPage() {
       <CTABand
         headline={`Ready to discuss your ${capability.title.split(" (")[0]} requirements?`}
         subhead="Send your alignment, drawings or RFP and our technical team will assess feasibility, risk and approach, with no obligation."
-        primaryCTA={{ label: "Send RFQ / Tender", href: "/contact" }}
         secondaryCTA={{ label: "View Project Records", href: "/projects" }}
       />
     </Layout>
