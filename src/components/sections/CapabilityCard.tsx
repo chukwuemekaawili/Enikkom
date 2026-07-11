@@ -8,50 +8,35 @@ interface CapabilityCardProps {
   href: string;
   icon?: LucideIcon;
   image?: string;
-  /** Short scope descriptor, e.g. "Long-distance trenchless crossings" */
+  /** Legacy scope descriptor — accepted for compatibility, no longer rendered. */
   metric?: string;
   ctaLabel?: string;
-  /** Typed header label, e.g. "Capability Statement" */
+  /** Legacy typed-header label — accepted for compatibility, no longer rendered. */
   docType?: string;
   index?: number;
 }
 
 /**
- * Capability presented as a filed capability statement: typed header row,
- * documentary photo plate, scope line, mono action. Squared, ruled — the
- * border sharpens on hover, no lift, no zoom.
+ * Capability as a Shell-style tile: rounded image, bold title, one
+ * sentence, "Read more →" bottom-right. Same prop API as before.
  */
 export function CapabilityCard({
   title,
   description,
   href,
   image,
-  metric,
-  ctaLabel = "View capability",
-  docType = "Capability Statement",
-  index,
+  ctaLabel = "Read more",
 }: CapabilityCardProps) {
   return (
     <Link
       to={href}
-      className="enk-doc-card enk-doc-card--interactive group flex h-full flex-col overflow-hidden focus-ring"
+      className="enk-card enk-card--hover group flex h-full flex-col p-2 focus-ring"
     >
-      {/* Typed header row */}
-      <div className="flex min-h-[38px] items-center justify-between gap-3 border-b border-[var(--enk-rule)] px-4 py-1.5">
-        <p className="enk-overline !text-[10px]">{docType}</p>
-        {typeof index === "number" && (
-          <span className="enk-mono text-[11px] font-medium text-[var(--enk-blueprint)]">
-            {String(index + 1).padStart(2, "0")}
-          </span>
-        )}
-      </div>
-
       {image && (
-        <div className="relative aspect-[16/9] overflow-hidden border-b border-[var(--enk-rule)]">
+        <div className="relative aspect-[16/9] overflow-hidden rounded-[10px]">
           <EnhancedImage
             src={image}
             alt={title}
-            tone="documentary"
             wrapperClassName="h-full w-full"
             loading="lazy"
             fallbackLabel={title}
@@ -59,24 +44,15 @@ export function CapabilityCard({
         </div>
       )}
 
-      <div className="flex flex-1 flex-col px-4 pb-4 pt-3.5">
-        <h3 className="font-heading text-[16px] font-semibold leading-snug text-[var(--enk-ink)]">
-          {title}
-        </h3>
-        <p className="mt-2 flex-1 text-[12.5px] leading-[1.55] text-[var(--enk-steel)]">
+      <div className="flex flex-1 flex-col px-4 pb-4 pt-5">
+        <h3 className="text-[17px] font-bold leading-snug text-[var(--enk-ink)]">{title}</h3>
+        <p className="mt-2 flex-1 text-[13.5px] leading-relaxed text-[var(--enk-steel)]">
           {description}
         </p>
 
-        {metric && (
-          <div className="mt-3.5 border-t border-[var(--enk-rule)] pt-3">
-            <p className="enk-overline !text-[10px]">Scope</p>
-            <p className="mt-1.5 text-[12px] leading-[1.5] text-[var(--enk-blueprint)]">{metric}</p>
-          </div>
-        )}
-
-        <span className="mt-auto flex items-center justify-end gap-1.5 pt-3.5 text-[14px] font-bold text-[var(--enk-accent-on-dark)] transition-colors group-hover:text-[var(--enk-accent-primary-on-dark)]">
+        <span className="enk-readmore mt-auto justify-end pt-5">
           {ctaLabel}
-          <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+          <ArrowRight className="h-4 w-4" aria-hidden="true" />
         </span>
       </div>
     </Link>

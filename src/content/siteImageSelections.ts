@@ -121,7 +121,9 @@ export const siteImageSelections = {
     },
   },
   about: {
-    hero: selectedGeneralImage("about-aerial-site-enhanced.jpg"),
+    // pl-16: worker on a large casing pipe against open sky — brightest
+    // on-topic hero frame (the old aerial read too dark, lum ~80).
+    hero: selectedGeneralImage("pl-16.jpg"),
     introMain: selectedGeneralImage("about-site-equipment-enhanced.jpg"),
     introSideField: selectedGeneralImage("about-field-team-enhanced.jpg"),
     introSideRiver: selectedGeneralImage("about-pipe-yard-enhanced.jpg"),

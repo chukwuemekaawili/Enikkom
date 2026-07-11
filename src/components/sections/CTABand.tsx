@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import { RecordEyebrow } from "@/components/records";
 
 /** Internal routes go through the router; mailto/http hrefs render as plain anchors. */
 function CTALink({ href, className, children }: { href: string; className: string; children: React.ReactNode }) {
@@ -35,25 +34,21 @@ interface CTABandProps {
 }
 
 /**
- * Procurement handoff band, in the Field Records language: amber title-block
- * rule on top, typed record eyebrow, left-aligned headline, procurement verbs.
- * No centered marketing block, no glow.
+ * Closing call-to-action band, Shell-style: bare sentence-case headline,
+ * one sentence, procurement actions. No eyebrow, no title rule.
+ * `eyebrow` is accepted for compatibility but no longer rendered.
  */
 export function CTABand({
   headline = "Put a project scope in front of the engineering team",
   subhead = "Send alignment sheets, an RFQ or a tender enquiry for a technical response — feasibility, method statement input, and budget pricing.",
-  eyebrow = "Submit / Request",
   primaryCTA = { label: "Discuss Project Scope", href: "/contact" },
   secondaryCTA,
 }: CTABandProps) {
   return (
-    <section
-      style={{ backgroundColor: "var(--enk-navy)", borderTop: "2px solid var(--enk-rule-accent)" }}
-    >
+    <section style={{ backgroundColor: "var(--enk-navy)" }}>
       <div className="enk-container py-14 md:py-16">
         <div className="max-w-2xl">
-          <RecordEyebrow refNo="RFQ / TENDER">{eyebrow}</RecordEyebrow>
-          <h2 className="enk-display mt-4 text-[clamp(1.5rem,2.8vw,2.1rem)] text-[var(--enk-on-dark)]">
+          <h2 className="text-[var(--enk-on-dark)]">
             {headline}
           </h2>
           {subhead && (

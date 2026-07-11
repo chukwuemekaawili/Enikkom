@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
 import { getAssetUrl } from "@/lib/assetMap";
-import { RecordEyebrow } from "@/components/records";
 
 interface HeroProps {
   title: string;
@@ -28,9 +27,10 @@ interface HeroProps {
 }
 
 /**
- * Page hero as an archive cover sheet: full-bleed field photo under a scrim,
- * typed record eyebrow, engineered headline, procurement CTAs, and a heavy
- * title-block rule at the base. Same prop API as before (drop-in).
+ * Page hero as a Shell-style rounded tile inset from the viewport: field
+ * photo inside the tile, a translucent rounded overlay panel with the
+ * headline, one sentence, and the page actions. Same prop API (drop-in);
+ * `badge` is kept for the aria-label only — no eyebrows.
  */
 export function Hero({
   title,
@@ -43,10 +43,10 @@ export function Hero({
   size = "default",
   align = "left",
 }: HeroProps) {
-  const pad = {
-    small: "py-14 md:py-18",
-    default: "py-16 md:py-24",
-    large: "py-20 md:py-28",
+  const minH = {
+    small: "min-h-[280px] md:min-h-[320px]",
+    default: "min-h-[340px] md:min-h-[400px]",
+    large: "min-h-[400px] md:min-h-[480px]",
   };
 
   const resolvedImage = backgroundImage ? getAssetUrl(backgroundImage) : undefined;
@@ -54,65 +54,63 @@ export function Hero({
 
   return (
     <section
-      className="relative isolate overflow-hidden"
-      style={{
-        backgroundColor: "var(--enk-navy)",
-        borderBottom: "2px solid var(--enk-rule-accent)",
-      }}
+      className="pt-3 md:pt-4"
+      style={{ backgroundColor: "var(--enk-bg)" }}
       aria-label={badge || "Introduction"}
     >
-      {resolvedImage && (
-        <img
-          src={resolvedImage}
-          alt=""
-          aria-hidden="true"
-          decoding="async"
-          className="enk-photo--hero absolute inset-0 h-full w-full object-cover object-center"
-        />
-      )}
-      <div className="enk-scrim" aria-hidden="true" />
-
-      <div className="enk-container relative">
-        <div className={`${pad[size]} ${centered ? "mx-auto max-w-3xl text-center" : "max-w-2xl"}`}>
-          <RecordEyebrow align={centered ? "center" : "start"} className="mb-5">
-            {badge || "Field Operations Record"}
-          </RecordEyebrow>
-
-          <h1 className="enk-display text-[var(--enk-on-dark)] text-[clamp(1.9rem,4.5vw,3.1rem)]">
-            {title}
-          </h1>
-
-          {subtitle && (
-            <p
-              className={`mt-5 text-[15px] leading-relaxed text-[var(--enk-on-dark-muted)] md:text-[16px] ${
-                centered ? "mx-auto max-w-2xl" : "max-w-xl"
-              }`}
-            >
-              {subtitle}
-            </p>
+      <div className="mx-auto max-w-[1440px] px-3 md:px-5">
+        <div className="relative isolate overflow-hidden rounded-[16px]" style={{ backgroundColor: "var(--enk-navy)" }}>
+          {resolvedImage && (
+            <img
+              src={resolvedImage}
+              alt=""
+              aria-hidden="true"
+              decoding="async"
+              className="absolute inset-0 h-full w-full object-cover object-center"
+            />
           )}
+          <div
+            className="absolute inset-0"
+            aria-hidden="true"
+            style={{ background: "linear-gradient(to top, rgba(9,14,20,0.45) 0%, rgba(9,14,20,0.12) 45%, rgba(9,14,20,0.2) 100%)" }}
+          />
 
-          {(primaryCTA || secondaryCTA) && (
+          <div className={`relative flex ${minH[size]} items-center px-4 py-10 md:px-10 md:py-14 ${centered ? "justify-center" : ""}`}>
             <div
-              className={`mt-8 flex flex-col gap-3 sm:flex-row sm:items-center ${
-                centered ? "sm:justify-center" : ""
-              }`}
+              className={`max-w-xl rounded-[12px] p-6 md:p-8 ${centered ? "text-center" : ""}`}
+              style={{ backgroundColor: "rgba(13,18,24,0.72)" }}
             >
-              {primaryCTA && (
-                <Link to={primaryCTA.href} className="enk-btn enk-btn--gold">
-                  {primaryCTA.label}
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                </Link>
-              )}
-              {secondaryCTA && (
-                <Link to={secondaryCTA.href} className="enk-btn enk-btn--on-dark">
-                  {secondaryCTA.label}
-                </Link>
-              )}
-            </div>
-          )}
+              <h1 className="text-white">{title}</h1>
 
-          {trustStrip && <div className="mt-10">{trustStrip}</div>}
+              {subtitle && (
+                <p className="mt-3 text-[15px] leading-relaxed text-white/80">
+                  {subtitle}
+                </p>
+              )}
+
+              {(primaryCTA || secondaryCTA) && (
+                <div
+                  className={`mt-6 flex flex-col gap-3 sm:flex-row sm:items-center ${
+                    centered ? "sm:justify-center" : ""
+                  }`}
+                >
+                  {primaryCTA && (
+                    <Link to={primaryCTA.href} className="enk-btn enk-btn--gold">
+                      {primaryCTA.label}
+                      <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                    </Link>
+                  )}
+                  {secondaryCTA && (
+                    <Link to={secondaryCTA.href} className="enk-btn enk-btn--on-dark">
+                      {secondaryCTA.label}
+                    </Link>
+                  )}
+                </div>
+              )}
+
+              {trustStrip && <div className="mt-8">{trustStrip}</div>}
+            </div>
+          </div>
         </div>
       </div>
     </section>
