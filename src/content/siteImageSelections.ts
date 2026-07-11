@@ -102,7 +102,7 @@ export interface GallerySelection {
 export const siteImageSelections = {
   home: {
     heroSlides: [
-      selectedGeneralImage("pl-02.jpg"),
+      selectedGeneralImage("pl-14.jpg"),
       selectedGeneralImage("pl-08.jpg"),
       selectedGeneralImage("pl-10.jpg"),
       selectedGeneralImage("pl-15.jpg"),

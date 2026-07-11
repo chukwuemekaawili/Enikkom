@@ -18,6 +18,9 @@ const projImg = (slug: string) =>
   getProjectImage(slug, "hero") ||
   getProjectImage(slug, "homeFeature");
 
+/** Home feature cards prefer the curated bright homeFeature frame. */
+const featImg = (slug: string) => getProjectImage(slug, "homeFeature") || projImg(slug);
+
 export const contact = {
   phone: "+234 803 508 2614",
   phoneHref: "tel:+2348035082614",
@@ -143,19 +146,19 @@ export const featuredProjects: FeaturedProject[] = [
     title: "Atlas Cove–Mosimi: Africa's longest single HDD drill",
     summary: "A 16-inch line drilled 3.1 km in one drive across the Arepo–Imagbon corridor, Ogun State.",
     href: "/projects/atlas-cove-mosimi",
-    thumbnail: projImg("atlas-cove-mosimi") as string,
+    thumbnail: featImg("atlas-cove-mosimi") as string,
   },
   {
     title: "OML34: Nigeria's longest continuous HDD",
     summary: "A 10-inch flowline drilled 12 km continuously at Utorogun, Delta State, for NPDC.",
     href: "/projects/oml34-chdd",
-    thumbnail: projImg("oml34-chdd") as string,
+    thumbnail: featImg("oml34-chdd") as string,
   },
   {
     title: "OB3 River Niger: a 48-inch Direct Pipe crossing",
     summary: "Nigeria's largest-diameter river crossing, installed 1.8 km under the River Niger.",
     href: "/projects/ob3-river-niger",
-    thumbnail: projImg("ob3-river-niger") as string,
+    thumbnail: featImg("ob3-river-niger") as string,
   },
 ];
 
@@ -319,7 +322,7 @@ export const proofRecords: ProofRecord[] = [
     metricLabel: "Africa's Longest Single HDD Drill",
     year: "2016",
     tags: ["HDD"],
-    thumbnail: projImg("atlas-cove-mosimi") as string,
+    thumbnail: featImg("atlas-cove-mosimi") as string,
   },
   {
     title: 'OML34 Continuous HDD, 10" × 12 km',
@@ -329,7 +332,7 @@ export const proofRecords: ProofRecord[] = [
     metricLabel: "Nigeria's Longest Continuous HDD",
     year: "2021",
     tags: ["HDD", "CHDD"],
-    thumbnail: projImg("oml34-chdd") as string,
+    thumbnail: featImg("oml34-chdd") as string,
   },
   {
     title: 'OB3 River Niger 48" Direct Pipe',
@@ -339,7 +342,7 @@ export const proofRecords: ProofRecord[] = [
     metricLabel: "Largest-Diameter River Crossing",
     year: "2020",
     tags: ["HDD", "Direct Pipe"],
-    thumbnail: projImg("ob3-river-niger") as string,
+    thumbnail: featImg("ob3-river-niger") as string,
   },
   {
     title: '16" & 6" Nun River HDD Crossing',

@@ -39,7 +39,7 @@ export interface ProjectImageSet {
 export const projectImageSelections: Record<string, ProjectImageSet> = {
   "oml34-chdd": {
     hero: selectedProjectImage("pa-046.jpg"),
-    homeFeature: currentProjectImage("proj_oml34.jpg"),
+    homeFeature: selectedProjectImage("pa-046.jpg"),
     homeRecord: selectedProjectImage("pa-043.jpg"),
     projectList: currentProjectImage("scope-operations.jpg"),
     projectGallery: currentProjectImage("scope-operations-2.jpg"),
@@ -69,7 +69,7 @@ export const projectImageSelections: Record<string, ProjectImageSet> = {
   },
   "atlas-cove-mosimi": {
     hero: currentProjectImage("atlas-cove-mosimi.jpg"),
-    homeFeature: currentProjectImage("proj_atlas_v2.jpg"),
+    homeFeature: currentProjectImage("atlas-cove-mosimi-2.jpg"),
     homeRecord: selectedProjectImage("pp-043.jpg"),
     projectList: currentProjectImage("atlas-cove-mosimi-2.jpg"),
     projectGallery: selectedProjectImage("pp-045.jpg"),
@@ -121,6 +121,7 @@ export const projectImageSelections: Record<string, ProjectImageSet> = {
   },
   "ob3-river-niger": {
     hero: selectedProjectImage("pa-129.jpg"),
+    homeFeature: selectedProjectImage("pa-103.jpg"),
     projectList: selectedProjectImage("pa-126.jpg"),
     projectGallery: selectedProjectImage("pa-103.jpg"),
     projectMap: selectedProjectImage("pa-105.jpg"),

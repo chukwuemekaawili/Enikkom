@@ -1,4 +1,4 @@
-import { useEffect, useState, type ImgHTMLAttributes } from "react";
+import { useEffect, useRef, useState, type ImgHTMLAttributes } from "react";
 import { ImageIcon } from "lucide-react";
 import { getAssetUrl } from "@/lib/assetMap";
 import { getResponsiveImageInfo } from "@/lib/responsiveImages";
@@ -52,6 +52,7 @@ export function EnhancedImage({
 }: EnhancedImageProps) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
+  const imgRef = useRef<HTMLImageElement>(null);
   const resolvedSrc = typeof src === "string" ? getAssetUrl(src) : src;
   const responsiveImageInfo =
     typeof resolvedSrc === "string" ? getResponsiveImageInfo(resolvedSrc) : undefined;
@@ -64,6 +65,12 @@ export function EnhancedImage({
   useEffect(() => {
     setIsLoaded(false);
     setHasError(false);
+    // Cached images complete before React attaches onLoad — without this
+    // check they stay stuck at the blurred opacity-0 placeholder state.
+    const img = imgRef.current;
+    if (img && img.complete && img.naturalWidth > 0) {
+      setIsLoaded(true);
+    }
   }, [resolvedSrc]);
 
   const showFallback = !resolvedSrc || hasError;
@@ -87,6 +94,7 @@ export function EnhancedImage({
           {webpSrcSet ? <source type="image/webp" srcSet={webpSrcSet} sizes={sizes} /> : null}
           <img
             {...props}
+            ref={imgRef}
             src={resolvedSrc}
             alt={imageAlt}
             aria-hidden={imageAriaHidden}
