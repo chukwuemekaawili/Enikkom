@@ -306,7 +306,6 @@ export default function EquipmentPage() {
               <FieldFigure
                 src={equipmentImages.support}
                 alt="Heavy transport and support fleet assets mobilized for field operations"
-                figNo="FIG 01"
                 caption="Heavy transport and support fleet mobilized to keep project sites supplied and running"
                 ratio="16/10"
                 className="mb-4"

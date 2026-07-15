@@ -207,7 +207,6 @@ export default function ResourcesPage() {
 
           <div className="mx-auto mt-8 max-w-4xl">
             <FieldFigure
-              figNo="VID 01"
               caption='OML34 continuous HDD, 10" × 12km project review'
               location="Utorogun, Delta State"
               ratio="16/9"

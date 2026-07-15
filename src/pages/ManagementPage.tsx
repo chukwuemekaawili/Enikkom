@@ -157,11 +157,8 @@ const TeamMemberCard = ({
     className="enk-doc-card enk-doc-card--interactive group flex h-full cursor-pointer flex-col overflow-hidden text-left focus-ring"
   >
     {/* Typed header row */}
-    <div className="flex min-h-[34px] items-center justify-between gap-3 border-b border-[var(--enk-rule)] px-4 py-1">
+    <div className="flex min-h-[34px] items-center border-b border-[var(--enk-rule)] px-4 py-1">
       <p className="enk-overline !text-[10px]">Personnel Record</p>
-      <span className="enk-mono text-[11px] font-medium text-[var(--enk-blueprint)]">
-        {String(index + 1).padStart(2, "0")}
-      </span>
     </div>
 
     {/* Photo plate */}

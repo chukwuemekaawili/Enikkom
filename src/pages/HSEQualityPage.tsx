@@ -201,7 +201,6 @@ export default function HSEQualityPage() {
               <FieldFigure
                 src={hseImages.briefing}
                 alt="Enikkom field personnel working in full PPE"
-                figNo="FIG 01"
                 caption={
                   <EditableText
                     value={commitmentContent.badgeSubtitle || "Maintained across all major projects"}
@@ -291,14 +290,9 @@ export default function HSEQualityPage() {
           />
 
           <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-            {sustainabilityPillars.map((p, index) => (
+            {sustainabilityPillars.map((p) => (
               <div key={p.title} className="enk-doc-card p-5">
-                <div className="flex items-center justify-between gap-3">
-                  <p className="enk-overline">Pillar</p>
-                  <span className="enk-mono text-[11px] font-medium text-[var(--enk-blueprint)]">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                </div>
+                <p className="enk-overline">Pillar</p>
                 <h4 className="mt-3 text-[15px] font-semibold text-[var(--enk-ink)]">{p.title}</h4>
                 <p className="mt-2 text-[13px] leading-6 text-[var(--enk-steel)]">{p.description}</p>
               </div>

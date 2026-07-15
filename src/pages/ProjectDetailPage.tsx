@@ -852,7 +852,6 @@ export default function ProjectDetailPage() {
             className="lg:sticky lg:top-24"
             src={heroImage}
             alt={`Field documentation: ${title}`}
-            figNo="Plate 01"
             caption="Site documentation from the project record"
             date={year}
             ratio="4/3"
@@ -909,9 +908,6 @@ export default function ProjectDetailPage() {
                       className="flex items-baseline gap-3 border-b py-2.5"
                       style={{ borderColor: "var(--enk-rule)" }}
                     >
-                      <span className="shrink-0 text-[11px] font-semibold text-[var(--enk-meta)]">
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
                       <span className="text-[14px] leading-snug text-[var(--enk-steel)] md:text-[15px]">
                         {item}
                       </span>
@@ -1084,7 +1080,6 @@ export default function ProjectDetailPage() {
                   <FieldFigure
                     src={image.src}
                     alt={image.alt}
-                    figNo={`Fig ${String(index + 1).padStart(2, "0")}`}
                     caption={image.caption || image.alt}
                     ratio="3/2"
                     sizes="(min-width: 1024px) 30vw, 50vw"

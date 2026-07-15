@@ -95,21 +95,18 @@ export default function AboutPage() {
             <FieldFigure
               src={aboutImages.introMain}
               alt="Pipeline crew executing welding and line installation work"
-              figNo="FIG 01"
               caption="Pipeline welding and line installation works"
               ratio="4/3"
             />
             <FieldFigure
               src={aboutImages.introSideField}
               alt="Enikkom field team reviewing live pipeline operations"
-              figNo="FIG 02"
               caption="Field leadership: technical control on site"
               ratio="4/3"
             />
             <FieldFigure
               src={aboutImages.introSideRiver}
               alt="River-crossing installation works on a coastal project corridor"
-              figNo="FIG 03"
               caption="River and swamp crossing delivery"
               ratio="4/3"
             />
@@ -117,14 +114,9 @@ export default function AboutPage() {
 
           {/* Group companies */}
           <div className="mt-10 grid gap-4 lg:grid-cols-2">
-            {companyIntroduction.subsidiaries.map((entry, index) => (
+            {companyIntroduction.subsidiaries.map((entry) => (
               <div key={entry.name} className="enk-doc-card p-5 md:p-6">
-                <div className="flex items-center justify-between gap-3">
-                  <p className="enk-overline">Group Company</p>
-                  <span className="enk-mono text-[11px] font-medium text-[var(--enk-blueprint)]">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                </div>
+                <p className="enk-overline">Group Company</p>
                 <h3 className="mt-3 font-heading text-[18px] font-semibold text-[var(--enk-ink)]">
                   {entry.name}
                 </h3>
@@ -170,15 +162,12 @@ export default function AboutPage() {
               The PRICE of Excellence
             </h3>
             <div className="mt-6 grid gap-px overflow-hidden rounded-[var(--enk-radius-record)] border border-[var(--enk-rule-strong)] bg-[var(--enk-rule)] sm:grid-cols-2 xl:grid-cols-5">
-              {coreValues.map((value, index) => (
+              {coreValues.map((value) => (
                 <div
                   key={value.title}
                   className="flex flex-col gap-2 p-5"
                   style={{ backgroundColor: "var(--enk-record-surface)" }}
                 >
-                  <span className="text-[12px] font-semibold text-[var(--enk-meta)]">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
                   <h4 className="text-[15px] font-semibold text-[var(--enk-ink)]">{value.title}</h4>
                   <p className="text-[12.5px] leading-6 text-[var(--enk-steel)]">{value.description}</p>
                 </div>
@@ -191,7 +180,6 @@ export default function AboutPage() {
             <FieldFigure
               src={aboutImages.missionBlock}
               alt="Enikkom team in active project review"
-              figNo="FIG 04"
               caption="Project review in progress"
               ratio="16/10"
             />

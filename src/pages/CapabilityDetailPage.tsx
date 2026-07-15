@@ -378,9 +378,6 @@ export default function CapabilityDetailPage() {
                 className="flex flex-col gap-2.5 p-5"
                 style={{ backgroundColor: "var(--enk-record-surface)" }}
               >
-                <span className="text-[13px] font-bold text-[var(--enk-meta)]">
-                  Step {index + 1}
-                </span>
                 <h4 className="text-[15px] font-semibold text-[var(--enk-ink)]">
                   <EditableText
                     value={step.title}
@@ -453,12 +450,7 @@ export default function CapabilityDetailPage() {
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {equipment.map((item: { name: string; specs: string }, index: number) => (
               <div key={index} className="enk-doc-card p-5">
-                <div className="flex items-center justify-between gap-3">
-                  <p className="enk-overline">Equipment</p>
-                  <span className="enk-mono text-[11px] font-medium text-[var(--enk-blueprint)]">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                </div>
+                <p className="enk-overline">Equipment</p>
                 <h4 className="mt-3 text-[15px] font-semibold text-[var(--enk-ink)]">
                   <EditableText
                     value={item.name}

@@ -359,7 +359,6 @@ export default function ProjectsPage() {
             className="hidden lg:block"
             src={heroContent.backgroundImage || siteImageSelections.completedProjects.hero}
             alt="Enikkom field operations on a completed pipeline project"
-            figNo="Plate 01"
             caption="Field documentation from Enikkom's completed works archive"
             ratio="4/3"
             priority
@@ -562,7 +561,6 @@ export default function ProjectsPage() {
                 key={img.label}
                 src={img.src}
                 alt={img.alt}
-                figNo={`Fig ${String(i + 1).padStart(2, "0")}`}
                 caption={img.label}
                 ratio="3/2"
                 sizes="(min-width: 1024px) 22vw, 50vw"

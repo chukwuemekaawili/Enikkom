@@ -322,15 +322,12 @@ export default function PartnersPage() {
           />
 
           <div className="mt-8 grid gap-px overflow-hidden rounded-[var(--enk-radius-record)] border border-[var(--enk-rule-strong)] bg-[var(--enk-rule)] sm:grid-cols-2 xl:grid-cols-5">
-            {partnershipBenefits.map((benefit, index) => (
+            {partnershipBenefits.map((benefit) => (
               <div
                 key={benefit.title}
                 className="flex flex-col gap-2 p-5"
                 style={{ backgroundColor: "var(--enk-record-surface)" }}
               >
-                <span className="text-[12px] font-semibold text-[var(--enk-meta)]">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
                 <h4 className="text-[15px] font-semibold text-[var(--enk-ink)]">{benefit.title}</h4>
                 <p className="text-[12.5px] leading-6 text-[var(--enk-steel)]">{benefit.description}</p>
               </div>

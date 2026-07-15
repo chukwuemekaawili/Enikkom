@@ -85,15 +85,12 @@ export default function CareersPage() {
           />
 
           <div className="mt-8 grid gap-px overflow-hidden rounded-[var(--enk-radius-record)] border border-[var(--enk-rule-strong)] bg-[var(--enk-rule)] md:grid-cols-2 lg:grid-cols-4">
-            {defaultBenefits.map((b, i) => (
+            {defaultBenefits.map((b) => (
               <div
                 key={b.title}
                 className="flex flex-col gap-2 p-5"
                 style={{ backgroundColor: "var(--enk-record-surface)" }}
               >
-                <span className="text-[12px] font-semibold text-[var(--enk-meta)]">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
                 <h4 className="text-[15px] font-semibold text-[var(--enk-ink)]">{b.title}</h4>
                 <p className="text-[13px] leading-6 text-[var(--enk-steel)]">{b.description}</p>
               </div>
@@ -230,7 +227,6 @@ export default function CareersPage() {
               </div>
               <figcaption className="enk-figure__caption">
                 <span className="enk-figure__text">
-                  <span className="enk-figure__no">FIG 01</span>
                   Enikkom project personnel on site
                 </span>
               </figcaption>
