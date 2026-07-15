@@ -24,7 +24,7 @@ export function BackToTopButton() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 12 }}
           transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          className="fixed bottom-24 right-5 z-40 inline-flex h-11 w-11 items-center justify-center rounded-md text-[var(--enk-on-dark)] shadow-[var(--enk-shadow-md)] transition-colors hover:bg-[var(--enk-navy-2)] focus-ring md:bottom-6 md:right-6"
+          className="fixed bottom-24 right-5 z-40 inline-flex h-11 w-11 items-center justify-center rounded-md text-white shadow-[var(--enk-shadow-md)] transition-colors hover:bg-[var(--enk-navy-2)] focus-ring md:bottom-6 md:right-6"
           style={{ backgroundColor: "var(--enk-navy)" }}
         >
           <ArrowUp className="h-5 w-5" aria-hidden="true" />

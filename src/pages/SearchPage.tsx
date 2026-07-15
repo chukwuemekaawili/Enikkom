@@ -64,16 +64,16 @@ export default function SearchPage() {
   return (
     <Layout>
       <SEO title="Search – Enikkom" canonical="/search" noindex />
-      <section className="relative isolate overflow-hidden" style={{ backgroundColor: "var(--enk-navy)" }}>
-        <div className="enk-container relative py-16 md:py-24">
-          <nav aria-label="Breadcrumb" className="mb-8 flex items-center gap-2 text-[13px] text-[var(--enk-on-dark-muted)]">
-            <Link to="/" className="transition-colors hover:text-[var(--enk-on-dark)]">Home</Link>
+      <section className="relative isolate overflow-hidden" style={{ backgroundColor: "var(--enk-bg-muted)", borderBottom: "1px solid var(--enk-rule)" }}>
+        <div className="enk-container relative py-12 md:py-16">
+          <nav aria-label="Breadcrumb" className="mb-6 flex items-center gap-2 text-[13px] text-[var(--enk-steel)]">
+            <Link to="/" className="transition-colors hover:text-[var(--enk-ink)]">Home</Link>
             <ChevronRight className="h-3.5 w-3.5" aria-hidden="true" />
-            <span className="text-[var(--enk-on-dark)]">Search</span>
+            <span className="text-[var(--enk-ink)]">Search</span>
           </nav>
 
-          <h1 className="enk-display mb-10 uppercase text-[var(--enk-on-dark)] text-[clamp(2.4rem,7vw,4.5rem)]">
-            Search
+          <h1 className="enk-display mb-8 text-[var(--enk-ink)]">
+            Search the site
           </h1>
 
           <form
@@ -89,13 +89,13 @@ export default function SearchPage() {
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search pages, capabilities, projects..."
               autoFocus
-              className="h-14 flex-1 rounded-md border border-[var(--enk-line-dark)] bg-[var(--enk-navy-2)] px-5 text-[16px] text-[var(--enk-on-dark)] placeholder:text-[var(--enk-on-dark-muted)] focus-ring"
+              className="h-14 flex-1 rounded-md border border-[var(--enk-line-strong)] bg-white px-5 text-[16px] text-[var(--enk-ink)] placeholder:text-[var(--enk-meta)] focus-ring"
             />
             <button
               type="submit"
               aria-label="Search"
-              className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-md text-[var(--enk-navy)] transition-colors focus-ring"
-              style={{ backgroundColor: "var(--enk-gold)" }}
+              className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-md text-white transition-colors focus-ring"
+              style={{ backgroundColor: "var(--enk-accent-primary)" }}
             >
               <SearchIcon className="h-5 w-5" aria-hidden="true" />
             </button>
@@ -103,8 +103,8 @@ export default function SearchPage() {
         </div>
       </section>
 
-      <section className="section-padding bg-background min-h-[40vh]">
-        <div className="container-wide">
+      <section className="enk-section min-h-[40vh]" style={{ backgroundColor: "var(--enk-bg)" }}>
+        <div className="enk-container">
           {!trimmed ? (
             <div className="grid gap-10 lg:grid-cols-[2fr_1fr]">
               <div className="grid gap-6 sm:grid-cols-2">

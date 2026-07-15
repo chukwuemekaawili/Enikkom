@@ -110,7 +110,7 @@ export default function EquipmentPage() {
                 </TableHeader>
                 <TableBody>
                   {hddRigSpecs.map((item, i) => (
-                    <TableRow key={i} className="hover:bg-white/[0.04] transition-colors">
+                    <TableRow key={i} className="hover:bg-[var(--enk-ledger-row-hover)] transition-colors">
                       <TableCell className={`${cellCls} font-medium`}>
                         {item.model}
                         {(item.model === "American Augers DD-1100" || item.model === "American Augers DD-1100 RS") && (
@@ -118,7 +118,7 @@ export default function EquipmentPage() {
                         )}
                       </TableCell>
                       <TableCell className={`${monoCls} text-[var(--enk-blueprint)]`}>{item.inventoryLabel}</TableCell>
-                      <TableCell className={`${monoCls} font-semibold text-[var(--enk-accent-on-dark)]`}>{item.pullbackClass}</TableCell>
+                      <TableCell className={`${monoCls} font-semibold text-[var(--enk-ink)]`}>{item.pullbackClass}</TableCell>
                       <TableCell className={`${cellCls} min-w-[190px] text-[var(--enk-steel)]`}>{item.thrustRating}</TableCell>
                       <TableCell className={`${cellCls} min-w-[170px] text-[var(--enk-steel)]`}>{item.rotaryTorque}</TableCell>
                       <TableCell className={`${cellCls} min-w-[210px] text-[var(--enk-steel)]`}>
@@ -171,7 +171,7 @@ export default function EquipmentPage() {
                 </TableHeader>
                 <TableBody>
                   {hddSupportSystems.map((item, i) => (
-                    <TableRow key={i} className="hover:bg-white/[0.04] transition-colors">
+                    <TableRow key={i} className="hover:bg-[var(--enk-ledger-row-hover)] transition-colors">
                       <TableCell className={`${cellCls} font-medium`}>{item.system}</TableCell>
                       <TableCell className={`${cellCls} text-[var(--enk-steel)]`}>{item.detail}</TableCell>
                       <TableCell className={monoCls}>{item.quantity}</TableCell>
@@ -223,7 +223,7 @@ export default function EquipmentPage() {
                   </TableHeader>
                   <TableBody>
                     {thrustBoringSpecs.map((item, i) => (
-                      <TableRow key={i} className="hover:bg-white/[0.04] transition-colors">
+                      <TableRow key={i} className="hover:bg-[var(--enk-ledger-row-hover)] transition-colors">
                         <TableCell className={`${cellCls} font-medium`}>{item.equipment}</TableCell>
                         <TableCell className={cellCls}>{item.make}</TableCell>
                         <TableCell className={`${cellCls} text-[var(--enk-steel)]`}>{item.rating}</TableCell>
@@ -251,7 +251,7 @@ export default function EquipmentPage() {
                   </TableHeader>
                   <TableBody>
                     {microTunnelingSpecs.map((item, i) => (
-                      <TableRow key={i} className="hover:bg-white/[0.04] transition-colors">
+                      <TableRow key={i} className="hover:bg-[var(--enk-ledger-row-hover)] transition-colors">
                         <TableCell className={`${cellCls} font-medium`}>{item.equipment}</TableCell>
                         <TableCell className={cellCls}>{item.make}</TableCell>
                         <TableCell className={`${cellCls} text-[var(--enk-steel)]`}>{item.rating}</TableCell>
@@ -290,7 +290,7 @@ export default function EquipmentPage() {
                   </TableHeader>
                   <TableBody>
                     {marineFleetSpecs.map((item, i) => (
-                      <TableRow key={i} className="hover:bg-white/[0.04] transition-colors">
+                      <TableRow key={i} className="hover:bg-[var(--enk-ledger-row-hover)] transition-colors">
                         <TableCell className={`${cellCls} font-medium`}>{item.category}</TableCell>
                         <TableCell className={`${cellCls} text-[var(--enk-steel)]`}>{item.detail}</TableCell>
                         <TableCell className={monoCls}>{item.quantity}</TableCell>
@@ -322,7 +322,7 @@ export default function EquipmentPage() {
                   </TableHeader>
                   <TableBody>
                     {supportFleetSpecs.map((item, i) => (
-                      <TableRow key={i} className="hover:bg-white/[0.04] transition-colors">
+                      <TableRow key={i} className="hover:bg-[var(--enk-ledger-row-hover)] transition-colors">
                         <TableCell className={`${cellCls} font-medium`}>{item.category}</TableCell>
                         <TableCell className={`${cellCls} text-[var(--enk-steel)]`}>{item.detail}</TableCell>
                         <TableCell className={monoCls}>{item.quantity}</TableCell>

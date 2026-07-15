@@ -5,62 +5,62 @@
 @tailwind utilities;
 
 /* ============================================
-   ENIKKOM 2026 PREMIUM DESIGN SYSTEM
-   World-Class EPC/Industrial Contractor
-   Award-Level UI/UX
+   ENIKKOM DESIGN SYSTEM
+   Light-first, Shell-style corporate surfaces
    ============================================ */
 
 @layer base {
   :root {
-    /* Brand Colors - muted industrial amber + disciplined neutrals */
-    --brand-primary: 43 87% 41%;
-    --brand-primary-hover: 43 87% 35%;
-    --brand-cyan: 43 87% 41%;
-    --brand-red: 6 78% 52%;
-    --brand-amber: 43 87% 41%;
-    --brand-amber-hover: 43 87% 35%;
-    --brand-bronze: 43 64% 51%;
+    /* Brand Colors - drawn from the Enikkom mark: deep blue, gear cyan,
+       gear red, charcoal wordmark. Legacy amber names alias to blue. */
+    --brand-primary: 213 82% 35%;        /* #1050A0 deep brand blue */
+    --brand-primary-hover: 213 83% 28%;
+    --brand-cyan: 197 100% 44%;          /* #00A0E0 gear cyan */
+    --brand-red: 355 75% 50%;            /* #E02030 gear red */
+    --brand-amber: 213 82% 35%;
+    --brand-amber-hover: 213 83% 28%;
+    --brand-bronze: 213 82% 35%;
 
-    /* Neutrals - DARK (whole site is now dark; shadcn semantic tokens flipped
-       so any component using text-foreground / bg-card / bg-muted / border
-       reads correctly on the dual-navy surfaces). */
-    --header-bg: 210 18% 14%;
+    /* Neutrals - LIGHT (Shell-style light-first site; dark navy is reserved
+       for the footer and photo overlays. shadcn semantic tokens read
+       correctly on the light surfaces, including portaled dialogs/sheets). */
+    --header-bg: 0 0% 100%;
     --charcoal: 210 18% 14%;
     --charcoal-light: 210 19% 18%;
-    --page-bg: 210 18% 14%;
-    --surface: 210 19% 16%;
-    --text-primary: 0 0% 88%;
-    --text-muted: 210 9% 75%;
-    --border-light: 210 18% 20%;
+    --page-bg: 210 20% 99%;
+    --surface: 210 20% 97%;
+    --text-primary: 210 16% 15%;
+    --text-muted: 210 9% 38%;
+    --border-light: 210 16% 90%;
 
-    /* Semantic tokens - DARK theme */
-    --background: 210 18% 14%;   /* #1D232A page */
-    --foreground: 0 0% 88%;      /* #E0E0E0 */
+    /* Semantic tokens - LIGHT theme */
+    --background: 210 20% 99%;   /* near-white, tinted toward the navy hue */
+    --foreground: 210 16% 15%;   /* #21272E ink */
 
-    --card: 210 19% 16%;         /* #222A32 card surface */
-    --card-foreground: 0 0% 88%;
+    --card: 0 0% 100%;
+    --card-foreground: 210 16% 15%;
 
-    --popover: 210 19% 16%;
-    --popover-foreground: 0 0% 88%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 16% 15%;
 
-    --primary: 43 87% 41%;       /* #C4900E muted industrial amber */
-    --primary-foreground: 210 18% 14%;
+    --primary: 213 82% 35%;      /* #1050A0 deep brand blue */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 18% 20%;
-    --secondary-foreground: 0 0% 88%;
+    --secondary: 210 18% 95%;
+    --secondary-foreground: 210 16% 15%;
 
-    --muted: 210 18% 18%;
-    --muted-foreground: 210 9% 75%;  /* #B8BEC4 */
+    --muted: 210 18% 95%;
+    --muted-foreground: 210 9% 38%;
 
-    --accent: 43 64% 51%;        /* #D4A832 readable amber accent-on-dark */
-    --accent-foreground: 210 18% 14%;
+    --accent: 213 82% 35%;       /* brand blue, readable on light */
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 357 82% 53%;
+    --destructive: 357 82% 46%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 18% 22%;
-    --input: 210 18% 24%;
-    --ring: 43 64% 51%;
+    --border: 210 16% 89%;
+    --input: 210 16% 86%;
+    --ring: 213 82% 35%;
 
     --radius: 0.75rem;
 
@@ -246,21 +246,22 @@
      not stock or cinematic renders.
      ========================================== */
 
-  /* Base grade — img/video element, on its own */
+  /* Base grade — img/video element, on its own. On the light site the
+     grade no longer darkens; it only steadies contrast and saturation. */
   .enk-photo {
-    filter: contrast(1.08) saturate(0.88) brightness(0.92);
+    filter: contrast(1.04) saturate(0.94);
   }
 
-  /* Hero / full-bleed: marginally stronger because the scrim
-     compounds with it; keep both moderate or it stacks too dark. */
+  /* Hero / full-bleed: the scrim carries text contrast, so the filter
+     stays light-handed. */
   .enk-photo--hero {
-    filter: contrast(1.10) saturate(0.85) brightness(0.88);
+    filter: contrast(1.06) saturate(0.92) brightness(0.96);
   }
 
   /* Card thumbnails: subtlest grade — preserves colour detail at
-     small size; the wrap vignette handles depth, not the filter. */
+     small size. */
   .enk-photo--card {
-    filter: contrast(1.06) saturate(0.90) brightness(0.94);
+    filter: contrast(1.03) saturate(0.95);
   }
 
   /* Wrap container: restrained bottom-weighted vignette that seats
@@ -389,7 +390,7 @@
   select:focus-visible,
   [role="button"]:focus-visible,
   [tabindex]:focus-visible {
-    outline: 2px solid var(--color-accent-on-dark, #D4A832);
+    outline: 2px solid var(--color-accent-hover, #0C4183);
     outline-offset: 2px;
     border-radius: 4px;
   }
@@ -427,37 +428,37 @@
 
 /* ============================================================
    ENIKKOM REDESIGN 2026  -  scoped design system (.enk)
-   Navy / graphite / muted industrial amber. The accent is warm and
-   high-contrast without the pure Shell-yellow feel.
-   Tier-1 EPC / procurement-grade. Squared, industrial, AA.
+   Light neutrals / charcoal ink / deep brand blue from the logo mark.
+   Tier-1 EPC / procurement-grade. Quiet, industrial, AA.
    ============================================================ */
 
 .enk {
   /* ----------------------------------------------------------------
-     SHELL DESIGN LANGUAGE — all-dark surface system.
-     Three surfaces in ONE navy hue family create depth without
-     borders/shadows (Shell never floats dark cards on white).
-     Each step is lighter than the last so a card always lifts off
-     whatever surface holds it:
-       page / band  #14191F  (page base, hero, header, footer, bands)
-       panel        #171D24  (floating .enk-panel sections)
-       card         #1E2830  (1 step lighter than panel → always lifts)
+     SHELL DESIGN LANGUAGE (light-first, matching shell.com itself):
+     near-white page, quiet gray tiles, whitespace between sections.
+     Dark navy survives only where it is physical: the hero video
+     tile, photo scrims, and the footer.
+       page         #FBFCFD  (near-white, tinted toward the navy hue)
+       band         #E9EEF3  (full-width band, blue-tinted — must stay
+                              visibly darker than the page or the whole
+                              scroll flattens into one white sheet)
+       card / tile  #FFFFFF  (white tile + hairline + faint shadow)
      Canonical --color-* names; established --enk-* names alias onto
      them so every component recolours centrally with no per-file churn.
      ---------------------------------------------------------------- */
-  --color-bg-deep:       #14191F;  /* footer only */
-  --color-bg:            #14191F;  /* unified page background — one dark tone like Shell */
-  --color-surface-panel: #171D24;  /* floating panels — between page and card */
-  --color-surface-card:  #1E2830;  /* cards lift above both page and panels */
-  --color-surface-card-hover: #263038;
-  --color-surface-light: #F4F6F8;  /* logo tiles only */
-  --color-footer:        #14191F;
-  --color-text:          #E0E0E0;  /* off-white text on all dark surfaces */
-  --color-text-muted:    #B8BEC4;
-  --color-text-on-light: #13171B;  /* text inside light logo tiles / forms */
-  --color-accent:         #C4900E; /* muted amber fills, dark text on top */
-  --color-accent-hover:   #A67A0C;
-  --color-accent-on-dark: #D4A832; /* readable amber text ON navy (WCAG) */
+  --color-bg-deep:       #E9EEF3;  /* tinted section bands */
+  --color-bg:            #FBFCFD;  /* page background */
+  --color-surface-panel: #F5F7F9;
+  --color-surface-card:  #FFFFFF;
+  --color-surface-card-hover: #F4F6F8;
+  --color-surface-light: #F4F6F8;  /* logo tiles */
+  --color-footer:        #16263B;  /* footer dark navy — same hue family as the brand blue #1050A0 */
+  --color-text:          #21272E;  /* ink on light surfaces */
+  --color-text-muted:    #59626B;
+  --color-text-on-light: #21272E;
+  --color-accent:         #1050A0; /* deep brand blue fills, white text on top */
+  --color-accent-hover:   #0C4183;
+  --color-accent-on-dark: #1050A0; /* legacy name; the accent TEXT tone, AA on light (8:1) */
   --radius-card:    14px;  /* rounded tiles — Shell card geometry */
   --radius-control: 8px;   /* buttons/inputs — softly rounded */
   --card-pad:       24px;
@@ -466,43 +467,48 @@
   --font-heading:   'Jost', 'Futura PT', 'Questrial', Arial, sans-serif;
   --font-body:      Arial, Roboto, Helvetica, sans-serif;
 
-  /* Surfaces — all dark, same navy hue family */
-  --enk-bg: var(--color-bg);            /* page / hero base */
-  --enk-bg-muted: var(--color-bg-deep); /* section bands (was light) */
+  /* Surfaces — light, same navy hue family */
+  --enk-bg: var(--color-bg);            /* page base */
+  --enk-bg-muted: var(--color-bg-deep); /* tinted section bands */
   --enk-surface-panel: var(--color-surface-panel);
   --enk-surface-card: var(--color-surface-card);
   --enk-surface-card-hover: var(--color-surface-card-hover);
-  --enk-navy: var(--color-bg);          /* header, scrims, CTA bands */
-  --enk-navy-2: #262D35;
-  --enk-navy-3: #2F3741;
+  /* Dark islands share the brand-blue hue (#1050A0 family) so footer,
+     hero tile and any dark surface read as one branded navy, not neutral
+     charcoal. */
+  --enk-navy: #16263B;
+  --enk-navy-2: #1F3450;
+  --enk-navy-3: #294263;
   --enk-footer: var(--color-footer);
 
-  /* Text — now light everywhere (no light content surfaces remain).
-     ink/steel flip to off-white so the many text-[var(--enk-ink)] /
-     text-[var(--enk-steel)] usages read correctly on the dark bands. */
-  --enk-ink: var(--color-text);            /* primary on dark */
-  --enk-steel: var(--color-text-muted);    /* muted on dark */
+  /* Text — ink/steel are the light-surface pair. The legacy on-dark
+     aliases resolve to the same pair: every surface that used to be navy
+     is light now, and the few genuinely dark islands (footer, hero panel,
+     lightbox) set explicit light text locally. */
+  --enk-ink: var(--color-text);
+  --enk-steel: var(--color-text-muted);
   --enk-on-dark: var(--color-text);
   --enk-on-dark-muted: var(--color-text-muted);
-  --enk-on-light: var(--color-text-on-light); /* for light logo tiles */
+  --enk-on-light: var(--color-text-on-light);
 
-  /* Brand — restrained industrial palette. Single amber accent; the old
-     Steel Blue tokens (--enk-blue / --enk-blue-hover) are retired — use
-     --enk-accent-primary / --enk-accent-primary-hover instead. */
+  /* Brand — restrained palette. Single deep-blue accent from the logo;
+     use --enk-accent-primary / --enk-accent-primary-hover. */
   --enk-accent-on-dark: var(--color-accent-on-dark);
   --enk-accent: var(--color-accent-on-dark);
   --enk-gold: var(--enk-accent-primary-on-dark);  /* legacy alias: active nav indicators */
   --enk-bronze: var(--enk-accent-primary-on-dark);
-  --enk-safety: oklch(0.66 0.13 150);              /* QHSE positive, lifted for dark */
-  --enk-red: #D33A3F;                              /* restrained logo red accent */
-  --enk-red-subtle: rgba(211, 58, 63, 0.14);
+  --enk-safety: oklch(0.50 0.11 150);              /* QHSE positive, readable on light */
+  --enk-red: #C0343A;                              /* restrained logo red accent */
+  --enk-red-subtle: rgba(192, 52, 58, 0.10);
+  --enk-cyan: #00A0E0;                             /* gear cyan — decorative touches only */
 
-  /* Muted amber primary accent — the older, calmer CTA color. */
-  --enk-accent-primary:        #C4900E;
-  --enk-accent-primary-hover:  #A67A0C;
-  --enk-accent-primary-on-dark:#D4A832;
-  --enk-accent-subtle:         rgba(196, 144, 14, 0.14);
-  --enk-accent-line:           rgba(212, 168, 50, 0.30);
+  /* Brand-blue primary accent, from the logo's gear segment. One tone
+     serves both fills (white text on top) and standalone accent text. */
+  --enk-accent-primary:        #1050A0;
+  --enk-accent-primary-hover:  #0C4183;
+  --enk-accent-primary-on-dark:#1050A0;
+  --enk-accent-subtle:         rgba(16, 80, 160, 0.10);
+  --enk-accent-line:           rgba(16, 80, 160, 0.35);
   /* Backward-compat aliases — any missed reference stays on-palette */
   --enk-warm-accent:         var(--enk-accent-primary);
   --enk-warm-accent-hover:   var(--enk-accent-primary-hover);
@@ -511,12 +517,13 @@
   --enk-orange-hover:        var(--enk-accent-primary-hover);
   --enk-orange-on-dark:      var(--enk-accent-primary-on-dark);
 
-  /* Lines — subtle light hairlines on the dark surfaces */
-  --enk-line: rgba(255, 255, 255, 0.08);
-  --enk-line-strong: rgba(255, 255, 255, 0.14);
-  --enk-line-dark: rgba(255, 255, 255, 0.10);
-  --enk-shadow-sm: none;
-  --enk-shadow-md: none;
+  /* Lines — quiet ink hairlines on the light surfaces */
+  --enk-line: rgba(29, 35, 42, 0.10);
+  --enk-line-strong: rgba(29, 35, 42, 0.18);
+  --enk-line-dark: rgba(255, 255, 255, 0.12); /* hairlines inside dark islands */
+  --enk-card-line: rgba(29, 35, 42, 0.07); /* hairline that keeps white tiles from dissolving into white sections */
+  --enk-shadow-sm: 0 1px 2px rgba(20, 26, 33, 0.05), 0 2px 8px rgba(20, 26, 33, 0.05);
+  --enk-shadow-md: 0 2px 4px rgba(20, 26, 33, 0.06), 0 6px 16px rgba(20, 26, 33, 0.07);
 
   --enk-radius: var(--radius-control);
 
@@ -527,28 +534,28 @@
      so all consumer components restyle centrally.
      ---------------------------------------------------------------- */
 
-  /* Record surfaces — a document sheet sits between page and card so a
-     record reads as "paper in the file", not a marketing card. */
-  --enk-record-surface:        #171E25;  /* document sheet body */
-  --enk-record-surface-raised: var(--color-surface-card);   /* lifted sheet */
-  --enk-record-inset:          #10151B;  /* recessed wells: table heads, ref plates */
+  /* Record surfaces — white tile with a faint shadow; the raised state
+     darkens a step so hover is visible on the white page. */
+  --enk-record-surface:        #FFFFFF;
+  --enk-record-surface-raised: #F4F6F8;
+  --enk-record-inset:          #EEF1F4;  /* recessed wells: table heads, ref plates */
 
   /* Ledger rows — alternating registers for spec/data tables */
-  --enk-ledger-row:       rgba(255, 255, 255, 0.015);
-  --enk-ledger-row-alt:   rgba(255, 255, 255, 0.045);
-  --enk-ledger-row-hover: rgba(255, 255, 255, 0.07);
+  --enk-ledger-row:       rgba(29, 35, 42, 0.015);
+  --enk-ledger-row-alt:   rgba(29, 35, 42, 0.035);
+  --enk-ledger-row-hover: rgba(29, 35, 42, 0.06);
 
-  /* Rules — drawing-sheet border weights (thin > medium > title-block) */
-  --enk-rule:        rgba(255, 255, 255, 0.10);
-  --enk-rule-strong: rgba(255, 255, 255, 0.20);
-  --enk-rule-heavy:  rgba(255, 255, 255, 0.32);
-  --enk-rule-accent: rgba(212, 168, 50, 0.55);
+  /* Rules — quiet ink hairline weights */
+  --enk-rule:        rgba(29, 35, 42, 0.10);
+  --enk-rule-strong: rgba(29, 35, 42, 0.18);
+  --enk-rule-heavy:  rgba(29, 35, 42, 0.28);
+  --enk-rule-accent: rgba(16, 80, 160, 0.45);
 
   /* Blueprint / steel annotation tones — cool secondary ink for
-     coordinates, drawing refs, figure numbers. AA on all dark surfaces. */
-  --enk-blueprint:     #8FA3B5;
-  --enk-blueprint-dim: #5F7183;  /* decorative only — below AA for text */
-  --enk-meta:          #99A2AB;  /* metadata/caption ink */
+     coordinates, drawing refs, figure numbers. AA on light surfaces. */
+  --enk-blueprint:     #4E6274;
+  --enk-blueprint-dim: #8FA0AF;  /* decorative only — below AA for text */
+  --enk-meta:          #646D76;  /* metadata/caption ink */
 
   /* Type roles */
   --enk-font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
@@ -557,22 +564,22 @@
   --enk-radius-record: 12px;
   --enk-radius-stamp:  6px;
 
-  /* Status stamp inks — official record states */
-  --enk-status-complete: #58B383;                    /* completed / zero LTI */
-  --enk-status-complete-bg: rgba(88, 179, 131, 0.10);
+  /* Status stamp inks — official record states, darkened for light surfaces */
+  --enk-status-complete: #2E7D53;                    /* completed / zero LTI */
+  --enk-status-complete-bg: rgba(46, 125, 83, 0.09);
   --enk-status-record:   var(--enk-accent-primary-on-dark);  /* project record / credential */
-  --enk-status-record-bg: rgba(212, 168, 50, 0.10);
-  --enk-status-neutral:  #A7B0B9;                    /* archived / on file */
-  --enk-status-neutral-bg: rgba(255, 255, 255, 0.05);
-  --enk-status-alert:    #E06A6E;                    /* restricted / attention */
-  --enk-status-alert-bg: rgba(211, 58, 63, 0.10);
+  --enk-status-record-bg: rgba(16, 80, 160, 0.08);
+  --enk-status-neutral:  #59626B;                    /* archived / on file */
+  --enk-status-neutral-bg: rgba(29, 35, 42, 0.05);
+  --enk-status-alert:    #B4383D;                    /* restricted / attention */
+  --enk-status-alert-bg: rgba(180, 56, 61, 0.08);
 
   background-color: var(--enk-bg);
   color: var(--enk-ink);
   font-family: Arial, Roboto, Helvetica, system-ui, sans-serif;
 }
 
-.enk ::selection { background: var(--enk-accent-primary); color: var(--enk-navy); }
+.enk ::selection { background: var(--enk-accent-primary); color: #FFFFFF; }
 
 /* Layout — Shell container 1300px, Shell-dense section rhythm (64-72px) */
 .enk-container { width: 100%; max-width: 1300px; margin-inline: auto; padding-inline: 1.25rem; }
@@ -587,9 +594,9 @@
   display: inline-flex; align-items: center; gap: 0.65rem;
   font-family: var(--font-body);
   font-size: 13px; font-weight: 700; letter-spacing: normal; text-transform: none;
-  color: var(--enk-accent-on-dark);
+  color: var(--enk-steel);
 }
-.enk-kicker--on-dark { color: var(--enk-accent-on-dark); }
+.enk-kicker--on-dark { color: var(--enk-steel); }
 
 /* Tag — soft borderless tinted chip, body font, sentence case. */
 .enk-chip {
@@ -598,9 +605,9 @@
   font-family: var(--font-body);
   font-size: 12px; font-weight: 600; letter-spacing: normal; text-transform: none;
   line-height: 1.6;
-  color: var(--enk-ink); background: rgba(255, 255, 255, 0.07);
+  color: var(--enk-ink); background: rgba(29, 35, 42, 0.06);
 }
-.enk-chip--on-dark { color: var(--enk-ink); background: rgba(255, 255, 255, 0.07); }
+.enk-chip--on-dark { color: #E6E9EC; background: rgba(255, 255, 255, 0.14); }
 
 /* Buttons - enterprise: opacity/border/background/elevation only, <=180ms ease-out, >=44px */
 .enk-btn {
@@ -610,14 +617,14 @@
   border: 1.5px solid transparent; cursor: pointer; text-align: center;
   transition: background-color 0.18s ease-out, border-color 0.18s ease-out, color 0.18s ease-out, box-shadow 0.18s ease-out;
 }
-.enk-btn--primary { background: var(--enk-accent-primary); color: var(--enk-navy); box-shadow: var(--enk-shadow-sm); }
+.enk-btn--primary { background: var(--enk-accent-primary); color: #FFFFFF; box-shadow: var(--enk-shadow-sm); }
 .enk-btn--primary:hover { background: var(--enk-accent-primary-hover); box-shadow: var(--enk-shadow-md); }
 .enk-btn--outline { background: transparent; color: var(--enk-ink); border-color: var(--enk-line-strong); }
 .enk-btn--outline:hover { border-color: var(--enk-accent-primary-on-dark); color: var(--enk-accent-primary-on-dark); }
 .enk-btn--on-dark { background: transparent; color: var(--enk-on-dark); border-color: oklch(1 0 0 / 0.28); }
 .enk-btn--on-dark:hover { background: oklch(1 0 0 / 0.08); border-color: oklch(1 0 0 / 0.5); }
-/* Legacy class name; renders with engineering yellow fill (navy text). */
-.enk-btn--gold { background: var(--enk-accent-primary); color: var(--enk-navy); box-shadow: var(--enk-shadow-sm); }
+/* Legacy class name; renders with the brand-blue fill (white text). */
+.enk-btn--gold { background: var(--enk-accent-primary); color: #FFFFFF; box-shadow: var(--enk-shadow-sm); }
 .enk-btn--gold:hover { background: var(--enk-accent-primary-hover); box-shadow: var(--enk-shadow-md); }
 
 /* Text link */
@@ -627,13 +634,13 @@
 }
 .enk-link:hover { border-bottom-color: var(--enk-accent-primary-on-dark); gap: 0.6rem; }
 
-/* Card — Shell tile: rounded, borderless, lifts off the page purely by
-   being a lighter surface. Hover raises the tone — no border, no glow. */
+/* Card — Shell tile: rounded white tile with a hairline + faint shadow
+   so it lifts on the near-white page. Hover tints the surface — no glow. */
 .enk-card {
   background: var(--enk-record-surface);
-  border: none;
+  border: 1px solid var(--enk-card-line);
   border-radius: var(--radius-card);
-  box-shadow: none; overflow: hidden;
+  box-shadow: var(--enk-shadow-sm); overflow: hidden;
   transition: background-color 0.18s ease-out;
 }
 .enk-card--hover:hover {
@@ -746,7 +753,7 @@
   font-weight: 700;
   letter-spacing: normal;
   text-transform: none;
-  color: var(--enk-accent-on-dark);
+  color: var(--enk-steel);
 }
 .enk-record-eyebrow__ref {
   color: var(--enk-blueprint);
@@ -816,7 +823,7 @@
   grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
   gap: 0.25rem 1.5rem;
   background: var(--enk-record-surface);
-  border: none;
+  border: 1px solid var(--enk-card-line);
   border-radius: var(--enk-radius-record);
   overflow: hidden;
 }
@@ -841,8 +848,9 @@
   display: flex;
   flex-direction: column;
   background: var(--enk-record-surface);
-  border: none;
+  border: 1px solid var(--enk-card-line);
   border-radius: var(--enk-radius-record);
+  box-shadow: var(--enk-shadow-sm);
   transition: background-color 0.18s ease-out;
 }
 a.enk-doc-card:hover,
@@ -853,10 +861,11 @@ a.enk-doc-card:hover,
 /* Field figure — rounded photo tile with a quiet caption strip. */
 .enk-figure {
   margin: 0;
-  border: none;
+  border: 1px solid var(--enk-card-line);
   border-radius: var(--enk-radius-record);
   overflow: hidden;
   background: var(--enk-record-surface);
+  box-shadow: var(--enk-shadow-sm);
 }
 .enk-figure__media {
   position: relative;
@@ -881,7 +890,7 @@ a.enk-doc-card:hover,
   font-weight: 700;
   letter-spacing: normal;
   text-transform: none;
-  color: var(--enk-accent-on-dark);
+  color: var(--enk-meta);
   margin-right: 0.6rem;
 }
 .enk-figure__loc {

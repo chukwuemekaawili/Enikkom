@@ -41,7 +41,7 @@ const defaultBranding: BrandingSettings = {
   logoUrl: '',
   faviconUrl: '',
   companyName: 'Enikkom Construction Limited',
-  tagline: 'Building Infrastructure Excellence',
+  tagline: 'Pipeline and trenchless contractor since 1995',
 };
 
 const defaultContact: ContactSettings = {

@@ -169,7 +169,7 @@ export default function ContactPage() {
                 <p className="enk-kicker mb-3">Request for Quotation</p>
                 <h2 className="enk-display text-[clamp(1.3rem,2.2vw,1.6rem)] text-[var(--enk-ink)]">
                   <EditableText
-                    value={content.form?.title || "Send RFQ / Tender Enquiry"}
+                    value={content.form?.title || "Send an RFQ or tender enquiry"}
                     pageSlug="contact"
                     sectionKey="form"
                     field="title"

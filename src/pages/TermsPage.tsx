@@ -14,8 +14,8 @@ export default function TermsPage() {
         description="The terms and conditions governing use of the Enikkom Construction website."
         canonical="/terms"
       />
-      <div className="section-padding">
-        <div className="container-wide max-w-4xl">
+      <div className="enk-section">
+        <div className="enk-container max-w-4xl">
           <p className="enk-kicker mb-4">Legal Document</p>
           <h1 className="mb-3">
             <EditableText

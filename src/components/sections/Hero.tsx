@@ -72,13 +72,13 @@ export function Hero({
           <div
             className="absolute inset-0"
             aria-hidden="true"
-            style={{ background: "linear-gradient(to top, rgba(9,14,20,0.45) 0%, rgba(9,14,20,0.12) 45%, rgba(9,14,20,0.2) 100%)" }}
+            style={{ background: "linear-gradient(to top, rgba(11,19,30,0.45) 0%, rgba(11,19,30,0.12) 45%, rgba(11,19,30,0.2) 100%)" }}
           />
 
           <div className={`relative flex ${minH[size]} items-center px-4 py-10 md:px-10 md:py-14 ${centered ? "justify-center" : ""}`}>
             <div
               className={`max-w-xl rounded-[12px] p-6 md:p-8 ${centered ? "text-center" : ""}`}
-              style={{ backgroundColor: "rgba(13,18,24,0.72)" }}
+              style={{ backgroundColor: "rgba(16,27,42,0.78)" }}
             >
               <h1 className="text-white">{title}</h1>
 

@@ -14,8 +14,8 @@ export default function PrivacyPage() {
         description="How Enikkom Construction collects, uses, and protects your personal information."
         canonical="/privacy"
       />
-      <div className="section-padding">
-        <div className="container-wide max-w-4xl">
+      <div className="enk-section">
+        <div className="enk-container max-w-4xl">
           <p className="enk-kicker mb-4">Legal Document</p>
           <h1 className="mb-3">
             <EditableText

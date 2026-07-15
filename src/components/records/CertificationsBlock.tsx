@@ -29,7 +29,7 @@ export function CertificationsBlock({
               href={cert.file}
               target="_blank"
               rel="noopener noreferrer"
-              title={`${cert.name} — view document`}
+              title={`${cert.name}: view document`}
               className="focus-ring rounded-[2px] transition-opacity hover:opacity-80"
             >
               <RecordStatusStamp tone="qhse">{cert.code}</RecordStatusStamp>

@@ -2,7 +2,7 @@ import { Fragment, useEffect, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X, ChevronDown, Search } from "lucide-react";
 import { navMenus, brand, contact, type NavMenu, type NavLink } from "@/content/home";
-import enikkomLogoWhite from "@/assets/images/logos/enikkom-logo-white-trimmed.png";
+import enikkomLogoColor from "@/assets/images/logos/enikkom-logo-color.png";
 
 const hddtecLogo = brand.hddtecLogo;
 
@@ -12,9 +12,9 @@ const extraLinks: NavLink[] = [
 ];
 
 /**
- * Dual-brand lockup: one group (Enikkom, white-knockout) + the HDDTEC delivery
- * arm. The HDDTEC mark carries its own dark navy plate baked into the artwork,
- * so on the dark header it's seated on a light chip for legible contrast.
+ * Dual-brand lockup: one group (Enikkom, full-colour mark) + the HDDTEC
+ * delivery arm. The HDDTEC mark carries its own dark navy plate baked into
+ * the artwork, which reads cleanly on the white header.
  */
 function BrandLockup({ compact, onClick }: { compact: boolean; onClick?: () => void }) {
   // Equal co-brand lockup: Enikkom and HDDTEC at equal optical height on one
@@ -30,8 +30,8 @@ function BrandLockup({ compact, onClick }: { compact: boolean; onClick?: () => v
       aria-label={`Enikkom Construction and HDDTEC, home. ${brand.microcopy}`}
       className="flex shrink-0 items-center gap-3.5 rounded-sm focus-ring sm:gap-4"
     >
-      <img src={enikkomLogoWhite} alt="Enikkom Construction Limited" style={{ height: h }} className="w-auto object-contain" />
-      <span aria-hidden="true" style={{ height: h - 2 }} className="w-px bg-white/25" />
+      <img src={enikkomLogoColor} alt="Enikkom Construction Limited" style={{ height: h }} className="w-auto object-contain" />
+      <span aria-hidden="true" style={{ height: h - 2 }} className="w-px bg-[rgba(29,35,42,0.18)]" />
       <img src={hddtecLogo} alt="HDDTEC, Trenchless Operations" style={{ height: h }} className="w-auto object-contain" />
     </Link>
   );
@@ -48,7 +48,7 @@ function ItemLink({ item, onClick, className, children }: { item: NavLink; onCli
 /** Top-level nav label: sentence case, Shell-style, flat amber rule when active. */
 const navItemClass = (active: boolean) =>
   `relative inline-flex h-10 shrink-0 items-center gap-1 whitespace-nowrap px-2.5 text-[14px] font-semibold transition-colors duration-150 focus-ring ${
-    active ? "text-[var(--enk-on-dark)]" : "text-[var(--enk-on-dark-muted)] hover:text-[var(--enk-on-dark)]"
+    active ? "text-[var(--enk-ink)]" : "text-[var(--enk-steel)] hover:text-[var(--enk-ink)]"
   }`;
 
 /** Flat squared active indicator — a rule, not a pill. */
@@ -106,16 +106,17 @@ function NavDropdown({ menu, active }: { menu: NavMenu; active: boolean }) {
         <ul
           className="min-w-[280px] overflow-hidden py-1.5"
           style={{
-            backgroundColor: "var(--enk-record-surface-raised)",
+            backgroundColor: "var(--enk-record-surface)",
             border: "1px solid var(--enk-rule)",
             borderRadius: "var(--enk-radius-record)",
+            boxShadow: "var(--enk-shadow-md)",
           }}
         >
           {menu.items.map((item) => (
             <li key={item.label}>
               <ItemLink
                 item={item}
-                className="flex min-h-[42px] items-center px-4 py-2 text-[13.5px] text-[var(--enk-on-dark-muted)] transition-colors duration-150 hover:bg-white/5 hover:text-[var(--enk-on-dark)] focus-ring"
+                className="flex min-h-[42px] items-center px-4 py-2 text-[13.5px] text-[var(--enk-steel)] transition-colors duration-150 hover:bg-[rgba(29,35,42,0.04)] hover:text-[var(--enk-ink)] focus-ring"
               >
                 {item.label}
               </ItemLink>
@@ -135,7 +136,7 @@ function MobileMenu({ onNavigate }: { onNavigate: () => void }) {
       <Link
         to="/"
         onClick={onNavigate}
-        className="flex min-h-[52px] w-full items-center border-b border-[var(--enk-line-dark)] px-1 py-3 text-[15px] font-semibold text-[var(--enk-on-dark)] focus-ring"
+        className="flex min-h-[52px] w-full items-center border-b border-[var(--enk-line)] px-1 py-3 text-[15px] font-semibold text-[var(--enk-ink)] focus-ring"
       >
         Home
       </Link>
@@ -143,13 +144,13 @@ function MobileMenu({ onNavigate }: { onNavigate: () => void }) {
         const expanded = openIdx === i;
         return (
           <Fragment key={menu.label}>
-            <div className="border-b border-[var(--enk-line-dark)]">
+            <div className="border-b border-[var(--enk-line)]">
             <button
               type="button"
               aria-expanded={expanded}
               aria-controls={`m-sec-${i}`}
               onClick={() => setOpenIdx(expanded ? null : i)}
-              className="flex min-h-[52px] w-full items-center justify-between px-1 py-3 text-[15px] font-semibold text-[var(--enk-on-dark)] focus-ring"
+              className="flex min-h-[52px] w-full items-center justify-between px-1 py-3 text-[15px] font-semibold text-[var(--enk-ink)] focus-ring"
             >
               {menu.label}
               <ChevronDown className={`h-5 w-5 transition-transform duration-150 ease-out ${expanded ? "rotate-180" : ""}`} aria-hidden="true" />
@@ -161,7 +162,7 @@ function MobileMenu({ onNavigate }: { onNavigate: () => void }) {
                     <ItemLink
                       item={item}
                       onClick={onNavigate}
-                      className="flex min-h-[44px] items-center rounded-md px-3 py-2.5 text-[14.5px] text-[var(--enk-on-dark-muted)] transition-colors hover:bg-white/5 hover:text-[var(--enk-on-dark)] focus-ring"
+                      className="flex min-h-[44px] items-center rounded-md px-3 py-2.5 text-[14.5px] text-[var(--enk-steel)] transition-colors hover:bg-[rgba(29,35,42,0.04)] hover:text-[var(--enk-ink)] focus-ring"
                     >
                       {item.label}
                     </ItemLink>
@@ -178,7 +179,7 @@ function MobileMenu({ onNavigate }: { onNavigate: () => void }) {
           key={link.label}
           to={link.href}
           onClick={onNavigate}
-          className="flex min-h-[52px] w-full items-center border-b border-[var(--enk-line-dark)] px-1 py-3 text-[15px] font-semibold text-[var(--enk-on-dark)] focus-ring"
+          className="flex min-h-[52px] w-full items-center border-b border-[var(--enk-line)] px-1 py-3 text-[15px] font-semibold text-[var(--enk-ink)] focus-ring"
         >
           {link.label}
         </Link>
@@ -189,7 +190,7 @@ function MobileMenu({ onNavigate }: { onNavigate: () => void }) {
         <Link
           to="/projects"
           onClick={onNavigate}
-          className="flex min-h-[48px] w-full items-center justify-center border px-4 py-3 text-[14px] font-semibold text-[var(--enk-on-dark)] focus-ring"
+          className="flex min-h-[48px] w-full items-center justify-center border px-4 py-3 text-[14px] font-semibold text-[var(--enk-ink)] focus-ring"
           style={{ borderColor: "var(--enk-rule-strong)", borderRadius: "var(--enk-radius-record)" }}
         >
           View projects
@@ -199,7 +200,7 @@ function MobileMenu({ onNavigate }: { onNavigate: () => void }) {
             href={contact.capabilityStatement}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex min-h-[44px] items-center justify-center border px-2 py-2 text-center text-[13px] font-semibold text-[var(--enk-on-dark-muted)] focus-ring"
+            className="flex min-h-[44px] items-center justify-center border px-2 py-2 text-center text-[13px] font-semibold text-[var(--enk-steel)] focus-ring"
             style={{ borderColor: "var(--enk-rule)", borderRadius: "var(--enk-radius-record)" }}
           >
             Capability statement
@@ -208,7 +209,7 @@ function MobileMenu({ onNavigate }: { onNavigate: () => void }) {
       </div>
 
       {/* Direct lines */}
-      <div className="mt-5 border-t border-[var(--enk-line-dark)] pt-4 pb-2 text-[13px] leading-relaxed text-[var(--enk-on-dark-muted)]">
+      <div className="mt-5 border-t border-[var(--enk-line)] pt-4 pb-2 text-[13px] leading-relaxed text-[var(--enk-steel)]">
         <a href={contact.phoneHref} className="block py-1 focus-ring rounded-sm">{contact.phone}</a>
         <a href={`mailto:${contact.email}`} className="block py-1 focus-ring rounded-sm">{contact.email}</a>
       </div>
@@ -252,11 +253,11 @@ export function HomeHeader() {
       <header
         className="sticky top-0 z-50"
         style={{
-          // Solid navy header bar — never a translucent band. A hairline rule
+          // Solid white header bar, never a translucent band. A hairline rule
           // separates it from content; on scroll the rule strengthens instead
           // of casting a floating shadow.
-          background: "var(--enk-navy)",
-          borderBottom: `1px solid ${scrolled ? "var(--enk-rule-strong)" : "var(--enk-line-dark)"}`,
+          background: "#FFFFFF",
+          borderBottom: `1px solid ${scrolled ? "var(--enk-rule-strong)" : "var(--enk-line)"}`,
         }}
       >
         <div className="enk-container">
@@ -293,7 +294,7 @@ export function HomeHeader() {
               <Link
                 to="/search"
                 aria-label="Search the site"
-                className="inline-flex h-10 w-10 items-center justify-center rounded-sm text-[var(--enk-on-dark)] transition-colors hover:bg-white/10 focus-ring"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-sm text-[var(--enk-ink)] transition-colors hover:bg-[rgba(29,35,42,0.05)] focus-ring"
               >
                 <Search className="h-5 w-5" aria-hidden="true" />
               </Link>
@@ -303,7 +304,7 @@ export function HomeHeader() {
                 aria-expanded={open}
                 aria-controls="mobile-nav"
                 aria-label={open ? "Close menu" : "Open menu"}
-                className="inline-flex h-10 w-10 items-center justify-center rounded-sm text-[var(--enk-on-dark)] transition-colors hover:bg-white/10 focus-ring min-[1120px]:hidden"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-sm text-[var(--enk-ink)] transition-colors hover:bg-[rgba(29,35,42,0.05)] focus-ring min-[1120px]:hidden"
               >
                 {open ? <X className="h-6 w-6" aria-hidden="true" /> : <Menu className="h-6 w-6" aria-hidden="true" />}
               </button>
@@ -312,7 +313,7 @@ export function HomeHeader() {
         </div>
 
         {open && (
-          <div id="mobile-nav" className="max-h-[calc(100vh-60px)] md:max-h-[calc(100vh-68px)] overflow-y-auto min-[1120px]:hidden" style={{ backgroundColor: "var(--enk-navy)" }}>
+          <div id="mobile-nav" className="max-h-[calc(100vh-60px)] md:max-h-[calc(100vh-68px)] overflow-y-auto min-[1120px]:hidden" style={{ backgroundColor: "#FFFFFF" }}>
             <MobileMenu onNavigate={() => setOpen(false)} />
           </div>
         )}

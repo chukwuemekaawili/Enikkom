@@ -40,19 +40,19 @@ interface CTABandProps {
  */
 export function CTABand({
   headline = "Put a project scope in front of the engineering team",
-  subhead = "Send alignment sheets, an RFQ or a tender enquiry for a technical response — feasibility, method statement input, and budget pricing.",
-  primaryCTA = { label: "Discuss Project Scope", href: "/contact" },
+  subhead = "Send alignment sheets, an RFQ or a tender enquiry for a technical response: feasibility, method statement input, and budget pricing.",
+  primaryCTA = { label: "Discuss a project scope", href: "/contact" },
   secondaryCTA,
 }: CTABandProps) {
   return (
-    <section style={{ backgroundColor: "var(--enk-navy)" }}>
+    <section style={{ backgroundColor: "var(--enk-bg-muted)" }}>
       <div className="enk-container py-14 md:py-16">
         <div className="max-w-2xl">
-          <h2 className="text-[var(--enk-on-dark)]">
+          <h2 className="text-[var(--enk-ink)]">
             {headline}
           </h2>
           {subhead && (
-            <p className="mt-4 max-w-xl text-[14px] leading-relaxed text-[var(--enk-on-dark-muted)] md:text-[15px]">
+            <p className="mt-4 max-w-xl text-[14px] leading-relaxed text-[var(--enk-steel)] md:text-[15px]">
               {subhead}
             </p>
           )}
@@ -64,7 +64,7 @@ export function CTABand({
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </CTALink>
           {secondaryCTA && (
-            <CTALink href={secondaryCTA.href} className="enk-btn enk-btn--on-dark">
+            <CTALink href={secondaryCTA.href} className="enk-btn enk-btn--outline">
               {secondaryCTA.label}
             </CTALink>
           )}

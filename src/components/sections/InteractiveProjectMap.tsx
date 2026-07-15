@@ -1,9 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
-import { MapPin, Building2, Calendar, Ruler, Filter, ChevronRight, ExternalLink } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { EnhancedImage } from "@/components/ui/enhanced-image";
 import { interactiveProjectImageSelections } from "@/content/projectImageSelections";
 import { currentProjectImage } from "@/content/siteImageSelections";
@@ -59,7 +56,7 @@ const baseProjectLocations: ProjectLocation[] = [
     state: "Delta",
     type: "HDD",
     coordinates: { x: 40, y: 74 },
-    description: "Installation of 12\" + 3\" x 2.78km bundled crossing using HDD Intersect Method - THE LONGEST BUNDLED CROSSING IN AFRICA at time of completion.",
+    description: "Installation of a 12\" + 3\" x 2.78km bundled crossing using the HDD intersect method, the longest bundled crossing in Africa at the time of completion.",
     client: "Saipem Contracting Nigeria Limited / SPDC",
     year: "2016",
     metrics: "2.78km Bundled HDD",
@@ -73,7 +70,7 @@ const baseProjectLocations: ProjectLocation[] = [
     state: "Ogun",
     type: "HDD",
     coordinates: { x: 26, y: 50 },
-    description: "Emergency reconstruction of vandalised pipeline section using HDD Intersect Method, LONGEST SINGLE DRILL IN AFRICA (3.1km) at time of completion.",
+    description: "Emergency reconstruction of a vandalised pipeline section using the HDD intersect method, the longest single drill in Africa (3.1km) at the time of completion.",
     client: "NNPC / PPMC",
     year: "2016",
     metrics: "16\" × 3.1km Africa Record",
@@ -87,7 +84,7 @@ const baseProjectLocations: ProjectLocation[] = [
     state: "Edo",
     type: "HDD",
     coordinates: { x: 42, y: 62 },
-    description: "36\" × 1.3km Gas Transmission Pipeline across Ekiadolor Rock Valley, DEEPEST HDD CROSSING IN AFRICA at over 80m depth.",
+    description: "36\" × 1.3km gas transmission pipeline across Ekiadolor Rock Valley, the deepest HDD crossing in Africa at over 80m.",
     client: "SPDC",
     year: "2016",
     metrics: "36\" × 1.3km @ 80m depth",
@@ -101,7 +98,7 @@ const baseProjectLocations: ProjectLocation[] = [
     state: "Delta",
     type: "HDD",
     coordinates: { x: 44, y: 72 },
-    description: "Installation of 10\" × 12km Pipeline by Continuous Horizontal Directional Drilling, LONGEST FUNCTIONAL CONTINUOUS HDD CROSSING IN NIGERIA.",
+    description: "Installation of a 10\" × 12km pipeline by continuous horizontal directional drilling, the longest functional continuous HDD crossing in Nigeria.",
     client: "NPDC / ND Western",
     year: "2021",
     metrics: "10\" × 12km CHDD, Nigeria Record",
@@ -115,7 +112,7 @@ const baseProjectLocations: ProjectLocation[] = [
     state: "Bayelsa",
     type: "HDD",
     coordinates: { x: 52, y: 78 },
-    description: "Construction and installation of 40\" x 760m gas pipeline at 100ft depth - LARGEST PIPELINE SIZE CROSSING IN NIGERIA at time of completion.",
+    description: "Construction and installation of a 40\" x 760m gas pipeline at 100ft depth, the largest pipeline crossing in Nigeria at the time of completion.",
     client: "Daewoo Nigeria Limited / SPDC",
     year: "2010",
     metrics: "40\" x 760m @ 100ft depth",
@@ -540,23 +537,6 @@ const projectLocations: ProjectLocation[] = baseProjectLocations.map((project) =
 
 const projectTypes = ["All", "HDD", "Pipeline", "Marine", "Dredging", "Shore Approach", "Thrust Boring"] as const;
 
-const typeColors: Record<string, string> = {
-  HDD: "bg-primary",
-  Pipeline: "bg-emerald-500",
-  Marine: "bg-blue-500",
-  Dredging: "bg-cyan-500",
-  "Shore Approach": "bg-rose-500",
-  "Thrust Boring": "bg-violet-500",
-};
-
-const typeBorderColors: Record<string, string> = {
-  HDD: "border-primary",
-  Pipeline: "border-emerald-500",
-  Marine: "border-blue-500",
-  Dredging: "border-cyan-500",
-  "Shore Approach": "border-rose-500",
-  "Thrust Boring": "border-violet-500",
-};
 
 interface InteractiveProjectMapProps {
   showHeader?: boolean;
@@ -566,335 +546,137 @@ interface InteractiveProjectMapProps {
   className?: string;
 }
 
-export function InteractiveProjectMap({ 
-  showHeader = true, 
-  showStats = true, 
+/**
+ * Project locations directory: the verified project list grouped by state,
+ * filterable by work type. A plain list replaces the old decorative map;
+ * selecting an entry opens the record detail.
+ * showHeader / showStats / maxHeight are accepted for compatibility but no
+ * longer render anything.
+ */
+export function InteractiveProjectMap({
   showFilters = true,
-  maxHeight = "500px",
-  className = ""
+  className = "",
 }: InteractiveProjectMapProps) {
-  const [activeProject, setActiveProject] = useState<ProjectLocation | null>(null);
   const [selectedProject, setSelectedProject] = useState<ProjectLocation | null>(null);
   const [activeFilter, setActiveFilter] = useState<string>("All");
 
-  const filteredProjects = activeFilter === "All" 
-    ? projectLocations 
-    : projectLocations.filter(p => p.type === activeFilter);
+  const filtered = activeFilter === "All"
+    ? projectLocations
+    : projectLocations.filter((p) => p.type === activeFilter);
 
-  const stats = {
-    states: new Set(projectLocations.map(p => p.state)).size,
-    projects: projectLocations.length,
-    hddCrossings: projectLocations.filter(p => p.type === "HDD").length,
-    pipelineKm: "100+",
-  };
+  const states = [...new Set(filtered.map((p) => p.state))].sort((a, b) => a.localeCompare(b));
 
   return (
     <>
-      <section className={`py-14 md:py-20 bg-charcoal ${className}`}>
-        <div className="container-wide max-w-6xl mx-auto px-4">
-          {/* Section Header */}
-          {showHeader && (
-            <motion.div 
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="text-center mb-10"
-            >
-              <span className="text-primary text-sm font-semibold tracking-wider uppercase mb-3 block">
-                Verified Project Portfolio
-              </span>
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">
-                Nationwide Project Coverage
-              </h2>
-              <p className="text-white/70 max-w-2xl mx-auto text-lg">
-                35+ verified major projects across Nigeria, extracted from official ECL Project Brochures.
-              </p>
-            </motion.div>
-          )}
-
-          {/* Stats Band */}
-          {showStats && (
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8"
-            >
-              <div className="bg-white/5 border border-white/10 rounded-xl p-4 text-center">
-                <div className="text-2xl md:text-3xl font-bold text-primary">{stats.states}</div>
-                <div className="text-white/60 text-sm">States + Ghana</div>
-              </div>
-              <div className="bg-white/5 border border-white/10 rounded-xl p-4 text-center">
-                <div className="text-2xl md:text-3xl font-bold text-primary">{stats.projects}</div>
-                <div className="text-white/60 text-sm">Major Projects</div>
-              </div>
-              <div className="bg-white/5 border border-white/10 rounded-xl p-4 text-center">
-                <div className="text-2xl md:text-3xl font-bold text-primary">{stats.hddCrossings}</div>
-                <div className="text-white/60 text-sm">HDD Crossings</div>
-              </div>
-              <div className="bg-white/5 border border-white/10 rounded-xl p-4 text-center">
-                <div className="text-2xl md:text-3xl font-bold text-primary">{stats.pipelineKm}</div>
-                <div className="text-white/60 text-sm">Km HDD Installed</div>
-              </div>
-            </motion.div>
-          )}
-
-          {/* Filter Tabs */}
-          {showFilters && (
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.15 }}
-              className="flex flex-wrap justify-center gap-2 mb-8"
-            >
-              {projectTypes.map((type) => (
+      <div className={`enk-container ${className}`}>
+        {showFilters && (
+          <div className="flex flex-wrap gap-2">
+            {projectTypes.map((type) => {
+              const active = activeFilter === type;
+              const count =
+                type === "All"
+                  ? projectLocations.length
+                  : projectLocations.filter((p) => p.type === type).length;
+              return (
                 <button
                   key={type}
+                  type="button"
+                  aria-pressed={active}
                   onClick={() => setActiveFilter(type)}
-                  className={`px-4 py-2 rounded-md text-[13px] font-medium transition-all duration-200 flex items-center gap-2 ${
-                    activeFilter === type
-                      ? "bg-primary text-white"
-                      : "bg-white/10 text-white/70 hover:bg-white/20 hover:text-white"
-                  }`}
+                  className="rounded-[8px] px-3.5 py-2 text-[13px] font-semibold transition-colors focus-ring"
+                  style={
+                    active
+                      ? { backgroundColor: "var(--enk-navy)", color: "#FFFFFF" }
+                      : { backgroundColor: "rgba(29,35,42,0.05)", color: "var(--enk-steel)" }
+                  }
                 >
-                  <Filter className="w-3.5 h-3.5" />
-                  {type}
-                  {type !== "All" && (
-                    <span className="bg-white/20 px-1.5 py-0.5 rounded text-xs">
-                      {projectLocations.filter(p => p.type === type).length}
-                    </span>
-                  )}
+                  {type} <span className="font-normal opacity-70">({count})</span>
                 </button>
-              ))}
-            </motion.div>
-          )}
+              );
+            })}
+          </div>
+        )}
 
-          {/* Map Container */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.98 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="relative bg-gradient-to-br from-charcoal-light to-charcoal rounded-2xl border border-white/10 overflow-hidden"
-            style={{ height: maxHeight }}
-          >
-            {/* Nigeria Map SVG Background */}
-            <div className="absolute inset-0 opacity-20">
-              <svg viewBox="0 0 100 100" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
-                {/* Simplified Nigeria outline */}
-                <path
-                  d="M15,35 L25,30 L35,28 L45,25 L55,22 L65,25 L75,30 L82,38 L85,48 L82,58 L78,68 L72,75 L65,82 L55,88 L45,90 L35,88 L28,82 L22,75 L18,65 L15,55 L14,45 Z"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="0.5"
-                  className="text-primary"
-                />
-                {/* Niger Delta region highlight */}
-                <path
-                  d="M35,75 L45,78 L55,82 L65,80 L70,75 L68,85 L55,90 L42,88 L35,82 Z"
-                  fill="currentColor"
-                  className="text-primary/30"
-                />
-                {/* Grid lines */}
-                {[20, 40, 60, 80].map(x => (
-                  <line key={`v${x}`} x1={x} y1="20" x2={x} y2="95" stroke="currentColor" strokeWidth="0.1" className="text-white/20" />
-                ))}
-                {[30, 50, 70, 90].map(y => (
-                  <line key={`h${y}`} x1="10" y1={y} x2="90" y2={y} stroke="currentColor" strokeWidth="0.1" className="text-white/20" />
-                ))}
-              </svg>
-            </div>
-
-            {/* Project Markers */}
-            <AnimatePresence>
-              {filteredProjects.map((project, index) => (
-                <motion.div
-                  key={project.id}
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0 }}
-                  transition={{ duration: 0.3, delay: index * 0.02 }}
-                  className="absolute cursor-pointer group"
-                  style={{
-                    left: `${project.coordinates.x}%`,
-                    top: `${project.coordinates.y}%`,
-                    transform: "translate(-50%, -50%)",
-                  }}
-                  onMouseEnter={() => setActiveProject(project)}
-                  onMouseLeave={() => setActiveProject(null)}
-                  onClick={() => setSelectedProject(project)}
-                >
-                  {/* Pulse ring */}
-                  <div className={`absolute inset-0 rounded-full ${typeColors[project.type]} animate-ping opacity-20`} 
-                       style={{ width: "20px", height: "20px", margin: "-4px" }} />
-                  
-                  {/* Marker dot */}
-                  <div className={`w-3 h-3 rounded-full ${typeColors[project.type]} border-2 border-white shadow-lg 
-                                  group-hover:scale-150 transition-transform duration-200`} />
-                  
-                  {/* Hover tooltip */}
-                  {activeProject?.id === project.id && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 8 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 z-50 pointer-events-none"
-                    >
-                      <div className="bg-charcoal-light border border-white/20 rounded-lg p-3 shadow-xl min-w-[220px] max-w-[280px]">
-                        <div className={`inline-block px-2 py-0.5 rounded text-xs font-medium text-white mb-2 ${typeColors[project.type]}`}>
-                          {project.type}
-                        </div>
-                        <h4 className="text-white font-semibold text-sm mb-1 line-clamp-2">{project.name}</h4>
-                        <p className="text-white/60 text-xs mb-2">{project.location}</p>
-                        <div className="flex items-center gap-2 text-xs text-white/50">
-                          <Building2 className="w-3 h-3" />
-                          <span className="truncate">{project.client}</span>
-                        </div>
-                        <div className="flex items-center gap-2 text-xs text-primary mt-1">
-                          <Ruler className="w-3 h-3" />
-                          <span>{project.metrics}</span>
-                        </div>
-                      </div>
-                    </motion.div>
-                  )}
-                </motion.div>
-              ))}
-            </AnimatePresence>
-
-            {/* Legend */}
-            <div className="absolute bottom-4 left-4 bg-charcoal-light/90 backdrop-blur border border-white/10 rounded-lg p-3">
-              <div className="text-white/50 text-xs mb-2 font-medium">Project Types</div>
-              <div className="grid grid-cols-2 gap-x-4 gap-y-1">
-                {Object.entries(typeColors).map(([type, color]) => (
-                  <div key={type} className="flex items-center gap-2">
-                    <div className={`w-2.5 h-2.5 rounded-full ${color}`} />
-                    <span className="text-white/70 text-xs">{type}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Instructions */}
-            <div className="absolute top-4 right-4 bg-charcoal-light/90 backdrop-blur border border-white/10 rounded-lg px-3 py-2">
-              <p className="text-white/50 text-xs">Click markers for details</p>
-            </div>
-          </motion.div>
-
-          {/* CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-center mt-8"
-          >
-            <Link to="/projects">
-              <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white">
-                View Full Project Portfolio
-                <ChevronRight className="w-4 h-4 ml-1" />
-              </Button>
-            </Link>
-          </motion.div>
+        <div className="mt-8 grid grid-cols-1 gap-x-10 gap-y-10 md:grid-cols-2">
+          {states.map((state) => {
+            const entries = filtered.filter((p) => p.state === state);
+            return (
+              <section key={state} aria-label={`Projects in ${state}`}>
+                <h3 className="text-[15px] font-bold text-[var(--enk-ink)]">
+                  {state} <span className="font-normal text-[var(--enk-meta)]">({entries.length})</span>
+                </h3>
+                <ul className="mt-2 divide-y divide-[var(--enk-rule)] border-t border-[var(--enk-rule)]">
+                  {entries.map((project) => (
+                    <li key={project.id}>
+                      <button
+                        type="button"
+                        onClick={() => setSelectedProject(project)}
+                        className="group flex w-full items-baseline justify-between gap-4 rounded-md py-3 text-left focus-ring"
+                      >
+                        <span>
+                          <span className="block text-[14px] font-semibold text-[var(--enk-ink)] group-hover:underline">
+                            {project.name}
+                          </span>
+                          <span className="mt-0.5 block text-[12.5px] text-[var(--enk-meta)]">
+                            {project.client} · {project.metrics}
+                          </span>
+                        </span>
+                        <span className="shrink-0 text-[12.5px] text-[var(--enk-meta)]">{project.year}</span>
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            );
+          })}
         </div>
-      </section>
+      </div>
 
-      {/* Project Detail Modal */}
+      {/* Detail dialog. Portals outside .enk, so Tailwind globals only. */}
       <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
-        <DialogContent className="bg-charcoal border-white/10 text-white max-w-2xl">
+        <DialogContent className="max-w-xl">
           {selectedProject && (
-            <div className="space-y-4">
-              {/* Header */}
-              <div className="flex items-start gap-4">
-                <div className={`p-3 rounded-xl ${typeColors[selectedProject.type]}`}>
-                  <MapPin className="w-6 h-6 text-white" />
-                </div>
-                <div className="flex-1">
-                  <div className={`inline-block px-2 py-0.5 rounded text-xs font-medium text-white mb-2 ${typeColors[selectedProject.type]}`}>
-                    {selectedProject.type}
-                  </div>
-                  <h3 className="text-xl font-bold text-white">{selectedProject.name}</h3>
-                  <p className="text-white/60">{selectedProject.location}</p>
-                </div>
-              </div>
-
-              {selectedProject.image ? (
-                <div className="relative h-48 rounded-xl overflow-hidden">
+            <div>
+              {selectedProject.image && (
+                <div className="overflow-hidden rounded-lg">
                   <EnhancedImage
                     src={selectedProject.image}
                     alt={selectedProject.name}
-                    wrapperClassName="h-full w-full"
-                    className="h-full w-full"
-                    hoverZoom
+                    wrapperClassName="h-48 w-full"
+                    className="h-48 w-full"
                     tone="natural"
                     fallbackLabel={selectedProject.name}
                   />
-                  <div className="absolute inset-0" style={{ background: "linear-gradient(0deg, oklch(0.13 0.03 255 / 0.8), transparent 55%)" }} />
-                  <div className="absolute bottom-3 left-3 right-3">
-                    <div className="flex items-center gap-4 text-sm">
-                      <div className="flex items-center gap-1.5 text-white/80">
-                        <Calendar className="w-4 h-4" />
-                        {selectedProject.year}
-                      </div>
-                      <div className="flex items-center gap-1.5 text-primary">
-                        <Ruler className="w-4 h-4" />
-                        {selectedProject.metrics}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ) : (
-                <div className="flex h-48 items-end rounded-xl border border-white/10 bg-white/5 p-4">
-                  <div className="flex items-center gap-4 text-sm">
-                    <div className="flex items-center gap-1.5 text-white/80">
-                      <Calendar className="w-4 h-4" />
-                      {selectedProject.year}
-                    </div>
-                    <div className="flex items-center gap-1.5 text-primary">
-                      <Ruler className="w-4 h-4" />
-                      {selectedProject.metrics}
-                    </div>
-                  </div>
                 </div>
               )}
-
-              {/* Details */}
-              <div className="space-y-3">
-                <div>
-                  <h4 className="text-white/50 text-sm mb-1">Description</h4>
-                  <p className="text-white/90">{selectedProject.description}</p>
+              <DialogTitle className="mt-4 text-lg font-bold text-foreground">
+                {selectedProject.name}
+              </DialogTitle>
+              <p className="mt-1 text-sm text-muted-foreground">
+                {selectedProject.location} · {selectedProject.type} · {selectedProject.year}
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-foreground">{selectedProject.description}</p>
+              <dl className="mt-4 space-y-2 border-t border-border pt-3 text-sm">
+                <div className="flex gap-2">
+                  <dt className="w-16 shrink-0 text-muted-foreground">Client</dt>
+                  <dd className="text-foreground">{selectedProject.client}</dd>
                 </div>
-                
-                <div>
-                  <h4 className="text-white/50 text-sm mb-1">Client</h4>
-                  <p className="text-white/90">{selectedProject.client}</p>
-                </div>
-
                 {selectedProject.scope && (
-                  <div>
-                    <h4 className="text-white/50 text-sm mb-1">Scope of Work</h4>
-                    <p className="text-white/90">{selectedProject.scope}</p>
+                  <div className="flex gap-2">
+                    <dt className="w-16 shrink-0 text-muted-foreground">Scope</dt>
+                    <dd className="text-foreground">{selectedProject.scope}</dd>
                   </div>
                 )}
-              </div>
-
-              {/* Actions */}
-              <div className="flex gap-3 pt-2">
-                {selectedProject.href && (
-                  <Link to={selectedProject.href} className="flex-1">
-                    <Button className="w-full bg-primary hover:bg-primary/90">
-                      View Project Details
-                      <ExternalLink className="w-4 h-4 ml-2" />
-                    </Button>
-                  </Link>
-                )}
-                <Link to="/contact" className="flex-1">
-                  <Button variant="outline" className="w-full border-white/20 text-white hover:bg-white/10">
-                    Contact Us
-                  </Button>
+              </dl>
+              {selectedProject.href && (
+                <Link
+                  to={selectedProject.href}
+                  className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-foreground underline underline-offset-4"
+                  onClick={() => setSelectedProject(null)}
+                >
+                  View the project record
                 </Link>
-              </div>
+              )}
             </div>
           )}
         </DialogContent>

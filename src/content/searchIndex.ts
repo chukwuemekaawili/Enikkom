@@ -26,7 +26,7 @@ const capabilityEntries: SearchEntry[] = capabilities.map((c) => ({
 const projectEntries: SearchEntry[] = proofRecords.map((p) => ({
   title: p.title,
   href: p.href,
-  description: `${p.location} — ${p.metricLabel}`,
+  description: `${p.location}, ${p.metricLabel}`,
   category: "Projects",
 }));
 
@@ -40,7 +40,7 @@ const certificationEntries: SearchEntry[] = certifications.map((c) => ({
 const achievementEntries: SearchEntry[] = proofMetrics.map((m) => ({
   title: m.label,
   href: m.href || "/projects",
-  description: `${m.value}${m.unit ? ` ${m.unit}` : ""} — ${m.note}`,
+  description: `${m.value}${m.unit ? ` ${m.unit}` : ""}, ${m.note}`,
   category: "Achievements",
 }));
 
@@ -62,13 +62,13 @@ const leadershipEntries: SearchEntry[] = [
   { name: "Uzoma Nwagboso", role: "Chief Financial Officer", highlight: "25+ years in Corporate Banking, Energy Finance, and O&G Project Management" },
   { name: "Mr. Chibuike Nwachukwu", role: "Executive Director", highlight: "15 years as Managing Director, operational backbone of Enikkom Group" },
   { name: "Teddy Allen", role: "General Manager, Drilling", highlight: "38 years global HDD expertise, diverse formations, direct pipe, and drilling systems" },
-  { name: "Idigbor Emeka, FCA", role: "Chief Accountant", highlight: "FCA-certified excellence in financial governance" },
-  { name: "Biodun Adefila", role: "Chairman, Board of Directors", highlight: "Driving strategic brand vision and governance excellence" },
+  { name: "Idigbor Emeka, FCA", role: "Chief Accountant", highlight: "FCA, financial governance and reporting" },
+  { name: "Biodun Adefila", role: "Chairman, Board of Directors", highlight: "Board governance and strategic direction" },
   { name: "Ken James", role: "Non-Executive Director", highlight: "40+ years shaping West Africa's energy infrastructure" },
 ].map((m) => ({
   title: m.name,
   href: "/about/leadership",
-  description: `${m.role} — ${m.highlight}`,
+  description: `${m.role}, ${m.highlight}`,
   category: "Leadership",
 }));
 
@@ -101,7 +101,7 @@ export const searchIndex: SearchEntry[] = [
   {
     title: "Home",
     href: "/",
-    description: "Enikkom Construction and HDDTEC — trenchless drilling, pipeline construction, dredging and piling, and production facilities across Nigeria's oil & gas sector.",
+    description: "Enikkom Construction and HDDTEC: trenchless drilling, pipeline construction, dredging and piling, and production facilities across Nigeria's oil & gas sector.",
     category: "Company",
   },
   {
@@ -135,7 +135,7 @@ export const searchIndex: SearchEntry[] = [
   {
     title: "About",
     href: "/about",
-    description: "Enikkom Construction (Pipeline Works) and HDDTEC (Trenchless Operations) — company history and local content.",
+    description: "Enikkom Construction (Pipeline Works) and HDDTEC (Trenchless Operations): company history and local content.",
     category: "Company",
   },
   ...statementEntries,

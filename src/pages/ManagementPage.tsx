@@ -74,7 +74,7 @@ const defaultLeadership: TeamMember[] = [
   {
     name: "Mr. Chibuike Nwachukwu",
     role: "Executive Director",
-    bio: "A Nigerian administrator with 23 years of experience, including 15 years as Managing Director at Enikkom Group Limited. Holds an MSc in Peace & Conflict Studies and bachelor's degrees in Mathematics and Peace & Conflict Studies. Brings extensive expertise in administrative management across local and international organisations, driving operational efficiency, strategic leadership, and organisational excellence at Enikkom.",
+    bio: "A Nigerian administrator with 23 years of experience, including 15 years as Managing Director at Enikkom Group Limited. Holds an MSc in Peace & Conflict Studies and bachelor's degrees in Mathematics and Peace & Conflict Studies. Brings extensive administrative management experience across local and international organisations.",
     expertise: ["Administrative Management", "Operational Efficiency", "Strategic Leadership"],
     photo: managementImages.photos.chibuikeNwachukwu,
     highlight: "15 years as Managing Director, operational backbone of Enikkom Group",
@@ -95,7 +95,7 @@ const defaultLeadership: TeamMember[] = [
     bio: "A Fellow of the Institute of Chartered Accountants of Nigeria (ICAN) with over 20 years of experience in financial strategy, control, and corporate governance. Previously with UAC Restaurants Limited, bringing rigorous financial management, audit expertise, and governance standards to Enikkom.",
     expertise: ["Financial Strategy", "Corporate Governance", "Audit & Compliance"],
     photo: managementImages.photos.idigborEmeka,
-    highlight: "FCA-certified excellence in financial governance",
+    highlight: "FCA, financial governance and reporting",
     category: "management",
   },
 ];
@@ -107,7 +107,7 @@ const defaultBoardOfDirectors: TeamMember[] = [
     bio: "Currently Managing Director of Spice360, a leading brand consultancy. Formerly Chief Operating Officer at SO&U Limited, one of Nigeria's foremost advertising agencies. Over 20 years of experience in brand management, marketing strategy, and corporate governance, bringing invaluable strategic insight to Enikkom's growth.",
     expertise: ["Brand Management", "Corporate Governance", "Marketing Strategy"],
     photo: managementImages.photos.biodunAdefila,
-    highlight: "Driving strategic brand vision and governance excellence",
+    highlight: "Board governance and strategic direction",
     category: "board",
   },
   {
@@ -184,7 +184,7 @@ const TeamMemberCard = ({
 
     <div className="flex flex-1 flex-col px-4 pb-4 pt-3">
       <h3 className="text-[15px] font-semibold text-[var(--enk-ink)] md:text-[16px]">{member.name}</h3>
-      <p className="mt-1 text-[13px] font-semibold text-[var(--enk-accent-on-dark)]">
+      <p className="mt-1 text-[13px] font-semibold text-[var(--enk-steel)]">
         {member.role}
       </p>
       <p className="mt-2.5 flex-1 text-[12.5px] leading-6 text-[var(--enk-steel)] line-clamp-3 md:line-clamp-4">{member.bio}</p>
@@ -409,12 +409,12 @@ export default function ManagementPage() {
     <Layout>
       <SEO
         title="Leadership & Management Team – Enikkom"
-        description="Meet Enikkom's leadership and board — decades of pipeline, HDD, finance, and energy expertise led by founder Engr. Edward Amene."
+        description="Meet Enikkom's leadership and board: decades of pipeline, HDD, finance, and energy expertise led by founder Engr. Edward Amene."
         canonical="/about/leadership"
       />
       <Hero
         title={heroContent.title || "Management Team"}
-        subtitle={heroContent.subtitle || "Experienced leaders driving excellence in engineering and construction across Nigeria and West Africa."}
+        subtitle={heroContent.subtitle || "The team responsible for engineering and construction delivery across Nigeria and West Africa."}
         badge="Personnel Register"
         backgroundImage={heroContent.backgroundImage || managementImages.hero}
         size="default"
@@ -435,7 +435,7 @@ export default function ManagementPage() {
               }
               intro={
                 <EditableText
-                  value={leadershipContent.description || "A team of industry veterans with deep expertise in HDD, pipeline construction, marine works, and project management, committed to delivering excellence on every project."}
+                  value={leadershipContent.description || "Industry veterans in HDD, pipeline construction, marine works, and project management."}
                   pageSlug="management"
                   sectionKey="leadership"
                   field="description"
@@ -474,7 +474,7 @@ export default function ManagementPage() {
               }
               intro={
                 <EditableText
-                  value={boardContent.description || "Providing strategic guidance and governance to ensure Enikkom's continued growth and excellence."}
+                  value={boardContent.description || "Strategic guidance and governance for the group."}
                   pageSlug="management"
                   sectionKey="board"
                   field="description"
@@ -508,8 +508,8 @@ export default function ManagementPage() {
 
       <CTABand
         headline="Put a project in front of this team"
-        primaryCTA={{ label: "Discuss Project Scope", href: "/contact" }}
-        secondaryCTA={{ label: "View Project Records", href: "/projects" }}
+        primaryCTA={{ label: "Discuss a project scope", href: "/contact" }}
+        secondaryCTA={{ label: "View projects", href: "/projects" }}
       />
     </Layout>
   );

@@ -88,7 +88,7 @@ const capabilityData: Record<string, CapabilityData> = {
     title: "Pipelines & Flowlines Construction",
     description: "Complete pipeline construction services from fabrication to installation and testing for oil, gas, and water transmission systems.",
     overview: [
-      "We deliver complete onshore and offshore pipeline and flowline construction — procurement, fabrication, welding, coating, installation, testing and commissioning — across land, swamp and shore-approach terrain. Our delivered record includes gas transmission and distribution networks such as the 24\" × 21.5 km Calabar line and the multi-diameter NIPCO distribution network.",
+      "We deliver complete onshore and offshore pipeline and flowline construction, from procurement and fabrication through welding, coating, installation, testing and commissioning, across land, swamp and shore-approach terrain. Our delivered record includes gas transmission and distribution networks such as the 24\" × 21.5 km Calabar line and the multi-diameter NIPCO distribution network.",
       "Work is executed to API and ASME codes with 100% radiographic weld inspection. As an EPCI contractor we integrate pipeline scopes with our own HDD, dredging and facilities capability, reducing interface risk on complex corridors.",
     ],
     icon: PipetteIcon,
@@ -173,7 +173,7 @@ const capabilityData: Record<string, CapabilityData> = {
     title: "Production Facilities Construction",
     description: "Integrated production systems covering flow station construction, wellhead upgrades, manifold inspection, plant turnaround maintenance, and pigging operations.",
     overview: [
-      "Enikkom constructs and maintains production facilities — flow stations, wellhead installations, manifolds and associated structures — and delivers plant turnaround maintenance, well upgrades, valve servicing and pigging operations. Recent facilities scopes include the NIPCO Ibafo depot phases and the Gbaran Phase 3b UZU CPF upgrade for SPDC.",
+      "Enikkom constructs and maintains production facilities (flow stations, wellhead installations, manifolds and associated structures) and delivers plant turnaround maintenance, well upgrades, valve servicing and pigging operations. Recent facilities scopes include the NIPCO Ibafo depot phases and the Gbaran Phase 3b UZU CPF upgrade for SPDC.",
       "Facilities work is executed to API and ASME codes, with integrated pre-commissioning and commissioning support so systems are handed over ready to operate.",
     ],
     icon: Factory,
@@ -215,7 +215,7 @@ const capabilityData: Record<string, CapabilityData> = {
     title: "Project Management & Support",
     description: "Integrated planning, execution support, field coordination, and project controls for complex HDD, pipeline, dredging, and facilities packages from mobilisation through close-out.",
     overview: [
-      "Every Enikkom scope is delivered under integrated project controls — planning, procurement tracking, field coordination, QA/QC and HSE assurance — from mobilisation through close-out. As a single-point EPCI partner we have managed record-setting HDD, pipeline and marine programmes for operators including Shell, NNPC, NPDC, Saipem and Dangote.",
+      "Every Enikkom scope is delivered under integrated project controls: planning, procurement tracking, field coordination, QA/QC and HSE assurance, from mobilisation through close-out. As a single-point EPCI partner we have managed record-setting HDD, pipeline and marine programmes for operators including Shell, NNPC, NPDC, Saipem and Dangote.",
       "Our controls emphasise early feasibility, risk management and disciplined documentation, coordinating multiple work fronts under the realities of Nigerian terrain and schedule pressure. Early engagement lets us de-risk crossing design, access and schedule before commitments are locked in.",
     ],
     icon: Briefcase,
@@ -300,7 +300,7 @@ export default function CapabilityDetailPage() {
   if (!capability) {
     return (
       <Layout>
-        <div className="section-padding container-wide text-center">
+        <div className="enk-section enk-container text-center">
           <h1 className="enk-display text-[clamp(1.8rem,4vw,2.6rem)] mb-4">Capability Not Found</h1>
           <p className="text-muted-foreground">The requested capability page does not exist.</p>
         </div>
@@ -333,7 +333,7 @@ export default function CapabilityDetailPage() {
         title={title}
         subtitle={subtitle}
         badge="Capability Statement"
-        primaryCTA={{ label: "Discuss Project Scope", href: "/contact" }}
+        primaryCTA={{ label: "Discuss a project scope", href: "/contact" }}
         backgroundImage={heroImage}
         size="default"
       />
@@ -356,7 +356,7 @@ export default function CapabilityDetailPage() {
       </section>
 
       {/* Process & Method */}
-      <section className="enk-section" style={{ borderTop: "1px solid var(--enk-line-dark)" }}>
+      <section className="enk-section" style={{ borderTop: "1px solid var(--enk-rule)" }}>
         <div className="enk-container">
           <SectionHeading
             kicker="Method"
@@ -378,7 +378,7 @@ export default function CapabilityDetailPage() {
                 className="flex flex-col gap-2.5 p-5"
                 style={{ backgroundColor: "var(--enk-record-surface)" }}
               >
-                <span className="text-[13px] font-bold text-[var(--enk-accent-on-dark)]">
+                <span className="text-[13px] font-bold text-[var(--enk-meta)]">
                   Step {index + 1}
                 </span>
                 <h4 className="text-[15px] font-semibold text-[var(--enk-ink)]">
@@ -404,7 +404,7 @@ export default function CapabilityDetailPage() {
       </section>
 
       {/* Standards & Compliance */}
-      <section className="enk-section" style={{ borderTop: "1px solid var(--enk-line-dark)" }}>
+      <section className="enk-section" style={{ borderTop: "1px solid var(--enk-rule)" }}>
         <div className="enk-container">
           <SectionHeading
             kicker="Compliance"
@@ -435,7 +435,7 @@ export default function CapabilityDetailPage() {
       </section>
 
       {/* Equipment Readiness */}
-      <section className="enk-section" style={{ borderTop: "1px solid var(--enk-line-dark)" }}>
+      <section className="enk-section" style={{ borderTop: "1px solid var(--enk-rule)" }}>
         <div className="enk-container">
           <SectionHeading
             kicker="Readiness"
@@ -483,7 +483,7 @@ export default function CapabilityDetailPage() {
 
       {/* Related Projects */}
       {capability.relatedProjects.length > 0 && (
-        <section className="enk-section" style={{ borderTop: "1px solid var(--enk-line-dark)" }}>
+        <section className="enk-section" style={{ borderTop: "1px solid var(--enk-rule)" }}>
           <div className="enk-container">
             <SectionHeading kicker="Proof" title="Related projects" onDark />
             <div className="mt-12 grid md:grid-cols-3 gap-6">
@@ -506,7 +506,7 @@ export default function CapabilityDetailPage() {
       <CTABand
         headline={`Ready to discuss your ${capability.title.split(" (")[0]} requirements?`}
         subhead="Send your alignment, drawings or RFP and our technical team will assess feasibility, risk and approach, with no obligation."
-        secondaryCTA={{ label: "View Project Records", href: "/projects" }}
+        secondaryCTA={{ label: "View projects", href: "/projects" }}
       />
     </Layout>
   );

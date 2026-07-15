@@ -117,7 +117,7 @@ export default function HSEQualityPage() {
         canonical="/hse-quality"
       />
       <Hero
-        title={heroContent.title || "HSE & Quality Excellence"}
+        title={heroContent.title || "Health, safety and quality"}
         subtitle={heroContent.subtitle || "Safety First. Quality Always. A firm commitment to zero incidents and high standards guides everything we do."}
         badge="QHSE Credentials"
         primaryCTA={{ label: heroContent.primaryBtnText || "Contact Us", href: heroContent.primaryBtnLink || "/contact" }}
@@ -153,7 +153,7 @@ export default function HSEQualityPage() {
                 className="flex flex-col gap-2.5 p-5"
                 style={{ backgroundColor: "var(--enk-record-surface)" }}
               >
-                <span className="text-[13px] font-bold text-[var(--enk-accent-on-dark)]">
+                <span className="text-[13px] font-bold text-[var(--enk-meta)]">
                   {step.level}
                 </span>
                 <h4 className="text-[15px] font-semibold text-[var(--enk-ink)]">{step.title}</h4>
@@ -320,7 +320,7 @@ export default function HSEQualityPage() {
         headline="Request the QHSE prequalification pack"
         subhead="Certificates, policies, and safety statistics compiled for tender and vendor-registration review."
         primaryCTA={{ label: "Contact Us", href: "/contact" }}
-        secondaryCTA={{ label: "View Project Records", href: "/projects" }}
+        secondaryCTA={{ label: "View projects", href: "/projects" }}
       />
     </Layout>
   );

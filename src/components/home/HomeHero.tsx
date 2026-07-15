@@ -45,14 +45,14 @@ export function HomeHero() {
           <div
             className="absolute inset-0"
             aria-hidden="true"
-            style={{ background: "linear-gradient(to top, rgba(9,14,20,0.45) 0%, rgba(9,14,20,0.12) 45%, rgba(9,14,20,0.2) 100%)" }}
+            style={{ background: "linear-gradient(to top, rgba(11,19,30,0.45) 0%, rgba(11,19,30,0.12) 45%, rgba(11,19,30,0.2) 100%)" }}
           />
 
           {/* Overlay panel — Shell's rounded translucent card */}
           <div className="relative flex min-h-[420px] items-center px-4 py-12 md:min-h-[500px] md:px-10 md:py-16 lg:min-h-[540px]">
             <div
               className="max-w-xl rounded-[12px] p-6 md:p-8"
-              style={{ backgroundColor: "rgba(13,18,24,0.72)" }}
+              style={{ backgroundColor: "rgba(16,27,42,0.78)" }}
             >
               <h1 id="hero-heading" className="text-white">
                 Where Nigeria's toughest crossings get built
@@ -72,7 +72,7 @@ export function HomeHero() {
                   <DialogTrigger asChild>
                     <button
                       type="button"
-                      aria-label="Watch video — capabilities reel, 1 minute 24 seconds"
+                      aria-label="Watch video: capabilities reel, 1 minute 24 seconds"
                       className="group inline-flex items-center gap-2 text-[14px] font-bold text-white/90 transition-colors hover:text-white focus-ring rounded-md"
                     >
                       <Play className="h-4 w-4 fill-current" aria-hidden="true" />
@@ -80,7 +80,7 @@ export function HomeHero() {
                     </button>
                   </DialogTrigger>
                   <DialogContent className="z-[200] max-w-4xl border-0 bg-transparent p-0 shadow-none">
-                    <DialogTitle className="sr-only">Enikkom field footage — capabilities reel</DialogTitle>
+                    <DialogTitle className="sr-only">Enikkom field footage: capabilities reel</DialogTitle>
                     <div
                       className="relative overflow-hidden rounded-[12px]"
                       style={{ paddingBottom: "56.25%" }}

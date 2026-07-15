@@ -208,7 +208,7 @@ export default function ResourcesPage() {
           <div className="mx-auto mt-8 max-w-4xl">
             <FieldFigure
               figNo="VID 01"
-              caption='OML34 Continuous HDD — 10" × 12km project review'
+              caption='OML34 continuous HDD, 10" × 12km project review'
               location="Utorogun, Delta State"
               ratio="16/9"
             >
@@ -305,7 +305,7 @@ export default function ResourcesPage() {
         headline="Need a document that isn't listed?"
         subhead="Prequalification packs, equipment schedules and certificates are compiled on request for tender review."
         primaryCTA={{ label: "Request Document Pack", href: "/contact" }}
-        secondaryCTA={{ label: "View Project Records", href: "/projects" }}
+        secondaryCTA={{ label: "View projects", href: "/projects" }}
       />
     </Layout>
   );

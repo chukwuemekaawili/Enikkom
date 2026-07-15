@@ -181,20 +181,20 @@ export const proofMetrics: ProofMetric[] = [
   {
     label: "Years of field delivery",
     value: experienceYears,
-    note: "Established Lagos, 1995 — operating nationwide",
+    note: "Established in Lagos in 1995, operating nationwide",
   },
   {
     label: "Longest single HDD drill",
     value: "3.1",
     unit: "km",
-    note: 'Atlas Cove–Mosimi, 16" — Africa record (2016)',
+    note: 'Atlas Cove–Mosimi, 16", Africa record (2016)',
     href: "/projects/atlas-cove-mosimi",
   },
   {
     label: "Longest continuous HDD",
     value: "12",
     unit: "km",
-    note: '10" OML34 drive for NPDC — Nigeria record (2021)',
+    note: '10" OML34 drive for NPDC, Nigeria record (2021)',
     href: "/projects/oml34-chdd",
   },
   {
@@ -247,7 +247,7 @@ export const capabilities: Capability[] = [
     key: "pipelines",
     code: "D-02",
     name: "Pipeline & Flowline Construction",
-    proof: "Transmission and distribution pipeline installed, welded, coated and tied-in — 100+ km delivered on record.",
+    proof: "Transmission and distribution pipeline installed, welded, coated and tied-in: 100+ km delivered on record.",
     scope: "Onshore, swamp and shore-approach corridors for oil, gas and water.",
     href: "/capabilities/pipelines-flowlines",
     image: siteImageSelections.home.capabilityCards.pipelines,

@@ -732,7 +732,7 @@ export default function ProjectDetailPage() {
       <Layout>
         <section className="enk-section">
           <div className="enk-container max-w-xl text-center">
-            <RecordEyebrow align="center">Record Not Found</RecordEyebrow>
+            <RecordEyebrow align="center">Record not found</RecordEyebrow>
             <h1 className="enk-display mt-4 text-[clamp(1.8rem,4vw,2.6rem)] text-[var(--enk-ink)]">
               No record on file
             </h1>
@@ -799,7 +799,7 @@ export default function ProjectDetailPage() {
       {/* ── Project dossier header — document cover sheet, not a marketing hero ── */}
       <section
         aria-label="Project record header"
-        style={{ backgroundColor: "var(--enk-navy)", borderBottom: "1px solid var(--enk-rule)" }}
+        style={{ backgroundColor: "var(--enk-bg-muted)", borderBottom: "1px solid var(--enk-rule)" }}
       >
         <div className="enk-container grid items-start gap-10 py-12 md:py-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,480px)]">
           <div>
@@ -812,7 +812,7 @@ export default function ProjectDetailPage() {
             </Link>
 
             <div className="mt-5">
-              <RecordEyebrow refNo={year}>Project Record</RecordEyebrow>
+              <RecordEyebrow refNo={year}>Project record</RecordEyebrow>
             </div>
             <h1 className="enk-display mt-4 max-w-2xl text-[clamp(1.8rem,3.8vw,2.7rem)] text-[var(--enk-on-dark)]">
               {title}
@@ -851,7 +851,7 @@ export default function ProjectDetailPage() {
           <FieldFigure
             className="lg:sticky lg:top-24"
             src={heroImage}
-            alt={`Field documentation — ${title}`}
+            alt={`Field documentation: ${title}`}
             figNo="Plate 01"
             caption="Site documentation from the project record"
             date={year}
@@ -909,7 +909,7 @@ export default function ProjectDetailPage() {
                       className="flex items-baseline gap-3 border-b py-2.5"
                       style={{ borderColor: "var(--enk-rule)" }}
                     >
-                      <span className="enk-mono shrink-0 text-[11px] font-semibold text-[var(--enk-accent-on-dark)]">
+                      <span className="shrink-0 text-[11px] font-semibold text-[var(--enk-meta)]">
                         {String(index + 1).padStart(2, "0")}
                       </span>
                       <span className="text-[14px] leading-snug text-[var(--enk-steel)] md:text-[15px]">
@@ -970,7 +970,7 @@ export default function ProjectDetailPage() {
                     "{clientQuote.text}"
                   </blockquote>
                   <figcaption className="mt-4 border-t border-[var(--enk-rule)] pt-3.5">
-                    <p className="text-[13.5px] font-bold text-[var(--enk-accent-on-dark)]">
+                    <p className="text-[13.5px] font-bold text-[var(--enk-ink)]">
                       {clientQuote.author}
                     </p>
                     <p className="mt-1 text-[12.5px] text-[var(--enk-blueprint)]">
@@ -1027,7 +1027,7 @@ export default function ProjectDetailPage() {
         <section className="enk-section" style={{ backgroundColor: "var(--enk-bg-muted)" }}>
           <div className="enk-container">
             <div className="mb-8 max-w-2xl">
-              <RecordEyebrow>Client Correspondence</RecordEyebrow>
+              <RecordEyebrow>Client feedback</RecordEyebrow>
               <h2 className="enk-display mt-3 text-[clamp(1.3rem,2.3vw,1.65rem)] text-[var(--enk-ink)]">
                 Filed client feedback
               </h2>
@@ -1044,7 +1044,7 @@ export default function ProjectDetailPage() {
                 "{projectTestimonial.quote}"
               </blockquote>
               <figcaption className="mt-5 border-t border-[var(--enk-rule)] pt-4">
-                <p className="text-[13.5px] font-bold text-[var(--enk-accent-on-dark)]">
+                <p className="text-[13.5px] font-bold text-[var(--enk-ink)]">
                   {projectTestimonial.client}
                 </p>
                 {projectTestimonial.project && (
@@ -1058,12 +1058,12 @@ export default function ProjectDetailPage() {
         </section>
       )}
 
-      {/* ── Field documentation — photographic record ── */}
+      {/* ── Field documentation: photographic record ── */}
       {gallery.length > 0 && (
         <section className="enk-section" style={{ backgroundColor: "var(--enk-bg-muted)" }}>
           <div className="enk-container">
             <div className="mb-8 max-w-2xl">
-              <RecordEyebrow refNo={`${gallery.length} PLATES`}>Field Documentation</RecordEyebrow>
+              <RecordEyebrow refNo={`${gallery.length} photos`}>Site photography</RecordEyebrow>
               <h2 className="enk-display mt-3 text-[clamp(1.3rem,2.3vw,1.65rem)] text-[var(--enk-ink)]">
                 Photographic record
               </h2>
@@ -1152,7 +1152,7 @@ export default function ProjectDetailPage() {
         <section className="enk-section">
           <div className="enk-container">
             <div className="mb-8 max-w-2xl">
-              <RecordEyebrow>Related Records</RecordEyebrow>
+              <RecordEyebrow>Related projects</RecordEyebrow>
               <h2 className="enk-display mt-3 text-[clamp(1.3rem,2.3vw,1.65rem)] text-[var(--enk-ink)]">
                 Other records in this discipline
               </h2>
@@ -1177,9 +1177,9 @@ export default function ProjectDetailPage() {
 
       <CTABand
         headline="Discuss a similar scope"
-        subhead="Send crossing or pipeline details for a technical response — scope review, method statement input, and budget pricing from the engineering team."
+        subhead="Send crossing or pipeline details for a technical response: scope review, method statement input, and budget pricing from the engineering team."
         primaryCTA={{ label: "Request Project Credentials", href: "/contact" }}
-        secondaryCTA={{ label: "View Full Project Register", href: "/projects" }}
+        secondaryCTA={{ label: "View all projects", href: "/projects" }}
       />
     </Layout>
   );

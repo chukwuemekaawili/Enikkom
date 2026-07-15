@@ -59,7 +59,7 @@ const jointVentures = [
 const technicalPartners = [
   {
     name: "American Augers Inc.",
-    role: "HDD Rigs & Thrust Boring — U.S.A.",
+    role: "HDD Rigs & Thrust Boring (USA)",
     description:
       "The world's leading manufacturer and supplier of auger boring machines and directional drills, with pullback force up to 1,100,000 lb (500 tons). American Augers manufactures the auger boring machines, directional drills, and fluid/mud systems used in the trenchless market.",
     highlights: [
@@ -90,7 +90,7 @@ const technicalPartners = [
   },
   {
     name: "Mears Group, Inc.",
-    role: "Marine HDD & Shore Approaches — U.S.A.",
+    role: "Marine HDD & Shore Approaches (USA)",
     description:
       "Founded in 1970, an engineering and construction company of over 500 employees and one of the largest HDD contractors in the world, specialising in marine HDD shore approaches and water-to-water crossings.",
     highlights: [
@@ -169,7 +169,7 @@ export default function PartnersPage() {
     <Layout>
       <SEO
         title="Partners & Strategic Alliances – Enikkom"
-        description="Enikkom's technical partnerships and joint ventures — HDDThailand (HDDTEC) and Ocean Marine Solutions (PIEJV) — operating Nigeria's largest in-country HDD fleet."
+        description="Enikkom's technical partnerships and joint ventures: HDDThailand (HDDTEC) and Ocean Marine Solutions (PIEJV), operating Nigeria's largest in-country HDD fleet."
         canonical="/partners"
       />
       <Hero
@@ -328,7 +328,7 @@ export default function PartnersPage() {
                 className="flex flex-col gap-2 p-5"
                 style={{ backgroundColor: "var(--enk-record-surface)" }}
               >
-                <span className="enk-mono text-[11px] font-semibold tracking-[0.1em] text-[var(--enk-accent-on-dark)]">
+                <span className="text-[12px] font-semibold text-[var(--enk-meta)]">
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 <h4 className="text-[15px] font-semibold text-[var(--enk-ink)]">{benefit.title}</h4>

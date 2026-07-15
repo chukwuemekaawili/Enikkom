@@ -91,7 +91,7 @@ export default function CareersPage() {
                 className="flex flex-col gap-2 p-5"
                 style={{ backgroundColor: "var(--enk-record-surface)" }}
               >
-                <span className="enk-mono text-[11px] font-semibold tracking-[0.1em] text-[var(--enk-accent-on-dark)]">
+                <span className="text-[12px] font-semibold text-[var(--enk-meta)]">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <h4 className="text-[15px] font-semibold text-[var(--enk-ink)]">{b.title}</h4>
@@ -152,7 +152,7 @@ export default function CareersPage() {
                 </p>
                 <a
                   href="mailto:careers@enikkom.com"
-                  className="enk-mono mt-1.5 inline-block text-[15px] font-semibold text-[var(--enk-accent-on-dark)] transition-colors hover:text-[var(--enk-accent-primary-on-dark)] focus-ring rounded-sm"
+                  className="mt-1.5 inline-block text-[15px] font-semibold text-[var(--enk-accent-on-dark)] transition-colors hover:text-[var(--enk-accent-primary-on-dark)] focus-ring rounded-sm"
                 >
                   careers@enikkom.com
                 </a>
@@ -188,7 +188,7 @@ export default function CareersPage() {
               />
               <p className="mt-5 text-[14px] leading-7 text-[var(--enk-on-dark-muted)]">
                 <EditableText
-                  value={cultureContent.description1 || "At Enikkom, we believe our people are our greatest asset. We foster a culture of continuous learning, innovation, and safety excellence that empowers every team member."}
+                  value={cultureContent.description1 || "Our people build careers on real projects. Training is continuous, supervision is experienced, and safety is non-negotiable."}
                   pageSlug="careers"
                   sectionKey="culture"
                   field="description1"
@@ -197,7 +197,7 @@ export default function CareersPage() {
               </p>
               <p className="mt-4 text-[14px] leading-7 text-[var(--enk-on-dark-muted)]">
                 <EditableText
-                  value={cultureContent.description2 || "Our workforce of over 500 professionals brings together expertise from across Nigeria and beyond, united by a shared commitment to delivering quality infrastructure."}
+                  value={cultureContent.description2 || "More than 500 professionals work across our engineering, operations and support teams."}
                   pageSlug="careers"
                   sectionKey="culture"
                   field="description2"
@@ -241,10 +241,10 @@ export default function CareersPage() {
 
       <CTABand
         headline="Ready to Join Us?"
-        subhead="Send your CV and discipline of interest — the HR team responds when a matching role opens."
+        subhead="Send your CV and discipline of interest. The HR team responds when a matching role opens."
         eyebrow="Personnel"
         primaryCTA={{ label: "Submit Your CV", href: "mailto:careers@enikkom.com" }}
-        secondaryCTA={{ label: "View Project Records", href: "/projects" }}
+        secondaryCTA={{ label: "View projects", href: "/projects" }}
       />
     </Layout>
   );

@@ -52,14 +52,14 @@ export default function AboutPage() {
     <Layout>
       <SEO
         title="About Enikkom – Engineering Contractor for HDD, Pipelines & Marine Civils"
-        description="Indigenous Nigerian EPCI contractor since 1995 and pioneer of HDD in Nigeria — 30+ years delivering pipelines, dredging, and marine civil works."
+        description="Indigenous Nigerian EPCI contractor since 1995 and pioneer of HDD in Nigeria, with 30+ years delivering pipelines, dredging, and marine civil works."
         canonical="/about"
       />
       <Hero
         title={heroContent.title || "About Enikkom Group"}
         subtitle={heroContent.subtitle || "An indigenous EPCI company providing engineering, procurement, fabrication, construction, and installation services for onshore and offshore pipelines and facilities across Nigeria since 1995."}
         badge={heroContent.badge || "Company File · Est. 1995"}
-        primaryCTA={{ label: heroContent.primaryBtnText || "Discuss Project Scope", href: heroContent.primaryBtnLink || "/contact" }}
+        primaryCTA={{ label: heroContent.primaryBtnText || "Discuss a project scope", href: heroContent.primaryBtnLink || "/contact" }}
         backgroundImage={heroContent.backgroundImage || aboutImages.hero}
         size="default"
       />
@@ -103,7 +103,7 @@ export default function AboutPage() {
               src={aboutImages.introSideField}
               alt="Enikkom field team reviewing live pipeline operations"
               figNo="FIG 02"
-              caption="Field leadership — technical control on site"
+              caption="Field leadership: technical control on site"
               ratio="4/3"
             />
             <FieldFigure
@@ -146,7 +146,7 @@ export default function AboutPage() {
         <div className="enk-container">
           <SectionHeading
             kicker="Purpose & Standards"
-            title={<>Mission, Vision &amp; Corporate Excellence</>}
+            title={<>Mission, vision &amp; values</>}
             intro="The mission, vision, and standards that guide how the Enikkom Group operates and grows."
             onDark
             align="left"
@@ -165,7 +165,7 @@ export default function AboutPage() {
 
           {/* Core values — PRICE register */}
           <div className="mt-12">
-            <RecordEyebrow>Core Values</RecordEyebrow>
+            <RecordEyebrow>Core values</RecordEyebrow>
             <h3 className="enk-display mt-4 text-[clamp(1.2rem,2.2vw,1.5rem)] text-[var(--enk-ink)]">
               The PRICE of Excellence
             </h3>
@@ -176,7 +176,7 @@ export default function AboutPage() {
                   className="flex flex-col gap-2 p-5"
                   style={{ backgroundColor: "var(--enk-record-surface)" }}
                 >
-                  <span className="enk-mono text-[11px] font-semibold tracking-[0.1em] text-[var(--enk-accent-on-dark)]">
+                  <span className="text-[12px] font-semibold text-[var(--enk-meta)]">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                   <h4 className="text-[15px] font-semibold text-[var(--enk-ink)]">{value.title}</h4>
@@ -214,7 +214,7 @@ export default function AboutPage() {
           <SectionHeading
             kicker="Company History"
             title={<>{experienceYears} Years on Record</>}
-            intro="From founding in 1995 to West Africa's leading HDD and pipeline contractor — the register of company milestones."
+            intro="Company milestones, from the 1995 founding to the present register of works."
             align="left"
           />
 
@@ -228,7 +228,7 @@ export default function AboutPage() {
                   backgroundColor: index % 2 === 1 ? "var(--enk-ledger-row-alt)" : undefined,
                 }}
               >
-                <span className="enk-mono px-1 text-[13px] font-semibold text-[var(--enk-accent-on-dark)] sm:pl-3">
+                <span className="enk-mono px-1 text-[13px] font-semibold text-[var(--enk-ink)] sm:pl-3">
                   {milestone.year}
                 </span>
                 <div className="px-1 sm:pr-3">
@@ -271,8 +271,8 @@ export default function AboutPage() {
       {/* CTA */}
       <CTABand
         headline="Partner with Enikkom"
-        primaryCTA={{ label: "Discuss Project Scope", href: "/contact" }}
-        secondaryCTA={{ label: "View Project Records", href: "/projects" }}
+        primaryCTA={{ label: "Discuss a project scope", href: "/contact" }}
+        secondaryCTA={{ label: "View projects", href: "/projects" }}
       />
     </Layout>
   );

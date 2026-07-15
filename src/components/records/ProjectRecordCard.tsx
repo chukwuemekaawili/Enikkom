@@ -38,7 +38,7 @@ export function ProjectRecordCard({
 }: ProjectRecordCardProps) {
   const summary = [metricLabel, metric && !title.includes(metric) ? metric : null]
     .filter(Boolean)
-    .join(" — ");
+    .join(" Â· ");
   const meta = [client, location, year].filter(Boolean).join(" · ");
   const hasDetail = Boolean(href);
 

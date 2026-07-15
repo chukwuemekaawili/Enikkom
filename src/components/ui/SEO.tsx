@@ -28,7 +28,7 @@ export default function SEO({
 }: SEOProps) {
   const siteName = "Enikkom Construction";
   const defaultDescription =
-    "Enikkom Construction — Nigerian contractor specialising in HDD trenchless crossings, pipeline construction, dredging, piling, and marine civil works.";
+    "Enikkom Construction, a Nigerian contractor specialising in HDD trenchless crossings, pipeline construction, dredging, piling, and marine civil works.";
 
   const currentTitle = title
     ? title.includes("Enikkom")

@@ -206,10 +206,10 @@ const registerTypeCounts = completedProjects.reduce<Record<string, number>>((acc
 /** Benchmarks held — same four records the page has always claimed,
     with provenance drawn from the register entries. */
 const benchmarks = [
-  { label: "Longest single HDD drill", value: "3.1", unit: "km", note: "Atlas Cove–Mosimi, 16\" — Africa record (2016)" },
-  { label: "Longest continuous HDD", value: "12", unit: "km", note: "OML34, 10\" — Nigeria record (2021)" },
-  { label: "Largest pipeline crossing", value: "40", unit: "in", note: "Yenagoa HDD, Bayelsa State — Nigeria record (2010)" },
-  { label: "Deepest HDD crossing", value: "80", unit: "m", note: "Ekiadolor valley, 36\" — Africa record (2016)" },
+  { label: "Longest single HDD drill", value: "3.1", unit: "km", note: "Atlas Cove–Mosimi, 16\", Africa record (2016)" },
+  { label: "Longest continuous HDD", value: "12", unit: "km", note: "OML34, 10\", Nigeria record (2021)" },
+  { label: "Largest pipeline crossing", value: "40", unit: "in", note: "Yenagoa HDD, Bayelsa State, Nigeria record (2010)" },
+  { label: "Deepest HDD crossing", value: "80", unit: "m", note: "Ekiadolor valley, 36\", Africa record (2016)" },
 ];
 
 /** Archive filter bar: overline field label + squared mono controls.
@@ -244,9 +244,9 @@ function RegisterFilter({
               style={
                 isActive
                   ? {
-                      borderColor: "var(--enk-rule-accent)",
-                      color: "var(--enk-accent-primary-on-dark)",
-                      backgroundColor: "var(--enk-status-record-bg)",
+                      borderColor: "var(--enk-navy)",
+                      color: "#FFFFFF",
+                      backgroundColor: "var(--enk-navy)",
                     }
                   : { borderColor: "var(--enk-rule)", color: "var(--enk-meta)" }
               }
@@ -312,24 +312,24 @@ export default function ProjectsPage() {
     <Layout>
       <SEO
         title="Project Records – HDD, Pipeline & Marine Works Archive – Enikkom"
-        description="Documented archive of Enikkom's completed crossings, pipeline works, dredging, piling and marine civil projects across Nigeria — including Africa's longest single HDD drill and Nigeria's longest continuous HDD."
+        description="Documented archive of Enikkom's completed crossings, pipeline works, dredging, piling and marine civil projects across Nigeria, including Africa's longest single HDD drill and Nigeria's longest continuous HDD."
         canonical="/projects"
       />
 
       {/* Archive header — document cover sheet, not a marketing hero */}
       <section
         aria-label="Project records archive"
-        style={{ backgroundColor: "var(--enk-navy)", borderBottom: "1px solid var(--enk-rule)" }}
+        style={{ backgroundColor: "var(--enk-bg-muted)", borderBottom: "1px solid var(--enk-rule)" }}
       >
         <div className="enk-container grid items-center gap-10 py-14 md:py-18 lg:grid-cols-[minmax(0,1fr)_minmax(0,440px)]">
           <div>
-            <RecordEyebrow refNo={`${completedProjects.length} ENTRIES`}>Project Records</RecordEyebrow>
+            <RecordEyebrow refNo={`${completedProjects.length} entries`}>Projects</RecordEyebrow>
             <h1 className="enk-display mt-5 max-w-xl text-[clamp(1.9rem,4.2vw,2.9rem)] text-[var(--enk-on-dark)]">
               {heroContent.title || "Completed works on record"}
             </h1>
             <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-[var(--enk-on-dark-muted)] md:text-[16px]">
               {heroContent.subtitle ||
-                "Completed crossings, pipeline works, dredging, piling and marine civil projects — a documented archive of Enikkom's field delivery across Nigerian oil & gas and infrastructure corridors."}
+                "Completed crossings, pipeline works, dredging, piling and marine civil projects delivered across Nigeria since 1995."}
             </p>
 
             <RecordMetaRow
@@ -410,7 +410,7 @@ export default function ProjectsPage() {
       <section className="enk-section">
         <div className="enk-container">
           <div className="mb-8 max-w-2xl">
-            <RecordEyebrow>Selected Records</RecordEyebrow>
+            <RecordEyebrow>Selected projects</RecordEyebrow>
             <h2 className="enk-display mt-4 text-[clamp(1.5rem,2.8vw,2rem)] text-[var(--enk-ink)]">
               Documented project files
             </h2>
@@ -450,7 +450,7 @@ export default function ProjectsPage() {
       <section className="enk-section scroll-mt-24" id="record" style={{ backgroundColor: "var(--enk-bg-muted)" }}>
         <div className="enk-container">
           <div className="mb-8 max-w-2xl">
-            <RecordEyebrow refNo={registerPeriod}>Full Register</RecordEyebrow>
+            <RecordEyebrow refNo={registerPeriod}>Full register</RecordEyebrow>
             <h2 className="enk-display mt-4 text-[clamp(1.5rem,2.8vw,2rem)] text-[var(--enk-ink)]">
               Completed project register
             </h2>
@@ -537,7 +537,7 @@ export default function ProjectsPage() {
       <section className="enk-section scroll-mt-24" id="gallery">
         <div className="enk-container">
           <div className="mb-8 max-w-2xl">
-            <RecordEyebrow>Field Documentation</RecordEyebrow>
+            <RecordEyebrow>Site photography</RecordEyebrow>
             <h2 className="enk-display mt-4 text-[clamp(1.5rem,2.8vw,2rem)] text-[var(--enk-ink)]">
               <EditableText
                 value={content.gallery?.title || "Photographic record"}
@@ -576,7 +576,7 @@ export default function ProjectsPage() {
       <section className="enk-section scroll-mt-24" id="testimonials" style={{ backgroundColor: "var(--enk-bg-muted)" }}>
         <div className="enk-container">
           <div className="mb-8 max-w-2xl">
-            <RecordEyebrow>Client Correspondence</RecordEyebrow>
+            <RecordEyebrow>Client feedback</RecordEyebrow>
             <h2 className="enk-display mt-4 text-[clamp(1.5rem,2.8vw,2rem)] text-[var(--enk-ink)]">
               On record from clients
             </h2>
@@ -600,7 +600,7 @@ export default function ProjectsPage() {
                   "{t.quote}"
                 </blockquote>
                 <figcaption className="mt-4 border-t border-[var(--enk-rule)] pt-3.5">
-                  <p className="text-[13.5px] font-bold text-[var(--enk-accent-on-dark)]">{t.client}</p>
+                  <p className="text-[13.5px] font-bold text-[var(--enk-ink)]">{t.client}</p>
                   <p className="mt-1 text-[12.5px] text-[var(--enk-blueprint)]">{t.project}</p>
                 </figcaption>
               </figure>
@@ -634,8 +634,8 @@ export default function ProjectsPage() {
 
       <CTABand
         headline={content.cta?.headline || "Discuss your crossing or pipeline scope"}
-        subhead={content.cta?.subhead || "Send project details for a technical response — scope, method statement input, and budget pricing from the engineering team."}
-        secondaryCTA={{ label: "View Capabilities", href: "/capabilities" }}
+        subhead={content.cta?.subhead || "Send project details for a technical response: scope, method statement input, and budget pricing from the engineering team."}
+        secondaryCTA={{ label: "What we do", href: "/capabilities" }}
       />
     </Layout>
   );

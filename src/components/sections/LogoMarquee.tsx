@@ -76,7 +76,7 @@ export function LogoMarquee({ showTitle = true }: LogoMarqueeProps) {
                   />
                 </div>
               ) : (
-                <span className="enk-mono text-[11px] font-semibold text-[var(--enk-accent-on-dark)]">
+                <span className="text-[11px] font-semibold text-[var(--enk-meta)]">
                   {partner.badge}
                 </span>
               )}

@@ -17,7 +17,7 @@ export function RecentOps() {
       <div className="enk-container">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-2xl">
-            <RecordEyebrow refNo="LIVE">Field Operations Log</RecordEyebrow>
+            <RecordEyebrow refNo="2026">Recent site activity</RecordEyebrow>
             <h2 id="recent-heading" className="enk-display mt-4 text-[clamp(1.5rem,2.8vw,2rem)] text-[var(--enk-ink)]">
               Current works on active fronts
             </h2>
