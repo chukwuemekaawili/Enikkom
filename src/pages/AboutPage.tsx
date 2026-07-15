@@ -59,7 +59,6 @@ export default function AboutPage() {
         title={heroContent.title || "About Enikkom Group"}
         subtitle={heroContent.subtitle || "An indigenous EPCI company providing engineering, procurement, fabrication, construction, and installation services for onshore and offshore pipelines and facilities across Nigeria since 1995."}
         badge={heroContent.badge || "Company File · Est. 1995"}
-        primaryCTA={{ label: heroContent.primaryBtnText || "Contact us", href: heroContent.primaryBtnLink || "/contact" }}
         backgroundImage={heroContent.backgroundImage || aboutImages.hero}
         size="default"
       />

@@ -6,8 +6,6 @@ import { SectionHeading } from "@/components/home/SectionHeading";
 import { usePageContent } from "@/hooks/useSiteSettings";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { FieldFigure, RecordMetric } from "@/components/records";
-import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
 import {
   equipmentSourceNote,
   hddRigSpecs,
@@ -358,10 +356,6 @@ export default function EquipmentPage() {
                 />
               </p>
             </div>
-            <Link to="/contact" className="enk-btn enk-btn--gold shrink-0">
-              Contact us
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </Link>
           </div>
         </div>
       </section>

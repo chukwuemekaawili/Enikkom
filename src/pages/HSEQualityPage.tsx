@@ -120,7 +120,6 @@ export default function HSEQualityPage() {
         title={heroContent.title || "Health, safety and quality"}
         subtitle={heroContent.subtitle || "Safety First. Quality Always. A firm commitment to zero incidents and high standards guides everything we do."}
         badge="QHSE Credentials"
-        primaryCTA={{ label: heroContent.primaryBtnText || "Contact us", href: heroContent.primaryBtnLink || "/contact" }}
         backgroundImage={heroContent.backgroundImage || hseImages.hero}
         size="default"
       />

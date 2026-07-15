@@ -1007,12 +1007,6 @@ export default function ProjectDetailPage() {
                   <dd className="enk-mono text-right text-[var(--enk-on-dark)]">{discipline}</dd>
                 </div>
               </dl>
-
-              <div className="mt-6 flex flex-col gap-3">
-                <Link to="/contact" className="enk-btn enk-btn--gold w-full justify-center">
-                  Contact us
-                </Link>
-              </div>
             </div>
           </aside>
         </div>

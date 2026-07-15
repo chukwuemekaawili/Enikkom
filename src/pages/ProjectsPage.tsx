@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { RecentOps } from "@/components/home/RecentOps";
 import { Layout } from "@/components/layout";
 import SEO from "@/components/ui/SEO";
@@ -343,9 +343,6 @@ export default function ProjectsPage() {
             />
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <Link to="/contact" className="enk-btn enk-btn--gold">
-                Contact us
-              </Link>
               <a
                 href="#record"
                 className="inline-flex min-h-[44px] items-center gap-2 px-2 text-[14px] font-bold text-[var(--enk-accent-on-dark)] transition-colors hover:text-[var(--enk-accent-primary-on-dark)] focus-ring rounded-md"

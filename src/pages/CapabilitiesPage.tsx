@@ -90,7 +90,6 @@ export default function CapabilitiesPage() {
         title={heroContent.title || "Our Capabilities"}
         subtitle={heroContent.subtitle || "Engineering services for Nigeria's most demanding infrastructure projects, from trenchless crossings to marine civil works."}
         badge="Capability Statements"
-        primaryCTA={{ label: heroContent.primaryBtnText || "Contact us", href: heroContent.primaryBtnLink || "/contact" }}
         backgroundImage={heroContent.backgroundImage || capabilityImages.hero}
         size="default"
       />
