@@ -53,7 +53,7 @@ export default function EquipmentPage() {
         title={heroContent.title || "Technical Capacity & Equipment Fleet"}
         subtitle={heroContent.subtitle || "Document-backed technical capacity across Enikkom's HDD, thrust boring, microtunneling, marine, and support fleets, with model-specific engineering ratings for every major asset class."}
         badge={heroContent.badge || "Equipment Register"}
-        primaryCTA={{ label: heroContent.primaryBtnText || "View HDD Fleet", href: heroContent.primaryBtnLink || "#hdd" }}
+        primaryCTA={{ label: heroContent.primaryBtnText || "View HDD fleet", href: heroContent.primaryBtnLink || "#hdd" }}
         backgroundImage={heroContent.backgroundImage || equipmentImages.hero}
         size="default"
       />
@@ -359,7 +359,7 @@ export default function EquipmentPage() {
               </p>
             </div>
             <Link to="/contact" className="enk-btn enk-btn--gold shrink-0">
-              Request Equipment Schedule
+              Contact us
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </div>
@@ -369,8 +369,8 @@ export default function EquipmentPage() {
       <CTABand
         headline={content.cta?.headline || "Need Equipment for Your Project?"}
         subhead={content.cta?.subhead || "Access West Africa's largest HDD fleet. Get availability and specifications within 24 hours."}
-        primaryCTA={{ label: "Check Equipment Availability", href: "/contact" }}
-        secondaryCTA={{ label: "View HDD Capability Statement", href: "/capabilities/hdd" }}
+        primaryCTA={{ label: "Contact us", href: "/contact" }}
+        secondaryCTA={{ label: "View HDD capabilities", href: "/capabilities/hdd" }}
       />
     </Layout>
   );

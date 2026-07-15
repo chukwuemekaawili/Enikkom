@@ -302,7 +302,7 @@ export default function ResourcesPage() {
       <CTABand
         headline="Need a document that isn't listed?"
         subhead="Prequalification packs, equipment schedules and certificates are compiled on request for tender review."
-        primaryCTA={{ label: "Request Document Pack", href: "/contact" }}
+        primaryCTA={{ label: "Contact us", href: "/contact" }}
         secondaryCTA={{ label: "View projects", href: "/projects" }}
       />
     </Layout>

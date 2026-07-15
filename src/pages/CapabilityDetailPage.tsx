@@ -333,7 +333,7 @@ export default function CapabilityDetailPage() {
         title={title}
         subtitle={subtitle}
         badge="Capability Statement"
-        primaryCTA={{ label: "Discuss a project scope", href: "/contact" }}
+        primaryCTA={{ label: "Contact us", href: "/contact" }}
         backgroundImage={heroImage}
         size="default"
       />

@@ -51,7 +51,7 @@ export default function CareersPage() {
         badge="Personnel File"
         backgroundImage={heroContent.backgroundImage || careersImages.hero}
         size="default"
-        primaryCTA={{ label: "View Recruitment Disciplines", href: "#openings" }}
+        primaryCTA={{ label: "View open roles", href: "#openings" }}
       />
 
       {/* Benefits */}
@@ -239,7 +239,7 @@ export default function CareersPage() {
         headline="Ready to Join Us?"
         subhead="Send your CV and discipline of interest. The HR team responds when a matching role opens."
         eyebrow="Personnel"
-        primaryCTA={{ label: "Submit Your CV", href: "mailto:careers@enikkom.com" }}
+        primaryCTA={{ label: "Submit your CV", href: "mailto:careers@enikkom.com" }}
         secondaryCTA={{ label: "View projects", href: "/projects" }}
       />
     </Layout>

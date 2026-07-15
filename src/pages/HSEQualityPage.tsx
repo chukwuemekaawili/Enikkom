@@ -120,7 +120,7 @@ export default function HSEQualityPage() {
         title={heroContent.title || "Health, safety and quality"}
         subtitle={heroContent.subtitle || "Safety First. Quality Always. A firm commitment to zero incidents and high standards guides everything we do."}
         badge="QHSE Credentials"
-        primaryCTA={{ label: heroContent.primaryBtnText || "Contact Us", href: heroContent.primaryBtnLink || "/contact" }}
+        primaryCTA={{ label: heroContent.primaryBtnText || "Contact us", href: heroContent.primaryBtnLink || "/contact" }}
         backgroundImage={heroContent.backgroundImage || hseImages.hero}
         size="default"
       />
@@ -312,7 +312,7 @@ export default function HSEQualityPage() {
       <CTABand
         headline="Request the QHSE prequalification pack"
         subhead="Certificates, policies, and safety statistics compiled for tender and vendor-registration review."
-        primaryCTA={{ label: "Contact Us", href: "/contact" }}
+        primaryCTA={{ label: "Contact us", href: "/contact" }}
         secondaryCTA={{ label: "View projects", href: "/projects" }}
       />
     </Layout>

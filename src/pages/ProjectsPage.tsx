@@ -344,7 +344,7 @@ export default function ProjectsPage() {
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               <Link to="/contact" className="enk-btn enk-btn--gold">
-                Discuss Project Scope
+                Contact us
               </Link>
               <a
                 href="#record"
@@ -631,7 +631,7 @@ export default function ProjectsPage() {
       </section>
 
       <CTABand
-        headline={content.cta?.headline || "Discuss your crossing or pipeline scope"}
+        headline={content.cta?.headline || "Have a crossing or pipeline project?"}
         subhead={content.cta?.subhead || "Send project details for a technical response: scope, method statement input, and budget pricing from the engineering team."}
         secondaryCTA={{ label: "What we do", href: "/capabilities" }}
       />

@@ -22,7 +22,7 @@ const routes: {
     icon: Mail,
     title: "Send an RFQ or tender",
     body: "Alignment sheets, drawings or bid documents go straight to the engineering team.",
-    action: "Send enquiry",
+    action: "Contact us",
     href: "/contact",
   },
   {

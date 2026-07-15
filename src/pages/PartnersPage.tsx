@@ -362,8 +362,8 @@ export default function PartnersPage() {
       <CTABand
         headline="Partner With Us"
         subhead="Interested in strategic collaboration? Put a proposal in front of the leadership team."
-        primaryCTA={{ label: "Discuss Partnership Scope", href: "/contact" }}
-        secondaryCTA={{ label: "View Capability Statements", href: "/capabilities" }}
+        primaryCTA={{ label: "Contact us", href: "/contact" }}
+        secondaryCTA={{ label: "View capabilities", href: "/capabilities" }}
       />
     </Layout>
   );

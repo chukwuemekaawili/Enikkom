@@ -505,7 +505,7 @@ export default function ManagementPage() {
 
       <CTABand
         headline="Put a project in front of this team"
-        primaryCTA={{ label: "Discuss a project scope", href: "/contact" }}
+        primaryCTA={{ label: "Contact us", href: "/contact" }}
         secondaryCTA={{ label: "View projects", href: "/projects" }}
       />
     </Layout>

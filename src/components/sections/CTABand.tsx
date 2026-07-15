@@ -39,9 +39,9 @@ interface CTABandProps {
  * `eyebrow` is accepted for compatibility but no longer rendered.
  */
 export function CTABand({
-  headline = "Put a project scope in front of the engineering team",
+  headline = "Bring your project to our engineering team",
   subhead = "Send alignment sheets, an RFQ or a tender enquiry for a technical response: feasibility, method statement input, and budget pricing.",
-  primaryCTA = { label: "Discuss a project scope", href: "/contact" },
+  primaryCTA = { label: "Contact us", href: "/contact" },
   secondaryCTA,
 }: CTABandProps) {
   return (

@@ -90,7 +90,7 @@ export default function CapabilitiesPage() {
         title={heroContent.title || "Our Capabilities"}
         subtitle={heroContent.subtitle || "Engineering services for Nigeria's most demanding infrastructure projects, from trenchless crossings to marine civil works."}
         badge="Capability Statements"
-        primaryCTA={{ label: heroContent.primaryBtnText || "Discuss a project scope", href: heroContent.primaryBtnLink || "/contact" }}
+        primaryCTA={{ label: heroContent.primaryBtnText || "Contact us", href: heroContent.primaryBtnLink || "/contact" }}
         backgroundImage={heroContent.backgroundImage || capabilityImages.hero}
         size="default"
       />
@@ -144,7 +144,7 @@ export default function CapabilitiesPage() {
 
       {/* CTA */}
       <CTABand
-        headline={content.cta?.headline || "Ready to Discuss Your Requirements?"}
+        headline={content.cta?.headline || "Ready to start your project?"}
         subhead={content.cta?.subhead || "Our engineering team can scope your project and provide a detailed proposal within 48 hours."}
         secondaryCTA={{ label: "View projects", href: "/projects" }}
       />

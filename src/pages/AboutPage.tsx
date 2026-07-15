@@ -59,7 +59,7 @@ export default function AboutPage() {
         title={heroContent.title || "About Enikkom Group"}
         subtitle={heroContent.subtitle || "An indigenous EPCI company providing engineering, procurement, fabrication, construction, and installation services for onshore and offshore pipelines and facilities across Nigeria since 1995."}
         badge={heroContent.badge || "Company File · Est. 1995"}
-        primaryCTA={{ label: heroContent.primaryBtnText || "Discuss a project scope", href: heroContent.primaryBtnLink || "/contact" }}
+        primaryCTA={{ label: heroContent.primaryBtnText || "Contact us", href: heroContent.primaryBtnLink || "/contact" }}
         backgroundImage={heroContent.backgroundImage || aboutImages.hero}
         size="default"
       />
@@ -243,7 +243,7 @@ export default function AboutPage() {
               />
             </div>
             <Link to="/about/leadership" className="enk-btn enk-btn--gold shrink-0 whitespace-nowrap">
-              View Leadership Team
+              View leadership team
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </div>
@@ -259,7 +259,7 @@ export default function AboutPage() {
       {/* CTA */}
       <CTABand
         headline="Partner with Enikkom"
-        primaryCTA={{ label: "Discuss a project scope", href: "/contact" }}
+        primaryCTA={{ label: "Contact us", href: "/contact" }}
         secondaryCTA={{ label: "View projects", href: "/projects" }}
       />
     </Layout>

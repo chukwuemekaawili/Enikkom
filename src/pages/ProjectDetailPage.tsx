@@ -1010,7 +1010,7 @@ export default function ProjectDetailPage() {
 
               <div className="mt-6 flex flex-col gap-3">
                 <Link to="/contact" className="enk-btn enk-btn--gold w-full justify-center">
-                  Request Project Credentials
+                  Contact us
                 </Link>
               </div>
             </div>
@@ -1171,9 +1171,9 @@ export default function ProjectDetailPage() {
       )}
 
       <CTABand
-        headline="Discuss a similar scope"
+        headline="Have a similar project?"
         subhead="Send crossing or pipeline details for a technical response: scope review, method statement input, and budget pricing from the engineering team."
-        primaryCTA={{ label: "Request Project Credentials", href: "/contact" }}
+        primaryCTA={{ label: "Contact us", href: "/contact" }}
         secondaryCTA={{ label: "View all projects", href: "/projects" }}
       />
     </Layout>

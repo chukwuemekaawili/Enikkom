@@ -48,11 +48,11 @@ const NotFound = () => {
 
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
               <Link to="/" className="enk-btn enk-btn--gold">
-                Return to Front Page
+                Return home
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
               <Link to="/projects" className="enk-btn enk-btn--outline">
-                View Project Records
+                View projects
               </Link>
             </div>
 
