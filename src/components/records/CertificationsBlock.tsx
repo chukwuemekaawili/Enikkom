@@ -22,24 +22,11 @@ export function CertificationsBlock({
   if (variant === "inline") {
     return (
       <div className="flex flex-wrap items-center justify-center gap-2.5">
-        {certifications.map((cert) =>
-          cert.file ? (
-            <a
-              key={cert.code}
-              href={cert.file}
-              target="_blank"
-              rel="noopener noreferrer"
-              title={`${cert.name}: view document`}
-              className="focus-ring rounded-[2px] transition-opacity hover:opacity-80"
-            >
-              <RecordStatusStamp tone="qhse">{cert.code}</RecordStatusStamp>
-            </a>
-          ) : (
-            <RecordStatusStamp key={cert.code} tone="neutral">
-              {cert.code}
-            </RecordStatusStamp>
-          ),
-        )}
+        {certifications.map((cert) => (
+          <RecordStatusStamp key={cert.code} tone="neutral">
+            {cert.code}
+          </RecordStatusStamp>
+        ))}
       </div>
     );
   }
@@ -68,9 +55,6 @@ export function CertificationsBlock({
               docType="Certificate"
               title={cert.code}
               description={cert.name}
-              href={cert.file}
-              actionLabel="View certificate"
-              stamp={cert.file ? { label: "On File", tone: "qhse" } : { label: "On Request", tone: "neutral" }}
             />
           ))}
         </div>

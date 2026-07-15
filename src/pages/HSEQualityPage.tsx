@@ -273,7 +273,6 @@ export default function HSEQualityPage() {
                 description={policy.description}
                 href={policy.href}
                 actionLabel="View policy"
-                stamp={{ label: "On File", tone: "neutral" }}
               />
             ))}
           </div>
