@@ -315,6 +315,48 @@ const baseProjectData: Record<string, ProjectData> = {
       { src: workersPpe, alt: "PPE Compliance", caption: "Full PPE enforcement" },
     ]
   },
+  // Presented as Phase 1 of a phased crossing per the client's confirmation
+  // (2026-07-16): the HDD and Direct Pipe works documented in the source tech
+  // overview are a completed phase; a subsequent 48" crossing phase remains in
+  // engineering per the Q1-2026 experience register.
+  "ob3-river-niger": {
+    title: "OB3 River Niger 48\" Crossing, Phase 1 (HDD + Direct Pipe)",
+    client: "NGIC",
+    location: "River Niger, Nigeria",
+    year: "2020-2021",
+    capabilities: ["HDD", "Microtunnelling", "Pipeline"],
+    overview: "Phase 1 of the 48-inch, 1.835km OB3 gas pipeline crossing under the River Niger, delivered with a combination of HDD and Direct Pipe Installation (DPI) - one of the most technically complex crossings attempted in Nigeria. Subsequent phases of the crossing are in engineering.",
+    challenge: "The OB3 gas pipeline required crossing the River Niger with a 48-inch diameter pipe through ground conditions that proved harder than any prior geotechnical survey had captured, including loose formations that washed away drilling lubricant and stalled the tunnelling machine mid-drive.",
+    solution: "Enikkom mobilized 500T and 300T HDD rigs in Q4 2020, drilling the pilot hole with an intersect at KP16 and reaming to 36 inches, then deployed Direct Pipe Installation with MTS Germany from Q1 2021, jacking the pre-welded 48-inch pipe in 300m spools. When loose ground stalled the drive, the team installed 60-inch casing, grouted the unstable sections, ballasted the tunnelling head to near-zero buoyancy, and re-established the geotechnical profile with ground-penetrating radar before resuming.",
+    results: [
+      { label: "Design Length", value: "1.835 km" },
+      { label: "Pipe Diameter", value: "48 inches" },
+      { label: "Technology", value: "HDD + DPI" },
+      { label: "Equipment", value: "MTS Germany" },
+    ],
+    hseNotes: "Complex marine safety protocols implemented for River Niger operations. Cofferdam construction required specialized safety measures throughout the technically complex crossing.",
+    heroImage: hddNightPanorama,
+    scope: [
+      "Geotechnical investigation and design",
+      "HDD pilot bore with intersect at KP16",
+      "Reaming operations to 36\"",
+      "Cofferdam construction and dewatering",
+      "Direct Pipe Installation (DPI) in 300m spools",
+      "60\" casing installation and ground grouting",
+      "Real-time trajectory monitoring"
+    ],
+    youtubeId: "mkx-naHfJx0",
+    gallery: [
+      { src: hddNightPanorama, alt: "OB3 Night Operations", caption: "24-hour operations at River Niger" },
+      { src: hddEquipmentFleet4, alt: "DPI Equipment", caption: "Direct Pipe Installation equipment" },
+      { src: catExcavator, alt: "Cofferdam Construction", caption: "Cofferdam excavation works" },
+      { src: craneOperations, alt: "Heavy Lifts", caption: "Heavy equipment mobilization" },
+      { src: multiCraneOps, alt: "48\" Pipe Handling", caption: "48-inch pipe string handling" },
+      { src: drillingOps4, alt: "Drilling Operations", caption: "Pilot bore operations" },
+      { src: scopeOperations, alt: "Control Center", caption: "Real-time monitoring center" },
+      { src: teamSafety, alt: "HSE Standards", caption: "Safety briefings and compliance" },
+    ]
+  },
   "ekiadolor-deep-valley": {
     title: "Ekiadolor Deep Valley Crossing",
     client: "Zakhem / NGC",
@@ -584,6 +626,15 @@ const relatedProjects = [
     tags: ["HDD"],
     href: "/projects/atlas-cove-mosimi",
     thumbnail: getProjectImage("atlas-cove-mosimi", "projectMap"),
+  },
+  {
+    title: "OB3 River Niger 48\"",
+    location: "River Niger",
+    metric: "48\"",
+    metricLabel: "HDD + DPI, Phase 1",
+    tags: ["HDD", "Microtunnelling"],
+    href: "/projects/ob3-river-niger",
+    thumbnail: getProjectImage("ob3-river-niger", "related"),
   },
   {
     title: "Ekiadolor Deep Valley",

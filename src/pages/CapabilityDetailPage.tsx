@@ -150,6 +150,15 @@ const capabilityData: Record<string, CapabilityData> = {
     ],
     relatedProjects: [
       {
+        title: "OB3 River Niger Crossing",
+        location: "River Niger",
+        metric: "48\"",
+        metricLabel: "Sheet piling & cofferdam",
+        tags: ["Piling", "Dredging"],
+        href: "/projects/ob3-river-niger",
+        thumbnail: getProjectImage("ob3-river-niger", "related"),
+      },
+      {
         title: "OML34 Dredging & Cofferdam",
         location: "Delta State",
         metric: "12 km",

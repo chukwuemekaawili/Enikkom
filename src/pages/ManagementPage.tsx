@@ -63,6 +63,17 @@ const defaultLeadership: TeamMember[] = [
     category: "management",
   },
   {
+    // Reinstated on the client's direct confirmation (2026-07-16) — profile
+    // supplied by the company; not present in the older registration docs.
+    name: "Uzoma Nwagboso",
+    role: "Chief Financial Officer",
+    bio: "Uzoma Nwagboso (Uzo) is a versatile and results-driven Senior Strategic Finance & Energy Executive with over 25 years of experience spanning Corporate Banking, Sustainable Energy Finance, and Oil & Gas Project Management. Combining a technical foundation in Engineering with specialized Finance expertise, he offers a unique ability to bridge the gap between complex engineering operations and strategic financial stewardship.\n\nWith core competencies in Strategic Finance and Energy Infrastructure, he has a proven track record of managing project finance portfolios exceeding $750M, spearheading massive digital transformations (SAP S/4HANA, SAGE), and delivering significant cost savings through business process optimization. His expertise lies in navigating the financial complexities of the Nigerian energy landscape, including Enterprise Risk Management, EPC Project Finance, LNG production, and International Trade Finance.\n\nA registered engineer (COREN), he holds a B.Eng. in Mechanical Engineering and both an MBA and MSc in Finance and Banking. His global perspective is furthered by executive education at Harvard Business School, where he completed the Finance for Senior Executives program.",
+    expertise: ["Strategic Finance", "Energy Infrastructure", "Project Management"],
+    photo: managementImages.photos.uzomaNwagboso,
+    highlight: "25+ years in Corporate Banking, Energy Finance, and O&G Project Management",
+    category: "management",
+  },
+  {
     name: "Mr. Chibuike Nwachukwu",
     role: "Executive Director",
     bio: "A Nigerian administrator with 23 years of experience, including 15 years as Managing Director at Enikkom Group Limited. Holds an MSc in Peace & Conflict Studies and bachelor's degrees in Mathematics and Peace & Conflict Studies. Brings extensive administrative management experience across local and international organisations.",

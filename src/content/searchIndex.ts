@@ -59,6 +59,7 @@ const leadershipEntries: SearchEntry[] = [
   { name: "Engr. Saleem Ahmad Khan", role: "Chief Technical Officer", highlight: "30+ years of trenchless technology expertise across Nigeria and international markets" },
   { name: "Mr. Francis Anatogu", role: "Chief Growth & Transformation Officer", highlight: "Cambridge MBA | ex-Schlumberger, Shell, Accenture, Deloitte, driving Enikkom's growth agenda" },
   { name: "Adekunle Adewole, PhD", role: "Chief Operations & Strategy Officer", highlight: "Oxford post-doctoral | INSEAD | PhD Strategic Management | ex-CEO Livingtrust Mortgage Bank" },
+  { name: "Uzoma Nwagboso", role: "Chief Financial Officer", highlight: "25+ years in Corporate Banking, Energy Finance, and O&G Project Management" },
   { name: "Mr. Chibuike Nwachukwu", role: "Executive Director", highlight: "15 years as Managing Director, operational backbone of Enikkom Group" },
   { name: "Teddy Allen", role: "General Manager, Drilling", highlight: "38 years global HDD expertise, diverse formations, direct pipe, and drilling systems" },
   { name: "Idigbor Emeka, FCA", role: "Chief Accountant", highlight: "FCA, financial governance and reporting" },

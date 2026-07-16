@@ -111,6 +111,16 @@ const defaultProjects = [
     year: "2009",
   },
   {
+    title: "OB3 River Niger 48\" Crossing, Phase 1",
+    location: "River Niger, Nigeria",
+    metric: "48\"",
+    metricLabel: "HDD + Direct Pipe, Phase 1",
+    tags: ["HDD"],
+    href: "/projects/ob3-river-niger",
+    thumbnail: getProjectImage("ob3-river-niger", "projectList"),
+    year: "2021",
+  },
+  {
     title: "Ekiadolor Deep Valley Crossing",
     location: "Edo State, Nigeria",
     metric: "36\" × 1.3km",

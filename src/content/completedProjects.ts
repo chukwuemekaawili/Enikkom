@@ -3,6 +3,8 @@ export const completedProjects = [
   // HDD Projects
   { year: "2024", client: "MORPOL / SPDC", project: "16\" & 6\" Nun River Dual HDD Crossing", scope: "Dual HDD crossing under Nun River", location: "Niger Delta", type: "HDD", size: "16\" & 6\"", length: "Dual" },
   { year: "2021", client: "NPDC / ND Western", project: "OML34 Continuous HDD, 10\" × 12km", scope: "Nigeria's longest CHDD, record breaking", location: "Utorogun, Delta State", type: "HDD", size: "10\"", length: "12km" },
+  // Phase 1 of the phased OB3 crossing (client-confirmed); later phases in engineering.
+  { year: "2021", client: "NGIC", project: "OB3 River Niger 48\" Crossing, Phase 1", scope: "HDD pilot, reaming and Direct Pipe works", location: "River Niger, Nigeria", type: "HDD", size: "48\"", length: "N/A" },
   { year: "2021", client: "ECL / SPDC", project: "Escravos Shore Approach Installation", scope: "Shore crossing pipeline installation", location: "Delta State", type: "Shore Approach", size: "N/A", length: "1.8km" },
   { year: "2015", client: "NNPC / Zakhem", project: "Escravos-Lagos Pipeline System Phase II", scope: "Multiple HDD sections, gas pipeline", location: "Lagos / Ogun State", type: "HDD", size: "36\"", length: "7.2km" },
   { year: "2016", client: "NNPC / PPMC", project: "Atlas Cove-Mosimi 16\" × 3.1km", scope: "Africa's longest single drill, record", location: "Arepo / Imagbon, Ogun State", type: "HDD", size: "16\"", length: "3.1km" },
