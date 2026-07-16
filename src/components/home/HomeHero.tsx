@@ -15,6 +15,8 @@ export function HomeHero() {
   const bgVideoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
+    // Respect reduced motion: leave the poster frame instead of autoplaying.
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     bgVideoRef.current?.play().catch(() => {});
   }, []);
 
@@ -27,10 +29,11 @@ export function HomeHero() {
       <div className="mx-auto max-w-[1440px] px-3 md:px-5">
         <div className="relative isolate overflow-hidden rounded-[16px]">
           {/* Documentary footage — real site operations */}
+          {/* Playback starts from the effect above so prefers-reduced-motion
+              users keep the still poster (no autoPlay attribute). */}
           <video
             ref={bgVideoRef}
             className="absolute inset-0 h-full w-full object-cover"
-            autoPlay
             muted
             loop
             playsInline

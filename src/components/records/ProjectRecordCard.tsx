@@ -38,7 +38,7 @@ export function ProjectRecordCard({
 }: ProjectRecordCardProps) {
   const summary = [metricLabel, metric && !title.includes(metric) ? metric : null]
     .filter(Boolean)
-    .join(" Â· ");
+    .join(" · ");
   const meta = [client, location, year].filter(Boolean).join(" · ");
   const hasDetail = Boolean(href);
 
@@ -51,6 +51,7 @@ export function ProjectRecordCard({
             alt={title}
             wrapperClassName="h-full w-full"
             loading="lazy"
+            sizes="(min-width: 1300px) 405px, (min-width: 768px) 33vw, 100vw"
             fallbackLabel={title}
           />
         </div>

@@ -155,7 +155,7 @@ export default function HSEQualityPage() {
                 <span className="text-[13px] font-bold text-[var(--enk-meta)]">
                   {step.level}
                 </span>
-                <h4 className="text-[15px] font-semibold text-[var(--enk-ink)]">{step.title}</h4>
+                <h3 className="text-[15px] font-semibold text-[var(--enk-ink)]">{step.title}</h3>
                 <p className="text-[13px] leading-6 text-[var(--enk-steel)]">{step.description}</p>
               </li>
             ))}
@@ -291,7 +291,7 @@ export default function HSEQualityPage() {
             {sustainabilityPillars.map((p) => (
               <div key={p.title} className="enk-doc-card p-5">
                 <p className="enk-overline">Pillar</p>
-                <h4 className="mt-3 text-[15px] font-semibold text-[var(--enk-ink)]">{p.title}</h4>
+                <h3 className="mt-3 text-[15px] font-semibold text-[var(--enk-ink)]">{p.title}</h3>
                 <p className="mt-2 text-[13px] leading-6 text-[var(--enk-steel)]">{p.description}</p>
               </div>
             ))}
@@ -300,7 +300,7 @@ export default function HSEQualityPage() {
           <div className="mx-auto mt-8 grid max-w-5xl gap-4 md:grid-cols-3">
             {fpic.points.map((point) => (
               <div key={point.title} className="enk-doc-card p-5">
-                <h4 className="text-[15px] font-semibold text-[var(--enk-ink)]">{point.title}</h4>
+                <h3 className="text-[15px] font-semibold text-[var(--enk-ink)]">{point.title}</h3>
                 <p className="mt-2 text-[13px] leading-6 text-[var(--enk-steel)]">{point.body}</p>
               </div>
             ))}

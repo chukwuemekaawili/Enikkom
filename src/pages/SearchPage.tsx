@@ -107,22 +107,25 @@ export default function SearchPage() {
         <div className="enk-container">
           {!trimmed ? (
             <div className="grid gap-10 lg:grid-cols-[2fr_1fr]">
-              <div className="grid gap-6 sm:grid-cols-2">
-                {featuredLinks.map((item) => (
-                  <CapabilityCard
-                    key={item.href}
-                    title={item.title}
-                    description={item.description}
-                    href={item.href}
-                    image={item.image}
-                    ctaLabel={item.ctaLabel}
-                    docType="Site Index"
-                  />
-                ))}
+              <div>
+                <h2 className="enk-kicker mb-4">Frequently visited</h2>
+                <div className="grid gap-6 sm:grid-cols-2">
+                  {featuredLinks.map((item) => (
+                    <CapabilityCard
+                      key={item.href}
+                      title={item.title}
+                      description={item.description}
+                      href={item.href}
+                      image={item.image}
+                      ctaLabel={item.ctaLabel}
+                      docType="Site Index"
+                    />
+                  ))}
+                </div>
               </div>
 
               <div>
-                <p className="enk-kicker">Popular Searches</p>
+                <h2 className="enk-kicker mb-4">Popular searches</h2>
                 <ul className="space-y-3">
                   {popularSearches.map((item) => (
                     <li key={item.href}>

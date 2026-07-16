@@ -20,7 +20,7 @@ const items = [
   },
   {
     title: "About Enikkom",
-    body: "An indigenous EPC contractor operating nationwide from Lagos since 1995.",
+    body: "An indigenous EPC contractor delivering projects across Nigeria since 1995.",
     href: "/about",
     image: selectedGeneralImage("pl-13.jpg"),
     imageAlt: "Two Enikkom engineers inspecting a large-diameter pipe section in the field.",
@@ -57,6 +57,7 @@ export function MoreAtEnikkom() {
                   alt={item.imageAlt}
                   wrapperClassName="h-full w-full"
                   loading="lazy"
+                  sizes="(min-width: 1300px) 405px, (min-width: 768px) 33vw, 100vw"
                   fallbackLabel={item.title}
                 />
               </div>

@@ -91,7 +91,7 @@ export default function CareersPage() {
                 className="flex flex-col gap-2 p-5"
                 style={{ backgroundColor: "var(--enk-record-surface)" }}
               >
-                <h4 className="text-[15px] font-semibold text-[var(--enk-ink)]">{b.title}</h4>
+                <h3 className="text-[15px] font-semibold text-[var(--enk-ink)]">{b.title}</h3>
                 <p className="text-[13px] leading-6 text-[var(--enk-steel)]">{b.description}</p>
               </div>
             ))}

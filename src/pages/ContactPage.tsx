@@ -172,7 +172,7 @@ export default function ContactPage() {
                 </h2>
                 <p className="mb-6 mt-2 text-[14px] leading-6 text-[var(--enk-steel)]">
                   <EditableText
-                    value={content.form?.description || "Fill out the form below and our engineering team will get back to you with a detailed proposal."}
+                    value={content.form?.description || "Fill out the form to compose your enquiry email. The engineering team reviews every RFQ and responds within 24-48 business hours."}
                     pageSlug="contact"
                     sectionKey="form"
                     field="description"

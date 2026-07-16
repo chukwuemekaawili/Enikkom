@@ -377,14 +377,14 @@ export default function CapabilityDetailPage() {
                 className="flex flex-col gap-2.5 p-5"
                 style={{ backgroundColor: "var(--enk-record-surface)" }}
               >
-                <h4 className="text-[15px] font-semibold text-[var(--enk-ink)]">
+                <h3 className="text-[15px] font-semibold text-[var(--enk-ink)]">
                   <EditableText
                     value={step.title}
                     pageSlug={pageSlug}
                     sectionKey="process_steps"
                     field={`step_${index}_title`}
                   />
-                </h4>
+                </h3>
                 <p className="text-[13px] leading-6 text-[var(--enk-steel)]">
                   <EditableText
                     value={step.description}
@@ -450,14 +450,14 @@ export default function CapabilityDetailPage() {
             {equipment.map((item: { name: string; specs: string }, index: number) => (
               <div key={index} className="enk-doc-card p-5">
                 <p className="enk-overline">Equipment</p>
-                <h4 className="mt-3 text-[15px] font-semibold text-[var(--enk-ink)]">
+                <h3 className="mt-3 text-[15px] font-semibold text-[var(--enk-ink)]">
                   <EditableText
                     value={item.name}
                     pageSlug={pageSlug}
                     sectionKey="equipment"
                     field={`equipment_${index}_name`}
                   />
-                </h4>
+                </h3>
                 <p className="enk-mono mt-1.5 text-[12px] leading-6 text-[var(--enk-blueprint)]">
                   <EditableText
                     value={item.specs}

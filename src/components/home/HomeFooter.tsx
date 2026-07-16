@@ -34,8 +34,9 @@ const columns: { title: string; links: FooterLink[] }[] = [
 ];
 
 function FooterLinkItem({ link }: { link: FooterLink }) {
+  // py-1.5 lifts each row to a ~24px tap target without changing the visual rhythm
   const cls =
-    "text-[13.5px] leading-snug text-[#B8BEC4] hover:text-[#E6E9EC] transition-colors focus-ring rounded-md";
+    "inline-block py-1.5 text-[13.5px] leading-snug text-[#B8BEC4] hover:text-[#E6E9EC] transition-colors focus-ring rounded-md";
   if (link.download) {
     return (
       <a href={link.href} target="_blank" rel="noopener noreferrer" className={`inline-flex items-center gap-1.5 ${cls}`}>
@@ -71,7 +72,7 @@ export function HomeFooter() {
           {columns.map((col) => (
             <nav key={col.title} aria-label={col.title}>
               <h3 className="text-[17px] font-bold text-[#E6E9EC]">{col.title}</h3>
-              <ul className="mt-4 space-y-2.5">
+              <ul className="mt-3">
                 {col.links.map((l) => (
                   <li key={l.label}>
                     <FooterLinkItem link={l} />
@@ -83,15 +84,15 @@ export function HomeFooter() {
 
           <div>
             <h3 className="text-[17px] font-bold text-[#E6E9EC]">Get in touch</h3>
-            <ul className="mt-4 space-y-2.5 text-[13.5px] leading-snug">
-              <li>{contact.address}</li>
+            <ul className="mt-3 text-[13.5px] leading-snug">
+              <li className="py-1.5">{contact.address}</li>
               <li>
-                <a href={contact.phoneHref} className="hover:text-[#E6E9EC] transition-colors focus-ring rounded-md">
+                <a href={contact.phoneHref} className="inline-block py-1.5 hover:text-[#E6E9EC] transition-colors focus-ring rounded-md">
                   {contact.phone}
                 </a>
               </li>
               <li>
-                <a href={`mailto:${contact.email}`} className="hover:text-[#E6E9EC] transition-colors focus-ring rounded-md">
+                <a href={`mailto:${contact.email}`} className="inline-block py-1.5 hover:text-[#E6E9EC] transition-colors focus-ring rounded-md">
                   {contact.email}
                 </a>
               </li>
@@ -105,8 +106,8 @@ export function HomeFooter() {
             © {new Date().getFullYear()} Enikkom Construction Limited. All rights reserved.
           </p>
           <div className="flex gap-6 text-[12.5px]">
-            <Link to="/privacy" className="hover:text-[#E6E9EC] transition-colors focus-ring rounded-md">Privacy</Link>
-            <Link to="/terms" className="hover:text-[#E6E9EC] transition-colors focus-ring rounded-md">Terms</Link>
+            <Link to="/privacy" className="inline-block py-1.5 hover:text-[#E6E9EC] transition-colors focus-ring rounded-md">Privacy</Link>
+            <Link to="/terms" className="inline-block py-1.5 hover:text-[#E6E9EC] transition-colors focus-ring rounded-md">Terms</Link>
           </div>
         </div>
       </div>

@@ -39,6 +39,7 @@ export function CapabilityCard({
             alt={title}
             wrapperClassName="h-full w-full"
             loading="lazy"
+            sizes="(min-width: 1300px) 405px, (min-width: 768px) 33vw, 100vw"
             fallbackLabel={title}
           />
         </div>

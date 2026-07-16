@@ -219,7 +219,7 @@ export default function AboutPage() {
                   {milestone.year}
                 </span>
                 <div className="px-1 sm:pr-3">
-                  <h4 className="text-[15px] font-semibold text-[var(--enk-ink)]">{milestone.title}</h4>
+                  <h3 className="text-[15px] font-semibold text-[var(--enk-ink)]">{milestone.title}</h3>
                   <p className="mt-1 text-[13.5px] leading-6 text-[var(--enk-steel)]">{milestone.description}</p>
                 </div>
               </div>

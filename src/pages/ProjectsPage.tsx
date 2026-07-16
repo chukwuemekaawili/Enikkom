@@ -483,7 +483,7 @@ export default function ProjectsPage() {
                     <th
                       key={head}
                       scope="col"
-                      className={`enk-overline whitespace-nowrap px-3.5 py-3 !text-[10.5px] font-semibold ${
+                      className={`enk-overline whitespace-nowrap px-3.5 py-3 !text-[11px] font-semibold ${
                         i === 0 ? "sticky left-0 z-10" : ""
                       }`}
                       style={{

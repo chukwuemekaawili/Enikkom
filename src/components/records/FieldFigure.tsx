@@ -39,7 +39,9 @@ export function FieldFigure({
   date,
   ratio = "16/9",
   priority,
-  sizes,
+  // Figures render at most half the container in every live layout, so a
+  // 50vw ceiling avoids shipping full-width variants to card-sized plates.
+  sizes = "(min-width: 768px) 50vw, 100vw",
   className,
   imgClassName,
 }: FieldFigureProps) {

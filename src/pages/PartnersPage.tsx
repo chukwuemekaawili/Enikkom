@@ -195,7 +195,7 @@ export default function PartnersPage() {
               <div key={partner.name} className="enk-doc-card flex flex-col p-0">
                 {/* Typed header row */}
                 <div className="flex min-h-[38px] items-center justify-between gap-3 border-b border-[var(--enk-rule)] px-5 py-1.5">
-                  <p className="enk-overline !text-[10px]">{partner.type}</p>
+                  <p className="enk-overline !text-[11px]">{partner.type}</p>
                   <span className="enk-mono text-[11px] font-medium text-[var(--enk-blueprint)]">
                     Since {partner.since}
                   </span>
@@ -276,7 +276,7 @@ export default function PartnersPage() {
                   )}
                   <div>
                     <p className="enk-overline">Joint Venture</p>
-                    <h4 className="mt-2 text-[16px] font-semibold text-[var(--enk-ink)]">{jv.name}</h4>
+                    <h3 className="mt-2 text-[16px] font-semibold text-[var(--enk-ink)]">{jv.name}</h3>
                     <p className="mt-2 text-[13.5px] leading-6 text-[var(--enk-steel)]">{jv.description}</p>
                   </div>
                 </div>
@@ -328,7 +328,7 @@ export default function PartnersPage() {
                 className="flex flex-col gap-2 p-5"
                 style={{ backgroundColor: "var(--enk-record-surface)" }}
               >
-                <h4 className="text-[15px] font-semibold text-[var(--enk-ink)]">{benefit.title}</h4>
+                <h3 className="text-[15px] font-semibold text-[var(--enk-ink)]">{benefit.title}</h3>
                 <p className="text-[12.5px] leading-6 text-[var(--enk-steel)]">{benefit.description}</p>
               </div>
             ))}

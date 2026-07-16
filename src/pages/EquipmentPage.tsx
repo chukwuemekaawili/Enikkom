@@ -29,7 +29,7 @@ function RegisterFrame({ children }: { children: React.ReactNode }) {
   );
 }
 
-const headCls = "enk-overline !text-[10.5px] whitespace-nowrap";
+const headCls = "enk-overline !text-[11px] whitespace-nowrap";
 const cellCls = "text-[13px]";
 const monoCls = "enk-mono text-[12.5px] whitespace-nowrap";
 
@@ -143,7 +143,7 @@ export default function EquipmentPage() {
                 ].includes(item.model)
               ).map((item) => (
                 <div key={item.model} className="enk-doc-card p-4">
-                  <p className="enk-overline !text-[10px]">Unit Note</p>
+                  <p className="enk-overline !text-[11px]">Unit Note</p>
                   <p className="mt-2 text-[12.5px] font-semibold text-[var(--enk-ink)]">{item.model}</p>
                   <p className="mt-1 text-[12.5px] leading-6 text-[var(--enk-steel)]">{item.note}</p>
                 </div>

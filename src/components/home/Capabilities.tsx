@@ -19,6 +19,7 @@ function CapabilityTile({ cap }: { cap: Capability }) {
           alt={cap.imageAlt}
           wrapperClassName="h-full w-full"
           loading="lazy"
+          sizes="(min-width: 1300px) 405px, (min-width: 768px) 33vw, 100vw"
           fallbackLabel={cap.name}
         />
       </div>

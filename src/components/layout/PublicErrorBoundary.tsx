@@ -29,18 +29,16 @@ export class PublicErrorBoundary extends Component<Props, State> {
     if (this.state.hasError) {
       return (
         <div className="min-h-[70vh] flex flex-col items-center justify-center p-6 text-center">
-          <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-6">
-            <AlertCircle className="h-8 w-8 text-red-600" />
-          </div>
-          <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-3">
+          <AlertCircle className="h-9 w-9 mb-5 text-destructive" aria-hidden="true" />
+          <h1 className="text-2xl md:text-3xl font-bold mb-3">
             Something went wrong
-          </h2>
+          </h1>
           <p className="text-muted-foreground mb-8 max-w-md mx-auto">
-            We apologize for the inconvenience. An unexpected error occurred while loading this page.
+            An unexpected error occurred while loading this page. Reloading usually fixes it.
           </p>
           <Button onClick={() => window.location.href = '/'} className="gap-2">
-            <Home className="h-4 w-4" />
-            Return to Homepage
+            <Home className="h-4 w-4" aria-hidden="true" />
+            Return home
           </Button>
         </div>
       );

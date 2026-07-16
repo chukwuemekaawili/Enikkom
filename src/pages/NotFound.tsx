@@ -33,11 +33,15 @@ const NotFound = () => {
               </span>
             </div>
 
-            <p className="enk-mono mt-6 text-[72px] font-semibold leading-none text-[var(--enk-rule-heavy)] md:text-[96px]">
+            <p aria-hidden="true" className="enk-mono mt-6 text-[72px] font-semibold leading-none text-[var(--enk-rule-heavy)] md:text-[96px]">
               404
             </p>
 
-            <div className="mt-5 flex justify-center">
+            <h1 className="mt-5 text-[20px] font-bold text-[var(--enk-ink)]">
+              Page not found
+            </h1>
+
+            <div className="mt-4 flex justify-center">
               <RecordStatusStamp tone="alert">Record Not Found</RecordStatusStamp>
             </div>
 

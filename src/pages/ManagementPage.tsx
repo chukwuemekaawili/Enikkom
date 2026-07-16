@@ -160,7 +160,7 @@ const TeamMemberCard = ({
   >
     {/* Typed header row */}
     <div className="flex min-h-[34px] items-center border-b border-[var(--enk-rule)] px-4 py-1">
-      <p className="enk-overline !text-[10px]">Personnel Record</p>
+      <p className="enk-overline !text-[11px]">Personnel Record</p>
     </div>
 
     {/* Photo plate */}
@@ -302,7 +302,7 @@ const TeamMemberModal = ({
                 
                 {/* Full bio */}
                 <div className="mb-5">
-                  <h4 className="text-sm font-semibold text-foreground mb-2">Biography</h4>
+                  <h3 className="text-sm font-semibold text-foreground mb-2">Biography</h3>
                   <p className="text-sm md:text-[15px] text-muted-foreground leading-relaxed">
                     {member.bio}
                   </p>
@@ -311,7 +311,7 @@ const TeamMemberModal = ({
                 {/* Expertise */}
                 {member.expertise.length > 0 && (
                   <div className="mb-6">
-                    <h4 className="text-sm font-semibold text-foreground mb-2">Areas of Expertise</h4>
+                    <h3 className="text-sm font-semibold text-foreground mb-2">Areas of Expertise</h3>
                     <div className="flex flex-wrap gap-2">
                       {member.expertise.map((skill) => (
                         <span
