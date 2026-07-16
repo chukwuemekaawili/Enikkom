@@ -23,7 +23,7 @@ const sustainabilityPillars = [
   {
     title: "Safety & Workforce Wellbeing",
     description:
-      "A documented HSE system, certified to ISO 45001:2018, has delivered a zero lost-time-injury record across 5M+ safe man-hours on site.",
+      "A documented HSE system, certified to ISO 45001:2018, governs safe working across every crossing and pipeline scope, with job hazard analysis and a full permit-to-work system.",
   },
   {
     title: "Community & Local Content",
@@ -56,10 +56,10 @@ const defaultHseCommitments = [
 ];
 
 const hseStats = [
-  { value: "0", label: "Lost Time Incidents" },
-  { value: "5M+", label: "Safe Man-Hours" },
   { value: "100%", label: "PTW Compliance" },
-  { value: "ISO", label: "Certified Systems" },
+  { value: "3", label: "ISO Systems" },
+  { value: "4", label: "Level HSE System" },
+  { value: "ISO", label: "45001 Certified" },
 ];
 
 const permitsAndLicenses = [
@@ -113,7 +113,7 @@ export default function HSEQualityPage() {
     <Layout>
       <SEO
         title="HSE & Quality – ISO 9001/14001/45001 – Enikkom"
-        description="Enikkom's QHSE system: ISO 9001, 14001 and 45001 certified, a zero lost-time-injury record, 5M+ safe man-hours, and a four-level quality process."
+        description="Enikkom's QHSE system: ISO 9001, 14001 and 45001 certified, with a four-level quality process and a full permit-to-work system."
         canonical="/hse-quality"
       />
       <Hero
@@ -213,13 +213,13 @@ export default function HSEQualityPage() {
               <div className="mt-4 flex flex-wrap items-center gap-2.5">
                 <RecordStatusStamp tone="qhse">
                   <EditableText
-                    value={commitmentContent.badgeTitle || "Zero LTI Record"}
+                    value={commitmentContent.badgeTitle || "ISO 45001 Certified"}
                     pageSlug="hse"
                     sectionKey="commitment"
                     field="badgeTitle"
                   />
                 </RecordStatusStamp>
-                <RecordStatusStamp tone="qhse">5M+ Safe Man-Hours</RecordStatusStamp>
+                <RecordStatusStamp tone="qhse">Full PTW System</RecordStatusStamp>
               </div>
             </div>
           </div>

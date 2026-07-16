@@ -10,7 +10,7 @@ import { experienceYears } from "@/content/home";
 
 const defaultBenefits = [
   { title: "Training & Development", description: "HSE certifications, technical training, and career development programs" },
-  { title: "Safety Culture", description: "Strong safety standards with a zero LTI record across all projects" },
+  { title: "Safety Culture", description: "A safety-first culture and strong HSE standards across every project" },
   { title: "Health Coverage", description: "Health insurance for employees and dependents" },
   { title: "Career Growth", description: "Opportunities across HDD, pipeline, marine, and corporate functions" },
 ];

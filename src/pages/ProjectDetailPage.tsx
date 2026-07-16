@@ -98,9 +98,8 @@ const baseProjectData: Record<string, ProjectData> = {
       { label: "Pipe Diameter", value: "10 inches" },
       { label: "Method", value: "Continuous HDD" },
       { label: "Duration", value: "14 months" },
-      { label: "LTI Record", value: "Zero" },
     ],
-    hseNotes: "The project maintained a strong safety record with zero LTI throughout the 14-month duration. Daily JSA reviews, regular toolbox talks, and environmental monitoring protected the sensitive Niger Delta environment.",
+    hseNotes: "The project maintained a strong safety record throughout the 14-month duration. Daily JSA reviews, regular toolbox talks, and environmental monitoring protected the sensitive Niger Delta environment.",
     clientQuote: {
       text: "Enikkom demonstrated exceptional capability in delivering this record-breaking CHDD project. Their technical expertise and commitment to safety made this complex crossing a complete success.",
       author: "Project Manager",
@@ -147,9 +146,8 @@ const baseProjectData: Record<string, ProjectData> = {
       { label: "12\" Pipeline", value: "Completed" },
       { label: "3\" Pipeline", value: "Bundled" },
       { label: "Completion", value: "April 2016" },
-      { label: "LTI Record", value: "Zero" },
     ],
-    hseNotes: "The project was completed with zero incidents despite the technical complexity. Environmental monitoring confirmed zero impact on the Escravos River ecosystem. Daily safety briefings and a full PTW system maintained continuous safety awareness.",
+    hseNotes: "Full HSE protocols were applied throughout despite the technical complexity. Environmental monitoring tracked impact on the Escravos River ecosystem. Daily safety briefings and a full PTW system maintained continuous safety awareness.",
     clientQuote: {
       text: "We are delighted with our experience of working with ENIKKOM on this challenging crossing. The team demonstrated unmatched professionalism. It was a pleasure working with the team.",
       author: "Construction Manager",
@@ -193,9 +191,8 @@ const baseProjectData: Record<string, ProjectData> = {
       { label: "Pipe Diameter", value: "16 inches" },
       { label: "Completion", value: "April 2016" },
       { label: "Client", value: "NNPC/PPMC" },
-      { label: "LTI Record", value: "Zero" },
     ],
-    hseNotes: "Despite the emergency nature of the project, full HSE protocols were maintained throughout. Zero LTI record achieved. Environmental monitoring confirmed minimal impact on the Lagos Lagoon ecosystem.",
+    hseNotes: "Despite the emergency nature of the project, full HSE protocols were maintained throughout. Environmental monitoring tracked impact on the Lagos Lagoon ecosystem.",
     heroImage: atlasCoveMosimi,
     scope: [
       "Rapid mobilization and site setup",
@@ -233,7 +230,6 @@ const baseProjectData: Record<string, ProjectData> = {
       { label: "Pipe Diameter", value: "36 inches" },
       { label: "Completion", value: "2016" },
       { label: "Client", value: "Dangote Fertilizer" },
-      { label: "LTI Record", value: "Zero" },
     ],
     hseNotes: "Marine safety protocols were rigorously implemented. All personnel completed water safety training. Environmental monitoring confirmed zero impact on the lagoon ecosystem.",
     clientQuote: {
@@ -276,9 +272,8 @@ const baseProjectData: Record<string, ProjectData> = {
       { label: "Pipe Diameter", value: "40 inches" },
       { label: "Depth Below River", value: "100 ft (30m)" },
       { label: "Completion", value: "February 2010" },
-      { label: "LTI Record", value: "Zero" },
     ],
-    hseNotes: "The project maintained exemplary safety standards despite the technical challenges of the largest diameter HDD crossing in Nigeria. Zero incidents recorded throughout the project duration.",
+    hseNotes: "The project maintained exemplary safety standards despite the technical challenges of the largest-diameter HDD crossing in Nigeria.",
     heroImage: hddRigNight,
     scope: [
       "Geotechnical investigation",
@@ -313,7 +308,6 @@ const baseProjectData: Record<string, ProjectData> = {
       { label: "Pipe Diameter", value: "36 inches" },
       { label: "Number of Crossings", value: "8" },
       { label: "Duration", value: "18 months" },
-      { label: "LTI Record", value: "Zero" },
     ],
     hseNotes: "HSE management system implemented across all 8 crossing sites. Regular third-party audits confirmed compliance with international standards. Zero environmental incidents.",
     clientQuote: {
@@ -355,9 +349,8 @@ const baseProjectData: Record<string, ProjectData> = {
       { label: "Pipe Diameter", value: "48 inches" },
       { label: "Technology", value: "HDD + DPI" },
       { label: "Equipment", value: "MTS Germany" },
-      { label: "LTI Record", value: "Zero" },
     ],
-    hseNotes: "Complex marine safety protocols implemented for River Niger operations. Cofferdam construction required specialized safety measures. Zero LTI maintained throughout despite the technical complexity.",
+    hseNotes: "Complex marine safety protocols implemented for River Niger operations. Cofferdam construction required specialized safety measures throughout the technically complex crossing.",
     heroImage: hddNightPanorama,
     scope: [
       "Geotechnical investigation and design",
@@ -395,9 +388,8 @@ const baseProjectData: Record<string, ProjectData> = {
       { label: "Pipe Diameter", value: "36 inches" },
       { label: "Maximum Depth", value: "80 meters" },
       { label: "Soil Analysis", value: "2D/3D ERI" },
-      { label: "LTI Record", value: "Zero" },
     ],
-    hseNotes: "Deep drilling operations required enhanced safety protocols. Mud pressure monitoring critical at 80m depth. Zero incidents despite the technical challenges and multiple drilling attempts.",
+    hseNotes: "Deep drilling operations required enhanced safety protocols, with mud-pressure monitoring critical at 80m depth through the technical challenges and multiple drilling attempts.",
     clientQuote: {
       text: "The Ekiadolor crossing pushed the boundaries of HDD capability in Nigeria. Enikkom's persistence and engineering innovation made what seemed impossible a reality.",
       author: "Project Engineer",
@@ -437,7 +429,6 @@ const baseProjectData: Record<string, ProjectData> = {
       { label: "Pipe Diameters", value: "4\"/8\"/12\"" },
       { label: "HDD Crossings", value: "50+" },
       { label: "Completion", value: "August 2009" },
-      { label: "LTI Record", value: "Zero" },
     ],
     hseNotes: "Urban safety protocols strictly observed throughout. Traffic management plans coordinated with Lagos authorities. Zero third-party incidents despite work in densely populated areas.",
     clientQuote: {
@@ -477,9 +468,8 @@ const baseProjectData: Record<string, ProjectData> = {
       { label: "Pipe Diameter", value: "24 inches" },
       { label: "HDD Crossings", value: "Multiple" },
       { label: "Completion", value: "July 2015" },
-      { label: "LTI Record", value: "Zero" },
     ],
-    hseNotes: "The project was completed with zero LTI incidents. Environmental monitoring confirmed compliance with Cross River State environmental requirements. Community engagement maintained positive relations throughout.",
+    hseNotes: "Environmental monitoring confirmed compliance with Cross River State environmental requirements. Community engagement maintained positive relations throughout.",
     heroImage: pipeLaying,
     scope: [
       "Engineering, Procurement & Construction",
@@ -514,7 +504,7 @@ const baseProjectData: Record<string, ProjectData> = {
       { label: "Client", value: "NNPC" },
       { label: "Legacy", value: "Industry Pioneer" },
     ],
-    hseNotes: "Established safety standards that would become the foundation for all future Enikkom HDD operations. Zero incidents on this historic first crossing.",
+    hseNotes: "Established safety standards that would become the foundation for all future Enikkom HDD operations.",
     heroImage: hddRigNight,
     scope: [
       "Technology introduction to Nigeria",

@@ -19,7 +19,7 @@ const defaultStats: KPIStat[] = [
   { value: "100", suffix: "+", label: "KM HDD Installed" },
   { value: "500", suffix: "+", label: "Workforce" },
   { value: experienceYears, label: "Years Experience" },
-  { value: "0", label: "LTI Record" },
+  { value: "3", label: "ISO Systems Certified" },
 ];
 
 /** Recorded figures presented as ledger entries — no icons, no count-ups. */

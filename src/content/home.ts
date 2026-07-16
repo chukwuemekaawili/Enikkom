@@ -397,9 +397,8 @@ export interface QhseMetric {
 
 export const qhse = {
   metrics: [
-    { value: "Zero", label: "Lost-time injuries on record" },
-    { value: "5M+", label: "Safe man-hours delivered" },
     { value: "3", label: "ISO management systems certified" },
+    { value: "30+", label: "Years of operating record" },
   ] as QhseMetric[],
   policies: [
     { label: "Quality Policy Statement", file: "/downloads/compliance/quality-policy-statement.pdf" },
@@ -446,7 +445,7 @@ export const faqs: Faq[] = [
   },
   {
     q: "What are your safety and quality standards?",
-    a: "Our management systems are certified to ISO 9001:2015, ISO 14001:2015 and ISO 45001:2018, backed by a zero lost-time-injury record and 5M+ safe man-hours. Policies are available to download below.",
+    a: "Our management systems are certified to ISO 9001:2015, ISO 14001:2015 and ISO 45001:2018. Policies are available to download below.",
   },
   {
     q: "How early should we engage you on a project?",

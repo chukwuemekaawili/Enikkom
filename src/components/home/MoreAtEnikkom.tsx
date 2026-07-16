@@ -6,7 +6,7 @@ import { selectedGeneralImage, selectedEquipmentImage } from "@/content/siteImag
 const items = [
   {
     title: "Safety & quality",
-    body: "Zero lost-time injuries and 5M+ safe man-hours, certified to three ISO standards.",
+    body: "Certified to three ISO standards, with HSE embedded across every project.",
     href: "/hse-quality",
     image: selectedGeneralImage("rg-031.jpg"),
     imageAlt: "Site crew in PPE working around drilling support equipment under a clear sky.",
