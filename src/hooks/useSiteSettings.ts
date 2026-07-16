@@ -47,7 +47,7 @@ const defaultBranding: BrandingSettings = {
 const defaultContact: ContactSettings = {
   phone: '+234 803 508 2614',
   email: 'info@enikkom.com',
-  address: 'Plot 2 Isaac John Street, Ikeja GRA, Lagos',
+  address: 'No 5b Theophilus Orji Street, Lekki Phase 1, Lagos',
   youtubeUrl: '',
   linkedinUrl: '',
   twitterUrl: '',

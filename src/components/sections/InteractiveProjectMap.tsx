@@ -85,7 +85,7 @@ const baseProjectLocations: ProjectLocation[] = [
     type: "HDD",
     coordinates: { x: 42, y: 62 },
     description: "36\" × 1.3km gas transmission pipeline across Ekiadolor Rock Valley, the deepest HDD crossing in Africa at over 80m.",
-    client: "SPDC",
+    client: "NNPC",
     year: "2016",
     metrics: "36\" × 1.3km @ 80m depth",
     scope: "Construction, Laying and Commissioning of Gas Transmission Pipeline",

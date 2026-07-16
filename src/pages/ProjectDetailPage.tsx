@@ -383,7 +383,7 @@ const baseProjectData: Record<string, ProjectData> = {
   },
   "ekiadolor-deep-valley": {
     title: "Ekiadolor Deep Valley Crossing",
-    client: "SPDC",
+    client: "NNPC",
     location: "Edo State, Nigeria",
     year: "2016",
     capabilities: ["HDD", "Pipeline"],

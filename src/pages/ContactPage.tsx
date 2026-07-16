@@ -27,17 +27,12 @@ const defaultOffices = [
   },
   {
     name: "Base 2, Warri",
-    address: "Km7-DCS Road, Warri, Delta State, Nigeria",
+    address: "DCS Road, Warri, Delta State, Nigeria",
     type: "Operations Base",
   },
   {
     name: "Base 3, Warri",
     address: "Opposite Ejovi Jetty, Opete Road, Warri, Delta State, Nigeria",
-    type: "Operations Base",
-  },
-  {
-    name: "Base 4, Warri",
-    address: "Old NNPC Filling Station, DCS Road, Warri, Delta State, Nigeria",
     type: "Operations Base",
   },
 ];

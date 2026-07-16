@@ -26,7 +26,7 @@ export const contact = {
   phoneHref: "tel:+2348035082614",
   email: "info@enikkom.com",
   rfpEmail: "info@enikkom.com",
-  address: "Plot 2 Isaac John Street, Ikeja GRA, Lagos, Nigeria",
+  address: "No 5b Theophilus Orji Street, Lekki Phase 1, Lagos, Nigeria",
   capabilityStatement: "/downloads/Enikkom_Company_Profile.pdf",
 } as const;
 

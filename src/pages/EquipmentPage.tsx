@@ -44,7 +44,7 @@ export default function EquipmentPage() {
     <Layout>
       <SEO
         title="Equipment – Fleet Specs & Capacity – Enikkom"
-        description="Document-backed technical capacity: West Africa's largest HDD fleet, thrust boring, microtunneling, marine, and support equipment with model-level ratings."
+        description="Document-backed technical capacity: Nigeria's largest in-country HDD fleet, thrust boring, microtunneling, marine, and support equipment with model-level ratings."
         canonical="/equipment"
       />
       <Hero
@@ -362,7 +362,7 @@ export default function EquipmentPage() {
 
       <CTABand
         headline={content.cta?.headline || "Need Equipment for Your Project?"}
-        subhead={content.cta?.subhead || "Access West Africa's largest HDD fleet. Get availability and specifications within 24 hours."}
+        subhead={content.cta?.subhead || "Access Nigeria's largest in-country HDD fleet. Get availability and specifications within 24 hours."}
         primaryCTA={{ label: "Contact us", href: "/contact" }}
         secondaryCTA={{ label: "View HDD capabilities", href: "/capabilities/hdd" }}
       />

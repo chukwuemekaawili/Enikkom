@@ -11,7 +11,7 @@ export const completedProjects = [
   // Client aligned with the project detail page + client testimonial (was a
   // copy of the Yenagoa row's "Daewoo / SPDC").
   { year: "2016", client: "Dangote Fertilizer Limited", project: "Dangote Fertilizer 36\" × 2km Lagoon Crossing", scope: "Swamp / lagoon HDD crossing", location: "Ejirin, Lagos Lagoon", type: "HDD", size: "36\"", length: "2km" },
-  { year: "2016", client: "SPDC", project: "Ekiadolor Deep Valley Crossing", scope: "Africa's deepest HDD crossing, 80m depth", location: "Edo State", type: "HDD", size: "36\"", length: "1.2km" },
+  { year: "2016", client: "NNPC", project: "Ekiadolor Deep Valley Crossing", scope: "Africa's deepest HDD crossing, 80m depth", location: "Edo State", type: "HDD", size: "36\"", length: "1.2km" },
   { year: "2010", client: "Daewoo / SPDC", project: "Yenagoa 40\" HDD Crossing", scope: "Largest pipeline crossing in Nigeria, record", location: "Bayelsa State", type: "HDD", size: "40\"", length: "760m" },
   { year: "2003", client: "NNPC", project: "First HDD Crossing of the River Niger", scope: "Pioneer HDD project, first in Nigeria", location: "Nigeria", type: "HDD", size: "16\"", length: "1.0km" },
 
