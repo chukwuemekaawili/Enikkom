@@ -158,11 +158,6 @@ const TeamMemberCard = ({
     onClick={() => onSelect(index)}
     className="enk-doc-card enk-doc-card--interactive group flex h-full cursor-pointer flex-col overflow-hidden text-left focus-ring"
   >
-    {/* Typed header row */}
-    <div className="flex min-h-[34px] items-center border-b border-[var(--enk-rule)] px-4 py-1">
-      <p className="enk-overline !text-[11px]">Personnel Record</p>
-    </div>
-
     {/* Photo plate */}
     <div className="relative aspect-[4/3] overflow-hidden border-b border-[var(--enk-rule)]">
       {member.photo ? (
