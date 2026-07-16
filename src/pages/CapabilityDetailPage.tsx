@@ -38,7 +38,7 @@ const capabilityData: Record<string, CapabilityData> = {
     description: "Trenchless technology for river, road, railway, and environmental crossings, with minimal surface disruption and high efficiency.",
     overview: [
       "Enikkom pioneered Horizontal Directional Drilling in Nigeria, completing the country's first HDD crossing of the River Niger in 2003. Since then we have installed more than 100 km of HDD crossings, including Africa's longest single drill, the 16\" × 3.1 km Atlas Cove–Mosimi line completed in 2016.",
-      "Our maxi-rig fleet, with pullback capacity up to 500 tons, crosses rivers, swamps, roads, railways and environmentally sensitive corridors with minimal surface disruption. Delivered diameters reach 48\", and our continuous-HDD record includes the 10\" × 12 km OML34 drive for NPDC, the longest functional CHDD in Nigeria.",
+      "Our maxi-rig fleet, with pullback capacity up to 500 tons, crosses rivers, swamps, roads, railways and environmentally sensitive corridors with minimal surface disruption. Delivered diameters reach 42\", and our continuous-HDD record includes the 10\" × 12 km OML34 drive for NPDC, the longest functional CHDD in Nigeria.",
     ],
     icon: Drill,
     heroImage: siteImageSelections.capabilities.hdd,
@@ -149,15 +149,6 @@ const capabilityData: Record<string, CapabilityData> = {
       { name: "Survey Equipment", specs: "Multi-beam echosounder, RTK GPS" },
     ],
     relatedProjects: [
-      {
-        title: "OB3 River Niger Crossing",
-        location: "River Niger",
-        metric: "48\"",
-        metricLabel: "Sheet piling & cofferdam",
-        tags: ["Piling", "Dredging"],
-        href: "/projects/ob3-river-niger",
-        thumbnail: getProjectImage("ob3-river-niger", "related"),
-      },
       {
         title: "OML34 Dredging & Cofferdam",
         location: "Delta State",

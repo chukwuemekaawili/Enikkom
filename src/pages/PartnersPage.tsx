@@ -119,8 +119,8 @@ const partnershipBenefits = [
     description: "Real-time pipeline surveillance capabilities through our security partnership network.",
   },
   {
-    title: "92% Local Content",
-    description: "Maintaining NCDMB compliance while delivering international-standard project execution.",
+    title: "Local Content",
+    description: "NCDMB-compliant indigenous capacity, built through our technical partnership with HDDTEC.",
   },
 ];
 

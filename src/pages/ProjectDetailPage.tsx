@@ -100,11 +100,6 @@ const baseProjectData: Record<string, ProjectData> = {
       { label: "Duration", value: "14 months" },
     ],
     hseNotes: "The project maintained a strong safety record throughout the 14-month duration. Daily JSA reviews, regular toolbox talks, and environmental monitoring protected the sensitive Niger Delta environment.",
-    clientQuote: {
-      text: "Enikkom demonstrated exceptional capability in delivering this record-breaking CHDD project. Their technical expertise and commitment to safety made this complex crossing a complete success.",
-      author: "Project Manager",
-      role: "NPDC"
-    },
     heroImage: hddNightPanorama,
     scope: [
       "Engineering design and feasibility study",
@@ -148,11 +143,6 @@ const baseProjectData: Record<string, ProjectData> = {
       { label: "Completion", value: "April 2016" },
     ],
     hseNotes: "Full HSE protocols were applied throughout despite the technical complexity. Environmental monitoring tracked impact on the Escravos River ecosystem. Daily safety briefings and a full PTW system maintained continuous safety awareness.",
-    clientQuote: {
-      text: "We are delighted with our experience of working with ENIKKOM on this challenging crossing. The team demonstrated unmatched professionalism. It was a pleasure working with the team.",
-      author: "Construction Manager",
-      role: "Saipem Contracting Nigeria"
-    },
     heroImage: otumaraEscravos,
     scope: [
       "Geotechnical investigation",
@@ -217,37 +207,32 @@ const baseProjectData: Record<string, ProjectData> = {
     ]
   },
   "dangote-lagoon": {
-    title: "Dangote Fertilizer, 36\" × 2km Lagoon Crossing",
-    client: "Dangote Fertilizer Limited",
-    location: "Ejirin, Lagos Lagoon, Lagos State, Nigeria",
-    year: "2016",
+    title: "Dangote Fertilizer, 36\" × 1.4km Lagoon Crossing",
+    client: "Zakhem Construction / Dangote Fertilizer Limited",
+    location: "Ejinrin, Lagos Lagoon, Lagos State, Nigeria",
+    year: "2018",
     capabilities: ["HDD", "Pipeline"],
-    overview: "36-inch × 2km swamp and lagoon HDD crossing delivering gas supply infrastructure to Dangote's fertilizer complex at Lekki. One of the largest diameter lagoon HDD crossings in Nigeria.",
-    challenge: "The project required crossing the Lagos Lagoon with a 36-inch pipeline through challenging swamp and open-water conditions. Tidal variations, soft marine sediments, and strict timelines to support the fertilizer plant's commissioning schedule added significant complexity.",
-    solution: "Enikkom deployed our 500T HDD rig with gyro guidance for the 2km crossing. The 36-inch steel pipeline was pre-fabricated onshore and pulled back in a single operation. A detailed geotechnical investigation informed the crossing design to handle the soft lagoon sediments.",
+    overview: "36-inch × 1.4km swamp and lagoon HDD crossing at Ejinrin, Epe, delivering gas supply infrastructure for Dangote's fertilizer complex. One of the largest diameter lagoon HDD crossings in Nigeria.",
+    challenge: "The project required crossing the Lagos Lagoon with a 36-inch pipeline through challenging swamp and open-water conditions. The soft terrain at Ejinrin required months of dredging and reclamation, to an average depth of 6m at the exit point, before the rigs could even be set up.",
+    solution: "Enikkom set the rig spread up on reinforced barges at the entry point and drilled the pilot bore with a 300-ton American Augers rig, completing it in 24 days including 16-inch casing installation for stabilisation and mud control, then progressed reaming passes up to 48 inches for the 36-inch product pipe.",
     results: [
-      { label: "Crossing Length", value: "2 km" },
+      { label: "Crossing Length", value: "1.4 km" },
       { label: "Pipe Diameter", value: "36 inches" },
-      { label: "Completion", value: "2016" },
-      { label: "Client", value: "Dangote Fertilizer" },
+      { label: "Completion", value: "October 2018" },
+      { label: "Client", value: "Zakhem / Dangote" },
     ],
-    hseNotes: "Marine safety protocols were rigorously implemented. All personnel completed water safety training. Environmental monitoring confirmed zero impact on the lagoon ecosystem.",
-    clientQuote: {
-      text: "Outstanding job on the 36\" × 2km swamp/lagoon crossing. Impressive drilling work done by your team. We look forward to more collaborations with Enikkom in the future.",
-      author: "Project Director",
-      role: "Dangote Fertilizer Limited"
-    },
+    hseNotes: "Marine safety protocols were implemented throughout, with all personnel completing water safety training and environmental monitoring run across the lagoon works.",
     heroImage: lekiGasPipeline,
     scope: [
       "Geotechnical investigation and crossing design",
+      "Dredging and reclamation for rig set-up",
       "36\" HDD pilot bore and reaming operations",
-      "Pipeline prefabrication (2km string)",
       "Single-pull pipeline installation",
       "Tie-in works at both ends",
       "Hydrostatic testing and commissioning"
     ],
     gallery: [
-      { src: lekiGasPipeline, alt: "Lekki Gas Pipeline Site", caption: "Main HDD site for Lekki Gas Pipeline" },
+      { src: lekiGasPipeline, alt: "Lagos Lagoon crossing site", caption: "Main HDD site for the Ejinrin lagoon crossing" },
       { src: hddEquipmentFleet, alt: "HDD Equipment Spread", caption: "Complete equipment spread" },
       { src: pipeLaying, alt: "36\" Pipeline Fabrication", caption: "36-inch pipeline string fabrication" },
       { src: multiCraneOps, alt: "Heavy Lift Operations", caption: "Multi-crane pipeline handling" },
@@ -297,8 +282,8 @@ const baseProjectData: Record<string, ProjectData> = {
   "elps-phase-2": {
     title: "Escravos-Lagos Gas Pipeline Phase II",
     client: "Zakhem Construction / NNPC",
-    location: "Niger Delta to Lagos, Nigeria",
-    year: "2018-2019",
+    location: "Lagos / Ogun State, Nigeria",
+    year: "2015",
     capabilities: ["HDD", "Pipeline"],
     overview: "Major gas transmission infrastructure - 36-inch pipeline HDD crossings totaling 7.2km across multiple river and creek crossings for the Escravos-Lagos Pipeline System Phase II expansion.",
     challenge: "ELPS II required multiple HDD crossings across some of the Niger Delta's most challenging waterways. The 36-inch diameter and cumulative 7.2km of HDD crossings required extensive planning and sequential execution across multiple sites.",
@@ -309,12 +294,7 @@ const baseProjectData: Record<string, ProjectData> = {
       { label: "Number of Crossings", value: "8" },
       { label: "Duration", value: "18 months" },
     ],
-    hseNotes: "HSE management system implemented across all 8 crossing sites. Regular third-party audits confirmed compliance with international standards. Zero environmental incidents.",
-    clientQuote: {
-      text: "ECL brings a level of client-side understanding to each and every project. Their technical capability and local expertise are unmatched. We have no hesitation in recommending ECL for HDD projects.",
-      author: "Project Director",
-      role: "Zakhem Construction Nigeria Limited"
-    },
+    hseNotes: "HSE management system implemented across all crossing sites, with regular audits confirming compliance with the project's standards.",
     heroImage: pipeLaying,
     scope: [
       "Multi-site mobilization and logistics",
@@ -335,52 +315,13 @@ const baseProjectData: Record<string, ProjectData> = {
       { src: workersPpe, alt: "PPE Compliance", caption: "Full PPE enforcement" },
     ]
   },
-  "ob3-river-niger": {
-    title: "OB3 River Niger 48\" Direct Pipe Installation",
-    client: "NPDC / OB3 Consortium",
-    location: "River Niger, Nigeria",
-    year: "2020",
-    capabilities: ["HDD", "Microtunnelling", "Pipeline"],
-    overview: "A landmark 48-inch x 1.8km pipeline crossing under the River Niger using a combination of HDD and Direct Pipe Installation (DPI) - one of the most technically complex crossings ever attempted in West Africa.",
-    challenge: "The OB3 gas pipeline required crossing the mighty River Niger - Nigeria's largest river - with a 48-inch diameter pipe. The geological conditions presented extreme complexity with variable soil strata including sand, clay, and rock formations. The water depth and river width made conventional HDD extremely challenging.",
-    solution: "Enikkom partnered with MTS Germany to deploy Direct Pipe Installation (DPI) technology - a hybrid of HDD and microtunnelling. This allowed simultaneous drilling and pipe installation with real-time steering control. Extensive geotechnical investigation using borehole data informed the crossing profile design. Cofferdam construction and dewatering systems managed groundwater.",
-    results: [
-      { label: "Crossing Length", value: "1.8 km" },
-      { label: "Pipe Diameter", value: "48 inches" },
-      { label: "Technology", value: "HDD + DPI" },
-      { label: "Equipment", value: "MTS Germany" },
-    ],
-    hseNotes: "Complex marine safety protocols implemented for River Niger operations. Cofferdam construction required specialized safety measures throughout the technically complex crossing.",
-    heroImage: hddNightPanorama,
-    scope: [
-      "Geotechnical investigation and design",
-      "Cofferdam construction and dewatering",
-      "Direct Pipe Installation (DPI) setup",
-      "48\" pipeline fabrication",
-      "HDD + microtunnelling combination",
-      "Real-time trajectory monitoring",
-      "Hydrostatic testing and commissioning"
-    ],
-    youtubeId: "PrMQDDb6ELA",
-    recordBadge: "Largest DPI Crossing in Africa",
-    gallery: [
-      { src: hddNightPanorama, alt: "OB3 Night Operations", caption: "24-hour operations at River Niger" },
-      { src: hddEquipmentFleet4, alt: "DPI Equipment", caption: "Direct Pipe Installation equipment" },
-      { src: catExcavator, alt: "Cofferdam Construction", caption: "Cofferdam excavation works" },
-      { src: craneOperations, alt: "Heavy Lifts", caption: "Heavy equipment mobilization" },
-      { src: multiCraneOps, alt: "48\" Pipe Handling", caption: "48-inch pipe string handling" },
-      { src: drillingOps4, alt: "Drilling Operations", caption: "Pilot bore operations" },
-      { src: scopeOperations, alt: "Control Center", caption: "Real-time monitoring center" },
-      { src: teamSafety, alt: "HSE Standards", caption: "Safety briefings and compliance" },
-    ]
-  },
   "ekiadolor-deep-valley": {
     title: "Ekiadolor Deep Valley Crossing",
-    client: "NNPC",
+    client: "Zakhem / NGC",
     location: "Edo State, Nigeria",
     year: "2016",
     capabilities: ["HDD", "Pipeline"],
-    overview: "Africa's deepest HDD crossing - a 36-inch x 1.2km pipeline installation at 80 meters depth through extremely challenging geological conditions including rock, sand, coal, and clay formations.",
+    overview: "Africa's deepest HDD crossing - a 36-inch x 1.3km pipeline installation at 80 meters depth through extremely challenging geological conditions including rock, sand, coal, and clay formations.",
     challenge: "The Ekiadolor crossing presented unprecedented depth requirements at 80m - the deepest HDD ever attempted in Nigeria. The geological survey revealed a complex formation with alternating layers of rock, sand, coal seams, and clay. Initial drilling attempts encountered tool losses and steering challenges in the variable formation.",
     solution: "After extensive analysis using 2D/3D Electrical Resistivity Imaging, Enikkom's engineering team designed a custom hybrid reamer specifically for the rock/sand/coal/clay formation. The tool combined rock cutting elements with sand displacement features. Three drilling attempts refined the approach, ultimately achieving success with the specialized tooling and optimized drilling parameters.",
     results: [
@@ -390,11 +331,6 @@ const baseProjectData: Record<string, ProjectData> = {
       { label: "Soil Analysis", value: "2D/3D ERI" },
     ],
     hseNotes: "Deep drilling operations required enhanced safety protocols, with mud-pressure monitoring critical at 80m depth through the technical challenges and multiple drilling attempts.",
-    clientQuote: {
-      text: "The Ekiadolor crossing pushed the boundaries of HDD capability in Nigeria. Enikkom's persistence and engineering innovation made what seemed impossible a reality.",
-      author: "Project Engineer",
-      role: "NPDC"
-    },
     heroImage: drillingSite2,
     scope: [
       "2D/3D Electrical Resistivity Imaging survey",
@@ -431,11 +367,6 @@ const baseProjectData: Record<string, ProjectData> = {
       { label: "Completion", value: "August 2009" },
     ],
     hseNotes: "Urban safety protocols strictly observed throughout. Traffic management plans coordinated with Lagos authorities. Zero third-party incidents despite work in densely populated areas.",
-    clientQuote: {
-      text: "Enikkom has provided Horizontal Directional Drilling services to our company, having satisfied our requirements for efficient work. We highly recommend their services.",
-      author: "Operations Manager",
-      role: "NIPCO PLC"
-    },
     heroImage: nipcoIbafo,
     scope: [
       "Network design and engineering",
@@ -524,11 +455,11 @@ const baseProjectData: Record<string, ProjectData> = {
   },
   "nun-river-dual-hdd": {
     title: "Nun River Dual HDD Crossing, 16\" & 6\"",
-    client: "NPDC",
+    client: "MORPOL / SPDC",
     location: "Niger Delta, Nigeria",
     year: "2024",
     capabilities: ["HDD", "Pipeline"],
-    overview: "A dual Horizontal Directional Drilling crossing installing 16-inch and 6-inch pipelines beneath the Nun River for NPDC, one of Enikkom's most recent trenchless crossings in the Niger Delta.",
+    overview: "A dual Horizontal Directional Drilling crossing installing 16-inch and 6-inch pipelines beneath the Nun River for SPDC under MORPOL, one of Enikkom's most recent trenchless crossings in the Niger Delta.",
     challenge: "The Nun River crossing required installing two lines of different diameters beneath an active river in soft, variable riverine ground, without disturbing the waterway or surrounding communities. Conventional open-cut installation was not viable across the river corridor.",
     solution: "Enikkom executed the crossing as two separate HDD drives, sequencing the 16-inch and 6-inch installations to maintain trajectory control and separation. Owned maxi-rig capacity, in-house mud recycling and real-time trajectory monitoring delivered both lines under the river to the required depth of cover.",
     results: [
@@ -630,7 +561,7 @@ const relatedProjects = [
   {
     title: "Lekki Gas Pipeline",
     location: "Lagos",
-    metric: "36\" x 1.5km",
+    metric: "36\" x 1.4km",
     metricLabel: "Dangote Fertilizer",
     tags: ["HDD"],
     href: "/projects/dangote-lagoon",
@@ -653,15 +584,6 @@ const relatedProjects = [
     tags: ["HDD"],
     href: "/projects/atlas-cove-mosimi",
     thumbnail: getProjectImage("atlas-cove-mosimi", "projectMap"),
-  },
-  {
-    title: "OB3 River Niger 48\"",
-    location: "River Niger",
-    metric: "48\" x 1.8km",
-    metricLabel: "HDD + DPI Technology",
-    tags: ["HDD", "Microtunnelling"],
-    href: "/projects/ob3-river-niger",
-    thumbnail: getProjectImage("ob3-river-niger", "related"),
   },
   {
     title: "Ekiadolor Deep Valley",

@@ -155,10 +155,10 @@ export const featuredProjects: FeaturedProject[] = [
     thumbnail: featImg("oml34-chdd") as string,
   },
   {
-    title: "OB3 River Niger: a 48-inch Direct Pipe crossing",
-    summary: "Nigeria's largest-diameter river crossing, installed 1.8 km under the River Niger.",
-    href: "/projects/ob3-river-niger",
-    thumbnail: featImg("ob3-river-niger") as string,
+    title: "Otumara–Escravos: Africa's longest bundled crossing",
+    summary: "A 12-inch + 3-inch bundle drilled 2.78 km under the Escravos River for Saipem and SPDC.",
+    href: "/projects/otumara-escravos",
+    thumbnail: featImg("otumara-escravos") as string,
   },
 ];
 
@@ -198,11 +198,11 @@ export const proofMetrics: ProofMetric[] = [
     href: "/projects/oml34-chdd",
   },
   {
-    label: "Largest-diameter crossing",
-    value: "48",
+    label: "Largest pipeline crossing",
+    value: "40",
     unit: "in",
-    note: "OB3 River Niger Direct Pipe installation",
-    href: "/projects/ob3-river-niger",
+    note: 'Yenagoa 40" × 760 m, Nigeria record (2010)',
+    href: "/projects/yenagoa-40-crossing",
   },
   {
     label: "HDD / pipeline installed",
@@ -237,7 +237,7 @@ export const capabilities: Capability[] = [
     key: "hdd",
     code: "D-01",
     name: "HDD & Trenchless Crossings",
-    proof: "Horizontal directional drilling for river, road, rail and swamp crossings up to 48-inch diameter and 12 km continuous drives.",
+    proof: "Horizontal directional drilling for river, road, rail and swamp crossings up to 42-inch diameter and 12 km continuous drives.",
     scope: "Rivers, wetlands, live infrastructure and environmentally sensitive corridors.",
     href: "/capabilities/hdd",
     image: siteImageSelections.home.capabilityCards.hdd,
@@ -335,16 +335,6 @@ export const proofRecords: ProofRecord[] = [
     thumbnail: featImg("oml34-chdd") as string,
   },
   {
-    title: 'OB3 River Niger 48" Direct Pipe',
-    href: "/projects/ob3-river-niger",
-    location: "River Niger, Nigeria",
-    metric: '48" × 1.8 km',
-    metricLabel: "Largest-Diameter River Crossing",
-    year: "2020",
-    tags: ["HDD", "Direct Pipe"],
-    thumbnail: featImg("ob3-river-niger") as string,
-  },
-  {
     title: '16" & 6" Nun River HDD Crossing',
     href: "/projects/nun-river-dual-hdd",
     location: "Niger Delta, Nigeria",
@@ -433,7 +423,7 @@ export interface Faq {
 export const faqs: Faq[] = [
   {
     q: "What size and type of crossings can you deliver?",
-    a: "We deliver HDD crossings and pipeline construction across a wide range of diameters and lengths, to date up to 48-inch diameter and 12 km continuous drives. Share your corridor and we will confirm feasibility.",
+    a: "We deliver HDD crossings and pipeline construction across a wide range of diameters and lengths, to date up to 42-inch diameter and 12 km continuous drives. Share your corridor and we will confirm feasibility.",
   },
   {
     q: "Which regions do you operate in?",
