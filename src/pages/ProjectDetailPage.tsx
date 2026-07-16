@@ -761,9 +761,6 @@ export default function ProjectDetailPage() {
   const discipline = capabilities.join(" · ");
   // Key figures pulled straight from the verified results ledger — never invented.
   const heroFigures = results.slice(0, 3);
-  const ltiEntry = results.find(
-    (r) => /lti/i.test(r.label) && /zero/i.test(r.value),
-  );
   const isRecordHolder = Boolean(recordBadge && /longest|largest|deepest|first|record/i.test(recordBadge));
 
   // Title-block metadata — only fields that exist.
@@ -811,14 +808,11 @@ export default function ProjectDetailPage() {
               {overview}
             </p>
 
-            {(recordBadge || ltiEntry) && (
+            {recordBadge && (
               <div className="mt-6 flex flex-wrap items-center gap-2.5">
-                {recordBadge && (
-                  <RecordStatusStamp tone={isRecordHolder ? "record" : "neutral"}>
-                    {recordBadge}
-                  </RecordStatusStamp>
-                )}
-                {ltiEntry && <RecordStatusStamp tone="complete">Zero LTI</RecordStatusStamp>}
+                <RecordStatusStamp tone={isRecordHolder ? "record" : "neutral"}>
+                  {recordBadge}
+                </RecordStatusStamp>
               </div>
             )}
 
@@ -927,11 +921,6 @@ export default function ProjectDetailPage() {
                   backgroundColor: "var(--enk-record-surface)",
                 }}
               >
-                {ltiEntry && (
-                  <div className="mb-4 flex flex-wrap items-center gap-2.5">
-                    <RecordStatusStamp tone="qhse">Zero LTI</RecordStatusStamp>
-                  </div>
-                )}
                 <p className="text-[14px] leading-relaxed text-[var(--enk-steel)] md:text-[15px]">
                   {hseNotes}
                 </p>
