@@ -204,16 +204,20 @@ export default function PartnersPage() {
                 <div className="flex flex-1 flex-col p-5 md:p-6">
                   <div className="flex items-start gap-4">
                     {partner.logoSrc && (
-                      <div className="enk-logo-card !mx-0 !h-14 !w-14 shrink-0 overflow-hidden !p-1.5">
+                      /* Landscape plate: these are wordmarks (HDDThailand is ~5.7:1),
+                         so a square tile clipped them. The !max-w-none/!h-full/!w-full
+                         overrides beat the marquee-geometry `.enk-logo-card img` rule
+                         in index.css, so object-contain letterboxes instead of cropping. */
+                      <div className="enk-logo-card !mx-0 !h-14 !w-32 shrink-0 overflow-hidden !p-2">
                         <EnhancedImage
                           src={partner.logoSrc}
                           alt={partner.name}
                           wrapperClassName="h-full w-full bg-transparent"
-                          className="h-full w-full"
+                          className="!h-full !w-full !max-w-none"
                           fit="contain"
                           tone="logo"
                           shimmer={false}
-                          sizes="56px"
+                          sizes="128px"
                         />
                       </div>
                     )}
@@ -261,16 +265,16 @@ export default function PartnersPage() {
               <div key={jv.name} className="enk-doc-card p-5 md:p-6">
                 <div className="flex items-start gap-4">
                   {jv.logoSrc && (
-                    <div className="enk-logo-card !mx-0 !h-12 !w-12 shrink-0 overflow-hidden !p-1.5">
+                    <div className="enk-logo-card !mx-0 !h-14 !w-28 shrink-0 overflow-hidden !p-2">
                       <EnhancedImage
                         src={jv.logoSrc}
                         alt={jv.name}
                         wrapperClassName="h-full w-full bg-transparent"
-                        className="h-full w-full"
+                        className="!h-full !w-full !max-w-none"
                         fit="contain"
                         tone="logo"
                         shimmer={false}
-                        sizes="48px"
+                        sizes="112px"
                       />
                     </div>
                   )}
