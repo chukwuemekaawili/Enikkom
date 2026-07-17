@@ -158,14 +158,17 @@ const TeamMemberCard = ({
     onClick={() => onSelect(index)}
     className="enk-doc-card enk-doc-card--interactive group flex h-full cursor-pointer flex-col overflow-hidden text-left focus-ring"
   >
-    {/* Photo plate */}
-    <div className="relative aspect-[4/3] overflow-hidden border-b border-[var(--enk-rule)]">
+    {/* Photo plate — 3:4 portrait matches these headshots' real proportions
+        (most are square, one is 1085x1450); a 4:3 landscape box previously
+        forced a top-anchored cover-crop that cut 25-44% off the bottom of
+        every photo, chopping straight through chins and shoulders. */}
+    <div className="relative aspect-[3/4] overflow-hidden border-b border-[var(--enk-rule)]">
       {member.photo ? (
         <EnhancedImage
           src={member.photo}
           alt={`${member.name}, ${member.role}, Enikkom Construction Limited`}
           wrapperClassName="h-full w-full"
-          className="h-full w-full object-top"
+          className="h-full w-full object-center"
           tone="documentary"
           fallbackLabel={member.name}
         />
