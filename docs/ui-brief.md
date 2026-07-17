@@ -155,6 +155,12 @@ surface tone (`.enk-card--hover`) — no lift-off glow, no border sharpening.
 - Copy is specific and fact-carrying (dimensions, clients, locations). Nothing
   invented: facts trace to `resources/eclweb` source documents. No em dashes in
   visible copy (en-dash ranges like 2003–2025 and route names are fine).
+- **Exception — fleet/equipment inventory (owner decision, 2026-07-16):** the
+  /equipment page describes fleets qualitatively (classes, brands, use cases),
+  never per-unit ratings, quantities, or years — counts go stale faster than
+  the site and dense spec tables read as AI-generated. Marquee verified claims
+  ("Nigeria's largest in-country HDD fleet", "up to 500-ton class") stay. The
+  detailed register lives unrendered in `src/content/equipmentSpecs.ts`.
 - Certificate cards show no status stamps and no public "View certificate" links
   (security decision, 2026-07-15). Documents that ARE public open in a new tab,
   never force-download.

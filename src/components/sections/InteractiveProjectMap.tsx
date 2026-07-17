@@ -38,7 +38,7 @@ const baseProjectLocations: ProjectLocation[] = [
   {
     id: "1",
     name: "Dangote Fertilizer Lagoon Crossing",
-    location: "Ejirin, Lagos Lagoon, Lagos State",
+    location: "Ejinrin, Lagos Lagoon, Lagos State",
     state: "Lagos",
     type: "HDD",
     coordinates: { x: 30, y: 54 },
@@ -123,7 +123,7 @@ const baseProjectLocations: ProjectLocation[] = [
     id: "7",
     name: "OB3 River Niger, 48\" Crossing Phase 1",
     location: "River Niger, Nigeria",
-    state: "Rivers",
+    state: "Delta",
     type: "HDD",
     coordinates: { x: 50, y: 70 },
     description: "Phase 1 of the 48\" × 1.835km OB3 crossing of the River Niger, delivered by HDD combined with Direct Pipe Installation; later phases in engineering.",
@@ -571,7 +571,9 @@ export function InteractiveProjectMap({
       <div className={`enk-container ${className}`}>
         {showFilters && (
           <div className="flex flex-wrap gap-2">
-            {projectTypes.map((type) => {
+            {projectTypes
+              .filter((type) => type === "All" || projectLocations.some((p) => p.type === type))
+              .map((type) => {
               const active = activeFilter === type;
               const count =
                 type === "All"

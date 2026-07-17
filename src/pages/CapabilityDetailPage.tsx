@@ -102,7 +102,7 @@ const capabilityData: Record<string, CapabilityData> = {
     ],
     standards: ["API 5L", "ASME B31.4/B31.8", "NACE MR0175", "AWS D1.1"],
     equipment: [
-      { name: "Pipe Layers", specs: "12+ sideboom pipelayers" },
+      { name: "Pipe Layers", specs: "Heavy sideboom pipelayer fleet" },
       { name: "Welding Equipment", specs: "Automatic/manual welding systems" },
       { name: "NDT Equipment", specs: "Radiographic, UT, MT, PT" },
     ],
@@ -144,7 +144,7 @@ const capabilityData: Record<string, CapabilityData> = {
     ],
     standards: ["PIANC Guidelines", "API RP 2A", "ASTM D1143", "EN 12699"],
     equipment: [
-      { name: "Dredger", specs: "3+ cutter suction dredgers" },
+      { name: "Dredger", specs: "Owned Ellicott cutter suction dredgers" },
       { name: "Pile Driver", specs: "Heavy duty impact hammers" },
       { name: "Survey Equipment", specs: "Multi-beam echosounder, RTK GPS" },
     ],

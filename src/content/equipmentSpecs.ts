@@ -1,6 +1,74 @@
 export const equipmentSourceNote =
   "Source documents: ECLweb/09 - EQUIPMENT & FACILITY/Attachment 3.5 - Equipment Owned by ENIKKOM.docx and 9.2 - Equipment Owned by ENIKKOM.pdf.";
 
+/**
+ * Summarized fleet groupings rendered on /equipment. The per-unit register
+ * further down is retained as the traceable source record but is no longer
+ * rendered: unit counts and inventory change faster than the site, so the
+ * page describes fleet groups qualitatively instead of quoting figures.
+ */
+export interface FleetSummaryGroup {
+  title: string;
+  description: string;
+}
+
+export const hddFleetSummary: FleetSummaryGroup[] = [
+  {
+    title: "Maxi-class rigs",
+    description:
+      "American Augers maxi rigs up to the 500-ton class, built for major river crossings and long, large-diameter installations.",
+  },
+  {
+    title: "Mid-range rigs",
+    description:
+      "Heavy and mid-range units for highway, canal, and swamp crossings where a full maxi spread is not required.",
+  },
+  {
+    title: "Compact rigs",
+    description:
+      "Smaller rigs for shorter crossings and congested corridors with tight working areas.",
+  },
+];
+
+export const hddSupportSummary =
+  "Every rig mobilizes with its own support spread: mud mixing, cleaning and recycling systems, high-capacity mud pumps, drill pipe, downhole tooling, reamers, and pipe-handling equipment.";
+
+export const trenchlessSummary: FleetSummaryGroup[] = [
+  {
+    title: "Thrust boring",
+    description:
+      "American Augers thrust boring machines across a range of push capacities for cased crossings beneath roads and live infrastructure.",
+  },
+  {
+    title: "Micro tunnelling",
+    description:
+      "Dedicated microtunneling and pipe-pusher spreads from MTS, Herrenknecht, and Prime Drilling for precision crossings.",
+  },
+];
+
+export const marineSupportSummary: FleetSummaryGroup[] = [
+  {
+    title: "Dredging and marine",
+    description:
+      "Owned cutter suction dredgers, marine support vessels, and swamp buggy excavators for river and delta operations.",
+  },
+  {
+    title: "Earthmoving and civil",
+    description:
+      "Excavators, dozers, loaders, and graders from CAT and Hitachi supporting right-of-way and site works.",
+  },
+  {
+    title: "Pipeline construction",
+    description:
+      "Sidebooms, cranes, piling hammers, and full bending and welding spreads for mainline construction.",
+  },
+  {
+    title: "Transport and logistics",
+    description:
+      "Heavy haulage, low-bed trailers, tankers, and a field vehicle fleet keeping remote sites supplied.",
+  },
+];
+
 export interface HddRigSpec {
   model: string;
   inventoryLabel: string;

@@ -357,10 +357,10 @@ export const proofRecords: ProofRecord[] = [
   {
     title: 'Dangote Fertilizer Lagoon Crossing',
     href: "/projects/dangote-lagoon",
-    location: "Ejirin, Lagos Lagoon",
-    metric: '36" × 2 km',
+    location: "Ejinrin, Lagos Lagoon",
+    metric: '36" × 1.4 km',
     metricLabel: "Swamp / Lagoon HDD Crossing",
-    year: "2016",
+    year: "2018",
     tags: ["HDD", "Pipeline"],
     thumbnail: projImg("dangote-lagoon") as string,
   },

@@ -18,7 +18,7 @@ const defaultFeaturedPartners = [
     description: "Thailand-based trenchless specialist with 15+ years international HDD experience across Asia, Africa and the Middle East. Provides advanced equipment, ISO 9001:2015 certified operations, and specialist engineer deployment to HDDTEC Ltd.",
     highlights: [
       "ISO 9001:2015 Certified Operations",
-      "9 HDD Rigs In-Country (up to 500T pullback)",
+      "In-Country HDD Rig Fleet (up to 500T pullback)",
       "Advanced Downhole Tool Technology",
       "International Engineer Exchange Programme",
     ],
@@ -112,7 +112,7 @@ const partnershipBenefits = [
   },
   {
     title: "Equipment Fleet",
-    description: "Nigeria's largest in-country HDD fleet, 9 maxi rigs from 50T to 500T pullback capacity, all based in-country.",
+    description: "Nigeria's largest in-country HDD fleet, spanning compact rigs to 500T pullback maxi rigs, all based in-country.",
   },
   {
     title: "24/7 Monitoring",

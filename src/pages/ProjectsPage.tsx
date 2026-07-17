@@ -41,14 +41,14 @@ const defaultProjects = [
     year: "2021",
   },
   {
-    title: "Dangote Fertilizer, 36\" × 2km Lagoon Crossing",
-    location: "Ejirin, Lagos Lagoon",
-    metric: "36\" × 2km",
+    title: "Dangote Fertilizer, 36\" × 1.4km Lagoon Crossing",
+    location: "Ejinrin, Lagos Lagoon",
+    metric: "36\" × 1.4km",
     metricLabel: "Swamp / Lagoon HDD Crossing",
     tags: ["HDD", "Pipeline"],
     href: "/projects/dangote-lagoon",
     thumbnail: getProjectImage("dangote-lagoon", "projectList"),
-    year: "2016",
+    year: "2018",
   },
   {
     title: "Atlas Cove-Mosimi, 16\" × 3.1km",
@@ -82,13 +82,13 @@ const defaultProjects = [
   },
   {
     title: "Escravos-Lagos Pipeline System Phase II",
-    location: "Lagos/Delta, Nigeria",
+    location: "Lagos / Ogun State, Nigeria",
     metric: "36\" × 7.2km",
     metricLabel: "Multiple HDD Sections",
     tags: ["HDD", "Pipeline"],
     href: "/projects/elps-phase-2",
     thumbnail: getProjectImage("elps-phase-2", "projectList"),
-    year: "2018",
+    year: "2015",
   },
   {
     title: "Calabar Gas Transmission Pipeline",
@@ -133,8 +133,8 @@ const defaultProjects = [
   {
     title: "River Niger Historic Crossing",
     location: "Niger Delta, Nigeria",
-    metric: "First",
-    metricLabel: "HDD Crossing in Nigeria",
+    metric: "16\" × 1.0km",
+    metricLabel: "First HDD Crossing in Nigeria",
     tags: ["HDD"],
     href: "/projects/river-niger-historic",
     thumbnail: getProjectImage("river-niger-historic", "projectList"),
@@ -143,8 +143,8 @@ const defaultProjects = [
   {
     title: "Gbaran Phase 3b - UZU CPF Upgrade",
     location: "Bayelsa State, Nigeria",
-    metric: "8km & 10km",
-    metricLabel: "x 16\" pipeline EPC",
+    metric: "16\" × 8km & 10km",
+    metricLabel: "Pipeline EPC",
     tags: ["Pipeline"],
     href: "/projects/gbaran-phase-3b",
     thumbnail: getProjectImage("gbaran-phase-3b", "projectList"),
@@ -153,8 +153,8 @@ const defaultProjects = [
   {
     title: "16\" & 6\" Nun River HDD Crossing",
     location: "Niger Delta, Nigeria",
-    metric: "Dual",
-    metricLabel: "HDD crossing under Nun River",
+    metric: "16\" & 6\"",
+    metricLabel: "Dual HDD crossing under the Nun River",
     tags: ["HDD"],
     href: "/projects/nun-river-dual-hdd",
     thumbnail: getProjectImage("nun-river-dual-hdd", "projectList"),
@@ -275,6 +275,8 @@ const registerCell = "px-3.5 py-3 align-top text-[13px] leading-snug";
 export default function ProjectsPage() {
   const [activeFilter, setActiveFilter] = useState("All");
   const [activeRecordFilter, setActiveRecordFilter] = useState("All");
+  const [showAllPhotos, setShowAllPhotos] = useState(false);
+  const [showFootprint, setShowFootprint] = useState(false);
   const location = useLocation();
   const { content } = usePageContent('projects');
   const heroContent = content.hero || {};
@@ -300,6 +302,10 @@ export default function ProjectsPage() {
 
   useEffect(() => {
     if (!location.hash) return;
+
+    // Deep links into the collapsed sections expand them first.
+    if (location.hash === "#gallery") setShowAllPhotos(true);
+    if (location.hash === "#map") setShowFootprint(true);
 
     window.requestAnimationFrame(() => {
       document.getElementById(location.hash.slice(1))?.scrollIntoView({ block: "start" });
@@ -553,7 +559,7 @@ export default function ProjectsPage() {
           </div>
 
           <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
-            {galleryImages.map((img, i) => (
+            {(showAllPhotos ? galleryImages : galleryImages.slice(0, 8)).map((img) => (
               <FieldFigure
                 key={img.label}
                 src={img.src}
@@ -564,6 +570,17 @@ export default function ProjectsPage() {
               />
             ))}
           </div>
+          {!showAllPhotos && galleryImages.length > 8 && (
+            <div className="mt-6">
+              <button
+                type="button"
+                className="enk-btn enk-btn--outline"
+                onClick={() => setShowAllPhotos(true)}
+              >
+                Show all {galleryImages.length} photographs
+              </button>
+            </div>
+          )}
         </div>
       </section>
 
@@ -581,7 +598,7 @@ export default function ProjectsPage() {
           </div>
 
           <div className="grid gap-5 md:grid-cols-2">
-            {testimonials.map((t) => (
+            {testimonials.slice(0, 2).map((t) => (
               <figure
                 key={t.client}
                 className="flex flex-col border p-5"
@@ -619,12 +636,24 @@ export default function ProjectsPage() {
             </p>
           </div>
         </div>
-        <InteractiveProjectMap
-          showHeader={false}
-          showStats={true}
-          showFilters={true}
-          maxHeight="600px"
-        />
+        {showFootprint ? (
+          <InteractiveProjectMap
+            showHeader={false}
+            showStats={true}
+            showFilters={true}
+            maxHeight="600px"
+          />
+        ) : (
+          <div className="enk-container">
+            <button
+              type="button"
+              className="enk-btn enk-btn--outline"
+              onClick={() => setShowFootprint(true)}
+            >
+              Browse the project directory by state
+            </button>
+          </div>
+        )}
       </section>
 
       <CTABand
