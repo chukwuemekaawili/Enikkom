@@ -33,19 +33,20 @@ export function LogoMarquee({ showTitle = true }: LogoMarqueeProps) {
         </div>
       )}
 
+      {/* Plain <img> straight inside .enk-logo-card — identical markup to the
+          homepage Credentials strip. EnhancedImage wraps the img in a
+          full-height div, which the tile's flex centering then centres instead
+          of the logo, leaving every mark pinned to the top of its tile. */}
       <div className="enk-marquee-mask">
         <div className="enk-marquee py-1">
           {duplicatedClients.map((client, index) => (
             <div key={`${client.id}-${index}`} className="enk-logo-card" title={client.fullName}>
-              <EnhancedImage
+              <img
                 src={client.logoSrc}
-                alt={client.fullName}
-                wrapperClassName={`h-full w-full bg-transparent ${client.imageWrapperClassName || ""}`}
-                className={`h-full w-full ${client.imageClassName || ""}`}
-                fit="contain"
-                tone="logo"
-                shimmer={false}
-                sizes="120px"
+                alt={index < approvedClientBrands.length ? client.fullName : ""}
+                aria-hidden={index >= approvedClientBrands.length || undefined}
+                loading="lazy"
+                decoding="async"
               />
             </div>
           ))}
