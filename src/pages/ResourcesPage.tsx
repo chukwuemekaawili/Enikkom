@@ -192,20 +192,20 @@ export default function ResourcesPage() {
               field="eyebrow"
             />}
             title={<EditableText
-              value={videoContent.title || "OML34 Continuous HDD Project Video"}
+              value={videoContent.title || "Project Videos"}
               pageSlug="resources"
               sectionKey="video"
               field="title"
             />}
             intro={<EditableText
-              value={videoContent.description || "Watch the documentary of Nigeria's longest functional Continuous HDD - 12km of 10\" pipeline installation."}
+              value={videoContent.description || "Documentary footage from two of our most demanding crossings: the OML34 continuous HDD and the OB3 River Niger 48\" Direct Pipe installation."}
               pageSlug="resources"
               sectionKey="video"
               field="description"
             />}
           />
 
-          <div className="mx-auto mt-8 max-w-4xl">
+          <div className="mt-8 grid gap-6 lg:grid-cols-2">
             <FieldFigure
               caption='OML34 continuous HDD, 10" × 12km project review'
               location="Utorogun, Delta State"
@@ -223,7 +223,25 @@ export default function ResourcesPage() {
               />
             </FieldFigure>
 
-            <div className="mt-5">
+            <FieldFigure
+              caption='OB3 River Niger, 48" HDD and Direct Pipe crossing'
+              location="River Niger, Delta State"
+              ratio="16/9"
+            >
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/mkx-naHfJx0?rel=0"
+                title="OB3 River Niger 48-inch Crossing"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="h-full w-full"
+                style={{ border: 0 }}
+              />
+            </FieldFigure>
+          </div>
+
+          <div className="mt-8">
               <a
                 href="https://www.youtube.com/@enikkomconstruction"
                 target="_blank"
@@ -234,7 +252,6 @@ export default function ResourcesPage() {
                 View all videos on YouTube
                 <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
               </a>
-            </div>
           </div>
         </div>
       </section>
