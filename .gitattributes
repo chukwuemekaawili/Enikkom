@@ -1,2 +1,9 @@
 *.mp4 filter=lfs diff=lfs merge=lfs -text
 *.webm filter=lfs diff=lfs merge=lfs -text
+
+# Vercel does not fetch Git LFS objects during its build: LFS-tracked files
+# deploy as ~132-byte pointer text, so the browser receives text labelled
+# video/mp4 and silently falls back to the poster image. The videos we actually
+# serve therefore have to be plain Git blobs. They are small enough to store
+# directly (hero 2.7MB, capabilities 19MB, both well under GitHub's 100MB cap).
+public/videos/*.mp4 -filter -diff -merge -text
