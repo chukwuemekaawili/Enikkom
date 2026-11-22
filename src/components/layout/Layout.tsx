@@ -9,11 +9,18 @@ interface LayoutProps {
 }
 
 export function Layout({ children }: LayoutProps) {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
+    // Deep links from the menu (/equipment#support, /hse-quality#sustainability)
+    // land on their section; everything else starts at the top.
+    const target = hash ? document.getElementById(decodeURIComponent(hash.slice(1))) : null;
+    if (target) {
+      window.requestAnimationFrame(() => target.scrollIntoView({ block: "start" }));
+      return;
+    }
     window.scrollTo({ top: 0, behavior: 'instant' });
-  }, [pathname]);
+  }, [pathname, hash]);
 
   return (
     <div className="enk min-h-screen flex flex-col">

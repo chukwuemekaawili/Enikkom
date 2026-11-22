@@ -113,7 +113,7 @@ export default function EquipmentPage() {
       </section>
 
       {/* Marine & Support Equipment */}
-      <section className="enk-section" style={{ borderBottom: "1px solid var(--enk-rule)" }}>
+      <section id="support" className="enk-section scroll-mt-24" style={{ borderBottom: "1px solid var(--enk-rule)" }}>
         <div className="enk-container">
           <SectionHeading
             kicker="Marine & support"

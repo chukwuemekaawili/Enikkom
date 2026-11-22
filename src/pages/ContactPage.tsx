@@ -75,7 +75,7 @@ export default function ContactPage() {
                       label: "Phone",
                       value: (
                         <a
-                          href={contactDetails.phone ? `tel:${contactDetails.phone}` : contact.phoneHref}
+                          href={contactDetails.phone ? `tel:${contactDetails.phone.replace(/\s+/g, "")}` : contact.phoneHref}
                           className="transition-colors hover:text-[var(--enk-accent-on-dark)] focus-ring rounded-sm"
                         >
                           <EditableText

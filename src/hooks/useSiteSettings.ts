@@ -45,7 +45,7 @@ const defaultBranding: BrandingSettings = {
 };
 
 const defaultContact: ContactSettings = {
-  phone: '+234 803 508 2614',
+  phone: '+234 806 573 8555',
   email: 'info@enikkom.com',
   address: 'No 5b Theophilus Orji Street, Lekki Phase 1, Lagos',
   youtubeUrl: '',

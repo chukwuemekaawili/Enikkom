@@ -18,7 +18,7 @@ const defaultCapabilities = [
     metric: "Long-distance trenchless crossings",
   },
   {
-    title: "Pipelines & Flowlines Construction",
+    title: "Pipeline Construction",
     description: "Complete pipeline construction services from fabrication and welding through installation, testing, and commissioning for oil, gas, and water transmission systems.",
     href: "/capabilities/pipelines-flowlines",
     icon: PipetteIcon,
@@ -83,7 +83,7 @@ export default function CapabilitiesPage() {
     <Layout>
       <SEO
         title="Capabilities – HDD, Pipelines, Dredging & Marine – Enikkom"
-        description="Engineering capabilities across horizontal directional drilling, pipeline and flowline construction, dredging and piling, production facilities, and pipeline security."
+        description="Engineering capabilities across horizontal directional drilling, pipeline construction, dredging and piling, production facilities, and pipeline security."
         canonical="/capabilities"
       />
       <Hero

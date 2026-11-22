@@ -22,8 +22,8 @@ const projImg = (slug: string) =>
 const featImg = (slug: string) => getProjectImage(slug, "homeFeature") || projImg(slug);
 
 export const contact = {
-  phone: "+234 803 508 2614",
-  phoneHref: "tel:+2348035082614",
+  phone: "+234 806 573 8555",
+  phoneHref: "tel:+2348065738555",
   email: "info@enikkom.com",
   rfpEmail: "info@enikkom.com",
   address: "No 5b Theophilus Orji Street, Lekki Phase 1, Lagos, Nigeria",
@@ -59,7 +59,7 @@ export const navMenus: NavMenu[] = [
     items: [
       { label: "Capabilities overview", href: "/capabilities" },
       { label: "Horizontal directional drilling", href: "/capabilities/hdd" },
-      { label: "Pipeline & flowline construction", href: "/capabilities/pipelines-flowlines" },
+      { label: "Pipeline construction", href: "/capabilities/pipelines-flowlines" },
       { label: "Dredging & piling", href: "/capabilities/dredging-piling" },
       { label: "Production facilities", href: "/capabilities/facilities" },
       { label: "Pipeline security & monitoring", href: "/capabilities/pipeline-security" },
@@ -83,6 +83,7 @@ export const navMenus: NavMenu[] = [
     items: [
       { label: "Fleet overview", href: "/equipment" },
       { label: "HDD & trenchless equipment", href: "/equipment#hdd" },
+      { label: "Support equipment", href: "/equipment#support" },
       { label: "Equipment specifications", href: "/resources" },
     ],
   },
@@ -126,6 +127,8 @@ export const experienceYears = "30+";
 export const homeStats = [
   { value: experienceYears, label: "years in the field" },
   { value: "3.1 km", label: "Africa-record HDD drive" },
+  // Client instruction (J. Okoye website review, 2026-11-19): OML34 12 km continuous HDD.
+  { value: "12 km", label: "longest functional continuous HDD project" },
   { value: "100+ km", label: "of pipeline installed" },
   { value: "500+", label: "skilled personnel" },
 ] as const;
@@ -246,7 +249,7 @@ export const capabilities: Capability[] = [
   {
     key: "pipelines",
     code: "D-02",
-    name: "Pipeline & Flowline Construction",
+    name: "Pipeline Construction",
     proof: "Transmission and distribution pipeline installed, welded, coated and tied-in: 100+ km delivered on record.",
     scope: "Onshore, swamp and shore-approach corridors for oil, gas and water.",
     href: "/capabilities/pipelines-flowlines",

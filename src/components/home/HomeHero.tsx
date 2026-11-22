@@ -58,11 +58,11 @@ export function HomeHero() {
               style={{ backgroundColor: "rgba(16,27,42,0.78)" }}
             >
               <h1 id="hero-heading" className="text-white">
-                Where Nigeria's toughest crossings get built
+                Where Nigeria's toughest pipeline infrastructure projects get built
               </h1>
 
               <p className="mt-3 text-[15px] leading-relaxed text-white/80">
-                HDD, pipeline crossings, dredging and marine civil works across Nigeria since 1995.
+                Pipeline construction, horizontal directional drilling (HDD), dredging and civil works across Nigeria since 1995.
               </p>
 
               <div className="mt-6 flex flex-wrap items-center gap-5">

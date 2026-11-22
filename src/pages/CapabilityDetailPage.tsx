@@ -85,7 +85,7 @@ const capabilityData: Record<string, CapabilityData> = {
     ],
   },
   "pipelines-flowlines": {
-    title: "Pipelines & Flowlines Construction",
+    title: "Pipeline Construction",
     description: "Complete pipeline construction services from fabrication to installation and testing for oil, gas, and water transmission systems.",
     overview: [
       "We deliver complete onshore and offshore pipeline and flowline construction, from procurement and fabrication through welding, coating, installation, testing and commissioning, across land, swamp and shore-approach terrain. Our delivered record includes gas transmission and distribution networks such as the 24\" × 21.5 km Calabar line and the multi-diameter NIPCO distribution network.",
