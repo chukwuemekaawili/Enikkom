@@ -104,12 +104,12 @@ export const approvedStrategicPartners: BrandEntity[] = [
 export const approvedJointVentures: BrandEntity[] = [
   {
     id: "hddtec",
-    name: "HDDTEC Ltd",
-    fullName: "HDDTEC Ltd",
+    name: "HDDTEL",
+    fullName: "HDDThailand-Enikkom Limited (HDDTEL)",
     type: "joint-venture",
-    logoSrc: "/brand/hddtec-logo.svg",
+    logoSrc: "/brand/hddtel-logo-on-light.png",
     imageWrapperClassName: "bg-transparent rounded-[0.65rem]",
-    aliases: ["hddtec", "hddtec ltd", "hddthailand-enikkom"],
+    aliases: ["hddtel", "hddtec", "hddtec ltd", "hddthailand-enikkom"],
   },
 ];
 

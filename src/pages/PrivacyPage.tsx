@@ -10,8 +10,8 @@ export default function PrivacyPage() {
   return (
     <Layout>
       <SEO
-        title="Privacy Policy – Enikkom"
-        description="How Enikkom Construction collects, uses, and protects your personal information."
+        title="Privacy Policy – HDDTEL"
+        description="How HDDTEL collects, uses, and protects your personal information."
         canonical="/privacy"
       />
       <div className="enk-section">
@@ -47,7 +47,7 @@ export default function PrivacyPage() {
               </h2>
               <p className="text-muted-foreground leading-relaxed">
                 <EditableText
-                  value={pageContent.section1_text || "Enikkom Construction Limited (\"we\", \"our\", or \"us\") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or engage with our services."}
+                  value={pageContent.section1_text || "HDDThailand-Enikkom Limited (HDDTEL, \"we\", \"our\", or \"us\") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or engage with our services."}
                   pageSlug="privacy"
                   sectionKey="main"
                   field="section1_text"
@@ -189,7 +189,7 @@ export default function PrivacyPage() {
               <div className="mt-4 enk-card p-4">
                 <p className="font-medium">
                   <EditableText
-                    value={pageContent.contact_company || "Enikkom Construction Limited"}
+                    value={pageContent.contact_company || "HDDThailand-Enikkom Limited"}
                     pageSlug="privacy"
                     sectionKey="main"
                     field="contact_company"

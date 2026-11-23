@@ -22,7 +22,7 @@ const NotFound = () => {
 
   return (
     <Layout>
-      <SEO title="Page Not Found – Enikkom" noindex />
+      <SEO title="Page Not Found – HDDTEL" noindex />
       <section className="enk-section flex min-h-[60vh] items-center justify-center">
         <div className="enk-container">
           <div className="enk-doc-card mx-auto max-w-xl p-8 text-center md:p-10">

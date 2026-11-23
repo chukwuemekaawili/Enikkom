@@ -82,7 +82,7 @@ export default function CapabilitiesPage() {
   return (
     <Layout>
       <SEO
-        title="Capabilities – HDD, Pipelines, Dredging & Marine – Enikkom"
+        title="Capabilities – HDD, Pipelines, Dredging & Marine – HDDTEL"
         description="Engineering capabilities across horizontal directional drilling, pipeline construction, dredging and piling, production facilities, and pipeline security."
         canonical="/capabilities"
       />

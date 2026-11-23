@@ -76,14 +76,14 @@ const leadershipEntries: SearchEntry[] = [
 const partnerEntries: SearchEntry[] = [
   {
     title: "HDDThailand Co. Ltd",
-    description: "Thailand-based trenchless specialist with 15+ years international HDD experience across Asia, Africa and the Middle East. Provides advanced equipment, ISO 9001:2015 certified operations, and specialist engineer deployment to HDDTEC Ltd.",
+    description: "Thailand-based trenchless specialist with 15+ years international HDD experience across Asia, Africa and the Middle East. Provides advanced equipment, ISO 9001:2015 certified operations, and specialist engineer deployment to HDDTEL.",
   },
   {
     title: "Ocean Marine Solutions (OMS)",
     description: "Nigerian maritime security company providing real-time pipeline surveillance, leak detection, and vandalism prevention services.",
   },
   {
-    title: "HDDTEC Ltd (HDDThailand-Enikkom)",
+    title: "HDDTEL (HDDThailand-Enikkom Limited)",
     description: "Formed in May 2020 by ECL and The E-Place Limited. Operates Nigeria's largest in-country HDD fleet, executing mega-scale trenchless crossings for IOCs and operators across Nigeria.",
   },
   {
@@ -101,7 +101,7 @@ export const searchIndex: SearchEntry[] = [
   {
     title: "Home",
     href: "/",
-    description: "Enikkom Construction and HDDTEC: trenchless drilling, pipeline construction, dredging and piling, and production facilities across Nigeria's oil & gas sector.",
+    description: "HDDTEL: trenchless drilling, pipeline construction, dredging and piling, and production facilities across Nigeria's oil & gas sector.",
     category: "Company",
   },
   {
@@ -135,27 +135,27 @@ export const searchIndex: SearchEntry[] = [
   {
     title: "About",
     href: "/about",
-    description: "Enikkom Construction (Pipeline Works) and HDDTEC (Trenchless Operations): company history and local content.",
+    description: "HDDTEL, an Enikkom Group company: company history and local content.",
     category: "Company",
   },
   ...statementEntries,
   {
     title: "Leadership",
     href: "/about/leadership",
-    description: "Enikkom and HDDTEC's management team.",
+    description: "HDDTEL's management team.",
     category: "Company",
   },
   ...leadershipEntries,
   {
     title: "Careers",
     href: "/careers",
-    description: "Open roles and working life at Enikkom and HDDTEC.",
+    description: "Open roles and working life at HDDTEL.",
     category: "Company",
   },
   {
     title: "News & Insights",
     href: "/resources#videos",
-    description: "Project videos and industry engagement from Enikkom and HDDTEC, including the OML34 documentary and NIPITECS 2019 presentation.",
+    description: "Project videos and industry engagement from HDDTEL, including the OML34 documentary and NIPITECS 2019 presentation.",
     category: "Company",
   },
   {
@@ -167,14 +167,14 @@ export const searchIndex: SearchEntry[] = [
   {
     title: "Partners",
     href: "/partners",
-    description: "Operators and EPC partners Enikkom and HDDTEC work with.",
+    description: "Operators and EPC partners HDDTEL works with.",
     category: "Resources",
   },
   ...partnerEntries,
   {
     title: "Contact",
     href: "/contact",
-    description: "Submit an RFP or drawing, or reach the Enikkom team directly.",
+    description: "Submit an RFP or drawing, or reach the HDDTEL team directly.",
     category: "Contact",
   },
 ];

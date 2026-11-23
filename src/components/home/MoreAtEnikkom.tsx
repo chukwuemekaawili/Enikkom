@@ -19,8 +19,8 @@ const items = [
     imageAlt: "Crawler crane lifting an Enikkom container on a palm-lined project site.",
   },
   {
-    title: "About Enikkom",
-    body: "An indigenous EPC contractor delivering projects across Nigeria since 1995.",
+    title: "About HDDTEL",
+    body: "An Enikkom Group company, built on the group's Nigerian pipeline and HDD record since 1995.",
     href: "/about",
     image: selectedGeneralImage("pl-13.jpg"),
     imageAlt: "Two Enikkom engineers inspecting a large-diameter pipe section in the field.",

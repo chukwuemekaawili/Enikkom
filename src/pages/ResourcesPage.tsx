@@ -89,7 +89,7 @@ export default function ResourcesPage() {
   return (
     <Layout>
       <SEO
-        title="Resources – Brochures, Videos & Compliance – Enikkom"
+        title="Resources – Brochures, Videos & Compliance – HDDTEL"
         description="Download Enikkom's company profile, project brochures, policy statements, and regulatory permits, plus project documentary videos."
         canonical="/resources"
       />

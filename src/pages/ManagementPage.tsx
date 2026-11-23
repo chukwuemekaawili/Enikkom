@@ -405,7 +405,7 @@ export default function ManagementPage() {
   return (
     <Layout>
       <SEO
-        title="Leadership & Management Team – Enikkom"
+        title="Leadership & Management Team – HDDTEL"
         description="Meet Enikkom's leadership and board: decades of pipeline, HDD, finance, and energy expertise led by founder Engr. Edward Amene."
         canonical="/about/leadership"
       />

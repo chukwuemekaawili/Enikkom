@@ -15,7 +15,7 @@ const defaultFeaturedPartners = [
     name: "HDDThailand Co. Ltd",
     type: "Joint Venture Partner",
     since: "May 2020",
-    description: "Thailand-based trenchless specialist with 15+ years international HDD experience across Asia, Africa and the Middle East. Provides advanced equipment, ISO 9001:2015 certified operations, and specialist engineer deployment to HDDTEC Ltd.",
+    description: "Thailand-based trenchless specialist with 15+ years international HDD experience across Asia, Africa and the Middle East. Provides advanced equipment, ISO 9001:2015 certified operations, and specialist engineer deployment to HDDTEL.",
     highlights: [
       "ISO 9001:2015 Certified Operations",
       "In-Country HDD Rig Fleet (up to 500T pullback)",
@@ -42,7 +42,7 @@ const defaultFeaturedPartners = [
 
 const jointVentures = [
   {
-    name: "HDDTEC Ltd (HDDThailand-Enikkom)",
+    name: "HDDTEL (HDDThailand-Enikkom Limited)",
     description: "Formed in May 2020 by ECL and The E-Place Limited. Operates Nigeria's largest in-country HDD fleet, executing mega-scale trenchless crossings for IOCs and operators across Nigeria.",
     logoSrc: findBrandEntity("hddtec")?.logoSrc,
   },
@@ -120,7 +120,7 @@ const partnershipBenefits = [
   },
   {
     title: "Local Content",
-    description: "NCDMB-compliant indigenous capacity, built through our technical partnership with HDDTEC.",
+    description: "NCDMB-compliant indigenous capacity, built through the HDDThailand-Enikkom technical partnership.",
   },
 ];
 
@@ -168,8 +168,8 @@ export default function PartnersPage() {
   return (
     <Layout>
       <SEO
-        title="Partners & Strategic Alliances – Enikkom"
-        description="Enikkom's technical partnerships and joint ventures: HDDThailand (HDDTEC) and Ocean Marine Solutions (PIEJV), operating Nigeria's largest in-country HDD fleet."
+        title="Partners & Strategic Alliances – HDDTEL"
+        description="Enikkom's technical partnerships and joint ventures: HDDThailand (HDDTEL) and Ocean Marine Solutions (PIEJV), operating Nigeria's largest in-country HDD fleet."
         canonical="/partners"
       />
       <Hero

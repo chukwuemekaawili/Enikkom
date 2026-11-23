@@ -41,12 +41,12 @@ export default function CareersPage() {
   return (
     <Layout>
       <SEO
-        title="Careers – Build Your Career at Enikkom"
+        title="Careers – Build Your Career at HDDTEL"
         description="Join one of Nigeria's established indigenous infrastructure contractors. Opportunities across HDD, pipeline, marine, facilities, HSE, and corporate roles."
         canonical="/careers"
       />
       <Hero
-        title={heroContent.title || "Build Your Career at Enikkom"}
+        title={heroContent.title || "Build Your Career at HDDTEL"}
         subtitle={heroContent.subtitle || "Join one of Nigeria's established indigenous infrastructure contractors. Be part of a team of 500+ professionals delivering projects across Nigeria."}
         badge="Personnel File"
         backgroundImage={heroContent.backgroundImage || careersImages.hero}

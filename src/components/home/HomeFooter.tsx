@@ -11,9 +11,9 @@ interface FooterLink {
 /** Shell-style footer: three plain sentence-case columns, one legal line. */
 const columns: { title: string; links: FooterLink[] }[] = [
   {
-    title: "Explore Enikkom",
+    title: "Explore HDDTEL",
     links: [
-      { label: "About Enikkom", href: "/about" },
+      { label: "About HDDTEL", href: "/about" },
       { label: "What we do", href: "/capabilities" },
       { label: "Projects", href: "/projects" },
       { label: "Equipment & fleet", href: "/equipment" },
@@ -99,7 +99,7 @@ export function HomeFooter() {
         {/* Legal line */}
         <div className="mt-12 flex flex-col gap-4 border-t border-[rgba(255,255,255,0.12)] pt-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-[12.5px]">
-            © {new Date().getFullYear()} Enikkom Construction Limited. All rights reserved.
+            © {new Date().getFullYear()} HDDThailand-Enikkom Limited (HDDTEL). All rights reserved.
           </p>
           <div className="flex gap-6 text-[12.5px]">
             <Link to="/privacy" className="inline-block py-1.5 hover:text-[#E6E9EC] transition-colors focus-ring rounded-md">Privacy</Link>

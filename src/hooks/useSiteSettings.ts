@@ -40,7 +40,7 @@ interface SiteSettings {
 const defaultBranding: BrandingSettings = {
   logoUrl: '',
   faviconUrl: '',
-  companyName: 'Enikkom Construction Limited',
+  companyName: 'HDDThailand-Enikkom Limited',
   tagline: 'Pipeline and trenchless contractor since 1995',
 };
 
@@ -54,7 +54,7 @@ const defaultContact: ContactSettings = {
 };
 
 const defaultSEO: SEOSettings = {
-  metaTitle: 'Enikkom Construction - HDD, Pipelines, Dredging & Marine Civils - Nigeria',
+  metaTitle: 'HDDTEL - HDD, Pipelines, Dredging & Marine Civils - Nigeria',
   metaDescription: "Nigeria's leading contractor specializing in HDD, pipeline construction, dredging, and marine works. 30+ years of experience.",
   ogImageUrl: '',
   keywords: 'HDD Nigeria, pipeline construction, dredging, marine works, trenchless technology',

@@ -84,7 +84,7 @@ export function HomeHero() {
                     </button>
                   </DialogTrigger>
                   <DialogContent className="z-[200] max-w-4xl border-0 bg-transparent p-0 shadow-none">
-                    <DialogTitle className="sr-only">Enikkom field footage: capabilities reel</DialogTitle>
+                    <DialogTitle className="sr-only">Field footage: capabilities reel</DialogTitle>
                     <div
                       className="relative overflow-hidden rounded-[12px]"
                       style={{ paddingBottom: "56.25%" }}

@@ -33,7 +33,7 @@ const sustainabilityPillars = [
   {
     title: "Indigenous Capacity Development",
     description:
-      "Indigenous technical capacity aligned with NOGICD and NCDMB local-content requirements, built through our partnership with HDDTEC.",
+      "Indigenous technical capacity aligned with NOGICD and NCDMB local-content requirements, built through the HDDThailand-Enikkom partnership.",
   },
 ];
 
@@ -112,8 +112,8 @@ export default function HSEQualityPage() {
   return (
     <Layout>
       <SEO
-        title="HSE & Quality – ISO 9001/14001/45001 – Enikkom"
-        description="Enikkom's QHSE system: ISO 9001, 14001 and 45001 certified, with a four-level quality process and a full permit-to-work system."
+        title="HSE & Quality – ISO 9001/14001/45001 – HDDTEL"
+        description="Our QHSE system: ISO 9001, 14001 and 45001 certified, with a four-level quality process and a full permit-to-work system."
         canonical="/hse-quality"
       />
       <Hero
@@ -171,7 +171,7 @@ export default function HSEQualityPage() {
               <SectionHeading
                 kicker={commitmentContent.subtitle || "Commitment"}
                 title={<EditableText value={commitmentContent.title || "Our HSE Commitment"} pageSlug="hse" sectionKey="commitment" field="title" />}
-                intro={<EditableText value={commitmentContent.description || "At Enikkom, HSE is more than a policy. It is a core value embedded in every aspect of our operations. We are committed to protecting our people, communities, and the environment."} pageSlug="hse" sectionKey="commitment" field="description" multiline />}
+                intro={<EditableText value={commitmentContent.description || "At HDDTEL, HSE is more than a policy. It is a core value embedded in every aspect of our operations. We are committed to protecting our people, communities, and the environment."} pageSlug="hse" sectionKey="commitment" field="description" multiline />}
                 onDark
               />
 
@@ -284,7 +284,7 @@ export default function HSEQualityPage() {
           <SectionHeading
             kicker="Sustainability & Community"
             title={<>Responsible Operations on Sensitive Terrain</>}
-            intro="Sustainability at Enikkom is built on auditable systems, not statements: certified management systems, a documented safety record, and host-community policy."
+            intro="Sustainability at HDDTEL is built on auditable systems, not statements: certified management systems, a documented safety record, and host-community policy."
           />
 
           <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">

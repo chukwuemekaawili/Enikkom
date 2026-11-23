@@ -10,8 +10,8 @@ export default function TermsPage() {
   return (
     <Layout>
       <SEO
-        title="Terms of Use – Enikkom"
-        description="The terms and conditions governing use of the Enikkom Construction website."
+        title="Terms of Use – HDDTEL"
+        description="The terms and conditions governing use of the HDDTEL website."
         canonical="/terms"
       />
       <div className="enk-section">
@@ -47,7 +47,7 @@ export default function TermsPage() {
               </h2>
               <p className="text-muted-foreground leading-relaxed">
                 <EditableText
-                  value={pageContent.section1_text || "By accessing and using the Enikkom Construction Limited website, you accept and agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our website."}
+                  value={pageContent.section1_text || "By accessing and using the HDDThailand-Enikkom Limited (HDDTEL) website, you accept and agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our website."}
                   pageSlug="terms"
                   sectionKey="main"
                   field="section1_text"
@@ -93,7 +93,7 @@ export default function TermsPage() {
               </h2>
               <p className="text-muted-foreground leading-relaxed">
                 <EditableText
-                  value={pageContent.section3_text || "All content on this website, including text, graphics, logos, images, and software, is the property of Enikkom Construction Limited or its content suppliers and is protected by Nigerian and international copyright laws. You may not reproduce, distribute, or create derivative works without our express written consent."}
+                  value={pageContent.section3_text || "All content on this website, including text, graphics, logos, images, and software, is the property of HDDThailand-Enikkom Limited or its content suppliers and is protected by Nigerian and international copyright laws. You may not reproduce, distribute, or create derivative works without our express written consent."}
                   pageSlug="terms"
                   sectionKey="main"
                   field="section3_text"
@@ -153,7 +153,7 @@ export default function TermsPage() {
               </h2>
               <p className="text-muted-foreground leading-relaxed">
                 <EditableText
-                  value={pageContent.section6_text || "Enikkom Construction Limited shall not be liable for any indirect, incidental, special, or consequential damages arising out of or in connection with your use of this website or our services. Our total liability shall not exceed the amount paid by you, if any, for accessing this website."}
+                  value={pageContent.section6_text || "HDDThailand-Enikkom Limited shall not be liable for any indirect, incidental, special, or consequential damages arising out of or in connection with your use of this website or our services. Our total liability shall not exceed the amount paid by you, if any, for accessing this website."}
                   pageSlug="terms"
                   sectionKey="main"
                   field="section6_text"
@@ -237,7 +237,7 @@ export default function TermsPage() {
               <div className="mt-4 enk-card p-4">
                 <p className="font-medium">
                   <EditableText
-                    value={pageContent.contact_company || "Enikkom Construction Limited"}
+                    value={pageContent.contact_company || "HDDThailand-Enikkom Limited"}
                     pageSlug="terms"
                     sectionKey="main"
                     field="contact_company"

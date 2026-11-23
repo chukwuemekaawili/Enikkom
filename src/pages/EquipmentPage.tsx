@@ -32,7 +32,7 @@ export default function EquipmentPage() {
   return (
     <Layout>
       <SEO
-        title="Equipment – Fleet Overview – Enikkom"
+        title="Equipment – Fleet Overview – HDDTEL"
         description="Nigeria's largest in-country HDD fleet plus thrust boring, microtunneling, marine, and support equipment, owned and operated from our Nigerian bases."
         canonical="/equipment"
       />

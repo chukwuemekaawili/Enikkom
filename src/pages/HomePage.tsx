@@ -20,13 +20,13 @@ export default function HomePage() {
   return (
     <div className="enk">
       <Helmet>
-        <title>Enikkom Construction, HDD, Pipelines, Dredging &amp; Marine Civils | Nigeria</title>
+        <title>HDDTEL, HDD, Pipelines, Dredging &amp; Marine Civils | Nigeria</title>
         <meta
           name="description"
           content="Nigerian EPC contractor for trenchless HDD crossings, pipeline construction, dredging and marine civils. Procurement-ready capability, QHSE proof, and a fast technical response."
         />
         <link rel="canonical" href="https://enikkom.com/" />
-        <meta property="og:title" content="Enikkom Construction, Trenchless &amp; Pipeline Contractor, Nigeria" />
+        <meta property="og:title" content="HDDTEL, Trenchless &amp; Pipeline Contractor, Nigeria" />
         <meta
           property="og:description"
           content="Critical crossings delivered where conventional methods cannot reach. HDD, pipelines, dredging and marine civils for oil & gas operators and EPC partners."

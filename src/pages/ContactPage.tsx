@@ -49,12 +49,12 @@ export default function ContactPage() {
   return (
     <Layout>
       <SEO
-        title="Contact Enikkom – Request a Quote"
-        description="Get in touch to discuss your HDD, pipeline, dredging, or marine civil project. Request a quote or send drawings to Enikkom's technical team."
+        title="Contact HDDTEL – Request a Quote"
+        description="Get in touch to discuss your HDD, pipeline, dredging, or marine civil project. Request a quote or send drawings to HDDTEL's technical team."
         canonical="/contact"
       />
       <Hero
-        title={heroContent.title || "Contact Enikkom"}
+        title={heroContent.title || "Contact HDDTEL"}
         subtitle={heroContent.subtitle || "Get in touch to discuss your infrastructure project requirements."}
         badge="RFQ / Tender Desk"
         backgroundImage={heroContent.backgroundImage || contactImages.hero}

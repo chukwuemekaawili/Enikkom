@@ -51,14 +51,14 @@ export default function AboutPage() {
   return (
     <Layout>
       <SEO
-        title="About Enikkom – Engineering Contractor for HDD, Pipelines & Marine Civils"
-        description="Indigenous Nigerian EPCI contractor since 1995 and pioneer of HDD in Nigeria, with 30+ years delivering pipelines, dredging, and marine civil works."
+        title="About HDDTEL – Engineering Contractor for HDD, Pipelines & Marine Civils"
+        description="HDDTEL, an Enikkom Group company, joins the group's Nigerian HDD and pipeline track record since 1995 with HDDThailand's international trenchless methods."
         canonical="/about"
       />
       <Hero
-        title={heroContent.title || "About Enikkom Group"}
-        subtitle={heroContent.subtitle || "An indigenous EPCI company providing engineering, procurement, fabrication, construction, and installation services for onshore and offshore pipelines and facilities across Nigeria since 1995."}
-        badge={heroContent.badge || "Company File · Est. 1995"}
+        title={heroContent.title || "About HDDTEL"}
+        subtitle={heroContent.subtitle || "HDDThailand-Enikkom Limited, an Enikkom Group company, brings the group's Nigerian pipeline and HDD record since 1995 together with HDDThailand's international trenchless methods."}
+        badge={heroContent.badge || "An Enikkom Group company"}
         backgroundImage={heroContent.backgroundImage || aboutImages.hero}
         size="default"
       />
@@ -257,7 +257,7 @@ export default function AboutPage() {
 
       {/* CTA */}
       <CTABand
-        headline="Partner with Enikkom"
+        headline="Partner with HDDTEL"
         primaryCTA={{ label: "Contact us", href: "/contact" }}
         secondaryCTA={{ label: "View projects", href: "/projects" }}
       />

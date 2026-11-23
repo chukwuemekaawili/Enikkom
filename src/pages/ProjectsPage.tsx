@@ -317,7 +317,7 @@ export default function ProjectsPage() {
   return (
     <Layout>
       <SEO
-        title="Project Records – HDD, Pipeline & Marine Works Archive – Enikkom"
+        title="Project Records – HDD, Pipeline & Marine Works Archive – HDDTEL"
         description="Documented archive of Enikkom's completed crossings, pipeline works, dredging, piling and marine civil projects across Nigeria, including Africa's longest single HDD drill and Nigeria's longest continuous HDD."
         canonical="/projects"
       />

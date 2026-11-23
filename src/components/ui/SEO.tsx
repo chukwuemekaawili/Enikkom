@@ -1,8 +1,8 @@
 import { Helmet } from "react-helmet-async";
 
 interface SEOProps {
-  /** Page title. If it already contains "Enikkom" it is used as-is; otherwise
-   *  " | Enikkom Construction" is appended. */
+  /** Page title. If it already contains the site name it is used as-is;
+   *  otherwise " | HDDTEL" is appended. */
   title: string;
   description?: string;
   type?: string;
@@ -26,12 +26,12 @@ export default function SEO({
   image,
   noindex,
 }: SEOProps) {
-  const siteName = "Enikkom Construction";
+  const siteName = "HDDTEL";
   const defaultDescription =
-    "Enikkom Construction, a Nigerian contractor specialising in HDD trenchless crossings, pipeline construction, dredging, piling, and marine civil works.";
+    "HDDTEL (HDDThailand-Enikkom Limited), a Nigerian contractor specialising in HDD trenchless crossings, pipeline construction, dredging, piling, and marine civil works.";
 
   const currentTitle = title
-    ? title.includes("Enikkom")
+    ? title.includes(siteName)
       ? title
       : `${title} | ${siteName}`
     : siteName;

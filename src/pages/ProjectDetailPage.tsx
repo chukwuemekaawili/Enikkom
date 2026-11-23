@@ -751,7 +751,7 @@ export default function ProjectDetailPage() {
   return (
     <Layout>
       <SEO
-        title={`${title}, ${location} – Enikkom`}
+        title={`${title}, ${location} – HDDTEL`}
         description={overview || challenge}
         canonical={`/projects/${slug}`}
       />

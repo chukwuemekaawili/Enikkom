@@ -325,7 +325,7 @@ export default function CapabilityDetailPage() {
   return (
     <Layout>
       <SEO
-        title={`${capability.title} – Enikkom Nigeria`}
+        title={`${capability.title} – HDDTEL Nigeria`}
         description={capability.description}
         canonical={`/capabilities/${slug}`}
       />

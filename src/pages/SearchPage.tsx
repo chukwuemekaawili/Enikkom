@@ -32,7 +32,7 @@ const popularSearches = [
 const featuredLinks = [
   {
     title: "Careers",
-    description: "Open roles and working life at Enikkom and HDDTEC.",
+    description: "Open roles and working life at HDDTEL.",
     href: "/careers",
     image: siteImageSelections.careers.hero,
     ctaLabel: "View Careers",
@@ -63,7 +63,7 @@ export default function SearchPage() {
 
   return (
     <Layout>
-      <SEO title="Search – Enikkom" canonical="/search" noindex />
+      <SEO title="Search – HDDTEL" canonical="/search" noindex />
       <section className="relative isolate overflow-hidden" style={{ backgroundColor: "var(--enk-bg-muted)", borderBottom: "1px solid var(--enk-rule)" }}>
         <div className="enk-container relative py-12 md:py-16">
           <nav aria-label="Breadcrumb" className="mb-6 flex items-center gap-2 text-[13px] text-[var(--enk-steel)]">
