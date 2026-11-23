@@ -107,10 +107,18 @@ export const qhseCredentialsMailto =
   `?subject=QHSE%20Credentials%20Request` +
   `&body=Organisation%3A%0AProject%20context%3A%0ADocuments%20required%3A`;
 
-/** Dual-brand: one group, two delivery arms. */
+/**
+ * Site brand mark. Client instruction (J. Okoye website review, 2026-11-19): the
+ * brand is "HDDTEL" (not "HDDTEC"); remove the Enikkom logo from the header and
+ * footer and make them specific to HDDTEL. Artwork is the logo used on the HDDTEL
+ * SharePoint hub: the on-dark file is the hub original (white "TEL" and dots),
+ * the on-light file swaps the white for the brand navy (#092D44) used on the
+ * company's own light-background HDDThailand-Enikkom logo.
+ */
 export const brand = {
-  hddtecLogo: "/brand/hddtec-logo.svg",
-  microcopy: "Enikkom Construction: Pipeline Works  |  HDDTEC: Trenchless Operations",
+  name: "HDDTEL",
+  logoOnLight: "/brand/hddtel-logo-on-light.png",
+  logoOnDark: "/brand/hddtel-logo-on-dark.png",
 } as const;
 
 /**

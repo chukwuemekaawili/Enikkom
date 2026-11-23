@@ -2,9 +2,6 @@ import { Fragment, useEffect, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X, ChevronDown, Search } from "lucide-react";
 import { navMenus, brand, contact, type NavMenu, type NavLink } from "@/content/home";
-import enikkomLogoColor from "@/assets/images/logos/enikkom-logo-color.png";
-
-const hddtecLogo = brand.hddtecLogo;
 
 /** Plain links that should stay visible without adding another dropdown. */
 const extraLinks: NavLink[] = [
@@ -12,27 +9,20 @@ const extraLinks: NavLink[] = [
 ];
 
 /**
- * Dual-brand lockup: one group (Enikkom, full-colour mark) + the HDDTEC
- * delivery arm. The HDDTEC mark carries its own dark navy plate baked into
- * the artwork, which reads cleanly on the white header.
+ * Single HDDTEL mark (client instruction, 2026-11-19: header is HDDTEL only).
+ * The on-light artwork is trimmed to its alpha bounds, so the CSS height is the
+ * real optical height of the mark.
  */
 function BrandLockup({ compact, onClick }: { compact: boolean; onClick?: () => void }) {
-  // Equal co-brand lockup: Enikkom and HDDTEC at equal optical height on one
-  // baseline, separated by a clean divider, [ Enikkom ] | [ HDDTEC ].
-  // Logo art is tightly trimmed (no dead padding) so these heights map to the
-  // actual mark — keep them generous enough that the wordmark stays legible.
-  const h = compact ? 32 : 40;
+  const h = compact ? 34 : 42;
   return (
     <Link
       to="/"
       onClick={onClick}
-      title={brand.microcopy}
-      aria-label={`Enikkom Construction and HDDTEC, home. ${brand.microcopy}`}
-      className="flex shrink-0 items-center gap-3.5 rounded-sm focus-ring sm:gap-4"
+      aria-label={`${brand.name}, home`}
+      className="flex shrink-0 items-center rounded-sm focus-ring"
     >
-      <img src={enikkomLogoColor} alt="Enikkom Construction Limited" style={{ height: h }} className="w-auto object-contain" />
-      <span aria-hidden="true" style={{ height: h - 2 }} className="w-px bg-[rgba(29,35,42,0.18)]" />
-      <img src={hddtecLogo} alt="HDDTEC, Trenchless Operations" style={{ height: h }} className="w-auto object-contain" />
+      <img src={brand.logoOnLight} alt={brand.name} style={{ height: h }} className="w-auto object-contain" />
     </Link>
   );
 }

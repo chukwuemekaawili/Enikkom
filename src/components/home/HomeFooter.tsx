@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { ExternalLink } from "lucide-react";
 import { contact, brand } from "@/content/home";
-import enikkomLogoWhite from "@/assets/images/logos/enikkom-logo-white.png";
 
 interface FooterLink {
   label: string;
@@ -58,13 +57,10 @@ export function HomeFooter() {
         {/* Brand */}
         <Link
           to="/"
-          title={brand.microcopy}
-          aria-label={`Enikkom and HDDTEC, home. ${brand.microcopy}`}
-          className="inline-flex items-center gap-4 rounded-md focus-ring"
+          aria-label={`${brand.name}, home`}
+          className="inline-flex items-center rounded-md focus-ring"
         >
-          <img src={enikkomLogoWhite} alt="Enikkom Construction Limited" style={{ height: 44 }} className="w-auto object-contain" />
-          <span aria-hidden="true" style={{ height: 44 }} className="w-px bg-[var(--enk-line-dark)]" />
-          <img src={brand.hddtecLogo} alt="HDDTEC, Trenchless Operations" style={{ height: 46 }} className="w-auto object-contain" />
+          <img src={brand.logoOnDark} alt={brand.name} style={{ height: 46 }} className="w-auto object-contain" />
         </Link>
 
         {/* Three plain columns */}

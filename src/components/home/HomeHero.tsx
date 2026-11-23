@@ -28,7 +28,8 @@ export function HomeHero() {
     >
       <div className="mx-auto max-w-[1440px] px-3 md:px-5">
         <div className="relative isolate overflow-hidden rounded-[16px]">
-          {/* Documentary footage — real site operations */}
+          {/* Documentary footage — real site operations (OB3 River Niger Direct Pipe
+              thrust pit; client asked to replace the previous clip, 2026-11-19) */}
           {/* Playback starts from the effect above so prefers-reduced-motion
               users keep the still poster (no autoPlay attribute). */}
           <video
@@ -38,7 +39,7 @@ export function HomeHero() {
             loop
             playsInline
             preload="none"
-            poster={heroImage}
+            poster="/videos/hero-poster.jpg"
             aria-hidden="true"
           >
             <source src="/videos/hero.mp4" type="video/mp4" />

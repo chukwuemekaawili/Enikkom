@@ -39,7 +39,9 @@ export interface ProjectImageSet {
 export const projectImageSelections: Record<string, ProjectImageSet> = {
   "oml34-chdd": {
     hero: selectedProjectImage("pa-046.jpg"),
-    homeFeature: selectedProjectImage("pa-046.jpg"),
+    // Client instruction (J. Okoye review, 2026-11-19): "use the profile". CHDD profile
+    // drawing from the HDDTEC Company Profile 2026, p13.
+    homeFeature: currentProjectImage("oml34-chdd-profile.jpg"),
     homeRecord: selectedProjectImage("pa-043.jpg"),
     projectList: currentProjectImage("scope-operations.jpg"),
     projectGallery: currentProjectImage("scope-operations-2.jpg"),
@@ -83,6 +85,9 @@ export const projectImageSelections: Record<string, ProjectImageSet> = {
   },
   "otumara-escravos": {
     hero: selectedProjectImage("pp-061.jpg"),
+    // Client instruction (J. Okoye review, 2026-11-19): "use the bundle pull picture".
+    // Pullback at the exit pit, from the Otumara section of the ECL Project Brochure.
+    homeFeature: currentProjectImage("otumara-escravos-pullback.jpg"),
     homeRecord: selectedProjectImage("pp-060.jpg"),
     projectList: currentProjectImage("otumara-escravos-2.jpg"),
     projectGallery: currentProjectImage("otumara-escravos.jpg"),
