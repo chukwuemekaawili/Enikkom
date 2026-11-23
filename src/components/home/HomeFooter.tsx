@@ -80,14 +80,16 @@ export function HomeFooter() {
 
           <div>
             <h3 className="text-[17px] font-bold text-[#E6E9EC]">Get in touch</h3>
+            {/* Explicit colour on li/p: the global `p, li` rule (--enk-steel) otherwise
+                wins over the footer's inherited colour and drops these to ~2.8:1 on navy. */}
             <ul className="mt-3 text-[13.5px] leading-snug">
-              <li className="py-1.5">{contact.address}</li>
-              <li>
+              <li className="py-1.5 text-[#B8BEC4]">{contact.address}</li>
+              <li className="text-[#B8BEC4]">
                 <a href={contact.phoneHref} className="inline-block py-1.5 hover:text-[#E6E9EC] transition-colors focus-ring rounded-md">
                   {contact.phone}
                 </a>
               </li>
-              <li>
+              <li className="text-[#B8BEC4]">
                 <a href={`mailto:${contact.email}`} className="inline-block py-1.5 hover:text-[#E6E9EC] transition-colors focus-ring rounded-md">
                   {contact.email}
                 </a>
@@ -98,7 +100,7 @@ export function HomeFooter() {
 
         {/* Legal line */}
         <div className="mt-12 flex flex-col gap-4 border-t border-[rgba(255,255,255,0.12)] pt-6 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-[12.5px]">
+          <p className="text-[12.5px] text-[#B8BEC4]">
             © {new Date().getFullYear()} HDDThailand-Enikkom Limited (HDDTEL). All rights reserved.
           </p>
           <div className="flex gap-6 text-[12.5px]">
